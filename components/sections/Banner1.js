@@ -31,10 +31,9 @@ export default function Banner1() {
                     <div className="row">
                         <div className="col-xl-6 col-md-12">
                             <div className="banner__content">
-                                <h2 className="title">Lần đâu thử test sự thay đổi</h2>
+                                <h2 className="title">Nivex.vn</h2>
                                 <p className="fs-20 desc">
-                                    Coin rockie is the easiest, safest, and fastest way to buy &amp;
-                                    sell crypto asset exchange.
+                                    NIVEX
                                 </p>
                                 <Link href="#" className="btn-action"><span>Get started now</span></Link>
                                 <div className="partner">

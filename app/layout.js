@@ -23,7 +23,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
-            <body className={`${poppins.variable} ${dm.variable} body header-fixed`}>{children}</body>
+            <body className={`${poppins.variable} ${dm.variable} body header-fixed is_dark`}>{children}</body>
         </html>
     )
 }
