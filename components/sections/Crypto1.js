@@ -15,7 +15,7 @@ export default function Crypto1() {
             <section className="crypto" data-aos="fade-up" data-aos-duration={1000}>
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-12 price-w-container">
+                        <div className="col-md-12 ">
                             <div className="crypto__main">
                                 <div className="flat-tabs">
                                     <ul className="menu-tab">
