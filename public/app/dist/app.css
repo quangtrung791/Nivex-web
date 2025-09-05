@@ -19,7 +19,7 @@
 }
 
 :root {
-    --primary: #3772ff;
+    --primary:  #BCFE08;
     --bg: #fff;
     --bg1: #fff;
     --onsurface: #23262f;
@@ -165,7 +165,7 @@ h6,
 }
 
 .fs-20 {
-    font-size: 20px;
+    font-size: 14px;
 }
 
 .fs-21 {
@@ -579,7 +579,8 @@ body[data-magic-cursor=hide] .mouse-cursor {
 }
 
 .header .header__body {
-    padding: 0 17px;
+    /* padding: 0 17px; */
+    padding: 0 7%;
 }
 
 @media only screen and (max-width: 767px) {
@@ -632,7 +633,8 @@ body[data-magic-cursor=hide] .mouse-cursor {
 .header .header__left .main-nav .menu li:hover,
 .header .header__left .main-nav .menu li.current-menu-item,
 .header .header__left .main-nav .menu li.current-item {
-    background: var(--primary);
+    /* background: var(--primary); */
+    background: linear-gradient(90deg,rgba(188, 254, 8, 1) 0%, rgba(134, 249, 105, 1) 50%, rgba(134, 249, 105, 1) 100%);
 }
 
 .header .header__left .main-nav .menu li:hover>a,
@@ -1039,6 +1041,10 @@ body[data-magic-cursor=hide] .mouse-cursor {
 .header .current-menu-item>a,
 .header .current-item a {
     color: #3772ff;
+    /* background: linear-gradient(90deg,rgba(188, 254, 8, 1) 0%, rgba(134, 249, 105, 1) 50%, rgba(134, 249, 105, 1) 100%); */
+}
+.current-menu-item {
+    background: linear-gradient(90deg,rgba(188, 254, 8, 1) 0%, rgba(134, 249, 105, 1) 50%, rgba(134, 249, 105, 1) 100%);
 }
 
 .is_dark .header .header__left .logo .light {
@@ -1051,7 +1057,8 @@ body[data-magic-cursor=hide] .mouse-cursor {
 
 .banner {
     background: var(--surface);
-    padding: 84px 0 145px;
+    /* padding: 84px 0 145px; */
+    padding: 5% 7% 10% 7%;
 }
 
 .banner .banner__content .title {
@@ -1250,7 +1257,8 @@ body[data-magic-cursor=hide] .mouse-cursor {
 }
 
 .crypto .crypto__main .flat-tabs .menu-tab li.active h6 {
-    color: #fff;
+    /* color: #fff; */
+    color: black;
 }
 
 .crypto .crypto__main .flat-tabs .content-tab {
@@ -1346,7 +1354,8 @@ body[data-magic-cursor=hide] .mouse-cursor {
 
 .is_dark .crypto .crypto__main .flat-tabs .content-tab .content-inner .crypto-box.active,
 .is_dark .crypto .crypto__main .flat-tabs .content-tab .content-inner .crypto-box:hover {
-    background: rgba(47, 50, 65, 0.5);
+    /* background: rgba(47, 50, 65, 0.5); */
+    background: rgb(57 57 57 / 50%);
     box-shadow: 0px 14px 64px -48px rgba(15, 15, 15, 0.1);
 }
 
@@ -1419,7 +1428,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
 }
 
 .coin-list .coin-list__main .flat-tabs .menu-tab li.active h6 {
-    color: #fff;
+    color: black;
 }
 
 .coin-list .coin-list__main .flat-tabs .content-tab {
@@ -6076,12 +6085,15 @@ body[data-magic-cursor=hide] .mouse-cursor {
 
 .btn-action {
     padding: 13px 30px;
-    background: var(--primary);
+    background: linear-gradient(90deg,rgba(188, 254, 8, 1) 0%, rgba(134, 249, 105, 1) 50%, rgba(134, 249, 105, 1) 100%);
     border-radius: 90px;
     color: #fff;
     display: inline-block;
     position: relative;
     overflow: hidden;
+}
+#btn-master-homepg {
+    border-radius: unset !important;
 }
 
 .btn-action:after {
@@ -7837,4 +7849,31 @@ body[data-magic-cursor=hide] .mouse-cursor {
     text-transform: capitalize;
 }
 
+.btn-master-homepg {
+    font-size: 14px;
+    font-weight: 600;
+    color: black;
+}
+.price-w-container {
+    padding: 0 7% 0 7%;
+}
+h2.title {
+    font-size: 48px;
+}
+.banner .banner__content .title {
+    max-width: 532px;
+}
+.market-update {
+    padding: 0 7%;
+}
+li.menu-item:hover {
+    background: linear-gradient(90deg,rgba(188, 254, 8, 1) 0%, rgba(134, 249, 105, 1) 50%, rgba(134, 249, 105, 1) 100%) !important;
+}
+.crypto-box.active {
+    border-radius: 0px !important;
+    
+}
+.flex-content {
+    display: flex;
+}
 /*# sourceMappingURL=app.css.map */
