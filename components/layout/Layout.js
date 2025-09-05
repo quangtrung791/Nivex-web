@@ -2,7 +2,6 @@
 'use client'
 import { useEffect, useState } from "react"
 import AddClassBody from "../elements/AddClassBody"
-import BackToTop from '../elements/BackToTop'
 import Breadcrumb from './Breadcrumb'
 import Footer1 from './footer/Footer1'
 import Footer2 from './footer/Footer2'
@@ -41,8 +40,6 @@ export default function Layout({ headerStyle, footerStyle, breadcrumbTitle, chil
             {!footerStyle && < Footer1 />}
             {footerStyle == 1 ? < Footer1 /> : null}
             {footerStyle == 2 ? < Footer2 /> : null}
-
-            <BackToTop target="#top" />
         </>
     )
 }
