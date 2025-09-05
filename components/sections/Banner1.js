@@ -31,12 +31,12 @@ export default function Banner1() {
                     <div className="row">
                         <div className="col-xl-6 col-md-12">
                             <div className="banner__content">
-                                <h2 className="title">Nivex.vn</h2>
+                                <h2 className="title">Cập nhật các kiến thức về AI trong giao dịch tiền mã hóa</h2>
                                 <p className="fs-20 desc">
-                                    NIVEX
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                 </p>
-                                <Link href="#" className="btn-action"><span>Get started now</span></Link>
-                                <div className="partner">
+                                <Link href="#" className="btn-action" id="button-master-homepg" style={{'borderRadius':'0px'}}><span class="btn-master-homepg">Xem thêm</span></Link>
+                                {/* <div className="partner">
                                     <h6>Our Partners</h6>
                                     <div className="partner__list">
                                         <div className="swiper swiper-partner">
@@ -59,7 +59,7 @@ export default function Banner1() {
                                             </Swiper>
                                         </div>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                         <div className="col-xl-6 col-md-12">
