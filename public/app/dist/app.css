@@ -1203,6 +1203,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
 
 .crypto {
     margin-top: -64px;
+    padding: 0 7% 0 7%;
 }
 
 .crypto .crypto__main {
@@ -1360,7 +1361,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
 }
 
 .coin-list {
-    padding: 100px 0 59px;
+    padding: 100px 0 7% 0 7%;
 }
 
 .coin-list .block-text {
@@ -7854,9 +7855,9 @@ body[data-magic-cursor=hide] .mouse-cursor {
     font-weight: 600;
     color: black;
 }
-.price-w-container {
+/* .price-w-container {
     padding: 0 7% 0 7%;
-}
+} */
 h2.title {
     font-size: 48px;
 }
