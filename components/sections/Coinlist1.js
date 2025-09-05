@@ -16,7 +16,7 @@ export default function Coinlist1() {
             <section className="coin-list">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-12">
+                        <div className="col-md-12 market-update">
                             <div className="block-text">
                                 <h3 className="heading">Market Update</h3>
                                 <Link className="btn-action-2" href="#">See All Coins</Link>
