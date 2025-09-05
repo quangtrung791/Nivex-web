@@ -1,0 +1,11 @@
+.footer__bottom_custom {
+    display: block;
+    text-align: center;
+    padding: 16px 0;
+    background: linear-gradient(to right, #BCFE08, #86F869);
+}
+.footer__bottom_custom p {
+    font-weight: 600;
+    font-size: 20px;
+    color: black
+}

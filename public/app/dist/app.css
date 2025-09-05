@@ -48,6 +48,8 @@ body {
     overflow-x: hidden;
     color: var(--text);
     background: var(--bg);
+    margin-left: auto;
+    margin-right: auto;
 }
 
 button {
@@ -1238,7 +1240,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
 
 .crypto .crypto__main .flat-tabs .menu-tab li {
     padding: 8px 20px;
-    border-radius: 24px;
+    /* border-radius: 24px; */
     cursor: pointer;
 }
 
@@ -1415,7 +1417,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
 .coin-list .coin-list__main .flat-tabs .menu-tab li {
     margin-right: 9px;
     padding: 8px 24px;
-    border-radius: 24px;
+    /* border-radius: 24px; */
     cursor: pointer;
 }
 
@@ -1496,6 +1498,10 @@ body[data-magic-cursor=hide] .mouse-cursor {
     font-size: 18px;
 }
 
+.coin-list__main .table tbody tr > :nth-child(8) {
+  text-align: right;
+}
+
 .coin-list .coin-list__main .flat-tabs .content-tab .content-inner tbody tr td.up {
     font-weight: 400;
     color: #58bd7d;
@@ -1510,8 +1516,8 @@ body[data-magic-cursor=hide] .mouse-cursor {
     display: inline-block;
     padding: 5px 10px;
     font-size: 14px;
-    border: 2px solid #e6e8ec;
-    border-radius: 90px;
+    border: 1px solid #e6e8ec;
+    /* border-radius: 90px; */
     transition: 0.3s all ease-in-out;
 }
 
@@ -6087,8 +6093,8 @@ body[data-magic-cursor=hide] .mouse-cursor {
 .btn-action {
     padding: 13px 30px;
     background: linear-gradient(90deg,rgba(188, 254, 8, 1) 0%, rgba(134, 249, 105, 1) 50%, rgba(134, 249, 105, 1) 100%);
-    border-radius: 90px;
-    color: #fff;
+    /* border-radius: 90px; */
+    color: black;
     display: inline-block;
     position: relative;
     overflow: hidden;
@@ -7794,9 +7800,11 @@ body[data-magic-cursor=hide] .mouse-cursor {
 .footer.style-2 .footer__main .footer-contact form input {
     width: 100%;
     border: 2px solid var(--line);
-    border-radius: 90px;
+    /* border-radius: 90px; */
     padding: 11px 19px;
     outline: none;
+    background: #141416;
+    color: white;
 }
 
 .footer.style-2 .footer__main .footer-contact form input::placeholder {
@@ -7811,12 +7819,12 @@ body[data-magic-cursor=hide] .mouse-cursor {
 
 .footer.style-2 .footer__main .footer-contact form button {
     position: absolute;
-    top: 6px;
-    right: 6px;
+    /* top: 6px; */
+    right: 2px;
     border: none;
-    padding: 8px 24px;
+    /* padding: 8px 24px; */
     font-weight: 700;
-    font-size: 14px;
+    /* font-size: 14px; */
 }
 
 .footer.style-2 .footer__main .footer-contact .list-social {
@@ -7834,20 +7842,6 @@ body[data-magic-cursor=hide] .mouse-cursor {
 
 .footer.style-2 .footer__main .footer-contact .list-social li a span {
     font-size: 24px;
-}
-
-.footer.style-2 .footer__bottom {
-    display: block;
-    text-align: center;
-    padding: 16px 0;
-    border-top: 1px solid var(--line);
-}
-
-.footer.style-2 .footer__bottom p {
-    font-weight: 400;
-    font-size: 16px;
-    letter-spacing: 0.05px;
-    text-transform: capitalize;
 }
 
 .btn-master-homepg {
@@ -7877,4 +7871,19 @@ li.menu-item:hover {
 .flex-content {
     display: flex;
 }
+
+.back_to_top-btn {
+    position: absolute;
+    right: -50px;
+    bottom: 30px;
+    background:url(/assets/images/background/button-back-to-top-bg.png) no-repeat center;
+    width: 50px;
+    height: 50px
+}
+
+.container .footer__main .row {
+    position: relative;
+}
+
 /*# sourceMappingURL=app.css.map */
+

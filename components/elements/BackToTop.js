@@ -23,10 +23,8 @@ export default function BackToTop({ target }) {
     return (
         <>
             {hasScrolled && (
-                <button className="btn btn-primary"  onClick={handleClick}>
-                    Back to top
-                </button>
-
+                <a className="back_to_top-btn"  onClick={handleClick}>
+                </a>
             )}
         </>
     )

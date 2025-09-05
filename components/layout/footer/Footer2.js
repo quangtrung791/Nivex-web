@@ -1,4 +1,6 @@
 import Link from "next/link"
+import styles from "./footer2.module.css"
+import BackToTop from '@/components/elements/BackToTop'
 
 export default function Footer2() {
     return (
@@ -65,7 +67,7 @@ export default function Footer2() {
                                     </p>
                                     <form >
                                         <input type="email" placeholder="Enter your email" required />
-                                        <button type="submit" className="btn-action">Submit</button>
+                                        <button type="submit" className="btn-action">Đăng ký</button>
                                     </form>
                                     <ul className="list-social">
                                         <li>
@@ -83,19 +85,20 @@ export default function Footer2() {
                                     </ul>
                                 </div>
                             </div>
+                            <BackToTop target="#top" />
                         </div>
                     </div>
                 </div>
                 <div className="container-fluid">
-                    <div className="footer__bottom">
-                        <p>
-                            ©{new Date().getFullYear()} Rockie.com. All rights reserved. Terms of Service | Privacy
-                            Terms
-                        </p>
-                    </div>
+
                 </div>
             </footer>
-
+            
+            <div className={`${styles.footer__bottom_custom} footer__bottom`}>
+                <p>
+                    © 2025 All rights reserved
+                </p>
+            </div>
         </>
     )
 }
