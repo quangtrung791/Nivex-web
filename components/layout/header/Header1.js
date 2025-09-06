@@ -17,11 +17,11 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu }) {
                             <div className="header__body d-flex justify-content-between">
                                 <div className="header__left">
                                     <div className="logo">
-                                        <Link className="light" href="/">
-                                            <img src="/assets/images/logo/logo.png" alt="" width={118} height={32} data-retina="assets/images/logo/logo@2x.png" data-width={118} data-height={32} />
-                                        </Link>
+                                        {/* <Link className="light" href="/">
+                                            <img src="/assets/images/logo/Nivex_icon_bg.png" alt="" width={118} height={32} data-retina="assets/images/logo/logo@2x.png" data-width={118} data-height={32} />
+                                        </Link> */}
                                         <Link className="dark" href="/">
-                                            <img src="/assets/images/logo/logo-dark.png" alt="" width={118} height={32} data-retina="assets/images/logo/logo-dark@2x.png" data-width={118} data-height={32} />
+                                            <img src="/assets/images/logo/Nivex_icon_bg.png" alt="" width={98} height={22} />
                                         </Link>
                                     </div>
                                     <div className="left__main">
@@ -34,7 +34,7 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu }) {
                                     </div>
                                 </div>
                                 <div className="header__right">
-                                    <Menu as="div" className="dropdown">
+                                    {/* <Menu as="div" className="dropdown">
                                         <Menu.Button className="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             Assets
                                         </Menu.Button>
@@ -54,35 +54,7 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu }) {
                                             <Link className="dropdown-item" href="#">Margin</Link>
                                             <Link className="dropdown-item" href="#">P2P</Link>
                                         </Menu.Items>
-                                    </Menu>
-                                    <Menu as="div" className="dropdown">
-                                        <Menu.Button className="btn dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            EN/USD
-                                        </Menu.Button>
-                                        <Menu.Items as="div" className="dropdown-menu show" aria-labelledby="dropdownMenuButton2">
-                                            <Link href="#" className="dropdown-item notify-item language" data-lang="en">
-                                                <img src="/assets/images/flags/us.jpg" alt="user-image" className="me-1" height={12} />
-                                                <span className="align-middle">English</span>
-                                            </Link>
-                                            <Link href="#" className="dropdown-item notify-item language" data-lang="sp">
-                                                <img src="/assets/images/flags/spain.jpg" alt="user-image" className="me-1" height={12} />
-                                                <span className="align-middle">Spanish</span>
-                                            </Link>
-                                            <Link href="#" className="dropdown-item notify-item language" data-lang="gr">
-                                                <img src="/assets/images/flags/germany.jpg" alt="user-image" className="me-1" height={12} />
-                                                <span className="align-middle">German</span>
-                                            </Link>
-                                            <Link href="#" className="dropdown-item notify-item language" data-lang="it">
-                                                <img src="/assets/images/flags/italy.jpg" alt="user-image" className="me-1" height={12} />
-                                                <span className="align-middle">Italian</span>
-                                            </Link>
-                                            <Link href="#" className="dropdown-item notify-item language" data-lang="ru">
-                                                <img src="/assets/images/flags/russia.jpg" alt="user-image" className="me-1" height={12} />
-                                                <span className="align-middle">Russian</span>
-                                            </Link>
-                                        </Menu.Items>
-                                    </Menu>
-                                    <ThemeSwitch />
+                                    </Menu> */}
                                     <Menu as="div" className="dropdown notification">
                                         <Menu.Button className="btn dropdown-toggle" type="button" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <span className="icon-notification" />
@@ -155,12 +127,41 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu }) {
                                             </div>
                                         </Menu.Items>
                                     </Menu>
+                                    <Menu as="div" className="dropdown">
+                                        <Menu.Button className="btn dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            VN
+                                        </Menu.Button>
+                                        <Menu.Items as="div" className="dropdown-menu show" aria-labelledby="dropdownMenuButton2">
+                                            <Link href="#" className="dropdown-item notify-item language" data-lang="en">
+                                                <img src="/assets/images/flags/us.jpg" alt="user-image" className="me-1" height={12} />
+                                                <span className="align-middle">English</span>
+                                            </Link>
+                                            <Link href="#" className="dropdown-item notify-item language" data-lang="sp">
+                                                <img src="/assets/images/flags/spain.jpg" alt="user-image" className="me-1" height={12} />
+                                                <span className="align-middle">Spanish</span>
+                                            </Link>
+                                            <Link href="#" className="dropdown-item notify-item language" data-lang="gr">
+                                                <img src="/assets/images/flags/germany.jpg" alt="user-image" className="me-1" height={12} />
+                                                <span className="align-middle">German</span>
+                                            </Link>
+                                            <Link href="#" className="dropdown-item notify-item language" data-lang="it">
+                                                <img src="/assets/images/flags/italy.jpg" alt="user-image" className="me-1" height={12} />
+                                                <span className="align-middle">Italian</span>
+                                            </Link>
+                                            <Link href="#" className="dropdown-item notify-item language" data-lang="ru">
+                                                <img src="/assets/images/flags/russia.jpg" alt="user-image" className="me-1" height={12} />
+                                                <span className="align-middle">Russian</span>
+                                            </Link>
+                                        </Menu.Items>
+                                    </Menu>
+                                    <ThemeSwitch />
+
                                     <div className="d-block d-lg-none">
                                         <div className={`mobile-button d-block ${isMobileMenu ? "active" : ""}`} onClick={handleMobileMenu}><span /></div>{/* /.mobile-button */}
                                     </div>
-                                    <div className="wallet">
+                                    {/* <div className="wallet">
                                         <Link href="/wallet"> Wallet </Link>
-                                    </div>
+                                    </div> */}
                                     <Menu as="div" className="dropdown user">
                                         <Menu.Button className="btn dropdown-toggle" type="button" id="dropdownMenuButton4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <img src="/assets/images/avt/avt-01.jpg" alt="" />

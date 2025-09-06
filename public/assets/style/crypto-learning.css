@@ -1,0 +1,157 @@
+/* Crypto Learning Section Styles */
+.crypto-learning-section {
+    padding: 80px 0;
+    /* background: #f8f9fa; */
+}
+.crypto-learning-section .crypto-content {
+    display: flex;
+    flex-direction: column;
+}
+.crypto-learning-section .crypto-content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: white;
+}
+
+.crypto-learning-section .crypto-content h2 .text-primary-crypto {
+    background: linear-gradient(to right, #BCFE08, #86F869);
+    -webkit-background-clip: text; 
+    background-clip: text;
+    color: transparent;
+}
+
+.crypto-learning-section .crypto-content .subtitle {
+    font-size: 1.1rem;
+    color: #6b7280;
+    margin-bottom: 50px;
+}
+
+.crypto-learning-section .crypto-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.crypto-learning-section .crypto-card {
+    flex: 1;
+    /* background: white; */
+    /* border-radius: 12px; */
+    /* padding: 20px; */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* .crypto-learning-section .crypto-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+} */
+
+.crypto-learning-section .crypto-card .card-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.crypto-learning-section .crypto-card .play-button {
+    width: 100%;
+    aspect-ratio: 16/9;
+    /* flex-shrink: 0; */
+    background: url(/assets/images/background/bg_crypto_learning_button.webp) no-repeat center;
+    background-size: cover;
+}
+
+
+.crypto-learning-section .crypto-card .card-info {
+    width: 100%
+}
+
+.crypto-learning-section .crypto-card .card-info .tag {
+    background: #242529;
+    color: white;
+    padding: 8px 14px;
+    font-size: 0.81rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+.crypto-learning-section .crypto-card .card-info h4 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    height: 63px;
+    color: white;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+@media  (max-width: 1300px) {
+    .crypto-learning-section .crypto-cards {
+        gap: 14px;
+    }
+    .crypto-learning-section .crypto-card .card-info h4 {
+        font-size: 1.25rem;
+     }
+}
+
+.crypto-learning-section .crypto-card .card-info .card-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    font-size: 0.9rem;
+    color: rgb(166,170,183);
+}
+
+.card-meta .icon-author {
+    background: url(/assets/images/background/Ellipse_507.png) no-repeat center;
+    width: 18px;
+    height: 18px;
+    background-size: cover;
+    margin-right: 4px;
+}
+
+.crypto-learning-section .crypto-card .card-info .card-meta .author,
+.crypto-learning-section .crypto-card .card-info .card-meta .date {
+    display: flex;
+    align-items: center;
+}
+
+.crypto-learning-section .btn-crypto-card-learning {
+    background: linear-gradient(to right, #BCFE08, #86F869);
+    color: black;
+    border: none;
+    padding: 10px 23px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    align-self: flex-end;
+    margin-top: 15px;
+}
+
+
+.crypto-learning-section .crypto-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.crypto-learning-section .crypto-image img {
+    max-width: 100%;
+    height: auto;
+}
+.crypto-learning-section .crypto-card .card-content {
+        flex-direction: column;
+}
+@media (max-width: 768px) {
+    .crypto-learning-section {
+        padding: 40px 0;
+    }
+    .crypto-learning-section .crypto-cards {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .crypto-learning-section .crypto-content h2 {
+        font-size: 2rem;
+    }
+    .crypto-learning-section .crypto-card .play-button {
+        margin-bottom: 16px;
+    }
+}
