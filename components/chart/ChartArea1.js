@@ -1,19 +1,18 @@
 'use client'
 import Chart from 'react-apexcharts'
 
-export default function ChartArea1() {
-    const options = {
+export default function ChartArea1({ options, series }) {
+    // Default options if none provided
+    const defaultOptions = {
         colors: ["#58BD7D"],
         chart: {
             type: "area",
             width: 100,
             height: 40,
-            sparkline: { enabled: !0 },
+            sparkline: { enabled: true },
         },
         plotOptions: { bar: { columnWidth: "50%" } },
-        // labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
         xaxis: { crosshairs: { width: 1 } },
-
         stroke: {
             show: true,
             curve: "smooth",
@@ -22,10 +21,9 @@ export default function ChartArea1() {
             width: 2,
             dashArray: 0,
         },
-
         tooltip: {
-            fixed: { enabled: !1 },
-            x: { show: !1 },
+            fixed: { enabled: false },
+            x: { show: false },
             y: {
                 title: {
                     formatter: function (e) {
@@ -33,7 +31,7 @@ export default function ChartArea1() {
                     },
                 },
             },
-            marker: { show: !1 },
+            marker: { show: false },
         },
         states: {
             hover: {
@@ -43,17 +41,30 @@ export default function ChartArea1() {
                 },
             },
         },
-    }
-    const series = [
+    };
+
+    // Default series if none provided
+    const defaultSeries = [
         {
             data: [
                 25, 66, 41, 89, 63, 25, 44, 20, 36, 40, 54, 89, 63, 25, 80,
             ],
         },
-    ]
+    ];
+
+    // Use provided options/series or defaults
+    const chartOptions = options || defaultOptions;
+    const chartSeries = series || defaultSeries;
+
     return (
         <>
-            <Chart options={options} series={series} type="area" height={40} width={100} />
+            <Chart 
+                options={chartOptions} 
+                series={chartSeries} 
+                type="area" 
+                height={40} 
+                width={100} 
+            />
         </>
-    )
+    );
 }

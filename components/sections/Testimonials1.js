@@ -26,107 +26,61 @@ export default function Testimonials1() {
     return (
         <>
 
-            <section className="testimonials">
+            <section className="crypto-learning-section">
                 <div className="container">
                     <div className="row">
-                        <div className="col-xl-6 col-md-12">
-                            <div className="block-text">
-                                <h3 className="heading">Our customers love what we do</h3>
-                                <h6 className="fs-20">
-                                    Transform Your idea into Reality With Finsweet
-                                </h6>
-                                <p>
-                                    It is a long established fact that a reader will be distracted
-                                    by the readable content of a page when looking at its layout.
-                                </p>
-                                <div className="swiper swiper-thumb1">
-                                    <Swiper {...thumbnailSwiperOptions} onSwiper={setThumbsSwiper} className="swiper-wrapper list-img">
-                                        <SwiperSlide>
-                                            <img src="/assets/images/avt/avt-02.png" alt="" />
-                                        </SwiperSlide>
-                                        <SwiperSlide>
-                                            <img src="/assets/images/avt/avt-03.png" alt="" />
-                                        </SwiperSlide>
-                                        <SwiperSlide>
-                                            <img src="/assets/images/avt/avt-04.png" alt="" />
-                                        </SwiperSlide>
-                                    </Swiper>
+                            <div className="crypto-content">
+                                <h2>Tiền Mã Hóa Cho Người <span className="text-primary-crypto">Mới Bắt Đầu</span></h2>
+                                <p className="subtitle">Bước vào thế giới blockchain từ con số 0</p>
+                                
+                                <div className="crypto-cards">
+                                    <div className="crypto-card">
+                                        <div className="card-content">
+                                            <div className="play-button">
+                                            </div>
+                                            <div className="card-info">
+                                                <span className="tag">Learn & Earn</span>
+                                                <h4>Learn about UI8 coin and earn an all Access Pass</h4>
+                                                <div className="card-meta">
+                                                    <span className="author"><i class="icon-author"></i>Floyd Buckridge</span>
+                                                    <span className="date">15/12/2024</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="crypto-card">
+                                        <div className="card-content">
+                                            <div className="play-button">
+                                            </div>
+                                            <div className="card-info">
+                                                <span className="tag">Learn & Earn</span>
+                                                <h4>Cryptocurrency Trading for Beginners</h4>
+                                                <div className="card-meta">
+                                                    <span className="author"><i class="icon-author"></i>Sarah Johnson</span>
+                                                    <span className="date">10/12/2024</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="crypto-card">
+                                        <div className="card-content">
+                                            <div className="play-button">
+                                            </div>
+                                            <div className="card-info">
+                                                <span className="tag">Learn $ Earn</span>
+                                                <h4>Blockchain Technology Fundamentals</h4>
+                                                <div className="card-meta">
+                                                    <span className="author"><i class="icon-author"></i>Michael Chen</span>
+                                                    <span className="date">05/12/2024</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className="couter">
-                                    <h6>30+</h6>
-                                    <p className="title">Customer Reviews</p>
-                                </div>
+                                <button className="btn-crypto-card-learning">Xem thêm</button>
                             </div>
-                        </div>
-                        <div className="col-xl-6 col-md-12">
-                            <div className="swiper swiper-testimonial-1">
-                                <Swiper {...mainSwiperOptions} className="swiper-wrapper">
-                                    <SwiperSlide>
-                                        <div className="testimonials-box">
-                                            <span className="icon-quote" />
-                                            <h6 className="text">
-                                                “Great course I really enjoyed it and the course was way
-                                                easy to learn with very good explanations of the code, I
-                                                could easily understand and develop applications with the
-                                                knowledge gathered during the course.”
-                                            </h6>
-                                            <div className="bottom">
-                                                <div className="info">
-                                                    <img src="/assets/images/avt/avt-02.png" alt="" />
-                                                    <div className="content">
-                                                        <h6 className="name">Johnny Andro</h6>
-                                                        <p className="position">Director, Company</p>
-                                                    </div>
-                                                </div>
-                                                <img src="/assets/images/partner/logo-05.png" alt="" />
-                                            </div>
-                                        </div>
-                                    </SwiperSlide>
-                                    <SwiperSlide>
-                                        <div className="testimonials-box">
-                                            <span className="icon-quote" />
-                                            <h6 className="text">
-                                                “Great course I really enjoyed it and the course was way
-                                                easy to learn with very good explanations of the code, I
-                                                could easily understand and develop applications with the
-                                                knowledge gathered during the course.”
-                                            </h6>
-                                            <div className="bottom">
-                                                <div className="info">
-                                                    <img src="/assets/images/avt/avt-03.png" alt="" />
-                                                    <div className="content">
-                                                        <h6 className="name">Johnny Andro</h6>
-                                                        <p className="position">Director, Company</p>
-                                                    </div>
-                                                </div>
-                                                <img src="/assets/images/partner/logo-05.png" alt="" />
-                                            </div>
-                                        </div>
-                                    </SwiperSlide>
-                                    <SwiperSlide>
-                                        <div className="testimonials-box">
-                                            <span className="icon-quote" />
-                                            <h6 className="text">
-                                                “Great course I really enjoyed it and the course was way
-                                                easy to learn with very good explanations of the code, I
-                                                could easily understand and develop applications with the
-                                                knowledge gathered during the course.”
-                                            </h6>
-                                            <div className="bottom">
-                                                <div className="info">
-                                                    <img src="/assets/images/avt/avt-04.png" alt="" />
-                                                    <div className="content">
-                                                        <h6 className="name">Johnny Andro</h6>
-                                                        <p className="position">Director, Company</p>
-                                                    </div>
-                                                </div>
-                                                <img src="/assets/images/partner/logo-05.png" alt="" />
-                                            </div>
-                                        </div>
-                                    </SwiperSlide>
-                                </Swiper>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </section>
