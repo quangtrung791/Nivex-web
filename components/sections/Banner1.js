@@ -31,7 +31,11 @@ export default function Banner1() {
                     <div className="row">
                         <div className="col-xl-6 col-md-12">
                             <div className="banner__content">
-                                <h2 className="title" style={{'textTransform': 'uppercase'}}>Cập nhật các kiến thức về AI trong giao dịch <br></br>tiền mã hóa</h2>
+                                <h2 className="title" style={{'textTransform': 'uppercase', 'letterSpacing' : '0.75px', 'lineHeight': '1.2'}}>
+                                        <span className="block" style={{'minWidth': '700px'}}>Cập nhật các kiến thức</span>
+                                        <span className="block">về AI trong giao dịch</span>
+                                        <span className="block">tiền mã hóa</span>
+                                </h2>
                                 <p className="fs-14 desc">
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                 </p>
@@ -64,7 +68,7 @@ export default function Banner1() {
                         </div>
                         <div className="col-xl-6 col-md-12">
                             <div className="banner__image">
-                                <img src="/assets/images/layout/banner-01.png" alt="" />
+                                <img className="logo-robot-mc" src="https://learningchain.vn/wp-content/uploads/nivex/logo_mc.svg" alt="" />
                             </div>
                         </div>
                     </div>
