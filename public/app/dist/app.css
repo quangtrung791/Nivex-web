@@ -8352,3 +8352,92 @@ img.ai-icon-small {
 .flex {
     display: flex;
 }
+
+.crypto-box .bottom {
+    margin: 0 auto;
+}
+
+.crypto-box span.unit {
+    text-align: center;
+}
+
+.crypto-box span.icon-btc,
+.crypto-box span.icon-eth,
+.crypto-box span.icon-tether,
+.crypto-box span.icon-bnb
+ {
+    font-size: 45px !important;
+    margin: 2px 0 14px 0!important;
+}
+.crypto-box .chart-container {
+    position: relative;
+    right: 10% !important;
+}
+
+.crypto-box .crypto-box span.unit {
+    text-align: center;
+    right: -6px;
+    position: relative;
+}
+
+.crypto-box h6.price {
+    position: relative;
+    top: -17px;
+}
+
+.crypto-box span.unit {
+    position: relative;
+    top: 7px;
+    right: -9px;
+}
+
+.crypto-box .add-position-right {
+    right: -40% !important;
+}
+
+.content-tab .crypto-box.active {
+    height: 200px;
+    min-width: unset !important;
+}
+
+@media (min-width: 1440px) and (max-width: 1599px) {
+    .crypto-box .flex-content {
+        position: relative !important;
+        right: -40% !important;
+    }
+}
+
+@media (min-width: 1600px) and (max-width: 1919px) {
+    .crypto-box .flex-content {
+        position: relative !important;
+        right: -60% !important;
+    }
+}
+
+@media (min-width: 1920px) {
+    .crypto-box .flex-content {
+        position: relative !important;
+        right: -60% !important;
+    }
+}
+/* special coins */
+@media (min-width: 1440px) and (max-width: 1599px) {
+    .flex-content.add-position-right.special-coin {
+        position: relative  !important;
+        right: -25% !important;
+    }
+}
+
+@media (min-width: 1600px) and (max-width: 1919px) {
+    .flex-content.add-position-right.special-coin {
+         position: relative  !important;
+        right: -40% !important;
+    }
+}
+
+@media (min-width: 1920px) {
+    .flex-content.add-position-right.special-coin {
+         position: relative  !important;
+        right: -40% !important;
+    }
+}
