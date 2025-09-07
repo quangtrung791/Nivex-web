@@ -17,7 +17,7 @@ export default function Work1() {
                                 </p>
                             </div>
                             <div className="work__main">
-                                <div className="work-box" style={{'background': '#3f3f3f54', 'minHeight' : '276px'}}>
+                                <div className="work-box" style={{'background': '#3f3f3f54', 'minHeight' : '276px', 'margin-right': '20px'}}>
                                     <div className="image">
                                         <img src="/assets/images/icon/trading_icon.svg" alt="" />
                                     </div>
@@ -33,7 +33,7 @@ export default function Work1() {
                                     </div>
                                     {/* <img className="line" src="/assets/images/icon/connect-line.png" alt="" /> */}
                                 </div>
-                                <div className="work-box" style={{'background': '#3f3f3f54', 'minHeight' : '276px'}}>
+                                <div className="work-box" style={{'background': '#3f3f3f54', 'minHeight' : '276px', 'margin-right': '20px'}}>
                                     <div className="image">
                                         <img src="/assets/images/icon/contract_icon.svg" alt="" />
                                     </div>
@@ -46,7 +46,7 @@ export default function Work1() {
                                     </div>
                                     {/* <img className="line" src="/assets/images/icon/connect-line.png" alt="" /> */}
                                 </div>
-                                <div className="work-box" style={{'background': '#3f3f3f54', 'width': '30vw',  'minHeight' : '276px'}}>
+                                <div className="work-box" style={{'background': '#3f3f3f54', 'width': '30vw',  'minHeight' : '276px', 'margin-right': '20px'}}>
                                     <div className="image">
                                         <img src="/assets/images/icon/target_icon.svg" alt="" />
                                     </div>

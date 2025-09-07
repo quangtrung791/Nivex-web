@@ -20,8 +20,8 @@ export default function About1() {
                 <div className="container ai-copy-trade">
                     <div className="row">
                         <div className="col-xl-6 col-md-12">
-                            <div className="about_image" style={{'marginLeft' :'5%'}}>
-                                <img src="https://learningchain.vn/wp-content/uploads/nivex/world_map.svg" ></img>
+                            <div className="about_image">
+                                <img className="img0-ai" src="https://learningchain.vn/wp-content/uploads/nivex/world_map.svg" ></img>
                                 {/* <div className="swiper img-swiper">
                                     <Swiper {...swiperOptions} className="swiper-wrapper">
                                         <SwiperSlide>
@@ -47,30 +47,38 @@ export default function About1() {
                             </div>
                         </div>
                         <div className="col-xl-6 col-md-12">
-                            <div className="about__content" data-aos="fade-up" data-aos-duration={1000}>
+                            <div className="about__content" style={{'padding-left': '20px'}} data-aos="fade-up" data-aos-duration={1000}>
                                 <h3 className="heading"><span style={{'color' : '#BCFE08'}}>AI Copy Trade</span> của Nivex</h3>
                                 <p className="fs-14 decs">
                                    Nivex cung cấp công cụ giao dịch tự động dựa trên AI, phân tích dữ liệu thị trường theo thời gian thực để đưa ra khuyến nghị cá nhân hóa và tối ưu lợi nhuận. Hệ thống được cập nhật hàng tuần, luôn duy trì các chiến lược mới nhất.
                                 </p>
                                 <ul className="list">
                                     <li>
-                                        <h6 className="title">
-                                            <span className="icon-check" />Spot AI
-                                        </h6>
-                                        <p className="fs-14 text">
-                                            Hỗ trợ đa dạng tiền tệ và cung cấp công cụ quản lý linh hoạt hơn, giúp người dùng tối ưu cơ hội trong biến động thị trường.
-                                        </p>
+                                        <img className="ai-icon-small" src="/assets/images/icon/coin_ico.svg" />
+                                        <div>
+                                            <h6 className="title" style={{'marginBottom': '0'}}>
+                                                {/* <span className="icon-check" /> */}
+                                                Spot AI
+                                            </h6>
+                                            <p className="fs-14 text">
+                                                Hỗ trợ đa dạng tiền tệ và cung cấp công cụ quản lý linh hoạt hơn, giúp người dùng tối ưu cơ hội trong biến động thị trường.
+                                            </p>
+                                        </div>
                                     </li>
                                     <li>
-                                        <h6 className=" title">
-                                            <span className="icon-check" />Feature AI
-                                        </h6>
-                                        <p className="fs-14 text">
-                                            Cung cấp đòn bẩy linh hoạt, phí thấp và phân tích thông minh, hỗ trợ giao dịch hiệu quả và chính xác hơn trong thị trường biến động.
-                                        </p>
+                                        <img className="ai-icon-small" src="/assets/images/icon/brain_ico.svg" />
+                                        <div>
+                                            <h6 className=" title" style={{'marginBottom': '0'}}>
+                                                {/* <span className="icon-check" /> */}
+                                                Feature AI
+                                            </h6>
+                                            <p className="fs-14 text">
+                                                Cung cấp đòn bẩy linh hoạt, phí thấp và phân tích thông minh, hỗ trợ giao dịch hiệu quả và chính xác hơn trong thị trường biến động.
+                                            </p>
+                                        </div>
                                     </li>
                                 </ul>
-                                <Link href="#" className="btn-action" style={{'color':'black'}}>Tìm hiểu ngay</Link>
+                                <Link href="#" className="btn-action" style={{'color':'black', 'padding': '13px 25px'}}>Tìm hiểu ngay</Link>
                             </div>
                         </div>
                     </div>
