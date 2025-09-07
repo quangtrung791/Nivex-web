@@ -1086,8 +1086,8 @@ body[data-magic-cursor=hide] .mouse-cursor {
 
 .banner {
     background: var(--surface);
-    /* padding: 84px 0 145px; */
-    padding: 5% 7% 10% 7%;
+    padding: 84px 0 145px;
+    /* padding: 5% 7% 10% 7%; */
 }
 
 .banner .banner__content .title {
@@ -1747,7 +1747,8 @@ body[data-magic-cursor=hide] .mouse-cursor {
 }
 
 .work .work__main .work-box .image {
-    margin-bottom: 12px;
+    /* margin-bottom: 12px; */
+    margin: 30px 0 5% 0;
 }
 
 .work .work__main .work-box .image img {
@@ -8040,6 +8041,25 @@ li.menu-item:hover {
     background-size: cover;
 }
 
+/* .banner */
+@media (min-width: 1440px) and (max-width: 1599px) {
+    .banner {
+        background: var(--surface);
+        /* padding: 84px 0 145px; */
+        padding: 5% 7% 10% 7%;
+    }
+}
+@media (min-width: 1600px) and (max-width: 1919px) {
+    .banner {
+        padding: 5% 7% 10% 7%;
+    }
+}
+@media (min-width: 1920px)  {
+    .banner {
+        padding: 5% 7% 10% 7%;
+    }
+}
+
 /* .gioi-thieu-nivex */
 @media (min-width: 1440px) and (max-width: 1599px) {
     .container.gioi-thieu-nivex {
@@ -8121,4 +8141,24 @@ li.menu-item:hover {
     .footer.footer-main {
         padding: 0 0%;
     }
+}
+/* .robot logo image */
+@media (min-width: 1440px) and (max-width: 1599px) {
+    img.logo-robot-mc {
+        width: 500px;
+    }
+}
+@media (min-width: 1600px) and (max-width: 1919px) {
+    img.logo-robot-mc {
+        width: 500px;
+    }
+}
+@media (min-width: 1920px) {
+    img.logo-robot-mc {
+        width: 500px;
+    }
+}
+
+span.block {
+    display: block;
 }
