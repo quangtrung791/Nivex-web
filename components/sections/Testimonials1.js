@@ -42,8 +42,8 @@ export default function Testimonials1() {
                                                 <span className="tag">Learn & Earn</span>
                                                 <h4>Learn about UI8 coin and earn an all Access Pass</h4>
                                                 <div className="card-meta">
-                                                    <span className="author"><i class="icon-author"></i>Floyd Buckridge</span>
-                                                    <span className="date">15/12/2024</span>
+                                                    <span className="author" style={{'fontSize':'12px', 'fontWeight': 400}}><i class="icon-author"></i>Floyd Buckridge</span>
+                                                    <span className="date"  style={{'fontSize':'12px', 'fontWeight': 400}}>7/9/2025</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -57,8 +57,8 @@ export default function Testimonials1() {
                                                 <span className="tag">Learn & Earn</span>
                                                 <h4>Cryptocurrency Trading for Beginners</h4>
                                                 <div className="card-meta">
-                                                    <span className="author"><i class="icon-author"></i>Sarah Johnson</span>
-                                                    <span className="date">10/12/2024</span>
+                                                    <span className="author" style={{'fontSize':'12px', 'fontWeight': 400}}><i class="icon-author"></i>Sarah Johnson</span>
+                                                    <span className="date"  style={{'fontSize':'12px', 'fontWeight': 400}}>7/9/2025</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -72,8 +72,8 @@ export default function Testimonials1() {
                                                 <span className="tag">Learn $ Earn</span>
                                                 <h4>Blockchain Technology Fundamentals</h4>
                                                 <div className="card-meta">
-                                                    <span className="author"><i class="icon-author"></i>Michael Chen</span>
-                                                    <span className="date">05/12/2024</span>
+                                                    <span className="author"  style={{'fontSize':'12px', 'fontWeight': 400}}><i class="icon-author"></i>Michael Chen</span>
+                                                    <span className="date" style={{'fontSize':'12px', 'fontWeight': 400}}>7/9/2025</span>
                                                 </div>
                                             </div>
                                         </div>

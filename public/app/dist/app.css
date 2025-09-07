@@ -1699,7 +1699,8 @@ body[data-magic-cursor=hide] .mouse-cursor {
 }
 
 .work {
-    padding: 100px 0;
+    /* padding: 100px 0; */
+    padding: 100px 0 120px 0;
     background: var(--surface);
 }
 
@@ -8220,4 +8221,134 @@ img.ai-icon-small {
 .link-footer, .link-footer a {
     font-size: 12px !important;
     font-weight: 300;
+}
+
+.input-email-footer-subscribe::placeholder {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+@media (min-width: 1440px ) and (max-width: 1599px) {
+    .custom-s2 {
+        padding-left: 140px !important;
+    }
+}
+@media (min-width: 1600px ) and (max-width: 1919px) {
+    .custom-s2 {
+        padding-left: 160px!important;
+    }
+}
+@media (min-width: 1920px ) {
+    .custom-s2 {
+        padding-left: 175px!important;
+    }
+}
+
+.chart-container {
+    width: 120px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    margin-bottom: 8px;
+}
+.sale.success, .sale.critical {
+    display: inline-block;
+    min-width: 56px;
+    text-align: center;
+    border-radius: 16px;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 2px 12px;
+    margin-top: 8px;
+    background: #23272f;
+}
+.sale.success {
+    color: #19c37d;
+    background: #1a2e23;
+}
+.sale.critical {
+    color: #f23c3d;
+    background: #2e1a1a;
+}
+
+.crypto-box {
+  background: #23242a;
+  border-radius: 8px;
+  padding: 32px 24px 24px 24px;
+  min-width: 320px;
+  max-width: 340px;
+  margin: 0 16px 24px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.crypto-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.crypto-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  margin-right: 12px;
+}
+.crypto-name {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+}
+.crypto-chart-row {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 16px;
+}
+.chart-container {
+  width: 120px;
+  height: 48px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+.change-badge {
+  margin-left: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 6px;
+  padding: 4px 16px;
+  color: #fff;
+  background: #23272f;
+  display: flex;
+  align-items: center;
+}
+.change-badge.up {
+  background: #19c37d;
+}
+.change-badge.down {
+  background: #f23c3d;
+}
+.crypto-price-row {
+  display: flex;
+  align-items: baseline;
+  margin-top: 12px;
+}
+.crypto-price {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  margin-right: 12px;
+}
+.crypto-unit {
+  font-size: 22px;
+  color: #b0b3c2;
+  font-weight: 500;
+}
+
+.flex {
+    display: flex;
 }

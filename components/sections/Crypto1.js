@@ -96,38 +96,44 @@ export default function Crypto1() {
                                     </ul> */}
                                     <div className="content-tab">
                                         <div className="content-inner" style={{ display: `${flatTabs === 1 ? "flex" : "none"}` }}>
+                                            
                                             <div className="crypto-box active">
-                                                <div>
-                                                    <div className="top">
-                                                        <Link href="#"><span className="icon-btc"><span className="path1" /><span className="path2" /></span>
-                                                            <span>Bitcoin</span>
-                                                            <span className="unit">BTC/USD</span></Link>
-                                                    </div>
-                                                    <h6 className="price">
-                                                        USD ${getCoinData('bitcoin').current_price ? formatPrice(getCoinData('bitcoin').current_price) : '46,168.95'}
-                                                    </h6>
-                                                </div>
-                                                
-                                                <div className="flex-content">
+                                                <div className="flex">
                                                     <div>
-                                                        <ChatList 
-                                                            sparkline={getCoinData('bitcoin').sparkline_in_7d ? getCoinData('bitcoin').sparkline_in_7d.price : null}
-                                                            isUp={getCoinData('bitcoin').price_change_percentage_24h >= 0}
-                                                        />
+                                                        <div className="top">
+                                                            <Link href="#"><span className="icon-btc"><span className="path1" /><span className="path2" /></span>
+                                                                <span>Bitcoin</span>
+                                                                {/* <span className="unit">BTC/USD</span> */}
+                                                            </Link>
+                                                        </div>
+                                                        <h6 className="price">
+                                                            USD ${getCoinData('bitcoin').current_price ? formatPrice(getCoinData('bitcoin').current_price) : '46,168.95'}
+                                                        </h6>
                                                     </div>
-                                                    <div className="bottom">
-                                                        {/* <p>{getCoinData('bitcoin').market_cap ? 
-                                                            `$${getCoinData('bitcoin').market_cap.toLocaleString()}` : 
-                                                            '36,641.20'}</p> */}
-                                                        <p className={`sale ${getCoinData('bitcoin').price_change_percentage_24h >= 0 ? 'success' : 'critical'}`}>
-                                                            {getCoinData('bitcoin').price_change_percentage_24h ? 
-                                                                `${getCoinData('bitcoin').price_change_percentage_24h.toFixed(2)}%` : 
-                                                                '-0.79%'}
-                                                        </p>
+                                                    
+                                                    <div className="flex-content">
+                                                        <div className="chart-container">
+                                                            <ChatList 
+                                                                sparkline={getCoinData('bitcoin').sparkline_in_7d ? getCoinData('bitcoin').sparkline_in_7d.price : null}
+                                                                isUp={getCoinData('bitcoin').price_change_percentage_24h >= 0}
+                                                            />
+                                                        </div>
+                                                        
+                                                        <div className="bottom">
+                                                            {/* <p>{getCoinData('bitcoin').market_cap ? 
+                                                                `$${getCoinData('bitcoin').market_cap.toLocaleString()}` : 
+                                                                '36,641.20'}</p> */}
+                                                            <p className={`sale ${getCoinData('bitcoin').price_change_percentage_24h >= 0 ? 'success' : 'critical'}`}>
+                                                                {getCoinData('bitcoin').price_change_percentage_24h ? 
+                                                                    `${getCoinData('bitcoin').price_change_percentage_24h.toFixed(2)}%` : 
+                                                                    '-0.79%'}
+                                                            </p><br></br>
+                                                            
+                                                        </div><span className="unit">BTC</span>
                                                     </div>
-
                                                 </div>
                                             </div>
+
                                             <div className="crypto-box active">
                                                 <div>
                                                     <div className="top">
@@ -139,7 +145,7 @@ export default function Crypto1() {
                                                     </h6>
                                                 </div>
                                                 <div className="flex-content">
-                                                    <div>
+                                                    <div className="chart-container">
                                                         <ChatList 
                                                             sparkline={getCoinData('ethereum').sparkline_in_7d ? getCoinData('ethereum').sparkline_in_7d.price : null}
                                                             isUp={getCoinData('ethereum').price_change_percentage_24h >= 0}
@@ -169,7 +175,7 @@ export default function Crypto1() {
                                                     </h6>
                                                 </div>
                                                 <div className="flex-content">
-                                                    <div>
+                                                    <div className="chart-container">
                                                         <ChatList 
                                                             sparkline={getCoinData('tether').sparkline_in_7d ? getCoinData('tether').sparkline_in_7d.price : null}
                                                             isUp={getCoinData('tether').price_change_percentage_24h >= 0}
@@ -198,7 +204,7 @@ export default function Crypto1() {
                                                     </h6>
                                                 </div>
                                                 <div className="flex-content">
-                                                    <div>
+                                                    <div className="chart-container">
                                                         <ChatList 
                                                             sparkline={getCoinData('binancecoin').sparkline_in_7d ? getCoinData('binancecoin').sparkline_in_7d.price : null}
                                                             isUp={getCoinData('binancecoin').price_change_percentage_24h >= 0}
@@ -241,7 +247,7 @@ export default function Crypto1() {
                                                                 '-0.79%'}
                                                         </p>
                                                     </div>
-                                                    <div>
+                                                    <div className="chart-container">
                                                         <ChatList 
                                                             sparkline={getCoinData('bitcoin').sparkline_in_7d ? getCoinData('bitcoin').sparkline_in_7d.price : null}
                                                             isUp={getCoinData('bitcoin').price_change_percentage_24h >= 0}
