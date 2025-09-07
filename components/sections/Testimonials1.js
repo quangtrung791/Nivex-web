@@ -27,11 +27,11 @@ export default function Testimonials1() {
         <>
 
             <section className="crypto-learning-section">
-                <div className="container">
+                <div className="container tien-ma-hoa-cho-nguoi-bat-dau">
                     <div className="row">
                             <div className="crypto-content">
                                 <h2>Tiền Mã Hóa Cho Người <span className="text-primary-crypto">Mới Bắt Đầu</span></h2>
-                                <p className="subtitle">Bước vào thế giới blockchain từ con số 0</p>
+                                <p className="subtitle fs-14" style={{'color': '#A6AAB7'}}>Bước vào thế giới blockchain từ con số 0</p>
                                 
                                 <div className="crypto-cards">
                                     <div className="crypto-card">

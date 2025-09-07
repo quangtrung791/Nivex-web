@@ -6,7 +6,7 @@ export default function Work1() {
         <>
 
             <section className="work background-container-custom">
-                <div className="container ">
+                <div className="container gioi-thieu-nivex">
                     <div className="row">
                         <div className="col-md-12">
                             <div className="block-text center">
@@ -46,7 +46,7 @@ export default function Work1() {
                                     </div>
                                     {/* <img className="line" src="/assets/images/icon/connect-line.png" alt="" /> */}
                                 </div>
-                                <div className="work-box" style={{'background': '#3f3f3f54'}}>
+                                <div className="work-box" style={{'background': '#3f3f3f54', 'width': '30vw'}}>
                                     <div className="image">
                                         <img src="/assets/images/icon/Mining.png" alt="" />
                                     </div>

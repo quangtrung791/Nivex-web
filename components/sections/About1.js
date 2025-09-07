@@ -17,11 +17,12 @@ export default function About1() {
         <>
 
             <section className="about">
-                <div className="container">
+                <div className="container ai-copy-trade">
                     <div className="row">
                         <div className="col-xl-6 col-md-12">
-                            <div className="about_image">
-                                <div className="swiper img-swiper">
+                            <div className="about_image" style={{'marginLeft' :'5%'}}>
+                                <img src="https://learningchain.vn/wp-content/uploads/nivex/world_map.svg" ></img>
+                                {/* <div className="swiper img-swiper">
                                     <Swiper {...swiperOptions} className="swiper-wrapper">
                                         <SwiperSlide>
                                             <img className="img-main" src="/assets/images/layout/about-h1.png" alt="" />
@@ -37,12 +38,12 @@ export default function About1() {
                                         </SwiperSlide>
                                     </Swiper>
                                     <div className="swiper-pagination" />
-                                </div>
-                                <img className="icon icon-1" src="/assets/images/icon/icon-01.png" alt="" />
+                                </div> */}
+                                {/* <img className="icon icon-1" src="/assets/images/icon/icon-01.png" alt="" />
                                 <img className="icon icon-2" src="/assets/images/icon/icon-02.png" alt="" />
                                 <img className="icon icon-3" src="/assets/images/icon/icon-03.png" alt="" />
                                 <img className="icon icon-4" src="/assets/images/icon/icon-04.png" alt="" />
-                                <img className="icon icon-5" src="/assets/images/icon/icon-05.png" alt="" />
+                                <img className="icon icon-5" src="/assets/images/icon/icon-05.png" alt="" /> */}
                             </div>
                         </div>
                         <div className="col-xl-6 col-md-12">

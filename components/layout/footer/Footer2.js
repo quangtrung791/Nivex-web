@@ -6,7 +6,7 @@ export default function Footer2() {
     return (
         <>
 
-            <footer className="footer style-2">
+            <footer className="footer style-2 footer-main">
                 <div className="container">
                     <div className="footer__main">
                         <div className="row">
