@@ -63,7 +63,7 @@ export default function Coinlist1() {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
-                            <div className="block-text">
+                           <div className="block-text">
                                 {/* <h3 className="heading">Market Update</h3> */}
                                  <h3 className="heading">Nắm Bắt Mọi Cơ Hội <span style={{'color':'#BCFE08'}}>Giao Dịch</span></h3>
                                 {/* <Link className="btn-action-2" href="#">See All Coins</Link> */}
