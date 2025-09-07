@@ -8039,3 +8039,86 @@ li.menu-item:hover {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+/* .gioi-thieu-nivex */
+@media (min-width: 1440px) and (max-width: 1599px) {
+    .container.gioi-thieu-nivex {
+        padding: 0 7%;
+    }
+}
+@media (min-width: 1600px) and (max-width: 1919px) {
+    .container.gioi-thieu-nivex {
+        padding: 0 5%;
+    }
+}
+@media (min-width: 1920px)  {
+    .container.gioi-thieu-nivex {
+        padding: 0;
+    }
+}
+/* @media (min-width: 2560px) and (max-width: 3439px) {
+    .container.gioi-thieu-nivex {
+        padding: 0 5%;
+    }
+}
+@media (min-width: 3440px) and (max-width: 3839px) {
+    .container.gioi-thieu-nivex {
+        padding: 0 5%;
+    }
+}
+@media (min-width: 3840px)  {
+    .container.gioi-thieu-nivex {
+        padding: 0 5%;
+    }
+} */
+
+/* ai-copy-trade */
+@media (min-width: 1440px) and (max-width: 1599px) {
+    .container.ai-copy-trade {
+        padding: 0 7%;
+    }
+}
+@media (min-width: 1600px) and (max-width: 1919px) {
+    .container.ai-copy-trade {
+        padding: 0 5%;
+    }
+}
+@media (min-width: 1920px) {
+    .container.ai-copy-trade {
+        padding: 0 0%;
+    }
+}
+
+/* .tien-ma-hoa-cho-nguoi-bat-dau */
+@media (min-width: 1440px) and (max-width: 1599px) {
+    .container.tien-ma-hoa-cho-nguoi-bat-dau {
+        padding: 0 7%;
+    }
+}
+@media (min-width: 1600px) and (max-width: 1919px) {
+    .container.tien-ma-hoa-cho-nguoi-bat-dau {
+        padding: 0 5%;
+    }
+}
+@media (min-width: 1920px) {
+    .container.tien-ma-hoa-cho-nguoi-bat-dau {
+        padding: 0 0%;
+    }
+}
+
+/* .footer-main */
+@media (min-width: 1440px) and (max-width: 1599px) {
+    .footer.footer-main {
+        padding: 0 7%;
+    }
+}
+@media (min-width: 1600px) and (max-width: 1919px) {
+    .footer.footer-main {
+        padding: 0 5%;
+    }
+}
+@media (min-width: 1920px) {
+    .footer.footer-main {
+        padding: 0 0%;
+    }
+}
