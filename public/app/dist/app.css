@@ -165,9 +165,9 @@ h6,
     font-size: 18px;
 }
 
-/* .fs-20 {
-    font-size: 14px;
-} */
+.fs-20 {
+    font-size: 20px;
+}
 
 .fs-21 {
     font-size: 21px;
@@ -7913,9 +7913,9 @@ body[data-magic-cursor=hide] .mouse-cursor {
 h2.title {
     font-size: 48px;
 }
-.banner .banner__content .title {
+/* .banner .banner__content .title {
     max-width: 532px;
-}
+} */
 .market-update {
     padding: 0 7%;
 }
@@ -8031,4 +8031,11 @@ li.menu-item:hover {
 
 .is_dark .apexcharts-tooltip .apexcharts-tooltip-text-label {
     color: rgba(0, 0, 0, 0.7) !important;
+}
+
+.background-container-custom {
+    background: url(https://learningchain.vn/wp-content/uploads/nivex/bg_gioi_thieu.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

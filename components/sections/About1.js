@@ -47,37 +47,29 @@ export default function About1() {
                         </div>
                         <div className="col-xl-6 col-md-12">
                             <div className="about__content" data-aos="fade-up" data-aos-duration={1000}>
-                                <h3 className="heading">What Is Rockie</h3>
-                                <p className="fs-20 decs">
-                                    Experience a variety of trading on Bitcost. You can use various
-                                    types of coin transactions such as Spot Trade, Futures Trade,
-                                    P2P, Staking, Mining, and margin.
+                                <h3 className="heading"><span style={{'color' : '#BCFE08'}}>AI Copy Trade</span> của Nivex</h3>
+                                <p className="fs-14 decs">
+                                   Nivex cung cấp công cụ giao dịch tự động dựa trên AI, phân tích dữ liệu thị trường theo thời gian thực để đưa ra khuyến nghị cá nhân hóa và tối ưu lợi nhuận. Hệ thống được cập nhật hàng tuần, luôn duy trì các chiến lược mới nhất.
                                 </p>
                                 <ul className="list">
                                     <li>
                                         <h6 className="title">
-                                            <span className="icon-check" />View real-time
-                                            cryptocurrency prices
+                                            <span className="icon-check" />Spot AI
                                         </h6>
-                                        <p className="text">
-                                            Experience a variety of trading on Bitcost. You can use
-                                            various types of coin transactions such as Spot Trade,
-                                            Futures Trade, P2P, Staking, Mining, and margin.
+                                        <p className="fs-14 text">
+                                            Hỗ trợ đa dạng tiền tệ và cung cấp công cụ quản lý linh hoạt hơn, giúp người dùng tối ưu cơ hội trong biến động thị trường.
                                         </p>
                                     </li>
                                     <li>
-                                        <h6 className="title">
-                                            <span className="icon-check" />Buy and sell BTC, ETH, XRP,
-                                            OKB, Etc...
+                                        <h6 className=" title">
+                                            <span className="icon-check" />Feature AI
                                         </h6>
-                                        <p className="text">
-                                            Experience a variety of trading on Bitcost. You can use
-                                            various types of coin transactions such as Spot Trade,
-                                            Futures Trade, P2P, Staking, Mining, and margin.
+                                        <p className="fs-14 text">
+                                            Cung cấp đòn bẩy linh hoạt, phí thấp và phân tích thông minh, hỗ trợ giao dịch hiệu quả và chính xác hơn trong thị trường biến động.
                                         </p>
                                     </li>
                                 </ul>
-                                <Link href="#" className="btn-action">Explore More</Link>
+                                <Link href="#" className="btn-action" style={{'color':'black'}}>Tìm hiểu ngay</Link>
                             </div>
                         </div>
                     </div>

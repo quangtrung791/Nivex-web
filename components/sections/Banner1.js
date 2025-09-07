@@ -31,8 +31,8 @@ export default function Banner1() {
                     <div className="row">
                         <div className="col-xl-6 col-md-12">
                             <div className="banner__content">
-                                <h2 className="title">Cập nhật các kiến thức về AI trong giao dịch tiền mã hóa</h2>
-                                <p className="fs-20 desc">
+                                <h2 className="title" style={{'textTransform': 'uppercase'}}>Cập nhật các kiến thức về AI trong giao dịch <br></br>tiền mã hóa</h2>
+                                <p className="fs-14 desc">
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                 </p>
                                 <Link href="#" className="btn-action" id="button-master-homepg" style={{'borderRadius':'0px'}}><span class="btn-master-homepg">Xem thêm</span></Link>
