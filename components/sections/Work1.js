@@ -10,8 +10,8 @@ export default function Work1() {
                     <div className="row">
                         <div className="col-md-12">
                             <div className="block-text center">
-                                <h3 className="heading">How It Work</h3>
-                                <p className="fs-20 desc">
+                                <h3 className="heading" style={{'textAlign': 'left'}}>Giới thiệu về <span style={{'color': '#BCFE08'}}>Nivex</span></h3>
+                                <p className="fs-20 desc" style={{'textAlign': 'left', 'padding': '0'}}>
                                     Stacks is a production-ready library of stackable content blocks
                                     built in React Native.
                                 </p>
