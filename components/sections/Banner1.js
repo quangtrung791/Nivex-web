@@ -39,7 +39,7 @@ export default function Banner1() {
                                 <p className="fs-14 desc">
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                 </p>
-                                <Link href="#" className="btn-action" id="button-master-homepg" style={{'borderRadius':'0px'}}><span class="btn-master-homepg">Xem thêm</span></Link>
+                                <Link href="#" className="btn-action" id="button-master-homepg" style={{'borderRadius':'0px'}}><span className="btn-master-homepg">Xem thêm</span></Link>
                                 {/* <div className="partner">
                                     <h6>Our Partners</h6>
                                     <div className="partner__list">

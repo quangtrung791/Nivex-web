@@ -1723,7 +1723,8 @@ body[data-magic-cursor=hide] .mouse-cursor {
 }
 
 .work .work__main .work-box {
-    width: 25%;
+    /* width: 25%; */
+    width: 30%;
     text-align: center;
     margin-right: 70px;
     position: relative;
@@ -1748,7 +1749,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
 
 .work .work__main .work-box .image {
     /* margin-bottom: 12px; */
-    margin: 30px 0 5% 0;
+    margin: 10% 0 5% 0;
 }
 
 .work .work__main .work-box .image img {
@@ -8161,4 +8162,62 @@ li.menu-item:hover {
 
 span.block {
     display: block;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list li {
+  display: flex;
+  align-items: flex-start; /* icon & text cùng top */
+  gap: 16px; /* khoảng cách giữa icon và chữ */
+  margin-bottom: 24px;  
+}
+
+.list li .title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.list li .text {
+  margin: 4px 0 0;
+  color: #aaa;
+  line-height: 1.6;
+  max-width: 600px; /* tránh text quá dài */
+}
+img.ai-icon-small {
+    height: auto;
+    flex-shrink: 0; /* icon không bị co lại */
+    width: 64px;
+    margin-right: 6px;
+}
+
+/* img.img0-ai */
+@media (min-width: 1440px) and (max-width: 1599px) {
+    img.img0-ai {
+        width: 40vw;
+    }
+}
+@media (min-width: 1600px) and (max-width: 1919px) {
+    img.img0-ai {
+        width: 35vw;
+    }
+}
+@media (min-width: 1920px) {
+    img.img0-ai {
+        width: 35vw;
+    }
+}
+/* img.img0-ai {
+    width: 40vw;
+} */
+
+.link-footer, .link-footer a {
+    font-size: 12px !important;
+    font-weight: 300;
 }
