@@ -8734,7 +8734,7 @@ img.ai-icon-small {
     .work-box .title {
         padding: 0 !important;
     }
-    .work .work__main .work-box:last-child {
+    section.background-container-custom .work-box:last-child {
         width: 31vw !important;
         margin-right: 0 !important;
     }
@@ -8752,6 +8752,66 @@ img.ai-icon-small {
     }
 }
 
+/* Responsive for iPad Mini 768px - vertical */
+@media (min-width: 750px) and (max-width: 799px) {
+    header.header .col-12,
+    section.banner .col-xl-6.col-md-12,
+    section.coin-list .col-md-12,
+    section.crypto.aos-init.aos-animate .col-md-12,
+    section.background-container-custom .col-md-12,
+    section.background-container-custom .col-xl-6.col-md-12,
+    section.about .col-xl-6.col-md-12
+    {
+        padding-left: unset !important;
+        padding-right: unset !important;
+    }
+    .header .header__body {
+        padding: 0;
+    }
+
+    header#header_main,
+    footer.footer.style-2.footer-main
+    {
+        padding: 0 5%;
+    }
+    section.banner,
+    section.coin-list,
+    section.work.background-container-custom,
+    section.about
+    {
+        padding: 5% 5%;
+    }
+    section.crypto.aos-init.aos-animate {
+        margin-top: -2%;
+    }
+    section.background-container-custom .work-box:last-child {
+        width: 35vw !important;
+        margin-right: 0 !important;
+    }
+    img.img0-ai {
+        margin: 0 auto;
+        display: block;
+    }
+    section.about .about__content.aos-init.aos-animate {
+        padding-left: unset !important;
+    }
+    section.crypto-learning-section {
+        padding: 5% 5%;
+    }
+    section.crypto-learning-section .container.tien-ma-hoa-cho-nguoi-bat-dau {
+        max-width: 100vw !important;
+    }
+    button.btn-crypto-card-learning {
+        display: block;
+        margin: 3% auto;
+    }
+    footer.footer.footer-main .container {
+        max-width: 100vw !important;
+    }
+    ul.list-social {
+        margin-left: 30%;
+    }
+}
 
 
 
