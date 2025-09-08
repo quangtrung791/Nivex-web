@@ -34,7 +34,7 @@ export default function Crypto1() {
 
     useEffect(() => {
         fetchCryptoData()
-        const interval = setInterval(fetchCryptoData, 30000) // Update every 30 seconds
+        const interval = setInterval(fetchCryptoData, 60000) // Update every 30 seconds
         return () => clearInterval(interval)
     }, [])
 
@@ -69,8 +69,7 @@ export default function Crypto1() {
                                         <div className="content-inner" style={{ display: `${flatTabs === 1 ? "flex" : "none"}` }}>
                                             
                                             <div className="crypto-box active">
-                                                <div className="flex">
-                                                    <div>
+                                                    <div className="crypto-box-flex-coin">
                                                         <div className="top">
                                                             <Link href="#"><span className="icon-btc"><span className="path1" /><span className="path2" /></span>
                                                                 {/* <span>Bitcoin</span> */}
@@ -78,6 +77,9 @@ export default function Crypto1() {
                                                             </Link>
                                                         </div>
                                                          <span>Bitcoin</span>
+                                                        <h6 className="price">
+                                                            USD {getCoinData('bitcoin').current_price ? formatPrice(getCoinData('bitcoin').current_price) : '46,168.95'}
+                                                        </h6>
                                                     </div>
                                                     <div className="flex-content">
                                                         <div className="chart-container">
@@ -97,16 +99,11 @@ export default function Crypto1() {
                                                             </p><br></br>
                                                         </div><span className="unit">BTC</span>
                                                     </div>
-                                                </div>
-                                                <h6 className="price">
-                                                            USD ${getCoinData('bitcoin').current_price ? formatPrice(getCoinData('bitcoin').current_price) : '46,168.95'}
-                                                </h6>
                                             </div>
 
 
                                             <div className="crypto-box active">
-                                                <div className="flex">
-                                                    <div>
+                                                    <div className="crypto-box-flex-coin">
                                                         <div className="top">
                                                             <Link href="#"><span className="icon-eth"><span className="path1" /><span className="path2" />
                                                                 <span className="path3" /><span className="path4" /></span>
@@ -115,9 +112,10 @@ export default function Crypto1() {
                                                             </Link>
                                                         </div>
                                                         <span>Ethereum</span>
-                                                        {/* <h6 className="price">
-                                                            USD ${getCoinData('ethereum').current_price ? formatPrice(getCoinData('ethereum').current_price) : '3,480.04'}
-                                                        </h6> */}
+                                                        <h6 className="price">
+                                                            USD {getCoinData('ethereum').current_price ? formatPrice(getCoinData('ethereum').current_price) : '3,480.04'}
+                                                        </h6>
+                                                   
                                                     </div>
                                                     <div className="flex-content add-position-right special-coin">
                                                         <div className="chart-container">
@@ -137,16 +135,12 @@ export default function Crypto1() {
                                                             </p><br></br>
                                                         </div><span className="unit">ETH</span>
                                                     </div>
-                                                </div>
-                                                <h6 className="price">
-                                                            USD ${getCoinData('ethereum').current_price ? formatPrice(getCoinData('ethereum').current_price) : '3,480.04'}
-                                                </h6>
+                                                
                                             </div>
 
 
                                             <div className="crypto-box active">
-                                                <div className="flex">
-                                                    <div>
+                                                    <div className="crypto-box-flex-coin">
                                                         <div className="top">
                                                             <Link href="#"><span className="icon-tether"><span className="path1" /><span className="path2" /></span>
                                                                 {/* <span>Tether</span>
@@ -154,9 +148,9 @@ export default function Crypto1() {
                                                             </Link>
                                                         </div>
                                                         <span>Tether</span>
-                                                        {/* <h6 className="price">
+                                                        <h6 className="price">
                                                             USD {getCoinData('tether').current_price ? formatPrice(getCoinData('tether').current_price) : '1.00'}
-                                                        </h6> */}
+                                                        </h6>
                                                     </div>
                                                     <div className="flex-content ">
                                                         <div className="chart-container">
@@ -176,17 +170,12 @@ export default function Crypto1() {
                                                             </div><br></br>
                                                         </div><span className="unit">USDT</span>
                                                     </div>
-                                                </div>
-                                                <h6 className="price">
-                                                            USD {getCoinData('tether').current_price ? formatPrice(getCoinData('tether').current_price) : '1.00'}
-                                                </h6>
                                             </div>
 
 
 
                                             <div className="crypto-box active">
-                                                <div className="flex">
-                                                    <div>
+                                                    <div className="crypto-box-flex-coin">
                                                         <div className="top">
                                                             <Link href="#"><span className="icon-bnb"><span className="path1" /><span className="path2" /><span className="path3" /><span className="path4" /><span className="path5" /><span className="path6" /></span>
                                                                 {/* <span>BNB</span> */}
@@ -194,11 +183,11 @@ export default function Crypto1() {
                                                             </Link>
                                                         </div>
                                                         <span>BNB</span>
-                                                        {/* <h6 className="price">
+                                                        <h6 className="price">
                                                             USD {getCoinData('binancecoin').current_price ? formatPrice(getCoinData('binancecoin').current_price) : '443.56'}
-                                                        </h6> */}
+                                                        </h6>
                                                     </div>
-                                                    <div className="flex-content add-position-right">
+                                                    <div className="flex-content">
                                                         <div className="chart-container">
                                                             <ChatList 
                                                                 sparkline={getCoinData('binancecoin').sparkline_in_7d ? getCoinData('binancecoin').sparkline_in_7d.price : null}
@@ -216,15 +205,11 @@ export default function Crypto1() {
                                                             </div><br></br>
                                                         </div><span className="unit">BNB</span>
                                                     </div>
-                                                </div>
-                                                <h6 className="price">
-                                                    USD {getCoinData('binancecoin').current_price ? formatPrice(getCoinData('binancecoin').current_price) : '443.56'}
-                                                </h6>
                                             </div>
                                         </div>
 
                                         {/* cac the khac */}
-                                        <div className="content-inner" style={{ display: `${flatTabs === 2 ? "flex" : "none"}` }}>
+                                        {/* <div className="content-inner" style={{ display: `${flatTabs === 2 ? "flex" : "none"}` }}>
                                             <div className="crypto-box">
                                                 <div>
                                                     <div className="top">
@@ -884,8 +869,8 @@ export default function Crypto1() {
                                                         />
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
+                                            </div> */}
+                                        {/* </div> */}
                                     </div>
                                 </div>
                             </div>

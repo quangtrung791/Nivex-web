@@ -1,6 +1,6 @@
 /* Crypto Learning Section Styles */
 .crypto-learning-section {
-    padding: 80px 0;
+    padding: 60px 7% 0 7%;
     /* background: #f8f9fa; */
 }
 .crypto-learning-section .crypto-content {
@@ -86,10 +86,10 @@
 }
 @media  (max-width: 1300px) {
     .crypto-learning-section .crypto-cards {
-        gap: 14px;
+        gap: 10px;
     }
     .crypto-learning-section .crypto-card .card-info h4 {
-        font-size: 1.25rem;
+        font-size: 1.1rem;
      }
 }
 
@@ -140,7 +140,7 @@
 .crypto-learning-section .crypto-card .card-content {
         flex-direction: column;
 }
-@media (max-width: 768px) {
+@media (max-width: 780px) {
     .crypto-learning-section {
         padding: 40px 0;
     }

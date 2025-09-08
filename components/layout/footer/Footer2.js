@@ -7,7 +7,7 @@ export default function Footer2() {
         <>
 
             <footer className="footer style-2 footer-main">
-                <div className="container">
+                <div className="container" style={{'position':'relative'}}>
                     <div className="footer__main">
                         <div className="row">
                             <div className="col-xl-4 col-md-6">
@@ -57,8 +57,8 @@ export default function Footer2() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-xl-4 col-md-12" style={{'paddingRight': 0 }}>
-                                <div className="footer-contact" style={{'padding-left' : '100px'}}>
+                            <div className="col-xl-4 col-md-12 footer-contact-container">
+                                <div className="footer-contact" >
                                     <h5 style={{'fontWeight': '500'}}>Chúng tôi có thể giúp gì cho bạn?</h5>
                                     <p className="link-footer">
                                         Subscribe our newsletter to get more interested resources from Nivex.
@@ -83,9 +83,11 @@ export default function Footer2() {
                                     </ul>
                                 </div>
                             </div>
-                            {/* <BackToTop target="#top" /> */}
+                            
                         </div>
+                        
                     </div>
+                    <BackToTop target="#top" />
                 </div>
                 <div className="container-fluid">
 

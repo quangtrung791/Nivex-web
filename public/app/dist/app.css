@@ -663,7 +663,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
 }
 
 .header .header__left .main-nav .menu li .sub-menu {
-    padding: 16px;
+    padding: 15px 0;
     background: var(--bg);
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
@@ -753,11 +753,11 @@ body[data-magic-cursor=hide] .mouse-cursor {
     margin-left: 21px;
 }
 
-/* @media only screen and (max-width: 1550px) {
+@media only screen and (max-width: 991px) {
     .header .header__right .dropdown {
         display: none;
     }
-} */
+}
 
 .header .header__right .dropdown button {
     padding: 0;
@@ -1104,7 +1104,8 @@ body[data-magic-cursor=hide] .mouse-cursor {
 
 @media only screen and (max-width: 767px) {
     .banner .banner__content .title {
-        font-size: 40px;
+        font-size: 32px;
+        white-space: normal;
     }
 }
 
@@ -1236,10 +1237,17 @@ body[data-magic-cursor=hide] .mouse-cursor {
     background: #18191d;
 }
 
-.crypto {
-    margin-top: -101px;
-    padding: 0 7% 0 7%;
+section.crypto {
+    margin-top: -101px;    
 }
+
+@media (min-width:1440px) {
+    section.crypto {
+        margin-top: -101px;
+        padding: 0 7%;    
+    }
+}
+
 
 .crypto .crypto__main {
     /* background: var(--bg);
@@ -1300,7 +1308,17 @@ body[data-magic-cursor=hide] .mouse-cursor {
 /* .crypto .crypto__main .flat-tabs .content-tab {
     margin-top: 37px;
 } */
-
+.crypto-box .crypto-box-flex-coin {
+    display: flex;
+    flex-direction: column;;
+    gap: 10px;
+}
+.crypto-box .crypto-box-flex-coin span {
+    margin-top: -5px;
+}
+.crypto-box-flex-coin h6 {
+    margin-top: 9px;
+}
 .crypto .crypto__main .flat-tabs .content-tab .content-inner {
     display: flex;
 }
@@ -1308,11 +1326,12 @@ body[data-magic-cursor=hide] .mouse-cursor {
 .crypto .crypto__main .flat-tabs .content-tab .content-inner .crypto-box {
     background: var(--bg);
     border-radius: 12px;
-    padding: 31px 40px;
+    padding: 25px 32px;
     margin-right: 22px;
     width: 25%;
     transition: 0.3s all ease-in-out;
     display: flex;
+    flex-direction: row;
 }
 
 .crypto .crypto__main .flat-tabs .content-tab .content-inner .crypto-box:last-child {
@@ -1347,14 +1366,21 @@ body[data-magic-cursor=hide] .mouse-cursor {
 }
 
 .crypto .crypto__main .flat-tabs .content-tab .content-inner .crypto-box .price {
-    margin-bottom: 11px;
-    font-size: 19px;
+    /* margin-bottom: 11px; */
+    font-size: 16px;
     font-weight: 600;
+}
+
+@media (min-width:1440px) {
+    .crypto .crypto__main .flat-tabs .content-tab .content-inner .crypto-box .price {
+        font-size: 17px;
+    }
 }
 
 .crypto .crypto__main .flat-tabs .content-tab .content-inner .crypto-box .bottom {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
 }
 
 .crypto .crypto__main .flat-tabs .content-tab .content-inner .crypto-box .bottom p {
@@ -1365,25 +1391,46 @@ body[data-magic-cursor=hide] .mouse-cursor {
     font-size: 12px;
     font-weight: 700;
     color: #fff;
-    margin-left: 9px;
+    align-items: center;
+/*     margin-left: 9px; */
     padding: 4px 8px 3px 9px;
-    border-radius: 0px;
 }
 
 @media only screen and (max-width: 1200px) {
     .crypto .crypto__main .flat-tabs .content-tab .content-inner {
         flex-wrap: wrap;
+        justify-content: center;
+        gap: 22px;
     }
 
     .crypto .crypto__main .flat-tabs .content-tab .content-inner .crypto-box {
-        width: calc(50% - 22px);
-        margin-bottom: 30px;
+        width: calc(50% - 11px);
+        margin-right: 0;
+    }
+    
+    .crypto .crypto__main .flat-tabs .content-tab .content-inner .crypto-box:nth-child(odd) {
+        margin-right: 0;
+    }
+    
+    .crypto .crypto__main .flat-tabs .content-tab .content-inner .crypto-box:nth-child(even) {
+        margin-right: 0;
     }
 }
 
-@media only screen and (max-width: 1200px) and (max-width: 767px) {
+@media only screen and (max-width: 767px) {
+    .crypto .crypto__main .flat-tabs .content-tab .content-inner {
+        flex-direction: column;
+        align-items: center;
+    }
+    
     .crypto .crypto__main .flat-tabs .content-tab .content-inner .crypto-box {
         width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    
+    .crypto .crypto__main .flat-tabs .content-tab .content-inner .crypto-box:last-child {
+        margin-bottom: 0;
     }
 }
 
@@ -1400,6 +1447,12 @@ body[data-magic-cursor=hide] .mouse-cursor {
 
 .coin-list {
     padding: 100px 7% 0 7%;
+}
+
+@media (max-width: 1440px) {
+    .coin-list {
+        padding: 100px 0 0 0;
+    }
 }
 
 .coin-list .block-text {
@@ -1548,12 +1601,12 @@ body[data-magic-cursor=hide] .mouse-cursor {
     color: #d33535;
 }
 
-.coin-list .coin-list__main .flat-tabs .content-tab .content-inner tbody tr td a.btn {
+.coin-list .coin-list__main .flat-tabs .content-tab .content-inner tbody tr a.btn {
     display: inline-block;
     padding: 5px 10px;
     font-size: 14px;
     border: 1px solid #e6e8ec;
-    /* border-radius: 90px; */
+    border-radius: 0px;
     transition: 0.3s all ease-in-out;
 }
 
@@ -1561,10 +1614,10 @@ body[data-magic-cursor=hide] .mouse-cursor {
     background: rgba(55, 114, 255, 0.1);
 }
 
-.coin-list .coin-list__main .flat-tabs .content-tab .content-inner tbody tr:hover a.btn {
-    border-color: var(--primary);
+.coin-list .coin-list__main .flat-tabs .content-tab .content-inner tbody tr a.btn:hover{
     background: var(--primary);
-    color: #fff;
+    border: none;
+    color: black;
 }
 
 .coin-list .coin-list__main .flat-tabs .content-tab .content-inner .icon-star.active::before {
@@ -6256,14 +6309,6 @@ body[data-magic-cursor=hide] .mouse-cursor {
     color: #777e90;
 }
 
-.crypto-box .price {
-    margin-bottom: 11px;
-}
-
-.crypto-box .bottom {
-    display: flex;
-    align-items: center;
-}
 
 .crypto-box .bottom p {
     font-size: 14px;
@@ -6274,8 +6319,8 @@ body[data-magic-cursor=hide] .mouse-cursor {
     font-weight: 700;
     color: #fff;
     margin-left: 9px;
-    padding: 4px 8px 3px 9px;
-    border-radius: 24px;
+    /* padding: 4px 8px 3px 9px; */
+    /* border-radius: 24px; */
 }
 
 .home-2 .crypto {
@@ -7638,6 +7683,9 @@ body[data-magic-cursor=hide] .mouse-cursor {
     .sidebar .widget.tags ul li a {
         padding: 4px 13px;
     }
+    section.coin-list {
+        display: none;
+    }
 }
 
 .footer .footer__main {
@@ -7645,7 +7693,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
 }
 
 .footer .footer__main .info {
-    padding-right: 130px;
+    /* padding-right: 130px; */
 }
 
 .footer .footer__main .info .logo {
@@ -7684,10 +7732,8 @@ body[data-magic-cursor=hide] .mouse-cursor {
     padding-left: 67px;
 }
 
+
 @media only screen and (max-width: 1200px) {
-    .footer .footer__main .widget-link {
-        padding-top: 40px;
-    }
 
     .footer .footer__main .widget-link.s1 {
         padding-top: 0;
@@ -7752,8 +7798,8 @@ body[data-magic-cursor=hide] .mouse-cursor {
 }
 
 .footer.style-2 {
-    /* border-top: 2px ridge var(--line); */
     position: relative;
+    padding: 0 7% 0 7%;
 }
 
 .footer.style-2::before {
@@ -7770,12 +7816,6 @@ body[data-magic-cursor=hide] .mouse-cursor {
         rgb(72, 73, 77) 80%, 
         transparent 100%
     );
-    /* Hoặc tạo hiệu ứng đậm ở giữa */
-    /* background: linear-gradient(to right, 
-        rgba(229, 229, 229, 0.3) 0%, 
-        var(--line) 50%, 
-        rgba(229, 229, 229, 0.3) 100%
-    ); */
 }
 
 .footer.style-2 .footer__main {
@@ -7783,7 +7823,6 @@ body[data-magic-cursor=hide] .mouse-cursor {
 }
 
 .footer.style-2 .footer__main .info {
-    /* border-right: 1px solid var(--line); */
     padding-top: 50px;
     height: 100%;
 }
@@ -7828,7 +7867,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
 .footer.style-2 .footer__main .footer-contact {
     /* border-left: 1px solid var(--line); */
     padding-top: 35px;
-    padding-left: 109px;
+    padding-left: 90px;
     padding-bottom: 90px;
 }
 
@@ -7836,7 +7875,11 @@ body[data-magic-cursor=hide] .mouse-cursor {
     .footer.style-2 .footer__main .footer-contact {
         border-top: 1px solid var(--line);
         border-left: 0;
-        padding: 60px 100px;
+        padding-left: 0;
+
+    }
+    .footer.style-2 .footer__main .row .footer-contact form {
+        width: 60%;
     }
 }
 
@@ -7939,7 +7982,7 @@ li.menu-item:hover {
 .crypto__main .flex-content {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 15px;
 }
 
 .footer__main ul p {
@@ -7956,39 +7999,95 @@ li.menu-item:hover {
 .list-social li span, .footer__main .icon-x-twitter {
     filter: brightness(2.5);
 }
-/* .back_to_top-btn {
+.back_to_top-btn {
     position: absolute;
-    right: 5px;
-    bottom: 30px;
+    right: -50px;
+    bottom: 35px;
     background:url(/assets/images/background/button-back-to-top-bg.png) no-repeat center;
     width: 50px;
     height: 50px
 }
 
-.container .footer__main .row {
-    position: relative;
-} */
-
+@media (max-width: 1024px) {
+    .back_to_top-btn {
+        right: 5px;
+        bottom: 15px;
+    }
+}
 /*# sourceMappingURL=app.css.map */
+
+
+.crypto .crypto__main .flat-tabs .content-tab .content-inner:first-child .crypto-box .crypto-box-flex-coin {
+    flex: 6;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.crypto .crypto__main .flat-tabs .content-tab .content-inner:first-child .crypto-box .flex-content {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    min-width: 100px;
+}
+
+@media (min-width: 1024px) {
+    .sub-menu .menu-item a:hover::before,
+    .sub-menu .menu-item.current-item a::before {
+        opacity: 1;
+    }
+
+
+    .sub-menu .menu-item a::before {
+        content: "|";
+        font-weight: 800;
+        display: inline-block;
+        margin-right: 3px;
+        opacity: 0;
+    }
+}
+
+
 
 
 /* Desktop column width distribution for coin list table */
 @media (min-width: 1200px) {
-
-    
+    .coin-list .coin-list__main .flat-tabs .content-tab .content-inner table th,
+    .coin-list .coin-list__main .flat-tabs .content-tab .content-inner table td {
+        padding: 0.5rem 0;
+    }
+    .coin-list .coin-list__main .flat-tabs .content-tab .content-inner table th:nth-child(1),
+    .coin-list .coin-list__main .flat-tabs .content-tab .content-inner table td:nth-child(1) {
+        width: 1%;
+    }
+    .coin-list .coin-list__main .flat-tabs .content-tab .content-inner table th:nth-child(2),
+    .coin-list .coin-list__main .flat-tabs .content-tab .content-inner table td:nth-child(2) {
+        width: 6%;
+        text-align: center;
+    }
     /* Name column */
     .coin-list .coin-list__main .flat-tabs .content-tab .content-inner table th:nth-child(3),
     .coin-list .coin-list__main .flat-tabs .content-tab .content-inner table td:nth-child(3) {
-        width: 18%;
+        width: 25%;
     }
-    .coin-list .coin-list__main .flat-tabs .content-tab .content-inner table th:nth-child(6),
+     .coin-list .coin-list__main .flat-tabs .content-tab .content-inner table th:nth-child(6),
     .coin-list .coin-list__main .flat-tabs .content-tab .content-inner table td:nth-child(6) {
         width: 22%;
     }
+    /*
+    .coin-list .coin-list__main .flat-tabs .content-tab .content-inner table th:nth-child(5), 
+    .coin-list .coin-list__main .flat-tabs .content-tab .content-inner table td:nth-child(5) {
+        width: 10%;
+    }
+    */
     .coin-list .coin-list__main .flat-tabs .content-tab .content-inner table th:nth-child(7),
     .coin-list .coin-list__main .flat-tabs .content-tab .content-inner table td:nth-child(7) {
-        width: 14%;
-    }
+        width: 11%;
+    } 
 }
 
 /* ApexCharts Tooltip Styles */
@@ -8119,7 +8218,7 @@ li.menu-item:hover {
 }
 
 /* .tien-ma-hoa-cho-nguoi-bat-dau */
-@media (min-width: 1440px) and (max-width: 1599px) {
+/* @media (min-width: 1440px) and (max-width: 1599px) {
     .container.tien-ma-hoa-cho-nguoi-bat-dau {
         padding: 0 7%;
     }
@@ -8133,10 +8232,10 @@ li.menu-item:hover {
     .container.tien-ma-hoa-cho-nguoi-bat-dau {
         padding: 0 0%;
     }
-}
+} */
 
 /* .footer-main */
-@media (min-width: 1440px) and (max-width: 1599px) {
+/* @media (min-width: 1440px) and (max-width: 1599px) {
     .footer.footer-main {
         padding: 0 7%;
     }
@@ -8150,7 +8249,7 @@ li.menu-item:hover {
     .footer.footer-main {
         padding: 0 0%;
     }
-}
+} */
 /* .robot logo image */
 @media (min-width: 1440px) and (max-width: 1599px) {
     img.logo-robot-mc {
@@ -8226,7 +8325,7 @@ img.ai-icon-small {
 } */
 
 .link-footer, .link-footer a {
-    font-size: 12px !important;
+    font-size: 14px;
     font-weight: 300;
 }
 
@@ -8237,17 +8336,17 @@ img.ai-icon-small {
 
 @media (min-width: 1440px ) and (max-width: 1599px) {
     .custom-s2 {
-        padding-left: 140px !important;
+        padding-left: 130px !important;
     }
 }
 @media (min-width: 1600px ) and (max-width: 1919px) {
     .custom-s2 {
-        padding-left: 160px!important;
+        padding-left: 140px!important;
     }
 }
 @media (min-width: 1920px ) {
     .custom-s2 {
-        padding-left: 175px!important;
+        padding-left: 150px!important;
     }
 }
 
@@ -8256,7 +8355,7 @@ img.ai-icon-small {
     height: 48px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     background: transparent;
     margin-bottom: 8px;
 }
@@ -8264,22 +8363,17 @@ img.ai-icon-small {
     display: inline-block;
     min-width: 56px;
     text-align: center;
-    border-radius: 16px;
+    /* border-radius: 16px; */
     font-weight: 600;
     font-size: 15px;
     padding: 2px 12px;
-    margin-top: 8px;
-    background: #23272f;
+    /* margin-top: 8px; */
 }
 .sale.success {
-    color: #19c37d;
-    /* background: #1a2e23; */
     background: #58BD7D;
 }
 .sale.critical {
-    color: #f23c3d;
-    /* background: #2e1a1a; */
-    background: red;
+    background: rgb(211,53,53);
 }
 
 .crypto-box {
@@ -8288,11 +8382,15 @@ img.ai-icon-small {
   padding: 32px 24px 24px 24px;
   min-width: 320px;
   max-width: 340px;
-  margin: 0 16px 24px 0;
+  /* margin: 0 16px 24px 0; */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
+/* .crypto-box-flex-coin h6 {
+    white-space: nowrap !important;
+} */
+
 .crypto-header {
   display: flex;
   align-items: center;
@@ -8316,13 +8414,6 @@ img.ai-icon-small {
   display: flex;
   align-items: flex-end;
   margin-bottom: 16px;
-}
-.chart-container {
-  width: 120px;
-  height: 48px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
 }
 .change-badge {
   margin-left: 12px;
@@ -8362,14 +8453,6 @@ img.ai-icon-small {
     display: flex;
 }
 
-.crypto-box .bottom {
-    margin: 0 auto;
-}
-
-.crypto-box span.unit {
-    text-align: center;
-}
-
 .crypto-box span.icon-btc,
 .crypto-box span.icon-eth,
 .crypto-box span.icon-tether,
@@ -8380,7 +8463,6 @@ img.ai-icon-small {
 }
 .crypto-box .chart-container {
     position: relative;
-    right: 5% !important;
 }
 
 .crypto-box .crypto-box span.unit {
@@ -8391,13 +8473,14 @@ img.ai-icon-small {
 
 .crypto-box h6.price {
     position: relative;
-    top: -17px;
+    /* top: -17px; */
 }
 
 .crypto-box span.unit {
     position: relative;
     top: 7px;
-    right: -9px;
+    /* right: -9px; */
+    text-align: right;
 }
 
 .crypto-box .add-position-right {
@@ -8405,11 +8488,11 @@ img.ai-icon-small {
 }
 
 .content-tab .crypto-box.active {
-    height: 200px;
+    /* height: 200px; */
     min-width: unset !important;
 }
 
-@media (min-width: 1440px) and (max-width: 1599px) {
+/* @media (min-width: 1440px) and (max-width: 1599px) {
     .crypto-box .flex-content {
         position: relative !important;
         right: -40% !important;
@@ -8429,7 +8512,6 @@ img.ai-icon-small {
         right: -60% !important;
     }
 }
-/* special coins */
 @media (min-width: 1440px) and (max-width: 1599px) {
     .flex-content.add-position-right.special-coin {
         position: relative  !important;
