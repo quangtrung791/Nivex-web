@@ -8242,10 +8242,10 @@ li.menu-item:hover {
 }
 @media (min-width: 1600px) and (max-width: 1919px) {
     .footer.footer-main {
-        padding: 0 5%;
+        padding: 0 7%;
     }
 }
-@media (min-width: 1920px) {
+@media (min-width: 1921px) {
     .footer.footer-main {
         padding: 0 0%;
     }
@@ -8484,7 +8484,7 @@ img.ai-icon-small {
 }
 
 .crypto-box .add-position-right {
-    right: -40% !important;
+    /* right: -40% !important; */
 }
 
 .content-tab .crypto-box.active {
@@ -8577,7 +8577,8 @@ img.ai-icon-small {
     }
     .flex-content {
         position: relative;
-        right: -28%;
+        /* right: -28%; */
+        right: 0%;
     }
     .crypto.aos-init.aos-animate .flex {
         position: relative;
@@ -8613,6 +8614,9 @@ img.ai-icon-small {
     .header .header__body
     {
         padding: 0 5%;
+    }
+    section.banner .banner__content {
+        padding: 0 !important;
     }
     section.work.background-container-custom,
     section.crypto-learning-section
@@ -8942,8 +8946,51 @@ img.ai-icon-small {
     }
     
 }
-
-
+/* fix for width range from 1441px to 1919 */
+/* @media (min-width: 1441px ) and (max-width: 1919px) {
+    footer.footer .container {
+        max-width: 100vw !important;
+    }
+} */
+ /* @media (min-width: 1440px) and (max-width: 1920px) {
+    .crypto-learning-section {
+        padding: 5% 7% !important;
+    }
+    .container.tien-ma-hoa-cho-nguoi-bat-dau {
+        padding: 0 !important;
+        max-width: 100vw !important;
+    }
+ }
+.container {
+    max-width: 100vw !important;
+} */
+/* remove white line above the main header */
 .header.is-fixed {
     box-shadow: none;
+}
+@media (max-width: 1000px) {
+    span.block {
+        display: inline;
+    }
+}
+@media (max-width: 660px) {
+    img.img0-ai {
+        width: 100%;
+        margin-top: -40%;
+    }
+    section.background-container-custom .work-box:last-child {
+        width: 100% !important;
+    }
+    .about__content.aos-init.aos-animate {
+        padding-left: 0;
+    }
+    .footer.style-2 {
+        padding: 0;
+    }
+    section.about .btn-action {
+        display: block;
+        margin-left: 50%;
+        margin-right: 0;
+        text-align: center;
+    }
 }
