@@ -8143,10 +8143,10 @@ li.menu-item:hover {
 }
 @media (min-width: 1600px) and (max-width: 1919px) {
     .footer.footer-main {
-        padding: 0 5%;
+        padding: 0 7%;
     }
 }
-@media (min-width: 1920px) {
+@media (min-width: 1921px) {
     .footer.footer-main {
         padding: 0 0%;
     }
@@ -8861,13 +8861,24 @@ img.ai-icon-small {
     
 }
 /* fix for width range from 1441px to 1919 */
-@media (min-width: 1441px ) and (max-width: 1919px) {
+/* @media (min-width: 1441px ) and (max-width: 1919px) {
     footer.footer .container {
         max-width: 100vw !important;
     }
-}
-
-
+} */
+ /* @media (min-width: 1440px) and (max-width: 1920px) {
+    .crypto-learning-section {
+        padding: 5% 7% !important;
+    }
+    .container.tien-ma-hoa-cho-nguoi-bat-dau {
+        padding: 0 !important;
+        max-width: 100vw !important;
+    }
+ }
+.container {
+    max-width: 100vw !important;
+} */
+/* remove white line above the main header */
 .header.is-fixed {
     box-shadow: none;
 }
