@@ -10,12 +10,12 @@ import "/public/app/dist/swiper-bundle.min.css"
 const inter = Inter({
     weight: ['400', '500', '600', '700'],
     subsets: ['latin'],
-    variable: "--dm", // 3. Gán vào biến --dm để CSS cũ vẫn hoạt động
+    variable: "--dm", 
     display: 'swap',
 })
 
 export const metadata = {
-    title: 'Homepage - Nivex Hub (Developed Version)',
+    title: 'Nivex',
     description: 'Nivex Website Vietnam - nivex.vn',
 }
 

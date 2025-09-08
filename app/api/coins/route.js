@@ -1,5 +1,5 @@
 // app/api/coins/route.js
-export const revalidate = 30; // cache 30s (ISR)
+export const revalidate = 60; // cache 30s (ISR)
 
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
