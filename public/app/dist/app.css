@@ -7866,7 +7866,8 @@ body[data-magic-cursor=hide] .mouse-cursor {
 
 .footer.style-2 .footer__main .footer-contact form input {
     width: 100%;
-    border: 2px solid var(--line);
+    /* border: 2px solid var(--line); */
+    border: 2px solid #dadde6;
     /* border-radius: 90px; */
     padding: 11px 19px;
     outline: none;
@@ -7887,7 +7888,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
 .footer.style-2 .footer__main .footer-contact form button {
     position: absolute;
     /* top: 6px; */
-    right: 2px;
+    /* right: 2px; */
     border: none;
     /* padding: 8px 24px; */
     font-weight: 700;
