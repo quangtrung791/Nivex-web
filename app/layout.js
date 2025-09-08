@@ -22,7 +22,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
     return (
-        <html lang="en">
+        <html lang="vi">
             {/* 4. Sử dụng biến của font Inter */}
             <body className={`${inter.variable} body header-fixed is_dark`}>
                 {children}
