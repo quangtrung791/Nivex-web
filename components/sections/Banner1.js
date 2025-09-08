@@ -32,9 +32,9 @@ export default function Banner1() {
                         <div className="col-xl-6 col-md-12">
                             <div className="banner__content">
                                 <h2 className="title" style={{'textTransform': 'uppercase', 'letterSpacing' : '0.75px', 'lineHeight': '1.2'}}>
-                                        <span className="block">Cập nhật các kiến thức</span>
-                                        <span className="block">về AI trong giao dịch</span>
-                                        <span className="block">tiền mã hóa</span>
+                                        <span className="block">Cập nhật các kiến thức </span>
+                                        <span className="block"> về AI trong giao dịch </span>
+                                        <span className="block"> tiền mã hóa </span>
                                 </h2>
                                 <p className="fs-14 desc">
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
