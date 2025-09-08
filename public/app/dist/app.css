@@ -8449,3 +8449,50 @@ img.ai-icon-small {
         right: -40% !important;
     }
 }
+
+/* ipad pro 1366px */
+@media (min-width: 1360px) and (max-width: 1380px) {
+    .container-fluid .row .col-12,
+    .crypto.aos-init.aos-animate .row .col-md-12,
+    .coin-list .row .col-md-12,
+    .work.background-container-custom .row .col-md-12,
+    .crypto-learning-section .crypto-content
+     {
+        padding-left: unset !important;
+        padding-right: unset !important;
+    }
+    section.banner .col-xl-6.col-md-12 {
+        position: relative;
+        left: 7%;
+    }
+    section.banner .col-xl-6 {
+        width: 45%;
+    }
+    span.block {
+        display: contents;
+    }
+    .flex-content {
+        position: relative;
+        right: -28%;
+    }
+    .crypto.aos-init.aos-animate .flex {
+        position: relative;
+        left: -7%;
+    }
+    h6.price {
+        position: relative;
+        left: -8%;
+    }
+    section.work.background-container-custom,
+    section.crypto-learning-section,
+    section.about {
+        padding: 5% 7%;
+    }
+    footer.footer.style-2.footer-main {
+        padding: 0% 7%;
+    }
+    .work__main .work-box:last-child {
+        width: 31vw !important;
+        margin-right: 0 !important;
+    }
+}
