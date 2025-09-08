@@ -7888,7 +7888,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
 .footer.style-2 .footer__main .footer-contact form button {
     position: absolute;
     /* top: 6px; */
-    /* right: 2px; */
+    right: 0px;
     border: none;
     /* padding: 8px 24px; */
     font-weight: 700;
