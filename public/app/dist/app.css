@@ -8860,6 +8860,12 @@ img.ai-icon-small {
     }
     
 }
+/* fix for width range from 1441px to 1919 */
+@media (min-width: 1441px ) and (max-width: 1919px) {
+    footer.footer .container {
+        max-width: 100vw !important;
+    }
+}
 
 
 .header.is-fixed {
