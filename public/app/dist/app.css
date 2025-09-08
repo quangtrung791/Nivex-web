@@ -8574,3 +8574,51 @@ img.ai-icon-small {
     }
 
 }
+/* Nut scrôll to top page */
+.back-to-top {
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  z-index: 999;
+  background: transparent;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 2rem;
+  /* box-shadow: 0 2px 8px rgba(0,0,0,0.15); */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.back-to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+/* .back-to-top:hover {
+  background: #19c37d;
+  color: #fff;
+} */
+@media (min-width: 1440px) and (max-width: 1599px) {
+    .back-to-top-btn {
+        position: fixed;
+        right: 2% !important;
+    }
+}
+@media (min-width: 1600px) and (max-width: 1919px) {
+    .back-to-top-btn {
+        position: fixed;
+        right: 1.5% !important;
+    }
+}
+@media (min-width: 1920px) {
+    .back-to-top-btn {
+        position: fixed;
+        right: 7% !important;
+    }
+}
