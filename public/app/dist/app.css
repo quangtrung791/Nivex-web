@@ -8812,7 +8812,53 @@ img.ai-icon-small {
         margin-left: 30%;
     }
 }
-
+/* Responsive for other tablets */
+@media (min-width: 650px) and (max-width: 1439px) {
+    section.banner,
+    section.coin-list,
+    section.work.background-container-custom,
+    section.about,
+    section.crypto-learning-section
+    {
+        padding: 5% 5%;
+    }
+    header.header,
+    footer.footer.style-2.footer-main
+    {
+        padding: 0 5%;
+    }
+    section.banner .col-xl-6.col-md-12,
+    header.header .col-12,
+    section.crypto.aos-init.aos-animate .col-md-12,
+    section.coin-list .col-md-12,
+    section.background-container-custom .col-md-12,
+    section.about .col-xl-6.col-md-12,
+    section.crypto-learning-section .crypto-content,
+    footer .col-xl-4.col-md-6,
+    footer .col-xl-4.col-md-12
+    {
+        padding-left: unset;
+        padding-right: unset;
+    }
+    .header .header__body {
+        padding : 0 !important;
+    }
+    section.crypto.aos-init.aos-animate {
+        margin-top: -3%;
+        padding: 0 5%;
+    }
+    section.background-container-custom .work-box:last-child {
+        margin-right: 0 !important;
+        width: 32vw !important;
+    }
+    footer.footer.style-2.footer-main .container {
+        max-width: 100vw !important;
+    }
+    .footer.style-2 .footer__main .footer-contact {
+        padding-bottom: 45px !important;
+    }
+    
+}
 
 
 .header.is-fixed {
