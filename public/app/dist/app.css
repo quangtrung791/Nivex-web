@@ -8186,6 +8186,10 @@ li.menu-item:hover {
 
 /* .banner */
 @media (min-width: 1440px) and (max-width: 1599px) {
+    section.work .col-md-12 {
+        /* padding-left: 0 !important; */
+        padding-right: 0 !important;
+    }
     .banner {
         background: var(--surface);
         /* padding: 84px 0 145px; */
