@@ -1589,6 +1589,7 @@ section.crypto {
 
 .coin-list__main .table tbody tr > :nth-child(8) {
   text-align: right;
+  padding: 0.5rem 0;
 }
 
 .coin-list .coin-list__main .flat-tabs .content-tab .content-inner tbody tr td.up {
