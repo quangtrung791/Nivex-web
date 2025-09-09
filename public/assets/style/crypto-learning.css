@@ -14,7 +14,7 @@
     color: white;
 }
 
-.crypto-learning-section .crypto-content h2 .text-primary-crypto {
+.crypto-learning-section .crypto-content h2 .text-primary-crypto, .crypto-learning-section .crypto-card .card-info h4:hover {
     background: linear-gradient(to right, #BCFE08, #86F869);
     -webkit-background-clip: text; 
     background-clip: text;
@@ -52,7 +52,6 @@
     align-items: flex-start;
     gap: 16px;
 }
-
 .crypto-learning-section .crypto-card .play-button {
     width: 100%;
     aspect-ratio: 16/9;
@@ -83,6 +82,7 @@
     color: white;
     margin-bottom: 12px;
     line-height: 1.4;
+    cursor: pointer;
 }
 @media  (max-width: 1300px) {
     .crypto-learning-section .crypto-cards {
