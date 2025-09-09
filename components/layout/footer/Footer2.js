@@ -15,7 +15,7 @@ export default function Footer2() {
                                     <Link href="/" className="logo">
                                         <img src="/assets/images/logo/Nivex_icon_bg.png" alt="" />
                                     </Link>
-                                    <h6 style={{'fontSize': '16px', 'fontWeight': 500, 'color': 'white'}}>Hãy liên hệ với chúng tôi</h6>
+                                    <h6 >Hãy liên hệ với chúng tôi</h6>
                                     <ul className="list">
                                         <li>
                                             <p className="link-footer">+12 345 678 9101</p>
@@ -34,7 +34,7 @@ export default function Footer2() {
                             <div className="col-xl-4 col-md-6">
                                 <div className="widget" style={{'marginLeft': '0%'}}>
                                     <div className="widget-link">
-                                        <h6 className="title" style={{'fontWeight': 600, 'letterSpacing': 0.25 }}>SẢN PHẨM</h6>
+                                        <h6 className="title">SẢN PHẨM</h6>
                                         <ul>
                                             <li className="link-footer"><Link href="/spot">Giao ngay</Link></li>
                                             <li className="link-footer"><Link href="#">Hợp đồng nghịch đảo</Link></li>
@@ -45,7 +45,7 @@ export default function Footer2() {
                                         </ul>
                                     </div>
                                     <div className="widget-link s2 custom-s2" >
-                                        <h6 className="title" style={{'fontWeight': 600, 'letterSpacing': 0.25 }}>SERVICES</h6>
+                                        <h6 className="title">DỊCH VỤ</h6>
                                         <ul>
                                             {/* <li className="link-footer"><Link href="/buy-crypto-select">Mua Crypto</Link></li> */}
                                             <li className="link-footer"><Link href="/">Các thuật ngữ</Link></li>
