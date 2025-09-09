@@ -9202,24 +9202,31 @@ section.glossary-search-section {
   gap: 5%;
 }
 .glossary-item {
-  background: none;
+  background: black;
   padding: 32px 24px;
   border-radius: 8px;
   transition: background 0.2s;
 }
 .glossary-item.selected-item {
-  background: #23242a;
+  background: transparent;
   padding: 32px 24px;
+  border-radius: 8px;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+.glossary-item.selected-item:hover,
+.glossary-item.selected-item.active {
+  background: #2d2e36;
 }
 .glossary-term {
-  font-size: 28px;
+  font-size: 20px;
   font-weight: 700;
   color: #fff;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 .glossary-desc {
   color: #fff;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 400;
 }
 @media (max-width: 900px) {
@@ -9227,4 +9234,13 @@ section.glossary-search-section {
   .glossary-term { font-size: 20px; }
   .glossary-desc { font-size: 15px; }
   .glossary-item.selected-item { padding: 20px 12px; }
+}
+@media (min-width: 1920px ) {
+    section.glossary-search-section {
+        background: #000;
+        padding: 5% 12.5%;
+    }
+}
+.dictionary-list-alphabet {
+    background-color: #000 !important;
 }

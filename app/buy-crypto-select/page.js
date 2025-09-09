@@ -7,6 +7,8 @@ export default function BuyCryptoSelect() {
     const handleFlatTabs = (index) => {
         setFlatTabs(index)
     }
+    const [selected, setSelected] = useState({ letter: null, idx: null })
+
     // Dữ liệu giả , sau này sẽ fetch từ backend
     const glossaryData = {
         A: [
@@ -94,15 +96,20 @@ export default function BuyCryptoSelect() {
                             <div key={letter} className="glossary-group">
                                 <div className="glossary-letter">{letter}</div>
                                 <div className="glossary-items">
-                                {items.map((item, idx) => (
-                                    <div
-                                    className={`glossary-item${idx === 0 ? " selected-item" : ""}`}
-                                    key={item.term + idx}
-                                    >
-                                    <div className="glossary-term">{item.term}</div>
-                                    <div className="glossary-desc">{item.desc}</div>
-                                    </div>
-                                ))}
+                                    {items.map((item, idx) => (
+                                        <div
+                                            // className={`glossary-item${idx === 0 ? " selected-item" : ""}`}
+                                            className={
+                                                "glossary-item selected-item" +
+                                                ((selected.letter === letter && selected.idx === idx) ? " active" : "")
+                                            }
+                                            key={item.term + idx}
+                                            onClick={() => setSelected({ letter, idx })}
+                                        >
+                                            <div className="glossary-term">{item.term}</div>
+                                            <div className="glossary-desc">{item.desc}</div>
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
                             ))}
