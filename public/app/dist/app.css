@@ -8003,12 +8003,18 @@ li.menu-item:hover {
     filter: brightness(2.5);
 }
 .back_to_top-btn {
+     animation: floatUpDown 2s ease-in-out infinite;
     position: absolute;
     right: -30px;
     bottom: 35px;
     background:url(/assets/images/background/button-back-to-top-bg.png) no-repeat center;
     width: 50px;
     height: 50px
+}
+@keyframes floatUpDown {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-16px); }
+  100% { transform: translateY(0); }
 }
 
 @media (max-width: 1366px) {
@@ -8979,4 +8985,242 @@ section.background-container-custom .work-box:hover
 /* Fix lỗi mất dấu khi dùng background cho text */
 span.text-primary-crypto {
     color: #BCFE08 !important;
+}
+/* fix vị trí của mục +- % */
+.sale.success, .sale.critical {
+    margin-top: -35px;
+}
+/* fix font-size responsive cho mobile */
+@media (max-width: 550px) {
+    section.banner h2.title {
+        margin-bottom: 14px !important;
+    }
+    a#button-master-homepg {
+        margin-top: 14px;
+    }
+    section.banner h2.title, section.banner h2.title span.block, .heading, .text-uppercase {
+        font-size: 28px !important;
+    }
+    section.banner h2.title span.block, .heading, .text-uppercase {
+        letter-spacing: 0px !important;
+    }
+}
+/* end */
+
+
+
+
+/* TRANG: BẢNG THUẬT NGỮ */
+.nivex-heading-title-gradient {
+  font-size: 2rem; /* Adjust size as needed */
+  font-weight: bold; /* Optional */
+  background: linear-gradient(to right, #BCFE08, #86F869);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.heading-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
+.heading-row .heading {
+    margin: 0;
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 1.1;
+}
+.heading-row .heading-desc {
+    margin: 0;
+    color: #b0b3c2;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: right;
+    min-width: 340px;
+}
+@media (min-width: 1440px) and (max-width: 1599px) {
+    section.page-title,
+    section.buy-crypto,
+    section.section-sale,
+    footer.footer
+    {
+        padding: 5% 7%;
+    }
+    h3.heading.nivex-heading-title,
+    .nivex-heading-title-gradient
+    {
+        font-size: 36px !important;
+    }
+    .heading-desc.desc {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 1600px) and (max-width: 1919px) {
+    section.page-title,
+    section.buy-crypto,
+    section.section-sale,
+    footer.footer
+    {
+        padding: 5% 7%;
+    }
+}
+
+@media (min-width: 1920px) {
+    section.page-title,
+    section.buy-crypto,
+    section.section-sale,
+    footer.footer
+    {
+        padding: 5% 7%;
+    }
+    section.page-title.custom {
+        padding: 5% 12.5%;
+    }
+}
+
+@media (max-width: 900px) {
+    .heading-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    .heading-row .heading-desc {
+        text-align: left;
+        min-width: unset;
+        font-size: 16px;
+    }
+}
+
+/* Khung search alphabet */
+section.glossary-search-section {
+  background: #000;
+  padding: 5% 7%;
+}
+.glossary-search-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.glossary-search-form {
+  display: flex;
+  align-items: center;
+  border: 2px solid #b0b3c2;
+  border-radius: 2px;
+  overflow: hidden;
+  background: #23242a;
+  height: 36px;
+  min-width: fit-content;
+}
+.glossary-search-input {
+  /* background: transparent; */
+  background: black;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 12px;
+  padding: 0 16px;
+  width: 220px;
+  height: 100%;
+}
+.glossary-search-btn {
+  background: #bcfe08;
+  border: none;
+  width: 40px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.glossary-search-btn:hover {
+  background: #d6ff5e;
+}
+.glossary-alphabet-list {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  /* padding: 0 0 0 32px; */
+  padding: 0;
+  list-style: none;
+}
+.glossary-alphabet-list li {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.glossary-alphabet-list li:hover {
+  color: #bcfe08;
+}
+.container.glossary-search-row {
+    max-width: 100vw !important;
+    width: 100vw !important;
+    padding-left: unset;
+    padding-right: unset;
+}
+
+@media (max-width: 900px) {
+  .glossary-search-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .glossary-alphabet-list {
+    padding-left: 0;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}
+
+/* Section hiển thị tra cứu theo dạng bảng chữ cái Alphabet */
+.dictionary-list-alphabet {
+  padding: 5% 7%;
+}
+.glossary-group {
+  margin-bottom: 48px;
+}
+.glossary-letter {
+  font-size: 56px;
+  font-weight: 800;
+  color: #bcfe08;
+  margin-bottom: 32px;
+  margin-top: 0;
+  line-height: 1;
+}
+.glossary-items {
+  display: flex;
+  flex-direction: column;
+  gap: 5%;
+}
+.glossary-item {
+  background: none;
+  padding: 32px 24px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+.glossary-item.selected-item {
+  background: #23242a;
+  padding: 32px 24px;
+}
+.glossary-term {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.glossary-desc {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+}
+@media (max-width: 900px) {
+  .glossary-letter { font-size: 36px; }
+  .glossary-term { font-size: 20px; }
+  .glossary-desc { font-size: 15px; }
+  .glossary-item.selected-item { padding: 20px 12px; }
 }

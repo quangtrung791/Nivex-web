@@ -7,12 +7,109 @@ export default function BuyCryptoSelect() {
     const handleFlatTabs = (index) => {
         setFlatTabs(index)
     }
+    // Dữ liệu giả , sau này sẽ fetch từ backend
+    const glossaryData = {
+        A: [
+            {
+                term: "ARC-20",
+                desc: "Một tiêu chuẩn token cho các token có thể thay thế (colored coin) trên mạng lưới Bitcoin."
+            },
+            {
+                term: "ARC-20",
+                desc: "Một tiêu chuẩn token cho các token có thể thay thế (colored coin) trên mạng lưới Bitcoin."
+            },
+            {
+                term: "ARC-20",
+                desc: "Một tiêu chuẩn token cho các token có thể thay thế (colored coin) trên mạng lưới Bitcoin."
+            }
+        ],
+        B: [
+            {
+                term: "B-Token",
+                desc: "Tên chính thức của Binance dành cho một loạt các token được bọc và được thế chấp đầy đủ"
+            },
+            {
+                term: "Bàn tay kim cương",
+                desc: "Thuật ngữ bắt nguồn từ cộng đồng nhà đầu tư trực tuyến trên các nền tảng như Reddit và Twitter"
+            }
+        ]
+        // ...Thêm các chữ cái và thuật ngữ khác nếu muốn
+    }
     return (
         <>
 
-            <Layout headerStyle={1} footerStyle={2} breadcrumbTitle="Buy Crypto">
+            <Layout 
+                // headerStyle={0}
+                footerStyle={2} 
+                // breadcrumbTitle={
+                //     <span style={{
+                //         color: "#BCFE08",
+                //         fontSize: "48px",
+                //         fontWeight: 800,
+                //         display: "flex",
+                //         alignItems: "center",
+                //         gap: "12px"
+                //         }}>
+                //         {/* <img src="/assets/images/icon/book.svg" alt="" style={{width: 40, height: 40}} /> */}
+                //         Bảng thuật ngữ
+                //         </span>
+                //     }
+                >
                 <div>
-                    <section className="buy-crypto flat-tabs">
+                    <section className="page-title custom">
+                         <div className="heading-row">
+                            <h3 className="heading nivex-heading-title">
+                                Bảng <span className="heading nivex-heading-title-gradient">thuật ngữ</span>
+                            </h3>
+                            <p className="heading-desc desc">
+                                Tìm hiểu về ngành blockchain chỉ trong 10 phút.
+                            </p>
+                        </div>
+                    </section>
+                    <section className="glossary-search-section">
+                        <div className="container glossary-search-row">
+                            <form className="glossary-search-form">
+                            <input
+                                type="text"
+                                className="glossary-search-input"
+                                placeholder="Tìm kiếm thuật ngữ"
+                            />
+                            <button type="submit" className="glossary-search-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <circle cx="11" cy="11" r="8" stroke="#111" strokeWidth="2"/>
+                                <path d="M21 21L16.65 16.65" stroke="#111" strokeWidth="2" strokeLinecap="round"/>
+                                </svg>
+                            </button>
+                            </form>
+                            <ul className="glossary-alphabet-list">
+                            {["A","B","C","D","E","F","G","H","I","K","L","M","N","O","P","Q","S","T","U","W","Z"].map(l => (
+                                <li key={l}>{l}</li>
+                            ))}
+                            </ul>
+                        </div>
+                    </section>
+                    <section className="dictionary-list-alphabet">
+                        <div className="container">
+                            {Object.entries(glossaryData).map(([letter, items]) => (
+                            <div key={letter} className="glossary-group">
+                                <div className="glossary-letter">{letter}</div>
+                                <div className="glossary-items">
+                                {items.map((item, idx) => (
+                                    <div
+                                    className={`glossary-item${idx === 0 ? " selected-item" : ""}`}
+                                    key={item.term + idx}
+                                    >
+                                    <div className="glossary-term">{item.term}</div>
+                                    <div className="glossary-desc">{item.desc}</div>
+                                    </div>
+                                ))}
+                                </div>
+                            </div>
+                            ))}
+                        </div>
+                    </section>
+
+                    {/* <section className="buy-crypto flat-tabs">
                         <div className="container">
                             <div className="row">
                                 <div className="col-md-3">
@@ -39,7 +136,7 @@ export default function BuyCryptoSelect() {
                                                 </ul>
                                             </div>
                                             <div className="main">
-                                                <h6>Select Currency</h6>
+                                                <h6>Select Currency Test Dev</h6>
                                                 <p>Reference Price: 1,450,939,280.43 VND/BTC</p>
                                                 <form action="buy-crypto-confirm" className="form">
                                                     <div className="form-field">
@@ -159,7 +256,7 @@ export default function BuyCryptoSelect() {
                                 </div>
                             </div>
                         </div>
-                    </section>
+                    </section> */}
                 </div>
 
             </Layout>
