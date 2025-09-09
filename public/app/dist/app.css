@@ -8995,24 +8995,8 @@ img.ai-icon-small {
     }
 }
 /* Hot fix for section.coin-list -- padding style*/
-@media (min-width: 1440px) and (max-width: 1599px) {
+@media (min-width: 1440px) and (max-width: 1460px) {
     section.coin-list {
         padding: 5% 5% !important;
-    }
-}
-/* check các query width khác */
-@media (min-width : 1600px) and (max-width: 1919px) {
-    section.coin-list {
-        padding: 5% 5% !important;
-    }
-}
-@media (min-width : 1920px) and (max-width: 2499px) {
-    section.coin-list {
-        /* padding: 5% 5% !important; */
-    }
-}
-@media (min-width : 2500px) {
-    section.coin-list {
-        /* padding: 5% 5% !important; */
     }
 }
