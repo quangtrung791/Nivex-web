@@ -1,0 +1,368 @@
+
+.howToBuyCryptoSection {
+    background: #181818;
+    min-height: 100vh;
+    color: white;
+    padding: 0 7%;
+    overflow-x: hidden;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 60px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100vw;
+    right: -100vw;
+    bottom: 0;
+    background: #1f2025;
+    z-index: -1;
+}
+
+.mainTitle {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.cryptoHighlight {
+    color: #BCFE08;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: rgb(166,170,183);
+    max-width: 430px;
+    align-self: center;
+    text-align: right;
+}
+
+.heroSection {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    margin: 40px 0;
+}
+
+.heroContent {
+    flex: 1;
+}
+
+.heroTitle {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.stepHighlight {
+    color: #BCFE08;
+    font-weight: 800;
+}
+
+.heroDescription {
+    font-size: 16px;
+    color: rgb(166,170,183);
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.heroImage {
+    text-align: center;
+    width: 350px;
+    height: auto;
+}
+
+.heroImage img {
+    max-width: 100%;
+    height: auto;
+}
+
+.stepsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 10px 0 50px 0;
+}
+
+.stepCard {
+    position: relative;
+    padding: 30px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.stepCard:hover {
+    background: #252525;
+}
+
+.stepCardIconArrow {
+    position: absolute;
+    background: url(/assets/images/icon/vector-arrow-white.png) no-repeat center;
+    width: 20px;
+    height: 22px;
+    background-size:contain;
+    right: -25px;
+    bottom: 50%;
+}
+
+.stepIcon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.stepIcon img {
+    width: 100%;
+    height: auto;
+}
+
+/* .stepNumber {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #ff4444;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+} */
+
+.stepTitle {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.stepDescription {
+    font-size: 14px;
+    color: #aaa;
+    line-height: 1.5;
+    margin-bottom: 55px;
+    height: 50px;
+}
+
+.stepButton {
+    background: none;
+    color: #A6AAB7;
+    border: 1px solid #A6AAB7;
+    padding: 7px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.stepButtonIconArrow {
+    background: url(/assets/images/icon/vector-arrow-white.png) no-repeat center;
+    display: inline-block;
+    width: 11px;
+    height: 15px;
+    background-size:contain;
+    margin-bottom: -3px;
+    margin-left: 8px;
+    filter: brightness(0.85);
+}
+.stepCard:hover .stepButton{
+    background: linear-gradient(90deg, rgba(188, 254, 8, 1) 0%, rgba(134, 249, 105, 1) 50%, rgba(134, 249, 105, 1) 100%);
+    color: black;
+    border: none;
+}
+.stepCard:hover .stepButtonIconArrow {
+    filter: invert(1);
+}
+
+/* FAQ Section */
+.faqSection {
+    margin-top: 80px;
+    padding-bottom: 100px;
+}
+
+.faqTitle {
+    font-size: 36px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.faqItem {
+    border-bottom: 1px solid #71737a;
+    margin-bottom: 0;
+}
+
+.faqQuestion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.faqQuestion:hover {
+    color: #BCFE08;
+}
+
+.faqIcon {
+    background: url(/assets/images/icon/vector-bottom-arrow.png) no-repeat center;
+    width: 18px;
+    height: 18px;
+    background-size: contain;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.faqIconOpen {
+    color: #BCFE08;
+    transform: rotate(180deg);
+}
+
+.faqQuestion:hover .faqIcon {
+    color: #BCFE08;
+}
+
+.faqAnswer {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.faqAnswerOpen {
+    max-height: 200px;
+    opacity: 1;
+    padding-bottom: 20px;
+}
+
+.faqAnswer p {
+    font-size: 14px;
+    color: #aaa;
+    line-height: 1.6;
+    margin: 0;
+}
+@media (max-width: 1400px) {
+    .howToBuyCryptoSection {
+        padding: 0 3.5%;
+    }
+}
+/* Responsive Design */
+@media only screen and (max-width: 1024px) {
+    .heroSection {
+        gap: 40px;
+    }
+    
+    .stepsGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .mainTitle {
+        font-size: 36px;
+    }
+    
+    .heroTitle {
+        font-size: 28px;
+    }
+    
+    .faqTitle {
+        font-size: 28px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .howToBuyCryptoSection {
+        padding: 40px 0;
+    }
+    .subtitle {
+        text-align: left;
+    }
+    .heroSection {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .stepsGrid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .stepCardIconArrow {
+        right: 47%;
+        bottom: -28px;
+        transform: rotate(90deg);
+    }
+    .mainTitle {
+        font-size: 28px;
+    }
+    
+    .heroTitle {
+        font-size: 24px;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    .stepCard {
+        padding: 25px 15px;
+    }
+    
+    .faqTitle {
+        font-size: 24px;
+    }
+    
+    .faqSection {
+        margin-top: 60px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .header {
+        flex-direction: column;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    .mainTitle {
+        font-size: 28px;
+    }
+    .heroTitle {
+        font-size: 28px;
+        text-align: left;
+    }
+    
+    .heroTitle, .heroDescription {
+        text-align: left;
+    }
+    
+    .heroDescription {
+        font-size: 14px;
+    }
+    
+    .faqTitle {
+        font-size: 28px;
+    }
+    
+    .faqQuestion {
+        font-size: 14px;
+        padding: 15px 0;
+    }
+}

@@ -33,32 +33,33 @@ export default function MainMenu() {
                     </ul> */}
                 </li>
                 <li className={`menu-item menu-item-has-children ${checkParentActive(["/thuat-ngu",
-                    "/buy-crypto-confirm",
+                    "/how-to-buy-crypto",
                     "/buy-crypto-details",])}`}>
                     <Link href="#">Kiến thức</Link>
                     <ul className="sub-menu">
                         <li className={`menu-item ${checkCurrentMenuItem("/thuat-ngu")}`}>
-                            <Link href="/thuat-ngu">Thuật ngữ</Link>
+                            <Link href="">Thuật ngữ</Link>
+
                         </li>
-                        <li className={`menu-item ${checkCurrentMenuItem("/buy-crypto-confirm")}`}>
-                            <Link href="/buy-crypto-confirm">Cách mua Crypto</Link>
-                        </li>
-                        <li className={`menu-item ${checkCurrentMenuItem("/buy-crypto-details")}`}>
-                            <Link href="/buy-crypto-details">AI Copy Trade</Link>
+                        <li className={`menu-item ${checkCurrentMenuItem("/how-to-buy-crypto")}`}>
+                            <Link href="">Cách mua Crypto</Link>
                         </li>
                         <li className={`menu-item ${checkCurrentMenuItem("/buy-crypto-details")}`}>
-                            <Link href="/buy-crypto-details">Hướng dẫn người mới</Link>
+                            <Link href="/">AI Copy Trade</Link>
+                        </li>
+                        <li className={`menu-item ${checkCurrentMenuItem("/buy-crypto-details")}`}>
+                            <Link href="/">Hướng dẫn người mới</Link>
                         </li>
                     </ul>
                 </li>
                 <li className={`menu-item ${pathname === "/markets" ? "current-menu-item" : ""}`}>
                     <Link href="/markets">Thị trường </Link>
                 </li>
-                <li className={`menu-item ${pathname === "/markets" ? "current-menu-item" : ""}`}>
-                    <Link href="/markets">Tin tức </Link>
+                <li className={`menu-item`}>
+                    <Link href="">Tin tức </Link>
                 </li>
-                <li className={`menu-item ${pathname === "/markets" ? "current-menu-item" : ""}`}>
-                    <Link href="/markets">Trung tâm trợ giúp </Link>
+                <li className={`menu-item`}>
+                    <Link href="">Trung tâm trợ giúp </Link>
                 </li>
                 {/* <li className={`menu-item menu-item-has-children ${checkParentActive(["/sell-crypto",
                     "/sell-crypto-amount",
