@@ -8988,7 +8988,7 @@ span.text-primary-crypto {
 }
 /* fix vị trí của mục +- % */
 .sale.success, .sale.critical {
-    margin-top: -35px;
+    /* margin-top: -35px; */
 }
 /* fix font-size responsive cho mobile */
 @media (max-width: 550px) {
