@@ -1326,7 +1326,7 @@ section.crypto {
 .crypto .crypto__main .flat-tabs .content-tab .content-inner .crypto-box {
     background: var(--bg);
     border-radius: 12px;
-    padding: 25px 32px;
+    padding: 25px 30px;
     margin-right: 18px;
     width: 25%;
     transition: 0.3s all ease-in-out;
