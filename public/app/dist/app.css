@@ -8994,3 +8994,9 @@ img.ai-icon-small {
         text-align: center;
     }
 }
+/* Hot fix for section.coin-list -- padding style*/
+@media (min-width: 1440px) and (max-width: 1460px) {
+    section.coin-list {
+        padding: 5% 5% !important;
+    }
+}
