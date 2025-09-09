@@ -7,6 +7,34 @@ export default function BuyCryptoSelect() {
     const handleFlatTabs = (index) => {
         setFlatTabs(index)
     }
+    // Dữ liệu giả , sau này sẽ fetch từ backend
+    const glossaryData = {
+        A: [
+            {
+                term: "ARC-20",
+                desc: "Một tiêu chuẩn token cho các token có thể thay thế (colored coin) trên mạng lưới Bitcoin."
+            },
+            {
+                term: "ARC-20",
+                desc: "Một tiêu chuẩn token cho các token có thể thay thế (colored coin) trên mạng lưới Bitcoin."
+            },
+            {
+                term: "ARC-20",
+                desc: "Một tiêu chuẩn token cho các token có thể thay thế (colored coin) trên mạng lưới Bitcoin."
+            }
+        ],
+        B: [
+            {
+                term: "B-Token",
+                desc: "Tên chính thức của Binance dành cho một loạt các token được bọc và được thế chấp đầy đủ"
+            },
+            {
+                term: "Bàn tay kim cương",
+                desc: "Thuật ngữ bắt nguồn từ cộng đồng nhà đầu tư trực tuyến trên các nền tảng như Reddit và Twitter"
+            }
+        ]
+        // ...Thêm các chữ cái và thuật ngữ khác nếu muốn
+    }
     return (
         <>
 
@@ -61,10 +89,26 @@ export default function BuyCryptoSelect() {
                         </div>
                     </section>
                     <section className="dictionary-list-alphabet">
-                        <div>
-                            
+                        <div className="container">
+                            {Object.entries(glossaryData).map(([letter, items]) => (
+                            <div key={letter} className="glossary-group">
+                                <div className="glossary-letter">{letter}</div>
+                                <div className="glossary-items">
+                                {items.map((item, idx) => (
+                                    <div
+                                    className={`glossary-item${idx === 0 ? " selected-item" : ""}`}
+                                    key={item.term + idx}
+                                    >
+                                    <div className="glossary-term">{item.term}</div>
+                                    <div className="glossary-desc">{item.desc}</div>
+                                    </div>
+                                ))}
+                                </div>
+                            </div>
+                            ))}
                         </div>
                     </section>
+
                     {/* <section className="buy-crypto flat-tabs">
                         <div className="container">
                             <div className="row">

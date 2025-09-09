@@ -8986,6 +8986,25 @@ section.background-container-custom .work-box:hover
 span.text-primary-crypto {
     color: #BCFE08 !important;
 }
+/* fix vị trí của mục +- % */
+.sale.success, .sale.critical {
+    margin-top: -35px;
+}
+/* fix font-size responsive cho mobile */
+@media (max-width: 550px) {
+    section.banner h2.title {
+        margin-bottom: 14px !important;
+    }
+    a#button-master-homepg {
+        margin-top: 14px;
+    }
+    section.banner h2.title, section.banner h2.title span.block, .heading, .text-uppercase {
+        font-size: 28px !important;
+    }
+    section.banner h2.title span.block, .heading, .text-uppercase {
+        letter-spacing: 0px !important;
+    }
+}
 /* end */
 
 
@@ -9156,4 +9175,52 @@ section.glossary-search-section {
     flex-wrap: wrap;
     gap: 12px;
   }
+}
+
+/* Section hiển thị tra cứu theo dạng bảng chữ cái Alphabet */
+.dictionary-list-alphabet {
+  padding: 5% 7%;
+}
+.glossary-group {
+  margin-bottom: 48px;
+}
+.glossary-letter {
+  font-size: 56px;
+  font-weight: 800;
+  color: #bcfe08;
+  margin-bottom: 32px;
+  margin-top: 0;
+  line-height: 1;
+}
+.glossary-items {
+  display: flex;
+  flex-direction: column;
+  gap: 5%;
+}
+.glossary-item {
+  background: none;
+  padding: 32px 24px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+.glossary-item.selected-item {
+  background: #23242a;
+  padding: 32px 24px;
+}
+.glossary-term {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.glossary-desc {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+}
+@media (max-width: 900px) {
+  .glossary-letter { font-size: 36px; }
+  .glossary-term { font-size: 20px; }
+  .glossary-desc { font-size: 15px; }
+  .glossary-item.selected-item { padding: 20px 12px; }
 }
