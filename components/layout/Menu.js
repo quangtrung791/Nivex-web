@@ -32,16 +32,17 @@ export default function MainMenu() {
                         </li>
                     </ul> */}
                 </li>
-                <li className={`menu-item menu-item-has-children ${checkParentActive(["/buy-crypto-select",
+                <li className={`menu-item menu-item-has-children ${checkParentActive(["/thuat-ngu",
                     "/how-to-buy-crypto",
                     "/buy-crypto-details",])}`}>
                     <Link href="#">Kiến thức</Link>
                     <ul className="sub-menu">
-                        <li className={`menu-item ${checkCurrentMenuItem("/buy-crypto-select")}`}>
-                            <Link href="/">Thuật ngữ</Link>
+                        <li className={`menu-item ${checkCurrentMenuItem("/thuat-ngu")}`}>
+                            <Link href="">Thuật ngữ</Link>
+
                         </li>
                         <li className={`menu-item ${checkCurrentMenuItem("/how-to-buy-crypto")}`}>
-                            <Link href="/how-to-buy-crypto">Cách mua Crypto</Link>
+                            <Link href="">Cách mua Crypto</Link>
                         </li>
                         <li className={`menu-item ${checkCurrentMenuItem("/buy-crypto-details")}`}>
                             <Link href="/">AI Copy Trade</Link>
