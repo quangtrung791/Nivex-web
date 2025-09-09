@@ -1366,9 +1366,9 @@ section.crypto {
 }
 
 .crypto .crypto__main .flat-tabs .content-tab .content-inner .crypto-box .price {
-    /* margin-bottom: 11px; */
     font-size: 16px;
     font-weight: 600;
+    width: 125%;
 }
 
 @media (min-width:1440px) {
