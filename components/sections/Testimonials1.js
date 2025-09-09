@@ -27,7 +27,7 @@ export default function Testimonials1() {
         <>
 
             <section className="crypto-learning-section">
-                <div className="container tien-ma-hoa-cho-nguoi-bat-dau">
+                <div className="container">
                     <div className="row">
                             <div className="crypto-content">
                                 <h2 className='text-uppercase'>Tiền Mã Hóa Cho Người <span className="text-primary-crypto">Mới Bắt Đầu</span></h2>

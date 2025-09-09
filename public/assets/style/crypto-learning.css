@@ -1,6 +1,6 @@
 /* Crypto Learning Section Styles */
 .crypto-learning-section {
-    padding: 60px 7% 0 7%;
+    padding: 60px 7% 5% 7%;
     /* background: #f8f9fa; */
 }
 .crypto-learning-section .crypto-content {
@@ -14,15 +14,11 @@
     color: white;
 }
 
-.crypto-learning-section .crypto-content h2 .text-primary-crypto {
-        color: #BCFE08 !important; /*fallback */
-    /* background: linear-gradient(to right, #BCFE08, #86F869);
+.crypto-learning-section .crypto-content h2 .text-primary-crypto, .crypto-learning-section .crypto-card .card-info h4:hover {
+    background: linear-gradient(to right, #BCFE08, #86F869);
     -webkit-background-clip: text; 
     background-clip: text;
     color: transparent;
-    -webkit-text-fill-color: transparent;
-      text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased; */
 }
 
 .crypto-learning-section .crypto-content .subtitle {
@@ -39,17 +35,9 @@
 
 .crypto-learning-section .crypto-card {
     flex: 1;
-    /* background: white; */
-    /* border-radius: 12px; */
-    /* padding: 20px; */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-/* .crypto-learning-section .crypto-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-} */
 
 .crypto-learning-section .crypto-card .card-content {
     display: flex;
@@ -87,6 +75,7 @@
     color: white;
     margin-bottom: 12px;
     line-height: 1.4;
+    cursor: pointer;
 }
 @media  (max-width: 1300px) {
     .crypto-learning-section .crypto-cards {
@@ -94,11 +83,12 @@
     }
     .crypto-learning-section .crypto-card .card-info h4 {
         font-size: 1.1rem;
+        height: auto;
      }
 }
 @media (max-width: 600px) {
     .crypto-learning-section .crypto-card .card-info h4 {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
     }
 }
 
