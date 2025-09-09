@@ -7989,12 +7989,18 @@ li.menu-item:hover {
     filter: brightness(2.5);
 }
 .back_to_top-btn {
+     animation: floatUpDown 2s ease-in-out infinite;
     position: absolute;
     right: -30px;
     bottom: 35px;
     background:url(/assets/images/background/button-back-to-top-bg.png) no-repeat center;
     width: 50px;
     height: 50px
+}
+@keyframes floatUpDown {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-16px); }
+  100% { transform: translateY(0); }
 }
 
 @media (max-width: 1366px) {
@@ -8188,12 +8194,16 @@ li.menu-item:hover {
     .banner {
         padding: 5% 7% 10% 7%;
     }
+    section.background-container-custom .col-md-12 {
+        padding-right: unset !important;
+        padding-left: unset !important;
+    }
 }
 
 /* .gioi-thieu-nivex */
 @media (min-width: 1440px) and (max-width: 1599px) {
     .work.background-container-custom {
-        padding: 0 7%;
+        padding: 5% 7%;
     }
 }
 @media (min-width: 1600px) and (max-width: 1919px) {
@@ -8964,3 +8974,23 @@ section.background-container-custom .work-box:hover
 span.text-primary-crypto {
     color: #BCFE08 !important;
 }
+/* fix vị trí của mục +- % */
+.sale.success, .sale.critical {
+    /* margin-top: -35px; */
+}
+/* fix font-size responsive cho mobile */
+@media (max-width: 550px) {
+    section.banner h2.title {
+        margin-bottom: 14px !important;
+    }
+    a#button-master-homepg {
+        margin-top: 14px;
+    }
+    section.banner h2.title, section.banner h2.title span.block, .heading, .text-uppercase {
+        font-size: 28px !important;
+    }
+    section.banner h2.title span.block, .heading, .text-uppercase {
+        letter-spacing: 0px !important;
+    }
+}
+/* end */
