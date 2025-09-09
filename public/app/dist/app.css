@@ -8217,7 +8217,7 @@ li.menu-item:hover {
 /* .gioi-thieu-nivex */
 @media (min-width: 1440px) and (max-width: 1599px) {
     .work.background-container-custom {
-        padding: 0 7%;
+        padding: 5% 7%;
     }
 }
 @media (min-width: 1600px) and (max-width: 1919px) {
