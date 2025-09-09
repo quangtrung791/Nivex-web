@@ -8208,6 +8208,10 @@ li.menu-item:hover {
     .banner {
         padding: 5% 7% 10% 7%;
     }
+    section.background-container-custom .col-md-12 {
+        padding-right: unset !important;
+        padding-left: unset !important;
+    }
 }
 
 /* .gioi-thieu-nivex */
