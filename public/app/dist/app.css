@@ -7828,7 +7828,7 @@ section.crypto {
 }
 
 .footer.style-2 .footer__main .info {
-    padding-top: 50px;
+    padding-top: 60px;
     height: 100%;
 }
 
@@ -7846,11 +7846,7 @@ section.crypto {
 
 .footer.style-2 .footer__main .widget {
     display: flex;
-    padding-top: 50px;
-}
-
-.footer.style-2 .footer__main .widget .widget-link {
-    /* padding-left: 55px; */
+    padding-top: 60px;
 }
 
 .footer.style-2 .footer__main .widget .widget-link.s2 {
@@ -7871,7 +7867,7 @@ section.crypto {
 
 .footer.style-2 .footer__main .footer-contact {
     /* border-left: 1px solid var(--line); */
-    padding-top: 35px;
+    padding-top: 52px;
     padding-left: 90px;
     padding-bottom: 90px;
 }
@@ -8010,7 +8006,7 @@ li.menu-item:hover {
 
 @media (max-width: 1366px) {
     .back_to_top-btn {
-        right: 5px;
+        right: 0px;
         bottom: 15px;
     }
 }
@@ -8487,49 +8483,6 @@ img.ai-icon-small {
     /* height: 200px; */
     min-width: unset !important;
 }
-
-/* @media (min-width: 1440px) and (max-width: 1599px) {
-    .crypto-box .flex-content {
-        position: relative !important;
-        right: -40% !important;
-    }
-}
-
-@media (min-width: 1600px) and (max-width: 1919px) {
-    .crypto-box .flex-content {
-        position: relative !important;
-        right: -60% !important;
-    }
-}
-
-@media (min-width: 1920px) {
-    .crypto-box .flex-content {
-        position: relative !important;
-        right: -60% !important;
-    }
-}
-@media (min-width: 1440px) and (max-width: 1599px) {
-    .flex-content.add-position-right.special-coin {
-        position: relative  !important;
-        right: -25% !important;
-    }
-}
-
-@media (min-width: 1600px) and (max-width: 1919px) {
-    .flex-content.add-position-right.special-coin {
-         position: relative  !important;
-        right: -40% !important;
-    }
-}
-
-@media (min-width: 1920px) {
-    .flex-content.add-position-right.special-coin {
-         position: relative  !important;
-        right: -40% !important;
-    }
-}
-
-/* September 8 - Tung */
 /* ipad pro 1366px - horizontal */
 @media (min-width: 1360px) and (max-width: 1380px) {
     .header .header__body {
@@ -8540,13 +8493,6 @@ img.ai-icon-small {
     } */
     section.banner {
         padding: 5% 3.5% 10% 3.5% !important;
-    }
-    section.crypto.aos-init.aos-animate {
-        margin-top: -2%;
-        padding: 0 5% !important;
-    }
-    section.crypto.aos-init.aos-animate .container {
-        max-width: 100vw !important;
     }
     section.banner .col-xl-6.col-md-12 {
         padding-left: unset;
@@ -8691,6 +8637,15 @@ img.ai-icon-small {
     }
 }
 
+@media (max-width: 480px) {
+    .work .work__main .work-box {
+        margin-right: unset !important;
+    }
+    .back_to_top-btn {
+        right: 10px;
+    }
+}
+
 /* Repsponsive for iPad Air 820px - vertical */
 @media (min-width: 800px) and (max-width: 850px) {
     section.crypto.aos-init.aos-animate,
@@ -8728,9 +8683,6 @@ img.ai-icon-small {
         /* padding: 30px 5% !important; */
         position: relative !important;
         /* left: -2% !important; */
-    }
-    .crypto-learning-section .crypto-card .card-info h4 {
-        font-size: 18px !important;
     }
     .crypto-learning-section button.btn-crypto-card-learning {
         margin: 2.5% auto;
