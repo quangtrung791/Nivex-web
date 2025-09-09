@@ -30,7 +30,7 @@ export default function Testimonials1() {
                 <div className="container tien-ma-hoa-cho-nguoi-bat-dau">
                     <div className="row">
                             <div className="crypto-content">
-                                <h2>Tiền Mã Hóa Cho Người <span className="text-primary-crypto">Mới Bắt Đầu</span></h2>
+                                <h2 className='text-uppercase'>Tiền Mã Hóa Cho Người <span className="text-primary-crypto">Mới Bắt Đầu</span></h2>
                                 <p className="subtitle fs-14" style={{'color': '#A6AAB7'}}>Bước vào thế giới blockchain từ con số 0</p>
                                 
                                 <div className="crypto-cards">
@@ -40,7 +40,7 @@ export default function Testimonials1() {
                                             </div>
                                             <div className="card-info">
                                                 <span className="tag">Learn & Earn</span>
-                                                <h4>Learn about UI8 coin and earn an all Access Pass</h4>
+                                                <h4 className='title-video-homepage'>Learn about UI8 coin and earn an all Access Pass</h4>
                                                 <div className="card-meta">
                                                     <span className="author" style={{'fontSize':'12px', 'fontWeight': 400}}><i class="icon-author"></i>Floyd Buckridge</span>
                                                     <span className="date"  style={{'fontSize':'12px', 'fontWeight': 400}}>7/9/2025</span>
@@ -55,7 +55,7 @@ export default function Testimonials1() {
                                             </div>
                                             <div className="card-info">
                                                 <span className="tag">Learn & Earn</span>
-                                                <h4>Cryptocurrency Trading for Beginners</h4>
+                                                <h4  className='title-video-homepage'>Cryptocurrency Trading for Beginners</h4>
                                                 <div className="card-meta">
                                                     <span className="author" style={{'fontSize':'12px', 'fontWeight': 400}}><i class="icon-author"></i>Sarah Johnson</span>
                                                     <span className="date"  style={{'fontSize':'12px', 'fontWeight': 400}}>7/9/2025</span>
@@ -70,7 +70,7 @@ export default function Testimonials1() {
                                             </div>
                                             <div className="card-info">
                                                 <span className="tag">Learn $ Earn</span>
-                                                <h4>Blockchain Technology Fundamentals</h4>
+                                                <h4 className='title-video-homepage'>Blockchain Technology Fundamentals</h4>
                                                 <div className="card-meta">
                                                     <span className="author"  style={{'fontSize':'12px', 'fontWeight': 400}}><i class="icon-author"></i>Michael Chen</span>
                                                     <span className="date" style={{'fontSize':'12px', 'fontWeight': 400}}>7/9/2025</span>
@@ -79,7 +79,7 @@ export default function Testimonials1() {
                                         </div>
                                     </div>
                                 </div>
-                                <button className="btn-crypto-card-learning">Xem thêm</button>
+                                <button className="btn-crypto-card-learning btn-action">Xem thêm</button>
                             </div>
                     </div>
                 </div>

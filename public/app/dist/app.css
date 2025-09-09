@@ -7966,6 +7966,12 @@ section.crypto {
 h2.title {
     font-size: 48px;
 }
+
+@media (min-width: 1920px) {
+    h2.title {
+        line-height: 1.3 !important;
+    }
+}
 /* .banner .banner__content .title {
     max-width: 532px;
 } */
@@ -8014,6 +8020,35 @@ li.menu-item:hover {
         bottom: 15px;
     }
 }
+/* Responsive desktop for top page button */
+/* @media (min-width: 1280px) and (max-width: 1439px) {
+    .back_to_top-btn {
+        scale: .8;
+        right: -50px;
+        bottom: 35px;
+    }
+}
+@media (min-width: 1440px) and (max-width: 1599px) {
+    .back_to_top-btn {
+        scale: .8;
+        right: -50px;
+        bottom: 35px;
+    }
+}
+@media (min-width: 1600px) and (max-width: 1919px) {
+    .back_to_top-btn {
+        scale: .8;
+        right: -50px;
+        bottom: 35px;
+    }
+}
+@media (min-width: 1920px) {
+    .back_to_top-btn {
+        scale: .9;
+        right: -90px;
+        bottom: 35px;
+    }
+} */
 /*# sourceMappingURL=app.css.map */
 
 
@@ -8264,7 +8299,7 @@ li.menu-item:hover {
 }
 
 span.block {
-    display: block;
+    /* display: block; */
 }
 
 .list {
@@ -8935,7 +8970,9 @@ img.ai-icon-small {
         width: 100% !important;
     }
     .about__content.aos-init.aos-animate {
-        padding-left: 0;
+        /* padding-left: 0; */
+        padding-left: unset !important;
+        padding-right: unset !important;
     }
     .footer.style-2 {
         padding: 0;
@@ -8950,6 +8987,39 @@ img.ai-icon-small {
 /* Hot fix for section.coin-list -- padding style*/
 @media (min-width: 1440px) and (max-width: 1460px) {
     section.coin-list {
-        padding: 5% 5% !important;
+        padding: 5% 7% !important;
     }
+}
+
+/* Các hiệu ứng hover */
+.text-uppercase {
+    text-transform: uppercase !important;
+}
+/* thêm classname .title-video-homepage vô <h2 tiêu đề video */
+.title-video-homepage:hover {
+    cursor: pointer;
+    background: linear-gradient(90deg, #BCFE08, #86F969);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent; /* fallback */
+}
+section.crypto .crypto-box.active:hover,
+section.background-container-custom .work-box:hover
+{
+    cursor: pointer;
+    background: #656363ba !important;
+}
+/* Fix lỗi rớt chữ trên màn 1440 */
+@media (width: 1440px) {
+    section.banner .col-xl-6.col-md-12:nth-child(1) {
+        width: 51% !important;
+    }
+    section.banner .col-xl-6.col-md-12:nth-child(2) {
+        width: 49% !important;
+    }
+}
+/* Fix lỗi mất dấu khi dùng background cho text */
+span.text-primary-crypto {
+    color: #BCFE08 !important;
 }
