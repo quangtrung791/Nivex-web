@@ -734,7 +734,7 @@ export default function Coinlist1() {
                                                         <th scope="row"><IconStar /></th>
                                                         <td>1</td>
                                                         <td>
-                                                            <Link href="#"><img src={getCoinIconUrl('BTC')} alt="Bitcoin" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><span>Immutable</span>
+                                                            <Link href="#"><img src={getCoinIconUrl('IMX')} alt="Immutable" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><span>Immutable</span>
                                                                 <span className="unit">IMX</span></Link>
                                                         </td>
                                                         <td className="boild">$0.5218</td>
@@ -871,7 +871,7 @@ export default function Coinlist1() {
                                                         <th scope="row"><IconStar /></th>
                                                         <td>1</td>
                                                         <td>
-                                                            <Link href="#"><img src={getCoinIconUrl('BTC')} alt="Bitcoin" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><span>Render</span>
+                                                            <Link href="#"><img src={getCoinIconUrl('RENDER')} alt="Render" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><span>Render</span>
                                                                 <span className="unit">RENDER</span></Link>
                                                         </td>
                                                         <td className="boild">$3.54</td>
