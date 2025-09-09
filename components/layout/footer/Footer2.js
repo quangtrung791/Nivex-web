@@ -47,7 +47,8 @@ export default function Footer2() {
                                     <div className="widget-link s2 custom-s2" >
                                         <h6 className="title" style={{'fontWeight': 600, 'letterSpacing': 0.25 }}>SERVICES</h6>
                                         <ul>
-                                            <li className="link-footer"><Link href="/buy-crypto-select">Mua Crypto</Link></li>
+                                            {/* <li className="link-footer"><Link href="/buy-crypto-select">Mua Crypto</Link></li> */}
+                                            <li className="link-footer"><Link href="/thuat-ngu">Các thuật ngữ</Link></li>
                                             <li className="link-footer"><Link href="/markets">Thị trường</Link></li>
                                             <li className="link-footer"><Link href="#">Phí giao dịch</Link></li>
                                             <li className="link-footer"><Link href="#">Liên kết (Affiliate)</Link></li>
