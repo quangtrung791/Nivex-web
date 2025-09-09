@@ -549,7 +549,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
     width: 100%;
     z-index: 9999;
     height: 50px;
-    background: var(--bg);
+    background: black;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1326,7 +1326,7 @@ section.crypto {
 .crypto .crypto__main .flat-tabs .content-tab .content-inner .crypto-box {
     background: var(--bg);
     border-radius: 12px;
-    padding: 25px 32px;
+    padding: 25px 30px;
     margin-right: 18px;
     width: 25%;
     transition: 0.3s all ease-in-out;
@@ -1366,9 +1366,9 @@ section.crypto {
 }
 
 .crypto .crypto__main .flat-tabs .content-tab .content-inner .crypto-box .price {
-    /* margin-bottom: 11px; */
     font-size: 16px;
     font-weight: 600;
+    width: 125%;
 }
 
 @media (min-width:1440px) {
@@ -1389,11 +1389,10 @@ section.crypto {
 
 .crypto .crypto__main .flat-tabs .content-tab .content-inner .crypto-box .bottom .sale {
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 500;
     color: #fff;
     align-items: center;
-/*     margin-left: 9px; */
-    padding: 4px 8px 3px 9px;
+    padding: 4px 6px 2px 6px;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -1559,8 +1558,8 @@ section.crypto {
 }
 
 .coin-list .coin-list__main .flat-tabs .content-tab .content-inner tbody tr td {
-    font-weight: 700;
-    font-size: 18px;
+    font-weight: 400;
+    font-size: 16px;
 }
 
 .coin-list .coin-list__main .flat-tabs .content-tab .content-inner tbody tr td a {
@@ -1584,7 +1583,7 @@ section.crypto {
 
 .coin-list .coin-list__main .flat-tabs .content-tab .content-inner tbody tr td.boild {
     font-weight: 700;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .coin-list__main .table tbody tr > :nth-child(8) {
@@ -1593,12 +1592,10 @@ section.crypto {
 }
 
 .coin-list .coin-list__main .flat-tabs .content-tab .content-inner tbody tr td.up {
-    font-weight: 400;
     color: #58bd7d;
 }
 
 .coin-list .coin-list__main .flat-tabs .content-tab .content-inner tbody tr td.down {
-    font-weight: 400;
     color: #d33535;
 }
 
@@ -6315,15 +6312,6 @@ section.crypto {
     font-size: 14px;
 }
 
-.crypto-box .bottom .sale {
-    font-size: 12px;
-    font-weight: 700;
-    color: #fff;
-    margin-left: 9px;
-    /* padding: 4px 8px 3px 9px; */
-    /* border-radius: 24px; */
-}
-
 .home-2 .crypto {
     margin-top: -117px;
 }
@@ -7684,9 +7672,9 @@ section.crypto {
     .sidebar .widget.tags ul li a {
         padding: 4px 13px;
     }
-    section.coin-list {
+    /* section.coin-list {
         display: none;
-    }
+    } */
 }
 
 .footer .footer__main {
@@ -7927,12 +7915,10 @@ section.crypto {
 
 .footer.style-2 .footer__main .footer-contact form button {
     position: absolute;
-    /* top: 6px; */
     right: 0px;
+    bottom: 0px;
     border: none;
-    /* padding: 8px 24px; */
     font-weight: 700;
-    /* font-size: 14px; */
 }
 
 .footer.style-2 .footer__main .footer-contact .list-social {
@@ -8401,23 +8387,21 @@ img.ai-icon-small {
     background: transparent;
     margin-bottom: 8px;
 }
-.sale.success, .sale.critical {
-    display: inline-block;
-    min-width: 56px;
-    text-align: center;
-    /* border-radius: 16px; */
-    font-weight: 600;
-    font-size: 15px;
-    padding: 2px 12px;
-    /* margin-top: 8px; */
-}
+
 .sale.success {
     background: #58BD7D;
+}
+.sale.success::before {
+    content: "↑";
+    margin-right: 2px;
 }
 .sale.critical {
     background: rgb(211,53,53);
 }
-
+.sale.critical::before {
+    content: "↓";
+    margin-right: 2px;
+}
 .crypto-box {
   background: #23242a;
   border-radius: 8px;
