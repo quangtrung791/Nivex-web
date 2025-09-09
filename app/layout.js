@@ -26,7 +26,6 @@ export default function RootLayout({ children }) {
             {/* 4. Sử dụng biến của font Inter */}
             <body className={`${inter.variable} body header-fixed is_dark`}>
                 {children}
-                <BackToTop />
             </body>
         </html>
     )

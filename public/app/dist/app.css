@@ -1327,7 +1327,7 @@ section.crypto {
     background: var(--bg);
     border-radius: 12px;
     padding: 25px 32px;
-    margin-right: 22px;
+    margin-right: 18px;
     width: 25%;
     transition: 0.3s all ease-in-out;
     display: flex;
@@ -7799,7 +7799,12 @@ section.crypto {
 
 .footer.style-2 {
     position: relative;
-    padding: 0 7% 0 7%;
+}
+
+@media (min-width:767.77px) {
+    .footer.style-2 {
+        padding: 0 7% 0 7%;
+    }
 }
 
 .footer.style-2::before {
@@ -7871,13 +7876,8 @@ section.crypto {
     padding-bottom: 90px;
 }
 
-@media only screen and (max-width: 1200px) {
-    .footer.style-2 .footer__main .footer-contact {
-        border-top: 1px solid var(--line);
-        border-left: 0;
-        padding-left: 0;
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
 
-    }
     .footer.style-2 .footer__main .row .footer-contact form {
         width: 60%;
     }
@@ -8001,14 +8001,14 @@ li.menu-item:hover {
 }
 .back_to_top-btn {
     position: absolute;
-    right: -50px;
+    right: -30px;
     bottom: 35px;
     background:url(/assets/images/background/button-back-to-top-bg.png) no-repeat center;
     width: 50px;
     height: 50px
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1366px) {
     .back_to_top-btn {
         right: 5px;
         bottom: 15px;
@@ -8170,20 +8170,16 @@ li.menu-item:hover {
 
 /* .gioi-thieu-nivex */
 @media (min-width: 1440px) and (max-width: 1599px) {
-    .container.gioi-thieu-nivex {
+    .work.background-container-custom {
         padding: 0 7%;
     }
 }
 @media (min-width: 1600px) and (max-width: 1919px) {
-    .container.gioi-thieu-nivex {
+    .work.background-container-custom {
         padding: 0 5%;
     }
 }
-@media (min-width: 1920px)  {
-    .container.gioi-thieu-nivex {
-        padding: 0;
-    }
-}
+
 /* @media (min-width: 2560px) and (max-width: 3439px) {
     .container.gioi-thieu-nivex {
         padding: 0 5%;
@@ -8543,7 +8539,7 @@ img.ai-icon-small {
         margin-left: 1%;
     } */
     section.banner {
-        padding: 5% 5% !important;
+        padding: 5% 3.5% 10% 3.5% !important;
     }
     section.crypto.aos-init.aos-animate {
         margin-top: -2%;
@@ -8608,12 +8604,12 @@ img.ai-icon-small {
 }
 /* ipad pro 1024px - vertical */
 @media (min-width: 1010px) and (max-width: 1050px) {
-    section.banner .banner__content,
+    /* section.banner .banner__content,
     .coin-list,
     .header .header__body
     {
         padding: 0 5%;
-    }
+    } */
     section.work.background-container-custom,
     section.crypto-learning-section
     {
@@ -8632,7 +8628,6 @@ img.ai-icon-small {
     }
     section.about {
         display: flex;
-        padding: 5% 5% !important;
     }
     .about .ai-copy-trade {
         max-width: 1050px !important;
@@ -8667,16 +8662,16 @@ img.ai-icon-small {
         margin: 0 auto;
         width: 100% !important;
     }
-    footer.footer .col-xl-4.col-md-6:nth-child(1) {
+    /* footer.footer .col-xl-4.col-md-6:nth-child(1) {
         margin-left: 3% !important;
-    }
+    } */
     footer.footer .col-md-6 {
         flex: 0 0 auto;
         width: 40% !important;
     }
-    footer.footer .footer-contact {
+    /* footer.footer .footer-contact {
         padding: 2.5% !important;
-    }
+    } */
     .footer.style-2 .footer__main .footer-contact form input {
         width: 95% !important;
     }
@@ -8688,49 +8683,9 @@ img.ai-icon-small {
      }
 }
 
-/* Nut scrôll to top page */
-.back-to-top {
-  position: fixed;
-  right: 32px;
-  bottom: 32px;
-  z-index: 999;
-  background: transparent;
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 48px;
-  height: 48px;
-  font-size: 2rem;
-  /* box-shadow: 0 2px 8px rgba(0,0,0,0.15); */
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.back-to-top.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-@media (min-width: 1440px) and (max-width: 1599px) {
-    .back-to-top-btn {
-        position: fixed;
-        right: 2% !important;
-    }
-}
-@media (min-width: 1600px) and (max-width: 1919px) {
-    .back-to-top-btn {
-        position: fixed;
-        right: 1.5% !important;
-    }
-}
-@media (min-width: 1920px) {
-    .back-to-top-btn {
-        position: fixed;
-        right: 7% !important;
+@media (max-width: 1200px) {
+    .footer.style-2 .footer__main .footer-contact {
+        padding-left: 0px;
     }
 }
 
@@ -8743,7 +8698,7 @@ img.ai-icon-small {
     section.about,
     section.crypto-learning-section
     {
-        padding: 5% 5%;
+        padding: 5% 3%;
     }
     .header .header__body {
         padding: 0 5%;
@@ -8763,14 +8718,14 @@ img.ai-icon-small {
     section.about .about__content.aos-init.aos-animate {
         padding-left: unset !important;
     }
-    footer.footer .info {
+    /* footer.footer .info {
         position: relative;
         right: -7%;
-    }
+    } */
     footer.footer .footer-contact {
-        padding: 30px 5% !important;
+        /* padding: 30px 5% !important; */
         position: relative !important;
-        left: -2% !important;
+        /* left: -2% !important; */
     }
     .crypto-learning-section .crypto-card .card-info h4 {
         font-size: 18px !important;
@@ -8787,7 +8742,7 @@ img.ai-icon-small {
     }
     header#header_main,
     footer.footer.style-2.footer-main {
-        padding: 0 5%;
+        padding: 0 3.5%;
     }
     header.header .col-12,
     section.banner .col-xl-6.col-md-12,
@@ -8809,7 +8764,7 @@ img.ai-icon-small {
     section.crypto-learning-section,
     section.about
     {
-        padding: 5% 5%;
+        padding: 5% 3.5%;
     }
     section.banner .col-md-12 {
         width: 50%;
@@ -8855,14 +8810,14 @@ img.ai-icon-small {
     header#header_main,
     footer.footer.style-2.footer-main
     {
-        padding: 0 5%;
+        padding: 0 3.5%;
     }
     section.banner,
     section.coin-list,
     section.work.background-container-custom,
     section.about
     {
-        padding: 5% 5%;
+        padding: 5% 3.5%;
     }
     section.crypto.aos-init.aos-animate {
         margin-top: -2%;
@@ -8903,12 +8858,12 @@ img.ai-icon-small {
     section.about,
     section.crypto-learning-section
     {
-        padding: 5% 5%;
+        padding: 5% 3.5%;
     }
     header.header,
     footer.footer.style-2.footer-main
     {
-        padding: 0 5%;
+        padding: 0 3.5%;
     }
     section.banner .col-xl-6.col-md-12,
     header.header .col-12,
@@ -8927,8 +8882,8 @@ img.ai-icon-small {
         padding : 0 !important;
     }
     section.crypto.aos-init.aos-animate {
-        margin-top: -3%;
-        padding: 0 5%;
+        margin-top: -2%;
+        padding: 0 3.5%;
     }
     section.background-container-custom .work-box:last-child {
         margin-right: 0 !important;
@@ -8938,7 +8893,7 @@ img.ai-icon-small {
         max-width: 100vw !important;
     }
     .footer.style-2 .footer__main .footer-contact {
-        padding-bottom: 45px !important;
+        padding-bottom: 60px !important;
     }
     
 }
