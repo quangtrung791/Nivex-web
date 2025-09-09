@@ -48,7 +48,7 @@ export default function Footer2() {
                                         <h6 className="title">DỊCH VỤ</h6>
                                         <ul>
                                             {/* <li className="link-footer"><Link href="/buy-crypto-select">Mua Crypto</Link></li> */}
-                                            <li className="link-footer"><Link href="/thuat-ngu">Các thuật ngữ</Link></li>
+                                            <li className="link-footer"><Link href="/">Các thuật ngữ</Link></li>
                                             <li className="link-footer"><Link href="/markets">Thị trường</Link></li>
                                             <li className="link-footer"><Link href="#">Phí giao dịch</Link></li>
                                             <li className="link-footer"><Link href="#">Liên kết (Affiliate)</Link></li>
