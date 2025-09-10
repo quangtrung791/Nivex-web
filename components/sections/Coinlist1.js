@@ -44,18 +44,18 @@ const getTradingUrl = (coinId, symbol) => {
 
 // Function to get trading URL for static coins
 const getStaticTradingUrl = (coinName) => {
-    const staticTradingPairs = {
-        'Bitcoin': 'btc_usdt',
-        'Ethereum': 'eth_usdt',
-        'BNB': 'bnb_usdt',
-        'Tether': 'usdt_usdt',
-        'Solana': 'sol_usdt',
-        'XRP': 'xrp_usdt',
-        'Cardano': 'ada_usdt',
-        'Avalanche': 'avax_usdt'
-    };
+    // const staticTradingPairs = {
+    //     'Bitcoin': 'btc_usdt',
+    //     'Ethereum': 'eth_usdt',
+    //     'BNB': 'bnb_usdt',
+    //     'Tether': 'usdt_usdt',
+    //     'Solana': 'sol_usdt',
+    //     'XRP': 'xrp_usdt',
+    //     'Cardano': 'ada_usdt',
+    //     'Avalanche': 'avax_usdt'
+    // };
     
-    const pair = staticTradingPairs[coinName] || 'btc_usdt';
+    const pair =  coinName.toLowerCase() + '_usdt';
     return `https://nivex0.one/klinechart/${pair}`;
 };
 
