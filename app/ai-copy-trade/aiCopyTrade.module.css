@@ -1,6 +1,6 @@
 
 .howToBuyCryptoSection {
-    background: #181818;
+    background: #141416;
     min-height: 100vh;
     color: white;
     padding: 0 7%;
@@ -12,6 +12,7 @@
     justify-content: space-between;
     padding: 60px 0;
     position: relative;
+    gap:20px;
     z-index: 1;
 }
 
@@ -39,7 +40,7 @@
 .subtitle {
     font-size: 16px;
     color: rgb(166,170,183);
-    max-width: 430px;
+    /* max-width: 500px; */
     align-self: center;
     text-align: right;
 }
@@ -47,14 +48,73 @@
 .heroSection {
     display: flex;
     align-items: center;
-    gap: 80px;
-    margin: 40px 0;
+    justify-content: space-between;;
+    margin: 60px 0;
 }
 
 .heroContent {
-    flex: 1;
+    padding: 35px 35px;
+    background-color:#18191D;
+}
+.AITradeText {
+    font-size: 40px;
+    font-weight: 700;
 }
 
+.heroContentText2 {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.heroDescription {
+    position: relative;
+}
+.displayFlexTextDescription {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    margin: 15px 0;
+}
+.heroDescription p {
+    margin-left: 15px;
+}
+.heroDescription p:first-child {
+    font-size: 24px;
+    color:#BCFE08;
+    font-weight: 600;
+}
+.heroDescription p:last-child {
+    font-size: 17px;
+}
+.introText {
+    margin-top: 50px;
+    margin-bottom: 70px;
+}
+.introText h3 span {
+    color: #BCFE08;
+}
+.beforeTextWithBorder::before {
+    content: '|';
+    position: absolute;
+    top: 0;
+    left: -3px;
+    font-size: 42px;
+    transform: scaleX(0.7);
+    color: #BCFE08;
+}
+
+.displayFlexTextDescription2 {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding-top: 5px;
+}
+.displayFlexTextDescription2 p {
+    font-size: 14px;
+}
+.displayFlexTextDescription2 p span, .introText p {
+    color: rgb(166,170,183);
+}
 .heroTitle {
     font-size: 36px;
     font-weight: 700;
@@ -67,16 +127,11 @@
     font-weight: 800;
 }
 
-.heroDescription {
-    font-size: 16px;
-    color: rgb(166,170,183);
-    line-height: 1.6;
-    margin-bottom: 30px;
-}
+
 
 .heroImage {
     text-align: center;
-    width: 350px;
+    width: 260px;
     height: auto;
 }
 
@@ -85,108 +140,6 @@
     height: auto;
 }
 
-.stepsGrid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    padding: 10px 0 50px 0;
-}
-
-.stepCard {
-    position: relative;
-    padding: 30px 20px;
-    text-align: center;
-    transition: all 0.3s ease;
-}
-
-.stepCard:hover {
-    background: #252525;
-}
-
-.stepCardIconArrow {
-    position: absolute;
-    background: url(/assets/images/icon/vector-arrow-white.png) no-repeat center;
-    width: 20px;
-    height: 22px;
-    background-size:contain;
-    right: -25px;
-    bottom: 50%;
-}
-
-.stepIcon {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
-.stepIcon img {
-    width: 100%;
-    height: auto;
-}
-
-/* .stepNumber {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    background: #ff4444;
-    color: white;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    font-weight: 700;
-} */
-
-.stepTitle {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 15px;
-    color: white;
-}
-
-.stepDescription {
-    font-size: 14px;
-    color: #aaa;
-    line-height: 1.5;
-    margin-bottom: 55px;
-    height: 50px;
-}
-
-.stepButton {
-    background: none;
-    color: #A6AAB7;
-    border: 1px solid #A6AAB7;
-    padding: 7px 18px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-.stepButtonIconArrow {
-    background: url(/assets/images/icon/vector-arrow-white.png) no-repeat center;
-    display: inline-block;
-    width: 11px;
-    height: 15px;
-    background-size:contain;
-    margin-bottom: -3px;
-    margin-left: 8px;
-    filter: brightness(0.85);
-}
-.stepCard:hover .stepButton{
-    background: linear-gradient(90deg, rgba(188, 254, 8, 1) 0%, rgba(134, 249, 105, 1) 50%, rgba(134, 249, 105, 1) 100%);
-    color: black;
-    border: none;
-}
-.stepCard:hover .stepButtonIconArrow {
-    filter: invert(1);
-}
 
 /* FAQ Section */
 .faqSection {
@@ -218,6 +171,9 @@
     color: white;
     transition: color 0.3s ease;
 }
+.faqQuestion span {
+    font-size: 18px;
+}
 
 .faqQuestion:hover {
     color: #BCFE08;
@@ -229,10 +185,6 @@
     height: 18px;
     background-size: contain;
     transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.faqQuestion span {
-    font-size: 18px;
 }
 
 .faqIconOpen {
@@ -274,10 +226,6 @@
         gap: 40px;
     }
     
-    .stepsGrid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
     
     .mainTitle {
         font-size: 36px;
@@ -304,10 +252,11 @@
         gap: 30px;
         text-align: center;
     }
-    
-    .stepsGrid {
-        grid-template-columns: 1fr;
-        gap: 40px;
+    .orderMobileSecond {
+        order: 2;
+    }
+    .orderMobileFirst {
+        order: 1;
     }
     .stepCardIconArrow {
         right: 47%;
@@ -326,16 +275,15 @@
         padding: 0 15px;
     }
     
-    .stepCard {
-        padding: 25px 15px;
-    }
-    
     .faqTitle {
         font-size: 24px;
     }
     
     .faqSection {
         margin-top: 60px;
+    }
+    .heroContent {
+        text-align: left;
     }
 }
 
@@ -345,26 +293,46 @@
         padding-top: 40px;
         padding-bottom: 40px;
     }
-    .mainTitle {
-        font-size: 28px;
-    }
     .heroTitle {
         font-size: 28px;
-        text-align: left;
     }
-    
+    .AITradeText {
+        font-size: 28px;
+    }
+
+    .heroContentText2 {
+        font-size: 20px;
+    }
+    .heroDescription p:first-child {
+        font-size: 20px;
+    }
+    .heroDescription p:last-child {
+        font-size: 16px;
+    }
+    .faqQuestion span:first-child {
+        width: 80%;
+        font-size: 16px;
+    }
     .heroTitle, .heroDescription {
         text-align: left;
     }
-    
+    .introText h3 {
+        font-size: 28px;
+    }
     .heroDescription {
         font-size: 14px;
+        align-self: start;
     }
-    
+    .displayFlexTextDescription {
+        flex-direction: column;
+        gap: 20px;
+    }
     .faqTitle {
         font-size: 28px;
     }
-    
+    .heroContent {
+        font-size: 15px;
+    }
     .faqQuestion {
         font-size: 14px;
         padding: 15px 0;

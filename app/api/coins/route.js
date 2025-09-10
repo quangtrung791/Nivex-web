@@ -1,5 +1,5 @@
 // app/api/coins/route.js
-export const revalidate = 60; // cache 30s (ISR)
+export const revalidate = 300; // cache 5 minutes (ISR) - tiết kiệm edge requests
 
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
@@ -19,5 +19,15 @@ export async function GET(request) {
     return new Response(JSON.stringify({ error: 'CoinGecko failed', status: res.status }), { status: 500 });
   }
   const data = await res.json();
-  return Response.json(data);
+  
+  // Thêm Cache-Control headers để tối ưu CDN caching
+  return new Response(JSON.stringify(data), {
+    status: 200,
+    headers: {
+      'Content-Type': 'application/json',
+      'Cache-Control': 's-maxage=300, stale-while-revalidate=600', // Cache 5 phút, stale 10 phút
+      'CDN-Cache-Control': 's-maxage=600', // Cache CDN 10 phút
+      'Vercel-CDN-Cache-Control': 's-maxage=1800' // Cache Vercel 30 phút
+    }
+  });
 }
