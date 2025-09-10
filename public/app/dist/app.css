@@ -9086,3 +9086,15 @@ span.text-primary-crypto {
     }
 }
 
+@media (max-width: 600px) {
+  h2.title,
+  p.fs-14.desc,
+  p.fs-14.decs
+   {
+  	 line-height: 1.4 !important;
+  }
+  p.fs-14.text {
+      line-height: 1.4 !important;
+      letter-spacing: 0px !important;
+  }
+}
