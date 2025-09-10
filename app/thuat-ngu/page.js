@@ -82,7 +82,7 @@ export default function BuyCryptoSelect() {
     }
     return (
         <>
-            <Layout footerStyle={2} 
+            <Layout headerStyle={1} footerStyle={2} 
                 >
                 <div>
                     <section className="page-title custom">
@@ -90,7 +90,7 @@ export default function BuyCryptoSelect() {
                             <h3 className="heading nivex-heading-title">
                                 Bảng <span className="heading nivex-heading-title-gradient">thuật ngữ</span>
                             </h3>
-                            <p className="heading-desc desc">
+                            <p className="heading-desc desc fs-14">
                                 Tìm hiểu về ngành blockchain chỉ trong 10 phút.
                             </p>
                         </div>
