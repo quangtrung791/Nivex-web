@@ -34,8 +34,7 @@ export default function Crypto1() {
 
     useEffect(() => {
         fetchCryptoData()
-        // Tăng interval từ 60s lên 300s (5 phút) để giảm function invocations
-        const interval = setInterval(fetchCryptoData, 300000) // Update every 5 minutes
+        const interval = setInterval(fetchCryptoData, 300000) // Update every 30 seconds
         return () => clearInterval(interval)
     }, [])
 
