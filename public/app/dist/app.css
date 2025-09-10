@@ -757,6 +757,15 @@ body[data-magic-cursor=hide] .mouse-cursor {
     .header .header__right .dropdown {
         display: none;
     }
+    .header .header__right .dropdown.notification {
+        display: flex;
+    }
+    .header .header__right .notification::after {
+        display: none;
+    }
+    .header .header__right .d-lg-none .mobile-button {
+        margin-left: 20px;
+    }
 }
 
 .header .header__right .dropdown button {
@@ -1562,7 +1571,7 @@ section.crypto {
 
 .coin-list .coin-list__main .flat-tabs .content-tab .content-inner tbody tr td a {
     font-weight: 700;
-    font-size: 18px;
+    font-size: 16px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -9060,6 +9069,10 @@ span.text-primary-crypto {
     .crypto .crypto__main .flat-tabs .content-tab {
         overflow-x: hidden !important;
         overflow-y: visible !important;
+    }
+    .coin-list .coin-list__main .flat-tabs .menu-tab li {
+        margin-left: 0px;
+        padding: 8px 18px;
     }
 }
 
