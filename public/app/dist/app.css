@@ -652,7 +652,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
 .header .header__left .main-nav .menu li:hover,
 .header .header__left .main-nav .menu li.current-menu-item,
 .header .header__left .main-nav .menu li.current-item {
-    /* background: var(--primary); */
+    
     background: linear-gradient(90deg,rgba(188, 254, 8, 1) 0%, rgba(134, 249, 105, 1) 50%, rgba(134, 249, 105, 1) 100%);
 }
 
@@ -687,12 +687,13 @@ body[data-magic-cursor=hide] .mouse-cursor {
 
 .header .header__left .main-nav .menu li .sub-menu li:hover,
 .header .header__left .main-nav .menu li .sub-menu li.current-item {
-    background: transparent;
+    background: transparent; 
 }
 
-.header .header__left .main-nav .menu li .sub-menu li:hover>a,
-.header .header__left .main-nav .menu li .sub-menu li.current-item>a {
+.header .header__left .main-nav .menu li .sub-menu li.menu-item:hover>a,
+.header .header__left .main-nav .menu li .sub-menu li.menu-item.current-item>a {
     color: var(--primary);
+    font-weight: 700 !important;
 }
 
 .header .header__left .main-nav .menu li .sub-menu::before {
