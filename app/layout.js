@@ -17,7 +17,7 @@ const inter = Inter({
 })
 
 export const metadata = {
-    title: 'Nivex',
+    title: 'Nivex hub',
     description: 'Nivex Website Vietnam - nivex.vn',
 }
 
