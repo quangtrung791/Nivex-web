@@ -1314,7 +1314,7 @@ section.crypto {
     gap: 10px;
 }
 .crypto-box .crypto-box-flex-coin span {
-    margin-top: -5px;
+    margin-top: -15px;
 }
 .crypto-box-flex-coin h6 {
     margin-top: 9px;
@@ -1381,14 +1381,11 @@ section.crypto {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-}
-
-.crypto .crypto__main .flat-tabs .content-tab .content-inner .crypto-box .bottom p {
-    font-size: 14px;
+    margin-top: -5px;
 }
 
 .crypto .crypto__main .flat-tabs .content-tab .content-inner .crypto-box .bottom .sale {
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 500;
     color: #fff;
     align-items: center;
@@ -1512,6 +1509,7 @@ section.crypto {
 .coin-list .coin-list__main .flat-tabs .menu-tab li h6 {
     margin-bottom: 0;
     font-size: 14px;
+    white-space: nowrap;
 }
 
 .coin-list .coin-list__main .flat-tabs .menu-tab li.active {
@@ -8507,14 +8505,12 @@ img.ai-icon-small {
 
 .crypto-box span.unit {
     position: relative;
-    top: 7px;
-    /* right: -9px; */
     text-align: right;
 }
 
-.crypto-box .add-position-right {
+/* .crypto-box .add-position-right { */
     /* right: -40% !important; */
-}
+/* } */
 
 .content-tab .crypto-box.active {
     /* height: 200px; */
@@ -8979,8 +8975,9 @@ span.text-primary-crypto {
 }
 /* fix vị trí của mục +- % */
 .sale.success, .sale.critical {
-    /* margin-top: -35px; */
+    margin-top: -15px;
 }
+
 /* fix font-size responsive cho mobile */
 @media (max-width: 550px) {
     section.banner h2.title {
@@ -8995,5 +8992,74 @@ span.text-primary-crypto {
     section.banner h2.title span.block, .heading, .text-uppercase {
         letter-spacing: 0px !important;
     }
+
+    .coin-list__main .content-inner .table thead {
+        display: none;
+    }
+
+    .coin-list .coin-list__main .flat-tabs .content-tab .content-inner tbody tr th:nth-child(1),
+    .coin-list .coin-list__main .flat-tabs .content-tab .content-inner tbody tr td:nth-child(2),
+    .coin-list .coin-list__main .flat-tabs .content-tab .content-inner tbody tr td:nth-child(6),
+    .coin-list .coin-list__main .flat-tabs .content-tab .content-inner tbody tr td:nth-child(7),
+    .coin-list .coin-list__main .flat-tabs .content-tab .content-inner tbody tr td:nth-child(8)  {
+        display: none ; /* Ẩn cột # */
+    }
+    .coin-list .block-text .heading {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .flex-class-mobile-coin {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .coin-list .coin-list__main .flat-tabs .content-tab .content-inner tbody tr td a .unit {
+        margin-left: 0px;
+    }
+    .coin-list .coin-list__main .flat-tabs .content-tab .content-inner tbody img {
+        width: 40px !important;
+        height: 40px !important;
+    }
+    .coin-list .coin-list__main .flat-tabs .content-tab .content-inner tbody tr td:nth-child(4),
+    .coin-list .coin-list__main .flat-tabs .content-tab .content-inner tbody tr td:nth-child(5) {
+        display: flex;
+        justify-content: right;
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+    .coin-list .coin-list__main .flat-tabs .content-tab .content-inner tbody tr td:nth-child(4) {
+        padding-top: 25px;
+    }
+    .coin-list .coin-list__main .flat-tabs .content-tab .content-inner tbody tr td a {
+        font-size: 16px;
+    }
+    
+    /* Mobile menu tabs horizontal scrolling - chỉ menu-tab kéo được */
+    .coin-list .coin-list__main .flat-tabs .menu-tab,
+    .crypto .crypto__main .flat-tabs .menu-tab {
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        white-space: nowrap !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important; /* Firefox */
+        -ms-overflow-style: none !important; /* IE and Edge */
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        gap: 0 !important;
+    }
+
+    .coin-list .coin-list__main .flat-tabs .menu-tab::-webkit-scrollbar,
+    .crypto .crypto__main .flat-tabs .menu-tab::-webkit-scrollbar {
+        display: none !important; /* Chrome, Safari, Opera */
+    }
+
+    
+    /* Đảm bảo content-tab KHÔNG có horizontal scroll */
+    .coin-list .coin-list__main .flat-tabs .content-tab,
+    .crypto .crypto__main .flat-tabs .content-tab {
+        overflow-x: hidden !important;
+        overflow-y: visible !important;
+    }
 }
-/* end */
+
