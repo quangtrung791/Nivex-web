@@ -9070,5 +9070,9 @@ span.text-primary-crypto {
         overflow-x: hidden !important;
         overflow-y: visible !important;
     }
+    .coin-list .coin-list__main .flat-tabs .menu-tab li {
+        margin-left: 0px;
+        padding: 8px 18px;
+    }
 }
 
