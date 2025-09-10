@@ -9080,5 +9080,9 @@ span.text-primary-crypto {
         margin-left: 0px;
         padding: 8px 18px;
     }
+    p.fs-14.decs {
+        letter-spacing: 0px !important;
+        text-align: justify;
+    }
 }
 
