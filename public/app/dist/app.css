@@ -1368,7 +1368,10 @@ section.crypto {
     font-size: 24px;
     margin-right: 8px;
 }
-
+.about_image .img0-ai {
+    /* object-fit: contain; */
+    width: 100%;
+}
 .crypto .crypto__main .flat-tabs .content-tab .content-inner .crypto-box .top a .unit {
     margin-left: 9px;
     color: #777e90;
@@ -1571,7 +1574,7 @@ section.crypto {
 
 .coin-list .coin-list__main .flat-tabs .content-tab .content-inner tbody tr td a {
     font-weight: 700;
-    font-size: 16px;
+    font-size: 15px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -1585,7 +1588,6 @@ section.crypto {
 .coin-list .coin-list__main .flat-tabs .content-tab .content-inner tbody tr td a .unit {
     margin-left: 9px;
     color: #777e90;
-    font-size: 15px;
 }
 
 .coin-list .coin-list__main .flat-tabs .content-tab .content-inner tbody tr td.boild {
@@ -8922,7 +8924,7 @@ img.ai-icon-small {
 }
 @media (max-width: 660px) {
     img.img0-ai {
-        width: 100%;
+        /* width: 100%; */
         margin-top: -40%;
     }
     section.background-container-custom .work-box:last-child {
@@ -8942,6 +8944,9 @@ img.ai-icon-small {
         margin-right: 0;
         text-align: center;
     }
+}
+.work .work__main .work-box:nth-child(3) .image {
+    margin: 5% 0 5% 0;
 }
 /* Hot fix for section.coin-list -- padding style*/
 @media (min-width: 1440px) and (max-width: 1460px) {
