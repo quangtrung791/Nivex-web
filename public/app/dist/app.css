@@ -8997,3 +8997,33 @@ span.text-primary-crypto {
     }
 }
 /* end */
+@media (max-width: 550px) {
+    .content-tab th,
+    .content-tab tbody span,
+    td.boild,
+    td.up
+    {
+        font-size: 14px !important;
+    }
+    h3.heading {
+        padding-right: 7%; /* Fix rớt chữ "Nắm bắt mọi cơ hội \n Giao dịch" */
+    }
+}
+p.fs-14.decs, p.fs-14.text, p.fs-14.desc {
+    line-height: 1.4 !important; /* Fix Line height */
+}
+p.fs-14.decs {
+    letter-spacing: 0px !important;
+    text-align: justify;
+}
+
+@media (min-width: 1600px) {
+    .work .work__main .work-box:nth-child(3) .image {
+        margin: 5% 0 5% 0 !important;
+    }
+}
+@media (min-width: 1400px ) and (max-width: 1599px) {
+    .work .work__main .work-box:nth-child(3) .image {
+        margin: 3% 0 5% 0 !important;
+    }
+}
