@@ -156,20 +156,20 @@ export default function Coinlist1() {
             try {
                 const res = await fetch('/api/coins?currency=usd&perPage=10');
                 if (!res.ok) {
-                    throw new Error(`Lá»—i: ${res.status}`);
+                    // throw new Error(`: ${res.status}`);
                 }
                 const data = await res.json();
                 setCoins(data);
                 setErr(""); 
             } catch (error) {
-                console.error("KhÃ´ng thá»ƒ láº¥y dá»¯ liá»‡u coins:", error);
+                // console.error("KhÃ´ng thá»ƒ láº¥y dá»¯ liá»‡u coins:", error);
                 setErr(error.message);
             }
         };
 
         fetchData();
 
-        const intervalId = setInterval(fetchData, 60000); 
+        const intervalId = setInterval(fetchData, 300000); 
 
         return () => {
             clearInterval(intervalId);
@@ -247,7 +247,6 @@ export default function Coinlist1() {
                                                         <td>
                                                             <Link href="#">
                                                             <div style={{display:'flex',alignItems:'center',gap:10}}>
-                                                                {/* DÃ¹ng <img> Ä‘á»ƒ khá»i cáº¥u hÃ¬nh next/image domains */}
                                                                 <img src={c.image} alt={c.symbol} width={20} height={20} style={{borderRadius:4}} />
 
                                                                 <div className="flex-class-mobile-coin">
