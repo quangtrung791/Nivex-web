@@ -44,18 +44,18 @@ const getTradingUrl = (coinId, symbol) => {
 
 // Function to get trading URL for static coins
 const getStaticTradingUrl = (coinName) => {
-    const staticTradingPairs = {
-        'Bitcoin': 'btc_usdt',
-        'Ethereum': 'eth_usdt',
-        'BNB': 'bnb_usdt',
-        'Tether': 'usdt_usdt',
-        'Solana': 'sol_usdt',
-        'XRP': 'xrp_usdt',
-        'Cardano': 'ada_usdt',
-        'Avalanche': 'avax_usdt'
-    };
+    // const staticTradingPairs = {
+    //     'Bitcoin': 'btc_usdt',
+    //     'Ethereum': 'eth_usdt',
+    //     'BNB': 'bnb_usdt',
+    //     'Tether': 'usdt_usdt',
+    //     'Solana': 'sol_usdt',
+    //     'XRP': 'xrp_usdt',
+    //     'Cardano': 'ada_usdt',
+    //     'Avalanche': 'avax_usdt'
+    // };
     
-    const pair = staticTradingPairs[coinName] || 'btc_usdt';
+    const pair =  coinName.toLowerCase() + '_usdt';
     return `https://nivex0.one/klinechart/${pair}`;
 };
 
@@ -156,20 +156,20 @@ export default function Coinlist1() {
             try {
                 const res = await fetch('/api/coins?currency=usd&perPage=10');
                 if (!res.ok) {
-                    throw new Error(`Lá»—i: ${res.status}`);
+                    // throw new Error(`: ${res.status}`);
                 }
                 const data = await res.json();
                 setCoins(data);
                 setErr(""); 
             } catch (error) {
-                console.error("KhÃ´ng thá»ƒ láº¥y dá»¯ liá»‡u coins:", error);
+                // console.error("KhÃ´ng thá»ƒ láº¥y dá»¯ liá»‡u coins:", error);
                 setErr(error.message);
             }
         };
 
         fetchData();
 
-        const intervalId = setInterval(fetchData, 60000); 
+        const intervalId = setInterval(fetchData, 300000); 
 
         return () => {
             clearInterval(intervalId);
@@ -190,7 +190,7 @@ export default function Coinlist1() {
                         <div className="col-md-12">
                            <div className="block-text">
                                 {/* <h3 className="heading">Market Update</h3> */}
-                                 <h3 className="heading">NẮM BẮT MỌI CƠ HỘI <span style={{'color':'#BCFE08'}}>GIAO DỊCH</span></h3>
+                                 <h3 className="heading"><span>NẮM BẮT MỌI CƠ HỘI</span> <span style={{'color':'#BCFE08'}}>GIAO DỊCH</span></h3>
                                 {/* <Link className="btn-action-2" href="#">See All Coins</Link> */}
                             </div>
                             <div className="coin-list__main">
@@ -247,11 +247,11 @@ export default function Coinlist1() {
                                                         <td>
                                                             <Link href="#">
                                                             <div style={{display:'flex',alignItems:'center',gap:10}}>
-                                                                {/* DÃ¹ng <img> Ä‘á»ƒ khá»i cáº¥u hÃ¬nh next/image domains */}
                                                                 <img src={c.image} alt={c.symbol} width={20} height={20} style={{borderRadius:4}} />
-                                                                <div>
-                                                                <span>{c.name}</span>
-                                                                <span className="unit">{(c.symbol||'').toUpperCase()}</span>
+
+                                                                <div className="flex-class-mobile-coin">
+                                                                    <span>{c.name}</span>
+                                                                    <span className="unit">{(c.symbol||'').toUpperCase()}</span>
                                                                 </div>
                                                             </div>
                                                             </Link>
@@ -297,8 +297,10 @@ export default function Coinlist1() {
                                                         <td>
                                                             <Link href="#">
                                                                 <img src={getCoinIconUrl('SAND')} alt="The Sandbox" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} />
-                                                                <span>The Sandbox</span>
-                                                                <span className="unit">SAND</span>
+                                                                <div className="flex-class-mobile-coin">
+                                                                    <span>The Sandbox</span>
+                                                                    <span className="unit">SAND</span>
+                                                                </div>
                                                             </Link>
                                                         </td>
                                                         <td className="boild">$0.2908</td>
@@ -315,8 +317,10 @@ export default function Coinlist1() {
                                                         <td>
                                                             <Link href="#">
                                                                 <img src={getCoinIconUrl('MANA')} alt="Decentraland" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} />
-                                                                <span>Decentraland</span>
-                                                                <span className="unit">MANA</span>
+                                                                <div className="flex-class-mobile-coin">
+                                                                    <span>Decentraland</span>
+                                                                    <span className="unit">MANA</span>
+                                                                </div>
                                                             </Link>
                                                         </td>
                                                         <td className="boild">$0.3250</td>
@@ -333,8 +337,10 @@ export default function Coinlist1() {
                                                         <td>
                                                             <Link href="#">
                                                                 <img src={getCoinIconUrl('APE')} alt="ApeCoin" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} />
-                                                                <span>ApeCoin</span>
-                                                                <span className="unit">APE</span>
+                                                                <div className="flex-class-mobile-coin">
+                                                                    <span>ApeCoin</span>
+                                                                    <span className="unit">APE</span>
+                                                                </div>
                                                             </Link>
                                                         </td>
                                                         <td className="boild">$0.5846</td>
@@ -351,8 +357,10 @@ export default function Coinlist1() {
                                                         <td>
                                                             <Link href="#">
                                                                 <img src={getCoinIconUrl('AXS')} alt="Axie Infinity" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} />
-                                                                <span>Axie Infinity</span>
-                                                                <span className="unit">AXS</span>
+                                                                <div className="flex-class-mobile-coin">
+                                                                    <span>Axie Infinity</span>
+                                                                    <span className="unit">AXS</span>
+                                                                </div>
                                                             </Link>
                                                         </td>
                                                         <td className="boild">$2.45</td>
@@ -369,8 +377,10 @@ export default function Coinlist1() {
                                                         <td>
                                                             <Link href="#">
                                                                 <img src={getCoinIconUrl('EGLD')} alt="MultiversX" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} />
-                                                                <span>MultiversX</span>
-                                                                <span className="unit">EGLD</span>
+                                                                <div className="flex-class-mobile-coin">
+                                                                    <span>MultiversX</span>
+                                                                    <span className="unit">EGLD</span>
+                                                                </div>
                                                             </Link>
                                                         </td>
                                                         <td className="boild">$13.75</td>
@@ -387,8 +397,10 @@ export default function Coinlist1() {
                                                         <td>
                                                             <Link href="#">
                                                                 <img src={getCoinIconUrl('WEMIX')} alt="WEMIX" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} />
-                                                                <span>WEMIX</span>
-                                                                <span className="unit">WEMIX</span>
+                                                                <div className="flex-class-mobile-coin">
+                                                                    <span>WEMIX</span>
+                                                                    <span className="unit">WEMIX</span>
+                                                                </div>
                                                             </Link>
                                                         </td>
                                                         <td className="boild">$0.7637</td>
@@ -405,8 +417,10 @@ export default function Coinlist1() {
                                                         <td>
                                                             <Link href="#">
                                                                 <img src={getCoinIconUrl('VIRTUAL')} alt="Virtuals Protocol" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} />
-                                                                <span>Virtuals Protocol</span>
-                                                                <span className="unit">VIRTUAL</span>
+                                                                <div className="flex-class-mobile-coin">
+                                                                    <span>Virtuals Protocol</span>
+                                                                    <span className="unit">VIRTUAL</span>
+                                                                </div>
                                                             </Link>
                                                         </td>
                                                         <td className="boild">$1.17</td>
@@ -423,8 +437,10 @@ export default function Coinlist1() {
                                                         <td>
                                                             <Link href="#">
                                                                 <img src={getCoinIconUrl('ILV')} alt="Illuvium" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} />
-                                                                <span>Illuvium</span>
-                                                                <span className="unit">ILV</span>
+                                                                <div className="flex-class-mobile-coin">
+                                                                    <span>Illuvium</span>
+                                                                    <span className="unit">ILV</span>
+                                                                </div>
                                                             </Link>
                                                         </td>
                                                         <td className="boild">$14.38</td>
@@ -459,8 +475,10 @@ export default function Coinlist1() {
                                                         <td>
                                                             <Link href="#">
                                                                 <img src={getCoinIconUrl('THETA')} alt="Theta Network" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} />
-                                                                <span>Theta Network</span>
-                                                                <span className="unit">THETA</span>
+                                                                <div className="flex-class-mobile-coin">
+                                                                    <span>Theta Network</span>
+                                                                    <span className="unit">THETA</span>
+                                                                </div>
                                                             </Link>
                                                         </td>
                                                         <td className="boild">$0.7933</td>
@@ -475,8 +493,8 @@ export default function Coinlist1() {
                                                         <th scope="row"><IconStar /></th>
                                                         <td>2</td>
                                                         <td>
-                                                            <Link href="#"><img src={getCoinIconUrl('APE')} alt="ApeCoin" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><span>ApeCoin</span>
-                                                                <span className="unit">APE</span></Link>
+                                                            <Link href="#"><img src={getCoinIconUrl('APE')} alt="ApeCoin" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><div className="flex-class-mobile-coin"><span>ApeCoin</span>
+                                                                <span className="unit">APE</span></div></Link>
                                                         </td>
                                                         <td className="boild">$0.5847</td>
                                                         <td className="up">+5.35%</td>
@@ -490,8 +508,8 @@ export default function Coinlist1() {
                                                         <th scope="row"><IconStar /></th>
                                                         <td>3</td>
                                                         <td>
-                                                            <Link href="#"><img src={getCoinIconUrl('TFUEL')} alt="Theta Fuel" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><span>Theta Fuel</span>
-                                                                <span className="unit">TFUEL</span></Link>
+                                                            <Link href="#"><img src={getCoinIconUrl('TFUEL')} alt="Theta Fuel" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><div className="flex-class-mobile-coin"><span>Theta Fuel</span>
+                                                                <span className="unit">TFUEL</span></div></Link>
                                                         </td>
                                                         <td className="boild">$0.03398</td>
                                                         <td className="up">+1.89%</td>
@@ -505,8 +523,8 @@ export default function Coinlist1() {
                                                         <th scope="row"><IconStar /></th>
                                                         <td>4</td>
                                                         <td>
-                                                            <Link href="#"><img src={getCoinIconUrl('YGG')} alt="Yield Guild Games" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><span>Yield Guild Games</span>
-                                                                <span className="unit">YGG</span></Link>
+                                                            <Link href="#"><img src={getCoinIconUrl('YGG')} alt="Yield Guild Games" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><div className="flex-class-mobile-coin"><span>Yield Guild Games</span>
+                                                                <span className="unit">YGG</span></div></Link>
                                                         </td>
                                                         <td className="boild">$0.1498</td>
                                                         <td className="up">+3.25%</td>
@@ -520,8 +538,8 @@ export default function Coinlist1() {
                                                         <th scope="row"><IconStar /></th>
                                                         <td>5</td>
                                                         <td>
-                                                            <Link href="#"><img src={getCoinIconUrl('WAXP')} alt="WAX" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><span>WAX</span>
-                                                                <span className="unit">WAXP</span></Link>
+                                                            <Link href="#"><img src={getCoinIconUrl('WAXP')} alt="WAX" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><div className="flex-class-mobile-coin"><span>WAX</span>
+                                                                <span className="unit">WAXP</span></div></Link>
                                                         </td>
                                                         <td className="boild">$0.01963</td>
                                                         <td className="up">+2.15%</td>
@@ -535,7 +553,7 @@ export default function Coinlist1() {
                                                         <th scope="row"><IconStar /></th>
                                                         <td>6</td>
                                                         <td>
-                                                            <Link href="#"><img src={getCoinIconUrl('LPT')} alt="Livepeer" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><span>Livepeer</span> <span className="unit">LPT</span></Link>
+                                                            <Link href="#"><img src={getCoinIconUrl('LPT')} alt="Livepeer" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><div className="flex-class-mobile-coin"><span>Livepeer</span> <span className="unit">LPT</span></div></Link>
                                                         </td>
                                                         <td className="boild">$8.94</td>
                                                         <td className="up">+1.78%</td>
@@ -549,8 +567,8 @@ export default function Coinlist1() {
                                                         <th scope="row"><IconStar /></th>
                                                         <td>7</td>
                                                         <td>
-                                                            <Link href="#"><img src={getCoinIconUrl('VRA')} alt="Verasity" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><span>Verasity</span>
-                                                                <span className="unit">VRA</span></Link>
+                                                            <Link href="#"><img src={getCoinIconUrl('VRA')} alt="Verasity" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><div className="flex-class-mobile-coin"><span>Verasity</span>
+                                                                <span className="unit">VRA</span></div></Link>
                                                         </td>
                                                         <td className="boild">$0.001332</td>
                                                         <td className="up">+5.49%</td>
@@ -564,8 +582,8 @@ export default function Coinlist1() {
                                                         <th scope="row"><IconStar /></th>
                                                         <td>8</td>
                                                         <td>
-                                                            <Link href="#"><img src={getCoinIconUrl('BabyDoge')} alt="Baby Doge Coin" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><span>Baby Doge Coin</span>
-                                                                <span className="unit">BabyDoge</span></Link>
+                                                            <Link href="#"><img src={getCoinIconUrl('BabyDoge')} alt="Baby Doge Coin" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><div className="flex-class-mobile-coin"><span>Baby Doge Coin</span>
+                                                                <span className="unit">BabyDoge</span></div></Link>
                                                         </td>
                                                         <td className="boild">$0.081272</td>
                                                         <td className="up">+4.44%</td>
@@ -597,8 +615,8 @@ export default function Coinlist1() {
                                                         <th scope="row"><IconStar /></th>
                                                         <td>1</td>
                                                         <td>
-                                                            <Link href="#"><img src={getCoinIconUrl('POWR')} alt="Power Ledger" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><span>Power Ledger</span>
-                                                                <span className="unit">POWR</span></Link>
+                                                            <Link href="#"><img src={getCoinIconUrl('POWR')} alt="Power Ledger" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><div className="flex-class-mobile-coin"><span>Power Ledger</span>
+                                                                <span className="unit">POWR</span></div></Link>
                                                         </td>
                                                         <td className="boild">$0.1585</td>
                                                         <td className="up">+3.24%</td>
@@ -612,8 +630,8 @@ export default function Coinlist1() {
                                                         <th scope="row"><IconStar /></th>
                                                         <td>2</td>
                                                         <td>
-                                                            <Link href="#"><img src={getCoinIconUrl('EWT')} alt="Energy Web Token" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><span>Energy Web Token</span>
-                                                                <span className="unit">EWT</span></Link>
+                                                            <Link href="#"><img src={getCoinIconUrl('EWT')} alt="Energy Web Token" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><div className="flex-class-mobile-coin"><span>Energy Web Token</span>
+                                                                <span className="unit">EWT</span></div></Link>
                                                         </td>
                                                         <td className="boild">$1.21</td>
                                                         <td className="up">+2.54%</td>
@@ -627,8 +645,8 @@ export default function Coinlist1() {
                                                         <th scope="row"><IconStar /></th>
                                                         <td>3</td>
                                                         <td>
-                                                            <Link href="#"><img src={getCoinIconUrl('STAR')} alt="Starname" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><span>STAR</span>
-                                                                <span className="unit">STAR</span></Link>
+                                                            <Link href="#"><img src={getCoinIconUrl('STAR')} alt="Starname" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><div className="flex-class-mobile-coin"><span>STAR</span>
+                                                                <span className="unit">STAR</span></div></Link>
                                                         </td>
                                                         <td className="boild">$0.06552</td>
                                                         <td className="up">+1.89%</td>
@@ -642,8 +660,8 @@ export default function Coinlist1() {
                                                         <th scope="row"><IconStar /></th>
                                                         <td>4</td>
                                                         <td>
-                                                            <Link href="#"><img src={getCoinIconUrl('DIONE')} alt="Dione Protocol" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><span>Dione Protocol</span>
-                                                                <span className="unit">DIONE</span></Link>
+                                                            <Link href="#"><img src={getCoinIconUrl('DIONE')} alt="Dione Protocol" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><div className="flex-class-mobile-coin"><span>Dione Protocol</span>
+                                                                <span className="unit">DIONE</span></div></Link>
                                                         </td>
                                                         <td className="boild">$0.0007695</td>
                                                         <td className="up">+4.12%</td>
@@ -657,8 +675,8 @@ export default function Coinlist1() {
                                                         <th scope="row"><IconStar /></th>
                                                         <td>5</td>
                                                         <td>
-                                                            <Link href="#"><img src={getCoinIconUrl('SNC')} alt="SunContract" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><span>SunContract</span>
-                                                                <span className="unit">SNC</span></Link>
+                                                            <Link href="#"><img src={getCoinIconUrl('SNC')} alt="SunContract" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><div className="flex-class-mobile-coin"><span>SunContract</span>
+                                                                <span className="unit">SNC</span></div></Link>
                                                         </td>
                                                         <td className="boild">$0.0234</td>
                                                         <td className="up">+1.78%</td>
@@ -672,7 +690,7 @@ export default function Coinlist1() {
                                                         <th scope="row"><IconStar /></th>
                                                         <td>6</td>
                                                         <td>
-                                                            <Link href="#"><img src={getCoinIconUrl('GRID')} alt="Grid+" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><span>Grid+</span> <span className="unit">GRID</span></Link>
+                                                            <Link href="#"><img src={getCoinIconUrl('GRID')} alt="Grid+" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><div className="flex-class-mobile-coin"><span>Grid+</span> <span className="unit">GRID</span></div></Link>
                                                         </td>
                                                         <td className="boild">$0.0456</td>
                                                         <td className="up">+2.34%</td>
@@ -686,8 +704,8 @@ export default function Coinlist1() {
                                                         <th scope="row"><IconStar /></th>
                                                         <td>7</td>
                                                         <td>
-                                                            <Link href="#"><img src={getCoinIconUrl('WPR')} alt="WePower" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><span>WePower</span>
-                                                                <span className="unit">WPR</span></Link>
+                                                            <Link href="#"><img src={getCoinIconUrl('WPR')} alt="WePower" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><div className="flex-class-mobile-coin"><span>WePower</span>
+                                                                <span className="unit">WPR</span></div></Link>
                                                         </td>
                                                         <td className="boild">$0.0089</td>
                                                         <td className="down">-1.12%</td>
@@ -701,8 +719,8 @@ export default function Coinlist1() {
                                                         <th scope="row"><IconStar /></th>
                                                         <td>8</td>
                                                         <td>
-                                                            <Link href="#"><img src={getCoinIconUrl('MWAT')} alt="Restart Energy" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><span>Restart Energy</span>
-                                                                <span className="unit">MWAT</span></Link>
+                                                            <Link href="#"><img src={getCoinIconUrl('MWAT')} alt="Restart Energy" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><div className="flex-class-mobile-coin"><span>Restart Energy</span>
+                                                                <span className="unit">MWAT</span></div></Link>
                                                         </td>
                                                         <td className="boild">$0.0012</td>
                                                         <td className="up">+3.45%</td>
@@ -734,8 +752,8 @@ export default function Coinlist1() {
                                                         <th scope="row"><IconStar /></th>
                                                         <td>1</td>
                                                         <td>
-                                                            <Link href="#"><img src={getCoinIconUrl('IMX')} alt="Immutable" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><span>Immutable</span>
-                                                                <span className="unit">IMX</span></Link>
+                                                            <Link href="#"><img src={getCoinIconUrl('IMX')} alt="Immutable" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><div className="flex-class-mobile-coin"><span>Immutable</span>
+                                                                <span className="unit">IMX</span></div></Link>
                                                         </td>
                                                         <td className="boild">$0.5218</td>
                                                         <td className="up">+4.39%</td>
@@ -749,8 +767,8 @@ export default function Coinlist1() {
                                                         <th scope="row"><IconStar /></th>
                                                         <td>2</td>
                                                         <td>
-                                                            <Link href="#"><img src={getCoinIconUrl('FLOW')} alt="Flow" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><span>Flow</span>
-                                                                <span className="unit">FLOW</span></Link>
+                                                            <Link href="#"><img src={getCoinIconUrl('FLOW')} alt="Flow" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><div className="flex-class-mobile-coin"><span>Flow</span>
+                                                                <span className="unit">FLOW</span></div></Link>
                                                         </td>
                                                         <td className="boild">$0.3974</td>
                                                         <td className="up">+1.52%</td>
@@ -764,8 +782,8 @@ export default function Coinlist1() {
                                                         <th scope="row"><IconStar /></th>
                                                         <td>3</td>
                                                         <td>
-                                                            <Link href="#"><img src={getCoinIconUrl('ENJ')} alt="Enjin Coin" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><span>Enjin Coin</span>
-                                                                <span className="unit">ENJ</span></Link>
+                                                            <Link href="#"><img src={getCoinIconUrl('ENJ')} alt="Enjin Coin" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><div className="flex-class-mobile-coin"><span>Enjin Coin</span>
+                                                                <span className="unit">ENJ</span></div></Link>
                                                         </td>
                                                         <td className="boild">$0.06629</td>
                                                         <td className="up">+0.79%</td>
@@ -779,8 +797,8 @@ export default function Coinlist1() {
                                                         <th scope="row"><IconStar /></th>
                                                         <td>4</td>
                                                         <td>
-                                                            <Link href="#"><img src={getCoinIconUrl('CHZ')} alt="Chiliz" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><span>Chiliz</span>
-                                                                <span className="unit">CHZ</span></Link>
+                                                            <Link href="#"><img src={getCoinIconUrl('CHZ')} alt="Chiliz" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><div className="flex-class-mobile-coin"><span>Chiliz</span>
+                                                                <span className="unit">CHZ</span></div></Link>
                                                         </td>
                                                         <td className="boild">$0.0534</td>
                                                         <td className="up">+2.89%</td>
@@ -794,8 +812,8 @@ export default function Coinlist1() {
                                                         <th scope="row"><IconStar /></th>
                                                         <td>5</td>
                                                         <td>
-                                                            <Link href="#"><img src={getCoinIconUrl('RARE')} alt="SuperRare" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><span>SuperRare</span>
-                                                                <span className="unit">RARE</span></Link>
+                                                            <Link href="#"><img src={getCoinIconUrl('RARE')} alt="SuperRare" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><div className="flex-class-mobile-coin"><span>SuperRare</span>
+                                                                <span className="unit">RARE</span></div></Link>
                                                         </td>
                                                         <td className="boild">$0.0456</td>
                                                         <td className="up">+1.78%</td>
@@ -809,7 +827,7 @@ export default function Coinlist1() {
                                                         <th scope="row"><IconStar /></th>
                                                         <td>6</td>
                                                         <td>
-                                                            <Link href="#"><img src={getCoinIconUrl('RARI')} alt="Rarible" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><span>Rarible</span> <span className="unit">RARI</span></Link>
+                                                            <Link href="#"><img src={getCoinIconUrl('RARI')} alt="Rarible" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><div className="flex-class-mobile-coin"><span>Rarible</span> <span className="unit">RARI</span></div></Link>
                                                         </td>
                                                         <td className="boild">$1.23</td>
                                                         <td className="up">+3.45%</td>
@@ -823,8 +841,8 @@ export default function Coinlist1() {
                                                         <th scope="row"><IconStar /></th>
                                                         <td>7</td>
                                                         <td>
-                                                            <Link href="#"><img src={getCoinIconUrl('OCEAN')} alt="Ocean Protocol" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><span>OpenSea</span>
-                                                                <span className="unit">OCEAN</span></Link>
+                                                            <Link href="#"><img src={getCoinIconUrl('OCEAN')} alt="Ocean Protocol" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><div className="flex-class-mobile-coin"><span>OpenSea</span>
+                                                                <span className="unit">OCEAN</span></div></Link>
                                                         </td>
                                                         <td className="boild">$0.3456</td>
                                                         <td className="down">-1.23%</td>
@@ -838,8 +856,8 @@ export default function Coinlist1() {
                                                         <th scope="row"><IconStar /></th>
                                                         <td>8</td>
                                                         <td>
-                                                            <Link href="#"><img src={getCoinIconUrl('FND')} alt="Foundation" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><span>Foundation</span>
-                                                                <span className="unit">FND</span></Link>
+                                                            <Link href="#"><img src={getCoinIconUrl('FND')} alt="Foundation" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><div className="flex-class-mobile-coin"><span>Foundation</span>
+                                                                <span className="unit">FND</span></div></Link>
                                                         </td>
                                                         <td className="boild">$0.0789</td>
                                                         <td className="up">+2.34%</td>
@@ -871,8 +889,8 @@ export default function Coinlist1() {
                                                         <th scope="row"><IconStar /></th>
                                                         <td>1</td>
                                                         <td>
-                                                            <Link href="#"><img src={getCoinIconUrl('RENDER')} alt="Render" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><span>Render</span>
-                                                                <span className="unit">RENDER</span></Link>
+                                                            <Link href="#"><img src={getCoinIconUrl('RENDER')} alt="Render" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><div className="flex-class-mobile-coin"><span>Render</span>
+                                                                <span className="unit">RENDER</span></div></Link>
                                                         </td>
                                                         <td className="boild">$3.54</td>
                                                         <td className="up">+6.44%</td>
@@ -886,8 +904,8 @@ export default function Coinlist1() {
                                                         <th scope="row"><IconStar /></th>
                                                         <td>2</td>
                                                         <td>
-                                                            <Link href="#"><img src={getCoinIconUrl('GALA')} alt="Gala" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><span>Gala</span>
-                                                                <span className="unit">GALA</span></Link>
+                                                            <Link href="#"><img src={getCoinIconUrl('GALA')} alt="Gala" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><div className="flex-class-mobile-coin"><span>Gala</span>
+                                                                <span className="unit">GALA</span></div></Link>
                                                         </td>
                                                         <td className="boild">$0.01647</td>
                                                         <td className="up">+4.37%</td>
@@ -901,8 +919,8 @@ export default function Coinlist1() {
                                                         <th scope="row"><IconStar /></th>
                                                         <td>3</td>
                                                         <td>
-                                                            <Link href="#"><img src={getCoinIconUrl('SUPER')} alt="SuperVerse" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><span>SuperVerse</span>
-                                                                <span className="unit">SUPER</span></Link>
+                                                            <Link href="#"><img src={getCoinIconUrl('SUPER')} alt="SuperVerse" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><div className="flex-class-mobile-coin"><span>SuperVerse</span>
+                                                                <span className="unit">SUPER</span></div></Link>
                                                         </td>
                                                         <td className="boild">$0.5854</td>
                                                         <td className="up">+4.84%</td>
@@ -916,8 +934,8 @@ export default function Coinlist1() {
                                                         <th scope="row"><IconStar /></th>
                                                         <td>4</td>
                                                         <td>
-                                                            <Link href="#"><img src={getCoinIconUrl('BEAM')} alt="Beam" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><span>Beam</span>
-                                                                <span className="unit">BEAM</span></Link>
+                                                            <Link href="#"><img src={getCoinIconUrl('BEAM')} alt="Beam" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><div className="flex-class-mobile-coin"><span>Beam</span>
+                                                                <span className="unit">BEAM</span></div></Link>
                                                         </td>
                                                         <td className="boild">$0.007117</td>
                                                         <td className="up">+4.05%</td>
@@ -931,8 +949,8 @@ export default function Coinlist1() {
                                                         <th scope="row"><IconStar /></th>
                                                         <td>5</td>
                                                         <td>
-                                                            <Link href="#"><img src={getCoinIconUrl('BIGTIME')} alt="Big Time" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><span>Big Time</span>
-                                                                <span className="unit">BIGTIME</span></Link>
+                                                            <Link href="#"><img src={getCoinIconUrl('BIGTIME')} alt="Big Time" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><div className="flex-class-mobile-coin"><span>Big Time</span>
+                                                                <span className="unit">BIGTIME</span></div></Link>
                                                         </td>
                                                         <td className="boild">$0.05</td>
                                                         <td className="up">+2.56%</td>
@@ -946,7 +964,7 @@ export default function Coinlist1() {
                                                         <th scope="row"><IconStar /></th>
                                                         <td>6</td>
                                                         <td>
-                                                            <Link href="#"><img src={getCoinIconUrl('PIXEL')} alt="Pixels" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><span>Pixels</span> <span className="unit">PIXEL</span></Link>
+                                                            <Link href="#"><img src={getCoinIconUrl('PIXEL')} alt="Pixels" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><div className="flex-class-mobile-coin"><span>Pixels</span> <span className="unit">PIXEL</span></div></Link>
                                                         </td>
                                                         <td className="boild">$0.03</td>
                                                         <td className="up">+1.89%</td>
@@ -960,8 +978,8 @@ export default function Coinlist1() {
                                                         <th scope="row"><IconStar /></th>
                                                         <td>7</td>
                                                         <td>
-                                                            <Link href="#"><img src={getCoinIconUrl('WILD')} alt="Wilder World" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><span>Wilder World</span>
-                                                                <span className="unit">WILD</span></Link>
+                                                            <Link href="#"><img src={getCoinIconUrl('WILD')} alt="Wilder World" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><div className="flex-class-mobile-coin"><span>Wilder World</span>
+                                                                <span className="unit">WILD</span></div></Link>
                                                         </td>
                                                         <td className="boild">$0.34</td>
                                                         <td className="up">+3.45%</td>
@@ -975,8 +993,8 @@ export default function Coinlist1() {
                                                         <th scope="row"><IconStar /></th>
                                                         <td>8</td>
                                                         <td>
-                                                            <Link href="#"><img src={getCoinIconUrl('GMT')} alt="STEPN" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><span>GMT</span>
-                                                                <span className="unit">GMT</span></Link>
+                                                            <Link href="#"><img src={getCoinIconUrl('GMT')} alt="STEPN" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><div className="flex-class-mobile-coin"><span>GMT</span>
+                                                                <span className="unit">GMT</span></div></Link>
                                                         </td>
                                                         <td className="boild">$0.04</td>
                                                         <td className="up">+2.15%</td>
@@ -1008,8 +1026,8 @@ export default function Coinlist1() {
                                                         <th scope="row"><IconStar /></th>
                                                         <td>1</td>
                                                         <td>
-                                                            <Link href="#"><img src={getCoinIconUrl('AUDIO')} alt="Audius" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><span>Audius</span>
-                                                                <span className="unit">AUDIO</span></Link>
+                                                            <Link href="#"><img src={getCoinIconUrl('AUDIO')} alt="Audius" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><div className="flex-class-mobile-coin"><span>Audius</span>
+                                                                <span className="unit">AUDIO</span></div></Link>
                                                         </td>
                                                         <td className="boild">$0.06173</td>
                                                         <td className="down">-0.15%</td>
@@ -1023,8 +1041,8 @@ export default function Coinlist1() {
                                                         <th scope="row"><IconStar /></th>
                                                         <td>2</td>
                                                         <td>
-                                                            <Link href="#"><img src={getCoinIconUrl('LMWR')} alt="Limewire" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><span>Limewire</span>
-                                                                <span className="unit">LMWR</span></Link>
+                                                            <Link href="#"><img src={getCoinIconUrl('LMWR')} alt="Limewire" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><div className="flex-class-mobile-coin"><span>Limewire</span>
+                                                                <span className="unit">LMWR</span></div></Link>
                                                         </td>
                                                         <td className="boild">$0.07494</td>
                                                         <td className="down">-4.20%</td>
@@ -1038,8 +1056,8 @@ export default function Coinlist1() {
                                                         <th scope="row"><IconStar /></th>
                                                         <td>3</td>
                                                         <td>
-                                                            <Link href="#"><img src={getCoinIconUrl('OPUL')} alt="Opulous" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><span>Opulous</span>
-                                                                <span className="unit">OPUL</span></Link>
+                                                            <Link href="#"><img src={getCoinIconUrl('OPUL')} alt="Opulous" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><div className="flex-class-mobile-coin"><span>Opulous</span>
+                                                                <span className="unit">OPUL</span></div></Link>
                                                         </td>
                                                         <td className="boild">$0.03168</td>
                                                         <td className="up">+13.32%</td>
@@ -1053,8 +1071,8 @@ export default function Coinlist1() {
                                                         <th scope="row"><IconStar /></th>
                                                         <td>4</td>
                                                         <td>
-                                                            <Link href="#"><img src={getCoinIconUrl('CEEK')} alt="CEEK VR" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><span>CEEK VR</span>
-                                                                <span className="unit">CEEK</span></Link>
+                                                            <Link href="#"><img src={getCoinIconUrl('CEEK')} alt="CEEK VR" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><div className="flex-class-mobile-coin"><span>CEEK VR</span>
+                                                                <span className="unit">CEEK</span></div></Link>
                                                         </td>
                                                         <td className="boild">$0.009480</td>
                                                         <td className="down">-1.61%</td>
@@ -1068,8 +1086,8 @@ export default function Coinlist1() {
                                                         <th scope="row"><IconStar /></th>
                                                         <td>5</td>
                                                         <td>
-                                                            <Link href="#"><img src={getCoinIconUrl('JAM')} alt="JAM" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><span>Tune.FM</span>
-                                                                <span className="unit">JAM</span></Link>
+                                                            <Link href="#"><img src={getCoinIconUrl('JAM')} alt="JAM" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><div className="flex-class-mobile-coin"><span>Tune.FM</span>
+                                                                <span className="unit">JAM</span></div></Link>
                                                         </td>
                                                         <td className="boild">$0.00006089</td>
                                                         <td className="up">+1.05%</td>
@@ -1083,7 +1101,7 @@ export default function Coinlist1() {
                                                         <th scope="row"><IconStar /></th>
                                                         <td>6</td>
                                                         <td>
-                                                            <Link href="#"><img src={getCoinIconUrl('BONDLY')} alt="Bondly" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><span>Forj (Bondly)</span> <span className="unit">BONDLY</span></Link>
+                                                            <Link href="#"><img src={getCoinIconUrl('BONDLY')} alt="Bondly" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><div className="flex-class-mobile-coin"><span>Forj (Bondly)</span> <span className="unit">BONDLY</span></div></Link>
                                                         </td>
                                                         <td className="boild">$0.0009119</td>
                                                         <td className="up">+2.36%</td>
@@ -1097,8 +1115,8 @@ export default function Coinlist1() {
                                                         <th scope="row"><IconStar /></th>
                                                         <td>7</td>
                                                         <td>
-                                                            <Link href="#"><img src={getCoinIconUrl('BEAT')} alt="BeatBind" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><span>MetaBeat</span>
-                                                                <span className="unit">BEAT</span></Link>
+                                                            <Link href="#"><img src={getCoinIconUrl('BEAT')} alt="BeatBind" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><div className="flex-class-mobile-coin"><span>MetaBeat</span>
+                                                                <span className="unit">BEAT</span></div></Link>
                                                         </td>
                                                         <td className="boild">$0.0002066</td>
                                                         <td className="up">+28.32%</td>
@@ -1112,8 +1130,8 @@ export default function Coinlist1() {
                                                         <th scope="row"><IconStar /></th>
                                                         <td>8</td>
                                                         <td>
-                                                            <Link href="#"><img src={getCoinIconUrl('MUSIC')} alt="Music Protocol" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><span>Gala Music</span>
-                                                                <span className="unit">MUSIC</span></Link>
+                                                            <Link href="#"><img src={getCoinIconUrl('MUSIC')} alt="Music Protocol" style={{width: '20px', height: '20px', borderRadius: '50%', marginRight: '8px'}} /><div className="flex-class-mobile-coin"><span>Gala Music</span>
+                                                                <span className="unit">MUSIC</span></div></Link>
                                                         </td>
                                                         <td className="boild">$0.01</td>
                                                         <td className="up">+5.23%</td>

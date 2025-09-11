@@ -21,7 +21,9 @@ export default function About1() {
                     <div className="row">
                         <div className="col-xl-6 col-md-12">
                             <div className="about_image">
-                                <img className="img0-ai" src="https://learningchain.vn/wp-content/uploads/nivex/world_map.svg" ></img>
+                                 {/* <img className="img0-ai" src="https://learningchain.vn/wp-content/uploads/nivex/world_map.svg" ></img> */}
+                                
+                                 <img className="img0-ai" src="/assets/images/background/world_map_homepage.webp" ></img>
                                 {/* <div className="swiper img-swiper">
                                     <Swiper {...swiperOptions} className="swiper-wrapper">
                                         <SwiperSlide>

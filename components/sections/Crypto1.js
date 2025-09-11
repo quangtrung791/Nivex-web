@@ -34,7 +34,7 @@ export default function Crypto1() {
 
     useEffect(() => {
         fetchCryptoData()
-        const interval = setInterval(fetchCryptoData, 60000) // Update every 30 seconds
+        const interval = setInterval(fetchCryptoData, 300000) // Update every 30 seconds
         return () => clearInterval(interval)
     }, [])
 

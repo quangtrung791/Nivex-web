@@ -5,10 +5,13 @@ import { useState } from "react"
 import styles from './howToBuyCrypto.module.css'
 
 export default function HowToBuyCrypto() {
-    const [openFaq, setOpenFaq] = useState(null)
+    const [openFaq, setOpenFaq] = useState({})
 
     const toggleFaq = (index) => {
-        setOpenFaq(openFaq === index ? null : index)
+        setOpenFaq(prev => ({
+            ...prev,
+            [index]: !prev[index]
+        }))
     }
 
     return (
@@ -39,7 +42,7 @@ export default function HowToBuyCrypto() {
                                 </p>
                             </div>
                             <div className={styles.heroImage}>
-                                <img src="/assets/images/layout/mainBorker.webp" alt="Crypto Wallet" />
+                                <img src="/assets/images/layout/mainBorker.svg" alt="Crypto Wallet" />
                             </div>
                         </div>
 
@@ -116,9 +119,9 @@ export default function HowToBuyCrypto() {
                                 <div className={styles.faqItem}>
                                     <div className={styles.faqQuestion} onClick={() => toggleFaq(0)}>
                                         <span>Tôi có cần xác minh KYC để mua crypto trên Nivex không?</span>
-                                        <span className={`${styles.faqIcon} ${openFaq === 0 ? styles.faqIconOpen : ''}`}></span>
+                                        <span className={`${styles.faqIcon} ${openFaq[0] ? styles.faqIconOpen : ''}`}></span>
                                     </div>
-                                    <div className={`${styles.faqAnswer} ${openFaq === 0 ? styles.faqAnswerOpen : ''}`}>
+                                    <div className={`${styles.faqAnswer} ${openFaq[0] ? styles.faqAnswerOpen : ''}`}>
                                         <p>Có, để đảm bảo an toàn và tuân thủ quy định, bạn cần hoàn tất xác minh KYC để sử dụng đầy đủ các tính năng mua bán crypto trên Nivex.</p>
                                     </div>
                                 </div>
@@ -126,9 +129,9 @@ export default function HowToBuyCrypto() {
                                 <div className={styles.faqItem}>
                                     <div className={styles.faqQuestion} onClick={() => toggleFaq(1)}>
                                         <span>Mua crypto trên Nivex có an toàn không?</span>
-                                        <span className={`${styles.faqIcon} ${openFaq === 1 ? styles.faqIconOpen : ''}`}></span>
+                                        <span className={`${styles.faqIcon} ${openFaq[1] ? styles.faqIconOpen : ''}`}></span>
                                     </div>
-                                    <div className={`${styles.faqAnswer} ${openFaq === 1 ? styles.faqAnswerOpen : ''}`}>
+                                    <div className={`${styles.faqAnswer} ${openFaq[1] ? styles.faqAnswerOpen : ''}`}>
                                         <p>Nivex sử dụng các biện pháp bảo mật tiên tiến nhất để bảo vệ tài sản của người dùng, bao gồm mã hóa SSL, xác thực 2FA và lưu trữ lạnh.</p>
                                     </div>
                                 </div>
@@ -136,9 +139,9 @@ export default function HowToBuyCrypto() {
                                 <div className={styles.faqItem}>
                                     <div className={styles.faqQuestion} onClick={() => toggleFaq(2)}>
                                         <span>Làm thế nào để bán crypto trên Nivex?</span>
-                                        <span className={`${styles.faqIcon} ${openFaq === 2 ? styles.faqIconOpen : ''}`}></span>
+                                        <span className={`${styles.faqIcon} ${openFaq[2] ? styles.faqIconOpen : ''}`}></span>
                                     </div>
-                                    <div className={`${styles.faqAnswer} ${openFaq === 2 ? styles.faqAnswerOpen : ''}`}>
+                                    <div className={`${styles.faqAnswer} ${openFaq[2] ? styles.faqAnswerOpen : ''}`}>
                                         <p>Bạn có thể bán crypto thông qua giao dịch P2P hoặc Spot trên Nivex. Chỉ cần chọn loại crypto, nhập số lượng và xác nhận giao dịch.</p>
                                     </div>
                                 </div>
@@ -146,9 +149,9 @@ export default function HowToBuyCrypto() {
                                 <div className={styles.faqItem}>
                                     <div className={styles.faqQuestion} onClick={() => toggleFaq(3)}>
                                         <span>Số tiền tối thiểu để mua crypto trên Nivex là bao nhiêu?</span>
-                                        <span className={`${styles.faqIcon} ${openFaq === 3 ? styles.faqIconOpen : ''}`}></span>
+                                        <span className={`${styles.faqIcon} ${openFaq[3] ? styles.faqIconOpen : ''}`}></span>
                                     </div>
-                                    <div className={`${styles.faqAnswer} ${openFaq === 3 ? styles.faqAnswerOpen : ''}`}>
+                                    <div className={`${styles.faqAnswer} ${openFaq[3] ? styles.faqAnswerOpen : ''}`}>
                                         <p>Số tiền tối thiểu để mua crypto trên Nivex là 100,000 VNĐ. Bạn có thể bắt đầu với số tiền nhỏ để làm quen với giao dịch.</p>
                                     </div>
                                 </div>
