@@ -73,7 +73,7 @@
 .displayFlexTextDescription {
     display: flex;
     gap: 60px;
-    align-items: center;
+    align-items: flex-start;
     margin: 15px 0;
 }
 .heroDescription p {
@@ -130,14 +130,12 @@
 
 
 
-.heroImage {
+/* .heroImage {
     text-align: center;
-    width: 260px;
-    height: auto;
-}
+} */
 
 .heroImage img {
-    max-width: 100%;
+    width: 260px;
     height: auto;
 }
 
@@ -216,13 +214,17 @@
     line-height: 1.6;
     margin: 0;
 }
-@media (max-width: 1400px) {
+@media (max-width: 1410px) {
     .howToBuyCryptoSection {
         padding: 0 3.5%;
     }
 }
 /* Responsive Design */
 @media only screen and (max-width: 1024px) {
+    .heroImage img {
+        width: 205px;
+    }
+
     .subtitle {
         max-width: 450px;
     }
@@ -245,6 +247,9 @@
 }
 
 @media only screen and (max-width: 768px) {
+    .heroImage img {
+        width: 75%;
+    }
     .howToBuyCryptoSection {
         padding: 40px 0;
     }
@@ -287,6 +292,7 @@
         margin-top: 60px;
     }
     .heroContent {
+        width: 100%;
         text-align: left;
     }
 }
@@ -314,7 +320,7 @@
         font-size: 16px;
     }
     .faqQuestion span:first-child {
-        width: 80%;
+        width: 85%;
         font-size: 16px;
     }
     .heroTitle, .heroDescription {
