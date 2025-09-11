@@ -1107,8 +1107,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
 }
 
 .banner .banner__content .title {
-    line-height: 1.11;
-    letter-spacing: -1.2px;
+    line-height: 1.35;
     margin-bottom: 24px;
 }
 
@@ -1572,6 +1571,11 @@ section.crypto {
     font-weight: 400;
     font-size: 14px;
 }
+
+.header__left .logo img {
+    object-position: center;
+}
+
 
 .coin-list .coin-list__main .flat-tabs .content-tab .content-inner tbody tr td a {
     font-weight: 700;
