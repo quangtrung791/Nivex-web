@@ -1034,10 +1034,13 @@ body[data-magic-cursor=hide] .mouse-cursor {
     padding: 0;
 }
 
+
 .header #main-nav-mobi ul li {
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     position: relative;
+    padding: 3px 0;
 }
+
 
 .header #main-nav-mobi ul li:last-child {
     border: 0;
@@ -1051,21 +1054,20 @@ body[data-magic-cursor=hide] .mouse-cursor {
     content: "";
     cursor: pointer;
     display: inline-block;
-    font-size: 20px;
-    font-family: "FontAwesome";
+    font-size: 16px;
     line-height: 48px;
     position: absolute;
     right: 15px;
     text-align: center;
     top: 0;
-    width: 48px;
+    width: 40px;
     transition: 0.3s all ease-in-out;
 }
 
 .header #main-nav-mobi ul li .arrow::before {
-    font-family: "Font Awesome 5 Free";
-    content: "\f107";
-    font-weight: 700;
+    content: "▼";
+    color: #fff;
+    font-size: 18px;
 }
 
 .header #main-nav-mobi ul li .arrow.active {
@@ -1082,12 +1084,11 @@ body[data-magic-cursor=hide] .mouse-cursor {
 
 .header .current-menu-item>a,
 .header .current-item a {
-    color: #3772ff;
-    /* background: linear-gradient(90deg,rgba(188, 254, 8, 1) 0%, rgba(134, 249, 105, 1) 50%, rgba(134, 249, 105, 1) 100%); */
+    color: #BCFE08;
 }
-.current-menu-item {
+/* .current-menu-item {
     background: linear-gradient(90deg,rgba(188, 254, 8, 1) 0%, rgba(134, 249, 105, 1) 50%, rgba(134, 249, 105, 1) 100%);
-}
+} */
 
 .is_dark .header .header__left .logo .light {
     display: none;
@@ -7986,9 +7987,9 @@ h2.title {
 .market-update {
     padding: 0 7%;
 }
-li.menu-item:hover {
-    background: linear-gradient(90deg,rgba(188, 254, 8, 1) 0%, rgba(134, 249, 105, 1) 50%, rgba(134, 249, 105, 1) 100%) !important;
-}
+/* li.menu-item:hover {
+    background: linear-gradient(90deg,rgba(188, 254, 8, 1) 0%, rgba(134, 249, 105, 1) 50%, rgba(134, 249, 105, 1) 100%);
+} */
 .crypto-box.active {
     border-radius: 0px !important;
     
@@ -8996,11 +8997,7 @@ section.background-container-custom .work-box:hover
         width: 49% !important;
     }
 }
-/* Fix lỗi mất dấu khi dùng background cho text */
-span.text-primary-crypto {
-    color: #BCFE08 !important;
-}
-/* fix vị trí của mục +- % */
+
 .sale.success, .sale.critical {
     margin-top: -15px;
 }

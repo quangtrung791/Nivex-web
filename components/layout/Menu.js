@@ -38,10 +38,10 @@ export default function MainMenu() {
                     <Link href="#">Kiến thức</Link>
                     <ul className="sub-menu">
                         <li className={`menu-item ${checkCurrentMenuItem("/thuat-ngu")}`}>
-                            <Link href="/">Thuật ngữ</Link>
+                            <Link href="/thuat-ngu">Thuật ngữ</Link>
                         </li>
                         <li className={`menu-item ${checkCurrentMenuItem("/how-to-buy-crypto")}`}>
-                            <Link href="">Cách mua Crypto</Link>
+                            <Link href="/how-to-buy-crypto">Cách mua Crypto</Link>
                         </li>
                         <li className={`menu-item ${checkCurrentMenuItem("/buy-crypto-details")}`}>
                             <Link href="/">AI Copy Trade</Link>
