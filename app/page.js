@@ -7,6 +7,7 @@ import Crypto1 from "@/components/sections/Crypto1"
 // import Sale from "@/components/sections/Sale"
 import Testimonials1 from "@/components/sections/Testimonials1"
 import Work1 from "@/components/sections/Work1"
+import Propose from "@/components/sections/Propose"
 export default function Home() {
 
     return (
@@ -21,6 +22,7 @@ export default function Home() {
                 {/* <Download /> */}
                 <Testimonials1 />
                 {/* <Sale /> */}
+                <Propose />
             </Layout>
         </>
     )

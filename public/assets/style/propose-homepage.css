@@ -1,0 +1,61 @@
+.title-propose {
+    font-size: 30px;
+}
+.crypto-content.propose {
+    gap: 10px;
+}
+.quotation-mark-propose {
+    background: url(/assets/images/background/quotation-mark.png) no-repeat left;
+    width: 40px;
+    height: 40px;
+}
+.card-info.card-info-propose {
+    display: flex;
+    gap: 18px;
+    flex-direction: column;
+    padding: 20px 15px;
+    cursor: pointer;
+}
+.card-info.card-info-propose:hover {
+    background: #242529;
+}
+.crypto-card .crypto-card-propose {
+    gap: 5px;
+}
+
+.title-propose-card {
+    font-size: 20px;
+    margin-bottom: 0px;;
+}
+
+.text-propose-card {
+    font-size: 14px;
+    font-weight: 300;
+    color: #fff;
+    display: -webkit-box;          /* Bắt buộc để line-clamp hoạt động */
+    -webkit-line-clamp: 2;         /* Số dòng muốn hiển thị */
+    -webkit-box-orient: vertical;  /* Thiết lập hướng box theo chiều dọc */
+    overflow: hidden;              /* Ẩn phần vượt quá */
+    text-overflow: ellipsis; 
+}
+.author.card-button-propose {
+    padding: 4px 12px;
+    border: 1px solid #7c7f88;
+    font-weight: 400;
+    font-size: 14px;
+}
+.card-info.card-info-propose:hover .author.card-button-propose {
+    color: black;
+    background: linear-gradient(90deg, #BCFE0B 0%, #86FB69 100%);
+    border: none;
+}
+.card-info.card-info-propose:hover .icon-button-propose {
+    filter: invert(1);
+}
+.icon-button-propose {
+    background: url(/assets/images/icon/vector-arrow-propose-white.svg) no-repeat center;
+    width: 9px;
+    height: 12px;
+    background-size: cover;
+    margin: 0px 0 0 15px;
+}
