@@ -136,7 +136,7 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu }) {
                                                 <img src="/assets/images/flags/us.jpg" alt="user-image" className="me-1" height={12} />
                                                 <span className="align-middle">English</span>
                                             </Link>
-                                            <Link href="#" className="dropdown-item notify-item language" data-lang="sp">
+                                            {/* <Link href="#" className="dropdown-item notify-item language" data-lang="sp">
                                                 <img src="/assets/images/flags/spain.jpg" alt="user-image" className="me-1" height={12} />
                                                 <span className="align-middle">Spanish</span>
                                             </Link>
@@ -151,7 +151,7 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu }) {
                                             <Link href="#" className="dropdown-item notify-item language" data-lang="ru">
                                                 <img src="/assets/images/flags/russia.jpg" alt="user-image" className="me-1" height={12} />
                                                 <span className="align-middle">Russian</span>
-                                            </Link>
+                                            </Link> */}
                                         </Menu.Items>
                                     </Menu>
                                     <ThemeSwitch />
@@ -162,7 +162,7 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu }) {
                                     {/* <div className="wallet">
                                         <Link href="/wallet"> Wallet </Link>
                                     </div> */}
-                                    <Menu as="div" className="dropdown user">
+                                    {/* <Menu as="div" className="dropdown user">
                                         <Menu.Button className="btn dropdown-toggle" type="button" id="dropdownMenuButton4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <img src="/assets/images/avt/avt-01.jpg" alt="" />
                                         </Menu.Button>
@@ -179,7 +179,7 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu }) {
                                             <Link className="dropdown-item text-danger" href="/user-login"><i className="bx bx-power-off font-size-16 align-middle me-1 text-danger" />
                                                 <span>Logout</span></Link>
                                         </Menu.Items>
-                                    </Menu>
+                                    </Menu> */}
                                 </div>
                             </div>
                         </div>
