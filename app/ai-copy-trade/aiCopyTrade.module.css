@@ -12,7 +12,7 @@
     justify-content: space-between;
     padding: 60px 0;
     position: relative;
-    gap:20px;
+    gap:15px;
     z-index: 1;
 }
 
@@ -31,6 +31,7 @@
     font-size: 36px;
     font-weight: 700;
     line-height: 1.2;
+    width: 250px;
 }
 
 .cryptoHighlight {
@@ -40,7 +41,7 @@
 .subtitle {
     font-size: 16px;
     color: rgb(166,170,183);
-    /* max-width: 500px; */
+    max-width: 500px;
     align-self: center;
     text-align: right;
 }
@@ -222,6 +223,9 @@
 }
 /* Responsive Design */
 @media only screen and (max-width: 1024px) {
+    .subtitle {
+        max-width: 450px;
+    }
     .heroSection {
         gap: 40px;
     }

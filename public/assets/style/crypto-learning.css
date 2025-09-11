@@ -7,14 +7,14 @@
     display: flex;
     flex-direction: column;
 }
-.crypto-learning-section .crypto-content h2 {
-    font-size: 2.5rem;
+.crypto-learning-section .crypto-content h2.text-uppercase {
+    font-size: 46px;
     font-weight: 700;
     margin-bottom: 16px;
     color: white;
 }
 
-.crypto-learning-section .crypto-content h2 .text-primary-crypto, .crypto-learning-section .crypto-card .card-info h4:hover {
+.crypto-learning-section .crypto-content h2 .text-primary-crypto, .crypto-learning-section .crypto-card .card-info h4.title-video-homepage:hover {
     background: linear-gradient(to right, #BCFE08, #86F869);
     -webkit-background-clip: text; 
     background-clip: text;
@@ -68,8 +68,8 @@
     margin-bottom: 12px;
 }
 
-.crypto-learning-section .crypto-card .card-info h4 {
-    font-size: 1.4rem;
+.crypto-learning-section .crypto-card .card-info .title-video-homepage {
+    font-size: 20px;
     font-weight: 600;
     height: 63px;
     color: white;

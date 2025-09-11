@@ -2,7 +2,8 @@ import { Inter } from 'next/font/google' // 1. Import font Inter
 import "/public/app/dist/app.css"
 import "/public/assets/style/crypto-learning.css"
 import "/public/app/dist/swiper-bundle.min.css"
-import BackToTop from '@/components/elements/BackToTop'
+import "/public/assets/style/propose-homepage.css"
+// import BackToTop from '@/components/elements/BackToTop'
 import { CoinDataProvider } from '@/components/CoinDataProvider'
 
 // (Không cần dùng Poppins và DM_Sans nữa, có thể xóa hoặc comment lại)
