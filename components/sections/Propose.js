@@ -30,7 +30,7 @@ export default function Propose() {
                 <div className="container">
                     <div className="row">
                             <div className="crypto-content propose">
-                                <h2 className='title-propose'>Đề xuất</h2>
+                                <h2 className='title-propose'>Thuật ngữ đề xuất</h2>
                                 
                                 <div className="crypto-cards">
                                     <div className="crypto-card crypto-card-propose">
