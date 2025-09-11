@@ -15,10 +15,12 @@
 }
 
 .crypto-learning-section .crypto-content h2 .text-primary-crypto, .crypto-learning-section .crypto-card .card-info h4.title-video-homepage:hover {
-    background: linear-gradient(to right, #BCFE08, #86F869);
-    -webkit-background-clip: text; 
+       /* hoặc inherit từ h2 */
+    padding: .25em 0;                      /* nới vùng tô background theo chiều dọc */
+    background: linear-gradient(90deg,#bcfe08,#66f869);
     background-clip: text;
-    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
 }
 
 .crypto-learning-section .crypto-content .subtitle {

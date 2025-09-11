@@ -8997,11 +8997,7 @@ section.background-container-custom .work-box:hover
         width: 49% !important;
     }
 }
-/* Fix lỗi mất dấu khi dùng background cho text */
-span.text-primary-crypto {
-    color: #BCFE08 !important;
-}
-/* fix vị trí của mục +- % */
+
 .sale.success, .sale.critical {
     margin-top: -15px;
 }
