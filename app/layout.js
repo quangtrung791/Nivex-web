@@ -25,8 +25,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="vi">
-            <head>
-                {/* Service Worker registration để tối ưu caching */}
+            {/* <head>
+
                 <script
                     dangerouslySetInnerHTML={{
                         __html: `
@@ -44,7 +44,7 @@ export default function RootLayout({ children }) {
                         `,
                     }}
                 />
-            </head>
+            </head> */}
             {/* 4. Sử dụng biến của font Inter */}
             <body className={`${inter.variable} body header-fixed is_dark`}>
                 <CoinDataProvider>
