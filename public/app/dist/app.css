@@ -1106,6 +1106,14 @@ body[data-magic-cursor=hide] .mouse-cursor {
     /* padding: 5% 7% 10% 7%; */
 }
 
+.title_nivex_hub {
+    /* background: linear-gradient(to right, #BCFE08, #86F869);
+    -webkit-background-clip: text;
+    background-clip: text; */
+    color: #BCFE08;
+    font-weight: 700;
+    font-size: 40px;
+}
 .banner .banner__content .title {
     line-height: 1.35;
     margin-bottom: 24px;
@@ -1125,7 +1133,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
 
 .banner .banner__content .btn-action {
     color: #fff;
-    margin-top: 48px;
+    /* margin-top: 48px; */
 }
 
 .banner .banner__content .partner {
@@ -1572,10 +1580,13 @@ section.crypto {
     font-size: 14px;
 }
 
+
 .header__left .logo img {
     object-position: center;
+    width: 135px;
+    height: 45px;
+    transform: translate(0%, 10%);
 }
-
 
 .coin-list .coin-list__main .flat-tabs .content-tab .content-inner tbody tr td a {
     font-weight: 700;

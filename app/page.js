@@ -15,7 +15,7 @@ export default function Home() {
             <Layout headerStyle={1} footerStyle={2}>
                 <Banner1 />
                 <Crypto1 />
-                <Coinlist1 />
+                {/* <Coinlist1 /> */}
                 <Work1 />
                 <About1 />
                 {/* <Download /> */}

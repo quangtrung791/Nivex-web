@@ -20,8 +20,8 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu }) {
                                         {/* <Link className="light" href="/">
                                             <img src="/assets/images/logo/Nivex_icon_bg.png" alt="" width={118} height={32} data-retina="assets/images/logo/logo@2x.png" data-width={118} data-height={32} />
                                         </Link> */}
-                                        <Link className="dark" href="/">
-                                            <img src="/assets/images/logo/Nivex_icon_bg.png" alt="" width={98} height={22} />
+                                        <Link className="dark" href="https://nivex.vn/">
+                                            <img src="/assets/images/icon/icon_menu_header.png" alt=""/>
                                         </Link>
                                     </div>
                                     <div className="left__main">

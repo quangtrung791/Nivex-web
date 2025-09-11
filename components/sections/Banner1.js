@@ -31,14 +31,15 @@ export default function Banner1() {
                     <div className="row">
                         <div className="col-xl-6 col-md-12">
                             <div className="banner__content">
+                                <h2 className="title_nivex_hub">Nivex HUB</h2>
                                 <h2 className="title" style={{'textTransform': 'uppercase', 'letterSpacing' : '0.75px'}}>
                                         <span className="block">Cập nhật các kiến thức </span>
                                         <span className="block"> về AI trong giao dịch </span>
                                         <span className="block"> tiền mã hóa </span>
                                 </h2>
-                                <p className="fs-14 desc">
+                                {/* <p className="fs-14 desc">
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                </p>
+                                </p> */}
                                 <Link href="#" className="btn-action" id="button-master-homepg" style={{'borderRadius':'0px'}}><span className="btn-master-homepg">Xem thêm</span></Link>
                                 {/* <div className="partner">
                                     <h6>Our Partners</h6>
