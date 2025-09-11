@@ -23,6 +23,7 @@ export default function Home() {
                 <Testimonials1 />
                 {/* <Sale /> */}
                 <Propose />
+
             </Layout>
         </>
     )

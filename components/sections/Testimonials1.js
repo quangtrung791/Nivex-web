@@ -42,7 +42,7 @@ export default function Testimonials1() {
                                                 <span className="tag">Learn & Earn</span>
                                                 <h4 className='title-video-homepage'>Learn about UI8 coin and earn an all Access Pass</h4>
                                                 <div className="card-meta">
-                                                    <span className="author" ><i class="icon-author"></i>Floyd Buckridge</span>
+                                                    <span className="author" ><i className="icon-author"></i>Floyd Buckridge</span>
                                                     <span className="date"  >7/9/2025</span>
                                                 </div>
                                             </div>
@@ -57,7 +57,7 @@ export default function Testimonials1() {
                                                 <span className="tag">Learn & Earn</span>
                                                 <h4  className='title-video-homepage'>Cryptocurrency Trading for Beginners</h4>
                                                 <div className="card-meta">
-                                                    <span className="author" ><i class="icon-author"></i>Sarah Johnson</span>
+                                                    <span className="author" ><i className="icon-author"></i>Sarah Johnson</span>
                                                     <span className="date"  >7/9/2025</span>
                                                 </div>
                                             </div>
@@ -72,7 +72,7 @@ export default function Testimonials1() {
                                                 <span className="tag">Learn $ Earn</span>
                                                 <h4 className='title-video-homepage'>Blockchain Technology Fundamentals</h4>
                                                 <div className="card-meta">
-                                                    <span className="author"  ><i class="icon-author"></i>Michael Chen</span>
+                                                    <span className="author"  ><i className="icon-author"></i>Michael Chen</span>
                                                     <span className="date" >7/9/2025</span>
                                                 </div>
                                             </div>
