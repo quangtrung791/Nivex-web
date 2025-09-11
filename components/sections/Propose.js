@@ -26,7 +26,7 @@ export default function Propose() {
     return (
         <>
 
-            <section className="crypto-learning-section">
+            <section className="crypto-learning-section propose-section">
                 <div className="container">
                     <div className="row">
                             <div className="crypto-content propose">
