@@ -27,7 +27,9 @@
     font-size: 20px;
     margin-bottom: 0px;;
 }
-
+.card-meta.card-meta-propose {
+    margin: 2px 0 16px 0; 
+}
 .text-propose-card {
     font-size: 14px;
     font-weight: 300;
