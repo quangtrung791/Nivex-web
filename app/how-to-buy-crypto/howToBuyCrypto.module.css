@@ -115,7 +115,7 @@
 
 .stepIcon {
     width: 80px;
-    height: 80px;
+    height: auto;
     margin: 0 auto 40px;
     display: flex;
     align-items: center;
@@ -337,6 +337,10 @@
     .faqSection {
         margin-top: 60px;
     }
+    .stepIcon {
+        width: 28%;
+        margin: 0 auto 25px;
+    }
 }
 
 @media only screen and (max-width: 480px) {
@@ -366,7 +370,10 @@
     }
     
     .faqQuestion {
-        font-size: 14px;
         padding: 15px 0;
+    }
+    .faqQuestion span:first-child {
+        width: 85%;
+        font-size: 15px;
     }
 }
