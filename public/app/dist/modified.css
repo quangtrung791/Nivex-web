@@ -1,0 +1,27 @@
+section.about p.fs-14.decs {
+    text-align: justify;
+}
+
+.header .header__left .main-nav .menu li .sub-menu::before {
+	content: none !important;
+}
+
+.header .header__left .main-nav .menu li:hover .sub-menu {
+	transform: translate(-50%, 15px) !important;
+}
+@media (min-width: 1280px) {
+    .header .header__left .main-nav .menu li .sub-menu {
+        left: 100% !important;
+    }
+}
+@media (min-width: 1024px) and (max-width: 1139px) {
+    .header .header__left .main-nav .menu li .sub-menu {
+        left: 107% !important;
+    }
+}
+@media (min-width: 1140px) and (max-width: 1279px) {
+    .header .header__left .main-nav .menu li .sub-menu {
+        left: 107% !important;
+    }
+}
+
