@@ -8236,7 +8236,7 @@ h2.title {
     }
     section.background-container-custom .col-md-12 {
         padding-right: unset !important;
-        padding-left: unset !important;
+/*         padding-left: unset !important; */
     }
 }
 
