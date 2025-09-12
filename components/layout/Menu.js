@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
+import "/public/app/dist/modified.css"
 
 export default function MainMenu() {
     const pathname = usePathname()
