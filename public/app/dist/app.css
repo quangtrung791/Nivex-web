@@ -693,6 +693,9 @@ body[data-magic-cursor=hide] .mouse-cursor {
 .header .header__left .main-nav .menu li .sub-menu li.menu-item:hover>a,
 .header .header__left .main-nav .menu li .sub-menu li.menu-item.current-item>a {
     color: var(--primary);
+}
+
+.header .header__left .main-nav .menu li .sub-menu li.menu-item.current-item>a {
     font-weight: 700 !important;
 }
 
@@ -761,9 +764,6 @@ body[data-magic-cursor=hide] .mouse-cursor {
     .header .header__right .dropdown.notification {
         display: flex;
     }
-    .header .header__right .notification::after {
-        display: none;
-    }
     .header .header__right .d-lg-none .mobile-button {
         margin-left: 20px;
     }
@@ -780,7 +780,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
     color: greenyellow;
     border: 2px solid greenyellow;
     font-size: 17px;
-    padding: 1px 8px 0px 8px;
+    padding: 2px 8px 0px 8px;
     line-height: 1.2;
     font-weight: 600;
 }
@@ -816,7 +816,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
     margin-top: 5px;
 }
 
-.header .header__right .notification::after {
+/* .header .header__right .notification::after {
     content: "";
     position: absolute;
     top: 0;
@@ -826,7 +826,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
     width: 1px;
     height: 19px;
     background: var(--line);
-}
+} */
 
 .header .header__right .notification .dropdown-toggle::after {
     display: none;
@@ -1037,10 +1037,13 @@ body[data-magic-cursor=hide] .mouse-cursor {
     padding: 0;
 }
 
+
 .header #main-nav-mobi ul li {
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     position: relative;
+    padding: 3px 0;
 }
+
 
 .header #main-nav-mobi ul li:last-child {
     border: 0;
@@ -1054,21 +1057,20 @@ body[data-magic-cursor=hide] .mouse-cursor {
     content: "";
     cursor: pointer;
     display: inline-block;
-    font-size: 20px;
-    font-family: "FontAwesome";
+    font-size: 16px;
     line-height: 48px;
     position: absolute;
     right: 15px;
     text-align: center;
     top: 0;
-    width: 48px;
+    width: 40px;
     transition: 0.3s all ease-in-out;
 }
 
 .header #main-nav-mobi ul li .arrow::before {
-    font-family: "Font Awesome 5 Free";
-    content: "\f107";
-    font-weight: 700;
+    content: "▼";
+    color: #fff;
+    font-size: 18px;
 }
 
 .header #main-nav-mobi ul li .arrow.active {
@@ -1085,12 +1087,11 @@ body[data-magic-cursor=hide] .mouse-cursor {
 
 .header .current-menu-item>a,
 .header .current-item a {
-    color: #3772ff;
-    /* background: linear-gradient(90deg,rgba(188, 254, 8, 1) 0%, rgba(134, 249, 105, 1) 50%, rgba(134, 249, 105, 1) 100%); */
+    color: #BCFE08;
 }
-.current-menu-item {
+/* .current-menu-item {
     background: linear-gradient(90deg,rgba(188, 254, 8, 1) 0%, rgba(134, 249, 105, 1) 50%, rgba(134, 249, 105, 1) 100%);
-}
+} */
 
 .is_dark .header .header__left .logo .light {
     display: none;
@@ -1835,9 +1836,9 @@ section.crypto {
     margin: 10% 0 5% 0;
 }
 
-/* .work .work__main .work-box .image img {
+.work .work__main .work-box .image img {
     transition: 0.5s all ease-in-out;
-} */
+}
 
 .work .work__main .work-box .content .step {
     font-size: 12px;
@@ -1858,18 +1859,11 @@ section.crypto {
     padding: 0 18px;
     text-transform: capitalize;
 }
-
-/* .work .work__main .work-box:hover .image img {
-    transform: rotateY(-360deg);
-} */
-
  .work .work__main .work-box .image img {
-    /* transition: transform 0.6s ease !important;
-    transform: rotateY(0deg) !important; */
+    transform: rotateY(0deg);
 }
  .work .work__main .work-box:hover .image img {
-    /* transform: rotateY(360deg) !important; */
-        animation: rotateOnceImg 0.6s linear !important;
+      animation: rotateOnceImg 0.6s linear;
 }
 @keyframes rotateOnceImg {
     from {
@@ -1879,6 +1873,7 @@ section.crypto {
         transform: rotateY(360deg);
     }
 }
+
 
 @media only screen and (max-width: 767px) {
     .work .work__main {
@@ -8006,9 +8001,9 @@ h2.title {
 .market-update {
     padding: 0 7%;
 }
-li.menu-item:hover {
-    background: linear-gradient(90deg,rgba(188, 254, 8, 1) 0%, rgba(134, 249, 105, 1) 50%, rgba(134, 249, 105, 1) 100%) !important;
-}
+/* li.menu-item:hover {
+    background: linear-gradient(90deg,rgba(188, 254, 8, 1) 0%, rgba(134, 249, 105, 1) 50%, rgba(134, 249, 105, 1) 100%);
+} */
 .crypto-box.active {
     border-radius: 0px !important;
     
@@ -9016,11 +9011,7 @@ section.background-container-custom .work-box:hover
         width: 49% !important;
     }
 }
-/* Fix lỗi mất dấu khi dùng background cho text */
-span.text-primary-crypto {
-    color: #BCFE08 !important;
-}
-/* fix vị trí của mục +- % */
+
 .sale.success, .sale.critical {
     margin-top: -15px;
 }
