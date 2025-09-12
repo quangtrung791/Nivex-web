@@ -20,12 +20,12 @@ export default function ChiTietThuatNgu() {
                             <div className="row">
                                 <div className="col-xl-8 col-md-12 w100">
                                     <div className="blog-main">
-                                        <p className="navigate-top">Bảng thuật ngữ {'>'} Altcoin</p>
+                                        <p className="navigate-top">Bảng thuật ngữ &nbsp; {'>'} &nbsp; <span style={{'color' : '#ffffff'}}>Altcoin</span></p>
                                         <h3 className="title">
                                             Altcoin
                                         </h3>
                                         <div className="meta">
-                                            <Link href="#" className="category btn-action">Người mới</Link>
+                                            <Link href="#" className="category btn-action" style={{'letterSpacing': '0px'}}>Người mới</Link>
                                             {/* <div className="meta-info">
                                                 <Link href="#" className="name"><span />Floyd Buckridge</Link>
                                                 <Link href="#" className="time">Feb 03, 2021</Link>
