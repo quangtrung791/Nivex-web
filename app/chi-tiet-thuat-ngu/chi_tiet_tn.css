@@ -33,10 +33,10 @@ h2.title-propose {
 } */
 @media (min-width: 1920px ) {
     button.btn-crypto-card-learning.btn-action {
-        margin-right: 20px !important;
+        /* margin-right: 20px !important; */
     }
     h2.title-propose {
-        margin-left: 16px !important;
+        /* margin-left: 16px !important; */
     }
 }
 /* Reponsive for PC 1440px */
@@ -87,7 +87,7 @@ h2.title-propose {
         margin-right: unset !important;
     }
     .propose-section .container {
-        max-width: 95% !important;
+        /* max-width: 95% !important; */
     }
 }
 
@@ -112,7 +112,7 @@ h2.title-propose {
         margin-right: unset !important;
     }
     .propose-section .container {
-        max-width: 90% !important;
+        /* max-width: 90% !important; */
     }
 }
 
@@ -178,7 +178,7 @@ h2.title-propose {
         line-height: 1.65 !important;
     }
     .propose-section .container {
-        max-width: 98% !important;
+        /* max-width: 98% !important; */
     }
 }
 
@@ -199,7 +199,7 @@ h2.title-propose {
         line-height: 1.7 !important;
     }
     .propose-section .container {
-        max-width: 96% !important;
+        /* max-width: 96% !important; */
     }
 }
 
@@ -223,7 +223,7 @@ h2.title-propose {
         line-height: 1.75 !important;
     }
     .propose-section .container {
-        max-width: 95% !important;
+        /* max-width: 95% !important; */
     }
 }
 /* Responsive for small mobile (≤ 480px) */
@@ -291,7 +291,7 @@ h2.title-propose {
         line-height: 1.4 !important;
     }
     .propose-section .container {
-        max-width: 98% !important;
+        /* max-width: 98% !important; */
     }
 }
 @media (max-width: 500px) {
