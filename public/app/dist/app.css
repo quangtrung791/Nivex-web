@@ -1859,10 +1859,21 @@ section.crypto {
     padding: 0 18px;
     text-transform: capitalize;
 }
-
-.work .work__main .work-box:hover .image img {
-    transform: rotateY(-360deg);
+ .work .work__main .work-box .image img {
+    transform: rotateY(0deg);
 }
+ .work .work__main .work-box:hover .image img {
+      animation: rotateOnceImg 0.6s linear;
+}
+@keyframes rotateOnceImg {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
 
 @media only screen and (max-width: 767px) {
     .work .work__main {
