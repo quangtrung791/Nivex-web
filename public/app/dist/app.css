@@ -693,6 +693,9 @@ body[data-magic-cursor=hide] .mouse-cursor {
 .header .header__left .main-nav .menu li .sub-menu li.menu-item:hover>a,
 .header .header__left .main-nav .menu li .sub-menu li.menu-item.current-item>a {
     color: var(--primary);
+}
+
+.header .header__left .main-nav .menu li .sub-menu li.menu-item.current-item>a {
     font-weight: 700 !important;
 }
 

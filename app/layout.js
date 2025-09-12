@@ -47,9 +47,9 @@ export default function RootLayout({ children }) {
             </head> */}
             {/* 4. Sử dụng biến của font Inter */}
             <body className={`${inter.variable} body header-fixed is_dark`}>
-                <CoinDataProvider>
+                {/* <CoinDataProvider> */}
                     {children}
-                </CoinDataProvider>
+                {/* </CoinDataProvider> */}
             </body>
         </html>
     )
