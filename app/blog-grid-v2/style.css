@@ -1,0 +1,11 @@
+section.section-sale {
+    display: none !important;
+}
+
+@media (min-width: 1440px) and (max-width: 1599px) {
+    section.blog-grid,
+    section.page-title
+    {
+        padding: 5% 7%;
+    }
+}

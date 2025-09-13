@@ -1,18 +1,19 @@
 'use client'
-import VideoPopup from "@/components/elements/VideoPopup"
-import Layout from "@/components/layout/Layout"
+// import VideoPopup from "@/components/elements/VideoPopup"
+import Layout from "../../components/layout/Layout";
 import Link from "next/link"
 import { useState } from "react"
 import { Autoplay, Navigation, Pagination } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
+import './style.css'
 
-const swiperOptions = {
-    modules: [Autoplay, Pagination, Navigation],
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-}
+// const swiperOptions = {
+//     modules: [Autoplay, Pagination, Navigation],
+//     pagination: {
+//         el: ".swiper-pagination",
+//         clickable: true,
+//     },
+// }
 export default function BlogGrid2() {
     const [flatTabs, setFlatTabs] = useState(1)
     const handleFlatTabs = (index) => {
@@ -25,117 +26,20 @@ export default function BlogGrid2() {
                 <div>
                     <section className="blog-grid">
                         <div className="container">
-                            <div className="row">
-                                <div className="col-md-12">
-                                    <div className="blog-slider">
-                                        <div className="swiper blog-swiper">
-                                            <Swiper {...swiperOptions} className="swiper-wrapper">
-                                                <SwiperSlide>
+                            <div className="row" style={{ display: "flex", gap: 32 }}>
+                                <div className="col-md-8" style={{ 'padding': 'unset' }}>
+                                    <div className="col-md-12">
                                                     <div className="blog-box">
                                                         <div className="box-image">
-                                                            <img src="/assets/images/blog/blog-01.jpg" alt="" />
+                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 
                                                             </div>
-                                                        </div>
-                                                        <div className="box-content">
-                                                            <Link href="#" className="category btn-action">learn &amp; earn</Link>
-                                                            <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
-                                                            <div className="meta">
-                                                                <Link href="#" className="name"><span />Floyd Buckridge</Link>
-                                                                <Link href="#" className="time">Feb 03, 2021</Link>
-                                                            </div>
-                                                            <p className="text">
-                                                                Lorem ipsum dolor sit amet, consectetur adipiscing
-                                                                elit. Consectetur nibha msm curabitur sit in
-                                                                adipiscing purus ut sem. Donec nulla sem rhoncus dolor
-                                                                aliquam.
-                                                            </p>
-                                                            <Link href="/blog-details">Read More</Link>
                                                         </div>
                                                     </div>
-                                                </SwiperSlide>
-                                                <SwiperSlide>
-                                                    <div className="blog-box">
-                                                        <div className="box-image">
-                                                            <img src="/assets/images/blog/blog-01.jpg" alt="" />
-                                                            <div className="wrap-video">
-                                                                <VideoPopup />
-                                                            </div>
-                                                        </div>
-                                                        <div className="box-content">
-                                                            <Link href="#" className="category btn-action">learn &amp; earn</Link>
-                                                            <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
-                                                            <div className="meta">
-                                                                <Link href="#" className="name"><span />Floyd Buckridge</Link>
-                                                                <Link href="#" className="time">Feb 03, 2021</Link>
-                                                            </div>
-                                                            <p className="text">
-                                                                Lorem ipsum dolor sit amet, consectetur adipiscing
-                                                                elit. Consectetur nibha msm curabitur sit in
-                                                                adipiscing purus ut sem. Donec nulla sem rhoncus dolor
-                                                                aliquam.
-                                                            </p>
-                                                            <Link href="/blog-details">Read More</Link>
-                                                        </div>
-                                                    </div>
-                                                </SwiperSlide>
-                                                <SwiperSlide>
-                                                    <div className="blog-box">
-                                                        <div className="box-image">
-                                                            <img src="/assets/images/blog/blog-01.jpg" alt="" />
-                                                            <div className="wrap-video">
-                                                                <VideoPopup />
-                                                            </div>
-                                                        </div>
-                                                        <div className="box-content">
-                                                            <Link href="#" className="category btn-action">learn &amp; earn</Link>
-                                                            <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
-                                                            <div className="meta">
-                                                                <Link href="#" className="name"><span />Floyd Buckridge</Link>
-                                                                <Link href="#" className="time">Feb 03, 2021</Link>
-                                                            </div>
-                                                            <p className="text">
-                                                                Lorem ipsum dolor sit amet, consectetur adipiscing
-                                                                elit. Consectetur nibha msm curabitur sit in
-                                                                adipiscing purus ut sem. Donec nulla sem rhoncus dolor
-                                                                aliquam.
-                                                            </p>
-                                                            <Link href="/blog-details">Read More</Link>
-                                                        </div>
-                                                    </div>
-                                                </SwiperSlide>
-                                                <SwiperSlide>
-                                                    <div className="blog-box">
-                                                        <div className="box-image">
-                                                            <img src="/assets/images/blog/blog-01.jpg" alt="" />
-                                                            <div className="wrap-video">
-                                                                <VideoPopup />
-                                                            </div>
-                                                        </div>
-                                                        <div className="box-content">
-                                                            <Link href="#" className="category btn-action">learn &amp; earn</Link>
-                                                            <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
-                                                            <div className="meta">
-                                                                <Link href="#" className="name"><span />Floyd Buckridge</Link>
-                                                                <Link href="#" className="time">Feb 03, 2021</Link>
-                                                            </div>
-                                                            <p className="text">
-                                                                Lorem ipsum dolor sit amet, consectetur adipiscing
-                                                                elit. Consectetur nibha msm curabitur sit in
-                                                                adipiscing purus ut sem. Donec nulla sem rhoncus dolor
-                                                                aliquam.
-                                                            </p>
-                                                            <Link href="/blog-details">Read More</Link>
-                                                        </div>
-                                                    </div>
-                                                </SwiperSlide>
-                                            </Swiper>
-                                            <div className="swiper-pagination" />
-                                        </div>
                                     </div>
                                 </div>
-                                <div className="col-md-12">
+                                <div className="col-md-8">
                                     <div className="flat-tabs">
                                         <ul className="menu-tab">
                                             <li className={flatTabs === 1 ? "active" : ""} onClick={() => handleFlatTabs(1)}><h6 className="fs-16">View All</h6></li>
@@ -158,12 +62,106 @@ export default function BlogGrid2() {
                                         </div>
                                         <div className="content-tab">
                                             <div className="content-inner row" style={{ display: `${flatTabs === 1 ? "flex" : "none"}` }}>
+                                                <div className="col-md-9"  style={{ display: 'flex', gap: '4%', 'paddingLeft': 'unset' }}>
+                                                    <div className="col-md-8">
+                                                        <div className="blog-box">
+                                                            <div className="box-image">
+                                                                <img src="/assets/images/blog/blog-01.jpg" alt="" />
+                                                                <div className="wrap-video">
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                            <div className="box-content">
+                                                                <Link href="#" className="category btn-action">learn &amp; earn</Link>
+                                                                <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
+                                                                <div className="meta">
+                                                                    <Link href="#" className="name"><span />Floyd Buckridge</Link>
+                                                                    <Link href="#" className="time">Feb 03, 2021</Link>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="col-md-8">
+                                                        <div className="blog-box">
+                                                            <div className="box-image">
+                                                                <img src="/assets/images/blog/blog-02.jpg" alt="" />
+                                                                <div className="wrap-video">
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                            <div className="box-content">
+                                                                <Link href="#" className="category btn-action">learn &amp; earn</Link>
+                                                                <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
+                                                                <div className="meta">
+                                                                    <Link href="#" className="name"><span />Floyd Buckridge</Link>
+                                                                    <Link href="#" className="time">Feb 03, 2021</Link>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="col-md-9" style={{ display: 'flex', gap: '4%', 'paddingLeft': 'unset' }}>
+                                                    <div className="col-md-8">
+                                                        <div className="blog-box">
+                                                            <div className="box-image">
+                                                                <img src="/assets/images/blog/blog-01.jpg" alt="" />
+                                                                <div className="wrap-video">
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                            <div className="box-content">
+                                                                <Link href="#" className="category btn-action">learn &amp; earn</Link>
+                                                                <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
+                                                                <div className="meta">
+                                                                    <Link href="#" className="name"><span />Floyd Buckridge</Link>
+                                                                    <Link href="#" className="time">Feb 03, 2021</Link>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="col-md-8">
+                                                        <div className="blog-box">
+                                                            <div className="box-image">
+                                                                <img src="/assets/images/blog/blog-02.jpg" alt="" />
+                                                                <div className="wrap-video">
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                            <div className="box-content">
+                                                                <Link href="#" className="category btn-action">learn &amp; earn</Link>
+                                                                <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
+                                                                <div className="meta">
+                                                                    <Link href="#" className="name"><span />Floyd Buckridge</Link>
+                                                                    <Link href="#" className="time">Feb 03, 2021</Link>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {/* <div className="col-md-4">
+                                                    <div className="blog-box">
+                                                        <div className="box-image">
+                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
+                                                            <div className="wrap-video">
+                                                                 
+                                                            </div>
+                                                        </div>
+                                                        <div className="box-content">
+                                                            <Link href="#" className="category btn-action">learn &amp; earn</Link>
+                                                            <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
+                                                            <div className="meta">
+                                                                <Link href="#" className="name"><span />Floyd Buckridge</Link>
+                                                                <Link href="#" className="time">Feb 03, 2021</Link>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                                 <div className="col-md-4">
                                                     <div className="blog-box">
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-01.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -181,7 +179,7 @@ export default function BlogGrid2() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -199,7 +197,7 @@ export default function BlogGrid2() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -211,61 +209,7 @@ export default function BlogGrid2() {
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div className="col-md-4">
-                                                    <div className="blog-box">
-                                                        <div className="box-image">
-                                                            <img src="/assets/images/blog/blog-01.jpg" alt="" />
-                                                            <div className="wrap-video">
-                                                                <VideoPopup />
-                                                            </div>
-                                                        </div>
-                                                        <div className="box-content">
-                                                            <Link href="#" className="category btn-action">learn &amp; earn</Link>
-                                                            <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
-                                                            <div className="meta">
-                                                                <Link href="#" className="name"><span />Floyd Buckridge</Link>
-                                                                <Link href="#" className="time">Feb 03, 2021</Link>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className="col-md-4">
-                                                    <div className="blog-box">
-                                                        <div className="box-image">
-                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
-                                                            <div className="wrap-video">
-                                                                <VideoPopup />
-                                                            </div>
-                                                        </div>
-                                                        <div className="box-content">
-                                                            <Link href="#" className="category btn-action">learn &amp; earn</Link>
-                                                            <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
-                                                            <div className="meta">
-                                                                <Link href="#" className="name"><span />Floyd Buckridge</Link>
-                                                                <Link href="#" className="time">Feb 03, 2021</Link>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className="col-md-4">
-                                                    <div className="blog-box">
-                                                        <div className="box-image">
-                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
-                                                            <div className="wrap-video">
-                                                                <VideoPopup />
-                                                            </div>
-                                                        </div>
-                                                        <div className="box-content">
-                                                            <Link href="#" className="category btn-action">learn &amp; earn</Link>
-                                                            <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
-                                                            <div className="meta">
-                                                                <Link href="#" className="name"><span />Floyd Buckridge</Link>
-                                                                <Link href="#" className="time">Feb 03, 2021</Link>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                </div> */}
                                                 <div className="col-md-12">
                                                     <div className="button-loadmore">
                                                         <Link href="#">
@@ -289,7 +233,7 @@ export default function BlogGrid2() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-01.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -307,7 +251,7 @@ export default function BlogGrid2() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -325,7 +269,7 @@ export default function BlogGrid2() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -343,7 +287,7 @@ export default function BlogGrid2() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-01.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -361,7 +305,7 @@ export default function BlogGrid2() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -379,7 +323,7 @@ export default function BlogGrid2() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -415,7 +359,7 @@ export default function BlogGrid2() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-01.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -433,7 +377,7 @@ export default function BlogGrid2() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -451,7 +395,7 @@ export default function BlogGrid2() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -469,7 +413,7 @@ export default function BlogGrid2() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-01.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -487,7 +431,7 @@ export default function BlogGrid2() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -505,7 +449,7 @@ export default function BlogGrid2() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -541,7 +485,7 @@ export default function BlogGrid2() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-01.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -559,7 +503,7 @@ export default function BlogGrid2() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -577,7 +521,7 @@ export default function BlogGrid2() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -595,7 +539,7 @@ export default function BlogGrid2() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-01.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -613,7 +557,7 @@ export default function BlogGrid2() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -631,7 +575,7 @@ export default function BlogGrid2() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -667,7 +611,7 @@ export default function BlogGrid2() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-01.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -685,7 +629,7 @@ export default function BlogGrid2() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -703,7 +647,7 @@ export default function BlogGrid2() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -721,7 +665,7 @@ export default function BlogGrid2() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-01.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -739,7 +683,7 @@ export default function BlogGrid2() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -757,7 +701,7 @@ export default function BlogGrid2() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -793,7 +737,7 @@ export default function BlogGrid2() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-01.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -811,7 +755,7 @@ export default function BlogGrid2() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -829,7 +773,7 @@ export default function BlogGrid2() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -847,7 +791,7 @@ export default function BlogGrid2() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-01.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -865,7 +809,7 @@ export default function BlogGrid2() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -883,7 +827,7 @@ export default function BlogGrid2() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -919,7 +863,25 @@ export default function BlogGrid2() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-01.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 
+                                                            </div>
+                                                        </div>
+                                                        {/* <div className="box-content">
+                                                            <Link href="#" className="category btn-action">learn &amp; earn</Link>
+                                                            <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
+                                                            <div className="meta">
+                                                                <Link href="#" className="name"><span />Floyd Buckridge</Link>
+                                                                <Link href="#" className="time">Feb 03, 2021</Link>
+                                                            </div>
+                                                        </div> */}
+                                                    </div>
+                                                </div>
+                                                {/* <div className="col-md-4">
+                                                    <div className="blog-box">
+                                                        <div className="box-image">
+                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
+                                                            <div className="wrap-video">
+                                                                 
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -937,25 +899,7 @@ export default function BlogGrid2() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
-                                                            </div>
-                                                        </div>
-                                                        <div className="box-content">
-                                                            <Link href="#" className="category btn-action">learn &amp; earn</Link>
-                                                            <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
-                                                            <div className="meta">
-                                                                <Link href="#" className="name"><span />Floyd Buckridge</Link>
-                                                                <Link href="#" className="time">Feb 03, 2021</Link>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className="col-md-4">
-                                                    <div className="blog-box">
-                                                        <div className="box-image">
-                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
-                                                            <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -973,7 +917,7 @@ export default function BlogGrid2() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-01.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -991,7 +935,7 @@ export default function BlogGrid2() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -1009,7 +953,7 @@ export default function BlogGrid2() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -1021,7 +965,7 @@ export default function BlogGrid2() {
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> */}
                                                 <div className="col-md-12">
                                                     <div className="button-loadmore">
                                                         <Link href="#">
