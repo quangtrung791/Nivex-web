@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+const path = require('path')
+
 const nextConfig = {
   // Tối ưu caching cho static files
   async headers() {
@@ -35,6 +37,15 @@ const nextConfig = {
   experimental: {
     largePageDataBytes: 128 * 1000, // 128KB
     serverComponentsExternalPackages: ['@prisma/client', 'prisma']
+  },
+  
+  // Webpack config for @ alias
+  webpack: (config) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@': path.resolve(__dirname),
+    }
+    return config
   },
 }
 
