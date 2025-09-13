@@ -3,21 +3,34 @@ import { NextResponse } from "next/server";
 
 export async function GET() {
   try {
-    console.log("Attempting to fetch data...");
-    const users = await prisma.test1.findMany();
-    console.log("Data fetched successfully:", users);
+    console.log("GET /api/test called");
+    console.log("DATABASE_URL:", process.env.DATABASE_URL);
+    
+    // Test connection
+    await prisma.$connect();
+    console.log("Database connected successfully");
+    
+    const rows = await prisma.test1.findMany({
+      orderBy: { id: 'asc' }
+    });
+    
+    console.log("Found rows:", rows);
     
     return NextResponse.json({ 
-      success: true, 
-      data: users,
-      count: users.length 
+      ok: true,
+      rows: rows,
+      meta: {
+        db: "nivex",
+        schema: "public",
+        count: rows.length
+      }
     });
   } catch (error) {
     console.error("Database error:", error);
     return NextResponse.json({ 
-      success: false, 
+      ok: false,
       error: error.message,
-      stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
+      code: error.code || 'UNKNOWN_ERROR'
     }, { status: 500 });
   }
 }
@@ -25,28 +38,28 @@ export async function GET() {
 export async function POST(request) {
   try {
     const body = await request.json();
-    console.log("Attempting to insert:", body);
+    console.log("POST /api/test called with:", body);
     
-    const newUser = await prisma.test1.create({
+    const newRow = await prisma.test1.create({
       data: {
-        name: body.name || 'Test User from Vercel'
+        id: body.id || undefined, // Let DB auto-increment if not provided
+        name: body.name || 'Test User'
       }
     });
     
-    console.log("Data inserted successfully:", newUser);
+    console.log("Created row:", newRow);
     
     return NextResponse.json({ 
-      success: true, 
-      data: newUser,
+      ok: true,
+      row: newRow,
       message: "Record created successfully" 
     });
   } catch (error) {
     console.error("Insert error:", error);
     return NextResponse.json({ 
-      success: false, 
+      ok: false,
       error: error.message,
-      code: error.code,
-      stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
+      code: error.code || 'UNKNOWN_ERROR'
     }, { status: 500 });
   }
 }
