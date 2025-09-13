@@ -39,52 +39,101 @@ export async function POST(request) {
   try {
     const body = await request.json();
     console.log("POST /api/test called with:", body);
+    console.log("Environment:", process.env.NODE_ENV);
+    console.log("Database URL (partial):", process.env.DATABASE_URL?.substring(0, 30) + "...");
     
-    // Sử dụng upsert để tránh conflict với ID
-    let newRow;
+    // Test connection first
+    await prisma.$connect();
+    console.log("Database connection successful");
     
-    if (body.id) {
-      // Nếu có ID, dùng upsert
-      newRow = await prisma.test1.upsert({
-        where: { id: parseInt(body.id) },
-        update: { name: body.name || 'Updated User' },
-        create: { 
-          id: parseInt(body.id),
-          name: body.name || 'Test User'
-        }
-      });
-    } else {
-      // Nếu không có ID, tạo mới với auto-increment
-      newRow = await prisma.test1.create({
-        data: {
-          name: body.name || 'Test User - ' + new Date().toISOString()
-        }
-      });
+    // Validate input
+    if (!body.name || body.name.trim() === '') {
+      return NextResponse.json({ 
+        ok: false,
+        error: "Name is required"
+      }, { status: 400 });
     }
     
-    console.log("Created/Updated row:", newRow);
+    let newRow;
     
-    return NextResponse.json({ 
-      ok: true,
-      row: newRow,
-      message: "Record created/updated successfully" 
-    });
+    try {
+      if (body.id && !isNaN(parseInt(body.id))) {
+        // Nếu có ID, kiểm tra xem có tồn tại không
+        const existing = await prisma.test1.findUnique({
+          where: { id: parseInt(body.id) }
+        });
+        
+        if (existing) {
+          // Update existing record
+          newRow = await prisma.test1.update({
+            where: { id: parseInt(body.id) },
+            data: { name: body.name.trim() }
+          });
+          console.log("Updated existing record:", newRow);
+        } else {
+          // Create with specific ID
+          newRow = await prisma.test1.create({
+            data: { 
+              id: parseInt(body.id),
+              name: body.name.trim()
+            }
+          });
+          console.log("Created record with ID:", newRow);
+        }
+      } else {
+        // Create new record with auto-increment ID
+        newRow = await prisma.test1.create({
+          data: {
+            name: body.name.trim()
+          }
+        });
+        console.log("Created new record:", newRow);
+      }
+      
+      return NextResponse.json({ 
+        ok: true,
+        row: newRow,
+        message: "Record saved successfully" 
+      });
+      
+    } catch (dbError) {
+      console.error("Database operation error:", dbError);
+      
+      // Handle specific Prisma errors
+      if (dbError.code === 'P2002') {
+        return NextResponse.json({ 
+          ok: false,
+          error: "Record with this ID already exists",
+          code: dbError.code
+        }, { status: 409 });
+      }
+      
+      throw dbError; // Re-throw to be caught by outer try-catch
+    }
+    
   } catch (error) {
-    console.error("Insert error:", error);
+    console.error("POST /api/test error:", error);
     
-    // Log chi tiết lỗi để debug trên Vercel
+    // Log chi tiết lỗi
     console.error("Error details:", {
+      name: error.name,
       message: error.message,
       code: error.code,
       meta: error.meta,
-      stack: error.stack
+      stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
     });
     
     return NextResponse.json({ 
       ok: false,
-      error: error.message,
+      error: error.message || "Internal server error",
       code: error.code || 'UNKNOWN_ERROR',
-      meta: error.meta || null
+      details: process.env.NODE_ENV === 'development' ? {
+        name: error.name,
+        stack: error.stack
+      } : undefined
     }, { status: 500 });
+  } finally {
+    // Disconnect để tránh connection leak trên serverless
+    await prisma.$disconnect();
   }
 }
