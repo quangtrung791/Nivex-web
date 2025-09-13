@@ -5,7 +5,7 @@ generator client {
 
 datasource db {
   provider  = "postgresql"
-  url       = env("DATABASE_URL")       // URL có ?pgbouncer=true
+  url       = env("DATABASE_URL_VERCEL")       // URL có ?pgbouncer=true
 }
 
 model test1 {
