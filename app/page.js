@@ -1,13 +1,13 @@
-import Layout from "@/components/layout/Layout"
-import About1 from "@/components/sections/About1"
-import Banner1 from "@/components/sections/Banner1"
-import Coinlist1 from "@/components/sections/Coinlist1"
-import Crypto1 from "@/components/sections/Crypto1"
-// import Download from "@/components/sections/Download"
-// import Sale from "@/components/sections/Sale"
-import Testimonials1 from "@/components/sections/Testimonials1"
-import Work1 from "@/components/sections/Work1"
-import Propose from "@/components/sections/Propose"
+import Layout from "../components/layout/Layout"
+import About1 from "../components/sections/About1"
+import Banner1 from "../components/sections/Banner1"
+import Coinlist1 from "../components/sections/Coinlist1"
+import Crypto1 from "../components/sections/Crypto1"
+// import Download from "../components/sections/Download"
+// import Sale from "../components/sections/Sale"
+import Testimonials1 from "../components/sections/Testimonials1"
+import Work1 from "../components/sections/Work1"
+import Propose from "../components/sections/Propose"
 export default function Home() {
 
     return (

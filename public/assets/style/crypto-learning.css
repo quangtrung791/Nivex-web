@@ -14,7 +14,7 @@
     color: white;
 }
 
-.crypto-learning-section .crypto-content h2 .text-primary-crypto, .crypto-learning-section .crypto-card .card-info h4.title-video-homepage:hover {
+.crypto-learning-section .crypto-content h2 .text-primary-crypto {
        /* hoặc inherit từ h2 */
     padding: .25em 0;                      /* nới vùng tô background theo chiều dọc */
     background: linear-gradient(90deg,#bcfe08,#66f869);

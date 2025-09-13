@@ -38,6 +38,7 @@
     color: #fff;
     display: -webkit-box;          /* Bắt buộc để line-clamp hoạt động */
     -webkit-line-clamp: 2;         /* Số dòng muốn hiển thị */
+    line-clamp: 2;                 /* Standard property for compatibility */
     -webkit-box-orient: vertical;  /* Thiết lập hướng box theo chiều dọc */
     overflow: hidden;              /* Ẩn phần vượt quá */
     text-overflow: ellipsis; 
