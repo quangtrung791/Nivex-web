@@ -11,4 +11,3 @@ model test1 {
   id   Int     @id @default(autoincrement())
   name String?
 }
-
