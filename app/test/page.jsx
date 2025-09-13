@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
-
+export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
 export default function Page() {
   const [rows, setRows] = useState([]);
   const [meta, setMeta] = useState(null);
