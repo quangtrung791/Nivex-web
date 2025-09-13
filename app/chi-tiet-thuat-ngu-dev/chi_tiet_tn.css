@@ -25,20 +25,8 @@ span.block  {
 p.main-text-p {
     letter-spacing: 0px !important;
 }
-/* .crypto-content.propose {
-    padding: unset;
-}
-h2.title-propose {
-    margin-left: 10px;
-} */
-@media (min-width: 1920px ) {
-    button.btn-crypto-card-learning.btn-action {
-        /* margin-right: 20px !important; */
-    }
-    h2.title-propose {
-        /* margin-left: 16px !important; */
-    }
-}
+
+
 /* Reponsive for PC 1440px */
 @media (min-width: 1440px) and (max-width: 1599px) {
     section.page-title {
@@ -87,7 +75,7 @@ h2.title-propose {
         margin-right: unset !important;
     }
     .propose-section .container {
-        /* max-width: 95% !important; */
+        max-width: 95% !important;
     }
 }
 
@@ -112,7 +100,7 @@ h2.title-propose {
         margin-right: unset !important;
     }
     .propose-section .container {
-        /* max-width: 90% !important; */
+        max-width: 90% !important;
     }
 }
 
@@ -146,7 +134,7 @@ h2.title-propose {
         padding: 6% 5%;
     }
     section.blog-details {
-        padding: 4% 3.5%;
+        padding: 4% 5%;
     }
     section.blog-details h3.title {
         font-size: 22px;
@@ -167,7 +155,7 @@ h2.title-propose {
         padding: 6% 6%;
     }
     section.blog-details {
-        padding: 4% 3.5%;
+        padding: 4% 6%;
     }
     section.blog-details h3.title {
         font-size: 24px;
@@ -178,7 +166,7 @@ h2.title-propose {
         line-height: 1.65 !important;
     }
     .propose-section .container {
-        /* max-width: 98% !important; */
+        max-width: 98% !important;
     }
 }
 
@@ -188,7 +176,7 @@ h2.title-propose {
         padding: 6% 6%;
     }
     section.blog-details {
-        padding: 4% 3.5%;
+        padding: 4% 6%;
     }
     section.blog-details h3.title {
         font-size: 26px;
@@ -199,20 +187,17 @@ h2.title-propose {
         line-height: 1.7 !important;
     }
     .propose-section .container {
-        /* max-width: 96% !important; */
+        max-width: 96% !important;
     }
 }
 
 /* Responsive for iPad Pro Landscape (1366px) */
 @media (min-width: 1280px) and (max-width: 1439px) {
-    .blog-details .blog-main {
-        margin-right: unset !important;
-    }
     section.page-title {
         padding: 5.5% 7%;
     }
     section.blog-details {
-        padding: 3.5% 3.5%;
+        padding: 3.5% 7%;
     }
     section.blog-details h3.title {
         font-size: 26px;
@@ -223,7 +208,7 @@ h2.title-propose {
         line-height: 1.75 !important;
     }
     .propose-section .container {
-        /* max-width: 95% !important; */
+        max-width: 95% !important;
     }
 }
 /* Responsive for small mobile (≤ 480px) */
@@ -239,7 +224,7 @@ h2.title-propose {
         letter-spacing: .15px;
     }
     p.main-text-p {
-        font-size: 14px !important;
+        font-size: 12px !important;
         line-height: 1.6 !important;
     }
     .propose-section .container {
@@ -260,8 +245,8 @@ h2.title-propose {
         letter-spacing: .18px;
     }
     p.main-text-p {
-        font-size: 14px !important;
-        line-height: 1.4 !important;
+        font-size: 13px !important;
+        line-height: 1.65 !important;
     }
     .propose-section .container {
         max-width: 100% !important;
@@ -274,13 +259,7 @@ h2.title-propose {
         padding: 6% 6%;
     }
     section.blog-details {
-        padding: 2.5% 3.5% 0 3.5% !important;
-    }
-    .col-xl-8.col-md-12.w100 {
-        padding: unset;
-    }
-    section.crypto-learning-section {
-                padding: 3.5% 2.5% !important;
+        padding: 4.5% 6%;
     }
     section.blog-details h3.title {
         font-size: 22px;
@@ -288,26 +267,9 @@ h2.title-propose {
     }
     p.main-text-p {
         font-size: 14px !important;
-        line-height: 1.4 !important;
+        line-height: 1.7 !important;
     }
     .propose-section .container {
-        /* max-width: 98% !important; */
-    }
-}
-@media (max-width: 500px) {
-    .col-xl-8.col-md-12.w100 {
-        padding: unset;
-    }
-}
-
-@media (min-width: 912px) and (max-width: 920px) {
-    .blog-details {
-        padding: 2.5% 3%;
-    }
-}
-
-@media (width: 540px) {
-    section.blog-details {
-        padding: 5% 2.5% !important;
+        max-width: 98% !important;
     }
 }
