@@ -1,32 +1,52 @@
-import { prisma } from "../../lib/prisma";
+import { prisma } from "@/app/lib/prisma";
+import { NextResponse } from "next/server";
 
-// Prisma cần Node runtime (không chạy ở Edge)
-export const runtime = "nodejs";
-
-// GET: meta + list rows
 export async function GET() {
   try {
-    const [meta] = await prisma.$queryRaw`
-      SELECT current_database() AS db, current_schema() AS schema
-    `;
-    const rows = await prisma.$queryRaw`
-      SELECT id, name FROM public.test1 ORDER BY id
-    `;
-    return Response.json({ ok: true, meta, rows }, { status: 200 });
-  } catch (e) {
-    return Response.json({ ok: false, error: String(e) }, { status: 500 });
+    console.log("Attempting to fetch data...");
+    const users = await prisma.test1.findMany();
+    console.log("Data fetched successfully:", users);
+    
+    return NextResponse.json({ 
+      success: true, 
+      data: users,
+      count: users.length 
+    });
+  } catch (error) {
+    console.error("Database error:", error);
+    return NextResponse.json({ 
+      success: false, 
+      error: error.message,
+      stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
+    }, { status: 500 });
   }
 }
 
-// POST: { id, name }
-export async function POST(req) {
+export async function POST(request) {
   try {
-    const { id, name } = await req.json();
-    await prisma.$executeRaw`
-      INSERT INTO public.test1 (id, name) VALUES (${id}, ${name})
-    `;
-    return Response.json({ ok: true }, { status: 201 });
-  } catch (e) {
-    return Response.json({ ok: false, error: String(e) }, { status: 500 });
+    const body = await request.json();
+    console.log("Attempting to insert:", body);
+    
+    const newUser = await prisma.test1.create({
+      data: {
+        name: body.name || 'Test User from Vercel'
+      }
+    });
+    
+    console.log("Data inserted successfully:", newUser);
+    
+    return NextResponse.json({ 
+      success: true, 
+      data: newUser,
+      message: "Record created successfully" 
+    });
+  } catch (error) {
+    console.error("Insert error:", error);
+    return NextResponse.json({ 
+      success: false, 
+      error: error.message,
+      code: error.code,
+      stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
+    }, { status: 500 });
   }
 }

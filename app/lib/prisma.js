@@ -1,11 +1,23 @@
 import { PrismaClient } from "@prisma/client";
 
-const g = globalThis;
+const globalForPrisma = globalThis;
 
-export const prisma =
-  g.prisma ??
-  new PrismaClient({
-    log: ["warn", "error"],
-  });
+export const prisma = globalForPrisma.prisma ?? new PrismaClient({
+  log: ['query', 'info', 'warn', 'error'],
+  datasourceUrl: process.env.DATABASE_URL,
+  // Thêm connection pooling settings
+  datasources: {
+    db: {
+      url: process.env.DATABASE_URL
+    }
+  }
+});
 
-if (process.env.NODE_ENV !== "production") g.prisma = prisma;
+if (process.env.NODE_ENV !== "production") {
+  globalForPrisma.prisma = prisma;
+}
+
+// Cleanup connections on process exit
+process.on('beforeExit', async () => {
+  await prisma.$disconnect();
+});
