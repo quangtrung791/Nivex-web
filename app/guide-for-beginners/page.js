@@ -1,5 +1,5 @@
-import Layout from "@/components/layout/Layout"
-import LearningHub from "@/app/guide-for-beginners/LearningHub"
+import Layout from "../../components/layout/Layout"
+import LearningHub from "../../app/guide-for-beginners/LearningHub"
 
 export const metadata = {
     title: 'Guide for Beginners - Nivex Hub',
