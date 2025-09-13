@@ -15,4 +15,3 @@ model test1 {
   
   @@map("test1")
 }
-
