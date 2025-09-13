@@ -40,26 +40,51 @@ export async function POST(request) {
     const body = await request.json();
     console.log("POST /api/test called with:", body);
     
-    const newRow = await prisma.test1.create({
-      data: {
-        id: body.id || undefined, // Let DB auto-increment if not provided
-        name: body.name || 'Test User'
-      }
-    });
+    // Sử dụng upsert để tránh conflict với ID
+    let newRow;
     
-    console.log("Created row:", newRow);
+    if (body.id) {
+      // Nếu có ID, dùng upsert
+      newRow = await prisma.test1.upsert({
+        where: { id: parseInt(body.id) },
+        update: { name: body.name || 'Updated User' },
+        create: { 
+          id: parseInt(body.id),
+          name: body.name || 'Test User'
+        }
+      });
+    } else {
+      // Nếu không có ID, tạo mới với auto-increment
+      newRow = await prisma.test1.create({
+        data: {
+          name: body.name || 'Test User - ' + new Date().toISOString()
+        }
+      });
+    }
+    
+    console.log("Created/Updated row:", newRow);
     
     return NextResponse.json({ 
       ok: true,
       row: newRow,
-      message: "Record created successfully" 
+      message: "Record created/updated successfully" 
     });
   } catch (error) {
     console.error("Insert error:", error);
+    
+    // Log chi tiết lỗi để debug trên Vercel
+    console.error("Error details:", {
+      message: error.message,
+      code: error.code,
+      meta: error.meta,
+      stack: error.stack
+    });
+    
     return NextResponse.json({ 
       ok: false,
       error: error.message,
-      code: error.code || 'UNKNOWN_ERROR'
+      code: error.code || 'UNKNOWN_ERROR',
+      meta: error.meta || null
     }, { status: 500 });
   }
 }
