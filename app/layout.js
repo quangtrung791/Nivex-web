@@ -4,7 +4,7 @@ import "/public/assets/style/crypto-learning.css"
 import "/public/app/dist/swiper-bundle.min.css"
 import "/public/assets/style/propose-homepage.css"
 // import BackToTop from '@/components/elements/BackToTop'
-import { CoinDataProvider } from '@/components/CoinDataProvider'
+// import { CoinDataProvider } from '@/components/CoinDataProvider'
 
 // (Không cần dùng Poppins và DM_Sans nữa, có thể xóa hoặc comment lại)
 // import { DM_Sans, Poppins } from 'next/font/google'

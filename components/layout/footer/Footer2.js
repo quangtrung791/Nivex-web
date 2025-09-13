@@ -1,6 +1,6 @@
 import Link from "next/link"
 import styles from "./footer2.module.css"
-import BackToTop from '@/components/elements/BackToTop'
+import BackToTop from '../../elements/BackToTop'
 
 export default function Footer2() {
     return (
