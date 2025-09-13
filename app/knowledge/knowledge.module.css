@@ -1,0 +1,292 @@
+/* Knowledge Page Styles */
+.knowledgeSection {
+  padding: 60px 0;
+  background: #141414;
+}
+
+.displayFlexForHeader {
+    display: flex;
+    justify-content: space-between;
+}
+.pageTitleKnowLedge {
+    background: #18191D;
+}
+.pageTitleKnowLedge .displayFlexForHeader h3.pageTitleHeading {
+    font-size: 36px;
+}
+
+.pageTitleKnowLedge .displayFlexForHeader h3.pageTitleHeading span {
+    color: #bcfe08
+}
+
+.pageHeaderKnowledgeSubtitle {
+    text-align: right;
+}
+.col6mdCenter {
+    align-self: center;
+    width: 31%;
+}
+
+.filterSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  gap: 20px;
+}
+
+.categoryFilter,
+.difficultyFilter {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.filterLabel {
+  font-size: 16px;
+  color: white;
+  font-weight: 500;
+}
+
+.categoryTabs,
+.difficultyTabs {
+  display: flex;
+  gap: 12px;
+}
+
+.categoryTab,
+.difficultyTab {
+  border: none;
+  background: transparent;
+  color: white;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+.categoryTab {
+    padding: 8px 14px;
+    font-size: 14px;
+}
+
+.difficultyTab {
+    padding: 4px 12px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.categoryTab:hover, .categoryTab.active {
+  background: linear-gradient(90deg, #bcfe08, #66f869);
+  color: black;
+}
+
+.difficultyTab{
+  border: none;
+  color: white;
+  filter: brightness(0.4);
+}
+
+
+.difficultyTab.blue {
+  background: #386EF5;
+}
+
+.difficultyTab.orange {
+  background: #FFB01C;
+}
+
+.difficultyTab.purple {
+  background: #8A38F5;
+}
+
+.difficultyTab.active {
+    filter: brightness(1);
+}
+
+.contentSection {
+  margin-top: 40px;
+}
+
+.sectionTitle {
+  font-size: 28px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 24px;
+}
+
+.articlesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 30px;
+}
+
+.articleCard {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.articleCard:hover .cardTitle {
+    color: #bcfe08;
+}
+
+.cardImage {
+  position: relative;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+}
+
+.cardImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.categoryBadge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+}
+
+.badge, .cardCategory {
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+
+.badge.blue {
+  background: #3772ff;
+}
+
+.badge.orange {
+  background: #ff9500;
+}
+
+.badge.purple {
+  background: #9757d7;
+}
+
+.cardContent {
+  /* padding: 20px; */
+  padding: 20px 0 15px;
+}
+
+.cardMeta {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  gap: 5px;
+}
+
+.cardCategory {
+  background: #242529;
+}
+
+.readTime {
+  font-size: 0.75rem;
+  color: #777e90;
+  font-weight: 500;
+}
+
+.cardSubcategory {
+  font-size: 0.75rem;
+  color: #777e90;
+  margin-bottom: 12px;
+}
+
+.cardTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.4;
+  margin-bottom: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.loadMoreSection {
+  display: flex;
+  justify-content: right;
+}
+
+.loadMoreBtn {
+    background: linear-gradient(to right, #BCFE08, #86F869);
+    color: black;
+    border: none;
+    padding: 13px 36px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    align-self: flex-end;
+    margin-top: 15px;
+}
+
+section.pageTitleKnowLedge, .knowledgeSection {
+    padding-left: 7%;
+    padding-right: 7%;
+}
+
+@media (min-width: 650px) and (max-width: 1439px) {
+    section.pageTitleKnowLedge, .knowledgeSection {
+        padding-left: 3.5%;
+        padding-right: 3.5%;
+    }  
+}
+
+
+@media screen and (max-width: 1024px) {
+    .col6mdCenter {
+        width: 45%;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .displayFlexForHeader {
+    flex-direction: column;
+    gap:10px;
+  }
+  .col6mdCenter {
+    width: 100%;
+  }
+  .col6mdCenter .pageHeaderKnowledgeSubtitle {
+    text-align: left;
+  }
+  .knowledgeSection {
+    padding: 40px 0;
+  }
+  section.pageTitleKnowLedge{
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .filterSection {
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .categoryTabs,
+  .difficultyTabs {
+    flex-wrap: wrap;
+  }
+
+  .articlesGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pageTitleHeading {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .articlesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

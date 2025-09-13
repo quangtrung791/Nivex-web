@@ -1,13 +1,13 @@
 "use client";
 import { useEffect, useState } from "react";
 
-export default function TestPage() {
+export default function TestNeonPage() {
   const [rows, setRows] = useState([]);
   const [meta, setMeta] = useState(null);
   const [id, setId] = useState(0);
   const [name, setName] = useState("");
 
-  const apiEndpoint = "/api/test";
+  const apiEndpoint = "/api/test-neon";
 
   const load = async () => {
     try {
@@ -43,14 +43,14 @@ export default function TestPage() {
 
   return (
     <div style={{ padding: 24, color: "#eee", background: "#121212", minHeight: "100vh" }}>
-      <h1 style={{ fontSize: 36, marginBottom: 12 }}>Test Prisma ORM</h1>
+      <h1 style={{ fontSize: 36, marginBottom: 12 }}>Test Neon Serverless Driver</h1>
       <div style={{ marginBottom: 8 }}>
         DB: <b>{meta?.db}</b> — schema: <b>{meta?.schema}</b>
       </div>
       <div style={{ marginBottom: 12, padding: 12, background: "#2a2a2a", borderRadius: 8 }}>
-        <h3 style={{ margin: "0 0 8px 0", color: "#3772ff" }}>Prisma ORM</h3>
+        <h3 style={{ margin: "0 0 8px 0", color: "#58bd7d" }}>Neon Serverless Driver</h3>
         <p style={{ margin: 0, fontSize: 14, color: "#ccc" }}>
-          Sử dụng Prisma ORM để quản lý database với type-safe queries
+          Sử dụng @neondatabase/serverless driver để kết nối trực tiếp với PostgreSQL
         </p>
       </div>
       <div style={{ display: "flex", gap: 8, margin: "12px 0" }}>
@@ -73,12 +73,12 @@ export default function TestPage() {
             padding: "6px 12px", 
             borderRadius: 4, 
             border: "none", 
-            background: "#3772ff", 
+            background: "#58bd7d", 
             color: "white", 
             cursor: "pointer" 
           }}
         >
-          Add via Prisma
+          Add via Neon
         </button>
         <button 
           onClick={load} 
@@ -96,7 +96,7 @@ export default function TestPage() {
       </div>
       
       <div style={{ marginBottom: 16 }}>
-        <h3 style={{ color: "#3772ff", marginBottom: 8 }}>Data Records ({rows.length} items):</h3>
+        <h3 style={{ color: "#58bd7d", marginBottom: 8 }}>Data Records ({rows.length} items):</h3>
       </div>
       
       <div style={{ 
@@ -113,25 +113,6 @@ export default function TestPage() {
           {JSON.stringify(rows, null, 2)}
         </pre>
       </div>
-      
-      <div style={{ marginTop: 24, padding: 16, background: "#2a2a2a", borderRadius: 8 }}>
-        <h3 style={{ margin: "0 0 8px 0", color: "#58bd7d" }}>Compare with Neon</h3>
-        <p style={{ margin: "0 0 8px 0", fontSize: 14, color: "#ccc" }}>
-          Muốn test Neon Serverless Driver? 
-        </p>
-        <a 
-          href="/test-neon" 
-          style={{ 
-            color: "#58bd7d", 
-            textDecoration: "none",
-            fontSize: 14,
-            fontWeight: "bold"
-          }}
-        >
-          → Đi đến Test Neon Page
-        </a>
-      </div>
     </div>
   );
 }
-	
