@@ -3,7 +3,7 @@
 
 async function createDbClient() {
   const { Client } = await import('pg');
-  return new Client(process.env.DATABASE_URL);
+  return new Client(process.env.DATABASE_URL_CONFIG);
 }
 
 async function query(text, params = []) {
