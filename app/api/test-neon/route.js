@@ -17,20 +17,33 @@ export async function GET(request) {
       let row;
       
       if (id && !isNaN(parseInt(id))) {
-        console.log("Upserting with id (neon):", parseInt(id)); // Debug log
-        // Upsert
-        const result = await query(
-          `INSERT INTO test1 (id, name) VALUES ($1, $2) 
-           ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name 
-           RETURNING *`,
-          [parseInt(id), name.trim()]
-        );
-        row = result[0];
+        console.log("Trying to update existing record with id (neon):", parseInt(id)); // Debug log
+        
+        // Kiểm tra xem record có tồn tại không
+        const existing = await query('SELECT * FROM test1 WHERE id = $1', [parseInt(id)]);
+        
+        if (existing.length > 0) {
+          // Update record có sẵn
+          const result = await query(
+            'UPDATE test1 SET name = $1 WHERE id = $2 RETURNING *',
+            [name.trim(), parseInt(id)]
+          );
+          row = result[0];
+          console.log("Updated existing record (neon):", row);
+        } else {
+          // Record không tồn tại, tạo mới mà không chỉ định ID
+          const result = await query(
+            'INSERT INTO test1 (name) VALUES ($1) RETURNING *',
+            [name.trim()]
+          );
+          row = result[0];
+          console.log("Created new record (auto ID, neon):", row);
+        }
       } else {
-        console.log("Creating new record (neon)"); // Debug log
-        // Insert mới
+        console.log("Creating new record without ID (neon)"); // Debug log
+        // Tạo record mới mà không chỉ định ID
         const result = await query(
-          `INSERT INTO test1 (name) VALUES ($1) RETURNING *`,
+          'INSERT INTO test1 (name) VALUES ($1) RETURNING *',
           [name.trim()]
         );
         row = result[0];

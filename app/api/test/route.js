@@ -17,14 +17,30 @@ export async function GET(request) {
       let row;
       
       if (id && !isNaN(parseInt(id))) {
-        console.log("Upserting with id:", parseInt(id)); // Debug log
-        row = await prisma.test1.upsert({
-          where: { id: parseInt(id) },
-          update: { name: name.trim() },
-          create: { id: parseInt(id), name: name.trim() }
+        console.log("Trying to update existing record with id:", parseInt(id)); // Debug log
+        
+        // Kiểm tra xem record có tồn tại không
+        const existing = await prisma.test1.findUnique({
+          where: { id: parseInt(id) }
         });
+        
+        if (existing) {
+          // Update record có sẵn
+          row = await prisma.test1.update({
+            where: { id: parseInt(id) },
+            data: { name: name.trim() }
+          });
+          console.log("Updated existing record:", row);
+        } else {
+          // Record không tồn tại, tạo mới mà không chỉ định ID
+          row = await prisma.test1.create({
+            data: { name: name.trim() }
+          });
+          console.log("Created new record (auto ID):", row);
+        }
       } else {
-        console.log("Creating new record"); // Debug log
+        console.log("Creating new record without ID"); // Debug log
+        // Tạo record mới mà không chỉ định ID
         row = await prisma.test1.create({
           data: { name: name.trim() }
         });
