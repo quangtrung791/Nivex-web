@@ -1,13 +1,14 @@
 
-import VideoPopup from "@/components/elements/VideoPopup"
-import Layout from "@/components/layout/Layout"
+// import VideoPopup from "@/components/elements/VideoPopup"
+import Layout from "../../components/layout/Layout"
 import Link from "next/link"
+import './style.css';
 export default function BlogDetails() {
 
     return (
         <>
 
-            <Layout headerStyle={1} footerStyle={2} breadcrumbTitle="Blog Details">
+            <Layout headerStyle={1} footerStyle={2} breadcrumbTitle="Tin tức">
                 <div>
                     <section className="blog-details">
                         <div className="container">
@@ -41,7 +42,7 @@ export default function BlogDetails() {
                                             <div className="box-image">
                                                 <img src="/assets/images/blog/blog-01.jpg" alt="" />
                                                 <div className="wrap-video">
-                                                    <VideoPopup />
+                                                    {/* <VideoPopup /> */}
                                                 </div>
                                             </div>
                                             <h5>What is Virtual Land?</h5>
@@ -58,8 +59,8 @@ export default function BlogDetails() {
                                                 quis nibh. Venenatis cras magna.
                                             </p>
                                             <div className="image">
-                                                <img src="/assets/images/blog/blog-details-1.jpg" alt="" />
-                                                <img src="/assets/images/blog/blog-details-2.jpg" alt="" />
+                                                <img src="/assets/images/blog/blog-details-1.jpg" alt="" style={{ 'width': '100%' }} />
+                                                {/* <img src="/assets/images/blog/blog-details-2.jpg" alt="" /> */}
                                             </div>
                                             <h5>The Frontier of a New Economy</h5>
                                             <p>
@@ -122,7 +123,7 @@ export default function BlogDetails() {
                                                 </ul>
                                             </div>
                                         </div>
-                                        <form >
+                                        {/* <form >
                                             <h6 className="heading">Leave a comment</h6>
                                             <div className="form-group">
                                                 <input className="form-control" type="text" placeholder="Name" />
@@ -132,7 +133,7 @@ export default function BlogDetails() {
                                                 <textarea className="form-control" cols={30} rows={10} placeholder="Message" />
                                             </div>
                                             <button className="btn-action" type="submit">Send comment</button>
-                                        </form>
+                                        </form> */}
                                     </div>
                                 </div>
                                 <div className="col-xl-4 col-md-12">

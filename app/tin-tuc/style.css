@@ -3,8 +3,8 @@ section.section-sale {
 }
 
 @media (min-width: 1440px) and (max-width: 1599px) {
-    section.blog-grid,
-    section.page-title
+    section.page-title,
+    section.blog-details
     {
         padding: 5% 7%;
     }
