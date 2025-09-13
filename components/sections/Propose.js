@@ -1,28 +1,28 @@
 
 'use client'
 import { useState } from 'react'
-import 'swiper/css/free-mode'
-import 'swiper/css/thumbs'
-import { FreeMode, Navigation, Thumbs } from 'swiper/modules'
-import { Swiper, SwiperSlide } from 'swiper/react'
+// import 'swiper/css/free-mode'
+// import 'swiper/css/thumbs'
+// import { FreeMode, Navigation, Thumbs } from 'swiper/modules'
+// import { Swiper, SwiperSlide } from 'swiper/react'
 export default function Propose() {
-    const [thumbsSwiper, setThumbsSwiper] = useState(null)
+    // const [thumbsSwiper, setThumbsSwiper] = useState(null)
 
-    // Swiper options for the main slider
-    const mainSwiperOptions = {
-        spaceBetween: 10,
-        thumbs: { swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null },
-        modules: [FreeMode, Navigation, Thumbs],
-    }
+    // // Swiper options for the main slider
+    // const mainSwiperOptions = {
+    //     spaceBetween: 10,
+    //     thumbs: { swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null },
+    //     modules: [FreeMode, Navigation, Thumbs],
+    // }
 
-    // Swiper options for the thumbnail slider
-    const thumbnailSwiperOptions = {
-        modules: [FreeMode, Navigation, Thumbs],
-        spaceBetween: 10,
-        slidesPerView: 3,
-        freeMode: true,
-        watchSlidesProgress: true,
-    }
+    // // Swiper options for the thumbnail slider
+    // const thumbnailSwiperOptions = {
+    //     modules: [FreeMode, Navigation, Thumbs],
+    //     spaceBetween: 10,
+    //     slidesPerView: 3,
+    //     freeMode: true,
+    //     watchSlidesProgress: true,
+    // }
     return (
         <>
 
