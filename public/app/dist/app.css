@@ -1089,7 +1089,10 @@ body[data-magic-cursor=hide] .mouse-cursor {
 .header .current-item a {
     color: #BCFE08;
 }
-.header .current-menu-item a {
+.header .current-menu-item .master-item {
+    font-weight: 700 !important;
+}
+.header .sub-menu .menu-item.current-item a {
     font-weight: 700 !important;
 }
 /* .current-menu-item {
