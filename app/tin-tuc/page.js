@@ -15,88 +15,143 @@ export default function BlogDetails() {
                             <div className="row">
                                 <div className="col-xl-8 col-md-12">
                                     <div className="blog-main">
-                                        <h3 className="title">
-                                            Virtual Land in the Metaverse Is Selling for Millions of Dollars
-                                        </h3>
-                                        <div className="meta">
+                                        <ul className="menu-tab menu-on-line">
+                                            <li className="listing active" ><h6 className="fs-16">View All</h6></li>
+                                            <li  className="listing" ><h6 className="fs-16">Learn &amp; Earn</h6></li>
+                                            <li  className="listing" ><h6 className="fs-16">Metaverse</h6></li>
+                                            <li  className="listing" ><h6 className="fs-16">Energy</h6></li>
+                                            <li  className="listing" ><h6 className="fs-16">NFT</h6></li>
+                                            <li  className="listing" ><h6 className="fs-16">Gaming</h6></li> 
+                                            <li  className="listing" ><h6 className="fs-16">Music</h6></li>
+                                        </ul>
+                                        
+                                        {/* <div className="meta">
                                             <Link href="#" className="category btn-action">learn &amp; earn</Link>
                                             <div className="meta-info">
                                                 <Link href="#" className="name"><span />Floyd Buckridge</Link>
                                                 <Link href="#" className="time">Feb 03, 2021</Link>
                                             </div>
-                                        </div>
+                                        </div> */}
                                         <div className="content">
-                                            <h5>What is the Metaverse?</h5>
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                Posuere sed nec, vestibulum odio diam amet. In massa auctor
-                                                integer est. Morbi viverra neque sagittis varius. Ornare in
-                                                nibh dui ornare mattis vel. Volutpat aenean enim sit cras
-                                                egestas diam volutpat integer est. Ornare in odio lorem
-                                                pharetra tempor, neque sit. Lacus fermentum urna tellus
-                                                vulputate aliquam nullam amet, posuere. Magna ligula et ut
-                                                sagittis interdum duis. Ut sed tristique tempor nibh bibendum
-                                                accumsan, fringilla. Eget rhoncus in hendrerit nascetur odio
-                                                consectetur enim tristique. In porttitor.
-                                            </p>
-                                            <div className="box-image">
-                                                <img src="/assets/images/blog/blog-01.jpg" alt="" />
+                                            
+                                           
+                                            <div className="box-image trigger-full-w">
+                                                <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                 <div className="wrap-video">
                                                     {/* <VideoPopup /> */}
                                                 </div>
                                             </div>
-                                            <h5>What is Virtual Land?</h5>
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus
-                                                quis diam integer ridiculus facilisis. Laoreet diam, ipsum
-                                                congue augue vel aenean mus. At felis, quis massa elementum
-                                                tortor dignissim erat. Pharetra eleifend facilisis sit nisi,
-                                                pharetra urna volutpat. Amet lacus sed lorem euismod at diam
-                                                neque, mi. Eget congue id phasellus pulvinar id at enim
-                                                feugiat cursus. Aliquam egestas vulputate semper at cursus
-                                                quam. Augue egestas montes, amet mauris molestie nibh. Aliquam
-                                                viverra nec, ornare vitae. Eu etiam donec morbi purus quis
-                                                quis nibh. Venenatis cras magna.
-                                            </p>
-                                            <div className="image">
-                                                <img src="/assets/images/blog/blog-details-1.jpg" alt="" style={{ 'width': '100%' }} />
-                                                {/* <img src="/assets/images/blog/blog-details-2.jpg" alt="" /> */}
+                                            <div className="heading-title-main">
+                                                <h3 className="title">
+                                                    Virtual Land in the Metaverse Is Selling for Millions of Dollars
+                                                </h3>
                                             </div>
-                                            <h5>The Frontier of a New Economy</h5>
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa
-                                                aenean turpis nec pharetra. Eu massa egestas dolor a facilisi.
-                                                Sed amet, ultrices et venenatis vitae ipsum ante. Cras viverra
-                                                dui augue nulla nulla phasellus magna. Quam congue ut nibh ut
-                                                magna non. Elit elementum cursus curabitur aliquet senectus.
-                                                Donec velit ac sed vitae vulputate lorem. Amet, amet feugiat
-                                                dui cursus integer luctus. Malesuada eu sodales et arcu varius
-                                                ac porta. Eu tincidunt et, tellus enim. Natoque in augue ac
-                                                donec tellus. Libero vel magnis leo nunc erat adipiscing
-                                                pretium diam. Nibh sagittis consequat massa vel. Tellus
-                                                interdum elit velit velit tincidunt egestas nunc, eu. Sit enim
-                                                vitae neque at nulla. Libero at facilisis scelerisque velit
-                                                gravida pellentesque amet, amet. Massa et viverra vitae, nec
-                                                turpis nisi. A suspendisse feugiat ac faucibus.
-                                            </p>
-                                            <div className="img">
-                                                <img src="/assets/images/blog/blog-details-3.jpg" alt="" />
+                                            
+                                           
+
+                                        <div className="content-tab">
+                                            <div className="content-inner row" style={{ display:  "flex"  }}>
+                                                <div className="col-md-9"  style={{ display: 'flex', gap: '4%', 'paddingLeft': 'unset', 'paddingRight': 'unset' }}>
+                                                    <div className="col-md-8">
+                                                        <div className="blog-box">
+                                                            <div className="box-image">
+                                                                <img src="/assets/images/blog/blog-02.jpg" alt="" />
+                                                                <div className="wrap-video">
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                            <div className="box-content">
+                                                                {/* <Link href="#" className="category btn-action">learn &amp; earn</Link> */}
+                                                                <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
+                                                                {/* <div className="meta">
+                                                                    <Link href="#" className="name"><span />Floyd Buckridge</Link>
+                                                                    <Link href="#" className="time">Feb 03, 2021</Link>
+                                                                </div> */}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="col-md-8">
+                                                        <div className="blog-box">
+                                                            <div className="box-image">
+                                                                <img src="/assets/images/blog/blog-02.jpg" alt="" />
+                                                                <div className="wrap-video">
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                            <div className="box-content">
+                                                                {/* <Link href="#" className="category btn-action">learn &amp; earn</Link> */}
+                                                                <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
+                                                                {/* <div className="meta">
+                                                                    <Link href="#" className="name"><span />Floyd Buckridge</Link>
+                                                                    <Link href="#" className="time">Feb 03, 2021</Link>
+                                                                </div> */}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="col-md-9" style={{ display: 'flex', gap: '4%', 'paddingLeft': 'unset', 'paddingRight': 'unset' }}>
+                                                    <div className="col-md-8">
+                                                        <div className="blog-box">
+                                                            <div className="box-image">
+                                                                <img src="/assets/images/blog/blog-02.jpg" alt="" />
+                                                                <div className="wrap-video">
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                            <div className="box-content">
+                                                                {/* <Link href="#" className="category btn-action">learn &amp; earn</Link> */}
+                                                                <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass abc</Link>
+                                                                {/* <div className="meta">
+                                                                    <Link href="#" className="name"><span />Floyd Buckridge</Link>
+                                                                    <Link href="#" className="time">Feb 03, 2021</Link>
+                                                                </div> */}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="col-md-8">
+                                                        <div className="blog-box">
+                                                            <div className="box-image">
+                                                                <img src="/assets/images/blog/blog-02.jpg" alt="" />
+                                                                <div className="wrap-video">
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                            <div className="box-content">
+                                                                {/* <Link href="#" className="category btn-action">learn &amp; earn</Link> */}
+                                                                <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
+                                                                {/* <div className="meta">
+                                                                    <Link href="#" className="name"><span />Floyd Buckridge</Link>
+                                                                    <Link href="#" className="time">Feb 03, 2021</Link>
+                                                                </div> */}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+
+
+                                                {/* Được xem nhiều nhất - Lorem ipsum */}
+                                                <div className="col-md-12">
+                                                    <div className="button-loadmore">
+                                                        <Link href="#">
+                                                            <svg width={14} height={14} viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M7.00001 0.333008C6.63182 0.333008 6.33334 0.631485 6.33334 0.999674V2.99967C6.33334 3.36786 6.63182 3.66634 7.00001 3.66634C7.3682 3.66634 7.66668 3.36786 7.66668 2.99967V0.999674C7.66668 0.631485 7.3682 0.333008 7.00001 0.333008Z" fill="#23262F" />
+                                                                <path d="M7.00001 10.333C6.63182 10.333 6.33334 10.6315 6.33334 10.9997V12.9997C6.33334 13.3679 6.63182 13.6663 7.00001 13.6663C7.3682 13.6663 7.66668 13.3679 7.66668 12.9997V10.9997C7.66668 10.6315 7.3682 10.333 7.00001 10.333Z" fill="#23262F" />
+                                                                <path d="M13 6.33301C13.3682 6.33301 13.6667 6.63148 13.6667 6.99967C13.6667 7.36786 13.3682 7.66634 13 7.66634H11C10.6318 7.66634 10.3333 7.36786 10.3333 6.99967C10.3333 6.63148 10.6318 6.33301 11 6.33301H13Z" fill="#23262F" />
+                                                                <path d="M3.66668 6.99967C3.66668 6.63148 3.3682 6.33301 3.00001 6.33301H1.00001C0.63182 6.33301 0.333344 6.63148 0.333344 6.99967C0.333343 7.36786 0.63182 7.66634 1.00001 7.66634H3.00001C3.3682 7.66634 3.66668 7.36786 3.66668 6.99967Z" fill="#23262F" />
+                                                                <path d="M10.7713 2.28569C11.0316 2.02535 11.4537 2.02535 11.7141 2.28569C11.9744 2.54604 11.9744 2.96815 11.7141 3.2285L10.2999 4.64272C10.0395 4.90307 9.61742 4.90307 9.35707 4.64272C9.09672 4.38237 9.09672 3.96026 9.35707 3.69991L10.7713 2.28569Z" fill="#23262F" />
+                                                                <path d="M4.64296 9.35666C4.38262 9.09631 3.9605 9.09631 3.70016 9.35666L2.28594 10.7709C2.02559 11.0312 2.02559 11.4533 2.28594 11.7137C2.54629 11.974 2.9684 11.974 3.22875 11.7137L4.64296 10.2995C4.90331 10.0391 4.90331 9.61701 4.64296 9.35666Z" fill="#23262F" />
+                                                                <path d="M11.7141 10.7709C11.9744 11.0313 11.9744 11.4534 11.7141 11.7138C11.4537 11.9741 11.0316 11.9741 10.7713 11.7138L9.35705 10.2995C9.0967 10.0392 9.0967 9.61708 9.35705 9.35673C9.6174 9.09638 10.0395 9.09638 10.2999 9.35673L11.7141 10.7709Z" fill="#23262F" />
+                                                                <path d="M4.64303 4.64263C4.90338 4.38228 4.90338 3.96017 4.64303 3.69982L3.22881 2.28561C2.96846 2.02526 2.54635 2.02526 2.286 2.28561C2.02565 2.54596 2.02565 2.96807 2.286 3.22841L3.70022 4.64263C3.96057 4.90298 4.38268 4.90298 4.64303 4.64263Z" fill="#23262F" />
+                                                            </svg>
+                                                            Load more</Link>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <h5>The Value Creation Machine</h5>
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-                                                iaculis laoreet morbi malesuada. Ligula semper faucibus eu
-                                                posuere enim diam. Pharetra amet velit lacus, montes, justo.
-                                                Tortor, lorem vivamus sit in mi ipsum sit sollicitudin dolor.
-                                                Nunc justo cras sed sollicitudin in. Lacus euismod hendrerit
-                                                duis pellentesque urna pulvinar lacinia. Platea tempor tellus,
-                                                amet odio mauris cursus pharetra. Massa nec, pretium
-                                                scelerisque nulla. Quam vitae vulputate et nunc nibh
-                                                vestibulum consectetur. Viverra non scelerisque quam rhoncus
-                                                id diam. Proin.
-                                            </p>
                                         </div>
-                                        <div className="details-bottom">
+                                        </div>
+
+                                        {/* <div className="details-bottom">
                                             <div className="tags">
                                                 <h6>Tags:</h6>
                                                 <ul>
@@ -122,18 +177,8 @@ export default function BlogDetails() {
                                                     </li>
                                                 </ul>
                                             </div>
-                                        </div>
-                                        {/* <form >
-                                            <h6 className="heading">Leave a comment</h6>
-                                            <div className="form-group">
-                                                <input className="form-control" type="text" placeholder="Name" />
-                                                <input className="form-control" type="text" placeholder="Email" />
-                                            </div>
-                                            <div className="form-group">
-                                                <textarea className="form-control" cols={30} rows={10} placeholder="Message" />
-                                            </div>
-                                            <button className="btn-action" type="submit">Send comment</button>
-                                        </form> */}
+                                        </div> */}
+                                        
                                     </div>
                                 </div>
                                 <div className="col-xl-4 col-md-12">
@@ -143,34 +188,34 @@ export default function BlogDetails() {
                                             <ul>
                                                 <li>
                                                     <div className="image">
-                                                        <img src="/assets/images/blog/blog-01.jpg" alt="" />
+                                                        <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                     </div>
                                                     <div className="content">
-                                                        <Link href="#" className="category">LEARN &amp; EARN</Link>
+                                                        {/* <Link href="#" className="category">LEARN &amp; EARN</Link> */}
                                                         <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
                                                     </div>
                                                 </li>
                                                 <li>
                                                     <div className="image">
-                                                        <img src="/assets/images/blog/blog-01.jpg" alt="" />
+                                                        <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                     </div>
                                                     <div className="content">
-                                                        <Link href="#" className="category">LEARN &amp; EARN</Link>
+                                                        {/* <Link href="#" className="category">LEARN &amp; EARN</Link> */}
                                                         <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
                                                     </div>
                                                 </li>
                                                 <li>
                                                     <div className="image">
-                                                        <img src="/assets/images/blog/blog-01.jpg" alt="" />
+                                                        <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                     </div>
                                                     <div className="content">
-                                                        <Link href="#" className="category">LEARN &amp; EARN</Link>
+                                                        {/* <Link href="#" className="category">LEARN &amp; EARN</Link> */}
                                                         <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
                                                     </div>
                                                 </li>
                                             </ul>
                                         </div>
-                                        <div className="widget tags">
+                                        {/* <div className="widget tags">
                                             <h6 className="heading">Popular tags</h6>
                                             <ul>
                                                 <li><Link href="/blog-grid-v1">Crypto</Link></li>
@@ -183,7 +228,7 @@ export default function BlogDetails() {
                                                 <li><Link href="/blog-grid-v1">Arts</Link></li>
                                                 <li><Link href="/blog-grid-v1">Wallet</Link></li>
                                             </ul>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </div>
                             </div>
@@ -208,6 +253,83 @@ export default function BlogDetails() {
                                 </div>
                             </div>
                         </div>
+                    </section>
+
+
+                    <section className="duoc-xem-nhieu col-md-12">
+                                            <div className="content-inner row" style={{ display: "flex" }}>
+                                                <div className="col-md-4">
+                                                    <div className="blog-box">
+                                                        <div className="box-image">
+                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
+                                                            <div className="wrap-video">
+                                                                 
+                                                            </div>
+                                                        </div>
+                                                        <div className="box-content">
+                                                            {/* <Link href="#" className="category btn-action">learn &amp; earn</Link> */}
+                                                            <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
+                                                            {/* <div className="meta">
+                                                                <Link href="#" className="name"><span />Floyd Buckridge</Link>
+                                                                <Link href="#" className="time">Feb 03, 2021</Link>
+                                                            </div> */}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="col-md-4">
+                                                    <div className="blog-box">
+                                                        <div className="box-image">
+                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
+                                                            <div className="wrap-video">
+                                                                 
+                                                            </div>
+                                                        </div>
+                                                        <div className="box-content">
+                                                            {/* <Link href="#" className="category btn-action">learn &amp; earn</Link> */}
+                                                            <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
+                                                            {/* <div className="meta">
+                                                                <Link href="#" className="name"><span />Floyd Buckridge</Link>
+                                                                <Link href="#" className="time">Feb 03, 2021</Link>
+                                                            </div> */}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="col-md-4">
+                                                    <div className="blog-box">
+                                                        <div className="box-image">
+                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
+                                                            <div className="wrap-video">
+                                                                 
+                                                            </div>
+                                                        </div>
+                                                        <div className="box-content">
+                                                            {/* <Link href="#" className="category btn-action">learn &amp; earn</Link> */}
+                                                            <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
+                                                            {/* <div className="meta">
+                                                                <Link href="#" className="name"><span />Floyd Buckridge</Link>
+                                                                <Link href="#" className="time">Feb 03, 2021</Link>
+                                                            </div> */}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                              
+                                                <div className="col-md-12">
+                                                    <div className="button-loadmore">
+                                                        <Link href="#">
+                                                            <svg width={14} height={14} viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M7.00001 0.333008C6.63182 0.333008 6.33334 0.631485 6.33334 0.999674V2.99967C6.33334 3.36786 6.63182 3.66634 7.00001 3.66634C7.3682 3.66634 7.66668 3.36786 7.66668 2.99967V0.999674C7.66668 0.631485 7.3682 0.333008 7.00001 0.333008Z" fill="#23262F" />
+                                                                <path d="M7.00001 10.333C6.63182 10.333 6.33334 10.6315 6.33334 10.9997V12.9997C6.33334 13.3679 6.63182 13.6663 7.00001 13.6663C7.3682 13.6663 7.66668 13.3679 7.66668 12.9997V10.9997C7.66668 10.6315 7.3682 10.333 7.00001 10.333Z" fill="#23262F" />
+                                                                <path d="M13 6.33301C13.3682 6.33301 13.6667 6.63148 13.6667 6.99967C13.6667 7.36786 13.3682 7.66634 13 7.66634H11C10.6318 7.66634 10.3333 7.36786 10.3333 6.99967C10.3333 6.63148 10.6318 6.33301 11 6.33301H13Z" fill="#23262F" />
+                                                                <path d="M3.66668 6.99967C3.66668 6.63148 3.3682 6.33301 3.00001 6.33301H1.00001C0.63182 6.33301 0.333344 6.63148 0.333344 6.99967C0.333343 7.36786 0.63182 7.66634 1.00001 7.66634H3.00001C3.3682 7.66634 3.66668 7.36786 3.66668 6.99967Z" fill="#23262F" />
+                                                                <path d="M10.7713 2.28569C11.0316 2.02535 11.4537 2.02535 11.7141 2.28569C11.9744 2.54604 11.9744 2.96815 11.7141 3.2285L10.2999 4.64272C10.0395 4.90307 9.61742 4.90307 9.35707 4.64272C9.09672 4.38237 9.09672 3.96026 9.35707 3.69991L10.7713 2.28569Z" fill="#23262F" />
+                                                                <path d="M4.64296 9.35666C4.38262 9.09631 3.9605 9.09631 3.70016 9.35666L2.28594 10.7709C2.02559 11.0312 2.02559 11.4533 2.28594 11.7137C2.54629 11.974 2.9684 11.974 3.22875 11.7137L4.64296 10.2995C4.90331 10.0391 4.90331 9.61701 4.64296 9.35666Z" fill="#23262F" />
+                                                                <path d="M11.7141 10.7709C11.9744 11.0313 11.9744 11.4534 11.7141 11.7138C11.4537 11.9741 11.0316 11.9741 10.7713 11.7138L9.35705 10.2995C9.0967 10.0392 9.0967 9.61708 9.35705 9.35673C9.6174 9.09638 10.0395 9.09638 10.2999 9.35673L11.7141 10.7709Z" fill="#23262F" />
+                                                                <path d="M4.64303 4.64263C4.90338 4.38228 4.90338 3.96017 4.64303 3.69982L3.22881 2.28561C2.96846 2.02526 2.54635 2.02526 2.286 2.28561C2.02565 2.54596 2.02565 2.96807 2.286 3.22841L3.70022 4.64263C3.96057 4.90298 4.38268 4.90298 4.64303 4.64263Z" fill="#23262F" />
+                                                            </svg>
+                                                            Load more</Link>
+                                                    </div>
+                                                </div>
+                                            </div>
                     </section>
                 </div>
 
