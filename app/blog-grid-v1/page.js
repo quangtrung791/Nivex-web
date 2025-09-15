@@ -1,6 +1,6 @@
 'use client'
-import VideoPopup from "@/components/elements/VideoPopup"
-import Layout from "@/components/layout/Layout"
+// import VideoPopup from "@/components/elements/VideoPopup"
+import Layout from "../../components/layout/Layout"
 import Link from "next/link"
 import { useState } from "react"
 export default function BlogGrid1() {
@@ -45,7 +45,7 @@ export default function BlogGrid1() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-01.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 {/* <VideoPopup /> */}
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -63,7 +63,7 @@ export default function BlogGrid1() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                  {/* <VideoPopup /> */}
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -81,7 +81,7 @@ export default function BlogGrid1() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                  {/* <VideoPopup /> */}
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -99,7 +99,7 @@ export default function BlogGrid1() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-01.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                  {/* <VideoPopup /> */}
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -117,7 +117,7 @@ export default function BlogGrid1() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                  {/* <VideoPopup /> */}
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -135,7 +135,7 @@ export default function BlogGrid1() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                  {/* <VideoPopup /> */}
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -171,7 +171,7 @@ export default function BlogGrid1() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-01.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                  {/* <VideoPopup /> */}
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -189,7 +189,7 @@ export default function BlogGrid1() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 {/* <VideoPopup /> */}
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -207,7 +207,7 @@ export default function BlogGrid1() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 {/* <VideoPopup /> */}
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -225,7 +225,7 @@ export default function BlogGrid1() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-01.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 {/* <VideoPopup /> */}
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -243,7 +243,7 @@ export default function BlogGrid1() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 {/* <VideoPopup /> */}
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -261,7 +261,7 @@ export default function BlogGrid1() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 {/* <VideoPopup /> */}
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -297,7 +297,7 @@ export default function BlogGrid1() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-01.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 {/* <VideoPopup /> */}
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -315,7 +315,7 @@ export default function BlogGrid1() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 {/* <VideoPopup /> */}
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -333,7 +333,7 @@ export default function BlogGrid1() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 {/* <VideoPopup /> */}
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -351,7 +351,7 @@ export default function BlogGrid1() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-01.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 {/* <VideoPopup /> */}
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -369,7 +369,7 @@ export default function BlogGrid1() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 {/* <VideoPopup /> */}
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -387,7 +387,7 @@ export default function BlogGrid1() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 {/* <VideoPopup /> */}
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -423,7 +423,7 @@ export default function BlogGrid1() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-01.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 {/* <VideoPopup /> */}
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -441,7 +441,7 @@ export default function BlogGrid1() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 {/* <VideoPopup /> */}
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -459,7 +459,7 @@ export default function BlogGrid1() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 {/* <VideoPopup /> */}
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -477,7 +477,7 @@ export default function BlogGrid1() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-01.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 {/* <VideoPopup /> */}
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -495,7 +495,7 @@ export default function BlogGrid1() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 {/* <VideoPopup /> */}
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -513,7 +513,7 @@ export default function BlogGrid1() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 {/* <VideoPopup /> */}
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -549,7 +549,7 @@ export default function BlogGrid1() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-01.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 {/* <VideoPopup /> */}
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -567,7 +567,7 @@ export default function BlogGrid1() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 {/* <VideoPopup /> */}
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -585,7 +585,7 @@ export default function BlogGrid1() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 {/* <VideoPopup /> */}
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -603,7 +603,7 @@ export default function BlogGrid1() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-01.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 {/* <VideoPopup /> */}
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -621,7 +621,7 @@ export default function BlogGrid1() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 {/* <VideoPopup /> */}
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -639,7 +639,7 @@ export default function BlogGrid1() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 {/* <VideoPopup /> */}
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -675,7 +675,7 @@ export default function BlogGrid1() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-01.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 {/* <VideoPopup /> */}
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -693,7 +693,7 @@ export default function BlogGrid1() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 {/* <VideoPopup /> */}
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -711,7 +711,7 @@ export default function BlogGrid1() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 {/* <VideoPopup /> */}
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -729,7 +729,7 @@ export default function BlogGrid1() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-01.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 {/* <VideoPopup /> */}
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -747,7 +747,7 @@ export default function BlogGrid1() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 {/* <VideoPopup /> */}
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -765,7 +765,7 @@ export default function BlogGrid1() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 {/* <VideoPopup /> */}
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -801,7 +801,7 @@ export default function BlogGrid1() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-01.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 {/* <VideoPopup /> */}
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -819,7 +819,7 @@ export default function BlogGrid1() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 {/* <VideoPopup /> */}
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -837,7 +837,7 @@ export default function BlogGrid1() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 {/* <VideoPopup /> */}
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -855,7 +855,7 @@ export default function BlogGrid1() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-01.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 {/* <VideoPopup /> */}
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -873,7 +873,7 @@ export default function BlogGrid1() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 {/* <VideoPopup /> */}
                                                             </div>
                                                         </div>
                                                         <div className="box-content">
@@ -891,7 +891,7 @@ export default function BlogGrid1() {
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             <div className="wrap-video">
-                                                                <VideoPopup />
+                                                                 {/* <VideoPopup /> */}
                                                             </div>
                                                         </div>
                                                         <div className="box-content">

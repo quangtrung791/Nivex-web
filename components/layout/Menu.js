@@ -20,7 +20,7 @@ export default function MainMenu() {
         <>
             <ul id="menu-primary-menu" className="menu">
                 <li className={`menu-item menu-item-has-children ${checkParentActive(["/home-v2", "/home-v3"])}`}>
-                    <Link href="#">Trang chủ </Link>
+                    <Link href="/" className='master-item'>Trang chủ </Link>
                     {/* <ul className="sub-menu">
                         <li className={`menu-item ${checkCurrentMenuItem("/")}`}>
                             <Link href="/">Home 01</Link>
@@ -36,7 +36,7 @@ export default function MainMenu() {
                 <li className={`menu-item menu-item-has-children ${checkParentActive(["/thuat-ngu",
                     "/how-to-buy-crypto",
                     "/buy-crypto-details",])}`}>
-                    <Link href="#">Kiến thức</Link>
+                    <Link href="#"  className='master-item'>Kiến thức</Link>
                     <ul className="sub-menu">
                         <li className={`menu-item ${checkCurrentMenuItem("/thuat-ngu")}`}>
                             <Link href="/thuat-ngu">Thuật ngữ</Link>
@@ -53,13 +53,13 @@ export default function MainMenu() {
                     </ul>
                 </li>
                 <li className={`menu-item ${pathname === "/markets" ? "current-menu-item" : ""}`}>
-                    <Link href="/markets">Thị trường </Link>
+                    <Link href="/markets"  className='master-item'>Thị trường </Link>
+                </li>
+                <li className={`menu-item ${pathname === "/tin-tuc" ? "current-menu-item" : ""}`}>
+                    <Link href="/tin-tuc"  className='master-item'>Tin tức </Link>
                 </li>
                 <li className={`menu-item`}>
-                    <Link href="">Tin tức </Link>
-                </li>
-                <li className={`menu-item`}>
-                    <Link href="">Trung tâm trợ giúp </Link>
+                    <Link href=""  className='master-item'>Trung tâm trợ giúp </Link>
                 </li>
                 {/* <li className={`menu-item menu-item-has-children ${checkParentActive(["/sell-crypto",
                     "/sell-crypto-amount",
