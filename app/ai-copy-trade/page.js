@@ -1,10 +1,13 @@
 'use client'
 import Layout from "../../components/layout/Layout"
 import Link from "next/link"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import styles from './aiCopyTrade.module.css'
 
 export default function AICopyTrade() {
+    useEffect(() => {
+        document.title = "AI copy trade"
+    }, []);
     const [openFaq, setOpenFaq] = useState({})
 
     const toggleFaq = (index) => {
