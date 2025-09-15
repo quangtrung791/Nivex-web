@@ -1089,6 +1089,9 @@ body[data-magic-cursor=hide] .mouse-cursor {
 .header .current-item a {
     color: #BCFE08;
 }
+.header .current-menu-item a {
+    font-weight: 700 !important;
+}
 /* .current-menu-item {
     background: linear-gradient(90deg,rgba(188, 254, 8, 1) 0%, rgba(134, 249, 105, 1) 50%, rgba(134, 249, 105, 1) 100%);
 } */
