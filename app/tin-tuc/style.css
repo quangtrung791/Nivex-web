@@ -14,6 +14,29 @@ section.blog-details .col-xl-4.col-md-12 {
     background-repeat: no-repeat;
 }
 
+/* Custom scrollbar for Chrome, Edge, Safari */
+.tin-nong::-webkit-scrollbar {
+    width: 8px;
+    background: transparent;
+}
+
+.tin-nong::-webkit-scrollbar-thumb {
+    background: #757575;
+    border-radius: 8px;
+    min-height: 10px;
+    max-height: 15px;
+}
+
+.tin-nong::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Custom scrollbar for Firefox */
+.tin-nong {
+    scrollbar-width: thin;
+    scrollbar-color: #757575 transparent;
+}
+
 @media (min-width: 1440px) and (max-width: 1599px) {
     section.blog-details,
     section.duoc-xem-nhieu.col-md-12
@@ -213,7 +236,7 @@ section.blog-details .col-xl-4.col-md-12 {
         padding: 3.5% 7%;
     }
     section.duoc-xem-nhieu.col-md-12 {
-        padding: 3.5% 12.5%;
+        padding: 2.5% 12.5%;
     }
     section.page-title {
         padding: 3.5% 7%;
@@ -234,6 +257,12 @@ section.blog-details .col-xl-4.col-md-12 {
         margin-top: -5px;
         display: flex;
         justify-content: flex-end;
+    }
+    .blog-details .content-inner.row.div-duoc-xem-nhieu {
+        margin-top: 5%;
+    }
+    section.duoc-xem-nhieu .title-container {
+        margin-bottom: 20px;
     }
     .content-tab .blog-box a.title {
         margin-top: 0;
