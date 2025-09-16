@@ -48,11 +48,9 @@ export default function BlogDetails() {
                                             </div>
                                             
                                            
-
                                         <div className="content-tab">
-                                            <div className="content-inner row" style={{ display:  "flex"  }}>
-                                                <div className="col-md-9 lorem-ipsum" >
-                                                    <div className="col-md-8">
+                                                <div className="content-inner row div-duoc-xem-nhieu" > 
+                                                    <div className="col-md-4">
                                                         <div className="blog-box">
                                                             <div className="box-image">
                                                                 <img src="/assets/images/blog/blog-02.jpg" alt="" />
@@ -60,7 +58,7 @@ export default function BlogDetails() {
                                                                     
                                                                 </div>
                                                             </div>
-                                                            <div className="box-content">
+                                                            <div className="box-content title-news-duoc-xem-nhieu">
                                                                 {/* <Link href="#" className="category btn-action">learn &amp; earn</Link> */}
                                                                 <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
                                                                 {/* <div className="meta">
@@ -70,7 +68,7 @@ export default function BlogDetails() {
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div className="col-md-8">
+                                                    <div className="col-md-4">
                                                         <div className="blog-box">
                                                             <div className="box-image">
                                                                 <img src="/assets/images/blog/blog-02.jpg" alt="" />
@@ -78,7 +76,7 @@ export default function BlogDetails() {
                                                                     
                                                                 </div>
                                                             </div>
-                                                            <div className="box-content">
+                                                            <div className="box-content title-news-duoc-xem-nhieu">
                                                                 {/* <Link href="#" className="category btn-action">learn &amp; earn</Link> */}
                                                                 <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
                                                                 {/* <div className="meta">
@@ -88,9 +86,7 @@ export default function BlogDetails() {
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div className="col-md-9 lorem-ipsum" >
-                                                    <div className="col-md-8">
+                                                    <div className="col-md-4">
                                                         <div className="blog-box">
                                                             <div className="box-image">
                                                                 <img src="/assets/images/blog/blog-02.jpg" alt="" />
@@ -98,25 +94,7 @@ export default function BlogDetails() {
                                                                     
                                                                 </div>
                                                             </div>
-                                                            <div className="box-content">
-                                                                {/* <Link href="#" className="category btn-action">learn &amp; earn</Link> */}
-                                                                <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass abc</Link>
-                                                                {/* <div className="meta">
-                                                                    <Link href="#" className="name"><span />Floyd Buckridge</Link>
-                                                                    <Link href="#" className="time">Feb 03, 2021</Link>
-                                                                </div> */}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div className="col-md-8">
-                                                        <div className="blog-box">
-                                                            <div className="box-image">
-                                                                <img src="/assets/images/blog/blog-02.jpg" alt="" />
-                                                                <div className="wrap-video">
-                                                                    
-                                                                </div>
-                                                            </div>
-                                                            <div className="box-content">
+                                                            <div className="box-content title-news-duoc-xem-nhieu">
                                                                 {/* <Link href="#" className="category btn-action">learn &amp; earn</Link> */}
                                                                 <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
                                                                 {/* <div className="meta">
@@ -125,7 +103,7 @@ export default function BlogDetails() {
                                                                 </div> */}
                                                             </div>
                                                         </div>
-                                                    </div>
+                                                    </div>                                                   
                                                 </div>
                                                 
 
@@ -138,7 +116,6 @@ export default function BlogDetails() {
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
                                         </div>
 
                                         {/* <div className="details-bottom">
@@ -203,6 +180,51 @@ export default function BlogDetails() {
                                                         <Link href="#" className="title navigate-child-news">Learn about UI8 coin and earn an All-Access Pass</Link>
                                                     </div>
                                                 </li>
+                                                <li>
+                                                    <div className="image">
+                                                        <img src="/assets/images/blog/blog-02.jpg" alt="" />
+                                                    </div>
+                                                    <div className="content">
+                                                        {/* <Link href="#" className="category">LEARN &amp; EARN</Link> */}
+                                                        <Link href="#" className="title navigate-child-news">Learn about UI8 coin and earn an All-Access Pass</Link>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div className="image">
+                                                        <img src="/assets/images/blog/blog-02.jpg" alt="" />
+                                                    </div>
+                                                    <div className="content">
+                                                        {/* <Link href="#" className="category">LEARN &amp; EARN</Link> */}
+                                                        <Link href="#" className="title navigate-child-news">Learn about UI8 coin and earn an All-Access Pass</Link>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div className="image">
+                                                        <img src="/assets/images/blog/blog-02.jpg" alt="" />
+                                                    </div>
+                                                    <div className="content">
+                                                        {/* <Link href="#" className="category">LEARN &amp; EARN</Link> */}
+                                                        <Link href="#" className="title navigate-child-news">Learn about UI8 coin and earn an All-Access Pass</Link>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div className="image">
+                                                        <img src="/assets/images/blog/blog-02.jpg" alt="" />
+                                                    </div>
+                                                    <div className="content">
+                                                        {/* <Link href="#" className="category">LEARN &amp; EARN</Link> */}
+                                                        <Link href="#" className="title navigate-child-news">Learn about UI8 coin and earn an All-Access Pass</Link>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div className="image">
+                                                        <img src="/assets/images/blog/blog-02.jpg" alt="" />
+                                                    </div>
+                                                    <div className="content">
+                                                        {/* <Link href="#" className="category">LEARN &amp; EARN</Link> */}
+                                                        <Link href="#" className="title navigate-child-news">Learn about UI8 coin and earn an All-Access Pass</Link>
+                                                    </div>
+                                                </li>
                                             </ul>
                                         </div>
                                         {/* <div className="widget tags">
@@ -224,7 +246,7 @@ export default function BlogDetails() {
                             </div>
                         </div>
                     </section>
-                    <section className="section-sale">
+                    {/* <section className="section-sale">
                         <div className="container">
                             <div className="row">
                                 <div className="col-md-7">
@@ -243,7 +265,7 @@ export default function BlogDetails() {
                                 </div>
                             </div>
                         </div>
-                    </section>
+                    </section> */}
 
 
                     <section className="duoc-xem-nhieu col-md-12">
