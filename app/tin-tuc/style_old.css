@@ -1,0 +1,193 @@
+section.section-sale {
+    display: none !important;
+}
+section.duoc-xem-nhieu .box-image, section.duoc-xem-nhieu .blog-box {
+    border-radius: 0px !important;
+}
+section.blog-details .sidebar .widget.recent ul li {
+    display: block;
+}
+section.blog-details .sidebar .widget.recent ul li .image {
+    min-width: auto;
+    width: 100%;
+    height: 100%;
+    border-radius: 0px !important;
+}
+section.blog-details ul.menu-tab.menu-on-line {
+    display: flex;
+    position: relative;
+}
+.menu-on-line li.listing {
+    /* margin-right: 5%; */
+    padding: 4px 12px;
+    border-radius: 0;
+    cursor: pointer;
+    /* margin:0 auto; */
+    /* background: var(--primary); màu nivẽ */
+    background: transparent;
+}
+.menu-on-line li.listing.active {
+    background: var(--primary);
+}
+.menu-on-line li.listing .fs-16 {
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+.menu-on-line li.listing.active .fs-16 {
+      color: black;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+.content-tab .blog-box .box-image {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.blog-box .box-content {
+    padding: 5px 0;
+}
+/* .heading-title-main {
+    margin-top: -20%;
+} */
+
+.button-loadmore a {
+    border-radius: 0;
+    color: black;
+    background: linear-gradient(to right, #BCFE08, #86F969);
+}
+.blog-box {
+    border-radius: 0px !important;
+}
+
+
+/* man hinh pc 1440+ */
+@media (min-width: 1440px) and (max-width: 1599px) {
+    section.page-title,
+    section.blog-details,
+    section.duoc-xem-nhieu
+    {
+        padding: 5% 7%;
+    }
+    .heading-title-main {
+        margin-top: -20%;
+        margin-left: 42px;
+    }
+    .heading-title-main h3.title {
+        color: white !important;
+        position: relative;
+        z-index: 800;
+        font-size: 48px;
+        font-weight: 700;
+        letter-spacing: 0px;
+        line-height: 1.1;
+    }
+    .lorem-ipsum {
+        display: flex;
+        padding: unset;
+        gap: 3.75%;
+        margin-top: 20px;
+    }
+    .trigger-full-w {
+        margin-right: -35px;
+    }
+    .menu-on-line li {
+        margin-right: 15px;
+    }
+    .content-tab .blog-box .box-image {
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+    .blog-box .box-content {
+        padding: 5px 0;
+    }
+    .watch-more-btn {
+        margin-top: -5px;
+        display: flex;
+        justify-content: flex-end;
+        margin-right: -40px;
+    }
+    .button-loadmore a {
+        padding: 14px 35px;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 1.4;
+        letter-spacing: 0;
+    }
+    .button-loadmore {
+        margin-top: -5px;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .navigate-child-news {
+        font-weight: 400;
+        font-size: 14px;
+    }
+    .blog-details .box-image {
+        margin-top: 0px !important;
+    }
+    .blog-details .blog-main .content {
+        margin-top: 30px !important;
+    }
+    ul.tin-nong {
+        margin-top: 30px !important;
+    }
+    .sidebar h6.heading {
+        margin-top: 3px;
+    }
+    .blog-box .box-content .title {
+        margin-top: -10px !important;
+        margin-bottom: 30px !important;
+    }
+
+    .title-container {
+        margin-bottom: 30px;
+    }
+    .title-container h5 {
+        color: white;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: 0;
+    }
+
+    .div-duoc-xem-nhieu {
+        display: flex;
+    }
+    .title-news-duoc-xem-nhieu {
+        margin-top: 20px;
+    }
+}
+
+
+
+
+
+/* mobile general css */
+@media (max-width: 600px) {
+    .lorem-ipsum {
+        display: block;
+        gap: unset; /* yeahh dòng này có hay không cũm đc, tại disp block auto unset gap */
+    }
+    section.blog-details ul.menu-tab.menu-on-line {
+        display: none;
+    }
+    section.duoc-xem-nhieu.col-md-12 {
+        padding: 0 12px;
+    }
+    .blog-details {
+        padding: 0;
+    }
+    .blog-details .content-tab .col-md-12
+    {
+        margin-top: -10%;
+    }
+    .page-title .breadcrumb {
+        justify-content: flex-start;
+        align-self: center;
+        margin-left: -10px;
+    }
+}

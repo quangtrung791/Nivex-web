@@ -108,13 +108,13 @@ export default function BlogDetails() {
                                                 
 
                                                 {/* Được xem nhiều nhất - Lorem ipsum */}
-                                                <div className="col-md-12">
+                                                {/* <div className="col-md-12">
                                                     <div className="button-loadmore watch-more-btn">
                                                         <Link href="#">
                                                             Xem thêm
                                                         </Link>
                                                     </div>
-                                                </div>
+                                                </div> */}
                                             </div>
                                         </div>
 
@@ -152,10 +152,14 @@ export default function BlogDetails() {
                                     <div className="sidebar">
                                         <div className="widget recent mt-0">
                                             <h6 className="heading">Tin nóng</h6>
+                                            
                                             <ul className="tin-nong">
                                                 <li>
-                                                    <div className="image">
-                                                        <img src="/assets/images/blog/blog-02.jpg" alt="" />
+                                                    <div style={{ 'display': 'block'}}>
+                                                        <p className="time-stamp-p">30 phút trước</p>
+                                                        <div className="image">
+                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
+                                                        </div>
                                                     </div>
                                                     <div className="content">
                                                         {/* <Link href="#" className="category">LEARN &amp; EARN</Link> */}
@@ -163,8 +167,11 @@ export default function BlogDetails() {
                                                     </div>
                                                 </li>
                                                 <li>
-                                                    <div className="image">
-                                                        <img src="/assets/images/blog/blog-02.jpg" alt="" />
+                                                    <div style={{ 'display': 'block'}}>
+                                                        <p className="time-stamp-p">30 phút trước</p>
+                                                        <div className="image">
+                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
+                                                        </div>
                                                     </div>
                                                     <div className="content">
                                                         {/* <Link href="#" className="category">LEARN &amp; EARN</Link> */}
@@ -172,8 +179,11 @@ export default function BlogDetails() {
                                                     </div>
                                                 </li>
                                                 <li>
-                                                    <div className="image">
-                                                        <img src="/assets/images/blog/blog-02.jpg" alt="" />
+                                                    <div style={{ 'display': 'block'}}>
+                                                        <p className="time-stamp-p">30 phút trước</p>
+                                                        <div className="image">
+                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
+                                                        </div>
                                                     </div>
                                                     <div className="content">
                                                         {/* <Link href="#" className="category">LEARN &amp; EARN</Link> */}
@@ -181,8 +191,11 @@ export default function BlogDetails() {
                                                     </div>
                                                 </li>
                                                 <li>
-                                                    <div className="image">
-                                                        <img src="/assets/images/blog/blog-02.jpg" alt="" />
+                                                    <div style={{ 'display': 'block'}}>
+                                                        <p className="time-stamp-p">30 phút trước</p>
+                                                        <div className="image">
+                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
+                                                        </div>
                                                     </div>
                                                     <div className="content">
                                                         {/* <Link href="#" className="category">LEARN &amp; EARN</Link> */}
@@ -190,8 +203,11 @@ export default function BlogDetails() {
                                                     </div>
                                                 </li>
                                                 <li>
-                                                    <div className="image">
-                                                        <img src="/assets/images/blog/blog-02.jpg" alt="" />
+                                                    <div style={{ 'display': 'block'}}>
+                                                        <p className="time-stamp-p">30 phút trước</p>
+                                                        <div className="image">
+                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
+                                                        </div>
                                                     </div>
                                                     <div className="content">
                                                         {/* <Link href="#" className="category">LEARN &amp; EARN</Link> */}
@@ -199,8 +215,11 @@ export default function BlogDetails() {
                                                     </div>
                                                 </li>
                                                 <li>
-                                                    <div className="image">
-                                                        <img src="/assets/images/blog/blog-02.jpg" alt="" />
+                                                    <div style={{ 'display': 'block'}}>
+                                                        <p className="time-stamp-p">30 phút trước</p>
+                                                        <div className="image">
+                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
+                                                        </div>
                                                     </div>
                                                     <div className="content">
                                                         {/* <Link href="#" className="category">LEARN &amp; EARN</Link> */}
@@ -208,8 +227,11 @@ export default function BlogDetails() {
                                                     </div>
                                                 </li>
                                                 <li>
-                                                    <div className="image">
-                                                        <img src="/assets/images/blog/blog-02.jpg" alt="" />
+                                                    <div style={{ 'display': 'block'}}>
+                                                        <p className="time-stamp-p">30 phút trước</p>
+                                                        <div className="image">
+                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
+                                                        </div>
                                                     </div>
                                                     <div className="content">
                                                         {/* <Link href="#" className="category">LEARN &amp; EARN</Link> */}
@@ -217,8 +239,71 @@ export default function BlogDetails() {
                                                     </div>
                                                 </li>
                                                 <li>
-                                                    <div className="image">
-                                                        <img src="/assets/images/blog/blog-02.jpg" alt="" />
+                                                    <div style={{ 'display': 'block'}}>
+                                                        <p className="time-stamp-p">30 phút trước</p>
+                                                        <div className="image">
+                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
+                                                        </div>
+                                                    </div>
+                                                    <div className="content">
+                                                        {/* <Link href="#" className="category">LEARN &amp; EARN</Link> */}
+                                                        <Link href="#" className="title navigate-child-news">Learn about UI8 coin and earn an All-Access Pass</Link>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div style={{ 'display': 'block'}}>
+                                                        <p className="time-stamp-p">30 phút trước</p>
+                                                        <div className="image">
+                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
+                                                        </div>
+                                                    </div>
+                                                    <div className="content">
+                                                        {/* <Link href="#" className="category">LEARN &amp; EARN</Link> */}
+                                                        <Link href="#" className="title navigate-child-news">Learn about UI8 coin and earn an All-Access Pass</Link>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div style={{ 'display': 'block'}}>
+                                                        <p className="time-stamp-p">30 phút trước</p>
+                                                        <div className="image">
+                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
+                                                        </div>
+                                                    </div>
+                                                    <div className="content">
+                                                        {/* <Link href="#" className="category">LEARN &amp; EARN</Link> */}
+                                                        <Link href="#" className="title navigate-child-news">Learn about UI8 coin and earn an All-Access Pass</Link>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div style={{ 'display': 'block'}}>
+                                                        <p className="time-stamp-p">30 phút trước</p>
+                                                        <div className="image">
+                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
+                                                        </div>
+                                                    </div>
+                                                    <div className="content">
+                                                        {/* <Link href="#" className="category">LEARN &amp; EARN</Link> */}
+                                                        <Link href="#" className="title navigate-child-news">Learn about UI8 coin and earn an All-Access Pass</Link>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div style={{ 'display': 'block'}}>
+                                                        <p className="time-stamp-p">30 phút trước</p>
+                                                        <div className="image">
+                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
+                                                        </div>
+                                                    </div>
+                                                    <div className="content">
+                                                        {/* <Link href="#" className="category">LEARN &amp; EARN</Link> */}
+                                                        <Link href="#" className="title navigate-child-news">Learn about UI8 coin and earn an All-Access Pass</Link>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div style={{ 'display': 'block'}}>
+                                                        <p className="time-stamp-p">30 phút trước</p>
+                                                        <div className="image">
+                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
+                                                        </div>
                                                     </div>
                                                     <div className="content">
                                                         {/* <Link href="#" className="category">LEARN &amp; EARN</Link> */}
@@ -331,7 +416,7 @@ export default function BlogDetails() {
                                                 <div className="col-md-12">
                                                     <div className="button-loadmore">
                                                         <Link href="#">
-                                                            Load more
+                                                            Xem thêm
                                                         </Link>
                                                     </div>
                                                 </div>
