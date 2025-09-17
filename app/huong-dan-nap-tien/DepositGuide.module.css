@@ -1,0 +1,311 @@
+/* Deposit Guide Styles */
+.pageTitleDeposit {
+    background: #18191D;
+    padding: 60px 0;
+}
+
+.displayFlexContainer {
+    display: flex;
+}
+
+.illustrationWrapper {
+    width: 100%;
+    background: url(https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483939_2x.webp) top no-repeat;
+    background-size: contain;
+    height: 500px;
+}
+
+.displayFlexForHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.displayFlexForHeader h1.pageTitleHeading {
+    font-size: 36px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.pageTitleHeading span {
+    color: #BCFE08;
+}
+
+.col4mdCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33%;
+}
+
+.pageHeaderKnowledgeSubtitle {
+    text-align: right;
+    color: rgb(166, 170, 183);
+    font-size: 14px;
+}
+
+/* Deposit Steps Section */
+.depositSection {
+    background: #141416;
+    padding: 60px 0 50px;
+    color: white;
+}
+h2.depositSectionTitle {
+    font-size: 48px;
+    margin-bottom: 50px;
+}
+h2.depositSectionTitle span {
+    color: #BCFE08;
+}
+.stepContainer {
+    margin-bottom: 25px;
+}
+
+.stepContainer:last-child {
+    margin-bottom: 0;
+}
+
+.stepContent {
+    flex: 1;
+}
+
+.stepTitle {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 12px 0;
+    letter-spacing: 0.6px;
+}
+
+.stepDescription, .troubleshootingSubtitle, .supportText {
+    font-size: 14px;
+    margin: 0;
+    font-weight: 300;
+}
+
+.highlightGreen {
+    color: #BCFE08;
+}
+
+/* Troubleshooting Section */
+
+.displayFlexContainerTroubleshooting {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.troubleshootingSection {
+    background: #141416;
+    padding: 40px 0 100px;
+    color: white;
+}
+
+.troubleshootingHeader {
+    margin-bottom: 25px;
+}
+
+.troubleshootingTitle {
+    font-size: 48px;
+    margin: 0 0 16px 0;
+}
+
+.stepTroubleshootingTitle {
+    font-size: 28px;
+    margin: 0;
+}
+
+.troubleshootingTitle span {
+    color: #BCFE08;
+}
+
+.troubleshootingGrid {
+    display: grid;
+    grid-template-columns: 3fr 3fr 4fr;
+    gap: 25px;
+    margin-bottom: 80px;
+}
+.troubleshootingGrid2 {
+    grid-template-columns: repeat(3, 1fr);
+}
+.troubleshootingCard {
+    background: rgba(36, 37, 41, 0.6);
+    padding: 40px 14px 45px;
+    text-align: center;
+}
+
+.troubleshootingIcon {
+    margin-bottom: 18px;
+}
+
+.iconPlaceholder {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto;
+}
+.iconPlaceholderImage1 {
+    background: url(https://learningchain.vn/wp-content/uploads/2025/09/deposit_icon_1.webp) center no-repeat;
+}
+
+.iconPlaceholderImage2 {
+    background: url(https://learningchain.vn/wp-content/uploads/2025/09/desosit_icon_image_2.webp) center no-repeat;
+}
+.iconPlaceholderImage3 {
+    background: url(https://learningchain.vn/wp-content/uploads/2025/09/deposit_icon_3.webp) center no-repeat;
+}
+.iconPlaceholderImage4 {
+    background: url(https://learningchain.vn/wp-content/uploads/2025/09/deposit_icon_4.webp) center no-repeat;
+}
+.iconPlaceholderImage5 {
+    background: url(https://learningchain.vn/wp-content/uploads/2025/09/deposit_icon_5.webp) center no-repeat;
+}
+.iconPlaceholderImage6 {
+    background: url(https://learningchain.vn/wp-content/uploads/2025/09/deposit_icon_6.webp) center no-repeat;
+}
+
+
+.troubleshootingCardTitle {
+    font-size: 26px;
+    font-weight: 500;
+    color: #fff;
+    margin: 0 0 16px 0;
+    letter-spacing: 1px;
+}
+
+.troubleshootingCardDesc {
+    font-size: 14px;
+    color: rgb(166, 170, 183);
+    margin: 0;
+}
+
+.supportTitle {
+    font-size: 28px;
+}
+.highlightGreen {
+    color: #BCFE08;
+    font-weight: 600;
+}
+.depositSectionTitleMobile {
+    display: none;
+}
+
+.pageTitleDeposit, .depositSection, .troubleshootingSection {
+    padding-left: 7%;
+    padding-right: 7%;
+}
+
+@media (min-width: 650px) and (max-width: 1439px) {
+    .pageTitleDeposit, .depositSection, .troubleshootingSection {
+        padding-left: 3.5%;
+        padding-right: 3.5%;
+    }  
+}
+
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    
+    .troubleshootingGrid {
+        gap: 15px;
+    }
+    .illustrationColumn {
+        width: 34%;
+    }
+    .troubleshootingGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .displayFlexForHeader h1.pageTitleHeading {
+        font-size: 30px;
+    }
+    
+    h2.depositSectionTitle, .troubleshootingTitle {
+        font-size: 34px;
+    }
+    .troubleshootingCardTitle {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    section.pageTitleDeposit, section.depositSection, section.troubleshootingSection {
+        padding-left: 3.5%;
+        padding-right: 3.5%;
+    } 
+    .displayFlexForHeader {
+        flex-direction: column;
+        gap: 10px;
+        align-items: unset;
+    }
+    .col4mdCenter {
+        width: 100%;
+    }
+    .col4mdCenter p {
+        text-align: left;
+    }
+    .displayFlexForHeader h1.pageTitleHeading {
+        font-size: 24px !important;
+    }
+    
+    .displayFlexContainer {
+        flex-direction: column;
+    }
+
+    .illustrationColumn {
+        order: 1;
+        width: unset;
+    }
+    .depositSectionTitleMobile {
+        display: block;
+        order: 2;
+    }
+    .contentColumn {
+        order: 3;
+    }
+    .illustrationWrapper {
+        height: 400px;
+    }
+    .depositSectionTitleDesktop {
+        display: none;
+    }
+    
+
+    h2.depositSectionTitle, .troubleshootingTitle {
+        font-size: 28px;
+        text-transform: uppercase;
+    }
+    
+
+    h2.depositSectionTitle {
+        margin-bottom: 20px;
+    }
+    .pageTitleDeposit {
+        padding: 40px 0;
+    }
+    
+    .depositSection,
+    .troubleshootingSection {
+        padding: 40px 0;
+    }
+    .troubleshootingSection {
+        padding-bottom: 80px;
+    }
+    
+    .troubleshootingGrid  {
+        grid-template-columns: 1fr;
+        margin-bottom: 60px;
+    }
+    .supportTitle {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    section.pageTitleDeposit, section.depositSection, section.troubleshootingSection {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .pageTitleHeading {
+        font-size: 28px;
+    }
+}
