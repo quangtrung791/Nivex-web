@@ -4,6 +4,9 @@
 .news-search-input:hover {
     border: 1px solid #bdfc6b;
 }
+.menu-tab-mobile {
+    font-weight: 600;
+}
 .news-search-input::placeholder:hover {
     color: #bdfc6b !important;
 }

@@ -2,6 +2,7 @@
 import VideoPopup from "@/components/elements/VideoPopup"
 import Layout from "@/components/layout/Layout"
 import Link from "next/link"
+import './style.css'
 export default function BlogDetails() {
 
     return (

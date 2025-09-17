@@ -36,24 +36,24 @@ export default function Footer2() {
                                     <div className="widget-link">
                                         <h6 className="title">SẢN PHẨM</h6>
                                         <ul>
-                                            <li className="link-footer"><Link href="/spot">Giao ngay</Link></li>
-                                            <li className="link-footer"><Link href="#">Hợp đồng nghịch đảo</Link></li>
-                                            <li className="link-footer"><Link href="#">Hợp đồng USDT</Link></li>
-                                            <li className="link-footer"><Link href="/exchange">Sàn giao dịch</Link></li>
-                                            <li className="link-footer"><Link href="#">Launchpad</Link></li>
-                                            <li className="link-footer"><Link href="#">Binance Pay</Link></li>
+                                            <li className="link-footer" style={{ 'fontWeight': 300 }}><Link href="/spot">Giao ngay</Link></li>
+                                            <li className="link-footer" style={{ 'fontWeight': 300 }}><Link href="#">Hợp đồng nghịch đảo</Link></li>
+                                            <li className="link-footer" style={{ 'fontWeight': 300 }}><Link href="#">Hợp đồng USDT</Link></li>
+                                            <li className="link-footer" style={{ 'fontWeight': 300 }}><Link href="/exchange">Sàn giao dịch</Link></li>
+                                            <li className="link-footer" style={{ 'fontWeight': 300 }}><Link href="#">Launchpad</Link></li>
+                                            <li className="link-footer" style={{ 'fontWeight': 300 }}><Link href="#">Binance Pay</Link></li>
                                         </ul>
                                     </div>
                                     <div className="widget-link s2 custom-s2" >
                                         <h6 className="title">DỊCH VỤ</h6>
                                         <ul>
                                             {/* <li className="link-footer"><Link href="/buy-crypto-select">Mua Crypto</Link></li> */}
-                                            <li className="link-footer"><Link href="/">Các thuật ngữ</Link></li>
-                                            <li className="link-footer"><Link href="/markets">Thị trường</Link></li>
-                                            <li className="link-footer"><Link href="#">Phí giao dịch</Link></li>
-                                            <li className="link-footer"><Link href="#">Liên kết (Affiliate)</Link></li>
-                                            <li className="link-footer"><Link href="#">Giới thiệu (Referral)</Link></li>
-                                            <li className="link-footer"><Link href="#">API</Link></li>
+                                            <li className="link-footer" ><Link style={{ 'fontWeight': 300 }} href="/">Các thuật ngữ</Link></li>
+                                            <li className="link-footer" ><Link style={{ 'fontWeight': 300 }} href="/markets">Thị trường</Link></li>
+                                            <li className="link-footer" ><Link style={{ 'fontWeight': 300 }} href="#">Phí giao dịch</Link></li>
+                                            <li className="link-footer" ><Link style={{ 'fontWeight': 300 }} href="#">Liên kết (Affiliate)</Link></li>
+                                            <li className="link-footer" ><Link style={{ 'fontWeight': 300 }} href="#">Giới thiệu (Referral)</Link></li>
+                                            <li className="link-footer" ><Link style={{ 'fontWeight': 300 }} href="#">API</Link></li>
                                         </ul>
                                     </div>
                                 </div>
