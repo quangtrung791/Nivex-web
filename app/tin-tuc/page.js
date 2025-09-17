@@ -39,8 +39,25 @@ export default function BlogDetails() {
     return (
         <>
 
-            <Layout headerStyle={1} footerStyle={2} breadcrumbTitle="Tin tức">
-                <div>
+            <Layout headerStyle={1} footerStyle={2} >
+                <section className="section-news-header">
+                    <div className="news-header-container">
+                        <h1 className="news-title">Tin tức</h1>
+                        <form className="news-search-form">
+                            <input
+                                type="text"
+                                placeholder="Tìm kiếm"
+                                className="news-search-input"
+                            />
+                            <button type="submit" className="news-search-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24">
+                                    <circle cx="11" cy="11" r="8" stroke="#222" strokeWidth="2" fill="none"/>
+                                    <line x1="17" y1="17" x2="22" y2="22" stroke="#222" strokeWidth="2"/>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </section>
                     {/* coin list */}
                     <div className="coin-list-container-c">
                         <div className="coin-list-marquee">
@@ -519,14 +536,13 @@ export default function BlogDetails() {
                                               
                                                 <div className="col-md-12">
                                                     <div className="button-loadmore">
-                                                        <Link href="#">
+                                                        <Link href="#" className="btn-action">
                                                             Xem thêm
                                                         </Link>
                                                     </div>
                                                 </div>
                                             </div>
                     </section>
-                </div>
 
             </Layout>
         </>
