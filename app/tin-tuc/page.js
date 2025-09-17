@@ -15,18 +15,19 @@ const COINS = [
     { id: "shiba-inu", symbol: "SHIB", name: "Shiba Inu" }
 ];
 const TABS = [
-    { label: "View All", value: "all" },
-    { label: "Learn & Earn", value: "learn" },
-    { label: "Metaverse", value: "metaverse" },
-    { label: "Energy", value: "energy" },
+    { label: "Tất cả", value: "all" },
+    { label: "Metaverse", value: "learn" },
+    { label: "Giải trí", value: "metaverse" },
+    { label: "Năng lượng", value: "energy" },
     { label: "NFT", value: "nft" },
-    { label: "Gaming", value: "gaming" },
-    { label: "Music", value: "music" }
+    { label: "Trò chơi", value: "gaming" },
+    { label: "Âm nhạc", value: "music" }
 ];
 
 export default function BlogDetails() {
     const [coinData, setCoinData] = useState([]);
     const [activeTab, setActiveTab] = useState("all");
+    const [showMobileTabs, setShowMobileTabs] = useState(false);
 
     useEffect(() => {
         fetch(
@@ -107,7 +108,7 @@ export default function BlogDetails() {
                                             ))}
                                         </ul>
 
-                                        {/* Tab menu for mobile */}
+                                         {/* Tab menu for mobile */}
                                         <select
                                             className="menu-tab-mobile"
                                             value={activeTab}
