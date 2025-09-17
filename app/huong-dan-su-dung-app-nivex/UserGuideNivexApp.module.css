@@ -1,0 +1,350 @@
+/* Wrapper */
+.wrapper {
+  background: #141414;
+  padding: 48px 0 140px;
+}
+.displayFlexForHeader {
+    display: flex;
+    justify-content: space-between;
+}
+.pageTitleKnowLedge {
+    background: #18191D;
+}
+.pageTitleKnowLedge .displayFlexForHeader h3.pageTitleHeading {
+    font-size: 36px;
+}
+
+.pageTitleKnowLedge .displayFlexForHeader h3.pageTitleHeading span, .pageTitle span {
+    color: #bcfe08
+}
+
+.pageHeaderKnowledgeSubtitle {
+    text-align: right;
+}
+.col6mdCenter {
+    align-self: center;
+    width: 31%;
+}
+/* Header: title + search */
+.headerRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+section.pageTitleKnowLedge, section.wrapper {
+    padding-left: 7%;
+    padding-right: 7%;
+}
+
+@media (min-width: 650px) and (max-width: 1439px) {
+    section.pageTitleKnowLedge, section.wrapper {
+        padding-left: 3.5%;
+        padding-right: 3.5%;
+    }  
+}
+
+.pageTitle {
+  color: #fff;
+  font-size: 46px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.searchInput {
+  background: #1a1d29;
+  border: 1px solid #353945;
+  color: #fff;
+  padding: 6px 12px;
+  min-width: 230px;
+}
+.searchInput:focus {
+  outline: none;
+  border: 1px solid #9ea3b1;
+  border-right: none;
+}
+.searchInput::placeholder {
+  color: #777e90;
+}
+
+.searchBtn {
+  width: 35px;
+  height: 35px;
+  border: none;
+  background: linear-gradient(90deg, #bcfe08, #86f969 50%, #86f969);
+}
+.searchBtn img {
+  width: 65%;
+  height: 65%;
+}
+/* Category grid */
+.categoryGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-bottom: 32px;
+}
+
+.categoryCard {
+  border: 1px solid #A6AAB7;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+  background: transparent;
+  transition: all 0.5s ease-in-out;
+}
+
+.cardIcon {
+  width: 45%;
+  height: 38.5%;
+}
+
+.iconImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.cardTitle, .chip .chipText {
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 14px;
+  
+}
+.cardTitle {
+  margin-bottom: 8%;
+}
+
+/* Sections */
+.section {
+  margin-top: 60px;
+}
+
+.sectionTitle {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 12px;
+}
+
+/* Chips row */
+.chipsRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #A6AAB7;
+  padding: 15px 24px;
+  white-space: normal;
+  word-wrap: break-word;
+  justify-content: space-between;
+  background-color: transparent;
+  transition: all 0.5s ease-in-out;
+}
+
+.categoryCard:hover, .chip:hover {
+  background-color: #242529;
+  border: 1px solid #242529;
+  color: white;
+}
+
+.chipArrow {
+  width: 18px;
+  height: 18px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+  font-weight: lighter;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .categoryGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .chipsRow {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 24px;
+  }
+  .searchBox {
+    display: none;
+  }
+  .headerRow {
+    margin-bottom: 26px;
+  }
+
+
+  .pageTitleHeading {
+    font-size: 24px !important;
+  }
+  .displayFlexForHeader {
+    flex-direction: column;
+    gap:10px;
+  }
+  .col6mdCenter {
+    width: 100%;
+  }
+  .col6mdCenter .pageHeaderKnowledgeSubtitle {
+    text-align: left;
+  }
+  .knowledgeSection {
+    padding: 40px 0;
+  }
+  .pageTitle {
+    font-size: 28px;
+  }
+  section.pageTitleKnowLedge{
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .headerRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .searchBox {
+    width: 100%;
+  }
+  .searchInput {
+    width: 100%;
+  }
+  .categoryGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .chipsRow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  section.pageTitleKnowLedge, section.wrapper {
+      padding-left: 0;
+      padding-right: 0;
+  }
+  .chipsRow {
+    grid-template-columns: 1fr;
+  }
+  .cardTitle {
+    font-size: 12px;
+  }
+  .wrapper {
+    padding-bottom: 100px
+  }
+}
+
+/* Search Results Styles */
+.searchResults {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  background: #1a1d29;
+  border: 1px solid #353945;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  max-height: 300px;
+  overflow-y: auto;
+  filter: drop-shadow(rgba(188, 254, 8, 0.25) 0px 1px 2px) drop-shadow(rgba(188, 254, 8, 0.25) 0px 6px 25px);
+  border-bottom: 2px solid #BCFE08;
+}
+
+.searchResultsHeader {
+  padding: 12px 16px;
+  background: #242731;
+  color: #BCFE08;
+  font-weight: 600;
+  font-size: 14px;
+  border-bottom: 1px solid #353945;
+}
+
+.searchResultItem {
+  padding: 12px 16px;
+  cursor: pointer;
+  border-bottom: 1px solid #2a2d3a;
+  transition: all 0.2s ease;
+}
+
+.searchResultItem:hover {
+  background: #BCFE08;
+  color: #000;
+}
+
+.searchResultItem:last-child {
+  border-bottom: none;
+}
+
+.searchResultTitle {
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.searchResultItem:hover .searchResultTitle {
+  color: #000;
+}
+
+.searchResultSection {
+  color: #A6AAB7;
+  font-size: 12px;
+}
+
+.searchResultItem:hover .searchResultSection {
+  color: #333;
+}
+
+.noResults {
+  padding: 14px;
+  text-align: center;
+  color: #A6AAB7;
+  font-style: italic;
+}
+
+/* Custom Scrollbar cho Search Results */
+.searchResults::-webkit-scrollbar {
+  width: 8px;
+}
+
+.searchResults::-webkit-scrollbar-track {
+  background: #1a1d29;
+  border-radius: 4px;
+}
+
+.searchResults::-webkit-scrollbar-thumb {
+  background: #BCFE08;
+  border-radius: 4px;
+  border: 1px solid #1a1d29;
+  
+}
+
+.searchResults::-webkit-scrollbar-thumb:hover {
+  background: #a8e607;
+}
+
+/* Firefox scrollbar (fallback) */
+.searchResults {
+  scrollbar-width: thin;
+  scrollbar-color: #BCFE08 #1a1d29;
+}

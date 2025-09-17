@@ -1,0 +1,339 @@
+/* KYC Verification Styles */
+.pageTitleKYC {
+    background: #18191D;
+    padding: 60px 0;
+}
+
+.displayFlexForHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pageTitleHeading {
+    font-size: 36px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+}
+
+.pageTitleHeading span {
+    color: #BCFE08;
+}
+
+.col6mdCenter {
+    align-self: center;
+    width: 45%;
+}
+
+.pageHeaderSubtitle {
+    font-size: 14px;
+    color:rgb(166,170,183);
+    text-align: right;
+    line-height: 1.5;
+}
+
+/* KYC Section */
+.kycSection {
+    background: #141416;
+    padding: 20px 0 60px;
+    color: white;
+}
+
+.stepContainer {
+    margin-bottom: 20px;
+    position: relative;
+}
+.displayFlexContainer {
+    display: flex;
+}
+.stepContainer:last-child {
+    margin-bottom: 0;
+}
+
+.imageColumn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.orderFirst {
+    order: -1;
+}
+
+.stepHeader {
+    display: flex;
+    gap: 20px;
+}
+
+.stepNumber {
+    background: #BCFE08;
+    color: #000;
+    font-size: 24px;
+    font-weight: 700;
+    padding: 12px 20px;
+    border-radius: 50px;
+    min-width: 60px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.stepTitle {
+    line-height: 1.3;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-align: left;
+}
+
+.stepTitle span:first-child {
+    font-size: 120px;
+    font-weight: 900;
+    font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+    color: transparent;
+    -webkit-text-stroke: 0.7px #BCFE08;
+    margin-left: -5px;
+}
+
+.stepTitle span:last-child {
+    background: #BCFE08;
+    color: #000;
+    font-size: 58px;
+    font-weight: 900;
+    font-family: 'Arial Black', 'Helvetica Black', sans-serif;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.stepDescription {
+    font-size: 14px;
+    color: #ffffff;
+    line-height: 1.6;
+    font-weight: 300;
+    margin-bottom: 20px;
+    width: 75%
+}
+
+.stepList {
+    list-style: none;
+    padding: 0;
+}
+
+.stepList li {
+    position: relative;
+    padding-left: 18px;
+    margin-bottom: 4px;
+    font-size: 14px;
+    font-weight: 300;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+.stepNote {
+    font-size: 16px;
+    color: #A6AAB7;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.highlightGreen {
+    color: #BCFE08;
+    font-weight: 600;
+}
+
+.warningNote {
+    background: rgba(255, 107, 107, 0.1);
+    border: 1px solid rgba(255, 107, 107, 0.3);
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 24px;
+}
+
+.warningNote p {
+    font-size: 14px;
+    color: #fff;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.warningNote p:last-child {
+    margin-bottom: 0;
+}
+
+/* Phone Container */
+.phoneContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.phoneFrame {
+    position: relative;
+    width: 480px;
+    height: auto;
+}
+
+.highlightGreen {
+    color: #BCFE08;
+}
+
+.highlightRed {
+    color: rgb(211,53,53);
+}
+
+.phoneImage {
+    width: 100%;
+    height: auto;
+}
+
+.finalNoteSection {
+    padding: 50px 0 30px;
+}
+
+.finalNote {
+    font-size: 14px;
+    color: #ffffff;
+    line-height: 1.6;
+    text-align: center;
+    padding: 0 20px;
+}
+
+
+.stepContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    min-height: 400px;
+}
+
+.contentColumn {
+    display: flex;
+    align-items: center;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .pageTitleHeading {
+        font-size: 32px;
+    }
+    
+    .stepTitle {
+        font-size: 24px;
+    }
+    
+    .phoneFrame {
+        width: 250px;
+    }
+}
+
+@media (max-width: 992px) {
+    .stepTitle span:first-child {
+        font-size: 100px;
+    }
+
+    .stepTitle span:last-child {
+        font-size: 45px;
+        width: 100px;
+        height: 100px;
+    }
+
+    .displayFlexForHeader {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .stepDescription {
+        width: 100%;
+        
+    }
+    .col6mdCenter {
+        width: 100%;
+    }
+    
+    .stepContainer {
+        margin-bottom: 80px;
+    }
+    .stepTitle span:first-child {
+        margin-left: 0px;
+    }
+    
+    .orderFirst {
+        order: 0;
+    }
+    
+    .phoneFrame {
+        width: 240px;
+    }
+}
+
+@media (max-width: 768px) {
+    .displayFlexContainer {
+        flex-direction: column;
+    }
+    .stepContent {
+        gap: 10px;
+        min-height: unset;
+    }
+    .pageTitleKYC {
+        padding: 30px 0;
+    }
+    .kycSection {
+        padding: 25px 0 40px;
+    }
+    .pageTitleHeading {
+        font-size: 28px;
+    }
+
+
+    .pageHeaderSubtitle {
+        text-align: left;
+    }
+    .stepHeader {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    
+    .stepTitle span:first-child {
+        font-size: 80px;
+        letter-spacing: 1px;
+    }
+    
+    .stepTitle span:last-child {
+        font-size: 41px;
+        width: 85px;
+        height: 85px;
+    }
+    .stepTitle {
+        gap: 12px;
+    }
+    .phoneContainer {
+        padding: 0;
+    }
+    
+    
+    .stepContainer {
+        margin-bottom: 70px;
+    }
+    
+    .finalNoteSection {
+        padding-top: 50px;
+    }
+    .contentColumn {
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+     .contentColumn {
+        margin-bottom: 0px;
+    }   
+}

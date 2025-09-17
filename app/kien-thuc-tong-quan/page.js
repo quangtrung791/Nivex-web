@@ -10,6 +10,7 @@ export default function Knowledge() {
 
     const [activeCategory, setActiveCategory] = useState('blockchain')
     const [activeDifficulty, setActiveDifficulty] = useState('easy')
+    const [isCategoryDropdownOpen, setIsCategoryDropdownOpen] = useState(false)
 
     const categories = [
         { id: 'blockchain', label: 'Blockchain' },
@@ -27,129 +28,143 @@ export default function Knowledge() {
     const knowledgeArticles = [
         {
             id: 1,
-            title: "Blockchain là gì? Tìm hiểu cônaaaa a a a aa a aa a a a nghệ chuỗi khối từ cơ bản đến nâng cao",
+            title: "Blockchain là gì? Tìm hiểu công nghệ chuỗi khối từ cơ bản đến nâng cao",
             category: "blockchain",
             difficulty: "easy",
-            image: "/assets/images/blog/blog-01.jpg",
+            image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
             description: "Blockchain",
-            readTime: "5 phút đọc"
+            readTime: "5 phút đọc",
+            publishDate: "2025-09-10"
         },
         {
             id: 25,
-            title: "Blockchain là gì? Tìm hiểu công nghệ chuỗi khối từ cơ bản đến nâng cao",
-            category: "blockchain",
+            title: "Xu hướng DeFi 2025: Những điều cần biết về tài chính phi tập trung",
+            category: "defi",
             difficulty: "easy",
-            image: "/assets/images/blog/blog-01.jpg",
-            description: "Blockchain",
-            readTime: "5 phút đọc"
+            image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
+            description: "DeFi",
+            readTime: "5 phút đọc",
+            publishDate: "2025-09-16"
         },
         {
             id: 26,
-            title: "Blockchain là gì? Tìm hiểu công nghệ chuỗi khối từ cơ bản đến nâng cao",
-            category: "blockchain",
-            difficulty: "easy",
-            image: "/assets/images/blog/blog-01.jpg",
-            description: "Blockchain",
-            readTime: "5 phút đọc"
+            title: "AI Copy Trading: Cách trí tuệ nhân tạo thay đổi giao dịch crypto",
+            category: "ai",
+            difficulty: "intermediate",
+            image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
+            description: "AI Trading",
+            readTime: "8 phút đọc",
+            publishDate: "2025-09-15"
         },
         {
             id: 27,
-            title: "Blockchain là gì? Tìm hiểu công nghệ chuỗi khối từ cơ bản đến nâng cao",
+            title: "Hướng dẫn sử dụng MetaMask: Ví crypto an toàn cho người mới",
             category: "blockchain",
             difficulty: "easy",
-            image: "/assets/images/blog/blog-01.jpg",
+            image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
             description: "Blockchain",
-            readTime: "5 phút đọc"
+            readTime: "6 phút đọc",
+            publishDate: "2025-09-14"
         },
         {
             id: 28,
-            title: "Blockchain là gì? Tìm hiểu công nghệ chuỗi khối từ cơ bản đến nâng cao",
-            category: "blockchain",
-            difficulty: "easy",
-            image: "/assets/images/blog/blog-01.jpg",
-            description: "Blockchain",
-            readTime: "5 phút đọc"
+            title: "Staking ETH 2.0: Cơ hội đầu tư với lợi nhuận ổn định",
+            category: "defi",
+            difficulty: "intermediate",
+            image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
+            description: "DeFi",
+            readTime: "10 phút đọc",
+            publishDate: "2025-09-13"
         },
         {
             id: 2,
             title: "Cách thức hoạt động của Smart Contract trên Ethereum",
             category: "blockchain",
             difficulty: "intermediate",
-            image: "/assets/images/blog/blog-02.jpg",
+            image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
             description: "Blockchain",
-            readTime: "8 phút đọc"
+            readTime: "8 phút đọc",
+            publishDate: "2025-09-08"
         },
         {
             id: 3,
             title: "Consensus Algorithm: Proof of Work vs Proof of Stake",
             category: "blockchain",
             difficulty: "advanced",
-            image: "/assets/images/blog/blog-03.jpg",
+            image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
             description: "Blockchain",
-            readTime: "12 phút đọc"
+            readTime: "12 phút đọc",
+            publishDate: "2025-09-05"
         },
         {
             id: 4,
             title: "Tìm hiểu về Bitcoin và cơ chế hoạt động",
             category: "blockchain",
             difficulty: "easy",
-            image: "/assets/images/background/AI_Trade.webp",
+            image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
             description: "Blockchain",
-            readTime: "6 phút đọc"
+            readTime: "6 phút đọc",
+            publishDate: "2025-09-03"
         },
         {
             id: 5,
             title: "Ethereum 2.0 và tương lai của blockchain",
             category: "blockchain",
             difficulty: "intermediate",
-            image: "/assets/images/background/Alpha10.webp",
+            image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
             description: "Blockchain",
-            readTime: "10 phút đọc"
+            readTime: "10 phút đọc",
+            publishDate: "2025-09-01"
         },
         {
             id: 6,
             title: "Phân tích Layer 2 Solutions cho Ethereum",
             category: "blockchain",
             difficulty: "advanced",
-            image: "/assets/images/background/astrabit-Pica.webp",
+            image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
             description: "Blockchain",
-            readTime: "15 phút đọc"
+            readTime: "15 phút đọc",
+            publishDate: "2025-08-28"
         },
         {
             id: 7,
             title: "DeFi là gì? Tài chính phi tập trung và cơ hội đầu tư",
             category: "defi",
             difficulty: "easy",
-            image: "/assets/images/blog/blog-01.jpg",
+            image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
             description: "DeFi",
-            readTime: "6 phút đọc"
+            readTime: "6 phút đọc",
+            publishDate: "2025-09-01"
         },
         {
             id: 8,
             title: "Yield Farming và Liquidity Mining: Hướng dẫn chi tiết",
             category: "defi",
             difficulty: "intermediate",
-            image: "/assets/images/blog/blog-02.jpg",
+            image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
             description: "DeFi",
-            readTime: "10 phút đọc"
+            readTime: "10 phút đọc",
+            publishDate: "2025-09-08"
         },
         {
             id: 9,
             title: "Automated Market Makers (AMM) hoạt động như thế nào?",
             category: "defi",
             difficulty: "advanced",
-            image: "/assets/images/blog/blog-03.jpg",
+            image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
             description: "DeFi",
-            readTime: "12 phút đọc"
+            readTime: "12 phút đọc",
+            publishDate: "2025-09-08"
         },
         {
             id: 10,
             title: "Lending và Borrowing trong DeFi",
             category: "defi",
             difficulty: "easy",
-            image: "/assets/images/background/AI_Trade.webp",
+            image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
             description: "DeFi",
-            readTime: "7 phút đọc"
+            readTime: "7 phút đọc",
+            publishDate: "2025-09-08"
         },
         {
             id: 11,
@@ -158,7 +173,8 @@ export default function Knowledge() {
             difficulty: "intermediate",
             image: "/assets/images/background/Alpha10.webp",
             description: "DeFi",
-            readTime: "9 phút đọc"
+            readTime: "9 phút đọc",
+            publishDate: "2025-09-08"
         },
         {
             id: 12,
@@ -167,7 +183,8 @@ export default function Knowledge() {
             difficulty: "advanced",
             image: "/assets/images/background/astrabit-Pica.webp",
             description: "DeFi",
-            readTime: "14 phút đọc"
+            readTime: "14 phút đọc",
+            publishDate: "2025-09-08"
         },
         {
             id: 13,
@@ -176,7 +193,8 @@ export default function Knowledge() {
             difficulty: "easy",
             image: "/assets/images/blog/blog-01.jpg",
             description: "Copy Trade",
-            readTime: "7 phút đọc"
+            readTime: "7 phút đọc",
+            publishDate: "2025-09-08"
         },
         {
             id: 14,
@@ -185,7 +203,8 @@ export default function Knowledge() {
             difficulty: "intermediate",
             image: "/assets/images/blog/blog-02.jpg",
             description: "Copy Trade",
-            readTime: "9 phút đọc"
+            readTime: "9 phút đọc",
+            publishDate: "2025-09-08"
         },
         {
             id: 15,
@@ -194,7 +213,8 @@ export default function Knowledge() {
             difficulty: "easy",
             image: "/assets/images/blog/blog-03.jpg",
             description: "Copy Trade",
-            readTime: "8 phút đọc"
+            readTime: "8 phút đọc",
+            publishDate: "2025-09-08"
         },
         {
             id: 16,
@@ -203,7 +223,8 @@ export default function Knowledge() {
             difficulty: "intermediate",
             image: "/assets/images/background/AI_Trade.webp",
             description: "Copy Trade",
-            readTime: "11 phút đọc"
+            readTime: "11 phút đọc",
+            publishDate: "2025-09-08"
         },
         {
             id: 17,
@@ -212,7 +233,8 @@ export default function Knowledge() {
             difficulty: "easy",
             image: "/assets/images/background/Alpha10.webp",
             description: "Copy Trade",
-            readTime: "6 phút đọc"
+            readTime: "6 phút đọc",
+            publishDate: "2025-09-08"
         },
         {
             id: 18,
@@ -221,7 +243,8 @@ export default function Knowledge() {
             difficulty: "advanced",
             image: "/assets/images/background/astrabit-Pica.webp",
             description: "Copy Trade",
-            readTime: "13 phút đọc"
+            readTime: "13 phút đọc",
+            publishDate: "2025-09-08"
         },
         {
             id: 19,
@@ -230,7 +253,8 @@ export default function Knowledge() {
             difficulty: "intermediate",
             image: "/assets/images/blog/blog-01.jpg",
             description: "AI Trading",
-            readTime: "11 phút đọc"
+            readTime: "11 phút đọc",
+            publishDate: "2025-09-08"
         },
         {
             id: 20,
@@ -239,7 +263,8 @@ export default function Knowledge() {
             difficulty: "advanced",
             image: "/assets/images/blog/blog-02.jpg",
             description: "AI Trading",
-            readTime: "15 phút đọc"
+            readTime: "15 phút đọc",
+            publishDate: "2025-09-08"
         },
         {
             id: 21,
@@ -248,7 +273,8 @@ export default function Knowledge() {
             difficulty: "easy",
             image: "/assets/images/blog/blog-03.jpg",
             description: "AI Trading",
-            readTime: "8 phút đọc"
+            readTime: "8 phút đọc",
+            publishDate: "2025-09-08"
         },
         {
             id: 22,
@@ -257,7 +283,8 @@ export default function Knowledge() {
             difficulty: "intermediate",
             image: "/assets/images/background/AI_Trade.webp",
             description: "AI Trading",
-            readTime: "12 phút đọc"
+            readTime: "12 phút đọc",
+            publishDate: "2025-09-08"
         },
         {
             id: 23,
@@ -266,7 +293,8 @@ export default function Knowledge() {
             difficulty: "advanced",
             image: "/assets/images/background/Alpha10.webp",
             description: "AI Trading",
-            readTime: "16 phút đọc"
+            readTime: "16 phút đọc",
+            publishDate: "2025-09-08"
         },
         {
             id: 24,
@@ -275,7 +303,38 @@ export default function Knowledge() {
             difficulty: "advanced",
             image: "/assets/images/background/astrabit-Pica.webp",
             description: "AI Trading",
-            readTime: "14 phút đọc"
+            readTime: "14 phút đọc",
+            publishDate: "2025-09-08"
+        },
+        {
+            id: 29,
+            title: "Blockchain là gì? Tìm hiểu công nghệ chuỗi khối từ cơ bản đến nâng cao",
+            category: "blockchain",
+            difficulty: "easy",
+            image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
+            description: "Blockchain",
+            readTime: "14 phút đọc",
+            publishDate: "2025-09-08"
+        },
+        {
+            id: 30,
+            title: "Blockchain là gì? Tìm hiểu công nghệ chuỗi khối từ cơ bản đến nâng cao",
+            category: "blockchain",
+            difficulty: "easy",
+            image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
+            description: "Blockchain",
+            readTime: "14 phút đọc",
+            publishDate: "2025-09-08"
+        },
+        {
+            id: 31,
+            title: "Blockchain là gì? Tìm hiểu công nghệ chuỗi khối từ cơ bản đến nâng cao",
+            category: "blockchain",
+            difficulty: "easy",
+            image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
+            description: "Blockchain",
+            readTime: "14 phút đọc",
+            publishDate: "2025-09-08"
         }
     ]
 
@@ -284,6 +343,10 @@ export default function Knowledge() {
         const difficultyMatch = article.difficulty === activeDifficulty
         return categoryMatch && difficultyMatch
     }).slice(0, 6)
+
+    const filteredArticlesNewest = knowledgeArticles
+        .sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate)) // Sắp xếp theo ngày mới nhất
+        .slice(0, 3) // Lấy 3 bài mới nhất
 
     const getDifficultyColor = (difficulty) => {
         switch (difficulty) {
@@ -342,7 +405,44 @@ export default function Knowledge() {
                     <div className={styles.filterSection}>
                         <div className={styles.categoryFilter}>
                             <span className={styles.filterLabel}>Chủ đề</span>
-                            <div className={styles.categoryTabs}>
+                            
+                            {/* Mobile dropdown */}
+                            <div className={styles.mobileDropdown}>
+                                <div 
+                                    className={styles.mobileDropdownInnerFlex}
+                                    onClick={() => setIsCategoryDropdownOpen((v) => !v)}
+                                >
+                                    <button
+                                        type="button"
+                                        className={styles.dropdownToggle}
+                                        aria-expanded={isCategoryDropdownOpen}
+                                        aria-haspopup="listbox"
+                                    >
+                                        {categories.find((c) => c.id === activeCategory)?.label || 'Chủ đề'}
+                                    </button>
+                                    <span className={`${styles.dropdownIcon} ${isCategoryDropdownOpen ? styles.open : ''}`}>
+                                    </span>
+                                </div>
+                                <ul className={`${styles.dropdownMenu} ${isCategoryDropdownOpen ? styles.open : ''}`} role="listbox">
+                                    {categories.map((category) => (
+                                        <li
+                                            key={category.id}
+                                            role="option"
+                                            aria-selected={activeCategory === category.id}
+                                            className={`${styles.categoryMenuItem} ${activeCategory === category.id ? styles.active : ''}`}
+                                            onClick={() => {
+                                                setActiveCategory(category.id)
+                                                setIsCategoryDropdownOpen(false)
+                                            }}
+                                        >
+                                            {category.label}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+
+                            {/* Desktop tabs */}
+                            <div className={`${styles.categoryTabs} ${styles.desktopTabs}`}>
                                 {categories.map(category => (
                                     <button
                                         key={category.id}
@@ -402,7 +502,41 @@ export default function Knowledge() {
                             </button>
                         </div>
                     </div>
+
+                    <div className={styles.contentSection} style={{marginTop: '70px'}}>
+                        <h3 className={styles.sectionTitle}>MỚI NHẤT</h3>
+                        
+                        <div className={styles.articlesGrid}>
+                            {filteredArticlesNewest.map(article => (
+                                <div key={article.id} className={styles.articleCard}>
+                                    <div className={styles.cardImage}>
+                                        <img src={article.image} alt={article.title} />
+                                    </div>
+                                    <div className={styles.cardContent}>
+                                        <div className={styles.cardMeta}>
+                                            <span className={`${styles.badge} ${styles[getDifficultyColor(article.difficulty)]}`}>
+                                                {getDifficultyLabel(article.difficulty)}
+                                            </span>
+                                            <span className={styles.cardCategory}>{article.description}</span>
+
+                                            {/* <span className={styles.readTime}>{article.readTime}</span> */}
+                                        </div>
+                                        <h4 className={styles.cardTitle}>{article.title}</h4>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+
+                        <div className={styles.loadMoreSection}>
+                            <button className={styles.loadMoreBtn}>
+                                Xem thêm
+                            </button>
+                        </div>
+                    </div>
+
                 </div>
+
+                
             </section>
              <section className="crypto-learning-section propose-section">
                 <div className="container">
