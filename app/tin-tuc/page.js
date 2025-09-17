@@ -1,9 +1,30 @@
 
+"use client";
 // import VideoPopup from "@/components/elements/VideoPopup"
+import React, { useEffect, useState } from "react";
 import Layout from "../../components/layout/Layout"
 import Link from "next/link"
 import './style.css';
+
+const COINS = [
+    { id: "solana", symbol: "SOL", name: "Solana" },
+    { id: "ripple", symbol: "XRP", name: "XRP" },
+    { id: "ethereum", symbol: "ETH", name: "Ethereum" },
+    { id: "bitcoin", symbol: "BTC", name: "Bitcoin" },
+    { id: "litecoin", symbol: "LTC", name: "Litecoin" },
+    { id: "shiba-inu", symbol: "SHIB", name: "Shiba Inu" }
+];
+
 export default function BlogDetails() {
+    const [coinData, setCoinData] = useState([]);
+
+    useEffect(() => {
+        fetch(
+            `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${COINS.map(c => c.id).join(",")}`
+        )
+            .then(res => res.json())
+            .then(data => setCoinData(data));
+    }, []);
 
     return (
         <>
@@ -14,19 +35,19 @@ export default function BlogDetails() {
                     <div className="coin-list-container-c">
                         <div className="coin-list-marquee">
                             <div className="coin-list-c">
-                                <span className="coin"><b>Solana</b> (SOL) <span className="red">$242.28 (-2.53%)</span></span>
-                                <span className="coin"><b>XRP</b> (XRP) <span className="red">$3.04 (-2.70%)</span></span>
-                                <span className="coin"><b>Ethereum</b> (ETH) <span className="red">$4,628.00 (-0.85%)</span></span>
-                                <span className="coin"><b>Bitcoin</b> (BTC) <span className="green">$116.136 (0.31%)</span></span>
-                                <span className="coin"><b>Litecoin</b> (LTC) <span className="red">$116.136 (0.31%)</span></span>
-                                <span className="coin"><b>Shiba Inu</b> (BTC) <span className="red">$116.136</span></span>
-                                {/* Lặp lại để hiệu ứng chạy liên tục */}
-                                <span className="coin"><b>Solana</b> (SOL) <span className="red">$242.28 (-2.53%)</span></span>
-                                <span className="coin"><b>XRP</b> (XRP) <span className="red">$3.04 (-2.70%)</span></span>
-                                <span className="coin"><b>Ethereum</b> (ETH) <span className="red">$4,628.00 (-0.85%)</span></span>
-                                <span className="coin"><b>Bitcoin</b> (BTC) <span className="green">$116.136 (0.31%)</span></span>
-                                <span className="coin"><b>Litecoin</b> (LTC) <span className="red">$116.136 (0.31%)</span></span>
-                                <span className="coin"><b>Shiba Inu</b> (BTC) <span className="red">$116.136</span></span>
+                                {coinData.concat(coinData).map((coin, idx) => (
+                                    <span className="coin" key={idx}>
+                                        <img
+                                            src={`https://s2.coinmarketcap.com/static/img/coins/64x64/${coin.id === "ripple" ? 52 : coin.id === "solana" ? 5426 : coin.id === "ethereum" ? 1027 : coin.id === "bitcoin" ? 1 : coin.id === "litecoin" ? 2 : coin.id === "shiba-inu" ? 5994 : ""}.png`}
+                                            alt={coin.name}
+                                            style={{ width: 24, height: 24, marginRight: 8, verticalAlign: "middle" }}
+                                        />
+                                        <b>{coin.name}</b> ({coin.symbol.toUpperCase()}){" "}
+                                        <span className={coin.price_change_percentage_24h >= 0 ? "green" : "red"}>
+                                            ${coin.current_price.toLocaleString()} ({coin.price_change_percentage_24h?.toFixed(2)}%)
+                                        </span>
+                                    </span>
+                                ))}
                             </div>
                         </div>
                     </div>
