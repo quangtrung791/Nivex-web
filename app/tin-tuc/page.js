@@ -14,9 +14,19 @@ const COINS = [
     { id: "litecoin", symbol: "LTC", name: "Litecoin" },
     { id: "shiba-inu", symbol: "SHIB", name: "Shiba Inu" }
 ];
+const TABS = [
+    { label: "View All", value: "all" },
+    { label: "Learn & Earn", value: "learn" },
+    { label: "Metaverse", value: "metaverse" },
+    { label: "Energy", value: "energy" },
+    { label: "NFT", value: "nft" },
+    { label: "Gaming", value: "gaming" },
+    { label: "Music", value: "music" }
+];
 
 export default function BlogDetails() {
     const [coinData, setCoinData] = useState([]);
+    const [activeTab, setActiveTab] = useState("all");
 
     useEffect(() => {
         fetch(
@@ -57,7 +67,7 @@ export default function BlogDetails() {
                             <div className="row">
                                 <div className="col-xl-8 col-md-12">
                                     <div className="blog-main">
-                                        <ul className="menu-tab menu-on-line">
+                                        {/* <ul className="menu-tab menu-on-line">
                                             <li className="listing active" ><h6 className="fs-16">View All</h6></li>
                                             <li  className="listing" ><h6 className="fs-16">Learn &amp; Earn</h6></li>
                                             <li  className="listing" ><h6 className="fs-16">Metaverse</h6></li>
@@ -65,7 +75,31 @@ export default function BlogDetails() {
                                             <li  className="listing" ><h6 className="fs-16">NFT</h6></li>
                                             <li  className="listing" ><h6 className="fs-16">Gaming</h6></li> 
                                             <li  className="listing" ><h6 className="fs-16">Music</h6></li>
+                                        </ul> */}
+                                        {/* Tab menu for desktop */}
+
+                                        <ul className="menu-tab menu-on-line">
+                                            {TABS.map(tab => (
+                                                <li
+                                                    key={tab.value}
+                                                    className={`listing${activeTab === tab.value ? " active" : ""}`}
+                                                    onClick={() => setActiveTab(tab.value)}
+                                                >
+                                                    <h6 className="fs-16">{tab.label}</h6>
+                                                </li>
+                                            ))}
                                         </ul>
+
+                                        {/* Tab menu for mobile */}
+                                        <select
+                                            className="menu-tab-mobile"
+                                            value={activeTab}
+                                            onChange={e => setActiveTab(e.target.value)}
+                                        >
+                                            {TABS.map(tab => (
+                                                <option key={tab.value} value={tab.value}>{tab.label}</option>
+                                            ))}
+                                        </select>
                                         
                                         {/* <div className="meta">
                                             <Link href="#" className="category btn-action">learn &amp; earn</Link>
@@ -145,7 +179,7 @@ export default function BlogDetails() {
                                                                 </div> */}
                                                             </div>
                                                         </div>
-                                                    </div>                                                   
+                                                    </div>                                           
                                                 </div>
                                                 
 

@@ -45,6 +45,31 @@ section.blog-details .col-xl-4.col-md-12 {
         letter-spacing: 0;
     }
 }
+.menu-tab-mobile {
+    display: none;
+    background: linear-gradient(45deg, #BCFE08, #86F969);
+    width: 25%;
+    padding: 10px;
+    font-size: 16px;
+    /* border-radius: 8px; */
+    margin-bottom: 16px;
+}
+
+/* Style dropdown options */
+.menu-tab-mobile option {
+    padding: 12px 24px;
+    color: white;
+    background: black;
+}
+
+@media (max-width: 768px) {
+    .menu-tab {
+        display: none;
+    }
+    .menu-tab-mobile {
+        display: block;
+    }
+}
 
 @media (min-width: 1024px) {
      /* coin list */
@@ -890,5 +915,36 @@ section.blog-details .col-xl-4.col-md-12 {
 
     .blog-box .box-content .title {
         margin-bottom: 0;
+    }
+}
+
+/* mobile responsive */
+@media (min-width: 390px) and (max-width: 500px) {
+    .page-title .breadcrumb {
+        justify-content: flex-start;
+    }
+    .page-title .breadcrumb li:nth-child(1) {
+        margin-left: 0;
+    }
+    .heading-title-main h3.title {
+        font-size: 20px;
+        letter-spacing: 0px;
+        font-weight: 700;
+        line-height: 1.4;
+    }
+    section.blog-details {
+        padding: 20px 0 0 0;
+    }
+    .blog-details .box-image.trigger-full-w {
+        margin: unset;
+    }
+    .blog-details .heading-title-main h3.title {
+        margin-top: 20px;        
+    }
+    .blog-details .blog-main .content {
+        margin-top: 40px;
+    }
+    .content-tab .col-md-4 {
+        width: 50%;
     }
 }
