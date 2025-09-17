@@ -46,6 +46,63 @@ section.blog-details .col-xl-4.col-md-12 {
     }
 }
 
+@media (min-width: 1024px) {
+     /* coin list */
+    .coin-list-container-c {
+        width: 100%;
+        background: #232326;
+        overflow: hidden;
+        border-bottom: 1px solid #222;
+    }
+
+    .coin-list-marquee {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        height: 48px;
+        display: flex;
+        align-items: center;
+    }
+
+    .coin-list-c {
+        display: flex;
+        gap: 32px;
+        white-space: nowrap;
+        animation: coin-marquee 30s linear infinite;
+        align-items: center;
+        height: 48px;
+    }
+
+    .coin-list-c .coin {
+        font-size: 18px;
+        color: #fff;
+        font-family: inherit;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .coin-list-c .coin .red {
+        color: #e74c3c;
+        font-weight: 500;
+    }
+
+    .coin-list-c .coin .green {
+        color: #27ae60;
+        font-weight: 500;
+    }
+
+    @keyframes coin-marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }  
+}
+@media (max-width: 1023px) {
+    .coin-list-container-c {
+        display: none;
+    }
+}
+
 
 /* pc 1440 */
 @media (min-width: 1440px) and (max-width: 1599px) {
@@ -148,7 +205,7 @@ section.blog-details .col-xl-4.col-md-12 {
     ul.menu-tab.menu-on-line {
         margin-top: 29px;
     }
-   
+    
 }
 
 /* 1600 */

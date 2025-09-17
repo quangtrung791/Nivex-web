@@ -10,6 +10,27 @@ export default function BlogDetails() {
 
             <Layout headerStyle={1} footerStyle={2} breadcrumbTitle="Tin tức">
                 <div>
+                    {/* coin list */}
+                    <div className="coin-list-container-c">
+                        <div className="coin-list-marquee">
+                            <div className="coin-list-c">
+                                <span className="coin"><b>Solana</b> (SOL) <span className="red">$242.28 (-2.53%)</span></span>
+                                <span className="coin"><b>XRP</b> (XRP) <span className="red">$3.04 (-2.70%)</span></span>
+                                <span className="coin"><b>Ethereum</b> (ETH) <span className="red">$4,628.00 (-0.85%)</span></span>
+                                <span className="coin"><b>Bitcoin</b> (BTC) <span className="green">$116.136 (0.31%)</span></span>
+                                <span className="coin"><b>Litecoin</b> (LTC) <span className="red">$116.136 (0.31%)</span></span>
+                                <span className="coin"><b>Shiba Inu</b> (BTC) <span className="red">$116.136</span></span>
+                                {/* Lặp lại để hiệu ứng chạy liên tục */}
+                                <span className="coin"><b>Solana</b> (SOL) <span className="red">$242.28 (-2.53%)</span></span>
+                                <span className="coin"><b>XRP</b> (XRP) <span className="red">$3.04 (-2.70%)</span></span>
+                                <span className="coin"><b>Ethereum</b> (ETH) <span className="red">$4,628.00 (-0.85%)</span></span>
+                                <span className="coin"><b>Bitcoin</b> (BTC) <span className="green">$116.136 (0.31%)</span></span>
+                                <span className="coin"><b>Litecoin</b> (LTC) <span className="red">$116.136 (0.31%)</span></span>
+                                <span className="coin"><b>Shiba Inu</b> (BTC) <span className="red">$116.136</span></span>
+                            </div>
+                        </div>
+                    </div>
+
                     <section className="blog-details">
                         <div className="container">
                             <div className="row">
