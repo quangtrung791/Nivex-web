@@ -180,6 +180,24 @@ export default function BlogDetails() {
                                                             </div>
                                                         </div>
                                                     </div>                                           
+                                                    <div className="col-md-4 mobile-only">
+                                                        <div className="blog-box">
+                                                            <div className="box-image">
+                                                                <img src="/assets/images/blog/blog-02.jpg" alt="" />
+                                                                <div className="wrap-video">
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                            <div className="box-content title-news-duoc-xem-nhieu">
+                                                                {/* <Link href="#" className="category btn-action">learn &amp; earn</Link> */}
+                                                                <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
+                                                                {/* <div className="meta">
+                                                                    <Link href="#" className="name"><span />Floyd Buckridge</Link>
+                                                                    <Link href="#" className="time">Feb 03, 2021</Link>
+                                                                </div> */}
+                                                            </div>
+                                                        </div>
+                                                    </div>                                           
                                                 </div>
                                                 
 
@@ -224,6 +242,15 @@ export default function BlogDetails() {
                                         
                                     </div>
                                 </div>
+
+                                <div className="container-xem-them-btn-mobile-only">
+                                    <div className="xem-them-btn-mobile-only">
+                                        <Link href="#">
+                                            Xem thêm
+                                        </Link>
+                                    </div>
+                                </div>
+
                                 <div className="col-xl-4 col-md-12">
                                     <div className="sidebar">
                                         <div className="widget recent mt-0">
@@ -428,6 +455,7 @@ export default function BlogDetails() {
                         </div>
                     </section> */}
 
+                    
 
                     <section className="duoc-xem-nhieu col-md-12">
                         <div className="title-container">
