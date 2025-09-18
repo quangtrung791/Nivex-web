@@ -290,7 +290,7 @@ export default function BlogDetails() {
                                                     </div>
                                                 </li>
                                             </ul>
-                                        </div>
+                                        </div> 
                                     </div>
 
 

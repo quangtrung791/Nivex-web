@@ -353,8 +353,7 @@ export default function BlogDetails() {
                                 <div className="col-xl-4 col-md-12">
                                     <div className="sidebar">
                                         <div className="widget recent mt-0">
-                                            <h6 className="heading">Tin nóng</h6>
-                                            
+                                            <h6 className="heading">Tin nóng</h6>    
                                             <ul className="tin-nong">
                                                 <li>
                                                     <div style={{ 'display': 'block'}}>
@@ -514,6 +513,9 @@ export default function BlogDetails() {
                                                 </li>
                                             </ul>
                                         </div>
+
+
+                                        <div className="sidebar-bottom-fade" />
                                         {/* <div className="widget tags">
                                             <h6 className="heading">Popular tags</h6>
                                             <ul>
