@@ -33,12 +33,18 @@ export default function BlogDetails() {
                         <div className="container">
                             <div className="row">
                                 <div className="col-xl-8 col-md-12">
+                                    <div className="navigate-link">
+                                        <span className="navigate-link-content">
+                                            <Link href='/tin-tuc'>Tin tức&nbsp;&nbsp;&gt;</Link>
+                                            <span>&nbsp;&nbsp;Virtual Land in the Metaverse Is Selling for Millions of Dollars</span>
+                                        </span>
+                                    </div>
                                     <div className="blog-main">
                                          <div className="box-image">
                                             <img src="/assets/images/blog/blog-01.jpg" alt="" />
-                                                <div className="wrap-video">
+                                                {/* <div className="wrap-video">
                                                     <VideoPopup />
-                                                </div>
+                                                </div> */}
                                             </div>
                                         <h3 className="title">
                                             Virtual Land in the Metaverse Is Selling for Millions of Dollars
@@ -122,7 +128,7 @@ export default function BlogDetails() {
                                     </div>
                                 </div>
                                 <div className="col-xl-4 col-md-12">
-                                    <h6 className="heading">Tin nóng</h6>
+                                    <h6 className="heading tin-nong-heading">Tin nóng</h6>
                                     <div className="sidebar">
                                         <div className="widget recent mt-0">
                                             {/* <h6 className="heading">Tin nóng</h6> */}

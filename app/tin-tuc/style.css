@@ -21,7 +21,9 @@ li.active h6 {
 .heading-title-main {
     background: linear-gradient(0deg, rgb(0 0 0 / 80%), rgb(0 0 0 / 0%) 70%);
 }
-
+a.title.navigate-child-news:hover {
+    color:  #BCFE08  !important; 
+}
 
 .blog-box {
     border-radius: 0px;
