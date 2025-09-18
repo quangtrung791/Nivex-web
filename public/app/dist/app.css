@@ -9,7 +9,7 @@
 @import "../dist/aos.css";
 /* @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"); */
 /* @import url("https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"); */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 * {
     margin: 0;
@@ -660,6 +660,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
 .header .header__left .main-nav .menu li.current-menu-item>a,
 .header .header__left .main-nav .menu li.current-item>a {
     color: black;
+    font-weight: 700 !important;
 }
 
 .header .header__left .main-nav .menu li .sub-menu {

@@ -1,0 +1,247 @@
+/* Register Login Guide Styles */
+.guideSection {
+    background: #141416;
+    color: white;
+    padding: 60px 0 80px;
+    position: relative;
+    overflow: hidden;
+}
+.displayFlexForHeader {
+    display: flex;
+    justify-content: space-between;
+}
+.pageTitleKnowLedge {
+    background: #18191D;
+    padding: 40px 0;
+}
+.pageTitleKnowLedge .displayFlexForHeader h3.pageTitleHeading {
+    font-size: 36px;
+}
+
+.pageTitleKnowLedge .displayFlexForHeader h3.pageTitleHeading span, .pageTitle span {
+    color: #bcfe08
+}
+
+.pageHeaderKnowledgeSubtitle {
+    text-align: right;
+}
+.col6mdCenter {
+    align-self: center;
+    width: 33%;
+}
+
+.pageTitleKnowLedge, .guideSection {
+    padding-left: 7%;
+    padding-right: 7%;
+}
+
+.displayFlexContainer {
+    display: flex;
+}
+
+.illustrationColumn {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+.mainTitle {
+    font-size: 48px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 60px;
+    line-height: 1.2;
+}
+
+.step {
+    margin-bottom: 60px;
+}
+
+.stepTitle {
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 16px;
+}
+
+.stepSubtitle, .stepNote {
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+.stepSubtitle {
+    margin-bottom: 20px;
+}
+.stepList {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.stepList li, .securityList li {
+    position: relative;
+    padding-left: 18px;
+    margin-bottom: 2px;
+    font-weight: 300;
+    font-size: 14px;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+.stepNote {
+    margin-top: 16px;
+}
+
+.highlightGreen {
+    color: #BCFE08;
+}
+
+.highlightRed {
+    color: rgb(211,53,53);
+}
+
+.supportSection {
+    margin: 40px 0 40px 0;
+    padding: 10px 0;
+}
+
+.supportTitle {
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 16px;
+}
+
+.supportText {
+    font-size: 14px;
+    color: #ffffff;
+    line-height: 1.6;
+}
+.highlight247 {
+    color: #BCFE08;
+    font-size: 18px;
+}
+.securitySection {
+    margin-top: 40px;
+    padding-top: 10px;
+}
+
+.securityTitle {
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.securityList {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+}
+
+.finalNoteSection {
+    padding: 40px 0 10px;
+}
+
+.finalNote {
+    font-size: 14px;
+    color: #ffffff;
+    line-height: 1.6;
+    text-align: center;
+    padding: 0 20px;
+}
+
+/* Robot Illustration */
+.illustrationWrapper {
+    width: 100%;
+    background: url(https://learningchain.vn/wp-content/uploads/nivex/logo_mc.svg) top no-repeat;
+    background-size: contain;
+    height: 500px;
+}
+
+@media (min-width: 650px) and (max-width: 1439px) {
+    .pageTitleKnowLedge, .guideSection {
+        padding-left: 3.5%;
+        padding-right: 3.5%;
+    }  
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {    
+    .mainTitle {
+        font-size: 40px;
+    }
+    
+}
+
+@media (max-width: 992px) {
+    .guideSection {
+        padding: 60px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .pageTitleHeading {
+        font-size: 24px !important;
+    }
+    .displayFlexContainer {
+        flex-direction: column
+    }
+    .displayFlexForHeader {
+        flex-direction: column;
+        gap:10px;
+    }
+    .col6mdCenter {
+        width: 100%;
+    }
+    .col6mdCenter .pageHeaderKnowledgeSubtitle {
+        text-align: left;
+    }
+    
+    .illustrationColumn {
+        order: 1;
+        margin-bottom: 40px;
+    }
+    .contentColumn {
+        order: 2;
+    }
+
+    .illustrationWrapper {
+        height: auto;
+        aspect-ratio: 14/12;
+    }
+
+    .guideSection {
+        padding: 30px 0 50px;
+    }
+    
+    .mainTitle {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+    
+    .stepTitle {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .step {
+        margin-bottom: 40px;
+    }
+    .finalNoteSection {
+        padding-top: 20px;
+    }
+    .supportText {
+        padding-left: 0px;
+    }
+    
+}
+@media (max-width: 480px)  {
+    .pageTitleKnowLedge {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}

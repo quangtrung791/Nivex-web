@@ -38,34 +38,38 @@ export default function MobileMenu({ isMobileMenu }) {
                             </li>
                         </ul> */}
                     </li>
-                    <li className={`menu-item menu-item-has-children ${checkParentActive(["/thuat-ngu",
-                        "/how-to-buy-crypto",
+                    <li className={`menu-item menu-item-has-children ${checkParentActive(["/kien-thuc-tong-quan",
+                        "/huong-dan-su-dung-app-nivex",
+                        "/huong-dan-dang-ky-dang-nhap",
+                        "/huong-dan-nap-tien", 
+                        "/xac-minh-danh-tinh-kyc",
+                        "/thuat-ngu",
                         "/ai-copy-trade",])}`}>
-                        <Link href="#">Kiến thức</Link>
+                        <Link href="/kien-thuc-tong-quan">Kiến thức</Link>
                         <span className={`arrow ${isActive === 2 ? 'active' : ''}`} onClick={() => handleClick(2)} />
                         <ul className="sub-menu" style={{ display: `${isActive == 2 ? "block" : "none"}` }}>
+                            <li className={`menu-item ${checkCurrentMenuItem("/kien-thuc-tong-quan")}`}>
+                                <Link href="/kien-thuc-tong-quan">Tổng quan</Link>
+                            </li>
+                            <li className={`menu-item ${checkCurrentMenuItem("/huong-dan-su-dung-app-nivex") || 
+                                checkCurrentMenuItem("/huong-dan-dang-ky-dang-nhap") ||
+                                checkCurrentMenuItem("/huong-dan-nap-tien") ||
+                                checkCurrentMenuItem("/xac-minh-danh-tinh-kyc")}`}>
+                                <Link href="/huong-dan-su-dung-app-nivex">Hướng dẫn sử dụng App</Link>
+                            </li>
                             <li className={`menu-item ${checkCurrentMenuItem("/thuat-ngu")}`}>
                                 <Link href="/thuat-ngu">Thuật ngữ</Link>
-                            </li>
-                            <li className={`menu-item ${checkCurrentMenuItem("/how-to-buy-crypto")}`}>
-                                <Link href="/how-to-buy-crypto">Cách mua Crypto</Link>
                             </li>
                             <li className={`menu-item ${checkCurrentMenuItem("/ai-copy-trade")}`}>
                                 <Link href="/ai-copy-trade">AI Copy Trade</Link>
                             </li>
-                            <li className={`menu-item`}>
-                                <Link href="#">Hướng dẫn người mới</Link>
-                            </li>
                         </ul>
                     </li>
                     <li className={`menu-item ${pathname === "/markets" ? "current-menu-item" : ""}`}>
-                        <Link href="/markets">Thị trường </Link>
+                        <Link href="/markets">Sự kiện</Link>
                     </li>
-                    <li className={`menu-item`}>
-                        <Link href="#">Tin tức </Link>
-                    </li>
-                    <li className={`menu-item`}>
-                        <Link href="#">Trung tâm trợ giúp </Link>
+                    <li className={`menu-item ${pathname === "/tin-tuc" ? "current-menu-item" : ""}`}>
+                        <Link href="/tin-tuc">Tin tức</Link>
                     </li>
                 </ul>
             </nav>
