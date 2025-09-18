@@ -27,6 +27,9 @@ section.section-sale {
 a.title.navigate-child-news:hover {
     color:  #BCFE08  !important; 
 }
+h6.heading {
+    padding-bottom: 20px !important;
+}
 
 @media (min-width: 1440px) and (max-width: 1919px) {
     .navigate-link {
@@ -1636,12 +1639,35 @@ footer.footer.style-2.footer-main {
 
 /* mobile responsive */
 @media (min-width: 390px) and (max-width: 500px) {
-     .section-news-header {
+    .tin-xem-nhieu  {
+        margin-top: 30px;
+    }
+    h6.heading {
+        background: #242529;
+        margin-bottom: unset;
+        padding-top: 20px;
+        padding-left: 14px;
+    }
+    .sidebar .widget ul li {
+        padding-right: 14px;
+    }
+    .navigate-link {
+        margin-top: 14px;
+    }
+    .col-xl-4.col-md-12 {
+        padding: unset;
+    }
+    .col-xl-4.col-md-12 {
+        padding: 4% 3% !important;
+    }
+
+    .section-news-header {
         background: #1e1f22;
         padding: 32px 16px 56px 16px;
         border-bottom: 2px solid #232326;
     }
-     section.blog-details .tin-nong{
+     /* section.blog-details .tin-nong{ */
+    .blog-details .row .col-xl-4.col-md-12 .sidebar {
         max-height: 650px; 
         overflow-y: auto;
     }
@@ -1663,7 +1689,15 @@ footer.footer.style-2.footer-main {
         margin: 0;
         letter-spacing: 0px;
         line-height: 1.2;
-            margin-bottom: 20px;
+        margin-bottom: 20px;
+    }
+    .blog-details h3.title {
+        margin-top: 20px;
+        font-size: 20px;
+        font-weight: 700;
+        text-align: justify;
+        line-height: 1.4 !important;
+        letter-spacing: 0px;
     }
 
     .news-search-form {
@@ -1736,7 +1770,7 @@ footer.footer.style-2.footer-main {
         margin-top: 20px;        
     }
     .blog-details .blog-main .content {
-        margin-top: 40px;
+        margin-top: 20px;
     }
     .content-tab .col-md-4 {
         width: 50%;
@@ -1797,7 +1831,7 @@ footer.footer.style-2.footer-main {
     }
 
     section.duoc-xem-nhieu.col-md-12 {
-        padding: 20% 7px;
+        padding: 15% 7px;
     }
     .title-container {
         margin-left: 9px;
@@ -1826,12 +1860,34 @@ footer.footer.style-2.footer-main {
         display: flex;
         justify-content: end;
     }
+    .tin-xem-nhieu { 
+        display: none;
+    }
 
 }
 
 
 /* 861 - 991 */
 @media (min-width: 861px) and (max-width: 991px) { 
+    .col-xl-4.col-md-12 {
+        padding: unset;
+    }
+    .tin-xem-nhieu  {
+        margin-top: 30px;
+    }
+    h6.heading {
+        background: #242529;
+        margin-bottom: unset;
+        padding-top: 20px;
+        padding-left: 14px;
+    }
+    .sidebar .widget ul li {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+    .navigate-link {
+        margin-top: 14px;
+    }
      .section-news-header {
         background: #1e1f22;
         padding: 32px 4%;
@@ -1977,7 +2033,7 @@ footer.footer.style-2.footer-main {
     }
 
     .widget.recent.mt-0 {
-        padding-top: 15px;
+        /* padding-top: 15px; */
         border-radius: 10px;
         padding-left: 25px;
     }
@@ -2008,7 +2064,8 @@ footer.footer.style-2.footer-main {
         margin-top: 25px !important;
     }
 
-    section.blog-details .tin-nong {
+    /* section.blog-details .tin-nong { */
+    .blog-details .row .col-xl-4.col-md-12 .sidebar {
         max-height: 500px;
         overflow-y: auto;
     }
@@ -2020,6 +2077,26 @@ footer.footer.style-2.footer-main {
 
 /* 1025 - 1099 */
 @media (min-width: 1025px) and (max-width: 1099px) {
+    .tin-xem-nhieu  {
+        margin-top: 30px;
+    }
+    .col-xl-4.col-md-12 {
+        padding: unset;
+    }
+    h6.heading {
+        background: #242529;
+        margin-bottom: unset;
+        padding-top: 20px;
+        padding-left: 14px;
+    }
+    .sidebar .widget ul li {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+    .navigate-link {
+        margin-top: 14px;
+    }
+
      .section-news-header {
         background: #1e1f22;
         padding: 32px 4%;
@@ -2167,7 +2244,7 @@ footer.footer.style-2.footer-main {
     }
 
     .widget.recent.mt-0 {
-        padding-top: 15px;
+        /* padding-top: 15px; */
         border-radius: 10px;
     }
 
@@ -2197,7 +2274,7 @@ footer.footer.style-2.footer-main {
         margin-top: 25px !important;
     }
 
-    section.blog-details .tin-nong {
+    .blog-details .row .col-xl-4.col-md-12 .sidebar {
         max-height: 550px;
         overflow-y: auto;
     }
@@ -2209,6 +2286,25 @@ footer.footer.style-2.footer-main {
 
 /* 1181 - 1279 */
 @media (min-width: 1181px) and (max-width: 1279px) {
+    .tin-xem-nhieu  {
+        margin-top: 30px;
+    }
+    h6.heading {
+        background: #242529;
+        margin-bottom: unset;
+        padding-top: 20px;
+        padding-left: 14px;
+    }
+    .sidebar .widget ul li {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+    .navigate-link {
+        margin-top: 14px;
+    }
+    .col-xl-4.col-md-12 {
+        padding: unset;
+    }
      .section-news-header {
         background: #1e1f22;
         padding: 32px 3.75%;
@@ -2365,7 +2461,7 @@ footer.footer.style-2.footer-main {
     }
 
     .widget.recent.mt-0 {
-        padding-top: 20px;
+        /* padding-top: 20px; */
         border-radius: 10px;
     }
 
@@ -2395,7 +2491,8 @@ footer.footer.style-2.footer-main {
         margin-top: 25px !important;
     }
 
-    section.blog-details .tin-nong {
+    /* section.blog-details .tin-nong { */
+    .blog-details .row .col-xl-4.col-md-12 .sidebar {
         max-height: 580px;
         overflow-y: auto;
     }
@@ -2407,6 +2504,25 @@ footer.footer.style-2.footer-main {
 
 /* 1367 - 1439 */
 @media (min-width: 1367px) and (max-width: 1439px) {
+    .tin-xem-nhieu  {
+        margin-top: 30px;
+    }
+    h6.heading {
+        background: #242529;
+        margin-bottom: unset;
+        padding-top: 20px;
+        padding-left: 14px;
+    }
+    .sidebar .widget ul li {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+    .navigate-link {
+        margin-top: 14px;
+    }
+    .col-xl-4.col-md-12 {
+        padding: unset;
+    }
      .section-news-header {
         background: #1e1f22;
         padding: 32px 4%;
@@ -2545,7 +2661,7 @@ footer.footer.style-2.footer-main {
     }
 
     .widget.recent.mt-0 {
-        padding-top: 20px;
+        /* padding-top: 20px; */
         border-radius: 10px;
     }
 
@@ -2579,7 +2695,8 @@ footer.footer.style-2.footer-main {
         margin-top: 25px !important;
     }
 
-    section.blog-details .tin-nong {
+    /* section.blog-details .tin-nong { */
+    .blog-details .row .col-xl-4.col-md-12 .sidebar {
         max-height: 670px;
         overflow-y: auto;
     }
