@@ -5,6 +5,8 @@ import React, { useEffect, useState } from "react";
 import Layout from "../../components/layout/Layout"
 import Link from "next/link"
 import './style.css';
+import styles from '../kien-thuc-tong-quan/knowledge.module.css'
+
 
 const COINS = [
     { id: "solana", symbol: "SOL", name: "Solana" },
@@ -28,6 +30,12 @@ export default function BlogDetails() {
     const [coinData, setCoinData] = useState([]);
     const [activeTab, setActiveTab] = useState("all");
     const [showMobileTabs, setShowMobileTabs] = useState(false);
+    const [activeCategory, setActiveCategory] = useState('blockchain')
+    const [activeDifficulty, setActiveDifficulty] = useState('easy')
+    const [isCategoryDropdownOpen, setIsCategoryDropdownOpen] = useState(false)
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [selectedTab, setSelectedTab] = useState(TABS[0].value);
+
 
     useEffect(() => {
         fetch(
@@ -109,7 +117,7 @@ export default function BlogDetails() {
                                         </ul>
 
                                          {/* Tab menu for mobile */}
-                                        <select
+                                        {/* <select
                                             className="menu-tab-mobile"
                                             value={activeTab}
                                             onChange={e => setActiveTab(e.target.value)}
@@ -117,7 +125,80 @@ export default function BlogDetails() {
                                             {TABS.map(tab => (
                                                 <option key={tab.value} value={tab.value}>{tab.label}</option>
                                             ))}
-                                        </select>
+                                        </select> */}
+                                        <div className={styles.mobileDropdown} style={{ width: "30%" }}>
+                                            <div
+                                                className={styles.mobileDropdownInnerFlex}
+                                                onClick={() => setIsDropdownOpen((v) => !v)}
+                                                tabIndex={0}
+                                                style={{ cursor: "pointer" }}
+                                            >
+                                                <button
+                                                    type="button"
+                                                    className={styles.dropdownToggle}
+                                                    aria-expanded={isDropdownOpen}
+                                                    aria-haspopup="listbox"
+                                                    style={{
+                                                        background: selectedTab === "all" ? "linear-gradient(90deg, #BCFE08, #86F969)" : undefined,
+                                                        color: "#111",
+                                                        fontWeight: "bold",
+                                                        border: "none",
+                                                        borderRadius: 4,
+                                                        padding: "10px 16px",
+                                                        minWidth: 100,
+                                                        textAlign: "left",
+                                                        width: "100%"
+                                                    }}
+                                                >
+                                                    {TABS.find((t) => t.value === selectedTab)?.label}
+                                                </button>
+                                                <span className={`${styles.dropdownIcon} ${isDropdownOpen ? styles.open : ''}`}>
+                                                    <svg width="18" height="18" style={{ marginLeft: 8, verticalAlign: "middle" }} viewBox="0 0 20 20">
+                                                        <polyline points="5 8 10 13 15 8" fill="none" stroke="#111" strokeWidth="2"/>
+                                                    </svg>
+                                                </span>
+                                            </div>
+                                            {isDropdownOpen && (
+                                                <ul className={`${styles.dropdownMenu} ${isDropdownOpen ? styles.open : ''}`} role="listbox"
+                                                    style={{
+                                                        position: "absolute",
+                                                        marginTop: 4,
+                                                        background: "#181818",
+                                                        borderRadius: 6,
+                                                        boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
+                                                        zIndex: 10,
+                                                        minWidth: 120,
+                                                        padding: 0,
+                                                        listStyle: "none",
+                                                        width: "50%"
+                                                    }}
+                                                >
+                                                    {TABS.map((tab) => (
+                                                        <li
+                                                            key={tab.value}
+                                                            role="option"
+                                                            aria-selected={selectedTab === tab.value}
+                                                            className={`${styles.categoryMenuItem} ${selectedTab === tab.value ? styles.active : ''}`}
+                                                            onClick={() => {
+                                                                setSelectedTab(tab.value);
+                                                                setIsDropdownOpen(false);
+                                                                setActiveTab(tab.value); // Nếu muốn đồng bộ với tab hiện tại
+                                                            }}
+                                                            style={{
+                                                                padding: "10px 16px",
+                                                                cursor: "pointer",
+                                                                background: selectedTab === tab.value ? "linear-gradient(90deg, #BCFE08, #86F969)" : "transparent",
+                                                                color: selectedTab === tab.value ? "#111" : "#fff",
+                                                                fontWeight: selectedTab === tab.value ? "bold" : "normal",
+                                                                width: "100%"
+                                                            }}
+                                                        >
+                                                            {tab.label}
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            )}
+                                        </div>
                                         
                                         {/* <div className="meta">
                                             <Link href="#" className="category btn-action">learn &amp; earn</Link>
