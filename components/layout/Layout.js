@@ -2,6 +2,7 @@
 'use client'
 import { useEffect, useState } from "react"
 import AddClassBody from "../elements/AddClassBody"
+import FloatingContacts from "../elements/FloatingContacts"
 import Breadcrumb from './Breadcrumb'
 import Footer1 from './footer/Footer1'
 import Footer2 from './footer/Footer2'
@@ -36,6 +37,9 @@ export default function Layout({ headerStyle, footerStyle, breadcrumbTitle, chil
             {breadcrumbTitle && <Breadcrumb breadcrumbTitle={breadcrumbTitle} />}
 
             {children}
+
+            {/* Floating Contact Buttons */}
+            <FloatingContacts />
 
             {!footerStyle && < Footer1 />}
             {footerStyle == 1 ? < Footer1 /> : null}

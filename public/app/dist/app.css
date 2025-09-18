@@ -728,8 +728,8 @@ body[data-magic-cursor=hide] .mouse-cursor {
     margin: 0 auto;
     width: 100%;
     height: 2px;
-    border-radius: 8px;
-    background: var(--primary);
+    /* border-radius: 8px; */
+    background: rgba(188, 254, 8, 0.75);
 }
 
 .header .header__left .main-nav .menu li:hover .sub-menu {
@@ -784,6 +784,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
     padding: 2px 8px 0px 8px;
     line-height: 1.2;
     font-weight: 600;
+    border-radius: 0px !important;
 }
 
 #header_main .mode-switcher {
@@ -1110,7 +1111,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
 
 .banner {
     background: var(--surface);
-    padding: 84px 0 145px;
+    padding: 84px 0 120px;
     /* padding: 5% 7% 10% 7%; */
 }
 
@@ -6311,14 +6312,14 @@ section.crypto {
     margin-right: 10px;
 }
 
-.crypto-box {
+/* .crypto-box {
     background: var(--bg);
     border-radius: 12px;
     padding: 31px 40px;
     margin-right: 22px;
     width: 25%;
     transition: 0.3s all ease-in-out;
-}
+} */
 
 .crypto-box:last-child {
     margin-right: 0;
@@ -8797,7 +8798,7 @@ img.ai-icon-small {
     section.crypto-learning-section,
     section.about
     {
-        padding: 5% 3.5%;
+        padding: 5% 3.5% 10%;
     }
     section.banner .col-md-12 {
         width: 50%;
@@ -8891,7 +8892,7 @@ img.ai-icon-small {
     section.about,
     section.crypto-learning-section
     {
-        padding: 5% 3.5%;
+        padding: 5% 3.5% 10%;
     }
     header.header,
     footer.footer.style-2.footer-main
