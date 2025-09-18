@@ -660,6 +660,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
 .header .header__left .main-nav .menu li.current-menu-item>a,
 .header .header__left .main-nav .menu li.current-item>a {
     color: black;
+    font-weight: 700 !important;
 }
 
 .header .header__left .main-nav .menu li .sub-menu {
