@@ -40,7 +40,7 @@ export default function MainMenu() {
                     "/xac-minh-danh-tinh-kyc",
                     "/thuat-ngu",
                     "/ai-copy-trade",])}`}>
-                    <Link href="#"  className='master-item'>Kiến thức</Link>
+                    <Link href="/kien-thuc-tong-quan"  className='master-item'>Kiến thức</Link>
                     <ul className="sub-menu">
                         <li className={`menu-item ${checkCurrentMenuItem("/kien-thuc-tong-quan")}`}>
                             <Link href="/kien-thuc-tong-quan">Tổng quan</Link>

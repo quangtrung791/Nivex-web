@@ -25,8 +25,8 @@ export default function Crypto1() {
             setCryptoData(filteredData)
             setError(null)
         } catch (err) {
-            console.error('Error fetching crypto data:', err)
-            setError('Failed to fetch data')
+            // console.error('Error fetching crypto data:', err)
+            // setError('Failed to fetch data')
         } finally {
             setLoading(false)
         }
@@ -34,7 +34,7 @@ export default function Crypto1() {
 
     useEffect(() => {
         fetchCryptoData()
-        const interval = setInterval(fetchCryptoData, 300000) // Update every 30 seconds
+        const interval = setInterval(fetchCryptoData, 300000) 
         return () => clearInterval(interval)
     }, [])
 

@@ -45,7 +45,7 @@ export default function MobileMenu({ isMobileMenu }) {
                         "/xac-minh-danh-tinh-kyc",
                         "/thuat-ngu",
                         "/ai-copy-trade",])}`}>
-                        <Link href="#">Kiến thức</Link>
+                        <Link href="/kien-thuc-tong-quan">Kiến thức</Link>
                         <span className={`arrow ${isActive === 2 ? 'active' : ''}`} onClick={() => handleClick(2)} />
                         <ul className="sub-menu" style={{ display: `${isActive == 2 ? "block" : "none"}` }}>
                             <li className={`menu-item ${checkCurrentMenuItem("/kien-thuc-tong-quan")}`}>
