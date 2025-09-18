@@ -1,3 +1,28 @@
+h6.fs-16 {
+    margin-bottom: 0;
+}
+li.listing {
+    padding: 8px 10px;
+    cursor: pointer;
+}
+li.listing:hover {
+    background: linear-gradient(to right, #BCFE08, #86F969);
+}
+li.listing h6:hover {
+    color: black;
+}
+li.listing.active {
+    background: linear-gradient(to right, #BCFE08, #86F969);
+}
+li.active h6 {
+    font-weight: 600 !important;
+     color: black;
+}
+.heading-title-main {
+    background: linear-gradient(0deg, rgb(0 0 0 / 80%), rgb(0 0 0 / 0%) 70%);
+}
+
+
 .blog-box {
     border-radius: 0px;
 }
@@ -164,6 +189,16 @@ footer.footer.style-2.footer-main {
 
 /* pc 1440 */
 @media (min-width: 1440px) and (max-width: 1599px) {
+    .blog-details .box-image {
+        margin-bottom: 75px;
+    }
+    .heading-title-main h3.title {
+        font-size: 32px;
+    }
+    .blog-details h6.heading {
+        margin-bottom: 0 !important;
+        margin-top: 5px !important;
+    }
     .section-news-header {
         background: #1e1f22;
         padding: 32px 8%;
@@ -251,7 +286,7 @@ footer.footer.style-2.footer-main {
 
     ul.menu-tab.menu-on-line {
         display: flex;
-        gap: 4%;
+        gap: 2.5%;
     }
     .button-loadmore a {
         padding: 14px 35px;
@@ -288,10 +323,14 @@ footer.footer.style-2.footer-main {
         padding: 5px 0;
     }
     .heading-title-main {
-        margin-top: -20%;
-        padding: 0 5%;
+        margin-top: -19%;
+        padding: 0 3%;
         position: relative;
         z-index: 100;
+    }
+    h3.title {
+        position: relative;
+        top: -4px;
     }
     .blog-details .sidebar {
         padding-left: 0 !important;
@@ -429,7 +468,7 @@ footer.footer.style-2.footer-main {
 
     ul.menu-tab.menu-on-line {
         display: flex;
-        gap: 4%;
+        gap: 2.5%;
     }
     section.duoc-xem-nhieu .blog-box .box-content .title {
         font-size: 20px;
@@ -466,11 +505,16 @@ footer.footer.style-2.footer-main {
         letter-spacing: 0;
     }
     .heading-title-main {
-        margin-top: -20%;
-        padding: 0 5%;
+        margin-top: -19%;
+        padding: 0 3%;
         position: relative;
         z-index: 100;
     }
+    h3.title {
+        position: relative;
+        top: -4px;
+    }
+    
     .blog-details .sidebar {
         padding-left: 0 !important;
     }
@@ -608,7 +652,7 @@ footer.footer.style-2.footer-main {
 
     ul.menu-tab.menu-on-line {
         display: flex;
-        gap: 4%;
+        gap: 3%;
     }
     .button-loadmore a {
         padding: 14px 35px;
@@ -651,10 +695,14 @@ footer.footer.style-2.footer-main {
         letter-spacing: 0;
     }
     .heading-title-main {
-        margin-top: -20%;
-        padding: 0 5%;
+        margin-top: -17%;
+        padding: 0 3%;
         position: relative;
         z-index: 100;
+    }
+    .heading-title-main h3.title {
+        top: -15px;
+        position: relative;
     }
     .blog-details .sidebar {
         padding-left: 0 !important;
@@ -827,10 +875,14 @@ footer.footer.style-2.footer-main {
     }
 
     .heading-title-main {
-        margin-top: -20%;
+        margin-top: -19%;
         padding: 0 4%;
         position: relative;
         z-index: 100;
+    }
+    h3.title {
+        position: relative;
+        top: -10px;
     }
     .blog-box .box-content {
         padding: 5px 0 !important;
@@ -902,7 +954,7 @@ footer.footer.style-2.footer-main {
         justify-content: space-between;
         margin: 0 auto;
     }
-
+    
     .news-title {
         color: #fff;
         font-size: 36px;
@@ -1017,10 +1069,14 @@ footer.footer.style-2.footer-main {
     }
 
     .heading-title-main {
-        margin-top: -19%;
+        margin-top: -17%;
         padding: 0 3%;
         position: relative;
         z-index: 100;
+    }
+    h3.title {
+        position: relative;
+        top: -8px;
     }
     .blog-details .col-xl-4.col-md-12 {
         margin-top: 3%;
@@ -1405,10 +1461,15 @@ footer.footer.style-2.footer-main {
     }
 
     .heading-title-main {
-        margin-top: -22%;
+        margin-top: -17%;
         padding: 0 3%;
         z-index: 100;
         position: relative;
+    }
+    h3.title {
+        position: relative;
+        top: -10px;
+        font-size: 32px;
     }
 
     .blog-details .sidebar {
