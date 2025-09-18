@@ -8,8 +8,27 @@ export default function BlogDetails() {
     return (
         <>
 
-            <Layout headerStyle={1} footerStyle={2} breadcrumbTitle="Blog Details">
+            <Layout headerStyle={1} footerStyle={2} >
                 <div>
+                    <section className="section-news-header">
+                        <div className="news-header-container">
+                            <h1 className="news-title">Tin tức</h1>
+                            <form className="news-search-form">
+                                <input
+                                    type="text"
+                                    placeholder="Tìm kiếm"
+                                    className="news-search-input"
+                                />
+                                <button type="submit" className="news-search-btn">
+                                    <svg width="20" height="20" viewBox="0 0 24 24">
+                                        <circle cx="11" cy="11" r="8" stroke="#222" strokeWidth="2" fill="none"/>
+                                        <line x1="17" y1="17" x2="22" y2="22" stroke="#222" strokeWidth="2"/>
+                                    </svg>
+                                </button>
+                            </form>
+                        </div>
+                    </section>
+
                     <section className="blog-details">
                         <div className="container">
                             <div className="row">
@@ -102,11 +121,11 @@ export default function BlogDetails() {
                                         </form> */}
                                     </div>
                                 </div>
-                                 <div className="col-xl-4 col-md-12">
+                                <div className="col-xl-4 col-md-12">
+                                    <h6 className="heading">Tin nóng</h6>
                                     <div className="sidebar">
                                         <div className="widget recent mt-0">
-                                            <h6 className="heading">Tin nóng</h6>
-                                            
+                                            {/* <h6 className="heading">Tin nóng</h6> */}
                                             <ul className="tin-nong">
                                                 <li>
                                                     <div style={{ 'display': 'block'}}>
@@ -266,44 +285,130 @@ export default function BlogDetails() {
                                                 </li>
                                             </ul>
                                         </div>
-                                        {/* <div className="widget tags">
-                                            <h6 className="heading">Popular tags</h6>
-                                            <ul>
-                                                <li><Link href="/blog-grid-v1">Crypto</Link></li>
-                                                <li><Link href="/blog-grid-v1">Virtual Land</Link></li>
-                                                <li><Link href="/blog-grid-v1">Metaverse</Link></li>
-                                                <li><Link href="/blog-grid-v1">NFT Marketplace</Link></li>
-                                                <li><Link href="/blog-grid-v1">Token</Link></li>
-                                                <li><Link href="/blog-grid-v1">NFTs</Link></li>
-                                                <li><Link href="/blog-grid-v1">Bitcoin</Link></li>
-                                                <li><Link href="/blog-grid-v1">Arts</Link></li>
-                                                <li><Link href="/blog-grid-v1">Wallet</Link></li>
-                                            </ul>
-                                        </div> */}
                                     </div>
+
+
+                                    {/* Tin xem nhiều */}
+                                    <div className="sidebar tin-xem-nhieu">
+                                        <div className="widget recent mt-0">
+                                            <h6 className="heading">Tin xem nhiều</h6>
+                                            
+                                            <ul className="tin-nong">
+                                                <li>
+                                                    <div style={{ 'display': 'block'}}>
+                                                        <p className="time-stamp-p">30 phút trước</p>
+                                                        <div className="image">
+                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
+                                                        </div>
+                                                    </div>
+                                                    <div className="content">
+                                                        {/* <Link href="#" className="category">LEARN &amp; EARN</Link> */}
+                                                        <Link href="#" className="title navigate-child-news">Learn about UI8 coin and earn an All-Access Pass</Link>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div style={{ 'display': 'block'}}>
+                                                        <p className="time-stamp-p">30 phút trước</p>
+                                                        <div className="image">
+                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
+                                                        </div>
+                                                    </div>
+                                                    <div className="content">
+                                                        {/* <Link href="#" className="category">LEARN &amp; EARN</Link> */}
+                                                        <Link href="#" className="title navigate-child-news">Learn about UI8 coin and earn an All-Access Pass</Link>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div style={{ 'display': 'block'}}>
+                                                        <p className="time-stamp-p">30 phút trước</p>
+                                                        <div className="image">
+                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
+                                                        </div>
+                                                    </div>
+                                                    <div className="content">
+                                                        {/* <Link href="#" className="category">LEARN &amp; EARN</Link> */}
+                                                        <Link href="#" className="title navigate-child-news">Learn about UI8 coin and earn an All-Access Pass</Link>
+                                                    </div>
+                                                </li>
+                                                
+                                            </ul>
+                                        </div>
+                                    </div>
+
+
+
                                 </div>
                             </div>
                         </div>
                     </section>
-                    <section className="section-sale">
-                        <div className="container">
-                            <div className="row">
-                                <div className="col-md-7">
-                                    <div className="block-text">
-                                        <h4 className="heading">Earn up to $25 worth of crypto</h4>
-                                        <p className="desc">
-                                            Discover how specific cryptocurrencies work — and get a bit of
-                                            each crypto to try out for yourself.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div className="col-md-5">
-                                    <div className="button">
-                                        <Link href="#">Create Account</Link>
-                                    </div>
-                                </div>
-                            </div>
+                      <section className="duoc-xem-nhieu col-md-12">
+                        <div className="title-container">
+                            <h5>Được xem nhiều</h5>
                         </div>
+                                            <div className="content-inner row div-duoc-xem-nhieu" > 
+                                                <div className="col-md-4">
+                                                    <div className="blog-box">
+                                                        <div className="box-image">
+                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
+                                                            <div className="wrap-video">
+                                                                 
+                                                            </div>
+                                                        </div>
+                                                        <div className="box-content title-news-duoc-xem-nhieu">
+                                                            {/* <Link href="#" className="category btn-action">learn &amp; earn</Link> */}
+                                                            <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
+                                                            {/* <div className="meta">
+                                                                <Link href="#" className="name"><span />Floyd Buckridge</Link>
+                                                                <Link href="#" className="time">Feb 03, 2021</Link>
+                                                            </div> */}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="col-md-4">
+                                                    <div className="blog-box">
+                                                        <div className="box-image">
+                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
+                                                            <div className="wrap-video">
+                                                                 
+                                                            </div>
+                                                        </div>
+                                                        <div className="box-content title-news-duoc-xem-nhieu">
+                                                            {/* <Link href="#" className="category btn-action">learn &amp; earn</Link> */}
+                                                            <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
+                                                            {/* <div className="meta">
+                                                                <Link href="#" className="name"><span />Floyd Buckridge</Link>
+                                                                <Link href="#" className="time">Feb 03, 2021</Link>
+                                                            </div> */}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="col-md-4">
+                                                    <div className="blog-box">
+                                                        <div className="box-image">
+                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
+                                                            <div className="wrap-video">
+                                                                 
+                                                            </div>
+                                                        </div>
+                                                        <div className="box-content title-news-duoc-xem-nhieu">
+                                                            {/* <Link href="#" className="category btn-action">learn &amp; earn</Link> */}
+                                                            <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
+                                                            {/* <div className="meta">
+                                                                <Link href="#" className="name"><span />Floyd Buckridge</Link>
+                                                                <Link href="#" className="time">Feb 03, 2021</Link>
+                                                            </div> */}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                              
+                                                <div className="col-md-12">
+                                                    <div className="button-loadmore">
+                                                        <Link href="#" className="btn-action">
+                                                            Xem thêm
+                                                        </Link>
+                                                    </div>
+                                                </div>
+                                            </div>
                     </section>
                 </div>
 
