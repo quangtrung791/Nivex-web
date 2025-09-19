@@ -666,8 +666,6 @@ body[data-magic-cursor=hide] .mouse-cursor {
 .header .header__left .main-nav .menu li .sub-menu {
     padding: 15px 0;
     background: var(--bg);
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
     filter: drop-shadow(rgba(188, 254, 8, 0.25) 0px 1px 2px) drop-shadow(rgba(188, 254, 8, 0.25) 0px 6px 25px);
     position: absolute;
     z-index: 9999;
@@ -676,8 +674,6 @@ body[data-magic-cursor=hide] .mouse-cursor {
     opacity: 0;
     visibility: hidden;
     white-space: nowrap;
-    left: 50%;
-    transform: translate(-50%, 20%);
     transition: 0.3s all ease-in-out;
 }
 
@@ -735,8 +731,12 @@ body[data-magic-cursor=hide] .mouse-cursor {
 .header .header__left .main-nav .menu li:hover .sub-menu {
     opacity: 1;
     visibility: visible;
-    transform: translate(-50%, 23px);
 }
+
+.header .header__left .main-nav .menu li .sub-menu {
+    left: 0%;
+    transform: translate(0px, 15px);
+} 
 
 @media only screen and (max-width: 1200px) {
     .header .header__left .main-nav .menu li {
