@@ -13,14 +13,14 @@ export default function FloatingContacts() {
       name: 'Zalo',
       icon: '/assets/images/icon/zalo-icon.png', 
       link: 'https://zalo.me/0974743849', 
-      bgColor: '#0F0F0F',
+      bgColor: '#040404',
       label: 'NivexVN'
     },
     {
       name: 'Phone',
       icon: '/assets/images/icon/phone-icon.png',
       link: 'tel:+84974743849', 
-      bgColor: '#000',
+      bgColor: '#040404',
       label: '097 474 3849'
     }
   ]
