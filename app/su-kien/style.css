@@ -4,6 +4,12 @@ section.blog-grid .blog-box {
 .blog-grid .flat-tabs .menu-tab li {
     border-radius: 0 !important;
 }
+.gradient-text {
+   background: linear-gradient(90deg, #bcfe08, #86f869);
+   -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-top: 4px;
+}
 
 /* 1440 PC */
 @media (min-width: 1440px) and (max-width: 1599px) {
@@ -18,6 +24,14 @@ section.blog-grid .blog-box {
         /* position: relative;
         top: -90px;
         padding: 0 15px; */
+    }
+
+    .cung-nivex-heading {
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: 0;
+        text-transform: uppercase;
     }
     .blog-box .box-content {
         /* padding: 0 !important; */
@@ -422,6 +436,27 @@ section.blog-grid .blog-box {
         padding: 5%;
     }
 
+    .blog-box .box-content {
+        /* padding: 0 !important; */
+        position: relative;
+        top: -72px;
+        padding: 0 20px;
+    }
+    .blog-box .box-content .title {
+        font-size: 23.68px;
+        font-weight: 700;
+        margin: 0;
+    }
+    .col-md-6:nth-child(3),
+    .col-md-6:nth-child(4) {
+        position: relative;
+        top: -5px;
+    }
+    .blog-grid .flat-tabs .menu-tab li {
+        padding: 8px 18px;
+    }
+
+
     .news-header-container {
         display: flex;
         align-items: center;
@@ -495,8 +530,31 @@ section.blog-grid .blog-box {
     section.section-news-header {
         padding: 2.5% 4.5%;
     }
-    header#header_main {
-        padding: 0 4.75%;
+    header#header_main,
+    footer.footer.footer-main {
+        padding: 0 4.75% !important;
+    }
+   
+
+
+    .blog-box .box-content {
+        /* padding: 0 !important; */
+        position: relative;
+        top: -72px;
+        padding: 0 20px;
+    }
+    .blog-box .box-content .title {
+        font-size: 23.68px;
+        font-weight: 700;
+        margin: 0;
+    }
+    .col-md-6:nth-child(3),
+    .col-md-6:nth-child(4) {
+        position: relative;
+        top: -5px;
+    }
+    .blog-grid .flat-tabs .menu-tab li {
+        padding: 8px 18px;
     }
 
 
@@ -507,6 +565,112 @@ section.blog-grid .blog-box {
         /* max-width: 1400px; */
         margin: 0 auto;
         /* padding: 0 32px; */
+    }
+
+    .news-title {
+        color: #fff;
+        font-size: 36px;
+        font-weight: 700;
+        margin: 0;
+        letter-spacing: 0px;
+        line-height: 1.2;
+    }
+
+    .news-search-form {
+        display: flex;
+        align-items: center;
+        background: transparent;
+    }
+
+    .news-search-input {
+        height: 35px;
+        width: 247px;
+        border: 1px solid #fff;
+        border-right: none;
+        background: transparent;
+        color: #fff;
+        font-size: 14px;
+        padding: 0 16px;
+        border-radius: 0;
+        outline: none;
+    }
+    input.news-search-input::placeholder {
+        font-size: 14px;
+    }
+
+    .news-search-input::placeholder {
+        color: #bdbdbd;
+        font-size: 18px;
+    }
+
+    .news-search-btn {
+        height: 35px;
+        width: 40px;
+        background: linear-gradient(90deg, #BCFE08, #86F969);
+        border: none;
+        border-radius: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+
+    .news-search-btn:hover {
+        background: linear-gradient(90deg, #86F969, #BCFE08);
+    }
+
+    .news-search-btn svg {
+        display: block;
+    }
+}
+
+/* iPad Air 1180 */
+@media (min-width: 1100px) and (max-width: 1180px) {
+    .section-news-header {
+        background: #1e1f22;
+        padding: 32px 3.5%;
+        border-bottom: 2px solid #232326;
+    }
+    section.blog-grid {
+        padding: 3.5% 4%;
+    }
+    .blog-grid .container {
+        max-width: unset;
+        padding: unset;
+    }
+
+
+    .blog-box .box-content {
+        /* padding: 0 !important; */
+        position: relative;
+        top: -74px;
+        padding: 0 20px;
+    }
+    .blog-box .box-content .title {
+        font-size: 23.68px;
+        font-weight: 700;
+        margin: 0;
+    }
+    .col-md-6:nth-child(3),
+    .col-md-6:nth-child(4) {
+        position: relative;
+        top: -34px;
+    }
+    .blog-grid .flat-tabs .menu-tab li {
+        padding: 8px 18px;
+    }
+
+
+
+    .blog-grid .col-md-12 {
+        padding: unset;
+    }
+    .news-header-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
     }
 
     .news-title {

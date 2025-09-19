@@ -22,7 +22,7 @@ export default function BlogGrid1() {
                 <div>
                     <section className="section-news-header">
                         <div className="news-header-container">
-                            <h1 className="news-title">Tin tức</h1>
+                            <h1 className="news-title">Trung tâm sự kiện Nivex</h1>
                             <form className="news-search-form">
                                 <input
                                     type="text"
@@ -43,7 +43,8 @@ export default function BlogGrid1() {
                             <div className="row">
                                 <div className="col-md-12">
                                     <div className="flat-tabs">
-                                        <ul className="menu-tab">
+                                        <h2 className="cung-nivex-heading">Cùng Nivex tham gia <span className="gradient-text">sự kiện toàn cầu</span></h2>
+                                        {/* <ul className="menu-tab">
                                             <li className={flatTabs === 1 ? "active" : ""} onClick={() => handleFlatTabs(1)}><h6 className="fs-16">View All</h6></li>
                                             <li className={flatTabs === 2 ? "active" : ""} onClick={() => handleFlatTabs(2)}><h6 className="fs-16">Learn &amp; Earn</h6></li>
                                             <li className={flatTabs === 3 ? "active" : ""} onClick={() => handleFlatTabs(3)}><h6 className="fs-16">Metaverse</h6></li>
@@ -51,7 +52,7 @@ export default function BlogGrid1() {
                                             <li className={flatTabs === 5 ? "active" : ""} onClick={() => handleFlatTabs(5)}><h6 className="fs-16">NFT</h6></li>
                                             <li className={flatTabs === 6 ? "active" : ""} onClick={() => handleFlatTabs(6)}><h6 className="fs-16">Gaming</h6></li>
                                             <li className={flatTabs === 7 ? "active" : ""} onClick={() => handleFlatTabs(7)}><h6 className="fs-16">Music</h6></li>
-                                        </ul>
+                                        </ul> */}
                                         {/* <div className="search">
                                             <form >
                                                 <div className="form-group">
