@@ -32,7 +32,6 @@
   width: 136px;
   justify-content: flex-start;
   padding-left: 12px;
-  background-color: #333338 !important;
 }
 .floatingContacts .contactButton:nth-child(3):hover {
   width: 170px;
