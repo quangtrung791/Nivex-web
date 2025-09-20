@@ -65,8 +65,8 @@ export default function MobileMenu({ isMobileMenu }) {
                             </li>
                         </ul>
                     </li>
-                    <li className={`menu-item ${pathname === "/markets" ? "current-menu-item" : ""}`}>
-                        <Link href="/markets">Sự kiện</Link>
+                    <li className={`menu-item ${pathname === "/su-kien" ? "current-menu-item" : ""}`}>
+                        <Link href="/su-kien">Sự kiện</Link>
                     </li>
                     <li className={`menu-item ${pathname === "/tin-tuc" ? "current-menu-item" : ""}`}>
                         <Link href="/tin-tuc">Tin tức</Link>

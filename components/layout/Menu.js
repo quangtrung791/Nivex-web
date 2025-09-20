@@ -59,8 +59,8 @@ export default function MainMenu() {
                         </li>
                     </ul>
                 </li>
-                <li className={`menu-item ${pathname === "/markets" ? "current-menu-item" : ""}`}>
-                    <Link href="/markets"  className='master-item'>Sự kiện</Link>
+                <li className={`menu-item ${pathname === "/su-kien" ? "current-menu-item" : ""}`}>
+                    <Link href="/su-kien"  className='master-item'>Sự kiện</Link>
                 </li>
                 <li className={`menu-item ${pathname === "/tin-tuc" ? "current-menu-item" : ""}`}>
                     <Link href="/tin-tuc"  className='master-item'>Tin tức </Link>
