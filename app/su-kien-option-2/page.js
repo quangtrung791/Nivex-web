@@ -155,7 +155,7 @@ export default function SuKienOption2() {
                                             <div className="box-content">
                                                 <div className="meta">
                                                     <Link href="#" className="name"><span />On-live</Link>
-                                                    <Link href="#" className="time">Feb 03, 2021</Link>
+                                                    <Link href="#" className="time">20/9/2025</Link>
                                                 </div>
                                                 {/* <Link href="#" className="category btn-action">learn &amp; earn</Link> */}
                                                 <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
@@ -177,7 +177,7 @@ export default function SuKienOption2() {
                                             <div className="box-content">
                                                 <div className="meta">
                                                     <Link href="#" className="name"><span />On-live</Link>
-                                                    <Link href="#" className="time">Feb 03, 2021</Link>
+                                                    <Link href="#" className="time">20/9/2025</Link>
                                                 </div>
                                                 {/* <Link href="#" className="category btn-action">learn &amp; earn</Link> */}
                                                 <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
@@ -199,7 +199,7 @@ export default function SuKienOption2() {
                                             <div className="box-content">
                                                 <div className="meta">
                                                     <Link href="#" className="name"><span />On-live</Link>
-                                                    <Link href="#" className="time">Feb 03, 2021</Link>
+                                                    <Link href="#" className="time">20/9/2025</Link>
                                                 </div>
                                                 {/* <Link href="#" className="category btn-action">learn &amp; earn</Link> */}
                                                 <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
@@ -221,7 +221,7 @@ export default function SuKienOption2() {
                                             <div className="box-content">
                                                 <div className="meta">
                                                     <Link href="#" className="name"><span />On-live</Link>
-                                                    <Link href="#" className="time">Feb 03, 2021</Link>
+                                                    <Link href="#" className="time">20/9/2025</Link>
                                                 </div>
                                                 {/* <Link href="#" className="category btn-action">learn &amp; earn</Link> */}
                                                 <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>

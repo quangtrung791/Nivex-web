@@ -1360,7 +1360,7 @@ section.blog-grid .blog-box {
 
 /* mobile responsive */
 @media (min-width: 400px) and (max-width: 600px) {
-.section-news-header {
+    .section-news-header {
         background: #1e1f22;
         padding: 32px 3.5%;
         border-bottom: 2px solid #232326;
