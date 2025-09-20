@@ -4,6 +4,11 @@
     }
 }
 
+
+h2.cung-nivex-heading {
+    text-transform: uppercase !important;
+}
+
 section.blog-grid .blog-box {
     border-radius: 0px !important;
 }
