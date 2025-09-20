@@ -1,0 +1,69 @@
+/* Floating Contacts Container */
+.floatingContacts {
+  position: fixed;
+  right: 0px;
+  bottom: 50%;
+  transform: translateY(50%);
+  z-index: 9998;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* Individual Contact Button */
+.contactButton {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  position: relative;
+  border-bottom: 1px solid #333338;
+  box-shadow: -3px 3px 4px rgba(188, 254, 8, 0.6);
+}
+
+.contactButton:nth-child(3) {
+  border-bottom: none;
+}
+
+.contactButton:hover {
+  width: 136px;
+  justify-content: flex-start;
+  padding-left: 12px;
+}
+.floatingContacts .contactButton:nth-child(3):hover {
+  width: 170px;
+}
+.floatingContacts .contactButton:nth-child(3)::after {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* Text Label */
+.contactButton::after {
+  content: attr(data-label);
+  color: #BCFE08;
+  font-size: 13px;
+  font-weight: 400;
+  white-space: nowrap;
+  margin-left: 23px;
+  display: none;
+}
+
+.contactButton:hover::after {
+  display: block;
+  opacity: 1;
+}
+
+.floatingContacts .contactButton:nth-child(3) .contactIcon{
+   width: 20px;
+}
+
+/* Contact Icon */
+.contactIcon {
+  width: 27px;
+  height: auto;
+  filter: brightness(1.1);
+}

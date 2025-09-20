@@ -6,15 +6,7 @@ section.about p.fs-14.decs {
 	content: none !important;
 }
 
-.header .header__left .main-nav .menu li:hover .sub-menu {
-	transform: translate(-50%, 15px) !important;
-}
-@media (min-width: 1280px) {
-    .header .header__left .main-nav .menu li .sub-menu {
-        left: 100% !important;
-    }
-}
-@media (min-width: 1024px) and (max-width: 1139px) {
+/* @media (min-width: 1024px) and (max-width: 1139px) {
     .header .header__left .main-nav .menu li .sub-menu {
         left: 107% !important;
     }
@@ -23,5 +15,5 @@ section.about p.fs-14.decs {
     .header .header__left .main-nav .menu li .sub-menu {
         left: 107% !important;
     }
-}
+} */
 

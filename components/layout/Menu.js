@@ -19,47 +19,45 @@ export default function MainMenu() {
     return (
         <>
             <ul id="menu-primary-menu" className="menu">
-                <li className={`menu-item menu-item-has-children ${checkParentActive(["/home-v2", "/home-v3"])}`}>
+                <li className={`menu-item`}>
                     <Link href="/" className='master-item'>Trang chủ </Link>
-                    {/* <ul className="sub-menu">
-                        <li className={`menu-item ${checkCurrentMenuItem("/")}`}>
-                            <Link href="/">Home 01</Link>
-                        </li>
-                        <li className={`menu-item ${checkCurrentMenuItem("/home-v2")}`}>
-                            <Link href="/home-v2">Home 02</Link>
-                        </li>
-                        <li className={`menu-item ${checkCurrentMenuItem("/home-v3")}`}>
-                            <Link href="/home-v3">Home 03</Link>
-                        </li>
-                    </ul> */}
+                    
                 </li>
-                <li className={`menu-item menu-item-has-children ${checkParentActive(["/kien-thuc-tong-quan",
+                <li className={`menu-item menu-item-has-children ${checkParentActive([
                     "/huong-dan-su-dung-app-nivex",
                     "/huong-dan-dang-ky-dang-nhap",
                     "/huong-dan-nap-tien", 
                     "/xac-minh-danh-tinh-kyc",
-                    "/thuat-ngu",
                     "/ai-copy-trade",])}`}>
-                    <Link href="/kien-thuc-tong-quan"  className='master-item'>Kiến thức</Link>
+                    <Link href="/#" className='master-item'>Về Nivex</Link>
                     <ul className="sub-menu">
-                        <li className={`menu-item ${checkCurrentMenuItem("/kien-thuc-tong-quan")}`}>
-                            <Link href="/kien-thuc-tong-quan">Tổng quan</Link>
-                        </li>
                         <li className={`menu-item ${checkCurrentMenuItem("/huong-dan-su-dung-app-nivex") || 
                             checkCurrentMenuItem("/huong-dan-dang-ky-dang-nhap") ||
                             checkCurrentMenuItem("/huong-dan-nap-tien") ||
                             checkCurrentMenuItem("/xac-minh-danh-tinh-kyc")}`}>
                             <Link href="/huong-dan-su-dung-app-nivex">Hướng dẫn sử dụng App</Link>
                         </li>
-                        <li className={`menu-item ${checkCurrentMenuItem("/thuat-ngu")}`}>
-                            <Link href="/thuat-ngu">Thuật ngữ</Link>
-                        </li>
                         <li className={`menu-item ${checkCurrentMenuItem("/ai-copy-trade")}`}>
                             <Link href="/ai-copy-trade">AI Copy Trade</Link>
                         </li>
                     </ul>
                 </li>
-                <li className={`menu-item ${pathname === "/su-kien" ? "current-menu-item" : ""}`}>
+                <li className={`menu-item menu-item-has-children ${checkParentActive(["/kien-thuc-tong-quan",
+                    "/thuat-ngu",])}`}>
+                    <Link href="/kien-thuc-tong-quan"  className='master-item'>Kiến thức</Link>
+                    <ul className="sub-menu">
+                        <li className={`menu-item ${checkCurrentMenuItem("/kien-thuc-tong-quan")}`}>
+                            <Link href="/kien-thuc-tong-quan">Tổng quan</Link>
+                        </li>
+                        <li className={`menu-item ${checkCurrentMenuItem("/thuat-ngu")}`}>
+                            <Link href="/thuat-ngu">Thuật ngữ</Link>
+                        </li>
+                    </ul>
+                </li>
+                <li className={`menu-item ${pathname === "/khoa-hoc" ? "current-menu-item" : ""}`}>
+                    <Link href="/khoa-hoc"  className='master-item'>Khóa học</Link>
+                </li>
+                <li className={`menu-item ${pathname === "/#" ? "current-menu-item" : ""}`}>
                     <Link href="/su-kien"  className='master-item'>Sự kiện</Link>
                 </li>
                 <li className={`menu-item ${pathname === "/tin-tuc" ? "current-menu-item" : ""}`}>

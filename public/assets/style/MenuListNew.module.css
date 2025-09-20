@@ -1,0 +1,132 @@
+/* Menu List Section */
+.menuListSection {
+  padding: 0 7% 40px;
+}
+
+@media (min-width: 650px) and (max-width: 1439px) {
+  .menuListSection {
+    padding: 0 3.5% 45px;
+  }
+  .containerCustom {
+    padding-left: unset;
+    padding-right: unset;
+  }
+}
+
+
+/* Menu Grid */
+.menuGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+  margin: 0 auto;
+  padding: 26px;
+  border: 2px solid rgb(35, 38, 47, 0.7);
+  background: #18191D;
+  margin-top: -8.5%;
+}
+
+/* Menu Card */
+.menuCard {
+  padding: 25px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.menuCard:hover {
+  background: rgba(36, 37, 41, 0.8);
+}
+
+/* Icon Container */
+.iconContainer {
+  width: 64.25px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+/* Menu Icon */
+.menuIcon {
+  width: 100%;
+  height: auto;
+  /* object-fit: contain; */
+}
+
+/* Menu Content */
+.menuContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Menu Title */
+.menuTitle {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 35px 0;
+  letter-spacing: 0.6px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .menuGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+}
+
+@media (max-width: 992px) {
+  .menuGrid {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .menuListSection {
+    padding-top: 20px;
+  }
+  .menuCard {
+    min-width: 160px;
+  }
+}
+@media (min-width: 481px) and (max-width: 650px) {
+  .menuGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .menuListSection {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .menuListSection {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  .menuGrid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .menuListSection {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .iconContainer {
+    width: 78px;
+    height: 77.69px;
+  }
+  .menuTitle {
+    margin-bottom: 15px;
+  }
+}
