@@ -1,0 +1,1016 @@
+.blog-box {
+    border-radius: 0px;
+}
+.read-more-btn {
+    background: transparent;
+    border: solid 1px white;
+    color: white;
+    padding: 8px 24px;
+    font-weight: 500;
+}
+.read-more-btn:hover {
+    background: linear-gradient(#BCFE08 , #86F969);
+    color: black;
+}
+.gradient-text {
+   background: linear-gradient(90deg, #bcfe08, #86f869);
+   -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-top: 4px;
+}
+
+li.listing.active {
+    padding: 8px 10px;
+    background: linear-gradient(90deg, #bcfe08, #86f869);
+    /* color: black; */
+}
+li.listing {
+    cursor: pointer;
+    padding: 8px 10px;
+    background: transparent;
+}
+li.listing:hover {
+    cursor: pointer;
+    background: linear-gradient(90deg, #bcfe08, #86f869);
+}
+.fs-16 {
+    margin: unset;
+}
+.listing.active .fs-16 {
+    color: black;
+}
+a.read-more-btn.btn-action {
+    font-weight: 600 !important;
+}
+
+/* PC 1440 */
+@media (min-width: 1440px) and (max-width: 1599px) {
+    section.blog-grid,
+    section.page-title {
+        padding: 3.5% 7%;
+    }
+    section.section-news-header {
+        padding: 3.5% 8%;
+    }
+    section.blog-list {
+        padding: 3.5% 7%;
+    }
+    
+    ul.menu-tab.menu-on-line {
+        display: flex;
+        gap: 1.5%;
+        margin-bottom: 20px;
+    }
+    .blog-list .blog-main .blog-box .box-image {
+        width: 70% !important;
+    }
+    .blog-list .blog-main .blog-box .box-content {
+        padding: 60px 0 !important;
+    }
+    .meta {
+        margin-bottom: 20px;
+    }
+    .blog-list .blog-main .blog-box .box-content .text {
+        margin-top: 30px !important;
+        margin-bottom: 30px !important;
+    }
+
+    a.time {
+        position: relative;
+        /* right: -49%; */
+        /* margin-left: 67%; */
+        font-size: 12px !important;
+        font-weight: 300 !important;
+    }
+    .blog-list .blog-main .blog-box .box-content .meta {
+        justify-content: space-between;
+    }
+    p.text {
+        text-align: justify;
+        font-size: 14px;
+        font-weight: 400;
+    }
+    a.title {
+        font-size: 28px;
+        font-weight: 700;
+    }
+    a.name {
+        font-size: 12px !important;
+        font-weight: 300 !important;
+    }
+    a.read-more-btn.btn-action {
+        font-size: 14px;
+    }
+    .blog-list .blog-main .blog-box .box-content {
+        margin-left: 10px !important;
+    }
+
+
+    .blog-list .blog-main .blog-box .box-content .meta a {
+        margin-right: unset !important;
+    }
+    .blog-list .blog-main .blog-box .box-content .title {
+        margin-bottom: 0 !important;
+    }
+
+    .news-header-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        /* max-width: 1400px; */
+        margin: 0 auto;
+        /* padding: 0 32px; */
+    }
+
+    .news-search-form {
+        display: flex;
+        align-items: center;
+        background: transparent;
+    }
+
+    .news-search-input {
+        height: 35px;
+        width: 247px;
+        border: 1px solid #fff;
+        border-right: none;
+        background: transparent;
+        color: #fff;
+        font-size: 14px;
+        padding: 0 16px;
+        border-radius: 0;
+        outline: none;
+    }
+    input.news-search-input::placeholder {
+        font-size: 14px;
+    }
+
+    .news-search-input::placeholder {
+        color: #bdbdbd;
+        font-size: 18px;
+    }
+
+    .news-search-btn {
+        height: 35px;
+        width: 40px;
+        background: linear-gradient(90deg, #BCFE08, #86F969);
+        border: none;
+        border-radius: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+
+    .news-search-btn:hover {
+        background: linear-gradient(90deg, #86F969, #BCFE08);
+    }
+
+    .news-search-btn svg {
+        display: block;
+    }
+
+
+}
+/* Pc 1600 */
+@media (min-width: 1600px) and (max-width: 1919px) {
+    section.blog-grid,
+    section.page-title {
+        padding: 3.5% 7%;
+    }
+    section.section-news-header {
+        padding: 3.5% 8%;
+    }
+    section.blog-list {
+        padding: 3.5% 7%;
+    }
+    
+    ul.menu-tab.menu-on-line {
+        display: flex;
+        gap: 1.5%;
+        margin-bottom: 20px;
+    }
+    .blog-list .blog-main .blog-box .box-image {
+        width: 70% !important;
+    }
+    .blog-list .blog-main .blog-box .box-content {
+        padding: 60px 0 !important;
+    }
+    .meta {
+        margin-bottom: 20px;
+    }
+    .blog-list .blog-main .blog-box .box-content .text {
+        margin-top: 30px !important;
+        margin-bottom: 30px !important;
+    }
+
+    a.time {
+        position: relative;
+        /* right: -49%; */
+        /* margin-left: 67%; */
+        font-size: 12px !important;
+        font-weight: 300 !important;
+    }
+    .blog-list .blog-main .blog-box .box-content .meta {
+        justify-content: space-between;
+    }
+    p.text {
+        text-align: justify;
+        font-size: 14px;
+        font-weight: 400;
+    }
+    a.title {
+        font-size: 28px;
+        font-weight: 700;
+    }
+    a.name {
+        font-size: 12px !important;
+        font-weight: 300 !important;
+    }
+    a.read-more-btn.btn-action {
+        font-size: 14px;
+    }
+    .blog-list .blog-main .blog-box .box-content {
+        margin-left: 10px !important;
+    }
+
+
+    .blog-list .blog-main .blog-box .box-content .meta a {
+        margin-right: unset !important;
+    }
+    .blog-list .blog-main .blog-box .box-content .title {
+        margin-bottom: 0 !important;
+    }
+
+    .news-header-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        /* max-width: 1400px; */
+        margin: 0 auto;
+        /* padding: 0 32px; */
+    }
+
+    .news-search-form {
+        display: flex;
+        align-items: center;
+        background: transparent;
+    }
+
+    .news-search-input {
+        height: 35px;
+        width: 247px;
+        border: 1px solid #fff;
+        border-right: none;
+        background: transparent;
+        color: #fff;
+        font-size: 14px;
+        padding: 0 16px;
+        border-radius: 0;
+        outline: none;
+    }
+    input.news-search-input::placeholder {
+        font-size: 14px;
+    }
+
+    .news-search-input::placeholder {
+        color: #bdbdbd;
+        font-size: 18px;
+    }
+
+    .news-search-btn {
+        height: 35px;
+        width: 40px;
+        background: linear-gradient(90deg, #BCFE08, #86F969);
+        border: none;
+        border-radius: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+
+    .news-search-btn:hover {
+        background: linear-gradient(90deg, #86F969, #BCFE08);
+    }
+
+    .news-search-btn svg {
+        display: block;
+    }
+
+
+}
+/* Pc 1920 */
+@media (min-width: 1920px) {
+    section.blog-grid,
+    section.page-title {
+        padding: 3.5% 7%;
+    }
+    section.section-news-header {
+        padding: 3.5% 13%;
+    }
+    section.blog-list {
+        padding: 3.5% 7%;
+    }
+    
+    ul.menu-tab.menu-on-line {
+        display: flex;
+        gap: 1.5%;
+        margin-bottom: 20px;
+    }
+    .blog-list .blog-main .blog-box .box-image {
+        width: 70% !important;
+    }
+    .blog-list .blog-main .blog-box .box-content {
+        padding: 100px 0 !important;
+    }
+    .meta {
+        margin-bottom: 20px;
+    }
+    .blog-list .blog-main .blog-box .box-content .text {
+        margin-top: 30px !important;
+        margin-bottom: 30px !important;
+    }
+
+    .blog-list .blog-main .blog-box .box-content .meta {
+        justify-content: space-between;
+    }
+    a.time {
+        position: relative;
+        /* right: -49%; */
+        /* margin-left: 67%; */
+        font-size: 12px !important;
+        font-weight: 300 !important;
+    }
+    p.text {
+        text-align: justify;
+        font-size: 14px;
+        font-weight: 400;
+    }
+    a.title {
+        font-size: 28px;
+        font-weight: 700;
+    }
+    a.name {
+        font-size: 12px !important;
+        font-weight: 300 !important;
+    }
+    a.read-more-btn.btn-action {
+        font-size: 14px;
+    }
+    .blog-list .blog-main .blog-box .box-content {
+        margin-left: 10px !important;
+    }
+
+
+    .blog-list .blog-main .blog-box .box-content .meta a {
+        margin-right: unset !important;
+    }
+    .blog-list .blog-main .blog-box .box-content .title {
+        margin-bottom: 0 !important;
+    }
+
+    .news-header-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        /* max-width: 1400px; */
+        margin: 0 auto;
+        /* padding: 0 32px; */
+    }
+
+    .news-search-form {
+        display: flex;
+        align-items: center;
+        background: transparent;
+    }
+
+    .news-search-input {
+        height: 35px;
+        width: 247px;
+        border: 1px solid #fff;
+        border-right: none;
+        background: transparent;
+        color: #fff;
+        font-size: 14px;
+        padding: 0 16px;
+        border-radius: 0;
+        outline: none;
+    }
+    input.news-search-input::placeholder {
+        font-size: 14px;
+    }
+
+    .news-search-input::placeholder {
+        color: #bdbdbd;
+        font-size: 18px;
+    }
+
+    .news-search-btn {
+        height: 35px;
+        width: 40px;
+        background: linear-gradient(90deg, #BCFE08, #86F969);
+        border: none;
+        border-radius: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+
+    .news-search-btn:hover {
+        background: linear-gradient(90deg, #86F969, #BCFE08);
+    }
+
+    .news-search-btn svg {
+        display: block;
+    }
+
+
+}
+
+/* iPad Pro - Landscape (1366px) */
+@media (min-width: 1280px) and (max-width: 1366px) {
+    section.blog-grid,
+    section.page-title {
+        padding: 3% 6.5%;
+    }
+    section.section-news-header {
+        padding: 3% 3.5%;
+    }
+    section.blog-list {
+        padding: 3% 3.5%;
+    }
+    .col-xl-12.col-md-12 {
+        padding: unset;
+    }
+    
+    ul.menu-tab.menu-on-line {
+        display: flex;
+        gap: 1.4%;
+        margin-bottom: 18px;
+        flex-wrap: wrap;
+    }
+
+    .blog-list .blog-main .blog-box .box-image {
+        width: 72% !important;
+    }
+    .blog-list .blog-main .blog-box .box-content {
+        padding: 55px 0 !important;
+        margin-left: 10px !important;
+    }
+
+    .meta {
+        margin-bottom: 18px;
+    }
+
+    .blog-list .blog-main .blog-box .box-content .text {
+        margin-top: 28px !important;
+        margin-bottom: 28px !important;
+    }
+
+    a.time {
+        position: relative;
+        /* nếu cần canh lại, bật các thuộc tính dưới */
+        /* right: -40%; */
+        /* margin-left: 60%; */
+        font-size: 12px !important;
+        font-weight: 300 !important;
+        display: inline-block;
+    }
+
+    .blog-list .blog-main .blog-box .box-content .meta {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    p.text {
+        text-align: justify;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.6;
+    }
+
+    a.title {
+        font-size: 26px;
+        font-weight: 700;
+    }
+
+    a.name {
+        font-size: 12px !important;
+        font-weight: 300 !important;
+    }
+
+    a.read-more-btn.btn-action {
+        font-size: 14px;
+    }
+
+    .blog-list .blog-main .blog-box .box-content {
+        margin-left: 10px !important;
+    }
+
+    .blog-list .blog-main .blog-box .box-content .meta a {
+        margin-right: unset !important;
+    }
+
+    .blog-list .blog-main .blog-box .box-content .title {
+        margin-bottom: 0 !important;
+    }
+
+    .news-header-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
+        width: 100%;
+        gap: 12px;
+    }
+
+    .news-search-form {
+        display: flex;
+        align-items: center;
+        background: transparent;
+    }
+
+    .news-search-input {
+        height: 35px;
+        width: 240px;
+        border: 1px solid #fff;
+        border-right: none;
+        background: transparent;
+        color: #fff;
+        font-size: 14px;
+        padding: 0 16px;
+        border-radius: 0;
+        outline: none;
+    }
+
+    input.news-search-input::placeholder {
+        font-size: 14px;
+    }
+
+    .news-search-input::placeholder {
+        color: #bdbdbd;
+        font-size: 16px;
+    }
+
+    .news-search-btn {
+        height: 35px;
+        width: 40px;
+        background: linear-gradient(90deg, #BCFE08, #86F969);
+        border: none;
+        border-radius: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+
+    .news-search-btn:hover {
+        background: linear-gradient(90deg, #86F969, #BCFE08);
+    }
+
+    .news-search-btn svg {
+        display: block;
+    }
+}
+
+/* iPad / iPad Pro - Portrait (1024px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+    section.blog-grid,
+    section.page-title {
+        padding: 2.5% 5%;
+    }
+    section.section-news-header {
+        padding: 2.5% 3.5%;
+    }
+    section.blog-list {
+        padding: 2.5% 3.5%;
+    }
+    
+    ul.menu-tab.menu-on-line {
+        display: flex;
+        gap: 1%;
+        margin-bottom: 15px;
+        flex-wrap: wrap;
+    }
+    .col-xl-12.col-md-12 {
+        padding: unset;
+    }
+
+    .blog-list .blog-main .blog-box .box-image {
+        width: 80% !important;
+    }
+    .blog-list .blog-main .blog-box .box-content {
+        padding: 45px 0 !important;
+        margin-left: 6px !important;
+    }
+
+    .meta {
+        margin-bottom: 15px;
+    }
+
+    .blog-list .blog-main .blog-box .box-content .text {
+        margin-top: 22px !important;
+        margin-bottom: 22px !important;
+    }
+
+    a.time {
+        position: relative;
+        /* right: -30%; */
+        /* margin-left: 50%; */
+        font-size: 11px !important;
+        font-weight: 300 !important;
+        display: inline-block;
+    }
+
+    .blog-list .blog-main .blog-box .box-content .meta {
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    p.text {
+        text-align: justify;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 1.6;
+    }
+
+    a.title {
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    a.name {
+        font-size: 12px !important;
+        font-weight: 300 !important;
+    }
+
+    a.read-more-btn.btn-action {
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+
+    .blog-list .blog-main .blog-box .box-content {
+        margin-left: 6px !important;
+    }
+
+    .blog-list .blog-main .blog-box .box-content .meta a {
+        margin-right: unset !important;
+    }
+
+    .blog-list .blog-main .blog-box .box-content .title {
+        margin-bottom: 0 !important;
+    }
+
+    .news-header-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .news-search-form {
+        display: flex;
+        align-items: center;
+        background: transparent;
+        flex-wrap: nowrap;
+    }
+
+    .news-search-input {
+        height: 35px;
+        width: 200px;
+        border: 1px solid #fff;
+        border-right: none;
+        background: transparent;
+        color: #fff;
+        font-size: 13px;
+        padding: 0 12px;
+        border-radius: 0;
+        outline: none;
+    }
+
+    input.news-search-input::placeholder {
+        font-size: 13px;
+    }
+
+    .news-search-input::placeholder {
+        color: #bdbdbd;
+        font-size: 14px;
+    }
+
+    .news-search-btn {
+        height: 35px;
+        width: 40px;
+        background: linear-gradient(90deg, #BCFE08, #86F969);
+        border: none;
+        border-radius: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+
+    .news-search-btn:hover {
+        background: linear-gradient(90deg, #86F969, #BCFE08);
+    }
+
+    .news-search-btn svg {
+        display: block;
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* iPad Air - Landscape (1180px) */
+@media (min-width: 1100px) and (max-width: 1180px) {
+    section.blog-grid,
+    section.page-title {
+        padding: 2.8% 5.5%;
+    }
+    section.section-news-header {
+        padding: 2.8% 3.5%;
+    }
+    section.blog-list {
+        padding: 2.8% 3.5%;
+    }
+    
+    ul.menu-tab.menu-on-line {
+        display: flex;
+        gap: 1.2%;
+        margin-bottom: 16px;
+        flex-wrap: wrap;
+    }
+
+    .blog-list .blog-main .blog-box .box-image {
+        width: 78% !important;
+    }
+    .blog-list .blog-main .blog-box .box-content {
+        padding: 45px 0 !important;
+        margin-left: 6px !important;
+    }
+
+    .meta {
+        margin-bottom: 16px;
+    }
+
+    .blog-list .blog-main .blog-box .box-content .text {
+        margin-top: 24px !important;
+        margin-bottom: 24px !important;
+    }
+
+    a.time {
+        position: relative;
+        font-size: 11px !important;
+        font-weight: 300 !important;
+    }
+
+    .blog-list .blog-main .blog-box .box-content .meta {
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
+    }
+
+    p.text {
+        text-align: justify;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 1.6;
+    }
+
+    a.title {
+        font-size: 23px;
+        font-weight: 700;
+    }
+
+    a.name {
+        font-size: 11px !important;
+        font-weight: 300 !important;
+    }
+
+    a.read-more-btn.btn-action {
+        font-size: 13px;
+    }
+
+    .blog-list .blog-main .blog-box .box-content .meta a {
+        margin-right: unset !important;
+    }
+
+    .blog-list .blog-main .blog-box .box-content .title {
+        margin-bottom: 0 !important;
+    }
+
+    .news-header-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .news-search-form {
+        display: flex;
+        align-items: center;
+        background: transparent;
+    }
+
+    .news-search-input {
+        height: 34px;
+        width: 190px;
+        border: 1px solid #fff;
+        border-right: none;
+        background: transparent;
+        color: #fff;
+        font-size: 13px;
+        padding: 0 12px;
+        border-radius: 0;
+        outline: none;
+    }
+
+    input.news-search-input::placeholder {
+        font-size: 13px;
+    }
+
+    .news-search-input::placeholder {
+        color: #bdbdbd;
+        font-size: 14px;
+    }
+
+    .news-search-btn {
+        height: 34px;
+        width: 38px;
+        background: linear-gradient(90deg, #BCFE08, #86F969);
+        border: none;
+        border-radius: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+
+    .news-search-btn:hover {
+        background: linear-gradient(90deg, #86F969, #BCFE08);
+    }
+
+    .news-search-btn svg {
+        display: block;
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* iPad Air - Portrait (820px) */
+@media (min-width: 768px) and (max-width: 820px) {
+    section.blog-grid,
+    section.page-title {
+        padding: 2% 3.5%;
+    }
+    section.section-news-header {
+        padding: 2% 3.5%;
+    }
+    section.blog-list {
+        padding: 2% 3.5%;
+    }
+    .col-xl-12.col-md-12 {
+        padding: unset;
+    }
+    
+    ul.menu-tab.menu-on-line {
+        display: flex;
+        gap: 1%;
+        margin-bottom: 12px;
+        flex-wrap: wrap;
+    }
+
+    .blog-list .blog-main .blog-box .box-image {
+        width: 85% !important;
+    }
+    .blog-list .blog-main .blog-box .box-content {
+        padding: 35px 0 !important;
+        margin-left: 4px !important;
+    }
+
+    .meta {
+        margin-bottom: 12px;
+    }
+
+    .blog-list .blog-main .blog-box .box-content .text {
+        margin-top: 18px !important;
+        margin-bottom: 18px !important;
+    }
+
+    a.time {
+        position: relative;
+        font-size: 10px !important;
+        font-weight: 300 !important;
+    }
+
+    .blog-list .blog-main .blog-box .box-content .meta {
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    p.text {
+        text-align: justify;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 1.6;
+    }
+
+    a.title {
+        font-size: 21px;
+        font-weight: 700;
+    }
+
+    a.name {
+        font-size: 10px !important;
+        font-weight: 300 !important;
+    }
+
+    a.read-more-btn.btn-action {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+
+    .blog-list .blog-main .blog-box .box-content .meta a {
+        margin-right: unset !important;
+    }
+
+    .blog-list .blog-main .blog-box .box-content .title {
+        margin-bottom: 0 !important;
+    }
+
+    .news-header-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
+        width: 100%;
+        gap: 8px;
+    }
+
+    .news-search-form {
+        display: flex;
+        align-items: center;
+        background: transparent;
+        flex-wrap: nowrap;
+    }
+
+    .news-search-input {
+        height: 32px;
+        width: 160px;
+        border: 1px solid #fff;
+        border-right: none;
+        background: transparent;
+        color: #fff;
+        font-size: 12px;
+        padding: 0 10px;
+        border-radius: 0;
+        outline: none;
+    }
+
+    input.news-search-input::placeholder {
+        font-size: 12px;
+    }
+
+    .news-search-input::placeholder {
+        color: #bdbdbd;
+        font-size: 13px;
+    }
+
+    .news-search-btn {
+        height: 32px;
+        width: 36px;
+        background: linear-gradient(90deg, #BCFE08, #86F969);
+        border: none;
+        border-radius: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+
+    .news-search-btn:hover {
+        background: linear-gradient(90deg, #86F969, #BCFE08);
+    }
+
+    .news-search-btn svg {
+        display: block;
+        width: 16px;
+        height: 16px;
+    }
+}
+
