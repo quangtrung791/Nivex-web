@@ -46,6 +46,7 @@ export default function MobileMenu({ isMobileMenu }) {
                             </li>
                         </ul>
                     </li>
+
                     <li className={`menu-item menu-item-has-children ${checkParentActive(["/kien-thuc-tong-quan",
                         "/thuat-ngu",])}`}>
                         <Link href="/kien-thuc-tong-quan">Kiến thức</Link>
@@ -63,7 +64,7 @@ export default function MobileMenu({ isMobileMenu }) {
                         <Link href="/khoa-hoc">Khóa học</Link>
                     </li>
                     <li className={`menu-item ${pathname === "/#" ? "current-menu-item" : ""}`}>
-                        <Link href="/#">Sự kiện</Link>
+                        <Link href="/su-kien">Sự kiện</Link>
                     </li>
                     <li className={`menu-item ${pathname === "/tin-tuc" ? "current-menu-item" : ""}`}>
                         <Link href="/tin-tuc">Tin tức</Link>

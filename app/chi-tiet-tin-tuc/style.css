@@ -1,3 +1,9 @@
+@media (max-width: 769px) {
+    ul.menu-tab.menu-on-line {
+        display: none !important;
+    }
+}
+
 section.section-sale {
     display: none;
 }

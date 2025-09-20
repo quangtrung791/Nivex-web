@@ -120,15 +120,7 @@ export default function BlogDetails() {
                                         </ul>
 
                                          {/* Tab menu for mobile */}
-                                        {/* <select
-                                            className="menu-tab-mobile"
-                                            value={activeTab}
-                                            onChange={e => setActiveTab(e.target.value)}
-                                        >
-                                            {TABS.map(tab => (
-                                                <option key={tab.value} value={tab.value}>{tab.label}</option>
-                                            ))}
-                                        </select> */}
+                                       
                                         <div className={styles.mobileDropdown} style={{ width: "30%" }}>
                                             <div
                                                 className={styles.mobileDropdownInnerFlex}

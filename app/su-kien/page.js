@@ -6,7 +6,7 @@ import { useState, useEffect } from "react"
 import './style.css';
 
 
-export default function BlogGrid1() {
+export default function SuKien() {
     const [flatTabs, setFlatTabs] = useState(1)
     const handleFlatTabs = (index) => {
         setFlatTabs(index)
@@ -22,7 +22,7 @@ export default function BlogGrid1() {
                 <div>
                     <section className="section-news-header">
                         <div className="news-header-container">
-                            <h1 className="news-title">Trung tâm sự kiện Nivex</h1>
+                            <h1 className="news-title">Trung tâm <span className="gradient-text">sự kiện Nivex</span></h1>
                             <form className="news-search-form">
                                 <input
                                     type="text"

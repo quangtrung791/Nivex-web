@@ -85,6 +85,12 @@ footer.footer.style-2.footer-main {
     padding-right: 0 !important;
 }
 
+@media (max-width: 769px) {
+    ul.menu-tab.menu-on-line {
+        display: none !important;
+    }
+}
+
 @media (min-width: 750px) {
     section.duoc-xem-nhieu .blog-box .box-content .title {
         font-size: 20px;
