@@ -238,52 +238,7 @@ section.pageTitleKnowLedge, .knowledgeSection {
     display: flex; 
 }
 
-.mobileDropdownInnerFlex {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-}
 
-.dropdownToggle {
-    background: #BCFE08;
-    color: #000;
-    border: none;
-    padding: 12px 16px;
-    font-size: 16px;
-    font-weight: 700;
-    text-align: center;
-    display: flex;
-    position: relative;
-    width: 100%;
-    justify-content: center;
-}
-
-.dropdownIcon { 
-    background: url(/assets/images/icon/vector-bottom-arrow.png) no-repeat center;
-    width: 22px;
-    height: 16px;
-    background-size: contain;
-    transition: transform 0.25s ease;
-}
-
-.dropdownIcon.open {
-    transform: rotate(180deg);
-}
-
-.dropdownMenu {
-    filter: drop-shadow(rgba(188, 254, 8, 0.25) 0px 1px 2px) drop-shadow(rgba(188, 254, 8, 0.25) 0px 6px 25px);
-    background: #000000;
-    overflow: hidden;
-    display: none;
-    transition: all 0.25s ease;
-    padding: 18px 12px;
-    border-bottom: 2px solid #BCFE08;
-    width: 100%;
-}
-
-.dropdownMenu.open {
-    display: inline-block;
-}
 
 .categoryMenuItem {
     padding: 10px 16px;
@@ -296,7 +251,6 @@ section.pageTitleKnowLedge, .knowledgeSection {
 }
 
 .dropdownMenu .categoryMenuItem.active {
-    background: none;
     color: #BCFE08;
 }
 
@@ -363,6 +317,51 @@ section.pageTitleKnowLedge, .knowledgeSection {
   }
   .desktopTabs { 
     display: none; 
+  }
+  .mobileDropdownInnerFlex {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+  }
+
+  .dropdownToggle {
+      background: #BCFE08;
+      color: #000;
+      border: none;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: 700;
+      text-align: center;
+      display: flex;
+      position: relative;
+      width: 100%;
+      justify-content: center;
+  }
+
+  .dropdownIcon { 
+      background: url(/assets/images/icon/vector-bottom-arrow.png) no-repeat center;
+      width: 22px;
+      height: 16px;
+      background-size: contain;
+      transition: transform 0.25s ease;
+  }
+
+  .dropdownIcon.open {
+      transform: rotate(180deg);
+  }
+
+  .dropdownMenu {
+      filter: drop-shadow(rgba(188, 254, 8, 0.25) 0px 1px 2px) drop-shadow(rgba(188, 254, 8, 0.25) 0px 6px 25px);
+      background: #000000;
+      overflow: hidden;
+      display: none;
+      transition: all 0.25s ease;
+      padding: 18px 15px 18px 12px;
+      border-bottom: 2px solid #BCFE08;
+  }
+
+  .dropdownMenu.open {
+      display: inline-block;
   }
 }
 

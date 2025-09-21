@@ -8,6 +8,7 @@ export default function CoursesPage() {
   const [activeFilter, setActiveFilter] = useState('all')
   const [searchResults, setSearchResults] = useState([])
   const [isSearching, setIsSearching] = useState(false)
+  const [isFilterDropdownOpen, setIsFilterDropdownOpen] = useState(false)
 
   // Dữ liệu khóa học mẫu
   const courses = useMemo(() => [
@@ -31,7 +32,7 @@ export default function CoursesPage() {
       level: 'Hạn chế',
       date: '01/09/2025',
       status: 'full',
-      image: 'https://learningchain.vn/wp-content/uploads/2025/09/course2.jpg',
+      image: '/assets/images/background/course_image_test2.png',
       buttonText: 'Hết hạn đăng ký',
       content: 'Những nhà đầu tư “khôn ngoan” không chờ thị trường ổn định mới hành động, mà họ đa dạng hóa danh mục ngay từ bây giờ để vừa bảo vệ vốn, vừa săn tìm lợi nhuận.',
     },
@@ -43,7 +44,7 @@ export default function CoursesPage() {
       level: 'Nâng cao',
       date: '15/09/2025',
       status: 'available',
-      image: 'https://learningchain.vn/wp-content/uploads/2025/09/course3.jpg',
+      image: '/assets/images/background/course_image_test1.png',
       buttonText: 'Đăng ký ngay',
       content: 'Những nhà đầu tư “khôn ngoan” không chờ thị trường ổn định mới hành động, mà họ đa dạng hóa danh mục ngay từ bây giờ để vừa bảo vệ vốn, vừa săn tìm lợi nhuận.',
     }
@@ -108,8 +109,8 @@ export default function CoursesPage() {
                 <div className="container">
                     <div className={styles.displayFlexForHeader}>
                         <div className="col-md-6">
-                            <h3 className={`heading ${styles.pageTitleHeading}`}>Khóa học <span>tại Nivex</span>
-                            </h3>
+                            <h1 className={`heading ${styles.pageTitleHeading}`}>Khóa học <span>tại Nivex</span>
+                            </h1>
                         </div>
                         <div className={`col-md-6 ${styles.col6mdCenter}`}>
                             <div className={styles.searchBox}>
@@ -167,7 +168,8 @@ export default function CoursesPage() {
 
           {/* Filter Tabs */}
           <div className={styles.filterSection}>
-            <div className={styles.filterTabs}>
+            {/* Desktop Tabs */}
+            <div className={`${styles.filterTabs} ${styles.desktopTabs}`}>
               {filterTabs.map((tab) => (
                 <button
                   key={tab.id}
@@ -177,6 +179,37 @@ export default function CoursesPage() {
                   {tab.label}
                 </button>
               ))}
+            </div>
+
+            {/* Mobile Dropdown */}
+            <div className={styles.mobileDropdown}>
+              <div 
+                  className={styles.mobileDropdownInnerFlex}
+                  onClick={() => setIsFilterDropdownOpen(!isFilterDropdownOpen)}
+              >
+                <button 
+                  className={styles.dropdownToggle}
+                  
+                >
+                    {filterTabs.find(tab => tab.id === activeFilter)?.label || 'Tất cả'}
+                    
+                </button>
+                <span className={`${styles.dropdownIcon} ${isFilterDropdownOpen ? styles.open : ''}`}></span>
+              </div>
+              <div className={`${styles.dropdownMenu} ${isFilterDropdownOpen ? styles.open : ''}`}>
+                {filterTabs.map((tab) => (
+                  <div
+                    key={tab.id}
+                    className={`${styles.filterMenuItem} ${activeFilter === tab.id ? styles.active : ''}`}
+                    onClick={() => {
+                      setActiveFilter(tab.id)
+                      setIsFilterDropdownOpen(false)
+                    }}
+                  >
+                    {tab.label}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
