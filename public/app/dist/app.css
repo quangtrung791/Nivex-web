@@ -7942,9 +7942,7 @@ section.crypto {
 
 .footer.style-2 .footer__main .footer-contact form input {
     width: 100%;
-    /* border: 2px solid var(--line); */
-    border: 2px solid #dadde6;
-    /* border-radius: 90px; */
+    border: 2px solid #A6AAB7;
     padding: 11px 19px;
     outline: none;
     background: #141416;
@@ -8031,11 +8029,20 @@ h2.title {
         background-size: cover;
         width: 17px;
         height: 16px;
-        margin-top: 3px;
+        margin-top: 4px;
 }
 .list-social li span, .footer__main .icon-x-twitter {
     filter: brightness(2.5);
 }
+
+.footer__main .icon-tiktok {
+        background: url("/assets/images/icon/icon-tiktok-footer.png") no-repeat bottom;
+        background-size: contain;
+        width: 17px;
+        height: 19px;
+        margin-top: 3px;
+}
+
 .back_to_top-btn {
      animation: floatUpDown 2s ease-in-out infinite;
     position: absolute;
