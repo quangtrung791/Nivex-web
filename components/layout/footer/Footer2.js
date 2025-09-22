@@ -70,15 +70,17 @@ export default function Footer2() {
                                     </form>
                                     <ul className="list-social">
                                         <li>
-                                            <Link href="https://www.facebook.com/NivexVN"><span className="icon-facebook-f" /></Link>
+                                            <Link href="https://www.facebook.com/NivexVN" target="_blank"><span className="icon-facebook-f" /></Link>
                                         </li>
                                         <li>
-                                            <Link href="https://x.com/Nivex_Vietnam" className="icon-x-twitter"></Link>
+                                            <Link href="https://www.tiktok.com/@nivexvn" target="_blank" className="icon-tiktok" ></Link>
                                         </li>
                                         <li>
-                                            <Link href="https://www.youtube.com/@Nivex_Vietnam"><span className="icon-youtube" /></Link>
+                                            <Link href="https://x.com/Nivex_Vietnam" target="_blank" className="icon-x-twitter"></Link>
                                         </li>
-                                        
+                                        <li>
+                                            <Link href="https://www.youtube.com/@Nivex_Vietnam" target="_blank"><span className="icon-youtube" /></Link>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
