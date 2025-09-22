@@ -51,11 +51,11 @@ export default function AICopyTrade() {
                                 </div>
                                 <div  className={`${styles.displayFlexTextDescription}`}>
                                     <div className={`${styles.heroDescription} ${styles.beforeTextWithBorder}`}>
-                                        <p>+1,786,506.44 USDT </p>
+                                        <p>+2,724,650.53 USDT </p>
                                         <p>Hiệu suất tích lũy</p> 
                                     </div>
                                     <div className={`${styles.heroDescription} ${styles.beforeTextWithBorder}`}>
-                                        <p>+145.34% </p>
+                                        <p>+303.25%</p>
                                         <p>ROI</p> 
                                     </div>
                                 </div>
@@ -77,11 +77,11 @@ export default function AICopyTrade() {
                                 </div>
                                 <div  className={`${styles.displayFlexTextDescription}`}>
                                     <div className={`${styles.heroDescription} ${styles.beforeTextWithBorder}`}>
-                                        <p>+3,472,414.08 USDT </p>
+                                        <p>+6,208,391.54 USDT </p>
                                         <p>Hiệu suất tích lũy</p> 
                                     </div>
                                     <div className={`${styles.heroDescription} ${styles.beforeTextWithBorder}`}>
-                                        <p>+130.13% </p>
+                                        <p>+162.66% </p>
                                         <p>ROI</p> 
                                     </div>
                                 </div>
@@ -104,16 +104,16 @@ export default function AICopyTrade() {
                             </div>
                             <div className={styles.heroContent}>
                                 <div>
-                                    <p className={`${styles.cryptoHighlight} ${styles.AITradeText}`}>AITrade</p>
+                                    <p className={`${styles.cryptoHighlight} ${styles.AITradeText}`}>AIpha 10</p>
                                     <p className={`${styles.heroContentText2}`}>Tần số cao · Tự động hóa coin chính thống</p>
                                 </div>
                                 <div  className={`${styles.displayFlexTextDescription}`}>
                                     <div className={`${styles.heroDescription} ${styles.beforeTextWithBorder}`}>
-                                        <p>+3,674,760.80 USDT </p>
+                                        <p>+6,382,978.24 USDT </p>
                                         <p>Hiệu suất tích lũy</p> 
                                     </div>
                                     <div className={`${styles.heroDescription} ${styles.beforeTextWithBorder}`}>
-                                        <p>+130.54%</p>
+                                        <p>+140.48%</p>
                                         <p>ROI</p> 
                                     </div>
                                 </div>
