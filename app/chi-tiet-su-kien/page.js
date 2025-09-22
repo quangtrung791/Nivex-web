@@ -75,7 +75,11 @@ export default function SuKienOption2() {
                                                         <div className="content-inner" style={{ display: `${flatTabs2 === 1 ? "block" : "block"}` }}>
                                                             <div className="coin-list__main">
                                                                 <div className="flat-tabs bxh-container">
-                                                                    <h3 className="text-center"><span className="gradient-text">TOP NHÀ GIAO DỊCH </span>DẪN ĐẦU CUỘC THI</h3>
+                                                                    <h3 className="text-center"><span className="gradient-text">
+                                                                        <img src='https://learningchain.vn/wp-content/uploads/nivex/fra-in.svg' />
+                                                                        &nbsp;TOP NHÀ GIAO DỊCH </span>DẪN ĐẦU CUỘC THI &nbsp;
+                                                                        <img src='https://learningchain.vn/wp-content/uploads/nivex/fra-out.svg' />
+                                                                    </h3>
                                                                     <p className="text-center bxh-desc">BXH những anh tài có lợi nhuận cao nhất được cập nhật hàng ngày.</p>
                                                                     <div className="content-tab bxh">
                                                                         <div className="content-inner" style={{ display: `${flatTabs3 === 1 ? "block" : "block"}` }}>
@@ -92,8 +96,10 @@ export default function SuKienOption2() {
                                                                                     </tr>
                                                                                 </thead>
                                                                                 <tbody>
-                                                                                    <tr>
-                                                                                        <td>1</td>
+                                                                                    <tr className="tr-top-1">
+                                                                                        <td>
+                                                                                            <img className="cup-champ" src="https://learningchain.vn/wp-content/uploads/nivex/1st.png" />
+                                                                                        </td>
                                                                                         <td>
                                                                                            user name 09123124 
                                                                                         </td>
@@ -103,8 +109,10 @@ export default function SuKienOption2() {
                                                                                         <td>2.000.000 VND</td>
                                                                                     </tr>
 
-                                                                                    <tr>
-                                                                                        <td>2</td>
+                                                                                    <tr  className="tr-top-2">
+                                                                                        <td>
+                                                                                            <img className="cup-champ" src="https://learningchain.vn/wp-content/uploads/nivex/2nd.png" />
+                                                                                        </td>
                                                                                         <td>
                                                                                             user name 09123124 
                                                                                         </td>
@@ -114,8 +122,10 @@ export default function SuKienOption2() {
                                                                                         <td>2.000.000 VND</td>
                                                                                     </tr>
                                                                                    
-                                                                                    <tr>
-                                                                                        <td>3</td>
+                                                                                    <tr className="tr-top-3">
+                                                                                        <td>
+                                                                                            <img className="cup-champ" src="https://learningchain.vn/wp-content/uploads/nivex/3rd.png" />
+                                                                                        </td>
                                                                                         <td>
                                                                                             user name 09123124 
                                                                                         </td>
@@ -127,7 +137,7 @@ export default function SuKienOption2() {
                                                                                     </tr>
 
                                                                                     <tr>
-                                                                                        <td>4</td>
+                                                                                        <td className="normal-rank-number">&nbsp;&nbsp;4</td>
                                                                                         <td>
                                                                                             user name 09123124 
                                                                                         </td>
@@ -139,7 +149,7 @@ export default function SuKienOption2() {
                                                                                     </tr>
                                                                                    
                                                                                    <tr>
-                                                                                        <td>5</td>
+                                                                                        <td className="normal-rank-number">&nbsp;&nbsp;5</td>
                                                                                         <td>
                                                                                             user name 09123124 
                                                                                         </td>
@@ -151,7 +161,7 @@ export default function SuKienOption2() {
                                                                                     </tr>
                                                                                    
                                                                                    <tr>
-                                                                                        <td>6</td>
+                                                                                        <td className="normal-rank-number">&nbsp;&nbsp;6</td>
                                                                                         <td>
                                                                                             user name 09123124 
                                                                                         </td>
@@ -163,7 +173,7 @@ export default function SuKienOption2() {
                                                                                     </tr>
                                                                                    
                                                                                    <tr>
-                                                                                        <td>7</td>
+                                                                                        <td className="normal-rank-number">&nbsp;&nbsp;7</td>
                                                                                         <td>
                                                                                             user name 09123124 
                                                                                         </td>
@@ -175,7 +185,7 @@ export default function SuKienOption2() {
                                                                                     </tr>
                                                                                    
                                                                                    <tr>
-                                                                                        <td>8</td>
+                                                                                        <td className="normal-rank-number">&nbsp;&nbsp;8</td>
                                                                                         <td>
                                                                                             user name 09123124 
                                                                                         </td>
@@ -187,7 +197,7 @@ export default function SuKienOption2() {
                                                                                     </tr>
                                                                                    
                                                                                    <tr>
-                                                                                        <td>9</td>
+                                                                                        <td className="normal-rank-number">&nbsp;&nbsp;9</td>
                                                                                         <td>
                                                                                             user name 09123124 
                                                                                         </td>
@@ -199,7 +209,7 @@ export default function SuKienOption2() {
                                                                                     </tr>
                                                                                    
                                                                                    <tr>
-                                                                                        <td>10</td>
+                                                                                        <td className="normal-rank-number">&nbsp;&nbsp;10</td>
                                                                                         <td>
                                                                                             user name 09123124 
                                                                                         </td>
@@ -211,7 +221,7 @@ export default function SuKienOption2() {
                                                                                     </tr>
                                                                                    
                                                                                    <tr>
-                                                                                        <td>11</td>
+                                                                                        <td className="normal-rank-number">&nbsp;&nbsp;11</td>
                                                                                         <td>
                                                                                             user name 09123124 
                                                                                         </td>
@@ -223,7 +233,7 @@ export default function SuKienOption2() {
                                                                                     </tr>
                                                                                    
                                                                                    <tr>
-                                                                                        <td>12</td>
+                                                                                        <td className="normal-rank-number">&nbsp;&nbsp;12</td>
                                                                                         <td>
                                                                                             user name 09123124 
                                                                                         </td>
@@ -235,7 +245,7 @@ export default function SuKienOption2() {
                                                                                     </tr>
                                                                                    
                                                                                    <tr>
-                                                                                        <td>13</td>
+                                                                                        <td className="normal-rank-number">&nbsp;&nbsp;13</td>
                                                                                         <td>
                                                                                             user name 09123124 
                                                                                         </td>
@@ -247,7 +257,7 @@ export default function SuKienOption2() {
                                                                                     </tr>
                                                                                    
                                                                                    <tr>
-                                                                                        <td>14</td>
+                                                                                        <td className="normal-rank-number">&nbsp;&nbsp;14</td>
                                                                                         <td>
                                                                                             user name 09123124 
                                                                                         </td>
@@ -259,7 +269,7 @@ export default function SuKienOption2() {
                                                                                     </tr>
                                                                                    
                                                                                    <tr>
-                                                                                        <td>15</td>
+                                                                                        <td className="normal-rank-number">&nbsp;&nbsp;15</td>
                                                                                         <td>
                                                                                             user name 09123124 
                                                                                         </td>
@@ -271,7 +281,7 @@ export default function SuKienOption2() {
                                                                                     </tr>
                                                                                    
                                                                                    <tr>
-                                                                                        <td>16</td>
+                                                                                        <td className="normal-rank-number">&nbsp;&nbsp;16</td>
                                                                                         <td>
                                                                                             user name 09123124 
                                                                                         </td>
@@ -283,7 +293,7 @@ export default function SuKienOption2() {
                                                                                     </tr>
                                                                                    
                                                                                    <tr>
-                                                                                        <td>17</td>
+                                                                                        <td className="normal-rank-number">&nbsp;&nbsp;17</td>
                                                                                         <td>
                                                                                             user name 09123124 
                                                                                         </td>
@@ -295,7 +305,7 @@ export default function SuKienOption2() {
                                                                                     </tr>
                                                                                    
                                                                                    <tr>
-                                                                                        <td>18</td>
+                                                                                        <td className="normal-rank-number">&nbsp;&nbsp;18</td>
                                                                                         <td>
                                                                                             user name 09123124 
                                                                                         </td>
@@ -307,7 +317,7 @@ export default function SuKienOption2() {
                                                                                     </tr>
                                                                                    
                                                                                    <tr>
-                                                                                        <td>19</td>
+                                                                                        <td className="normal-rank-number">&nbsp;&nbsp;19</td>
                                                                                         <td>
                                                                                             user name 09123124 
                                                                                         </td>
@@ -319,7 +329,7 @@ export default function SuKienOption2() {
                                                                                     </tr>
                                                                                    
                                                                                    <tr>
-                                                                                        <td>20</td>
+                                                                                        <td className="normal-rank-number">&nbsp;&nbsp;20</td>
                                                                                         <td>
                                                                                             user name 09123124 
                                                                                         </td>
