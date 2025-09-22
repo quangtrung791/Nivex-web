@@ -21,7 +21,7 @@ export default function Footer2() {
                                             <p className="link-footer">+84 974 743 849</p>
                                         </li>
                                         <li>
-                                            <p  className="link-footer">nivexvietnam@gmail.com</p>
+                                            <p className="link-footer">nivexvietnam@gmail.com</p>
                                         </li>
                                         <li>
                                             <p className="link-footer">
@@ -73,14 +73,12 @@ export default function Footer2() {
                                             <Link href="https://www.facebook.com/NivexVN"><span className="icon-facebook-f" /></Link>
                                         </li>
                                         <li>
-                                            <Link href="https://www.tiktok.com/@nivexvn" className="icon-tiktok" ></Link>
-                                        </li>
-                                        <li>
                                             <Link href="https://x.com/Nivex_Vietnam" className="icon-x-twitter"></Link>
                                         </li>
                                         <li>
                                             <Link href="https://www.youtube.com/@Nivex_Vietnam"><span className="icon-youtube" /></Link>
                                         </li>
+                                        
                                     </ul>
                                 </div>
                             </div>
