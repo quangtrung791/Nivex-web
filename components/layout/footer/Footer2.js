@@ -18,10 +18,10 @@ export default function Footer2() {
                                     <h6 >Hãy liên hệ với chúng tôi</h6>
                                     <ul className="list">
                                         <li>
-                                            <p className="link-footer">+12 345 678 9101</p>
+                                            <p className="link-footer">+84 974 743 849</p>
                                         </li>
                                         <li>
-                                            <p  className="link-footer">nivexhub@gmail.com</p>
+                                            <p  className="link-footer">nivexvietnam@gmail.com</p>
                                         </li>
                                         <li>
                                             <p className="link-footer">
@@ -70,16 +70,16 @@ export default function Footer2() {
                                     </form>
                                     <ul className="list-social">
                                         <li>
-                                            <Link href="#"><span className="icon-facebook-f" /></Link>
+                                            <Link href="https://www.facebook.com/NivexVN"><span className="icon-facebook-f" /></Link>
                                         </li>
                                         <li>
-                                            <Link href="#" className="icon-x-twitter"></Link>
+                                            <Link href="https://www.tiktok.com/@nivexvn" className="icon-tiktok" ></Link>
                                         </li>
                                         <li>
-                                            <Link href="#"><span className="icon-youtube" /></Link>
+                                            <Link href="https://x.com/Nivex_Vietnam" className="icon-x-twitter"></Link>
                                         </li>
                                         <li>
-                                            <Link href="#"><span className="icon-instagram" /></Link>
+                                            <Link href="https://www.youtube.com/@Nivex_Vietnam"><span className="icon-youtube" /></Link>
                                         </li>
                                     </ul>
                                 </div>
