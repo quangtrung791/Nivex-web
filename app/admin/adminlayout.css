@@ -1,0 +1,10 @@
+.RaLayout-contentWithSidebar a.RaMenuItemLink-active {
+    color: black;
+    background-color: rgb(206, 228, 162);
+}
+.RaLayout-contentWithSidebar #main-content h3 {
+    color: black;
+}
+.css-c6lgp2-RaLayout-root div.RaLayout-appFrame {
+    margin-top: 0px;
+}

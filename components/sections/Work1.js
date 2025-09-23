@@ -13,7 +13,7 @@ export default function Work1() {
                                 {/* <h3 className="heading">How It Work</h3> */}
                                 <h3 className="heading" style={{'textAlign': 'left', 'textTransform': 'uppercase'}}>Giới thiệu về <span style={{'color': '#BCFE08'}}>Nivex</span></h3>
                                 <p className="fs-14 desc"  style={{'textAlign': 'left', 'padding': '0', 'fontWeight': '400'}}>
-                                    <b>Nivex</b> là sàn giao dịch tiền điện tử hàng đầu thế giới được hỗ trợ bởi AI, nhằm mang đến cho người dùng trải nghiệm giao dịch thông minh và tự động.
+                                    <b>Nivex</b> là nền tảng giao dịch tài sản số được hỗ trợ bởi AI... chú trọng bảo mật & minh bạch phí, nhằm mang đến cho người dùng trải nghiệm giao dịch thông minh và tự động" như này luôn à
                                 </p>
                             </div>
                             <div className="work__main">

@@ -251,7 +251,7 @@ export default function CoursesPage() {
                         </div>
                         
                         <button 
-                            className={`${styles.courseButton} ${course.status === 'full' ? styles.disabled : ''}`}
+                            className={`btn-cta-simple ${styles.courseButton} ${course.status === 'full' ? styles.disabled : ''}`}
                             disabled={course.status === 'full'}
                             >
                             {course.buttonText}
@@ -299,7 +299,7 @@ export default function CoursesPage() {
                         </div>
                         
                         <button 
-                            className={`${styles.courseButton} ${course.status === 'full' ? styles.disabled : ''}`}
+                            className={`btn-cta-simple ${styles.courseButton} ${course.status === 'full' ? styles.disabled : ''}`}
                             disabled={course.status === 'full'}
                             >
                             {course.buttonText}

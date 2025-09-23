@@ -79,9 +79,9 @@ a {
     color: var(--onsurface);
 }
 
-a:hover {
+/* a:hover {
     color: var(--primary);
-}
+} */
 
 button {
     color: var(--onsurface);
@@ -104,7 +104,7 @@ h6,
     font-style: normal;
     font-weight: 700;
     line-height: 1.2;
-    color: var(--onsurface);
+    /* color: var(--onsurface); */
 }
 
 h2,
@@ -263,10 +263,6 @@ h6,
 
 .mt-42 {
     margin-top: 42px;
-}
-
-.mt-48 {
-    margin-top: 48px;
 }
 
 .mt-45 {
@@ -1126,6 +1122,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
 .banner .banner__content .title {
     line-height: 1.35;
     margin-bottom: 24px;
+    color: #fff;
 }
 
 @media only screen and (max-width: 767px) {
@@ -6237,8 +6234,11 @@ section.crypto {
 #btn-master-homepg {
     border-radius: unset !important;
 }
-
-.btn-action:after {
+.btn-cta-simple {
+    position: relative;
+    overflow: hidden;
+}
+.btn-action:after, .btn-cta-simple:after {
     background: linear-gradient(90deg, rgba(255, 255, 255, 0.13) 0px, rgba(255, 255, 255, 0.13) 77%, rgba(255, 255, 255, 0.5) 92%, rgba(255, 255, 255, 0));
     content: "";
     height: 200%;
@@ -6254,7 +6254,7 @@ section.crypto {
     color: #fff;
 }
 
-.btn-action:hover:after {
+.btn-action:hover:after, .btn-cta-simple:hover:after {
     left: -30%;
     opacity: 1;
     top: -20%;
@@ -8042,7 +8042,6 @@ h2.title {
         height: 19px;
         margin-top: 3px;
 }
-
 .back_to_top-btn {
      animation: floatUpDown 2s ease-in-out infinite;
     position: absolute;

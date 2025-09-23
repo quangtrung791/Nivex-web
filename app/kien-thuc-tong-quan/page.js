@@ -497,7 +497,7 @@ export default function Knowledge() {
                         </div>
 
                         <div className={styles.loadMoreSection}>
-                            <button className={styles.loadMoreBtn}>
+                            <button className={`btn-cta-simple ${styles.loadMoreBtn}`}>
                                 Xem thêm
                             </button>
                         </div>
@@ -528,7 +528,7 @@ export default function Knowledge() {
                         </div>
 
                         <div className={styles.loadMoreSection}>
-                            <button className={styles.loadMoreBtn}>
+                            <button className={`btn-cta-simple ${styles.loadMoreBtn}`}>
                                 Xem thêm
                             </button>
                         </div>
