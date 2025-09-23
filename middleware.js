@@ -4,6 +4,38 @@ import { NextResponse } from 'next/server';
 export function middleware(request) {
   const response = NextResponse.next();
   
+  // Admin Authentication Check - chỉ kiểm tra có token hay không
+  if (request.nextUrl.pathname.startsWith('/admin') && 
+      !request.nextUrl.pathname.startsWith('/admin/login')) {
+    
+    // Lấy token từ cookie
+    const token = request.cookies.get('admin-token')?.value;
+
+    if (!token) {
+      // Không có token, redirect về login
+      return NextResponse.redirect(new URL('/admin/login', request.url));
+    }
+
+    // Có token thì cho qua, sẽ verify ở API level
+    // (không verify JWT ở middleware vì Edge Runtime không support crypto)
+  }
+
+  // Admin API Authentication Check
+  if (request.nextUrl.pathname.startsWith('/api/admin') && 
+      !request.nextUrl.pathname.startsWith('/api/admin/auth')) {
+    
+    const token = request.cookies.get('admin-token')?.value;
+
+    if (!token) {
+      return NextResponse.json(
+        { error: 'Unauthorized - Token required' },
+        { status: 401 }
+      );
+    }
+
+    // Token có tồn tại, JWT verification sẽ được làm ở API route level
+  }
+  
   // Tối ưu caching cho API routes
   if (request.nextUrl.pathname.startsWith('/api/coins')) {
     // Static data cache lâu hơn
@@ -37,8 +69,10 @@ export function middleware(request) {
 
 export const config = {
   matcher: [
-    '/api/:path*',
-    '/assets/:path*',
+    '/admin/:path*',          // Admin pages  
+    '/api/admin/:path*',      // Admin API routes
+    '/api/:path*',            // Other API routes
+    '/assets/:path*',         // Static assets
     '/((?!_next/static|_next/image|favicon.ico).*)',
   ],
 };

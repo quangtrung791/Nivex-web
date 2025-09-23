@@ -14,3 +14,21 @@ model test1 {
   
   @@map("test1")
 }
+
+// Map to existing "courses" table created in Postgres
+model courses {
+  id          Int       @id @default(autoincrement())
+  title       String
+  type        String?
+  category    Json?
+  level       String?
+  date        String?
+  status      String?
+  button_text String?
+  content     String?
+  image_url   String?
+  created_at  DateTime? @default(now())
+  updated_at  DateTime? @default(now())
+
+  @@map("courses")
+}
