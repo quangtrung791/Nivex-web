@@ -15,6 +15,7 @@
     "@neondatabase/serverless": "^1.0.1",
     "@prisma/client": "^5.0.0",
     "aos": "^2.3.4",
+    "cloudinary": "^2.7.0",
     "dotenv": "^17.2.2",
     "jsonwebtoken": "^9.0.2",
     "next": "14.1.4",
