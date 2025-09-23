@@ -1,4 +1,12 @@
 import { NextResponse } from 'next/server'
+import { v2 as cloudinary } from 'cloudinary'
+
+// Configure Cloudinary
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+})
 
 export async function POST(request) {
   try {
@@ -25,30 +33,59 @@ export async function POST(request) {
       }, { status: 400 })
     }
 
-    // For production (Vercel), return a placeholder response
-    // In a real production app, you would use external storage like:
-    // - Vercel Blob Storage
-    // - Cloudinary
-    // - AWS S3
-    // - Firebase Storage
-    
+    // For production, use Cloudinary
     if (process.env.NODE_ENV === 'production') {
-      // Generate a fake URL for demonstration
-      const timestamp = Date.now()
-      const originalName = file.name.replace(/[^a-zA-Z0-9.-]/g, '_')
-      const fakeUrl = `https://placeholder-storage.example.com/courses/${originalName}_${timestamp}`
-      
-      console.log('Production mode: File upload simulated')
-      
-      return NextResponse.json({
-        success: true,
-        filename: `${originalName}_${timestamp}`,
-        url: fakeUrl,
-        originalName: file.name,
-        size: file.size,
-        type: file.type,
-        note: 'Production mode: Using placeholder URL. Integrate with external storage service.'
-      })
+      try {
+        // Convert file to buffer for Cloudinary upload
+        const bytes = await file.arrayBuffer()
+        const buffer = Buffer.from(bytes)
+        
+        // Generate unique filename
+        const timestamp = Date.now()
+        const originalName = file.name.replace(/[^a-zA-Z0-9.-]/g, '_')
+        const extension = originalName.split('.').pop()
+        const baseName = originalName.replace(`.${extension}`, '')
+        const publicId = `courses/${baseName}_${timestamp}`
+        
+        // Upload to Cloudinary
+        const uploadResult = await new Promise((resolve, reject) => {
+          cloudinary.uploader.upload_stream(
+            {
+              resource_type: 'image',
+              public_id: publicId,
+              folder: 'nivex-courses',
+              transformation: [
+                { width: 800, height: 600, crop: 'limit' },
+                { quality: 'auto' },
+                { format: 'auto' }
+              ]
+            },
+            (error, result) => {
+              if (error) reject(error)
+              else resolve(result)
+            }
+          ).end(buffer)
+        })
+
+        console.log('Image uploaded to Cloudinary:', uploadResult.secure_url)
+
+        return NextResponse.json({
+          success: true,
+          filename: `${baseName}_${timestamp}.${extension}`,
+          url: uploadResult.secure_url,
+          originalName: file.name,
+          size: file.size,
+          type: file.type,
+          cloudinaryId: uploadResult.public_id
+        })
+
+      } catch (cloudinaryError) {
+        console.error('Cloudinary upload error:', cloudinaryError)
+        return NextResponse.json({
+          error: 'Failed to upload to cloud storage',
+          details: cloudinaryError.message
+        }, { status: 500 })
+      }
     }
 
     // Development mode: Use local filesystem
@@ -96,13 +133,30 @@ export async function POST(request) {
 export async function GET() {
   try {
     if (process.env.NODE_ENV === 'production') {
-      // In production, return empty list or connect to external storage
-      console.log('Production mode: Image listing not available without external storage')
-      
-      return NextResponse.json({ 
-        images: [],
-        note: 'Production mode: Connect to external storage service to list images'
-      })
+      try {
+        // List images from Cloudinary
+        const result = await cloudinary.search
+          .expression('folder:nivex-courses')
+          .sort_by([['created_at', 'desc']])
+          .max_results(30)
+          .execute()
+
+        const images = result.resources.map(resource => ({
+          filename: resource.public_id.split('/').pop(),
+          url: resource.secure_url,
+          uploadDate: new Date(resource.created_at),
+          cloudinaryId: resource.public_id
+        }))
+
+        return NextResponse.json({ images })
+
+      } catch (cloudinaryError) {
+        console.error('Cloudinary list error:', cloudinaryError)
+        return NextResponse.json({ 
+          images: [],
+          note: 'Failed to connect to cloud storage'
+        })
+      }
     }
 
     // Development mode: Use local filesystem
