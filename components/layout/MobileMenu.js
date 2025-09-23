@@ -31,19 +31,24 @@ export default function MobileMenu({ isMobileMenu }) {
                         "/huong-dan-dang-ky-dang-nhap",
                         "/huong-dan-nap-tien", 
                         "/xac-minh-danh-tinh-kyc",
-                        "/ai-copy-trade",])}`}>
-                        <Link href="/#">Về Nivex</Link>
+                        "/ai-copy-trade",
+                        "/gioi-thieu-ve-nivex",])}`}>
+                        <Link href="/gioi-thieu-ve-nivex">Về Nivex</Link>
                         <span className={`arrow ${isActive === 1 ? 'active' : ''}`} onClick={() => handleClick(1)} />
                         <ul className="sub-menu" style={{ display: `${isActive == 1 ? "block" : "none"}` }}>
+                            <li className={`menu-item ${checkCurrentMenuItem("/gioi-thieu-ve-nivex")}`}>
+                                <Link href="/gioi-thieu-ve-nivex">Giới thiệu</Link>
+                            </li>
+                            <li className={`menu-item ${checkCurrentMenuItem("/ai-copy-trade")}`}>
+                                <Link href="/ai-copy-trade">AI Copy Trade</Link>
+                            </li>
                             <li className={`menu-item ${checkCurrentMenuItem("/huong-dan-su-dung-app-nivex") || 
                                 checkCurrentMenuItem("/huong-dan-dang-ky-dang-nhap") ||
                                 checkCurrentMenuItem("/huong-dan-nap-tien") ||
                                 checkCurrentMenuItem("/xac-minh-danh-tinh-kyc")}`}>
                                 <Link href="/huong-dan-su-dung-app-nivex">Hướng dẫn sử dụng App</Link>
                             </li>
-                            <li className={`menu-item ${checkCurrentMenuItem("/ai-copy-trade")}`}>
-                                <Link href="/ai-copy-trade">AI Copy Trade</Link>
-                            </li>
+                            
                         </ul>
                     </li>
 
