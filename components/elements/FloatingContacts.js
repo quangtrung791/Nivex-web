@@ -12,7 +12,7 @@ export default function FloatingContacts() {
     {
       name: 'Zalo',
       icon: '/assets/images/icon/zalo-icon.png', 
-      link: 'https://zalo.me/0974743849', 
+      link: 'https://zalo.me/g/xhcwjb384', 
       bgColor: '#040404',
       label: 'NivexVN'
     },
