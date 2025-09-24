@@ -20,6 +20,7 @@
     "form-data": "^4.0.4",
     "jsonwebtoken": "^9.0.2",
     "next": "14.1.4",
+    "node-fetch": "^2.7.0",
     "pg": "^8.16.3",
     "prisma": "^5.0.0",
     "ra-data-json-server": "^5.11.3",

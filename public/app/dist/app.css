@@ -79,9 +79,9 @@ a {
     color: var(--onsurface);
 }
 
-/* a:hover {
+a:hover {
     color: var(--primary);
-} */
+}
 
 
 button {
