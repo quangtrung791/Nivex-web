@@ -30,8 +30,9 @@ export default function Testimonials1() {
                 <div className="container">
                     <div className="row">
                             <div className="crypto-content">
-                                <h2 className='text-uppercase'>Tiền Mã Hóa Cho Người <span className="text-primary-crypto">Mới Bắt Đầu</span></h2>
-                                <p className="subtitle fs-14" style={{'color': '#A6AAB7'}}>Bước vào thế giới blockchain từ con số 0</p>
+                                <h2 className='text-uppercase'>Giải Mã <span className="text-primary-crypto">Tiền Mã Hóa</span></h2>
+                                {/* <p className="subtitle fs-14" style={{'color': '#A6AAB7'}}>Bước vào thế giới blockchain từ con số 0</p> */}
+                                <p className="subtitle fs-14" style={{'color': '#A6AAB7'}}>Ứng dụng AI để phân tích xu hướng, token và giao thức mới</p>
                                 
                                 <div className="crypto-cards">
                                     <div className="crypto-card">

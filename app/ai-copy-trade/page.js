@@ -51,19 +51,19 @@ export default function AICopyTrade() {
                                 </div>
                                 <div  className={`${styles.displayFlexTextDescription}`}>
                                     <div className={`${styles.heroDescription} ${styles.beforeTextWithBorder}`}>
-                                        <p>+2,724,650.53 USDT </p>
+                                        <p>+1,786,506.44 USDT </p>
                                         <p>Hiệu suất tích lũy</p> 
                                     </div>
                                     <div className={`${styles.heroDescription} ${styles.beforeTextWithBorder}`}>
-                                        <p>+303.25%</p>
+                                        <p>+145.34%</p>
                                         <p>ROI</p> 
                                     </div>
                                 </div>
 
                                 <div  className={`${styles.displayFlexTextDescription2}`}>
-                                    <p>Định vị: <span>Giao dịch tần số cao, arbitrage trong biên độ BTC/ETH và các coin thanh khoản cao</span> </p>
+                                    <p>Định vị: <span>Giao dịch tần số cao, arbitrage trong biên độ BTC/ETH và các coin thanh khoản cao.</span> </p>
                                     <p>Quản trị rủi ro: <span>Tự động chốt lời/cắt lỗ, AI nhận diện tâm lý thị trường (big data).</span> </p> 
-                                    <p>Phù hợp với: <span>Nhà đầu tư ưa thanh khoản cao, độ ổn định và tự động hóa tối đa.</span> </p> 
+                                    <p>Phù hợp với: <span>Nhà đầu tư ưa <b>thanh khoản cao</b>, độ ổn định và tự động hóa tối đa.</span> </p> 
                                 </div>
                             </div>
                         </div>
@@ -77,11 +77,11 @@ export default function AICopyTrade() {
                                 </div>
                                 <div  className={`${styles.displayFlexTextDescription}`}>
                                     <div className={`${styles.heroDescription} ${styles.beforeTextWithBorder}`}>
-                                        <p>+6,208,391.54 USDT </p>
+                                        <p>+3,472,414.08 USDT </p>
                                         <p>Hiệu suất tích lũy</p> 
                                     </div>
                                     <div className={`${styles.heroDescription} ${styles.beforeTextWithBorder}`}>
-                                        <p>+162.66% </p>
+                                        <p>+130.13% </p>
                                         <p>ROI</p> 
                                     </div>
                                 </div>
@@ -105,15 +105,15 @@ export default function AICopyTrade() {
                             <div className={styles.heroContent}>
                                 <div>
                                     <p className={`${styles.cryptoHighlight} ${styles.AITradeText}`}>AIpha 10</p>
-                                    <p className={`${styles.heroContentText2}`}>Tần số cao · Tự động hóa coin chính thống</p>
+                                    <p className={`${styles.heroContentText2}`}>Xu hướng ổn định · Coin chính thống</p>
                                 </div>
                                 <div  className={`${styles.displayFlexTextDescription}`}>
                                     <div className={`${styles.heroDescription} ${styles.beforeTextWithBorder}`}>
-                                        <p>+6,382,978.24 USDT </p>
+                                        <p>+3,674,760.80 USDT </p>
                                         <p>Hiệu suất tích lũy</p> 
                                     </div>
                                     <div className={`${styles.heroDescription} ${styles.beforeTextWithBorder}`}>
-                                        <p>+140.48%</p>
+                                        <p>+130.54%</p>
                                         <p>ROI</p> 
                                     </div>
                                 </div>

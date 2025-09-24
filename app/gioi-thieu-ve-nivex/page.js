@@ -68,9 +68,7 @@ export default function AboutNivex() {
                             <div className={styles.missionCard}>
                                 <h3 className={styles.cardTitle}>SỨ MỆNH</h3>
                                 <p className={styles.cardDescription}>
-                                    Chúng tôi cung cấp các giải pháp giao dịch tiền điện tử cho người dùng 
-                                    toàn cầu, hỗ trợ tạo ra môi trường phát triển thị trường tiền mã hóa và đem lại 
-                                    năng suất lợi nhuận hàng năm.
+                                    Chúng tôi cung cấp các giải pháp giao dịch tiên tiến cho người dùng toàn cầu, hạ thấp rào cản gia nhập thị trường tiền mã hóa và hiện thực hóa mục tiêu gia tăng giá trị tài sản.
                                 </p>
                             </div>
                         </div>
