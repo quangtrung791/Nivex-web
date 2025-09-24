@@ -7,14 +7,14 @@ export default function FloatingContacts() {
       icon: '/assets/images/icon/messenger-icon.png',
       link: 'https://m.me/NivexVN', 
       bgColor: '#040404',
-      label: 'NivexVN'
+      label: 'Chat với Messenger'
     },
     {
       name: 'Zalo',
       icon: '/assets/images/icon/zalo-icon.png', 
       link: 'https://zalo.me/g/xhcwjb384', 
       bgColor: '#040404',
-      label: 'NivexVN'
+      label: 'Liên hệ qua Zalo'
     },
     {
       name: 'Phone',
