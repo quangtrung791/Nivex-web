@@ -1,16 +1,8 @@
 import { NextResponse } from 'next/server'
-import { v2 as cloudinary } from 'cloudinary'
-
-// Configure Cloudinary (keeping as fallback)
-cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-  api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET,
-})
 
 export async function POST(request) {
   try {
-    console.log('🔍 Upload API called')
+    console.log('🔍 Debug Upload API called')
     
     const data = await request.formData()
     const file = data.get('file')
@@ -35,17 +27,8 @@ export async function POST(request) {
       }, { status: 400 })
     }
 
-    // Validate file size (max 5MB)
-    const maxSize = 5 * 1024 * 1024 // 5MB
-    if (file.size > maxSize) {
-      return NextResponse.json({ 
-        error: 'File too large. Maximum size is 5MB.' 
-      }, { status: 400 })
-    }
-
     console.log('✅ File validation passed')
 
-    // Try WordPress upload first
     try {
       console.log('🔄 Attempting WordPress upload...')
       
@@ -122,14 +105,7 @@ export async function POST(request) {
       const baseName = path.basename(originalName, extension)
       const filename = `${baseName}_${timestamp}${extension}`
 
-      // Ensure directory exists
-      const fs = require('fs')
-      const coursesDir = path.join(process.cwd(), 'public', 'assets', 'images', 'courses')
-      if (!fs.existsSync(coursesDir)) {
-        fs.mkdirSync(coursesDir, { recursive: true })
-      }
-
-      const uploadPath = path.join(coursesDir, filename)
+      const uploadPath = path.join(process.cwd(), 'public', 'assets', 'images', 'courses', filename)
       await writeFile(uploadPath, buffer)
 
       const imageUrl = `/assets/images/courses/${filename}`
@@ -156,91 +132,13 @@ export async function POST(request) {
   }
 }
 
-// GET method to list uploaded images
 export async function GET() {
-  try {
-    console.log('🔍 Loading images...')
-    
-    // Try WordPress first
-    try {
-      console.log('🔄 Attempting WordPress media fetch...')
-      
-      const response = await fetch(
-        `${process.env.WORDPRESS_SITE_URL}/wp-json/wp/v2/media?page=1&per_page=30&order=desc&orderby=date`,
-        {
-          headers: {
-            'Authorization': `Basic ${Buffer.from(`${process.env.WORDPRESS_USERNAME}:${process.env.WORDPRESS_PASSWORD}`).toString('base64')}`,
-          }
-        }
-      )
-
-      if (!response.ok) {
-        throw new Error(`WordPress media fetch failed: ${response.status}`)
-      }
-
-      const items = await response.json()
-      
-      const images = items.map(item => ({
-        id: item.id,
-        url: item.source_url,
-        thumbnail: item.media_details?.sizes?.thumbnail?.source_url || item.source_url,
-        filename: item.media_details?.file || item.slug,
-        title: item.title?.rendered || '',
-        alt: item.alt_text || '',
-        uploadDate: item.date,
-        mimeType: item.mime_type
-      }))
-      
-      console.log('✅ WordPress images loaded:', images.length)
-      
-      return NextResponse.json({ 
-        images: images,
-        source: 'wordpress'
-      })
-      
-    } catch (wordpressError) {
-      console.error('❌ WordPress media fetch failed:', wordpressError.message)
-      
-      // Fallback to local filesystem
-      console.log('🔄 Using local filesystem fallback...')
-      
-      const fs = require('fs')
-      const path = await import('path')
-      
-      const imagesDir = path.join(process.cwd(), 'public', 'assets', 'images', 'courses')
-      
-      // Create directory if it doesn't exist
-      if (!fs.existsSync(imagesDir)) {
-        fs.mkdirSync(imagesDir, { recursive: true })
-        return NextResponse.json({ 
-          images: [],
-          source: 'local'
-        })
-      }
-
-      const files = fs.readdirSync(imagesDir)
-      const images = files
-        .filter(file => /\.(jpg|jpeg|png|gif|webp)$/i.test(file))
-        .map(file => ({
-          filename: file,
-          url: `/assets/images/courses/${file}`,
-          uploadDate: fs.statSync(path.join(imagesDir, file)).mtime
-        }))
-        .sort((a, b) => new Date(b.uploadDate) - new Date(a.uploadDate))
-
-      console.log('✅ Local images loaded:', images.length)
-
-      return NextResponse.json({ 
-        images: images,
-        source: 'local'
-      })
+  return NextResponse.json({
+    message: 'Upload debug API ready',
+    wordpress: {
+      siteUrl: process.env.WORDPRESS_SITE_URL,
+      username: process.env.WORDPRESS_USERNAME,
+      hasPassword: !!process.env.WORDPRESS_PASSWORD
     }
-
-  } catch (error) {
-    console.error('💥 Error listing images:', error)
-    return NextResponse.json({
-      error: 'Failed to list images',
-      details: error.message
-    }, { status: 500 })
-  }
+  })
 }
