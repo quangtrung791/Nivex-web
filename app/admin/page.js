@@ -2,6 +2,8 @@
 import { Admin, Resource } from 'react-admin'
 import { dataProvider } from '@/lib/dataProvider'
 import { CourseList, CourseCreate, CourseEdit, CourseShow } from '@/components/admin/CourseAdmin'
+import { NewsList, NewsCreate, NewsEdit, NewsShow } from '@/components/admin/NewsAdmin'
+import { CateNewsCreate, CateNewsEdit, CateNewsList, CateNewsShow } from '@/components/admin/CategoryNewsAdmin'
 import AuthWrapper from '@/components/admin/AuthWrapper'
 
 // Custom Admin Dashboard
@@ -70,41 +72,77 @@ const Dashboard = () => {
         gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
         gap: '20px'
       }}>
-      <a href='/admin#/courses' style={{ 
-        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', 
-        padding: '25px', 
-        borderRadius: '12px', 
-        boxShadow: '0 4px 15px rgba(0,0,0,0.2)',
-        color: '#fff', 
-        textDecoration: 'none',
-        transition: 'transform 0.2s'
-      }}>
-        <h3 style={{ margin: '0 0 10px 0', fontSize: '1.4em' }}>📚 Quản lý Khóa học</h3>
-        <p style={{ margin: '0 0 10px 0', opacity: 0.9 }}>Tạo, chỉnh sửa và quản lý các khóa học crypto</p>
-        <small style={{ 
-          background: 'rgba(255,255,255,0.2)', 
-          padding: '4px 8px', 
-          borderRadius: '12px',
-          fontSize: '0.8em'
-        }}>✅ Đã sẵn sàng</small>
-      </a>
+        {/* Quản lý khóa học  */}
+        <a href='/admin#/courses' style={{ 
+          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', 
+          padding: '25px', 
+          borderRadius: '12px', 
+          boxShadow: '0 4px 15px rgba(0,0,0,0.2)',
+          color: '#fff', 
+          textDecoration: 'none',
+          transition: 'transform 0.2s'
+        }}>
+          <h3 style={{ margin: '0 0 10px 0', fontSize: '1.4em' }}>📚 Quản lý Khóa học</h3>
+          <p style={{ margin: '0 0 10px 0', opacity: 0.9 }}>Tạo, chỉnh sửa và quản lý các khóa học crypto</p>
+          <small style={{ 
+            background: 'rgba(255,255,255,0.2)', 
+            padding: '4px 8px', 
+            borderRadius: '12px',
+            fontSize: '0.8em'
+          }}>Truy cập</small>
+        </a>
       
-      <div style={{ 
-        background: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)', 
-        padding: '25px', 
-        borderRadius: '12px', 
-        boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
-        color: '#8b4513' 
-      }}>
-        <h3 style={{ margin: '0 0 10px 0', fontSize: '1.4em' }}>📝 Quản lý Bài viết</h3>
-        <p style={{ margin: '0 0 10px 0', opacity: 0.8 }}>Tạo và chỉnh sửa bài viết kiến thức</p>
-        <small style={{ 
-          background: 'rgba(139,69,19,0.2)', 
-          padding: '4px 8px', 
-          borderRadius: '12px',
-          fontSize: '0.8em'
-        }}>🚧 Coming Soon</small>
-      </div>
+      {/* Quản lý bài đăng tin tức */}
+        <a href='/admin#/courses' style={{ 
+            background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', 
+            padding: '25px', 
+            borderRadius: '12px', 
+            boxShadow: '0 4px 15px rgba(0,0,0,0.2)',
+            color: '#fff', 
+            textDecoration: 'none',
+            transition: 'transform 0.2s'
+          }}>
+            <h3 style={{ margin: '0 0 10px 0', fontSize: '1.4em' }}>📝 Quản lý Bài viết</h3>
+            <p style={{ margin: '0 0 10px 0', opacity: 0.8 }}>Tạo và chỉnh sửa bài viết kiến thức</p>
+            <small style={{ 
+              background: 'rgba(139,69,19,0.2)', 
+              padding: '4px 8px', 
+              borderRadius: '12px',
+              fontSize: '0.8em'
+            }}>Truy cập</small>
+
+          </a>
+
+
+          {/* Quản lý danh mục bài đăng */}
+        <a href='/admin#/category_news' style={{ 
+            background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', 
+            padding: '25px', 
+            borderRadius: '12px', 
+            boxShadow: '0 4px 15px rgba(0,0,0,0.2)',
+            color: '#fff', 
+            textDecoration: 'none',
+            transition: 'transform 0.2s'
+          }}>
+            <h3 style={{ margin: '0 0 10px 0', fontSize: '1.4em' }}>📝 Xem danh mục</h3>
+            <p style={{ margin: '0 0 10px 0', opacity: 0.8 }}>Tạo và chỉnh sửa tên danh mục</p>
+            <small style={{ 
+              background: 'rgba(139,69,19,0.2)', 
+              padding: '4px 8px', 
+              borderRadius: '12px',
+              fontSize: '0.8em'
+            }}>Truy cập</small>
+
+          </a>
+        {/* <div style={{ 
+          background: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)', 
+          padding: '25px', 
+          borderRadius: '12px', 
+          boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
+          color: '#8b4513' 
+        }}>
+          
+      </div> */}
     </div>
     
     <div style={{ 
@@ -154,6 +192,22 @@ export default function AdminPage() {
           edit={CourseEdit}
           show={CourseShow}
           options={{ label: '📚 Khóa học' }}
+        />
+        <Resource 
+          name="news" 
+          list={NewsList}
+          create={NewsCreate}
+          edit={NewsEdit}
+          show={NewsShow}
+          options={{ label: '📚 Tin tức' }}
+        />
+        <Resource 
+          name="category_news" 
+          list={CateNewsList}
+          create={CateNewsCreate}
+          edit={CateNewsEdit}
+          show={CateNewsShow}
+          options={{ label: 'Danh mục bài đăng' }}
         />
       </Admin>
     </AuthWrapper>
