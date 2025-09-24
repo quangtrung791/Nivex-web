@@ -13,7 +13,14 @@ export async function POST(request) {
     console.log('🔍 Upload API called')
     console.log('📊 Request headers:', Object.fromEntries(request.headers.entries()))
     
-    const data = await request.formData()
+    let data
+    try {
+      data = await request.formData()
+      console.log('✅ FormData parsed successfully')
+    } catch (formDataError) {
+      console.error('❌ Failed to parse FormData:', formDataError)
+      throw new Error('Invalid form data: ' + formDataError.message)
+    }
     const file = data.get('file')
 
     if (!file) {
@@ -64,13 +71,25 @@ export async function POST(request) {
       console.log('📦 Buffer created, size:', buffer.length)
       
       // WordPress upload using native FormData for Node.js
-      const FormData = (await import('form-data')).default
+      let FormData
+      try {
+        FormData = (await import('form-data')).default
+      } catch (importError) {
+        console.error('❌ Failed to import form-data:', importError)
+        throw new Error('form-data package not available')
+      }
+      
       const formData = new FormData()
       
-      formData.append('file', buffer, {
-        filename: filename,
-        contentType: file.type
-      })
+      try {
+        formData.append('file', buffer, {
+          filename: filename,
+          contentType: file.type
+        })
+      } catch (appendError) {
+        console.error('❌ Failed to append file to FormData:', appendError)
+        throw new Error('Failed to prepare file for upload')
+      }
       
       console.log('🌐 Uploading to WordPress...')
       
