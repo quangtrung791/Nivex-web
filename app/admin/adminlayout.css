@@ -8,3 +8,6 @@
 .layout div.RaLayout-appFrame {
     margin-top: 0px;
 }
+.MuiFormControl-root .MuiTextField-root .css-10c21ck {
+    display: none;
+}
