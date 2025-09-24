@@ -26,7 +26,7 @@ export async function GET(request) {
         created_at,
         updated_at
       FROM public.courses
-      WHERE 1=1
+      WHERE public.courses.status = 'active'
     `
 
     const queryParams = []
