@@ -7,9 +7,9 @@ CREATE TABLE IF NOT EXISTS courses (
   status VARCHAR(50) NOT NULL DEFAULT 'active',
   start_date TIMESTAMP,
   end_date TIMESTAMP,
+  link_zoom VARCHAR(300),
   link_zoom VARCHAR(500),
-  content TEXT,
-  image_url VARCHAR(500),
+  image_url VARCHAR(300),
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
