@@ -52,7 +52,7 @@ export default function About1() {
                             <div className="about__content" style={{'padding-left': '20px'}} data-aos="fade-up" data-aos-duration={1000}>
                                 <h3 className="heading"><span style={{'color' : '#BCFE08'}}>AI Copy Trade</span> của Nivex</h3>
                                 <p className="fs-14 decs">
-                                   Nivex cung cấp công cụ giao dịch tự động dựa trên AI, phân tích dữ liệu thị trường theo thời gian thực để đưa ra khuyến nghị cá nhân hóa và tối ưu lợi nhuận. Hệ thống được cập nhật hàng tuần, luôn duy trì các chiến lược mới nhất.
+                                   Nivex mang đến bộ công cụ <b>sao chép giao dịch được AI hỗ trợ</b>. Hệ thống phân tích dữ liệu theo thời gian thực để gợi ý chiến lược <b>phù hợp khẩu vị rủi ro</b>. Bạn luôn chủ động phân bổ vốn, đặt chốt lời/dừng lỗ và có thể dừng sao chép bất cứ lúc nào.
                                 </p>
                                 <ul className="list">
                                     <li>
@@ -63,7 +63,7 @@ export default function About1() {
                                                 Spot AI
                                             </h6>
                                             <p className="fs-14 text">
-                                                Hỗ trợ đa dạng tiền tệ và cung cấp công cụ quản lý linh hoạt hơn, giúp người dùng tối ưu cơ hội trong biến động thị trường.
+                                                Hỗ trợ nhiều cặp tiền và công cụ quản trị rủi ro linh hoạt, giúp giữ kỷ luật khi thị trường biến động.
                                             </p>
                                         </div>
                                     </li>
@@ -75,12 +75,12 @@ export default function About1() {
                                                 Feature AI
                                             </h6>
                                             <p className="fs-14 text">
-                                                Cung cấp đòn bẩy linh hoạt, phí thấp và phân tích thông minh, hỗ trợ giao dịch hiệu quả và chính xác hơn trong thị trường biến động.
+                                                Giao dịch hợp đồng có đòn bẩy linh hoạt, theo dõi ký quỹ và cảnh báo thời gian thực; AI hỗ trợ đọc tín hiệu để kiểm soát rủi ro tốt hơn.
                                             </p>
                                         </div>
                                     </li>
                                 </ul>
-                                <Link href="#" className="btn-action" style={{'color':'black', 'padding': '13px 25px'}}>Tìm hiểu ngay</Link>
+                                <Link href="#" className="btn-action" style={{'color':'black', 'padding': '13px 25px'}}>Tìm hiểu AI Copy Trade</Link>
                             </div>
                         </div>
                     </div>
