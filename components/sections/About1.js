@@ -72,7 +72,7 @@ export default function About1() {
                                         <div>
                                             <h6 className=" title" style={{'marginBottom': '0'}}>
                                                 {/* <span className="icon-check" /> */}
-                                                Features AI
+                                                Futures AI 
                                             </h6>
                                             <p className="fs-14 text">
                                                 Giao dịch hợp đồng có đòn bẩy linh hoạt, theo dõi ký quỹ và cảnh báo thời gian thực; AI hỗ trợ đọc tín hiệu để kiểm soát rủi ro tốt hơn.
