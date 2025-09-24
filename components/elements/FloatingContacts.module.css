@@ -21,7 +21,7 @@
   text-decoration: none;
   position: relative;
   border-bottom: 1px solid #333338;
-  box-shadow: -3px 3px 4px rgba(188, 254, 8, 0.6);
+  box-shadow: -3px 3px 10px rgba(188, 254, 8, 0.25);
 }
 
 .contactButton:nth-child(3) {
@@ -29,18 +29,19 @@
 }
 
 .contactButton:hover {
-  width: 136px;
   justify-content: flex-start;
   padding-left: 12px;
 }
 .floatingContacts .contactButton:nth-child(3):hover {
-  width: 170px;
+  width: 158px;
+  font-size: 14px;
 }
-.floatingContacts .contactButton:nth-child(3)::after {
-  font-size: 15px;
-  font-weight: 700;
+.floatingContacts .contactButton:nth-child(1):hover {
+  width: 197px;
 }
-
+.floatingContacts .contactButton:nth-child(2):hover {
+  width: 175px;
+}
 /* Text Label */
 .contactButton::after {
   content: attr(data-label);
