@@ -11,6 +11,7 @@ cloudinary.config({
 export async function POST(request) {
   try {
     console.log('🔍 Upload API called')
+    console.log('📊 Request headers:', Object.fromEntries(request.headers.entries()))
     
     const data = await request.formData()
     const file = data.get('file')
@@ -93,7 +94,7 @@ export async function POST(request) {
       const wpResult = await wpResponse.json()
       console.log('✅ WordPress upload successful:', wpResult.source_url)
 
-      return NextResponse.json({
+      const jsonResponse = NextResponse.json({
         success: true,
         filename: filename,
         url: wpResult.source_url,
@@ -103,6 +104,13 @@ export async function POST(request) {
         wordpressId: wpResult.id,
         source: 'wordpress'
       })
+      
+      // Add CORS headers
+      jsonResponse.headers.set('Access-Control-Allow-Origin', '*')
+      jsonResponse.headers.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
+      jsonResponse.headers.set('Access-Control-Allow-Headers', 'Content-Type')
+      
+      return jsonResponse
 
     } catch (wpError) {
       console.error('❌ WordPress upload failed:', wpError.message)
@@ -135,7 +143,7 @@ export async function POST(request) {
       const imageUrl = `/assets/images/courses/${filename}`
       console.log('✅ Local upload successful:', imageUrl)
 
-      return NextResponse.json({
+      const jsonResponse = NextResponse.json({
         success: true,
         filename: filename,
         url: imageUrl,
@@ -145,15 +153,38 @@ export async function POST(request) {
         source: 'local',
         note: 'WordPress failed, used local storage'
       })
+      
+      // Add CORS headers
+      jsonResponse.headers.set('Access-Control-Allow-Origin', '*')
+      jsonResponse.headers.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
+      jsonResponse.headers.set('Access-Control-Allow-Headers', 'Content-Type')
+      
+      return jsonResponse
     }
 
   } catch (error) {
     console.error('💥 Upload error:', error)
-    return NextResponse.json({
+    const errorResponse = NextResponse.json({
       error: 'Failed to upload file',
       details: error.message
     }, { status: 500 })
+    
+    // Add CORS headers to error responses too
+    errorResponse.headers.set('Access-Control-Allow-Origin', '*')
+    errorResponse.headers.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
+    errorResponse.headers.set('Access-Control-Allow-Headers', 'Content-Type')
+    
+    return errorResponse
   }
+}
+
+// Handle OPTIONS requests for CORS
+export async function OPTIONS() {
+  const response = new NextResponse(null, { status: 200 })
+  response.headers.set('Access-Control-Allow-Origin', '*')
+  response.headers.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
+  response.headers.set('Access-Control-Allow-Headers', 'Content-Type')
+  return response
 }
 
 // GET method to list uploaded images
@@ -193,10 +224,17 @@ export async function GET() {
       
       console.log('✅ WordPress images loaded:', images.length)
       
-      return NextResponse.json({ 
+      const jsonResponse = NextResponse.json({ 
         images: images,
         source: 'wordpress'
       })
+      
+      // Add CORS headers
+      jsonResponse.headers.set('Access-Control-Allow-Origin', '*')
+      jsonResponse.headers.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
+      jsonResponse.headers.set('Access-Control-Allow-Headers', 'Content-Type')
+      
+      return jsonResponse
       
     } catch (wordpressError) {
       console.error('❌ WordPress media fetch failed:', wordpressError.message)
@@ -212,10 +250,12 @@ export async function GET() {
       // Create directory if it doesn't exist
       if (!fs.existsSync(imagesDir)) {
         fs.mkdirSync(imagesDir, { recursive: true })
-        return NextResponse.json({ 
+        const emptyResponse = NextResponse.json({ 
           images: [],
           source: 'local'
         })
+        emptyResponse.headers.set('Access-Control-Allow-Origin', '*')
+        return emptyResponse
       }
 
       const files = fs.readdirSync(imagesDir)
@@ -230,17 +270,21 @@ export async function GET() {
 
       console.log('✅ Local images loaded:', images.length)
 
-      return NextResponse.json({ 
+      const localResponse = NextResponse.json({ 
         images: images,
         source: 'local'
       })
+      localResponse.headers.set('Access-Control-Allow-Origin', '*')
+      return localResponse
     }
 
   } catch (error) {
     console.error('💥 Error listing images:', error)
-    return NextResponse.json({
+    const errorResponse = NextResponse.json({
       error: 'Failed to list images',
       details: error.message
     }, { status: 500 })
+    errorResponse.headers.set('Access-Control-Allow-Origin', '*')
+    return errorResponse
   }
 }
