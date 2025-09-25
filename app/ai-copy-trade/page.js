@@ -28,7 +28,7 @@ export default function AICopyTrade() {
                                 <span className={styles.cryptoHighlight}>AI</span> Copy Trade
                             </h1>
                             <p className={styles.subtitle}>
-                                Tận dụng công nghệ AI để tự động sao chép chiến lược tối ưu hóa lợi nhuận và quản lý rủi ro trong thời gian thực.
+                                Tận dụng công nghệ AI để tự động sao chép chiến lược, tối ưu hóa lợi nhuận và quản lý rủi ro trong thời gian thực.
                             </p>
                         </div>
                         <div className={styles.introText}>
@@ -36,7 +36,7 @@ export default function AICopyTrade() {
                                 <span>3 AI COPY TRADE </span>NỔI BẬT
                             </h3>
                             <p>
-                                Khám phá 3 chiến lược AI của Nivex, tối ưu hóa lợi nhuận và tự động quản lý rủi ro từ giao dịch xu hướng đến altcoin và tần số cao.
+                               Khám phá 3 chiến lược AI của Nivex, tối ưu hóa lợi nhuận và tự động quản lý rủi ro từ giao dịch xu hướng đến altcoin và tần số cao.
                             </p>
                         </div>
                         {/* Hero Section */}
@@ -51,11 +51,11 @@ export default function AICopyTrade() {
                                 </div>
                                 <div  className={`${styles.displayFlexTextDescription}`}>
                                     <div className={`${styles.heroDescription} ${styles.beforeTextWithBorder}`}>
-                                        <p>+1,786,506.44 USDT </p>
+                                        <p>+2,756,536.59 USDT</p>
                                         <p>Hiệu suất tích lũy</p> 
                                     </div>
                                     <div className={`${styles.heroDescription} ${styles.beforeTextWithBorder}`}>
-                                        <p>+145.34%</p>
+                                        <p>+306.41%</p>
                                         <p>ROI</p> 
                                     </div>
                                 </div>
@@ -77,11 +77,11 @@ export default function AICopyTrade() {
                                 </div>
                                 <div  className={`${styles.displayFlexTextDescription}`}>
                                     <div className={`${styles.heroDescription} ${styles.beforeTextWithBorder}`}>
-                                        <p>+3,472,414.08 USDT </p>
+                                        <p>+6,305,345.90 USDT</p>
                                         <p>Hiệu suất tích lũy</p> 
                                     </div>
                                     <div className={`${styles.heroDescription} ${styles.beforeTextWithBorder}`}>
-                                        <p>+130.13% </p>
+                                        <p>+162.66%</p>
                                         <p>ROI</p> 
                                     </div>
                                 </div>
@@ -109,11 +109,11 @@ export default function AICopyTrade() {
                                 </div>
                                 <div  className={`${styles.displayFlexTextDescription}`}>
                                     <div className={`${styles.heroDescription} ${styles.beforeTextWithBorder}`}>
-                                        <p>+3,674,760.80 USDT </p>
+                                        <p>+6,497,844.53 USDT </p>
                                         <p>Hiệu suất tích lũy</p> 
                                     </div>
                                     <div className={`${styles.heroDescription} ${styles.beforeTextWithBorder}`}>
-                                        <p>+130.54%</p>
+                                        <p>+140.43%</p>
                                         <p>ROI</p> 
                                     </div>
                                 </div>
