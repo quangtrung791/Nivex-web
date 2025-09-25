@@ -214,7 +214,6 @@ export const CourseCreate = () => (
         choices={[
           { id: 'active', name: 'Đang hoạt động' },
           { id: 'inactive', name: 'Không hoạt động' },
-          { id: 'coming_soon', name: 'Sắp ra mắt' },
         ]}
         defaultValue="active"
         validate={[required()]}
@@ -287,7 +286,6 @@ export const CourseEdit = () => (
         choices={[
           { id: 'active', name: 'Đang hoạt động' },
           { id: 'inactive', name: 'Không hoạt động' },
-          { id: 'coming_soon', name: 'Sắp ra mắt' },
         ]}
         validate={[required()]}
       />
