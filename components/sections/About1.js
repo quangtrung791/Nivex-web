@@ -75,7 +75,7 @@ export default function About1() {
                                                 Futures AI 
                                             </h6>
                                             <p className="fs-14 text">
-                                                Giao dịch hợp đồng có đòn bẩy linh hoạt, theo dõi ký quỹ và cảnh báo thời gian thực; AI hỗ trợ đọc tín hiệu để kiểm soát rủi ro tốt hơn.
+                                                Giao dịch hợp đồng có <b>đòn bẩy linh hoạt</b>, theo dõi ký quỹ và cảnh báo thời gian thực; AI hỗ trợ đọc tín hiệu để <b>kiểm soát rủi ro</b> tốt hơn.
                                             </p>
                                         </div>
                                     </li>
