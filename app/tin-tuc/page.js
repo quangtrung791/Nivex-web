@@ -314,7 +314,7 @@ export default function BlogDetails() {
                                                     </div>                                           
                                                 </div> */}
                                                 <div className="content-inner row div-duoc-xem-nhieu">
-                                                    {news.slice(0, 6).map(item => (
+                                                    {news.slice(0, 3).map(item => (
                                                         <div className="col-md-4" key={item.id}>
                                                             <div className="blog-box">
                                                                 <div className="box-image">
