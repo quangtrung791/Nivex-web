@@ -44,10 +44,11 @@
 .mainHeading {
   font-size: 45px;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.15;
   margin-bottom: 18px;
-  max-width: 620px;
+  max-width: 750px;
   color: #ffffff;
+  text-transform: uppercase;
 }
 
 .highlight {
@@ -60,7 +61,7 @@
 .description {
   font-size: 14px;
   color: #A6AAB7;
-  max-width: 620px;
+  max-width: 750px;
   font-weight: 400;
 }
 

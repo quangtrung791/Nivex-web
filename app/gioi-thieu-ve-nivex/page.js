@@ -33,11 +33,10 @@ export default function AboutNivex() {
                                 
                                 <div className={styles.heroDescription}>
                                     <h2 className={styles.mainHeading}>
-                                        <span className={styles.highlight}>SÀN GIAO DỊCH SINH LỜI</span> ĐƯỢC HỖ TRỢ BỞI AI HÀNG ĐẦU THẾ GIỚI
+                                        <span className={styles.highlight}>Nivex</span> là nền tảng tài sản số an toàn & minh bạch, được AI hỗ trợ phân tích
                                     </h2>
                                     <p className={styles.description}>
-                                        Sàn giao dịch thông minh và giao ngay tạo lời nhanh được hỗ trợ bởi AI hàng đầu thế giới.
-                                        Mở khóa giao dịch tiền điện tử thông minh, tự động thu lợi nhuận lớn trong thị trường.
+                                        Nivex là nền tảng tài sản số hướng tới bảo mật, minh bạch phí và trải nghiệm mượt mà. Nivex cung cấp Spot, Futures và AI Copy Trade – nơi AI hỗ trợ phân tích dữ liệu để người dùng ra quyết định tốt hơn. Bạn luôn giữ quyền kiểm soát: phân bổ vốn, chốt lời/dừng lỗ và có thể dừng sao chép bất kỳ lúc nào.
                                     </p>
                                 </div>
                             </div>
@@ -58,9 +57,7 @@ export default function AboutNivex() {
                             <div className={styles.visionCard}>
                                 <h3 className={styles.cardTitle}>TẦM NHÌN</h3>
                                 <p className={styles.cardDescription}>
-                                    Chúng tôi tận dụng tầm ảnh hưởng toàn cầu và ngành an toàn hàng đầu để trở thành 
-                                    đối tác đáng tin cậy với công nghệ trường quốc tế, thúc đẩy 
-                                    việc ứng dụng công nghệ blockchain vào thực tiễn.
+                                    Trở thành nền tảng giao dịch đáng tin cậy cho cộng đồng, nơi công nghệ AI sẽ giúp mọi người tiếp cận thị trường một cách an toàn và tăng trưởng bền vững
                                 </p>
                             </div>
                         </div>
@@ -68,7 +65,7 @@ export default function AboutNivex() {
                             <div className={styles.missionCard}>
                                 <h3 className={styles.cardTitle}>SỨ MỆNH</h3>
                                 <p className={styles.cardDescription}>
-                                    Chúng tôi cung cấp các giải pháp giao dịch tiên tiến cho người dùng toàn cầu, hạ thấp rào cản gia nhập thị trường tiền mã hóa và hiện thực hóa mục tiêu gia tăng giá trị tài sản.
+                                    Trao cho người dùng các công cụ giao dịch dễ dùng; áp dụng AI để hỗ trợ phân tích và quản trị rủi ro, từ đó nâng cao trải nghiệm và hiệu quả ra quyết định.
                                 </p>
                             </div>
                         </div>
@@ -87,7 +84,7 @@ export default function AboutNivex() {
                     
                     <div className={styles.aiStrategySection}>
                         <h3 className={styles.strategyTitle}>AI + CHIẾN LƯỢC</h3>
-                        <p className={styles.strategySubtitle}>Quản lý tài sản tối ưu hiện nay</p>
+                        <p className={styles.strategySubtitle}>QUẢN LÝ TÀI SẢN TỐT NHẤT HIỆN NAY</p>
                         
                         <div className={styles.displayFlexHeroContent}>
                             <div className="col-lg-6">
@@ -120,7 +117,7 @@ export default function AboutNivex() {
                                     
                                 </div>
                                 <div className={styles.ctaButton}>
-                                        <a href="/ai-copy-trade"className={`btn-cta-simple ${styles.learnMoreBtn}`}>Tìm hiểu ngay</a>
+                                        <a href="/ai-copy-trade"className={`btn-cta-simple ${styles.learnMoreBtn}`}>Tìm hiểu thêm</a>
                                 </div>
                             </div>
                         </div>
