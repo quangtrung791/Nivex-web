@@ -94,7 +94,7 @@ const Dashboard = () => {
         </a>
       
       {/* Quản lý bài đăng tin tức */}
-        <a href='/admin#/courses' style={{ 
+        <a href='/admin#/news' style={{ 
             background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', 
             padding: '25px', 
             borderRadius: '12px', 
@@ -103,8 +103,8 @@ const Dashboard = () => {
             textDecoration: 'none',
             transition: 'transform 0.2s'
           }}>
-            <h3 style={{ margin: '0 0 10px 0', fontSize: '1.4em' }}>📝 Quản lý Bài viết</h3>
-            <p style={{ margin: '0 0 10px 0', opacity: 0.8 }}>Tạo và chỉnh sửa bài viết kiến thức</p>
+            <h3 style={{ margin: '0 0 10px 0', fontSize: '1.4em' }}>📝 Quản lý Bài tin tức</h3>
+            <p style={{ margin: '0 0 10px 0', opacity: 0.8 }}>Tạo và chỉnh sửa bài viết tin tức</p>
             <small style={{ 
               background: 'rgba(139,69,19,0.2)', 
               padding: '4px 8px', 
