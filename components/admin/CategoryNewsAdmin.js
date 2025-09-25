@@ -162,7 +162,7 @@ export const CateNewsList = () => (
     >
       <TextField source="id" label="ID" />
       {/* <ImageField source="thumbnail_url" label="Ảnh" sx={{ '& img': { maxWidth: '60px', maxHeight: '45px', objectFit: 'cover' } }} /> */}
-      <TextField source="name" label="Tên Danh mục bài đăng" />
+      <TextField source="name" label="Tên Danh mục tin tức" />
       {/* <TextField source="author" label="Tác giả bài đăng" /> */}
       {/* <SelectField 
         source="type" 
@@ -186,7 +186,7 @@ export const CateNewsList = () => (
 // Create component (loại bỏ level, thêm DateTimeInput)
 export const CateNewsCreate = () => (
   <Create 
-    title="➕ Tạo danh mục bài đăng"
+    title="➕ Tạo Danh mục tin tức"
     redirect="list"
   >
     <SimpleForm>
@@ -261,7 +261,7 @@ export const CateNewsCreate = () => (
 // Edit component (loại bỏ level, thêm DateTimeInput)
 export const CateNewsEdit = () => (
   <Edit 
-    title="✏️ Chỉnh sửa danh mục bài đăng"
+    title="✏️ Chỉnh sửa Danh mục tin tức"
   >
     <SimpleForm>
       <TextInput source="id" label="ID" disabled />
