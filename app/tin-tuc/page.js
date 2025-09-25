@@ -35,6 +35,8 @@ export default function BlogDetails() {
     const [isCategoryDropdownOpen, setIsCategoryDropdownOpen] = useState(false)
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [selectedTab, setSelectedTab] = useState(TABS[0].value);
+    const [categories, setCategories] = useState([]);
+    const [news, setNews] = useState([]);
 
 
     useEffect(() => {
@@ -47,6 +49,30 @@ export default function BlogDetails() {
             .then(res => res.json())
             .then(data => setCoinData(data));
     }, []);
+
+
+    useEffect(() => {
+        // Lấy danh mục từ API
+        fetch('/api/admin/category_news')
+            .then(res => res.json())
+            .then(data => {
+                // data là mảng [{ id, name }]
+                setCategories([
+                    { label: "Tất cả", value: "all" }, // Thêm tab "Tất cả"
+                    ...data.map(cat => ({
+                        label: cat.name,
+                        value: cat.id
+                    }))
+                ])
+            })
+    }, [])
+
+    useEffect(() => {
+        // Lấy danh sách bài viết từ API
+        fetch('/api/admin/news')
+            .then(res => res.json())
+            .then(data => setNews(data))
+    }, [])
 
     return (
         <>
@@ -108,7 +134,7 @@ export default function BlogDetails() {
                                         {/* Tab menu for desktop */}
 
                                         <ul className="menu-tab menu-on-line">
-                                            {TABS.map(tab => (
+                                            {categories.map(tab => (
                                                 <li
                                                     key={tab.value}
                                                     className={`listing${activeTab === tab.value ? " active" : ""}`}
@@ -205,21 +231,35 @@ export default function BlogDetails() {
                                         <div className="content">
                                             
                                            
-                                            <div className="box-image trigger-full-w">
+                                            {/* <div className="box-image trigger-full-w">
                                                 <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                 <div className="wrap-video">
-                                                    {/* <VideoPopup /> */}
                                                 </div>
-                                            </div>
-                                            <div className="heading-title-main">
+                                            </div> */}
+                                            {news[0] && (
+                                                <div className="box-image trigger-full-w">
+                                                    <img src={news[0].thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={news[0].title} />
+                                                    <div className="wrap-video">
+                                                        {/* <VideoPopup /> */}
+                                                    </div>
+                                                </div>
+                                            )}
+                                            {/* <div className="heading-title-main">
                                                 <h3 className="title">
                                                     Virtual Land in the Metaverse Is Selling for Millions of Dollars
                                                 </h3>
-                                            </div>
+                                            </div> */}
+                                            {news[0] && (
+                                                <div className="heading-title-main">
+                                                    <h3 className="title">
+                                                        {news[0].title}
+                                                    </h3>
+                                                </div>
+                                            )}
                                             
                                            
                                         <div className="content-tab">
-                                                <div className="content-inner row div-duoc-xem-nhieu" > 
+                                                {/* <div className="content-inner row div-duoc-xem-nhieu" > 
                                                     <div className="col-md-4">
                                                         <div className="blog-box">
                                                             <div className="box-image">
@@ -229,12 +269,7 @@ export default function BlogDetails() {
                                                                 </div>
                                                             </div>
                                                             <div className="box-content title-news-duoc-xem-nhieu">
-                                                                {/* <Link href="#" className="category btn-action">learn &amp; earn</Link> */}
                                                                 <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
-                                                                {/* <div className="meta">
-                                                                    <Link href="#" className="name"><span />Floyd Buckridge</Link>
-                                                                    <Link href="#" className="time">Feb 03, 2021</Link>
-                                                                </div> */}
                                                             </div>
                                                         </div>
                                                     </div>
@@ -247,12 +282,7 @@ export default function BlogDetails() {
                                                                 </div>
                                                             </div>
                                                             <div className="box-content title-news-duoc-xem-nhieu">
-                                                                {/* <Link href="#" className="category btn-action">learn &amp; earn</Link> */}
                                                                 <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
-                                                                {/* <div className="meta">
-                                                                    <Link href="#" className="name"><span />Floyd Buckridge</Link>
-                                                                    <Link href="#" className="time">Feb 03, 2021</Link>
-                                                                </div> */}
                                                             </div>
                                                         </div>
                                                     </div>
@@ -265,12 +295,7 @@ export default function BlogDetails() {
                                                                 </div>
                                                             </div>
                                                             <div className="box-content title-news-duoc-xem-nhieu">
-                                                                {/* <Link href="#" className="category btn-action">learn &amp; earn</Link> */}
                                                                 <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
-                                                                {/* <div className="meta">
-                                                                    <Link href="#" className="name"><span />Floyd Buckridge</Link>
-                                                                    <Link href="#" className="time">Feb 03, 2021</Link>
-                                                                </div> */}
                                                             </div>
                                                         </div>
                                                     </div>                                           
@@ -283,26 +308,28 @@ export default function BlogDetails() {
                                                                 </div>
                                                             </div>
                                                             <div className="box-content title-news-duoc-xem-nhieu">
-                                                                {/* <Link href="#" className="category btn-action">learn &amp; earn</Link> */}
                                                                 <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
-                                                                {/* <div className="meta">
-                                                                    <Link href="#" className="name"><span />Floyd Buckridge</Link>
-                                                                    <Link href="#" className="time">Feb 03, 2021</Link>
-                                                                </div> */}
                                                             </div>
                                                         </div>
                                                     </div>                                           
-                                                </div>
-                                                
-
-                                                {/* Được xem nhiều nhất - Lorem ipsum */}
-                                                {/* <div className="col-md-12">
-                                                    <div className="button-loadmore watch-more-btn">
-                                                        <Link href="#">
-                                                            Xem thêm
-                                                        </Link>
-                                                    </div>
                                                 </div> */}
+                                                <div className="content-inner row div-duoc-xem-nhieu">
+                                                    {news.slice(0, 6).map(item => (
+                                                        <div className="col-md-4" key={item.id}>
+                                                            <div className="blog-box">
+                                                                <div className="box-image">
+                                                                    <img src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
+                                                                    <div className="wrap-video">
+                                                                    </div>
+                                                                </div>
+                                                                <div className="box-content title-news-duoc-xem-nhieu">
+                                                                    <Link href={`/tin-tuc/${item.id}`} className="title">{item.title}</Link>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    ))}
+                                                </div>
+
                                             </div>
                                         </div>
 
@@ -350,163 +377,27 @@ export default function BlogDetails() {
                                         <div className="widget recent mt-0">
                                             <h6 className="heading">Tin nóng</h6>    
                                             <ul className="tin-nong">
-                                                <li>
-                                                    <div style={{ 'display': 'block'}}>
-                                                        <p className="time-stamp-p">30 phút trước</p>
-                                                        <div className="image">
-                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
-                                                        </div>
-                                                    </div>
-                                                    <div className="content">
-                                                        {/* <Link href="#" className="category">LEARN &amp; EARN</Link> */}
-                                                        <Link href="#" className="title navigate-child-news">Learn about UI8 coin and earn an All-Access Pass</Link>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div style={{ 'display': 'block'}}>
-                                                        <p className="time-stamp-p">30 phút trước</p>
-                                                        <div className="image">
-                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
-                                                        </div>
-                                                    </div>
-                                                    <div className="content">
-                                                        {/* <Link href="#" className="category">LEARN &amp; EARN</Link> */}
-                                                        <Link href="#" className="title navigate-child-news">Learn about UI8 coin and earn an All-Access Pass</Link>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div style={{ 'display': 'block'}}>
-                                                        <p className="time-stamp-p">30 phút trước</p>
-                                                        <div className="image">
-                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
-                                                        </div>
-                                                    </div>
-                                                    <div className="content">
-                                                        {/* <Link href="#" className="category">LEARN &amp; EARN</Link> */}
-                                                        <Link href="#" className="title navigate-child-news">Learn about UI8 coin and earn an All-Access Pass</Link>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div style={{ 'display': 'block'}}>
-                                                        <p className="time-stamp-p">30 phút trước</p>
-                                                        <div className="image">
-                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
-                                                        </div>
-                                                    </div>
-                                                    <div className="content">
-                                                        {/* <Link href="#" className="category">LEARN &amp; EARN</Link> */}
-                                                        <Link href="#" className="title navigate-child-news">Learn about UI8 coin and earn an All-Access Pass</Link>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div style={{ 'display': 'block'}}>
-                                                        <p className="time-stamp-p">30 phút trước</p>
-                                                        <div className="image">
-                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
-                                                        </div>
-                                                    </div>
-                                                    <div className="content">
-                                                        {/* <Link href="#" className="category">LEARN &amp; EARN</Link> */}
-                                                        <Link href="#" className="title navigate-child-news">Learn about UI8 coin and earn an All-Access Pass</Link>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div style={{ 'display': 'block'}}>
-                                                        <p className="time-stamp-p">30 phút trước</p>
-                                                        <div className="image">
-                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
-                                                        </div>
-                                                    </div>
-                                                    <div className="content">
-                                                        {/* <Link href="#" className="category">LEARN &amp; EARN</Link> */}
-                                                        <Link href="#" className="title navigate-child-news">Learn about UI8 coin and earn an All-Access Pass</Link>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div style={{ 'display': 'block'}}>
-                                                        <p className="time-stamp-p">30 phút trước</p>
-                                                        <div className="image">
-                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
-                                                        </div>
-                                                    </div>
-                                                    <div className="content">
-                                                        {/* <Link href="#" className="category">LEARN &amp; EARN</Link> */}
-                                                        <Link href="#" className="title navigate-child-news">Learn about UI8 coin and earn an All-Access Pass</Link>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div style={{ 'display': 'block'}}>
-                                                        <p className="time-stamp-p">30 phút trước</p>
-                                                        <div className="image">
-                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
-                                                        </div>
-                                                    </div>
-                                                    <div className="content">
-                                                        {/* <Link href="#" className="category">LEARN &amp; EARN</Link> */}
-                                                        <Link href="#" className="title navigate-child-news">Learn about UI8 coin and earn an All-Access Pass</Link>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div style={{ 'display': 'block'}}>
-                                                        <p className="time-stamp-p">30 phút trước</p>
-                                                        <div className="image">
-                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
-                                                        </div>
-                                                    </div>
-                                                    <div className="content">
-                                                        {/* <Link href="#" className="category">LEARN &amp; EARN</Link> */}
-                                                        <Link href="#" className="title navigate-child-news">Learn about UI8 coin and earn an All-Access Pass</Link>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div style={{ 'display': 'block'}}>
-                                                        <p className="time-stamp-p">30 phút trước</p>
-                                                        <div className="image">
-                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
-                                                        </div>
-                                                    </div>
-                                                    <div className="content">
-                                                        {/* <Link href="#" className="category">LEARN &amp; EARN</Link> */}
-                                                        <Link href="#" className="title navigate-child-news">Learn about UI8 coin and earn an All-Access Pass</Link>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div style={{ 'display': 'block'}}>
-                                                        <p className="time-stamp-p">30 phút trước</p>
-                                                        <div className="image">
-                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
-                                                        </div>
-                                                    </div>
-                                                    <div className="content">
-                                                        {/* <Link href="#" className="category">LEARN &amp; EARN</Link> */}
-                                                        <Link href="#" className="title navigate-child-news">Learn about UI8 coin and earn an All-Access Pass</Link>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div style={{ 'display': 'block'}}>
-                                                        <p className="time-stamp-p">30 phút trước</p>
-                                                        <div className="image">
-                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
-                                                        </div>
-                                                    </div>
-                                                    <div className="content">
-                                                        {/* <Link href="#" className="category">LEARN &amp; EARN</Link> */}
-                                                        <Link href="#" className="title navigate-child-news">Learn about UI8 coin and earn an All-Access Pass</Link>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div style={{ 'display': 'block'}}>
-                                                        <p className="time-stamp-p">30 phút trước</p>
-                                                        <div className="image">
-                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
-                                                        </div>
-                                                    </div>
-                                                    <div className="content">
-                                                        {/* <Link href="#" className="category">LEARN &amp; EARN</Link> */}
-                                                        <Link href="#" className="title navigate-child-news">Learn about UI8 coin and earn an All-Access Pass</Link>
-                                                    </div>
-                                                </li>
-                                            </ul>
+    {news.slice(0, 10).map(item => (
+        <li key={item.id}>
+            <div style={{ display: 'block' }}>
+                <p className="time-stamp-p">
+                    {item.time_upload
+                        ? new Date(item.time_upload).toLocaleString('vi-VN', { hour12: false })
+                        : ''}
+                </p>
+                <div className="image">
+                    <img src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
+                </div>
+            </div>
+            <div className="content">
+                {/* <Link href="#" className="category">{item.category_name}</Link> */}
+                <Link href={`/tin-tuc/${item.id}`} className="title navigate-child-news">
+                    {item.title}
+                </Link>
+            </div>
+        </li>
+    ))}
+</ul>
                                         </div>
 
 
