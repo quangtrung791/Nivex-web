@@ -5,7 +5,6 @@ export const runtime = 'nodejs';
 
 export async function GET(request) {
   try {
-    console.log("GET /api/courses called");
     
     const { searchParams } = new URL(request.url)
     const filter = searchParams.get('filter') || 'all'
@@ -58,10 +57,8 @@ export async function GET(request) {
       }
     }
 
-  // Order by start date and limit to 20 records
-  sqlQuery += ` ORDER BY start_date DESC LIMIT 20`
-
-    console.log("Executing query:", { sqlQuery, queryParams });
+  // Order by start date and limit to 30 records
+  sqlQuery += ` ORDER BY start_date DESC LIMIT 30`
     const result = await query(sqlQuery, queryParams)
 
     // Process courses data
@@ -110,15 +107,12 @@ export async function GET(request) {
       }
     })
 
-    console.log("Returning courses:", courses.length);
-
     return NextResponse.json({
       success: true,
       data: courses
     })
 
   } catch (error) {
-    console.error('Error fetching courses:', error)
     return NextResponse.json(
       {
         success: false,

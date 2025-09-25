@@ -11,11 +11,15 @@ export default function Knowledge() {
     const [activeCategory, setActiveCategory] = useState('blockchain')
     const [activeDifficulty, setActiveDifficulty] = useState('easy')
     const [isCategoryDropdownOpen, setIsCategoryDropdownOpen] = useState(false)
+    const [knowledgeArticles, setKnowledgeArticles] = useState([])
+    const [newestArticles, setNewestArticles] = useState([])
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState(null)
 
     const categories = [
         { id: 'blockchain', label: 'Blockchain' },
         { id: 'defi', label: 'DeFi' },
-        { id: 'copytrade', label: 'Copy Trade' },
+        { id: 'copy_trade', label: 'Copy Trade' }, // Updated to match database
         { id: 'ai', label: 'AI' }
     ]
 
@@ -25,328 +29,49 @@ export default function Knowledge() {
         { id: 'advanced', label: 'Nâng cao', color: 'purple' }
     ]
 
-    const knowledgeArticles = [
-        {
-            id: 1,
-            title: "Blockchain là gì? Tìm hiểu công nghệ chuỗi khối từ cơ bản đến nâng cao",
-            category: "blockchain",
-            difficulty: "easy",
-            image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
-            description: "Blockchain",
-            readTime: "5 phút đọc",
-            publishDate: "2025-09-10"
-        },
-        {
-            id: 25,
-            title: "Xu hướng DeFi 2025: Những điều cần biết về tài chính phi tập trung",
-            category: "defi",
-            difficulty: "easy",
-            image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
-            description: "DeFi",
-            readTime: "5 phút đọc",
-            publishDate: "2025-09-16"
-        },
-        {
-            id: 26,
-            title: "AI Copy Trading: Cách trí tuệ nhân tạo thay đổi giao dịch crypto",
-            category: "ai",
-            difficulty: "intermediate",
-            image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
-            description: "AI Trading",
-            readTime: "8 phút đọc",
-            publishDate: "2025-09-15"
-        },
-        {
-            id: 27,
-            title: "Hướng dẫn sử dụng MetaMask: Ví crypto an toàn cho người mới",
-            category: "blockchain",
-            difficulty: "easy",
-            image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
-            description: "Blockchain",
-            readTime: "6 phút đọc",
-            publishDate: "2025-09-14"
-        },
-        {
-            id: 28,
-            title: "Staking ETH 2.0: Cơ hội đầu tư với lợi nhuận ổn định",
-            category: "defi",
-            difficulty: "intermediate",
-            image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
-            description: "DeFi",
-            readTime: "10 phút đọc",
-            publishDate: "2025-09-13"
-        },
-        {
-            id: 2,
-            title: "Cách thức hoạt động của Smart Contract trên Ethereum",
-            category: "blockchain",
-            difficulty: "intermediate",
-            image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
-            description: "Blockchain",
-            readTime: "8 phút đọc",
-            publishDate: "2025-09-08"
-        },
-        {
-            id: 3,
-            title: "Consensus Algorithm: Proof of Work vs Proof of Stake",
-            category: "blockchain",
-            difficulty: "advanced",
-            image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
-            description: "Blockchain",
-            readTime: "12 phút đọc",
-            publishDate: "2025-09-05"
-        },
-        {
-            id: 4,
-            title: "Tìm hiểu về Bitcoin và cơ chế hoạt động",
-            category: "blockchain",
-            difficulty: "easy",
-            image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
-            description: "Blockchain",
-            readTime: "6 phút đọc",
-            publishDate: "2025-09-03"
-        },
-        {
-            id: 5,
-            title: "Ethereum 2.0 và tương lai của blockchain",
-            category: "blockchain",
-            difficulty: "intermediate",
-            image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
-            description: "Blockchain",
-            readTime: "10 phút đọc",
-            publishDate: "2025-09-01"
-        },
-        {
-            id: 6,
-            title: "Phân tích Layer 2 Solutions cho Ethereum",
-            category: "blockchain",
-            difficulty: "advanced",
-            image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
-            description: "Blockchain",
-            readTime: "15 phút đọc",
-            publishDate: "2025-08-28"
-        },
-        {
-            id: 7,
-            title: "DeFi là gì? Tài chính phi tập trung và cơ hội đầu tư",
-            category: "defi",
-            difficulty: "easy",
-            image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
-            description: "DeFi",
-            readTime: "6 phút đọc",
-            publishDate: "2025-09-01"
-        },
-        {
-            id: 8,
-            title: "Yield Farming và Liquidity Mining: Hướng dẫn chi tiết",
-            category: "defi",
-            difficulty: "intermediate",
-            image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
-            description: "DeFi",
-            readTime: "10 phút đọc",
-            publishDate: "2025-09-08"
-        },
-        {
-            id: 9,
-            title: "Automated Market Makers (AMM) hoạt động như thế nào?",
-            category: "defi",
-            difficulty: "advanced",
-            image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
-            description: "DeFi",
-            readTime: "12 phút đọc",
-            publishDate: "2025-09-08"
-        },
-        {
-            id: 10,
-            title: "Lending và Borrowing trong DeFi",
-            category: "defi",
-            difficulty: "easy",
-            image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
-            description: "DeFi",
-            readTime: "7 phút đọc",
-            publishDate: "2025-09-08"
-        },
-        {
-            id: 11,
-            title: "Staking rewards và cách tối ưu hóa lợi nhuận",
-            category: "defi",
-            difficulty: "intermediate",
-            image: "/assets/images/background/Alpha10.webp",
-            description: "DeFi",
-            readTime: "9 phút đọc",
-            publishDate: "2025-09-08"
-        },
-        {
-            id: 12,
-            title: "Rủi ro Impermanent Loss trong Liquidity Providing",
-            category: "defi",
-            difficulty: "advanced",
-            image: "/assets/images/background/astrabit-Pica.webp",
-            description: "DeFi",
-            readTime: "14 phút đọc",
-            publishDate: "2025-09-08"
-        },
-        {
-            id: 13,
-            title: "Copy Trading: Sao chép giao dịch từ trader chuyên nghiệp",
-            category: "copytrade",
-            difficulty: "easy",
-            image: "/assets/images/blog/blog-01.jpg",
-            description: "Copy Trade",
-            readTime: "7 phút đọc",
-            publishDate: "2025-09-08"
-        },
-        {
-            id: 14,
-            title: "Phân tích rủi ro khi tham gia Copy Trading",
-            category: "copytrade",
-            difficulty: "intermediate",
-            image: "/assets/images/blog/blog-02.jpg",
-            description: "Copy Trade",
-            readTime: "9 phút đọc",
-            publishDate: "2025-09-08"
-        },
-        {
-            id: 15,
-            title: "Cách chọn trader phù hợp để copy",
-            category: "copytrade",
-            difficulty: "easy",
-            image: "/assets/images/blog/blog-03.jpg",
-            description: "Copy Trade",
-            readTime: "8 phút đọc",
-            publishDate: "2025-09-08"
-        },
-        {
-            id: 16,
-            title: "Quản lý vốn hiệu quả trong Copy Trading",
-            category: "copytrade",
-            difficulty: "intermediate",
-            image: "/assets/images/background/AI_Trade.webp",
-            description: "Copy Trade",
-            readTime: "11 phút đọc",
-            publishDate: "2025-09-08"
-        },
-        {
-            id: 17,
-            title: "Social Trading và cộng đồng trader",
-            category: "copytrade",
-            difficulty: "easy",
-            image: "/assets/images/background/Alpha10.webp",
-            description: "Copy Trade",
-            readTime: "6 phút đọc",
-            publishDate: "2025-09-08"
-        },
-        {
-            id: 18,
-            title: "Phân tích performance của các trader hàng đầu",
-            category: "copytrade",
-            difficulty: "advanced",
-            image: "/assets/images/background/astrabit-Pica.webp",
-            description: "Copy Trade",
-            readTime: "13 phút đọc",
-            publishDate: "2025-09-08"
-        },
-        {
-            id: 19,
-            title: "AI trong Trading: Ứng dụng trí tuệ nhân tạo vào giao dịch",
-            category: "ai",
-            difficulty: "intermediate",
-            image: "/assets/images/blog/blog-01.jpg",
-            description: "AI Trading",
-            readTime: "11 phút đọc",
-            publishDate: "2025-09-08"
-        },
-        {
-            id: 20,
-            title: "Machine Learning cho dự đoán giá cryptocurrency",
-            category: "ai",
-            difficulty: "advanced",
-            image: "/assets/images/blog/blog-02.jpg",
-            description: "AI Trading",
-            readTime: "15 phút đọc",
-            publishDate: "2025-09-08"
-        },
-        {
-            id: 21,
-            title: "Trading Bot và tự động hóa giao dịch",
-            category: "ai",
-            difficulty: "easy",
-            image: "/assets/images/blog/blog-03.jpg",
-            description: "AI Trading",
-            readTime: "8 phút đọc",
-            publishDate: "2025-09-08"
-        },
-        {
-            id: 22,
-            title: "Sentiment Analysis trong crypto trading",
-            category: "ai",
-            difficulty: "intermediate",
-            image: "/assets/images/background/AI_Trade.webp",
-            description: "AI Trading",
-            readTime: "12 phút đọc",
-            publishDate: "2025-09-08"
-        },
-        {
-            id: 23,
-            title: "Neural Networks ứng dụng trong phân tích kỹ thuật",
-            category: "ai",
-            difficulty: "advanced",
-            image: "/assets/images/background/Alpha10.webp",
-            description: "AI Trading",
-            readTime: "16 phút đọc",
-            publishDate: "2025-09-08"
-        },
-        {
-            id: 24,
-            title: "Algorithmic Trading strategies với AI",
-            category: "ai",
-            difficulty: "advanced",
-            image: "/assets/images/background/astrabit-Pica.webp",
-            description: "AI Trading",
-            readTime: "14 phút đọc",
-            publishDate: "2025-09-08"
-        },
-        {
-            id: 29,
-            title: "Blockchain là gì? Tìm hiểu công nghệ chuỗi khối từ cơ bản đến nâng cao",
-            category: "blockchain",
-            difficulty: "easy",
-            image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
-            description: "Blockchain",
-            readTime: "14 phút đọc",
-            publishDate: "2025-09-08"
-        },
-        {
-            id: 30,
-            title: "Blockchain là gì? Tìm hiểu công nghệ chuỗi khối từ cơ bản đến nâng cao",
-            category: "blockchain",
-            difficulty: "easy",
-            image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
-            description: "Blockchain",
-            readTime: "14 phút đọc",
-            publishDate: "2025-09-08"
-        },
-        {
-            id: 31,
-            title: "Blockchain là gì? Tìm hiểu công nghệ chuỗi khối từ cơ bản đến nâng cao",
-            category: "blockchain",
-            difficulty: "easy",
-            image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
-            description: "Blockchain",
-            readTime: "14 phút đọc",
-            publishDate: "2025-09-08"
+    // Fetch knowledge articles from API
+    const fetchKnowledgeArticles = async () => {
+        try {
+            setLoading(true)
+            setError(null)
+            
+            // Fetch filtered articles for current category and difficulty (for "Được xem nhiều")
+            const filteredResponse = await fetch(
+                `/api/knowledge?topic=${activeCategory}&difficulty=${activeDifficulty}&limit=6`
+            )
+            const filteredData = await filteredResponse.json()
+            
+            // Fetch newest articles with same filters (for "Mới nhất")
+            const newestResponse = await fetch(
+                `/api/knowledge?topic=${activeCategory}&difficulty=${activeDifficulty}&limit=3`
+            )
+            const newestData = await newestResponse.json()
+            
+            if (filteredData.success && newestData.success) {
+                setKnowledgeArticles(filteredData.data || [])
+                setNewestArticles(newestData.data || [])
+            } else {
+                throw new Error('Failed to fetch articles')
+            }
+        } catch (error) {
+            console.error('Error fetching knowledge articles:', error)
+            setError('Không thể tải dữ liệu. Vui lòng thử lại sau.')
+            // Fallback to empty arrays
+            setKnowledgeArticles([])
+            setNewestArticles([])
+        } finally {
+            setLoading(false)
         }
-    ]
+    }
 
-    const filteredArticles = knowledgeArticles.filter(article => {
-        const categoryMatch = article.category === activeCategory
-        const difficultyMatch = article.difficulty === activeDifficulty
-        return categoryMatch && difficultyMatch
-    }).slice(0, 6)
+    // Fetch data when component mounts or filters change
+    useEffect(() => {
+        fetchKnowledgeArticles()
+    }, [activeCategory, activeDifficulty])
 
-    const filteredArticlesNewest = knowledgeArticles
-        .sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate)) // Sắp xếp theo ngày mới nhất
-        .slice(0, 3) // Lấy 3 bài mới nhất
+    // Use filtered articles from API instead of local filtering
+    const filteredArticles = knowledgeArticles
+    const filteredArticlesNewest = newestArticles
 
     const getDifficultyColor = (difficulty) => {
         switch (difficulty) {
@@ -475,26 +200,45 @@ export default function Knowledge() {
                     <div className={styles.contentSection}>
                         <h3 className={styles.sectionTitle}>Được xem nhiều</h3>
                         
-                        <div className={styles.articlesGrid}>
-                            {filteredArticles.map(article => (
-                                <div key={article.id} className={styles.articleCard}>
-                                    <div className={styles.cardImage}>
-                                        <img src={article.image} alt={article.title} />
-                                    </div>
-                                    <div className={styles.cardContent}>
-                                        <div className={styles.cardMeta}>
-                                            <span className={`${styles.badge} ${styles[getDifficultyColor(article.difficulty)]}`}>
-                                                {getDifficultyLabel(article.difficulty)}
-                                            </span>
-                                            <span className={styles.cardCategory}>{article.description}</span>
-
-                                            {/* <span className={styles.readTime}>{article.readTime}</span> */}
+                        {loading && (
+                            <div style={{ textAlign: 'center', padding: '40px' }}>
+                                <p>Đang tải dữ liệu...</p>
+                            </div>
+                        )}
+                        
+                        {error && (
+                            <div style={{ textAlign: 'center', padding: '40px', color: 'red' }}>
+                                <p>{error}</p>
+                                <button onClick={fetchKnowledgeArticles} className="btn-cta-simple">
+                                    Thử lại
+                                </button>
+                            </div>
+                        )}
+                        
+                        {!loading && !error && (
+                            <div className={styles.articlesGrid}>
+                                {filteredArticles.length > 0 ? filteredArticles.map(article => (
+                                    <div key={article.id} className={styles.articleCard}>
+                                        <div className={styles.cardImage}>
+                                            <img src={article.image} alt={article.title} />
                                         </div>
-                                        <h4 className={styles.cardTitle}>{article.title}</h4>
+                                        <div className={styles.cardContent}>
+                                            <div className={styles.cardMeta}>
+                                                <span className={`${styles.badge} ${styles[getDifficultyColor(article.difficulty)]}`}>
+                                                    {getDifficultyLabel(article.difficulty)}
+                                                </span>
+                                                <span className={styles.cardCategory}>{article.description}</span>
+                                            </div>
+                                            <h4 className={styles.cardTitle}>{article.title}</h4>
+                                        </div>
                                     </div>
-                                </div>
-                            ))}
-                        </div>
+                                )) : (
+                                    <div style={{ textAlign: 'center', padding: '40px', gridColumn: '1 / -1' }}>
+                                        <p>Không có bài viết nào phù hợp với bộ lọc này.</p>
+                                    </div>
+                                )}
+                            </div>
+                        )}
 
                         <div className={styles.loadMoreSection}>
                             <button className={`btn-cta-simple ${styles.loadMoreBtn}`}>
@@ -506,26 +250,30 @@ export default function Knowledge() {
                     <div className={styles.contentSection} style={{marginTop: '70px'}}>
                         <h3 className={styles.sectionTitle}>MỚI NHẤT</h3>
                         
-                        <div className={styles.articlesGrid}>
-                            {filteredArticlesNewest.map(article => (
-                                <div key={article.id} className={styles.articleCard}>
-                                    <div className={styles.cardImage}>
-                                        <img src={article.image} alt={article.title} />
-                                    </div>
-                                    <div className={styles.cardContent}>
-                                        <div className={styles.cardMeta}>
-                                            <span className={`${styles.badge} ${styles[getDifficultyColor(article.difficulty)]}`}>
-                                                {getDifficultyLabel(article.difficulty)}
-                                            </span>
-                                            <span className={styles.cardCategory}>{article.description}</span>
-
-                                            {/* <span className={styles.readTime}>{article.readTime}</span> */}
+                        {!loading && !error && (
+                            <div className={styles.articlesGrid}>
+                                {filteredArticlesNewest.length > 0 ? filteredArticlesNewest.map(article => (
+                                    <div key={article.id} className={styles.articleCard}>
+                                        <div className={styles.cardImage}>
+                                            <img src={article.image} alt={article.title} />
                                         </div>
-                                        <h4 className={styles.cardTitle}>{article.title}</h4>
+                                        <div className={styles.cardContent}>
+                                            <div className={styles.cardMeta}>
+                                                <span className={`${styles.badge} ${styles[getDifficultyColor(article.difficulty)]}`}>
+                                                    {getDifficultyLabel(article.difficulty)}
+                                                </span>
+                                                <span className={styles.cardCategory}>{article.description}</span>
+                                            </div>
+                                            <h4 className={styles.cardTitle}>{article.title}</h4>
+                                        </div>
                                     </div>
-                                </div>
-                            ))}
-                        </div>
+                                )) : (
+                                    <div style={{ textAlign: 'center', padding: '40px', gridColumn: '1 / -1' }}>
+                                        <p>Không có bài viết mới nào.</p>
+                                    </div>
+                                )}
+                            </div>
+                        )}
 
                         <div className={styles.loadMoreSection}>
                             <button className={`btn-cta-simple ${styles.loadMoreBtn}`}>

@@ -4,6 +4,7 @@ import { dataProvider } from '@/lib/dataProvider'
 import { CourseList, CourseCreate, CourseEdit, CourseShow } from '@/components/admin/CourseAdmin'
 import { NewsList, NewsCreate, NewsEdit, NewsShow } from '@/components/admin/NewsAdmin'
 import { CateNewsCreate, CateNewsEdit, CateNewsList, CateNewsShow } from '@/components/admin/CategoryNewsAdmin'
+import { KnowledgeList, KnowledgeCreate, KnowledgeEdit, KnowledgeShow } from '@/components/admin/KnowledgeAdmin'
 import { EventList, EventCreate, EventEdit, EventShow } from '@/components/admin/EventAdmin'
 import AuthWrapper from '@/components/admin/AuthWrapper'
 
@@ -93,6 +94,25 @@ const Dashboard = () => {
           }}>Truy cập</small>
         </a>
       
+        {/* Quản lý kiến thức */}
+        <a href='/admin#/knowledge' style={{ 
+          background: 'linear-gradient(135deg, #4caf50 0%, #45a049 100%)', 
+          padding: '25px', 
+          borderRadius: '12px', 
+          boxShadow: '0 4px 15px rgba(0,0,0,0.2)',
+          color: '#fff', 
+          textDecoration: 'none',
+          transition: 'transform 0.2s'
+        }}>
+          <h3 style={{ margin: '0 0 10px 0', fontSize: '1.4em' }}>🧠 Quản lý Kiến thức</h3>
+          <p style={{ margin: '0 0 10px 0', opacity: 0.9 }}>Tạo và quản lý bài viết kiến thức chuyên sâu</p>
+          <small style={{ 
+            background: 'rgba(255,255,255,0.2)', 
+            padding: '4px 8px', 
+            borderRadius: '12px',
+            fontSize: '0.8em'
+          }}>Truy cập</small>
+        </a>
       {/* Quản lý bài đăng tin tức */}
         <a href='/admin#/news' style={{ 
             background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', 
@@ -106,16 +126,15 @@ const Dashboard = () => {
             <h3 style={{ margin: '0 0 10px 0', fontSize: '1.4em' }}>📝 Quản lý Bài tin tức</h3>
             <p style={{ margin: '0 0 10px 0', opacity: 0.8 }}>Tạo và chỉnh sửa bài viết tin tức</p>
             <small style={{ 
-              background: 'rgba(139,69,19,0.2)', 
+              background: 'rgba(255,255,255,0.2)', 
               padding: '4px 8px', 
               borderRadius: '12px',
               fontSize: '0.8em'
             }}>Truy cập</small>
-
           </a>
 
 
-          {/* Quản lý danh mục bài đăng */}
+          {/* Quản lý Danh mục tin tức */}
         <a href='/admin#/category_news' style={{ 
             background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', 
             padding: '25px', 
@@ -125,8 +144,8 @@ const Dashboard = () => {
             textDecoration: 'none',
             transition: 'transform 0.2s'
           }}>
-            <h3 style={{ margin: '0 0 10px 0', fontSize: '1.4em' }}>📝 Xem danh mục</h3>
-            <p style={{ margin: '0 0 10px 0', opacity: 0.8 }}>Tạo và chỉnh sửa tên danh mục</p>
+            <h3 style={{ margin: '0 0 10px 0', fontSize: '1.4em' }}>📝 Danh mục tin tức</h3>
+            <p style={{ margin: '0 0 10px 0', opacity: 0.8 }}>Tạo và chỉnh sửa tên danh mục tin tức</p>
             <small style={{ 
               background: 'rgba(139,69,19,0.2)', 
               padding: '4px 8px', 
@@ -147,7 +166,7 @@ const Dashboard = () => {
             textDecoration: 'none',
             transition: 'transform 0.2s'
           }}>
-            <h3 style={{ margin: '0 0 10px 0', fontSize: '1.4em' }}>📝 Xem Sự kiện</h3>
+            <h3 style={{ margin: '0 0 10px 0', fontSize: '1.4em' }}>📝 Quản lý Sự kiện</h3>
             <p style={{ margin: '0 0 10px 0', opacity: 0.8 }}>Tạo và chỉnh sửa Sự kiện</p>
             <small style={{ 
               background: 'rgba(139,69,19,0.2)', 
@@ -216,13 +235,24 @@ export default function AdminPage() {
           show={CourseShow}
           options={{ label: '📚 Khóa học' }}
         />
+        
+        {/* Knowledge Management with full CRUD */}
+        <Resource 
+          name="knowledge" 
+          list={KnowledgeList}
+          create={KnowledgeCreate}
+          edit={KnowledgeEdit}
+          show={KnowledgeShow}
+          options={{ label: '🧠 Kiến thức' }}
+        />
+        
         <Resource 
           name="news" 
           list={NewsList}
           create={NewsCreate}
           edit={NewsEdit}
           show={NewsShow}
-          options={{ label: '📚 Tin tức' }}
+          options={{ label: '� Tin tức' }}
         />
         <Resource 
           name="category_news" 
@@ -230,7 +260,7 @@ export default function AdminPage() {
           create={CateNewsCreate}
           edit={CateNewsEdit}
           show={CateNewsShow}
-          options={{ label: 'Danh mục bài đăng' }}
+          options={{ label: '📂 Danh mục tin tức' }}
         />
         <Resource 
           name="events" 
