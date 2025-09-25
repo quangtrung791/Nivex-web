@@ -194,21 +194,21 @@ export const EventList = () => (
 // Create component (loại bỏ level, thêm DateTimeInput)
 export const EventCreate = () => (
   <Create 
-    title="➕ Tạo bài đăng mới"
+    title="➕ Tạo sự kiện mới"
     redirect="list"
   >
     <SimpleForm>
       {/* Chọn danh mục tin tức */}
-      <ReferenceInput source="category_id" reference="category_news" label="Danh mục">
+      {/* <ReferenceInput source="category_id" reference="category_news" label="Danh mục">
         <SelectInput optionText="name" />
-      </ReferenceInput>
+      </ReferenceInput> */}
 
       <TextInput 
         source="title" 
-        label="Tiêu đề bài đăng" 
+        label="Tên sự kiện" 
         validate={[required()]}
         fullWidth
-        helperText="Nhập tiêu đề của bài đăng tin tức (bắt buộc)"
+        helperText="Nhập tên của sự kiện (bắt buộc)"
       required />
       
       {/* <SelectInput 
@@ -223,7 +223,7 @@ export const EventCreate = () => (
         validate={[required()]}
       disabled /> */}
       
-      <SelectInput 
+      {/* <SelectInput 
         source="status" 
         label="Trạng thái"
         choices={[
@@ -233,11 +233,11 @@ export const EventCreate = () => (
         ]}
         defaultValue="active"
         validate={[required()]}
-      />
+      /> */}
       
       <DateTimeInput 
-        source="time_upload" 
-        label="Thời gian đăng tải"
+        source="time_event" 
+        label="Thời gian diễn ra sự kiện"
       required/>
       
       {/* <DateTimeInput 
@@ -254,39 +254,39 @@ export const EventCreate = () => (
       
       <ImageUploadInput 
         source="thumbnail_url" 
-        label="Hình ảnh thumbnail quảng bá bài đăng (Nên là tỉ lệ 16:9)"
+        label="Hình ảnh thumbnail quảng bá sự kiện (Nên là tỉ lệ 16:9)"
         helperText="Tải lên hoặc chọn ảnh từ thư viện. Kích thước tối đa: 5MB. Định dạng: JPG, PNG, GIF, WebP"
       />
       
       <TextInput 
         source="content" 
-        label="Nội dung bài đăng"
+        label="Nội dung giới thiệu sự kiện"
         multiline
         rows={15}
         fullWidth
-        helperText="Nội dung bài đăng"
+        helperText="Nội dung giới thiệu sự kiện"
       />
-      <TextField source="author" label="Tác giả bài đăng" />
+      {/* <TextField source="author" label="Tác giả bài đăng" /> */}
     </SimpleForm>
   </Create>
 )
 
 // Edit component (loại bỏ level, thêm DateTimeInput)
-export const NewsEdit = () => (
+export const EventEdit = () => (
   <Edit 
-    title="✏️ Chỉnh sửa bài đăng"
+    title="✏️ Chỉnh sửa thông tin sự kiện"
   >
     <SimpleForm>
       {/* Chọn id danh mục */}
-      <ReferenceInput source="category_id" reference="category_news" label="Danh mục">
+      {/* <ReferenceInput source="category_id" reference="category_news" label="Danh mục">
         <SelectInput optionText="name" />
-      </ReferenceInput>
+      </ReferenceInput> */}
 
       <TextInput source="id" label="ID" disabled />
       
       <TextInput 
         source="title" 
-        label="Tiêu đề bài đăng" 
+        label="Tên sự kiện" 
         validate={[required()]}
         fullWidth
       required />
@@ -302,7 +302,7 @@ export const NewsEdit = () => (
         validate={[required()]}
       disabled /> */}
       
-      <SelectInput 
+      {/* <SelectInput 
         source="status" 
         label="Trạng thái"
         choices={[
@@ -311,11 +311,11 @@ export const NewsEdit = () => (
         //   { id: 'removed', name: 'Sắp ra mắt' },
         ]}
         validate={[required()]}
-      />
+      /> */}
       
       <DateTimeInput 
-        source="time_upload" 
-        label="Thời gian đăng tải"
+        source="time_event" 
+        label="Thời gian diễn ra sự kiện"
       required />
       
       {/* <DateTimeInput 
@@ -332,18 +332,18 @@ export const NewsEdit = () => (
       
       <ImageUploadInput 
         source="thumbnail_url" 
-        label="Hình ảnh thumbnail quảng bá bài đăng (Nên là tỉ lệ 16:9)"
+        label="Hình ảnh thumbnail quảng bá sự kiện (Nên là tỉ lệ 16:9)"
         helperText="Tải lên hoặc chọn ảnh từ thư viện. Kích thước tối đa: 5MB"
       />
       
       <TextInput 
         source="content" 
-        label="Nội dung bài đăng"
+        label="Nội dung quảng bá sự kiện"
         multiline
         rows={15}
         fullWidth
       />
-      <TextField source="author" label="Tác giả bài đăng" />
+      {/* <TextField source="author" label="Tác giả bài đăng" /> */}
       <span>Ngày tạo: </span><DateField source="created_at" label="Ngày tạo" showTime disabled />
       <span>Ngày cập nhật: </span><DateField source="updated_at" label="Cập nhật lần cuối" showTime disabled />
     </SimpleForm>
@@ -351,18 +351,18 @@ export const NewsEdit = () => (
 )
 
 // Show component (loại bỏ level, thêm start_date/end_date, hiển thị ảnh)
-export const NewsShow = () => (
-  <Show title="👁️ Chi tiết bài đăng">
+export const EventShow = () => (
+  <Show title="👁️ Chi tiết sự kiện">
     <SimpleShowLayout>
 
       {/* Chọn ID danh mục tin tức */}
-      <ReferenceField source="category_id" reference="category_news" label="Danh mục">
+      {/* <ReferenceField source="category_id" reference="category_news" label="Danh mục">
         <TextField source="category_id" label="ID Danh mục" />
-      </ReferenceField>
+      </ReferenceField> */}
 
-      <TextField source="id" label="ID bài đăng" />
-      <TextField source="title" label="Tiêu đề bài đăng" />
-      <TextField source="author" label="Tác giả bài đăng" />
+      <TextField source="id" label="ID sự kiện" />
+      <TextField source="title" label="Tên sự kiện" />
+      {/* <TextField source="author" label="Tác giả bài đăng" /> */}
       {/* <SelectField 
         source="type" 
         label="Loại"
@@ -373,10 +373,10 @@ export const NewsShow = () => (
         ]}
       /> */}
       <StatusField />
-      <DateField source="time_upload" label="Thời gian đã đăng" showTime />
+      <DateField source="time_event" label="Thời gian diễn ra sự kiện" showTime />
       {/* <DateField source="end_date" label="Ngày giờ kết thúc" showTime /> */}
       {/* <TextField source="link_zoom" label="Link Zoom" /> */}
-      <ImageField source="thumbnail_url" label="Hình ảnh" sx={{ '& img': { maxWidth: '300px', borderRadius: '8px' } }} />
+      <ImageField source="thumbnail_url" label="Hình ảnh quảng bá sự kiện" sx={{ '& img': { maxWidth: '300px', borderRadius: '8px' } }} />
       <RichTextField source="content" label="Nội dung" />
       <DateField source="created_at" label="Ngày tạo" showTime />
       <DateField source="updated_at" label="Cập nhật lần cuối" showTime />
