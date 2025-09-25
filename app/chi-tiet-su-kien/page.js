@@ -11,7 +11,7 @@ import styles from '../kien-thuc-tong-quan/knowledge.module.css'
 import './style.css';
 
 
-export default function SuKienOption2() {
+export default function ChiTietSuKien() {
 //    const [users, setUsers] = useState([]);
 
 //     useEffect(() => {
