@@ -1,6 +1,33 @@
 h6.fs-16 {
     margin-bottom: 0;
 }
+.blog-details a.title.navigate-child-news {
+    padding-right: 7px;
+}
+h3.title {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+a.title.navigate-child-news,
+.content-tab a.title {
+    display: -webkit-box !important;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.title-news-duoc-xem-nhieu a.title {
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 li.listing {
     padding: 8px 10px;
     cursor: pointer;
