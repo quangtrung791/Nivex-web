@@ -72,15 +72,15 @@ export default function BlogDetails() {
 
     useEffect(() => {
         // Lấy danh sách bài viết từ API
-        fetch('/api/admin/news')
+        fetch('/api/news')
             .then(res => res.json())
-            .then(data => setNews(data))
+            .then(data => setNews(Array.isArray(data.data) ? data.data : []))
     }, []);
 
     useEffect(() => {
         if (!id) return;
         setLoading(true);
-        fetch(`/api/admin/news/${id}`)
+        fetch(`/api/news/${id}`)
             .then(res => res.json())
             .then(data => {
                 setNews(data);
@@ -88,13 +88,13 @@ export default function BlogDetails() {
             })
             .catch(() => setLoading(false));
         // Fetch danh sách tin nóng
-        fetch('/api/admin/news?hot=1')
+        fetch('/api/news?hot=1')
             .then(res => res.json())
             .then(data => setHotNews(data));
     }, [id]);
 
     useEffect(() => {
-        fetch('/api/admin/news?hot=1')
+        fetch('/api/news?hot=1')
             .then(res => res.json())
             .then(data => setHotNews(data));
     }, []);
@@ -357,7 +357,7 @@ export default function BlogDetails() {
                                                     ))}
                                                 </div> */}
                                                 <div className="content-inner row div-duoc-xem-nhieu">
-                                                    {filteredNews.slice(0, 3).map(item => (
+                                                    {Array.isArray(news) && news.slice(0, 3).map(item => (
                                                         <div className="col-md-4" key={item.id}>
                                                             <div className="blog-box">
                                                                 <div className="box-image">
@@ -491,7 +491,7 @@ export default function BlogDetails() {
                             <h5>Được xem nhiều</h5>
                         </div>
                                             <div className="content-inner row div-duoc-xem-nhieu">
-                                                {hotNews.slice(0, 3).map(item => (
+                                                {Array.isArray(news) && news.slice(0, 3).map(item => (
                                                     <div className="col-md-4" key={item.id}>
                                                         <div className="blog-box">
                                                             <div className="box-image">

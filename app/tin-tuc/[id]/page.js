@@ -26,7 +26,7 @@ export default function BlogDetails() {
     useEffect(() => {
         if (!id) return
         setLoading(true)
-        fetch(`/api/admin/news/${id}`)
+        fetch(`/api/news/${id}`)
             .then(res => res.json())
             .then(data => {
                 setNews(data)
@@ -36,9 +36,9 @@ export default function BlogDetails() {
     }, [id]);
 
     useEffect(() => {
-        if (!id) return;
+    if (!id) return;
         setLoading(true);
-        fetch(`/api/admin/news/${id}`)
+        fetch(`/api/news/${id}`)
             .then(res => res.json())
             .then(data => {
                 setNews(data);
@@ -46,9 +46,9 @@ export default function BlogDetails() {
             })
             .catch(() => setLoading(false));
         // Fetch danh sách tin nóng
-        fetch('/api/admin/news?hot=1')
+        fetch('/api/news?hot=1')
             .then(res => res.json())
-            .then(data => setHotNews(data));
+            .then(data => setHotNews(Array.isArray(data.data) ? data.data : []));
     }, [id]);
 
     if (loading) return 
@@ -185,7 +185,7 @@ export default function BlogDetails() {
                                         <div className="widget recent mt-0">
                                             {/* <h6 className="heading">Tin nóng</h6> */}
                                             <ul className="tin-nong">
-                                                {hotNews.slice(0, 10).map(item => (
+                                                {Array.isArray(hotNews) && hotNews.slice(0, 10).map(item => (
                                                     <li key={item.id}>
                                                         <div style={{ display: 'block' }}>
                                                             <p className="time-stamp-p">
