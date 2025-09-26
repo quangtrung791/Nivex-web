@@ -15,6 +15,7 @@ export async function GET(request) {
       id: row.id,
       title: row.title,
       content: row.content || '',
+      short_desc: row.short_desc || '',
       thumbnail_url: row.thumbnail_url,
       time_event: row.time_event,
       created_at: row.created_at,
@@ -46,10 +47,11 @@ export async function POST(request) {
     
     // Insert into events table
     const result = await query(
-      'INSERT INTO public.event (title, content, thumbnail_url, time_event) VALUES ($1, $2, $3, $4) RETURNING *',
+      'INSERT INTO public.event (title, content, short_desc, thumbnail_url, time_event) VALUES ($1, $2, $3, $4, $5) RETURNING *',
       [
         data.title || 'Untitled',
         data.content || '',
+        data.short_desc || '',
         data.thumbnail_url || null,
         data.time_event || '01/01/1990'
       ]
