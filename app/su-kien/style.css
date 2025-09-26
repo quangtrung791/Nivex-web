@@ -1,3 +1,8 @@
+/* Fixed */
+.blog-box .box-image {
+    border-radius: 0px !important;
+}
+
 @media (max-width: 769px) {
     ul.menu-tab.menu-on-line {
         display: none !important;

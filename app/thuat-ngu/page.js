@@ -40,44 +40,53 @@ export default function BuyCryptoSelect() {
                 desc: "Một tiêu chuẩn token cho các token có thể thay thế (colored coin) trên mạng lưới Bitcoin."
             },
             {
-                term: "ARC-20",
-                desc: "Một tiêu chuẩn token cho các token có thể thay thế (colored coin) trên mạng lưới Bitcoin."
+                term: "Address",
+                desc: "Một địa chỉ crypto, còn được gọi là địa chỉ công khai, là một chuỗi ký tự duy nhất được sử dụng để xác định một ví hoặc tài khoản cụ thể trên mạng blockchain. Địa chỉ này thường là sự kết hợp của chữ cái và số, và được sử dụng để gửi và nhận các giao dịch tiền điện tử. Định dạng phổ biến nhất cho một địa chỉ crypto là một chuỗi ký tự bao gồm chữ cái và số bắt đầu bằng một chữ cái hoặc số cụ thể, phụ thuộc vào mạng blockchain cụ thể."
             },
             {
-                term: "ARC-20",
-                desc: "Một tiêu chuẩn token cho các token có thể thay thế (colored coin) trên mạng lưới Bitcoin."
+                term: "Airdrop",
+                desc: "Một airdrop (tạm dịch là \"phân phát không trọng tài\") trong thế giới tiền điện tử đề cập đến quá trình phân phát một số lượng nhất định các đồng tiền điện tử cho một nhóm người cụ thể, thường là miễn phí. "
+            },
+            {
+                term: "All Time High",
+                desc: "Thuật ngữ \"All Time High\" (ATH) thường được sử dụng trong ngữ cảnh giao dịch để chỉ mức giá cao nhất từ trước đến nay mà một tài sản cụ thể từng đạt được. Điều này có thể bao gồm các tài sản truyền thống như cổ phiếu, cũng như các tài sản có tính chất đầu cơ hơn."
+            },
+            {
+                term: "Altcoin",
+                desc: "Thuật ngữ \"Altcoin\" là viết tắt của \"Alternative coin\" và được sử dụng để miêu tả bất kỳ loại tiền điện tử nào ngoài Bitcoin. Bitcoin là đồng tiền điện tử phi tập trung đầu tiên, và từ khi ra mắt từ năm 2009, hàng ngàn loại tiền điện tử khác nhau được tạo ra."
             }
         ],
         B: [
             {
                 term: "B-Token",
-                desc: "Tên chính thức của Binance dành cho một loạt các token được bọc và được thế chấp đầy đủ"
+                desc: "Tên chính thức của Binance dành cho một loạt các token được bọc và được thế chấp đầy đủ."
             },
             {
                 term: "Bàn tay kim cương",
                 desc: "Thuật ngữ bắt nguồn từ cộng đồng nhà đầu tư trực tuyến trên các nền tảng như Reddit và Twitter"
             }
-        ],
-        C: [
-            {
-                term: "C-Token",
-                desc: "Tên chính thức của Binance dành cho một loạt các token được bọc và được thế chấp đầy đủ"
-            },
-            {
-                term: "Càn tay kim cương",
-                desc: "Thuật ngữ bắt nguồn từ cộng đồng nhà đầu tư trực tuyến trên các nền tảng như Reddit và Twitter"
-            }
-        ],
-        D: [
-            {
-                term: "D-Token",
-                desc: "Tên chính thức của Binance dành cho một loạt các token được bọc và được thế chấp đầy đủ"
-            },
-            {
-                term: "Dàn tay kim cương",
-                desc: "Thuật ngữ bắt nguồn từ cộng đồng nhà đầu tư trực tuyến trên các nền tảng như Reddit và Twitter"
-            }
         ]
+        // ,
+        // C: [
+        //     {
+        //         term: "C-Token",
+        //         desc: "Tên chính thức của Binance dành cho một loạt các token được bọc và được thế chấp đầy đủ"
+        //     },
+        //     {
+        //         term: "Càn tay kim cương",
+        //         desc: "Thuật ngữ bắt nguồn từ cộng đồng nhà đầu tư trực tuyến trên các nền tảng như Reddit và Twitter"
+        //     }
+        // ],
+        // D: [
+        //     {
+        //         term: "D-Token",
+        //         desc: "Tên chính thức của Binance dành cho một loạt các token được bọc và được thế chấp đầy đủ"
+        //     },
+        //     {
+        //         term: "Dàn tay kim cương",
+        //         desc: "Thuật ngữ bắt nguồn từ cộng đồng nhà đầu tư trực tuyến trên các nền tảng như Reddit và Twitter"
+        //     }
+        // ]
         // Thêm data ở object này nha
     }
     return (
