@@ -37,6 +37,7 @@ import {
 } from 'react-admin'
 import { ImageUploadInput } from './ImageUploadInput'
 import { useState } from 'react'
+import RichTextInput from './RichTextInput'
 
 // Custom Delete Button với confirmation rõ ràng
 const CustomDeleteButton = () => {
@@ -260,7 +261,7 @@ export const EventCreate = () => (
         helperText="Tải lên hoặc chọn ảnh từ thư viện. Kích thước tối đa: 5MB. Định dạng: JPG, PNG, GIF, WebP"
       />
       
-      <TextInput 
+      <RichTextInput 
         source="content" 
         label="Nội dung giới thiệu đầy đủ cho sự kiện"
         multiline
@@ -268,7 +269,7 @@ export const EventCreate = () => (
         fullWidth
         helperText="Nội dung giới thiệu đầy đủ cho sự kiện"
       />
-      <TextInput 
+      <RichTextInput 
         source="short_desc" 
         label="Nội dung giới thiệu ngắn gọn cho sự kiện"
         multiline
@@ -346,14 +347,14 @@ export const EventEdit = () => (
         helperText="Tải lên hoặc chọn ảnh từ thư viện. Kích thước tối đa: 5MB"
       />
       
-      <TextInput 
+      <RichTextInput 
         source="content" 
         label="Nội dung quảng bá đầy đủ cho sự kiện"
         multiline
         rows={15}
         fullWidth
       />
-      <TextInput 
+      <RichTextInput 
         source="short_desc" 
         label="Mô tả ngắn cho sự kiện"
         multiline
