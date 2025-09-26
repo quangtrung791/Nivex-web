@@ -5,7 +5,7 @@ export const runtime = 'nodejs';
 
 export async function GET(request) {
   try {
-    console.log("GET /api/events called");
+    console.log("GET /api/dictionary called");
     
     const { searchParams } = new URL(request.url)
     const filter = searchParams.get('filter') || 'all'
@@ -14,53 +14,49 @@ export async function GET(request) {
     let sqlQuery = `
       SELECT 
         id,
-        title,
-        content,
-        short_desc,
-        thumbnail_url,
-        time_event,
+        keyword,
+        description,
         created_at,
         updated_at
-      FROM public.event
-    `
+      FROM public.dictionary`
     
     const queryParams = []
     let paramIndex = 1
 
     // Apply search filter
     if (search.trim()) {
-      sqlQuery += ` AND (title ILIKE $${paramIndex} OR content ILIKE $${paramIndex})`
+      sqlQuery += ` AND (keyword ILIKE $${paramIndex} OR description ILIKE $${paramIndex})`
       queryParams.push(`%${search}%`)
       paramIndex++
     }
 
 
   // Order by start date and limit to 20 records
-  sqlQuery += ` ORDER BY time_event DESC LIMIT 20`
+  sqlQuery += ` ORDER BY created_at DESC LIMIT 20`
 
     console.log("Executing query:", { sqlQuery, queryParams });
     const result = await query(sqlQuery, queryParams)
 
     // Process courses data
-    const events = result.map(n => {
-    const now = new Date()
-    const timeUpload = n.time_event
+    const dictionary = result.map(n => {
+    // const now = new Date()
+    // const timeUpload = n.time_event
 
     return {
         id: n.id,
-        title: n.title,
-        time_event: n.time_event,
-        content: n.content,
-        short_desc: n.short_desc,
-        thumbnail_url: n.thumbnail_url
+        keyword: n.keyword,
+        // time_event: n.time_event,
+        description: n.description,
+        // short_desc: n.short_desc,
+        // thumbnail_url: n.thumbnail_url
       }
     })
 
-    console.log("Returning data:", events.length);
+    console.log("Returning data:", dictionary.length);
 
     return NextResponse.json({
       success: true,
-      data: events
+      data: dictionary
     })
 
   } catch (error) {

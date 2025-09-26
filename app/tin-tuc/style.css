@@ -1,4 +1,8 @@
 /* Fixed */
+.heading-title-main h3.title:hover {
+    color: #BCFE08;
+}
+
 @media (min-width: 1440px) and (max-width: 1600px) {
     section.duoc-xem-nhieu.col-md-12 {
         padding: 3.5% 8% !important;

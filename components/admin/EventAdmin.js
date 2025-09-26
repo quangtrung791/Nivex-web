@@ -171,6 +171,8 @@ export const EventList = () => (
       <TextField source="id" label="ID" />
       <ImageField source="thumbnail_url" label="Ảnh" sx={{ '& img': { maxWidth: '60px', maxHeight: '45px', objectFit: 'cover' } }} />
       <TextField source="title" label="Tên sự kiện" />
+      <TextField source="content" label="Mô tả đầy đủ" />
+      <TextField source="short_desc" label="Mô tả ngắn" />
       {/* <TextField source="author" label="Tác giả bài đăng" /> */}
       {/* <SelectField 
         source="type" 
@@ -260,11 +262,19 @@ export const EventCreate = () => (
       
       <TextInput 
         source="content" 
-        label="Nội dung giới thiệu sự kiện"
+        label="Nội dung giới thiệu đầy đủ cho sự kiện"
         multiline
         rows={15}
         fullWidth
-        helperText="Nội dung giới thiệu sự kiện"
+        helperText="Nội dung giới thiệu đầy đủ cho sự kiện"
+      />
+      <TextInput 
+        source="short_desc" 
+        label="Nội dung giới thiệu ngắn gọn cho sự kiện"
+        multiline
+        rows={5}
+        fullWidth
+        helperText="Nội dung giới thiệu ngắn gọn cho sự kiện"
       />
       {/* <TextField source="author" label="Tác giả bài đăng" /> */}
     </SimpleForm>
@@ -338,7 +348,14 @@ export const EventEdit = () => (
       
       <TextInput 
         source="content" 
-        label="Nội dung quảng bá sự kiện"
+        label="Nội dung quảng bá đầy đủ cho sự kiện"
+        multiline
+        rows={15}
+        fullWidth
+      />
+      <TextInput 
+        source="short_desc" 
+        label="Mô tả ngắn cho sự kiện"
         multiline
         rows={15}
         fullWidth
@@ -377,7 +394,8 @@ export const EventShow = () => (
       {/* <DateField source="end_date" label="Ngày giờ kết thúc" showTime /> */}
       {/* <TextField source="link_zoom" label="Link Zoom" /> */}
       <ImageField source="thumbnail_url" label="Hình ảnh quảng bá sự kiện" sx={{ '& img': { maxWidth: '300px', borderRadius: '8px' } }} />
-      <RichTextField source="content" label="Nội dung" />
+      <RichTextField source="content" label="Nội dung giới thiệu đầy đủ" />
+      <RichTextField source="short_desc" label="Nội dung mô tả ngắn gọn" />
       <DateField source="created_at" label="Ngày tạo" showTime />
       <DateField source="updated_at" label="Cập nhật lần cuối" showTime />
     </SimpleShowLayout>

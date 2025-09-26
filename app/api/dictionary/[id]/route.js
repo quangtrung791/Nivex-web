@@ -8,7 +8,7 @@ export async function GET(request, { params }) {
     const { id } = params;
     if (!id) {
       return NextResponse.json(
-        { success: false, error: "Thiếu id thông tin sự kiện" },
+        { success: false, error: "Thiếu id thông tin thuật ngữ" },
         { status: 400 }
       );
     }
@@ -16,14 +16,12 @@ export async function GET(request, { params }) {
     const sqlQuery = `
       SELECT 
         id,
-        title,
-        content,
-        short_desc,
-        thumbnail_url,
-        time_event,
+        keyword,
+        description,
         created_at,
-        updated_at,
-      FROM public.event
+        updated_at
+      FROM public.dictionary
+      WHERE id = $1
       LIMIT 1
     `;
     const result = await query(sqlQuery, [id]);
