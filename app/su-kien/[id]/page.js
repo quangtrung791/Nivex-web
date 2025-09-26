@@ -7,11 +7,11 @@ import ChatList from "@/components/chart/ChatList"
 import IconStar from "@/components/elements/IconStar"
 import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react"
-import styles from '../kien-thuc-tong-quan/knowledge.module.css'
+import styles from '../../kien-thuc-tong-quan/knowledge.module.css'
 import './style.css';
 
 
-export default function ChiTietSuKienAlt() {
+export default function ChiTietSuKien() {
 //    const [users, setUsers] = useState([]);
 
 //     useEffect(() => {

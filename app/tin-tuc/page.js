@@ -54,21 +54,37 @@ export default function BlogDetails() {
     }, []);
 
 
+    // useEffect(() => {
+    //     // Lấy danh mục từ API
+    //     fetch('/api/category_news')
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             // data là mảng [{ id, name }]
+    //             setCategories([
+    //                 { label: "Tất cả", value: "all" }, 
+    //                 ...data.map(cat => ({
+    //                     label: cat.name,
+    //                     value: cat.id
+    //                 }))
+    //             ])
+    //         })
+    // }, []);
+
     useEffect(() => {
         // Lấy danh mục từ API
-        fetch('/api/admin/category_news')
+        fetch('/api/category_news')
             .then(res => res.json())
             .then(data => {
-                // data là mảng [{ id, name }]
+                // data.data là mảng [{ id, name }]
                 setCategories([
                     { label: "Tất cả", value: "all" }, // Thêm tab "Tất cả"
-                    ...data.map(cat => ({
+                    ...(Array.isArray(data.data) ? data.data.map(cat => ({
                         label: cat.name,
                         value: cat.id
-                    }))
+                    })) : [])
                 ])
             })
-    }, [])
+    }, []);
 
     useEffect(() => {
         // Lấy danh sách bài viết từ API
@@ -357,7 +373,11 @@ export default function BlogDetails() {
                                                     ))}
                                                 </div> */}
                                                 <div className="content-inner row div-duoc-xem-nhieu">
-                                                    {Array.isArray(news) && news.slice(0, 3).map(item => (
+                                                    {filteredNews.length === 0 ? (
+                                                        <p style={{ textAlign: "center", padding: "20px", color: "#888" }}>
+                                                            Không có dữ liệu
+                                                        </p>
+                                                    ) : filteredNews.slice(0, 3).map(item => (
                                                         <div className="col-md-4" key={item.id}>
                                                             <div className="blog-box">
                                                                 <div className="box-image">
