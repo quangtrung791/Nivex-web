@@ -27,7 +27,56 @@ import {
 import { Chip } from '@mui/material'
 import { ImageUploadInput } from './ImageUploadInput'
 import RichTextInput from './RichTextInput'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+
+// ===== Dynamic Topic Select Component =====
+const DynamicTopicSelect = ({ source, label, validate, ...props }) => {
+  const [topics, setTopics] = useState([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const fetchTopics = async () => {
+      try {
+        const response = await fetch('/api/knowledge-topics')
+        const result = await response.json()
+        if (result.success) {
+          const choices = result.data.map(topic => ({
+            id: topic.id,
+            name: topic.name
+          }))
+          setTopics(choices)
+        }
+      } catch (error) {
+        console.error('Error fetching topics:', error)
+        // Fallback to hardcoded values
+        setTopics([
+          { id: 1, name: 'Blockchain' },
+          { id: 2, name: 'DeFi' },
+          { id: 3, name: 'Copy Trade' },
+          { id: 4, name: 'AI' },
+        ])
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchTopics()
+  }, [])
+
+  if (loading) {
+    return <div>Đang tải chủ đề...</div>
+  }
+
+  return (
+    <SelectInput
+      source={source}
+      label={label}
+      choices={topics}
+      validate={validate}
+      {...props}
+    />
+  )
+}
 
 // ===== Custom Delete Button (xác nhận xóa) =====
 const CustomDeleteButton = () => {
@@ -69,16 +118,10 @@ const knowledgeFilters = [
       { id: 'inactive', name: 'Không hoạt động' },
     ]}
   />,
-  <SelectInput
-    key="topic"
-    source="topic"
+  <DynamicTopicSelect
+    key="topic_id"
+    source="topic_id"
     label="Chủ đề"
-    choices={[
-      { id: 'blockchain', name: 'Blockchain' },
-      { id: 'defi', name: 'DeFi' },
-      { id: 'copy_trade', name: 'Copy Trade' },
-      { id: 'ai', name: 'AI' },
-    ]}
   />,
   <SelectInput
     key="difficulty"
@@ -119,16 +162,20 @@ const StatusField = () => {
 
 const TopicField = () => {
   const record = useRecordContext()
-  const t = record?.topic
-  const map = {
-    blockchain: { text: 'Blockchain', color: '#2196f3' },
-    defi: { text: 'DeFi', color: '#ff9800' },
-    copy_trade: { text: 'Copy Trade', color: '#9c27b0' },
-    ai: { text: 'AI', color: '#4caf50' },
+  const topicName = record?.topic_name || record?.topic
+  
+  // Color mapping based on topic name
+  const colorMap = {
+    'Blockchain': '#2196f3',
+    'DeFi': '#ff9800', 
+    'Copy Trade': '#9c27b0',
+    'AI': '#4caf50',
   }
-  if (!t) return null
-  const { text, color } = map[t] ?? { text: t, color: '#9e9e9e' }
-  return <Chip label={text} style={{ backgroundColor: color, color: 'white', fontWeight: 'bold' }} />
+  
+  if (!topicName) return null
+  
+  const color = colorMap[topicName] || '#290909ff'
+  return <Chip label={topicName} style={{ backgroundColor: color, color: 'white', fontWeight: 'bold' }} />
 }
 
 const DifficultyField = () => {
@@ -178,16 +225,10 @@ export const KnowledgeCreate = () => (
         fullWidth
         helperText="Nhập tiêu đề bài viết (bắt buộc)"
       />
-      <SelectInput
-        source="topic"
+      <DynamicTopicSelect
+        source="topic_id"
         label="Chủ đề"
-        choices={[
-          { id: 'blockchain', name: 'Blockchain' },
-          { id: 'defi', name: 'DeFi' },
-          { id: 'copy_trade', name: 'Copy Trade' },
-          { id: 'ai', name: 'AI' },
-        ]}
-        defaultValue="blockchain"
+        defaultValue={1}
         validate={[required()]}
       />
       <SelectInput
@@ -220,7 +261,6 @@ export const KnowledgeCreate = () => (
         source="content"
         label="Nội dung bài viết"
         fullWidth
-        fullHeight
         helperText="Nội dung chi tiết của bài viết kiến thức với định dạng HTML"
         validate={[required()]}
       />
@@ -234,15 +274,10 @@ export const KnowledgeEdit = () => (
     <SimpleForm>
       <TextInput source="id" label="ID" disabled />
       <TextInput source="title" label="Tiêu đề bài viết" validate={[required()]} fullWidth />
-      <SelectInput
-        source="topic"
+
+      <DynamicTopicSelect
+        source="topic_id"
         label="Chủ đề"
-        choices={[
-          { id: 'blockchain', name: 'Blockchain' },
-          { id: 'defi', name: 'DeFi' },
-          { id: 'copy_trade', name: 'Copy Trade' },
-          { id: 'ai', name: 'AI' },
-        ]}
         validate={[required()]}
       />
       <SelectInput
@@ -273,7 +308,6 @@ export const KnowledgeEdit = () => (
         source="content"
         label="Nội dung bài viết"
         fullWidth
-        fullHeight
         validate={[required()]}
       />
       <DateField source="created_at" label="Ngày tạo" showTime disabled />

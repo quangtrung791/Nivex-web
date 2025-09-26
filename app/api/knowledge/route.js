@@ -14,10 +14,12 @@ export async function GET(request) {
 
     let sqlQuery = `
       SELECT 
-        id, title, topic, difficulty, status, content, image_url, 
-        created_at, updated_at
-      FROM knowledge 
-      WHERE status = 'active'
+        k.id, k.title, k.difficulty, k.status, k.content, k.image_url, 
+        k.created_at, k.updated_at,
+        kt.name as topic
+      FROM knowledge k
+      LEFT JOIN knowledge_topics kt ON k.topic_id = kt.id
+      WHERE k.status = 'active' AND (kt.status = 'active' OR kt.status IS NULL)
     `
     
     const queryParams = []
@@ -25,7 +27,7 @@ export async function GET(request) {
 
     // Add filters
     if (topic) {
-      sqlQuery += ` AND topic = $${paramIndex}`
+      sqlQuery += ` AND kt.name = $${paramIndex}`
       queryParams.push(topic)
       paramIndex++
     }
@@ -37,13 +39,13 @@ export async function GET(request) {
     }
 
     if (search) {
-      sqlQuery += ` AND (title ILIKE $${paramIndex} OR content ILIKE $${paramIndex})`
+      sqlQuery += ` AND (k.title ILIKE $${paramIndex} OR k.content ILIKE $${paramIndex})`
       queryParams.push(`%${search}%`)
       paramIndex++
     }
 
     // Order by created_at DESC and limit to 30 records
-    sqlQuery += ` ORDER BY created_at DESC LIMIT 30`
+    sqlQuery += ` ORDER BY k.created_at DESC LIMIT 30`
 
     const result = await query(sqlQuery, queryParams)
 

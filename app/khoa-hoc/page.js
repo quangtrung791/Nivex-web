@@ -26,11 +26,9 @@ export default function CoursesPage() {
       if (result.success) {
         setCourses(result.data)
       } else {
-        console.error('Error fetching courses:', result.error)
         setCourses([])
       }
     } catch (error) {
-      console.error('Error fetching courses:', error)
       setCourses([])
     } finally {
       setLoading(false)
@@ -221,7 +219,7 @@ export default function CoursesPage() {
                     </div>
                     
                     <h3 className={styles.courseTitle}>{course.title}</h3>
-                    <p className={styles.courseCardContent}>{course.content}</p>
+                    <div className={styles.courseCardContent}>{course.content}</div>
 
                     <div className={styles.courseCardLastChild}>
                         <div className={styles.courseDetails}>
