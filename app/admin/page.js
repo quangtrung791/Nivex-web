@@ -2,6 +2,7 @@
 import { Admin, Resource } from 'react-admin'
 import { dataProvider } from '@/lib/dataProvider'
 import { CourseList, CourseCreate, CourseEdit, CourseShow } from '@/components/admin/CourseAdmin'
+import { KnowledgeTopicsList, KnowledgeTopicsCreate, KnowledgeTopicsEdit, KnowledgeTopicsShow } from '@/components/admin/KnowledgeTopicsAdmin'
 import { NewsList, NewsCreate, NewsEdit, NewsShow } from '@/components/admin/NewsAdmin'
 import { CateNewsCreate, CateNewsEdit, CateNewsList, CateNewsShow } from '@/components/admin/CategoryNewsAdmin'
 import { KnowledgeList, KnowledgeCreate, KnowledgeEdit, KnowledgeShow } from '@/components/admin/KnowledgeAdmin'
@@ -113,6 +114,27 @@ const Dashboard = () => {
             fontSize: '0.8em'
           }}>Truy cập</small>
         </a>
+
+        {/* Quản lý chủ đề kiến thức */}
+        <a href='/admin#/knowledge_topics' style={{ 
+          background: 'linear-gradient(135deg, #8e24aa 0%, #7b1fa2 100%)', 
+          padding: '25px', 
+          borderRadius: '12px', 
+          boxShadow: '0 4px 15px rgba(0,0,0,0.2)',
+          color: '#fff', 
+          textDecoration: 'none',
+          transition: 'transform 0.2s'
+        }}>
+          <h3 style={{ margin: '0 0 10px 0', fontSize: '1.4em' }}>📂 Chủ đề Kiến thức</h3>
+          <p style={{ margin: '0 0 10px 0', opacity: 0.9 }}>Quản lý danh mục và chủ đề bài viết kiến thức</p>
+          <small style={{ 
+            background: 'rgba(255,255,255,0.2)', 
+            padding: '4px 8px', 
+            borderRadius: '12px',
+            fontSize: '0.8em'
+          }}>Truy cập</small>
+        </a>
+
       {/* Quản lý bài đăng tin tức */}
         <a href='/admin#/news' style={{ 
             background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', 
@@ -244,6 +266,16 @@ export default function AdminPage() {
           edit={KnowledgeEdit}
           show={KnowledgeShow}
           options={{ label: '🧠 Kiến thức' }}
+        />
+        
+        {/* Knowledge Topics Management */}
+        <Resource 
+          name="knowledge_topics" 
+          list={KnowledgeTopicsList}
+          create={KnowledgeTopicsCreate}
+          edit={KnowledgeTopicsEdit}
+          show={KnowledgeTopicsShow}
+          options={{ label: '📂 Chủ đề Kiến thức' }}
         />
         
         <Resource 

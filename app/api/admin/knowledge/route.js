@@ -5,17 +5,25 @@ export const runtime = 'nodejs';
 
 export async function GET(request) {
   try {
-    console.log("GET /api/admin/knowledge called");
     
-    // Query knowledge table
-    const rows = await query('SELECT * FROM public.knowledge ORDER BY created_at DESC');
+    // Query knowledge table with JOIN to get topic name
+    const rows = await query(`
+      SELECT 
+        k.*,
+        kt.name as topic_name
+      FROM public.knowledge k
+      LEFT JOIN public.knowledge_topics kt ON k.topic_id = kt.id
+      ORDER BY k.created_at DESC
+    `);
     
     // Transform knowledge data for React Admin
     const knowledge = rows.map(row => ({
       id: row.id,
       title: row.title,
       status: row.status || 'active',
-      topic: row.topic || 'blockchain',
+      topic: row.topic || 'blockchain', // Keep old field for compatibility during migration
+      topic_id: row.topic_id,
+      topic_name: row.topic_name || 'Unknown Topic',
       difficulty: row.difficulty || 'easy',
       content: row.content || '',
       image_url: row.image_url,
@@ -23,7 +31,6 @@ export async function GET(request) {
       updated_at: row.updated_at
     }));
     
-    console.log("Returning knowledge articles:", knowledge.length);
     
     return NextResponse.json(knowledge, {
       headers: {
@@ -33,7 +40,6 @@ export async function GET(request) {
     });
     
   } catch (error) {
-    console.error("GET /api/admin/knowledge error:", error);
     return NextResponse.json({
       ok: false,
       error: error.message
@@ -44,15 +50,14 @@ export async function GET(request) {
 export async function POST(request) {
   try {
     const data = await request.json();
-    console.log("POST /api/admin/knowledge - data:", data);
     
     // Insert into knowledge table
     const result = await query(
-      'INSERT INTO public.knowledge (title, status, topic, difficulty, content, image_url) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *',
+      'INSERT INTO public.knowledge (title, status, topic_id, difficulty, content, image_url) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *',
       [
         data.title || 'New Article',
         data.status || 'active',
-        data.topic || 'blockchain',
+        data.topic_id || 1, // Default to first topic (usually Blockchain)
         data.difficulty || 'easy',
         data.content || '',
         data.image_url || null
@@ -65,7 +70,6 @@ export async function POST(request) {
     return NextResponse.json(knowledge, { status: 201 });
     
   } catch (error) {
-    console.error("POST /api/admin/knowledge error:", error);
     return NextResponse.json({
       ok: false,
       error: error.message

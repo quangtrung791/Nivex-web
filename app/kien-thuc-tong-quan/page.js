@@ -8,26 +8,42 @@ export default function Knowledge() {
         document.title = "Kiến thức tổng quan"
     }, []);
 
-    const [activeCategory, setActiveCategory] = useState('blockchain')
+    const [activeCategory, setActiveCategory] = useState('Blockchain')
     const [activeDifficulty, setActiveDifficulty] = useState('easy')
     const [isCategoryDropdownOpen, setIsCategoryDropdownOpen] = useState(false)
     const [knowledgeArticles, setKnowledgeArticles] = useState([])
     const [newestArticles, setNewestArticles] = useState([])
+    const [categories, setCategories] = useState([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
-
-    const categories = [
-        { id: 'blockchain', label: 'Blockchain' },
-        { id: 'defi', label: 'DeFi' },
-        { id: 'copy_trade', label: 'Copy Trade' }, // Updated to match database
-        { id: 'ai', label: 'AI' }
-    ]
 
     const difficulties = [
         { id: 'easy', label: 'Người mới', color: 'blue' },
         { id: 'intermediate', label: 'Trung cấp', color: 'orange' },
         { id: 'advanced', label: 'Nâng cao', color: 'purple' }
     ]
+
+    // Fetch categories from database
+    const fetchCategories = async () => {
+        try {
+            const response = await fetch('/api/categories')
+            const result = await response.json()
+            if (result.success) {
+                setCategories(result.data || [])
+                // Set default category to first available category
+                if (result.data && result.data.length > 0) {
+                    setActiveCategory(result.data[0].id)
+                }
+            }
+        } catch (error) {
+            setCategories([
+                { id: 'Blockchain', label: 'Blockchain' },
+                { id: 'DeFi', label: 'DeFi' },
+                { id: 'Copy Trade', label: 'Copy Trade' },
+                { id: 'AI', label: 'AI' }
+            ])
+        }
+    }
 
     // Fetch knowledge articles from API
     const fetchKnowledgeArticles = async () => {
@@ -54,7 +70,6 @@ export default function Knowledge() {
                 throw new Error('Failed to fetch articles')
             }
         } catch (error) {
-            console.error('Error fetching knowledge articles:', error)
             setError('Không thể tải dữ liệu. Vui lòng thử lại sau.')
             // Fallback to empty arrays
             setKnowledgeArticles([])
@@ -64,9 +79,16 @@ export default function Knowledge() {
         }
     }
 
+    // Fetch categories on component mount
+    useEffect(() => {
+        fetchCategories()
+    }, [])
+
     // Fetch data when component mounts or filters change
     useEffect(() => {
-        fetchKnowledgeArticles()
+        if (activeCategory) { // Only fetch when category is set
+            fetchKnowledgeArticles()
+        }
     }, [activeCategory, activeDifficulty])
 
     // Use filtered articles from API instead of local filtering
