@@ -166,15 +166,6 @@ export default function BlogDetails() {
                             <div className="row">
                                 <div className="col-xl-8 col-md-12">
                                     <div className="blog-main">
-                                        {/* <ul className="menu-tab menu-on-line">
-                                            <li className="listing active" ><h6 className="fs-16">View All</h6></li>
-                                            <li  className="listing" ><h6 className="fs-16">Learn &amp; Earn</h6></li>
-                                            <li  className="listing" ><h6 className="fs-16">Metaverse</h6></li>
-                                            <li  className="listing" ><h6 className="fs-16">Energy</h6></li>
-                                            <li  className="listing" ><h6 className="fs-16">NFT</h6></li>
-                                            <li  className="listing" ><h6 className="fs-16">Gaming</h6></li> 
-                                            <li  className="listing" ><h6 className="fs-16">Music</h6></li>
-                                        </ul> */}
                                         {/* Tab menu for desktop */}
 
                                         <ul className="menu-tab menu-on-line">
@@ -189,7 +180,7 @@ export default function BlogDetails() {
                                             ))}
                                         </ul>
 
-                                         {/* Tab menu for mobile */}
+                                        {/* Tab menu for mobile */}
                                        
                                         <div className={styles.mobileDropdown} style={{ width: "30%" }}>
                                             <div
@@ -265,21 +256,7 @@ export default function BlogDetails() {
                                             )}
                                         </div>
                                         
-                                        {/* <div className="meta">
-                                            <Link href="#" className="category btn-action">learn &amp; earn</Link>
-                                            <div className="meta-info">
-                                                <Link href="#" className="name"><span />Floyd Buckridge</Link>
-                                                <Link href="#" className="time">Feb 03, 2021</Link>
-                                            </div>
-                                        </div> */}
                                         <div className="content">
-                                            
-                                           
-                                            {/* <div className="box-image trigger-full-w">
-                                                <img src="/assets/images/blog/blog-02.jpg" alt="" />
-                                                <div className="wrap-video">
-                                                </div>
-                                            </div> */}
                                             {news[0] && (
                                                 <div className="box-image trigger-full-w">
                                                     <img src={news[0].thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={news[0].title} />
@@ -301,77 +278,6 @@ export default function BlogDetails() {
                                             
                                            
                                         <div className="content-tab">
-                                                {/* <div className="content-inner row div-duoc-xem-nhieu" > 
-                                                    <div className="col-md-4">
-                                                        <div className="blog-box">
-                                                            <div className="box-image">
-                                                                <img src="/assets/images/blog/blog-02.jpg" alt="" />
-                                                                <div className="wrap-video">
-                                                                    
-                                                                </div>
-                                                            </div>
-                                                            <div className="box-content title-news-duoc-xem-nhieu">
-                                                                <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div className="col-md-4">
-                                                        <div className="blog-box">
-                                                            <div className="box-image">
-                                                                <img src="/assets/images/blog/blog-02.jpg" alt="" />
-                                                                <div className="wrap-video">
-                                                                    
-                                                                </div>
-                                                            </div>
-                                                            <div className="box-content title-news-duoc-xem-nhieu">
-                                                                <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div className="col-md-4">
-                                                        <div className="blog-box">
-                                                            <div className="box-image">
-                                                                <img src="/assets/images/blog/blog-02.jpg" alt="" />
-                                                                <div className="wrap-video">
-                                                                    
-                                                                </div>
-                                                            </div>
-                                                            <div className="box-content title-news-duoc-xem-nhieu">
-                                                                <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
-                                                            </div>
-                                                        </div>
-                                                    </div>                                           
-                                                    <div className="col-md-4 mobile-only">
-                                                        <div className="blog-box">
-                                                            <div className="box-image">
-                                                                <img src="/assets/images/blog/blog-02.jpg" alt="" />
-                                                                <div className="wrap-video">
-                                                                    
-                                                                </div>
-                                                            </div>
-                                                            <div className="box-content title-news-duoc-xem-nhieu">
-                                                                <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
-                                                            </div>
-                                                        </div>
-                                                    </div>                                           
-                                                </div> */}
-                                                
-                                                {/* <div className="content-inner row div-duoc-xem-nhieu">
-                                                    {news.slice(0, 3).map(item => (
-                                                        <div className="col-md-4" key={item.id}>
-                                                            <div className="blog-box">
-                                                                <div className="box-image">
-                                                                    <img src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
-                                                                    <div className="wrap-video">
-                                                                    </div>
-                                                                </div>
-                                                                <div className="box-content title-news-duoc-xem-nhieu">
-                                                                    <Link href={`/tin-tuc/${item.id}`} className="title">{item.title}</Link>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    ))}
-                                                </div> */}
                                                 <div className="content-inner row div-duoc-xem-nhieu">
                                                     {filteredNews.length === 0 ? (
                                                         <p style={{ textAlign: "center", padding: "20px", color: "#888" }}>
@@ -394,34 +300,6 @@ export default function BlogDetails() {
 
                                             </div>
                                         </div>
-
-                                        {/* <div className="details-bottom">
-                                            <div className="tags">
-                                                <h6>Tags:</h6>
-                                                <ul>
-                                                    <li><Link href="/blog-grid-v1">Metaverse</Link></li>
-                                                    <li><Link href="/blog-grid-v1">NFT Marketplace</Link></li>
-                                                    <li><Link href="/blog-grid-v1">Virtual Land</Link></li>
-                                                </ul>
-                                            </div>
-                                            <div className="share">
-                                                <h6>Share:</h6>
-                                                <ul>
-                                                    <li>
-                                                        <Link href="#"><i className="fa-brands fa-facebook-f" /></Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="#"><i className="fa-brands fa-instagram" /></Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="#"><i className="fa-brands fa-youtube" /></Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="#"><i className="fa-brands fa-twitter" /></Link>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div> */}
                                         
                                     </div>
                                 </div>
