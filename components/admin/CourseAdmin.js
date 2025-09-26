@@ -171,10 +171,8 @@ export const CourseList = () => (
           { id: 'hybrid', name: 'Hybrid' },
         ]}
       />
-      <DateField source="start_date" ampm={false}
-          format="dd/MM/yyyy HH:mm" label="Ngày bắt đầu" showTime />
-      <DateField source="end_date" ampm={false}
-          format="dd/MM/yyyy HH:mm" label="Ngày kết thúc" showTime />
+      <DateField source="start_date" label="Ngày bắt đầu" showTime />
+      <DateField source="end_date" label="Ngày kết thúc" showTime />
       <StatusField />
       <EditButton label="Sửa" />
       <ShowButton label="Xem" />
@@ -223,15 +221,11 @@ export const CourseCreate = () => (
       
       <DateTimeInput 
         source="start_date" 
-        ampm={false}
-        format="dd/MM/yyyy HH:mm"
         label="Ngày giờ bắt đầu"
       required/>
       
       <DateTimeInput 
         source="end_date"
-          ampm={false}
-          format="dd/MM/yyyy HH:mm"
         label="Ngày giờ kết thúc"
       required/>
       
@@ -298,15 +292,11 @@ export const CourseEdit = () => (
       
       <DateTimeInput 
         source="start_date" 
-          ampm={false}
-          format="dd/MM/yyyy HH:mm"
         label="Ngày giờ bắt đầu"
       required />
       
       <DateTimeInput 
         source="end_date" 
-          ampm={false}
-          format="dd/MM/yyyy HH:mm"
         label="Ngày giờ kết thúc"
       required />
       
