@@ -1,6 +1,8 @@
 // API endpoint cho single course dùng database
 import { NextResponse } from 'next/server'
 import { query } from '@/app/lib/neon'
+import { zonedTimeToUtc } from 'date-fns-tz';
+const TZ = 'Asia/Ho_Chi_Minh';
 
 export async function GET(request, { params }) {
   try {
@@ -22,15 +24,16 @@ export async function PUT(request, { params }) {
   try {
     const id = parseInt(params.id)
     const data = await request.json()
-    console.log("PUT /api/admin/courses/:id - data:", data);
+    const startUtc = fromClientToUTC(data.start_date); 
+    const endUtc   = fromClientToUTC(data.end_date);  
     
     const paramsArr = [
       data.title,
       data.type ?? 'online',
       JSON.stringify(data.category ?? []),
       data.status ?? 'active',
-      data.start_date ?? null,
-      data.end_date ?? null,
+      startUtc,              
+      endUtc,  
       data.link_zoom ?? null,
       data.content ?? null,
       data.image_url ?? null,
