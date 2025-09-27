@@ -1,8 +1,6 @@
 // API endpoint cho single course dùng database
 import { NextResponse } from 'next/server'
 import { query } from '@/app/lib/neon'
-import { zonedTimeToUtc } from 'date-fns-tz';
-const TZ = 'Asia/Ho_Chi_Minh';
 
 export async function GET(request, { params }) {
   try {
