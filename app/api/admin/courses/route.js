@@ -1,7 +1,27 @@
 import { query } from "@/app/lib/neon";
 import { NextResponse } from "next/server";
+import { zonedTimeToUtc } from "date-fns-tz";
 
-export const runtime = 'nodejs';
+export const runtime = "nodejs";
+
+const TZ = "Asia/Ho_Chi_Minh";
+const hasTZ = (s: any) => typeof s === "string" && /Z|[+\-]\d{2}:\d{2}$/.test(s);
+
+// DB -> API (luôn trả ISO UTC)
+const toApiISOFromDb = (v: any) => {
+  if (!v) return null;
+  if (v instanceof Date) return v.toISOString();             // timestamptz -> Date
+  if (hasTZ(v)) return new Date(v).toISOString();            // string đã có TZ
+  return zonedTimeToUtc(v, TZ).toISOString();                // string không TZ => hiểu là giờ VN
+};
+
+// Client -> DB (nhận 'YYYY-MM-DDTHH:mm' hoặc ISO; trả ISO UTC)
+const fromClientToUTC = (v: any) => {
+  if (!v) return null;
+  if (v instanceof Date) return v.toISOString();
+  if (hasTZ(v)) return new Date(v).toISOString();            // đã có TZ => giữ UTC
+  return zonedTimeToUtc(v, TZ).toISOString();                // không TZ => coi là giờ VN
+};
 
 export async function GET(request) {
   try {
@@ -16,8 +36,8 @@ export async function GET(request) {
       title: row.title,
       type: row.type || 'online',
       status: row.status || 'active',
-      start_date: row.start_date,
-      end_date: row.end_date,
+      start_date: toApiISOFromDb(row.start_date), 
+      end_date: toApiISOFromDb(row.end_date),  
       link_zoom: row.link_zoom,
       content: row.content || '',
       image_url: row.image_url,
@@ -47,7 +67,8 @@ export async function GET(request) {
 export async function POST(request) {
   try {
     const data = await request.json();
-    console.log("POST /api/admin/courses - data:", data);
+    const startUtc = fromClientToUTC(data.start_date);  
+    const endUtc   = fromClientToUTC(data.end_date);   
     
     // Insert into courses table (thêm link_zoom)
     const result = await query(
@@ -56,8 +77,8 @@ export async function POST(request) {
         data.title || 'New Course',
         data.type || 'online',
         data.status || 'active',
-        data.start_date || null,
-        data.end_date || null,
+        startUtc,              
+        endUtc,  
         data.link_zoom || null,
         data.content || '',
         data.image_url || null,
