@@ -24,16 +24,14 @@ export async function PUT(request, { params }) {
   try {
     const id = parseInt(params.id)
     const data = await request.json()
-    const startUtc = fromClientToUTC(data.start_date); 
-    const endUtc   = fromClientToUTC(data.end_date);  
     
     const paramsArr = [
       data.title,
       data.type ?? 'online',
       JSON.stringify(data.category ?? []),
       data.status ?? 'active',
-      startUtc,              
-      endUtc,  
+      data.start_date ? zonedTimeToUtc(data.start_date, TZ).toISOString() : null,
+      data.end_date   ? zonedTimeToUtc(data.end_date,   TZ).toISOString() : null,
       data.link_zoom ?? null,
       data.content ?? null,
       data.image_url ?? null,
