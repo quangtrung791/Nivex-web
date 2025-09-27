@@ -1,10 +1,7 @@
 import { query } from "@/app/lib/neon";
 import { NextResponse } from "next/server";
-import { zonedTimeToUtc } from "date-fns-tz";
 
 export const runtime = "nodejs";
-
-const TZ = "Asia/Ho_Chi_Minh";
 
 export async function GET(request) {
   try {
