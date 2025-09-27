@@ -257,7 +257,7 @@ export default function SuKien() {
                                                                 </Link>
                                                             </div>
                                                             <Link href={`/su-kien/${item.id}`} className="title">{item.title}</Link>
-                                                            <p className="text">{item.short_desc}</p>
+                                                            <div className="text" dangerouslySetInnerHTML={{ __html: item.short_desc }}></div>
                                                             <Link href={`/su-kien/${item.id}`} className="read-more-btn btn-action">Đăng ký ngay</Link>
                                                         </div>
                                                     </div>
