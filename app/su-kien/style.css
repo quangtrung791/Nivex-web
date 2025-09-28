@@ -1,4 +1,7 @@
 /* Fixed */
+.text {
+    padding-right: 10px !important;
+}
 .blog-box .box-image {
     border-radius: 0px !important;
 }
