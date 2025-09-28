@@ -1,0 +1,44 @@
+.gradient-text {
+   background: linear-gradient(90deg, #bcfe08, #86f869);
+   -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-top: 3px;
+}
+
+.banner p.fs-14.desc.main-description {
+    padding: unset;
+}
+
+.main-description {
+    font-size: 14px;
+    color: #A6AAB7;
+    font-weight: 400;
+}
+
+p.text.fs-14 {
+    color: white;
+    font-weight: 300 !important;
+    text-transform: unset !important;
+}
+.white-text {
+    color: white !important;
+}
+
+.banner .banner__content .btn-action {
+    margin-top: 27px !important;
+}
+.MenuListNew_menuGrid__Go4YE {
+    background: #18191d17 !important;
+}
+
+@media (min-width: 1440px) {
+    .main-description {
+        margin-bottom: 24px;
+    }
+}
+@media (min-width: 1920px) {
+    section.MenuListNew_menuListSection__geRaI.aos-init.aos-animate {
+        position: relative;
+        top: -50px !important;
+    }
+}

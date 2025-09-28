@@ -1,7 +1,10 @@
+'use client'
 import Link from 'next/link'
 import styles from '../../public/assets/style/MenuListNew.module.css'
+import { useEffect, useState } from "react";
 
 export default function MenuListNew() {
+  const [isMobile, setIsMobile] = useState(false);
   const menuItems = [
     {
       title: 'Khóa học',
@@ -35,12 +38,18 @@ export default function MenuListNew() {
     }
   ]
 
+  useEffect(() => {
+    if (window.innerWidth < 767) {
+      setIsMobile(true);
+    }
+  }, []);
+
   return (
-    <section className={styles.menuListSection} data-aos="fade-up" data-aos-duration={1000}>
+    <section className={styles.menuListSection} data-aos={!isMobile ? "fade-up" : ""} data-aos-duration={!isMobile ? "1000" : ""}>
       <div className={`container ${styles.containerCustom}`}>
         {/* <div className="row"> */}
           {/* <div className="col-md-12"> */}
-            <div className={styles.menuGrid}>
+            <div className={`${styles.menuGrid} customed-menu-grid`}>
               {menuItems.map((item, index) => (
                 <Link href={item.href} key={index} className={styles.menuCard}>
                   <div className={styles.iconContainer}>

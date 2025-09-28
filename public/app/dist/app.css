@@ -592,6 +592,12 @@ body[data-magic-cursor=hide] .mouse-cursor {
     /* padding: 0 17px; */
     padding: 0 7%;
 }
+section.banner {
+    background-image: url(https://learningchain.vn/wp-content/uploads/nivex/background_hero_update.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
 @media only screen and (max-width: 767px) {
     .header .header__body {
@@ -1113,10 +1119,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
 }
 
 .title_nivex_hub {
-    /* background: linear-gradient(to right, #BCFE08, #86F869);
-    -webkit-background-clip: text;
-    background-clip: text; */
-    color: #BCFE08;
+    /* color: #BCFE08; */
     font-weight: 700;
     font-size: 40px;
 }
@@ -1814,7 +1817,8 @@ section.crypto {
 
 .work .work__main .work-box {
     /* width: 25%; */
-    width: 30%;
+    /* width: 30%; */
+    width: 33%;
     text-align: center;
     margin-right: 70px;
     position: relative;
@@ -1865,7 +1869,7 @@ section.crypto {
     padding: 0 18px;
     text-transform: capitalize;
 }
- .work .work__main .work-box .image img {
+/* .work .work__main .work-box .image img {
     transform: rotateY(0deg);
 }
  .work .work__main .work-box:hover .image img {
@@ -1878,8 +1882,14 @@ section.crypto {
     to {
         transform: rotateY(360deg);
     }
+} */
+img.img-src-2-el {
+    width: 238px;
+    height: 238px;
 }
-
+.work.background-container-custom {
+    background-color: #141416 !important;
+}
 
 @media only screen and (max-width: 767px) {
     .work .work__main {
@@ -8222,12 +8232,17 @@ h2.title {
 }
 
 .background-container-custom {
-    background: url(https://learningchain.vn/wp-content/uploads/nivex/bg_gioi_thieu.png);
+    /* background: url(https://learningchain.vn/wp-content/uploads/nivex/bg_gioi_thieu.png);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
 }
-
+.work-box {
+    background-image: url(https://learningchain.vn/wp-content/uploads/nivex/bg-img-hanh-trinh.png) !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
 /* .banner */
 @media (min-width: 1440px) and (max-width: 1599px) {
     section.work .col-md-12 {
@@ -8247,7 +8262,7 @@ h2.title {
 }
 @media (min-width: 1920px)  {
     .banner {
-        padding: 5% 7% 10% 7%;
+        padding: 5% 7% 2.5% 7%;
     }
     section.background-container-custom .col-md-12 {
         padding-right: unset !important;
@@ -8258,7 +8273,11 @@ h2.title {
 /* .gioi-thieu-nivex */
 @media (min-width: 1440px) and (max-width: 1599px) {
     .work.background-container-custom {
-        padding: 5% 7%;
+        /* padding: 5% 8%; */
+        padding: 1% 8% 5% 8%;
+    }
+    .last-el-wb {
+        margin-right: 0px;
     }
 }
 @media (min-width: 1600px) and (max-width: 1919px) {
@@ -8266,22 +8285,12 @@ h2.title {
         padding: 0 5%;
     }
 }
+@media (min-width: 1920px) {
+    .work.background-container-custom {
+        padding-top: 0%;
+    }
+}
 
-/* @media (min-width: 2560px) and (max-width: 3439px) {
-    .container.gioi-thieu-nivex {
-        padding: 0 5%;
-    }
-}
-@media (min-width: 3440px) and (max-width: 3839px) {
-    .container.gioi-thieu-nivex {
-        padding: 0 5%;
-    }
-}
-@media (min-width: 3840px)  {
-    .container.gioi-thieu-nivex {
-        padding: 0 5%;
-    }
-} */
 
 /* ai-copy-trade */
 @media (min-width: 1440px) and (max-width: 1599px) {
@@ -8300,43 +8309,18 @@ h2.title {
     }
 }
 
-/* .tien-ma-hoa-cho-nguoi-bat-dau */
-/* @media (min-width: 1440px) and (max-width: 1599px) {
-    .container.tien-ma-hoa-cho-nguoi-bat-dau {
-        padding: 0 7%;
-    }
-}
-@media (min-width: 1600px) and (max-width: 1919px) {
-    .container.tien-ma-hoa-cho-nguoi-bat-dau {
-        padding: 0 5%;
-    }
-}
 @media (min-width: 1920px) {
-    .container.tien-ma-hoa-cho-nguoi-bat-dau {
-        padding: 0 0%;
+    .last-el-wb {
+        margin-right: 12px !important;
     }
-} */
+}
 
-/* .footer-main */
-/* @media (min-width: 1440px) and (max-width: 1599px) {
-    .footer.footer-main {
-        padding: 0 7%;
-    }
-}
-@media (min-width: 1600px) and (max-width: 1919px) {
-    .footer.footer-main {
-        padding: 0 7%;
-    }
-}
-@media (min-width: 1921px) {
-    .footer.footer-main {
-        padding: 0 0%;
-    }
-} */
 /* .robot logo image */
 @media (min-width: 1440px) and (max-width: 1599px) {
     img.logo-robot-mc {
-        width: 500px;
+        position: absolute;
+        right: 6%;
+        width: 400px;
     }
 }
 @media (min-width: 1600px) and (max-width: 1919px) {
@@ -8575,9 +8559,6 @@ img.ai-icon-small {
     .header .header__body {
         padding: 0 5%;
     }
-    /* header#header_main .header__left {
-        margin-left: 1%;
-    } */
     section.banner {
         padding: 5% 3.5% 10% 3.5% !important;
     }
@@ -9011,11 +8992,14 @@ img.ai-icon-small {
     background-clip: text;
     color: transparent; /* fallback */
 }
-section.crypto .crypto-box.active:hover,
-section.background-container-custom .work-box:hover
+section.crypto .crypto-box.active:hover
 {
     cursor: pointer;
     background: #656363ba !important;
+}
+
+section.background-container-custom .work-box:hover {
+    border: solid 1px greenyellow;
 }
 /* Fix lỗi rớt chữ trên màn 1440 */
 @media (width: 1440px) {
@@ -9135,4 +9119,80 @@ section.background-container-custom .work-box:hover
       line-height: 1.4 !important;
       letter-spacing: 0px !important;
   }
+}
+@media (min-width: 1350px) and (max-width: 1439px) {
+    a#button-master-homepg {
+        margin-top: 27px !important;
+    }
+}
+
+
+@media (min-width: 1440px) and (max-width: 1919px) {
+    h3.heading {
+        padding-right: 33%;
+    }
+}
+@media (min-width: 1920px) {
+    h3.heading {
+        padding-right: 45%;
+    }
+}
+
+/* mobile */
+@media (max-width: 600px) {
+    /* .header {
+        height: 60px !important;
+    } */
+    .cocktail-img {
+        display: none;
+    }
+    section.banner {
+        background-image: none;
+    }
+    .logo-cocktail-mb {
+        width: 65%;
+        position: relative;
+        z-index: 20;
+    }
+    .logo-cocktail-mb-container {
+        margin: 0 auto;
+        display: block;
+        text-align: center;
+    }
+    img.background-hero-mb {
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+    }
+    .banner .container {
+        position: relative;
+        z-index: 20;
+    }
+    h2.title_nivex_hub.gradient-text {
+        font-size: 24px;
+    }
+    section.banner {
+        padding-bottom: 40px !important;
+    }
+
+    .background-container-custom h3.heading {
+        padding-right: 40px !important;
+    }
+    p.fs-14.desc.white-text {
+        letter-spacing: 0px !important;
+        font-weight: 300 !important;
+    }
+}
+
+/* exception */
+@media (min-width: 601px) {
+    .logo-cocktail-mb-container {
+        display: none !important;
+    }
+}
+
+.customed-menu-grid {
+  box-shadow: 0 0 20px 2px #BCFE0833 !important;
+  transition: box-shadow 0.3s ease-in-out !important;
 }

@@ -23,7 +23,65 @@
   padding: 26px;
   border: 2px solid rgb(35, 38, 47, 0.7);
   background: #18191D;
-  margin-top: -8.5%;
+  backdrop-filter: blur(4px);
+  /* margin-top: -8.5%; */
+}
+
+/* Tablet nhỏ và mobile: 2-2-1 layout */
+@media (min-width: 768px) and (max-width: 1200px) {
+  .menuGrid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-rows: repeat(2, auto);
+    gap: 24px;
+  }
+  .menuCard:nth-child(5) {
+    grid-column: 1 / span 2; 
+    justify-self: center;
+  }
+}
+@media (max-width: 767px) {
+  .menuGrid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 24px;
+  }
+  .menuCard:nth-child(5) {
+    grid-column: 1 / span 2; /* Element cuối chiếm 2 cột */
+    justify-self: center;
+  }
+}
+@media (max-width: 900px) {
+  .menuGrid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 24px;
+  }
+  .menuCard:nth-child(5) {
+    grid-column: 1 / span 2; /* Element cuối chiếm 2 cột */
+    justify-self: center;
+  }
+}
+
+@media (min-width: 1350px) and (max-width: 1439px) {
+  .menuGrid  {
+    margin-top: -12.5%;
+  }
+}
+@media (min-width: 1440px) and (max-width: 1599px) {
+  .menuGrid  {
+    margin-top: -8.5%;
+  }
+}
+
+@media (min-width: 1600px) and (max-width: 1919px) {
+  .menuGrid  {
+    margin-top: -7.5%;
+  }
+}
+@media (min-width: 1920px) {
+  .menuGrid  {
+    margin-top: -7.5%;
+  }
 }
 
 /* Menu Card */

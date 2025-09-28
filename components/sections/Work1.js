@@ -1,5 +1,6 @@
 
 import Link from "next/link"
+import './add.css'
 
 export default function Work1() {
     return (
@@ -11,23 +12,22 @@ export default function Work1() {
                         <div className="col-md-12">
                             <div className="block-text center">
                                 {/* <h3 className="heading">How It Work</h3> */}
-                                <h3 className="heading" style={{'textAlign': 'left', 'textTransform': 'uppercase'}}>Giới thiệu về <span style={{'color': '#BCFE08'}}>Nivex</span></h3>
-                                <p className="fs-14 desc"  style={{'textAlign': 'left', 'padding': '0', 'fontWeight': '400'}}>
-                                    <b>Nivex</b> là nền tảng giao dịch tài sản số được hỗ trợ bởi AI. Tối ưu bảo mật & minh bạch phí, nhằm mang đến cho người dùng trải nghiệm giao dịch thông minh và tự động.
+                                <h3 className="heading" style={{'textAlign': 'left', 'textTransform': 'uppercase'}}>Hành Trình Của Bạn Bắt Đầu Từ <span style={{'color': '#BCFE08'}}>Tri Thức</span></h3>
+                                <p className="fs-14 desc white-text"  style={{'textAlign': 'left', 'padding': '0', 'fontWeight': '400'}}>
+                                   Tại <b>Nivex</b>, chúng tôi tin rằng một nhà giao dịch thành công trước hết phải là một người không ngừng học hỏi. Nền tảng của chúng tôi được thiết kế để đồng hành cùng bạn, từ những khái niệm cơ bản nhất đến việc làm chủ các chiến lược AI phức tạp.
                                 </p>
                             </div>
                             <div className="work__main">
                                 <div className="work-box" style={{'background': '#3f3f3f54', 'minHeight' : '276px', 'margin-right': '20px'}}>
                                     <div className="image">
-                                        <img src="/assets/images/icon/trading_icon.svg" alt="" />
+                                        {/* <img src="/assets/images/icon/trading_icon.svg" alt="" /> */}
+                                        <img src="https://learningchain.vn/wp-content/uploads/nivex/img_1.png" alt="" />
                                     </div>
                                     <div className="content">
                                         {/* <p className="step">Step 1</p> */}
-                                        <Link href="#" className="title fs-28" style={{'fontSize' : '28px', 'fontWeight': '500', 'marginBottom': '5px', 'padding' : '0 15px'}}>GIAO DỊCH <br></br>SPOT</Link>
-                                        <p className="text fs-14" style={{'padding': '5px 40px 25px 40px'}}>
-                                            Mua/bán theo giá hiện tại <br></br>
-                                            Sở hữu tài sản thật.<br></br>
-                                            Market/Limit, hỗ trợ DCA/Grid.
+                                        <Link href="#" className="title fs-28 gradient-text" style={{'fontSize' : '28px', 'fontWeight': '700', 'marginBottom': '5px', 'padding' : '0 15px'}}>Kiến Thức <br></br>Là Nền Tảng</Link>
+                                        <p className="text fs-14" style={{'padding': '5px 33px 25px 33px'}}>
+                                           Truy cập thư viện khóa học, hướng dẫn chi tiết và các chuyên đề chuyên sâu để thực sự hiểu rõ "tại sao" đằng sau mỗi chiến lược giao dịch.
                                           
                                         </p>
                                     </div>
@@ -35,30 +35,29 @@ export default function Work1() {
                                 </div>
                                 <div className="work-box" style={{'background': '#3f3f3f54', 'minHeight' : '276px', 'margin-right': '20px'}}>
                                     <div className="image">
-                                        <img src="/assets/images/icon/contract_icon.svg" alt="" />
+                                        {/* <img src="/assets/images/icon/contract_icon.svg" alt="" /> */}
+                                        <img src="https://learningchain.vn/wp-content/uploads/nivex/img_2.png" className="img-src-2-el" alt="" />
                                     </div>
                                     <div className="content">
                                         {/* <p className="step">Step 2</p> */}
-                                        <Link href="#" className="title" style={{'fontSize' : '28px', 'fontWeight': '500', 'marginBottom': '5px', 'padding' : '0 15px'}}>GIAO DỊCH <br></br>HỢP ĐỒNG</Link>
-                                        <p className="text fs-14" style={{'padding': '5px 40px 25px 40px'}}>
-                                            Hợp đồng đòn bẩy, không sở hữu coin. <br></br>
-                                            Quản trị rủi ro, dừng lỗ, ký quỹ.<br></br>
-                                            Cảnh báo ký quỹ thời gian thực.
+                                        <Link href="#" className="title gradient-text" style={{'fontSize' : '28px', 'fontWeight': '700', 'marginBottom': '5px', 'padding' : '0 15px'}}>Công Cụ Là<br></br> Phòng Thí Nghiệm</Link>
+                                        {/* <p className="text fs-14" style={{'padding': '5px 40px 25px 40px'}}> */}
+                                        <p className="text fs-14" style={{'padding': '5px 33px 25px 33px'}}>
+                                            Sau khi nắm vững kiến thức, hãy xem các công cụ AI của chúng tôi như một "phòng thí nghiệm" an toàn để áp dụng, kiểm chứng và theo dõi kết quả học tập.
                                         </p>
                                     </div>
                                     {/* <img className="line" src="/assets/images/icon/connect-line.png" alt="" /> */}
                                 </div>
-                                <div className="work-box" style={{'background': '#3f3f3f54', 'width': '30vw',  'minHeight' : '276px', 'margin-right': '20px'}}>
+                                <div className="work-box last-el-wb" style={{'background': '#3f3f3f54',  'minHeight' : '276px'}}>
                                     <div className="image">
-                                        <img src="/assets/images/icon/target_icon.svg" alt="" />
+                                        {/* <img src="/assets/images/icon/target_icon.svg" alt="" /> */}
+                                        <img src="https://learningchain.vn/wp-content/uploads/nivex/img_3.png" alt="" />
                                     </div>
                                     <div className="content">
                                         {/* <p className="step">Step 3</p> */}
-                                        <Link href="#" className="title" style={{'fontSize' : '28px', 'fontWeight': '500', 'marginBottom': '5px', 'padding' : '0 15px'}}>CHIẾN LƯỢC LỢI NHUẬN <br></br> DO AI DẪN DẮT</Link>
-                                        <p className="text fs-14" style={{'padding': '5px 40px 25px 40px'}}>
-                                            Chọn chiến lược theo khẩu vị rủi ro <br></br>
-                                            AI hỗ trợ phân tích và gợi ý. <br></br>
-                                            Tự đặt chốt lời/dừng lỗ, dừng sao chép.
+                                        <Link href="#" className="title gradient-text" style={{'fontSize' : '28px', 'fontWeight': '700', 'marginBottom': '5px', 'padding' : '0 15px'}}>Phát Triển <br></br>Cùng Cộng Đồng</Link>
+                                        <p className="text fs-14" style={{'padding': '5px 33px 25px 33px'}}>
+                                            Bạn không đơn độc. Tham gia các buổi hội thảo, workshop độc quyền và kết nối với cộng đồng các nhà giao dịch cùng chí hướng để cùng nhau phát triển.
                                         </p>
                                     </div>
                                     {/* <img className="line" src="/assets/images/icon/connect-line.png" alt="" /> */}
