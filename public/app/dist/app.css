@@ -8285,6 +8285,11 @@ h2.title {
         padding: 0 5%;
     }
 }
+@media (min-width: 1920px) {
+    .work.background-container-custom {
+        padding-top: 0%;
+    }
+}
 
 
 /* ai-copy-trade */
@@ -9130,5 +9135,59 @@ section.background-container-custom .work-box:hover {
 @media (min-width: 1920px) {
     h3.heading {
         padding-right: 45%;
+    }
+}
+
+/* mobile */
+@media (max-width: 600px) {
+    /* .header {
+        height: 60px !important;
+    } */
+    .cocktail-img {
+        display: none;
+    }
+    section.banner {
+        background-image: none;
+    }
+    .logo-cocktail-mb {
+        width: 65%;
+        position: relative;
+        z-index: 20;
+    }
+    .logo-cocktail-mb-container {
+        margin: 0 auto;
+        display: block;
+        text-align: center;
+    }
+    img.background-hero-mb {
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+    }
+    .banner .container {
+        position: relative;
+        z-index: 20;
+    }
+    h2.title_nivex_hub.gradient-text {
+        font-size: 24px;
+    }
+    section.banner {
+        padding-bottom: 40px !important;
+    }
+
+    .background-container-custom h3.heading {
+        padding-right: 40px !important;
+    }
+    p.fs-14.desc.white-text {
+        letter-spacing: 0px !important;
+        font-weight: 300 !important;
+    }
+}
+
+/* exception */
+@media (min-width: 601px) {
+    .logo-cocktail-mb-container {
+        display: none !important;
     }
 }

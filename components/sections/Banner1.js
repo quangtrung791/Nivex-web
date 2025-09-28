@@ -26,8 +26,12 @@ const swiperOptions = {
 export default function Banner1() {
     return (
         <>
-
+            
             <section className="banner">
+                <div className="logo-cocktail-mb-container">
+                    <img className="logo-cocktail-mb" src="https://learningchain.vn/wp-content/uploads/nivex/cocktail.png" alt=""></img>
+                    <img class="background-hero-mb" src="https://learningchain.vn/wp-content/uploads/nivex/backgr-hero-mb.png" alt=""></img>
+                </div>
                 <div className="container">
                     <div className="row">
                         <div className="col-xl-6 col-md-12">
@@ -40,7 +44,7 @@ export default function Banner1() {
                                 </h2>
                                 <p className="fs-14 desc main-description">
                                     Kiến thức dễ hiểu cho người mới, tin tức chọn lọc mỗi ngày và lớp học trực tuyến hàng tuần.
-Cùng khám phá Nivex & AI Copy Trade – nơi bạn không chỉ nhận công cụ, mà còn được trang bị nền tảng kiến thức và sự tự tin để đưa ra những quyết định giao dịch thông minh trong kỷ nguyên số.
+                                    <br></br>Cùng khám phá Nivex & AI Copy Trade – nơi bạn không chỉ nhận công cụ, mà còn được trang bị nền tảng kiến thức và sự tự tin để đưa ra những quyết định giao dịch thông minh trong kỷ nguyên số.
                                 </p>
                                 <Link href="#" className="btn-action" id="button-master-homepg" style={{'borderRadius':'0px'}}><span className="btn-master-homepg">Xem thêm</span></Link>
                                 {/* <div className="partner">
@@ -70,7 +74,7 @@ Cùng khám phá Nivex & AI Copy Trade – nơi bạn không chỉ nhận công 
                             </div>
                         </div>
                         <div className="col-xl-6 col-md-12">
-                            <div className="banner__image">
+                            <div className="banner__image cocktail-img">
                                 <img className="logo-robot-mc" src="https://learningchain.vn/wp-content/uploads/nivex/cocktail.png" alt="" />
                             </div>
                         </div>
