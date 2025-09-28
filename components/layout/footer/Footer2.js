@@ -33,27 +33,30 @@ export default function Footer2() {
                             </div>
                             <div className="col-xl-4 col-md-6">
                                 <div className="widget" style={{'marginLeft': '0%'}}>
-                                    <div className="widget-link">
-                                        <h6 className="title">SẢN PHẨM</h6>
+                                    <div className="widget-link s1">
+                                        <h6 className="title">VỀ NIVEX</h6>
                                         <ul>
-                                            <li className="link-footer" style={{ 'fontWeight': 300 }}><Link href="/spot">Giao ngay</Link></li>
-                                            <li className="link-footer" style={{ 'fontWeight': 300 }}><Link href="#">Hợp đồng nghịch đảo</Link></li>
-                                            <li className="link-footer" style={{ 'fontWeight': 300 }}><Link href="#">Hợp đồng USDT</Link></li>
-                                            <li className="link-footer" style={{ 'fontWeight': 300 }}><Link href="/exchange">Sàn giao dịch</Link></li>
-                                            <li className="link-footer" style={{ 'fontWeight': 300 }}><Link href="#">Launchpad</Link></li>
-                                            <li className="link-footer" style={{ 'fontWeight': 300 }}><Link href="#">Binance Pay</Link></li>
+                                            <li className="link-footer" style={{ 'fontWeight': 300 }}><Link href="/gioi-thieu-ve-nivex"  style={{ 'fontWeight': 300 }}>Giới thiệu</Link></li>
+                                            <li className="link-footer" style={{ 'fontWeight': 300 }}><Link href="#"  style={{ 'fontWeight': 300 }}>Tải App</Link></li>
+                                            <li className="link-footer" style={{ 'fontWeight': 300 }}><Link href="/huong-dan-su-dung-app-nivex"  style={{ 'fontWeight': 300 }}>Hướng dẫn sử dụng App Nivex</Link></li>
+                                            <li className="link-footer" style={{ 'fontWeight': 300 }}><Link href="/su-kien"  style={{ 'fontWeight': 300 }}>Sự kiện</Link></li>
                                         </ul>
                                     </div>
                                     <div className="widget-link s2 custom-s2" >
-                                        <h6 className="title">DỊCH VỤ</h6>
+                                        <h6 className="title">KIẾN THỨC</h6>
                                         <ul>
-                                            {/* <li className="link-footer"><Link href="/buy-crypto-select">Mua Crypto</Link></li> */}
-                                            <li className="link-footer" ><Link style={{ 'fontWeight': 300 }} href="/">Các thuật ngữ</Link></li>
-                                            <li className="link-footer" ><Link style={{ 'fontWeight': 300 }} href="/markets">Thị trường</Link></li>
-                                            <li className="link-footer" ><Link style={{ 'fontWeight': 300 }} href="#">Phí giao dịch</Link></li>
-                                            <li className="link-footer" ><Link style={{ 'fontWeight': 300 }} href="#">Liên kết (Affiliate)</Link></li>
-                                            <li className="link-footer" ><Link style={{ 'fontWeight': 300 }} href="#">Giới thiệu (Referral)</Link></li>
-                                            <li className="link-footer" ><Link style={{ 'fontWeight': 300 }} href="#">API</Link></li>
+                                            <li className="link-footer" ><Link style={{ 'fontWeight': 300 }} href="/kien-thuc-tong-quan" >Tổng quan</Link></li>
+                                            <li className="link-footer" ><Link style={{ 'fontWeight': 300 }} href="/thuat-ngu">Thuật ngữ</Link></li>
+                                        </ul>
+                                    </div>
+                                    <div className="widget-link s3" >
+                                        <h6 className="title">HỖ TRỢ</h6>
+                                        <ul>
+                                            <li className="link-footer" ><Link style={{ 'fontWeight': 300 }} href="/" >Tài khoản & Bảo mật</Link></li>
+                                            <li className="link-footer" ><Link style={{ 'fontWeight': 300 }} href="/">Nạp & Rút tiền</Link></li>
+                                            <li className="link-footer" ><Link style={{ 'fontWeight': 300 }} href="/">Chương trình đại lý</Link></li>
+                                            <li className="link-footer" ><Link style={{ 'fontWeight': 300 }} href="/">An toàn & Bảo mật</Link></li>
+                                            
                                         </ul>
                                     </div>
                                 </div>

@@ -8401,9 +8401,16 @@ img.ai-icon-small {
     font-weight: 400;
 }
 
-@media (min-width: 1440px ) and (max-width: 1599px) {
+@media (min-width: 1009px) and (max-width: 1050px) {
     .custom-s2 {
-        padding-left: 130px !important;
+        padding-left: 100px !important;
+    }
+}
+
+@media (min-width: 1440px ) and (max-width: 1599px) {
+    footer.footer .custom-s2 {
+        /* padding-left: 90px !important; */
+        padding-left: 0px !important;
     }
 }
 @media (min-width: 1600px ) and (max-width: 1919px) {
@@ -8694,9 +8701,9 @@ img.ai-icon-small {
     /* footer.footer button.btn-action {
         margin-right: 2% !important;
     } */
-     .footer.style-2 .footer__main .widget .widget-link.s2 {
+     /* .footer.style-2 .footer__main .widget .widget-link.s2 {
         padding-left: 130px !important;
-     }
+     } */
 }
 
 @media (max-width: 1200px) {
@@ -8804,9 +8811,9 @@ img.ai-icon-small {
     .about .about_image {
         margin-top: 15%;
     }
-    .footer.style-2 .footer__main .widget .widget-link.s2 {
+    /* .footer.style-2 .footer__main .widget .widget-link.s2 {
         padding-left: 269px !important;
-    }
+    } */
     section.crypto-learning-section button.btn-crypto-card-learning {
         margin: 2.5% auto;
     }
@@ -9183,6 +9190,9 @@ section.background-container-custom .work-box:hover {
         letter-spacing: 0px !important;
         font-weight: 300 !important;
     }
+    .background-container-custom h3.heading {
+        letter-spacing: 0.6px !important;
+    }
 }
 
 /* exception */
@@ -9195,4 +9205,57 @@ section.background-container-custom .work-box:hover {
 .customed-menu-grid {
   box-shadow: 0 0 20px 2px #BCFE0833 !important;
   transition: box-shadow 0.3s ease-in-out !important;
+}
+
+@media (min-width: 1440px) {
+    p.fs-14.desc.main-description {
+        line-height: 1.6 !important;
+    }
+    a#button-master-homepg {
+        margin-top: 10px !important;
+    }
+}
+
+.widget {
+  display: flex !important;
+  flex-direction: row;
+  justify-content: space-between; /* Phân đều các widget-link */
+  height: 100%; /* Đảm bảo chiếm toàn bộ chiều cao cột */
+  gap: 0; /* Xóa khoảng cách thừa nếu có */
+}
+
+.widget-link {
+  margin-bottom: 0; /* Xóa margin nếu có */
+}
+
+/* Fix footer */
+@media (min-width: 700px)  {
+    .widget-link.s1 {
+        padding-left: 0px !important;
+        position: relative;
+        left: -60px;
+    }
+    .widget-link.s2.custom-s2 {
+        padding-left: 0px !important;
+        position: relative;
+        left: -30px;
+        width: 160px;
+    }
+    .widget-link.s3 {
+        padding-left: 0px !important;
+        position: relative;
+        left: 20px;
+    }
+}
+@media (min-width: 400px) and (max-width: 600px) {
+    .widget-link.s2.custom-s2 {
+        padding-left: 0px !important;
+        min-width: 135px !important;
+    }
+}
+@media (max-width: 399px) {
+    .widget-link.s2.custom-s2 {
+        padding-left: 0px !important;
+        min-width: 135px !important;
+    }
 }
