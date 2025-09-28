@@ -23,7 +23,30 @@
   padding: 26px;
   border: 2px solid rgb(35, 38, 47, 0.7);
   background: #18191D;
-  margin-top: -8.5%;
+  backdrop-filter: blur(4px);
+  /* margin-top: -8.5%; */
+}
+
+@media (min-width: 1350px) and (max-width: 1439px) {
+  .menuGrid  {
+    margin-top: -16.5%;
+  }
+}
+@media (min-width: 1440px) and (max-width: 1599px) {
+  .menuGrid  {
+    margin-top: -8.5%;
+  }
+}
+
+@media (min-width: 1600px) and (max-width: 1919px) {
+  .menuGrid  {
+    margin-top: -17.5%;
+  }
+}
+@media (min-width: 1920px) {
+  .menuGrid  {
+    margin-top: -17.5%;
+  }
 }
 
 /* Menu Card */
