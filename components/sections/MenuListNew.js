@@ -49,7 +49,7 @@ export default function MenuListNew() {
       <div className={`container ${styles.containerCustom}`}>
         {/* <div className="row"> */}
           {/* <div className="col-md-12"> */}
-            <div className={styles.menuGrid}>
+            <div className={`${styles.menuGrid} customed-menu-grid`}>
               {menuItems.map((item, index) => (
                 <Link href={item.href} key={index} className={styles.menuCard}>
                   <div className={styles.iconContainer}>

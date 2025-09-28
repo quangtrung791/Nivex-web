@@ -9191,3 +9191,8 @@ section.background-container-custom .work-box:hover {
         display: none !important;
     }
 }
+
+.customed-menu-grid {
+  box-shadow: 0 0 20px 2px #BCFE0833 !important;
+  transition: box-shadow 0.3s ease-in-out !important;
+}
