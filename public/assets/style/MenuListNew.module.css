@@ -27,6 +27,41 @@
   /* margin-top: -8.5%; */
 }
 
+/* Tablet nhỏ và mobile: 2-2-1 layout */
+@media (min-width: 768px) and (max-width: 1200px) {
+  .menuGrid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-rows: repeat(2, auto);
+    gap: 24px;
+  }
+  .menuCard:nth-child(5) {
+    grid-column: 1 / span 2; 
+    justify-self: center;
+  }
+}
+@media (max-width: 767px) {
+  .menuGrid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 24px;
+  }
+  .menuCard:nth-child(5) {
+    grid-column: 1 / span 2; /* Element cuối chiếm 2 cột */
+    justify-self: center;
+  }
+}
+@media (max-width: 900px) {
+  .menuGrid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 24px;
+  }
+  .menuCard:nth-child(5) {
+    grid-column: 1 / span 2; /* Element cuối chiếm 2 cột */
+    justify-self: center;
+  }
+}
+
 @media (min-width: 1350px) and (max-width: 1439px) {
   .menuGrid  {
     margin-top: -16.5%;
@@ -40,12 +75,12 @@
 
 @media (min-width: 1600px) and (max-width: 1919px) {
   .menuGrid  {
-    margin-top: -17.5%;
+    margin-top: -7.5%;
   }
 }
 @media (min-width: 1920px) {
   .menuGrid  {
-    margin-top: -17.5%;
+    margin-top: -7.5%;
   }
 }
 

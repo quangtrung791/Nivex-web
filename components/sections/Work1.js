@@ -12,7 +12,7 @@ export default function Work1() {
                         <div className="col-md-12">
                             <div className="block-text center">
                                 {/* <h3 className="heading">How It Work</h3> */}
-                                <h3 className="heading" style={{'textAlign': 'left', 'textTransform': 'uppercase'}}>Hành Trình Của Bạn Bắt Đầu<br></br> Từ <span style={{'color': '#BCFE08'}}>Tri Thức</span></h3>
+                                <h3 className="heading" style={{'textAlign': 'left', 'textTransform': 'uppercase'}}>Hành Trình Của Bạn Bắt Đầu Từ <span style={{'color': '#BCFE08'}}>Tri Thức</span></h3>
                                 <p className="fs-14 desc white-text"  style={{'textAlign': 'left', 'padding': '0', 'fontWeight': '400'}}>
                                    Tại <b>Nivex</b>, chúng tôi tin rằng một nhà giao dịch thành công trước hết phải là một người không ngừng học hỏi. Nền tảng của chúng tôi được thiết kế để đồng hành cùng bạn, từ những khái niệm cơ bản nhất đến việc làm chủ các chiến lược AI phức tạp.
                                 </p>

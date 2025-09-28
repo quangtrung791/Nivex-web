@@ -8262,7 +8262,7 @@ h2.title {
 }
 @media (min-width: 1920px)  {
     .banner {
-        padding: 5% 7% 10% 7%;
+        padding: 5% 7% 2.5% 7%;
     }
     section.background-container-custom .col-md-12 {
         padding-right: unset !important;
@@ -8273,7 +8273,8 @@ h2.title {
 /* .gioi-thieu-nivex */
 @media (min-width: 1440px) and (max-width: 1599px) {
     .work.background-container-custom {
-        padding: 5% 8%;
+        /* padding: 5% 8%; */
+        padding: 1% 8% 5% 8%;
     }
     .last-el-wb {
         margin-right: 0px;
@@ -9117,5 +9118,17 @@ section.background-container-custom .work-box:hover {
 @media (min-width: 1350px) and (max-width: 1439px) {
     a#button-master-homepg {
         margin-top: 27px !important;
+    }
+}
+
+
+@media (min-width: 1440px) and (max-width: 1919px) {
+    h3.heading {
+        padding-right: 33%;
+    }
+}
+@media (min-width: 1920px) {
+    h3.heading {
+        padding-right: 45%;
     }
 }
