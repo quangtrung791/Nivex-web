@@ -23,13 +23,21 @@ export async function PUT(request, { params }) {
     const id = parseInt(params.id)
     const data = await request.json()
     
+    console.log("PUT course data received:", data);
+    
+    // Parse và validate datetime inputs
+    const startDate = data.start_date ? new Date(data.start_date).toISOString() : null;
+    const endDate = data.end_date ? new Date(data.end_date).toISOString() : null;
+    
+    console.log("Parsed dates for update:", { startDate, endDate });
+    
     const paramsArr = [
       data.title,
       data.type ?? 'online',
       JSON.stringify(data.category ?? []),
       data.status ?? 'active',
-      data.start_date ?? null, 
-      data.end_date ?? null,
+      startDate, 
+      endDate,
       data.link_zoom ?? null,
       data.content ?? null,
       data.image_url ?? null,
