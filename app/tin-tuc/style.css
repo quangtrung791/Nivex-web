@@ -1,4 +1,11 @@
 /* Fixed */
+/* .widget {
+    flex-direction: column !important;
+} */
+.widget.recent.mt-0 {
+    flex-direction: column !important;
+}
+
 .heading-title-main h3.title:hover {
     color: #BCFE08;
 }
