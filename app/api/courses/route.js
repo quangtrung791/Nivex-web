@@ -70,15 +70,6 @@ export async function GET(request) {
       
       // Sử dụng utility function để xác định status
       const courseStatus = getCourseStatus(course.start_date, course.end_date)
-      
-      console.log('Course processing:', {
-        id: course.id,
-        title: course.title,
-        start_date: course.start_date,
-        end_date: course.end_date,
-        status: courseStatus,
-        formatted_date: formatDateForUser(course.start_date)
-      })
 
       // Determine button text and class
       let buttonText = 'Xem ngay'
@@ -101,7 +92,7 @@ export async function GET(request) {
         type: course.type,
         category: course.category || [],
         status: courseStatus,
-        date: formatDateForUser(course.start_date) || new Date(course.start_date).toLocaleDateString('vi-VN', {
+        date: startDate.toLocaleDateString('vi-VN', {
           day: '2-digit',
           month: '2-digit', 
           year: 'numeric'
