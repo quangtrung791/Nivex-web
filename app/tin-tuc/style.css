@@ -288,7 +288,7 @@ footer.footer.style-2.footer-main {
         margin-bottom: 29px !important;
     }
     .blog-details .box-image {
-        margin-bottom: 75px;
+        margin-bottom: 75px !important;
     }
     .heading-title-main h3.tin-tuc {
         font-size: 32px;
@@ -467,7 +467,8 @@ footer.footer.style-2.footer-main {
         padding-bottom: 5px;
     }
     section.blog-details .tin-nong{
-        max-height: 650px; 
+        /* max-height: 650px;  */
+        max-height: 700px; 
         overflow-y: auto;
     }
     .blog-box .box-content .title {
@@ -652,7 +653,7 @@ footer.footer.style-2.footer-main {
         padding-bottom: 5px;
     }
     section.blog-details .tin-nong{
-        max-height: 650px; 
+        max-height: 700px; 
         overflow-y: auto;
     }
     .blog-box .box-content .title {
@@ -841,7 +842,7 @@ footer.footer.style-2.footer-main {
         padding-bottom: 5px;
     }
     section.blog-details .tin-nong{
-        max-height: 800px; 
+        max-height: 840px; 
         overflow-y: auto;
     }
     .blog-box .box-content .title {
