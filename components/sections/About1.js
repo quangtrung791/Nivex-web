@@ -15,15 +15,37 @@ const swiperOptions = {
 export default function About1() {
     return (
         <>
-
             <section className="about">
+                <div className="about-first-title-container">
+                    <h3 className="about-first-title">KHÁM PHÁ <span className="gradient-text">HỆ SINH THÁI HỌC TẬP</span> CỦA BẠN</h3>
+                </div>
                 <div className="container ai-copy-trade">
+                    {/* Các khóa học chuyên sâu */}
+                    <div className="row">
+                        <div className="col-xl-6 col-md-12">
+                            <div className="about__content element-1-e-l" style={{'padding-left': '20px'}} data-aos="fade-up" data-aos-duration={1000}>
+                                <h3 className="heading"><span style={{'color' : '#BCFE08'}}>CÁC KHÓA HỌC CHUYÊN SÂU</span></h3>
+                                <p className="fs-14 decs text-white">
+                                   <b>Nivex</b> tự hào góp mặt tại các hội nghị và sự kiện blockchain hàng đầu thế giới, kết nối với các nhà lãnh đạo ngành và mang về những kiến thức chuyên sâu độc quyền cho cộng đồng của mình.
+                                </p>
+                                <Link href="#" className="btn-action" style={{'color':'black', 'padding': '13px 25px'}}>Xem thêm</Link>
+                            </div>
+                        </div>
+
+                        <div className="col-xl-6 col-md-12 limit-width">
+                            <div className="about_image">                                
+                                 <img className="img0-ai pic-1" src="https://learningchain.vn/wp-content/uploads/nivex/framei.png" ></img>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Sự kiện quốc tế */}
                     <div className="row">
                         <div className="col-xl-6 col-md-12">
                             <div className="about_image">
                                  {/* <img className="img0-ai" src="https://learningchain.vn/wp-content/uploads/nivex/world_map.svg" ></img> */}
                                 
-                                 <img className="img0-ai" src="/assets/images/background/world_map_homepage.webp" ></img>
+                                 <img className="img0-ai" src="https://learningchain.vn/wp-content/uploads/nivex/world.png" ></img>
                                 {/* <div className="swiper img-swiper">
                                     <Swiper {...swiperOptions} className="swiper-wrapper">
                                         <SwiperSlide>
@@ -48,18 +70,18 @@ export default function About1() {
                                 <img className="icon icon-5" src="/assets/images/icon/icon-05.png" alt="" /> */}
                             </div>
                         </div>
-                        <div className="col-xl-6 col-md-12">
+                        <div className="col-xl-6 col-md-12 limit-width">
                             <div className="about__content" style={{'padding-left': '20px'}} data-aos="fade-up" data-aos-duration={1000}>
-                                <h3 className="heading"><span style={{'color' : '#BCFE08'}}>AI Copy Trade</span> của Nivex</h3>
-                                <p className="fs-14 decs">
-                                   Nivex mang đến bộ công cụ <b>sao chép giao dịch được AI hỗ trợ</b>. Hệ thống phân tích dữ liệu theo thời gian thực để gợi ý chiến lược <b>phù hợp khẩu vị rủi ro</b>. Bạn luôn chủ động phân bổ vốn, đặt chốt lời/dừng lỗ và có thể dừng sao chép bất cứ lúc nào.
+                                <h3 className="heading"><span style={{'color' : '#BCFE08'}}>SỰ KIỆN QUỐC TẾ</span></h3>
+                                <p className="fs-14 decs text-white">
+                                   <b>Nivex</b> tự hào góp mặt tại các hội nghị và sự kiện blockchain hàng đầu thế giới, kết nối với các nhà lãnh đạo ngành và mang về những kiến thức chuyên sâu độc quyền cho cộng đồng của mình.
                                 </p>
-                                <ul className="list">
+                                {/* <ul className="list">
                                     <li>
                                         <img className="ai-icon-small" src="/assets/images/icon/coin_ico.svg" />
                                         <div>
                                             <h6 className="title" style={{'marginBottom': '0'}}>
-                                                {/* <span className="icon-check" /> */}
+                                                <span className="icon-check" />
                                                 Spot AI
                                             </h6>
                                             <p className="fs-14 text">
@@ -71,7 +93,7 @@ export default function About1() {
                                         <img className="ai-icon-small" src="/assets/images/icon/brain_ico.svg" />
                                         <div>
                                             <h6 className=" title" style={{'marginBottom': '0'}}>
-                                                {/* <span className="icon-check" /> */}
+                                                <span className="icon-check" />
                                                 Futures AI 
                                             </h6>
                                             <p className="fs-14 text">
@@ -79,8 +101,8 @@ export default function About1() {
                                             </p>
                                         </div>
                                     </li>
-                                </ul>
-                                <Link href="#" className="btn-action" style={{'color':'black', 'padding': '13px 25px'}}>Tìm hiểu AI Copy Trade</Link>
+                                </ul> */}
+                                <Link href="#" className="btn-action" style={{'color':'black', 'padding': '13px 25px'}}>Xem thêm</Link>
                             </div>
                         </div>
                     </div>

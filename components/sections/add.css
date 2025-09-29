@@ -42,3 +42,177 @@ p.text.fs-14 {
         top: -50px !important;
     }
 }
+
+.ai-copy-trade h3.heading {
+    padding-right: 0px !important;
+}
+.about__content.aos-init.aos-animate {
+    padding-right: 0px !important;
+}
+/* Responsive */
+@media (min-width: 1440px) and (max-width: 1599px) {
+    .ai-copy-trade h3.heading {
+        font-size: 28px  !important;
+    }
+    img.img0-ai.pic-1 {
+        /* width: 75% !important; */
+    }
+    .about__content.aos-init.aos-animate {
+        padding-top: 75px;
+    }
+    .element-1-e-l {
+        padding-top: 165px !important;
+    }
+    .ai-copy-trade a.btn-action {
+        margin-top: 20px !important;
+    }
+    h3.title-ssgd {
+        font-size: 28px;
+        background: linear-gradient(#BCFE08, #86F969);
+        color: transparent;
+        background-clip: text;
+        padding-top: 4px;
+        margin-bottom: 16px;
+    }
+    .san-sang-gd-container {
+        text-align: center;
+    }
+    p.text-desc-san-sang {
+        padding: 0 27%;
+    }
+    .about-first-title-container {
+        text-align: center;
+        margin-bottom: 5%;
+    }
+    .about-first-title-container .about-first-title {
+        font-size: 56px; /* để cho nó chung padding với section ở trên */
+    }
+    section.about {
+        padding-top: 0 !important;
+    }
+    section.work .col-md-12 {
+        padding-left: 0 !important;
+    }
+
+}
+@media (min-width: 1600px) and (max-width: 1919px) {
+    .ai-copy-trade h3.heading {
+        font-size: 28px  !important;
+    }
+    img.img0-ai.pic-1 {
+        /* width: 75% !important; */
+    }
+    .about__content.aos-init.aos-animate {
+        padding-top: 75px;
+    }
+    .element-1-e-l {
+        padding-top: 165px !important;
+    }
+    .ai-copy-trade a.btn-action {
+        margin-top: 20px !important;
+    }
+    h3.title-ssgd {
+        font-size: 28px;
+        background: linear-gradient(#BCFE08, #86F969);
+        color: transparent;
+        background-clip: text;
+        padding-top: 4px;
+        margin-bottom: 16px;
+    }
+    .san-sang-gd-container {
+        text-align: center;
+    }
+    p.text-desc-san-sang {
+        padding: 0 27%;
+    }
+    .about-first-title-container {
+        text-align: center;
+        margin-bottom: 5%;
+        margin-top: 5%;
+    }
+    .about-first-title-container .about-first-title {
+        font-size: 48px;
+    }
+    section.about {
+        padding-top: 0 !important;
+        padding: 0% 6% 5% 6% !important;
+    }
+    section.work .col-md-12 {
+        padding-left: 0 !important;
+    }
+    .work.background-container-custom {
+        padding: 0 8% !important;
+    }
+    section.work .col-md-12 {
+        padding-right: 0 !important;
+    }
+    .container.ai-copy-trade {
+        padding: 0 !important;
+    }
+    .ai-copy-trade .col-xl-6.col-md-12 {
+        padding: 0 !important;
+    }
+
+}
+@media (min-width: 1920px) {
+    .ai-copy-trade h3.heading {
+        font-size: 28px  !important;
+    }
+    img.img0-ai.pic-1 {
+        /* width: 75% !important; */
+    }
+    .about__content.aos-init.aos-animate {
+        padding-top: 75px;
+    }
+    .element-1-e-l {
+        padding-top: 165px !important;
+    }
+    .ai-copy-trade a.btn-action {
+        margin-top: 20px !important;
+    }
+    h3.title-ssgd {
+        font-size: 28px;
+        background: linear-gradient(#BCFE08, #86F969);
+        color: transparent;
+        background-clip: text;
+        padding-top: 4px;
+        margin-bottom: 16px;
+    }
+    .san-sang-gd-container {
+        text-align: center;
+    }
+    p.text-desc-san-sang {
+        padding: 0 27%;
+    }
+    .about-first-title-container {
+        text-align: center;
+        margin-bottom: 5%;
+        margin-top: 5%;
+    }
+    .about-first-title-container .about-first-title {
+        font-size: 48px;
+    }
+    section.about {
+        padding-top: 0 !important;
+        padding: 0% 6% 5% 6% !important;
+    }
+    section.work .col-md-12 {
+        padding-left: 0 !important;
+    }
+    .work.background-container-custom {
+        padding: 0 8% !important;
+    }
+    section.work .col-md-12 {
+        padding-right: 0 !important;
+    }
+    .container.ai-copy-trade {
+        padding: 0 !important;
+    }
+    .ai-copy-trade .col-xl-6.col-md-12 {
+        padding: 0 !important;
+    }
+    .limit-width {
+        width: 45% !important;
+        margin-left: 4% !important;
+    }
+}
