@@ -355,6 +355,16 @@ h3.pageTitleHeading span {
   color: #A6AAB7;
   font-style: italic;
 }
+.pageTitleCourse, .coursesWrapper {
+    padding-left: 7%;
+    padding-right: 7%;
+}
+@media (min-width: 650px) and (max-width:1439px) {
+  .pageTitleCourse, .coursesWrapper {
+    padding-left: 3.5%;
+    padding-right: 3.5%;
+  }
+}
 
 /* Responsive Design */
 @media (max-width: 1024px) {
