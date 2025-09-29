@@ -3,20 +3,26 @@ export const vietnamTimeZone = 'Asia/Ho_Chi_Minh';
 
 // Lấy thời gian hiện tại theo timezone Việt Nam
 export function getVietnamTime() {
-  return new Date(new Date().toLocaleString("en-US", { timeZone: vietnamTimeZone }));
+  // Cách đơn giản hơn: UTC + 7 giờ
+  const now = new Date();
+  return new Date(now.getTime() + (7 * 60 * 60 * 1000));
 }
 
 // Chuyển đổi UTC time thành Vietnam time
 export function convertToVietnamTime(utcDate) {
   if (!utcDate) return null;
-  return new Date(new Date(utcDate).toLocaleString("en-US", { timeZone: vietnamTimeZone }));
+  const date = new Date(utcDate);
+  return new Date(date.getTime() + (7 * 60 * 60 * 1000));
 }
 
 // Format date cho hiển thị trong admin
 export function formatDateForAdmin(date) {
   if (!date) return null;
-  return new Date(date).toLocaleString('vi-VN', {
-    timeZone: vietnamTimeZone,
+  const vietnamDate = new Date(date);
+  // Thêm 7 giờ để chuyển từ UTC sang Vietnam time
+  vietnamDate.setHours(vietnamDate.getHours() + 7);
+  
+  return vietnamDate.toLocaleString('vi-VN', {
     year: 'numeric',
     month: '2-digit',
     day: '2-digit',
@@ -29,12 +35,21 @@ export function formatDateForAdmin(date) {
 // Format date cho hiển thị user-friendly
 export function formatDateForUser(date) {
   if (!date) return null;
-  return new Date(date).toLocaleDateString('vi-VN', {
-    timeZone: vietnamTimeZone,
+  
+  console.log('formatDateForUser input:', date);
+  
+  const vietnamDate = new Date(date);
+  // Thêm 7 giờ để chuyển từ UTC sang Vietnam time
+  vietnamDate.setHours(vietnamDate.getHours() + 7);
+  
+  const result = vietnamDate.toLocaleDateString('vi-VN', {
     day: '2-digit',
     month: '2-digit',
     year: 'numeric'
   });
+  
+  console.log('formatDateForUser output:', result);
+  return result;
 }
 
 // So sánh thời gian để xác định trạng thái course

@@ -1,5 +1,6 @@
 import { query } from "@/app/lib/neon";
 import { NextResponse } from "next/server";
+import { formatDateForAdmin } from '@/utils/timezone';
 
 export const runtime = "nodejs";
 
@@ -10,22 +11,30 @@ export async function GET(request) {
     // Query courses table with explicit schema
     const rows = await query('SELECT * FROM public.courses ORDER BY id ASC');
     
-    // Transform courses data for React Admin với timezone handling
-    const courses = rows.map(row => ({
-      id: row.id,
-      title: row.title,
-      type: row.type || 'online',
-      status: row.status || 'active',
-      // Đảm bảo dates được format đúng cho React Admin DateTimeInput
-      start_date: row.start_date ? new Date(row.start_date).toISOString() : null, 
-      end_date: row.end_date ? new Date(row.end_date).toISOString() : null,  
-      link_zoom: row.link_zoom,
-      content: row.content || '',
-      image_url: row.image_url,
-      created_at: row.created_at,
-      updated_at: row.updated_at,
-      category: row.category || []
-    }));
+    // Transform courses data for React Admin với Vietnam timezone
+    const courses = rows.map(row => {
+      console.log('Admin API - Raw database dates:', {
+        id: row.id,
+        start_date: row.start_date,
+        end_date: row.end_date
+      });
+      
+      return {
+        id: row.id,
+        title: row.title,
+        type: row.type || 'online',
+        status: row.status || 'active',
+        // Format dates cho React Admin với Vietnam timezone
+        start_date: row.start_date, // Giữ nguyên ISO string cho DateTimeInput
+        end_date: row.end_date,    // Giữ nguyên ISO string cho DateTimeInput
+        link_zoom: row.link_zoom,
+        content: row.content || '',
+        image_url: row.image_url,
+        created_at: row.created_at,
+        updated_at: row.updated_at,
+        category: row.category || []
+      };
+    });
     
     console.log("Returning courses:", courses.length);
     
