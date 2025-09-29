@@ -10,14 +10,15 @@ export async function GET(request) {
     // Query courses table with explicit schema
     const rows = await query('SELECT * FROM public.courses ORDER BY id ASC');
     
-    // Transform courses data for React Admin (thêm link_zoom)
+    // Transform courses data for React Admin với timezone handling
     const courses = rows.map(row => ({
       id: row.id,
       title: row.title,
       type: row.type || 'online',
       status: row.status || 'active',
-      start_date: row.start_date, 
-      end_date: row.end_date,  
+      // Đảm bảo dates được format đúng cho React Admin DateTimeInput
+      start_date: row.start_date ? new Date(row.start_date).toISOString() : null, 
+      end_date: row.end_date ? new Date(row.end_date).toISOString() : null,  
       link_zoom: row.link_zoom,
       content: row.content || '',
       image_url: row.image_url,
@@ -48,15 +49,23 @@ export async function POST(request) {
   try {
     const data = await request.json();
     
-    // Insert into courses table (thêm link_zoom)
+    console.log("POST course data received:", data);
+    
+    // Parse và validate datetime inputs
+    const startDate = data.start_date ? new Date(data.start_date).toISOString() : null;
+    const endDate = data.end_date ? new Date(data.end_date).toISOString() : null;
+    
+    console.log("Parsed dates:", { startDate, endDate });
+    
+    // Insert into courses table với timezone handling
     const result = await query(
       'INSERT INTO public.courses (title, type, status, start_date, end_date, link_zoom, content, image_url, category) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *',
       [
         data.title || 'New Course',
         data.type || 'online',
         data.status || 'active',
-        data.start_date || null, 
-        data.end_date || null,
+        startDate, 
+        endDate,
         data.link_zoom || null,
         data.content || '',
         data.image_url || null,

@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { query } from "@/app/lib/neon"
+import { getVietnamTime, getCourseStatus, formatDateForUser } from '@/utils/timezone'
 
 export const runtime = 'nodejs';
 
@@ -38,21 +39,27 @@ export async function GET(request) {
       paramIndex++
     }
 
-    // Apply status filter based on current date and course dates
+    // Apply status filter based on Vietnam timezone
     if (filter !== 'all') {
-      const now = new Date()
+      const vietnamTime = getVietnamTime()
+      
+      console.log('Filter debug:', { 
+        filter, 
+        vietnamTime: vietnamTime.toISOString(),
+        vietnamTimeLocal: vietnamTime.toString()
+      })
       
       if (filter === 'online') { // Đang diễn ra
         sqlQuery += ` AND start_date <= $${paramIndex} AND (end_date IS NULL OR end_date >= $${paramIndex})`
-        queryParams.push(now.toISOString())
+        queryParams.push(vietnamTime.toISOString())
         paramIndex++
       } else if (filter === 'offline') { // Sắp diễn ra
         sqlQuery += ` AND start_date > $${paramIndex}`
-        queryParams.push(now.toISOString())
+        queryParams.push(vietnamTime.toISOString())
         paramIndex++
       } else if (filter === 'completed') { // Đã kết thúc
         sqlQuery += ` AND end_date < $${paramIndex}`
-        queryParams.push(now.toISOString())
+        queryParams.push(vietnamTime.toISOString())
         paramIndex++
       }
     }
@@ -61,29 +68,36 @@ export async function GET(request) {
   sqlQuery += ` ORDER BY start_date DESC LIMIT 30`
     const result = await query(sqlQuery, queryParams)
 
-    // Process courses data
+    // Process courses data với timezone utility
     const courses = result.map(course => {
-      const now = new Date()
       const startDate = new Date(course.start_date)
       const endDate = course.end_date ? new Date(course.end_date) : null
+      
+      // Sử dụng utility function để xác định status
+      const courseStatus = getCourseStatus(course.start_date, course.end_date)
+      
+      console.log('Debug course status:', {
+        courseId: course.id,
+        title: course.title,
+        startDate: course.start_date,
+        endDate: course.end_date,
+        status: courseStatus,
+        vietnamTime: getVietnamTime().toISOString()
+      })
 
-      // Determine course status
-      let courseStatus = 'available'
+      // Determine button text and class
       let buttonText = 'Xem ngay'
       let buttonClass = ''
       
-      if (endDate && endDate < now) {
-        courseStatus = 'completed'
+      if (courseStatus === 'completed') {
         buttonText = 'Xem lại'
         buttonClass = 'replay'
-      } else if (startDate > now) {
-        courseStatus = 'upcoming'
-        buttonText = 'Xem ngay'
-        buttonClass = ''
+      } else if (courseStatus === 'upcoming') {
+        buttonText = 'Sắp diễn ra'
+        buttonClass = 'upcoming'
       } else {
-        courseStatus = 'ongoing'
         buttonText = 'Xem ngay'
-        buttonClass = ''
+        buttonClass = 'active'
       }
 
       return {
@@ -92,11 +106,7 @@ export async function GET(request) {
         type: course.type,
         category: course.category || [],
         status: courseStatus,
-        date: startDate.toLocaleDateString('vi-VN', {
-          day: '2-digit',
-          month: '2-digit', 
-          year: 'numeric'
-        }),
+        date: formatDateForUser(course.start_date),
         start_date: course.start_date,
         end_date: course.end_date,
         link_zoom: course.link_zoom,
