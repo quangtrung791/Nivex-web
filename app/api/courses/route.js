@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 import { query } from "@/app/lib/neon"
-import { getVietnamTime, getCourseStatus, formatDateForUser } from '@/utils/timezone'
+import { getVietnamTime, getCourseStatus } from '@/utils/timezone'
 
 export const runtime = 'nodejs';
 

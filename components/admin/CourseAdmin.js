@@ -66,53 +66,6 @@ const SimpleDateField = ({ source, label, showTime = false }) => {
   return <span>{formatted}</span>
 }
 
-// Custom DateField với Vietnam timezone - Simple approach
-const VietnamDateField = ({ source, label, showTime = false, ...props }) => {
-  const record = useRecordContext()
-  
-  if (!record || !record[source]) {
-    return null
-  }
-  
-  const dateValue = record[source]
-  console.log(`VietnamDateField ${source}:`, dateValue)
-  
-  // Sử dụng cách đơn giản như code cũ đã hoạt động
-  const date = new Date(dateValue)
-  const formatted = showTime ? 
-    date.toLocaleString('vi-VN', {
-      day: '2-digit',
-      month: '2-digit',
-      year: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit'
-    }) :
-    date.toLocaleDateString('vi-VN', {
-      day: '2-digit',
-      month: '2-digit',
-      year: 'numeric'
-    })
-  
-  console.log(`VietnamDateField ${source} formatted:`, formatted)
-  
-  return <span>{formatted}</span>
-}
-  const record = useRecordContext()
-  
-  if (!record || !record[source]) {
-    return <span>-</span>
-  }
-  
-  const dateValue = record[source]
-  console.log(`VietnamDateField ${source}:`, dateValue)
-  
-  // Format datetime cho Vietnam timezone
-  const formatted = formatDateForAdmin(dateValue)
-  console.log(`VietnamDateField ${source} formatted:`, formatted)
-  
-  return <span>{formatted || dateValue}</span>
-}
-
 // Custom Delete Button với confirmation rõ ràng
 const CustomDeleteButton = () => {
   const record = useRecordContext()
