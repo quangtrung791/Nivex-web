@@ -308,7 +308,7 @@ export default function BlogDetails() {
                                                                     <div className="wrap-video"></div>
                                                                 </div>
                                                                 <div className="box-content title-news-duoc-xem-nhieu">
-                                                                    <Link href={`/tin-tuc/${item.id}`} className="title-news">{item.title}</Link>
+                                                                    <Link href={`/tin-tuc/${item.id}`} className="title title-news">{item.title}</Link>
                                                                 </div>
                                                             </div>
                                                         </div>
