@@ -123,7 +123,7 @@ h6.heading.tin-nong-heading {
     color: black;
     background: linear-gradient(to right, #BCFE08, #86F969);
 }
-section.blog-details .col-xl-4.col-md-12 {
+section.blog-details .col-xl-4.col-md-12 .sidebar {
     /* background-color: rgb(93 91 91 / 22%); */
     background-image: url('/assets/images/background/background_tin_nong.png');
     background-size: cover;
