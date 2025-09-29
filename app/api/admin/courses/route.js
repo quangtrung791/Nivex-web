@@ -11,7 +11,7 @@ export async function GET(request) {
     // Query courses table with explicit schema
     const rows = await query('SELECT * FROM public.courses ORDER BY id ASC');
     
-    // Transform courses data for React Admin với Vietnam timezone
+    // Transform courses data for React Admin với timezone đúng
     const courses = rows.map(row => {
       console.log('Admin API - Raw database dates:', {
         id: row.id,
@@ -19,14 +19,21 @@ export async function GET(request) {
         end_date: row.end_date
       });
       
+      // Format dates để hiển thị đúng trong admin (tương tự code cũ hoạt động)
+      const formatDateForDisplay = (dateStr) => {
+        if (!dateStr) return null;
+        const date = new Date(dateStr);
+        return date.toISOString(); // Giữ ISO format để DateField tự xử lý timezone
+      };
+      
       return {
         id: row.id,
         title: row.title,
         type: row.type || 'online',
         status: row.status || 'active',
-        // Format dates cho React Admin với Vietnam timezone
-        start_date: row.start_date, // Giữ nguyên ISO string cho DateTimeInput
-        end_date: row.end_date,    // Giữ nguyên ISO string cho DateTimeInput
+        // Sử dụng format tương tự code cũ
+        start_date: formatDateForDisplay(row.start_date),
+        end_date: formatDateForDisplay(row.end_date),
         link_zoom: row.link_zoom,
         content: row.content || '',
         image_url: row.image_url,

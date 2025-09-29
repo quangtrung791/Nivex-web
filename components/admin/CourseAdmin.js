@@ -37,8 +37,66 @@ import { ImageUploadInput } from './ImageUploadInput'
 import { formatDateForAdmin } from '@/utils/timezone'
 import { useState } from 'react'
 
-// Custom DateField với Vietnam timezone
+// Simple DateField component giống như code cũ đã hoạt động
+const SimpleDateField = ({ source, label, showTime = false }) => {
+  const record = useRecordContext()
+  
+  if (!record || !record[source]) {
+    return <span>-</span>
+  }
+  
+  const dateValue = record[source]
+  const date = new Date(dateValue)
+  
+  // Sử dụng format giống hệt code cũ đã hoạt động
+  const formatted = showTime ? 
+    date.toLocaleString('vi-VN', {
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    }) :
+    date.toLocaleDateString('vi-VN', {
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric'
+    })
+  
+  return <span>{formatted}</span>
+}
+
+// Custom DateField với Vietnam timezone - Simple approach
 const VietnamDateField = ({ source, label, showTime = false, ...props }) => {
+  const record = useRecordContext()
+  
+  if (!record || !record[source]) {
+    return null
+  }
+  
+  const dateValue = record[source]
+  console.log(`VietnamDateField ${source}:`, dateValue)
+  
+  // Sử dụng cách đơn giản như code cũ đã hoạt động
+  const date = new Date(dateValue)
+  const formatted = showTime ? 
+    date.toLocaleString('vi-VN', {
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    }) :
+    date.toLocaleDateString('vi-VN', {
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric'
+    })
+  
+  console.log(`VietnamDateField ${source} formatted:`, formatted)
+  
+  return <span>{formatted}</span>
+}
   const record = useRecordContext()
   
   if (!record || !record[source]) {
@@ -190,8 +248,8 @@ export const CourseList = () => (
           { id: 'hybrid', name: 'Hybrid' },
         ]}
       />
-      <VietnamDateField source="start_date" label="Ngày bắt đầu" showTime />
-      <VietnamDateField source="end_date" label="Ngày kết thúc" showTime />
+      <SimpleDateField source="start_date" label="Ngày bắt đầu" showTime />
+      <SimpleDateField source="end_date" label="Ngày kết thúc" showTime />
       <StatusField />
       <EditButton label="Sửa" />
       <ShowButton label="Xem" />
