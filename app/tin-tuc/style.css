@@ -22,7 +22,12 @@
         top: -35%;
     }
 }
-
+/* @media (min-width: 1440px) and (max-width: 1599px) {
+    .heading-title-main {
+        margin-top: unset !important;
+        top: -123px;
+    }
+} */
 
 .widget.recent.mt-0 {
     flex-direction: column !important;
@@ -421,7 +426,7 @@ footer.footer.style-2.footer-main {
         position: relative;
         z-index: 100;
     }
-    h3.title.tin-tuc {
+    h3.tin-tuc, h3.title {
         position: relative;
         top: -4px;
     }
@@ -471,7 +476,9 @@ footer.footer.style-2.footer-main {
     ul.menu-tab.menu-on-line {
         margin-top: 29px;
     }
-    
+    .headline-news {
+        font-size: 13.2px !important;
+    }    
 }
 
 /* 1600 */
