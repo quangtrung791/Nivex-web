@@ -522,13 +522,32 @@ p.text.fs-14 {
         margin-bottom: 10%;
     }
     .about-first-title-container .about-first-title {
-        font-size: 50.5px;
+        font-size: 28px;
+        text-align: left;
     }
     section.about {
         padding-top: 0 !important;
     }
     section.work .col-md-12 {
-        padding-left: 0 !important;
+        /* padding-left: 0 !important; */
+    }
+    .about-first-title-container {
+        padding: 0 15px;
+    }
+    section.work.background-container-custom {
+        padding-bottom: 30px !important;
+    }
+    h3.about-first-title {
+        padding-right: 20px;
+        line-height: 1.4;
+    }
+    .ai-copy-trade h3.heading {
+        line-height: 1.4;
+        padding-right: 15% !important;
+    }
+    section.about .btn-action {
+        margin-right: 60% !important;
+        margin-left: unset !important;
     }
     .about_image .img0-ai {
         width: 70%;
@@ -536,7 +555,7 @@ p.text.fs-14 {
         margin: 0 auto;
     }
     section.san-sang-giao-dich {
-        margin-bottom: 5%;
+        margin-bottom: 10%;
     }
 
     .col-xl-6.col-md-12.adaptive {
@@ -550,8 +569,11 @@ p.text.fs-14 {
         display: block;
         margin: 0 auto;
     }
-    
+    .san-sang-giao-dich .text-desc-san-sang {
+        text-align: unset !important;
+    }
 }
+
 @media (max-width: 399px) {
     .ai-copy-trade h3.heading {
         font-size: 28px  !important;
@@ -574,20 +596,42 @@ p.text.fs-14 {
         text-align: center;
     }
     p.text-desc-san-sang {
-        padding: 0 13%;
+        padding: 0 7%;
     }
     .about-first-title-container {
         text-align: center;
         margin-bottom: 10%;
     }
     .about-first-title-container .about-first-title {
-        font-size: 50.5px;
+        font-size: 28px;
+        text-align: left;
     }
     section.about {
         padding-top: 0 !important;
     }
     section.work .col-md-12 {
-        padding-left: 0 !important;
+        /* padding-left: 0 !important; */
+    }
+    .about-first-title-container {
+        padding: 0 15px;
+    }
+    section.work.background-container-custom {
+        padding-bottom: 30px !important;
+    }
+    h3.about-first-title {
+        padding-right: 20px;
+        line-height: 1.4;
+    }
+    .ai-copy-trade h3.heading {
+        line-height: 1.4;
+        padding-right: 15% !important;
+    }
+    section.about .btn-action {
+        margin-right: 60% !important;
+        margin-left: unset !important;
+    }
+    .san-sang-giao-dich .text-desc-san-sang {
+        text-align: unset !important;
     }
     .about_image .img0-ai {
         width: 70%;
@@ -595,7 +639,7 @@ p.text.fs-14 {
         margin: 0 auto;
     }
     section.san-sang-giao-dich {
-        margin-bottom: 5%;
+        margin-bottom: 10%;
     }
 
     .col-xl-6.col-md-12.adaptive {
