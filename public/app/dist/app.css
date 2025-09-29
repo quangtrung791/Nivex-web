@@ -8916,7 +8916,7 @@ img.ai-icon-small {
     }
     section.background-container-custom .work-box:last-child {
         margin-right: 0 !important;
-        width: 32vw !important;
+        /* width: 32vw !important; */
     }
     footer.footer.style-2.footer-main .container {
         max-width: 100vw !important;

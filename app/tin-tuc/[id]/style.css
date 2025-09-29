@@ -356,10 +356,13 @@ footer.footer.style-2.footer-main {
     .blog-details .row .col-xl-4.col-md-12 {
         padding-right: 5px;
     }
-    section.blog-details,
-    section.duoc-xem-nhieu.col-md-12
+    section.blog-details
     {
         padding: 3.5% 7%;
+    }
+    section.duoc-xem-nhieu.col-md-12
+    {
+        padding: 3.5% 8%;
     }
     section.page-title {
         padding: 3.5% 7%;
