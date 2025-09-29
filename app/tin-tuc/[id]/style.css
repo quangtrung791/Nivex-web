@@ -1,4 +1,11 @@
 /* Fixed */
+/* .widget {
+    flex-direction: column !important;
+} */
+.widget.recent.mt-0 {
+    flex-direction: column !important;
+}
+
 .content {
     text-align: justify !important;
     letter-spacing: 0px !important;
