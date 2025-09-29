@@ -34,7 +34,26 @@ import {
   Button
 } from 'react-admin'
 import { ImageUploadInput } from './ImageUploadInput'
+import { formatDateForAdmin } from '@/utils/timezone'
 import { useState } from 'react'
+
+// Custom DateField với Vietnam timezone
+const VietnamDateField = ({ source, label, showTime = false, ...props }) => {
+  const record = useRecordContext()
+  
+  if (!record || !record[source]) {
+    return <span>-</span>
+  }
+  
+  const dateValue = record[source]
+  console.log(`VietnamDateField ${source}:`, dateValue)
+  
+  // Format datetime cho Vietnam timezone
+  const formatted = formatDateForAdmin(dateValue)
+  console.log(`VietnamDateField ${source} formatted:`, formatted)
+  
+  return <span>{formatted || dateValue}</span>
+}
 
 // Custom Delete Button với confirmation rõ ràng
 const CustomDeleteButton = () => {
@@ -171,8 +190,8 @@ export const CourseList = () => (
           { id: 'hybrid', name: 'Hybrid' },
         ]}
       />
-      <DateField source="start_date" label="Ngày bắt đầu" showTime />
-      <DateField source="end_date" label="Ngày kết thúc" showTime />
+      <VietnamDateField source="start_date" label="Ngày bắt đầu" showTime />
+      <VietnamDateField source="end_date" label="Ngày kết thúc" showTime />
       <StatusField />
       <EditButton label="Sửa" />
       <ShowButton label="Xem" />
