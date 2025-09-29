@@ -2,6 +2,9 @@
 /* .widget {
     flex-direction: column !important;
 } */
+ section.blog-details .col-xl-4.col-md-12 {
+    background-image: none !important;
+ }
 .widget.recent.mt-0 {
     flex-direction: column !important;
 }

@@ -277,9 +277,9 @@ export default function BlogDetails() {
                                             {news[0] && (
                                                 <div className="box-image trigger-full-w">
                                                     <img src={news[0].thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={news[0].title} />
-                                                    <div className="wrap-video">
+                                                    {/* <div className="wrap-video"> */}
                                                         {/* <VideoPopup /> */}
-                                                    </div>
+                                                    {/* </div> */}
                                                 </div>
                                             )}
                                             
@@ -305,10 +305,10 @@ export default function BlogDetails() {
                                                             <div className="blog-box">
                                                                 <div className="box-image">
                                                                     <img src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
-                                                                    <div className="wrap-video"></div>
+                                                                    {/* <div className="wrap-video"></div> */}
                                                                 </div>
                                                                 <div className="box-content title-news-duoc-xem-nhieu">
-                                                                    <Link href={`/tin-tuc/${item.id}`} className="title title-news">{item.title}</Link>
+                                                                    <Link href={`/tin-tuc/${item.id}`} className="title-news headline-news">{item.title}</Link>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -411,7 +411,7 @@ export default function BlogDetails() {
                                                         <div className="blog-box">
                                                             <div className="box-image">
                                                                 <img src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
-                                                                <div className="wrap-video"></div>
+                                                                {/* <div className="wrap-video"></div> */}
                                                             </div>
                                                             <div className="box-content title-news-duoc-xem-nhieu">
                                                                 <Link href={`/tin-tuc/${item.id}`} className="title">{item.title}</Link>
