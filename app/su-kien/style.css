@@ -1,4 +1,7 @@
 /* Fixed */
+.blog-list .blog-main .blog-box .box-image {
+    height: fit-content;
+}
 .text {
     padding-right: 10px !important;
 }

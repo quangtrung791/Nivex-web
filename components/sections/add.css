@@ -49,6 +49,12 @@ p.text.fs-14 {
 .about__content.aos-init.aos-animate {
     padding-right: 0px !important;
 }
+
+@media (min-width: 1180px) {
+    .adaptive-small {
+        display: none;
+    }
+}
 /* Responsive */
 @media (min-width: 1440px) and (max-width: 1599px) {
     .ai-copy-trade h3.heading {
@@ -214,5 +220,155 @@ p.text.fs-14 {
     .limit-width {
         width: 45% !important;
         margin-left: 4% !important;
+    }
+}
+/* iPad Pro 1366 */
+@media (min-width: 1360px) and (max-width: 1439px) {
+    .ai-copy-trade h3.heading {
+        font-size: 28px  !important;
+    }
+    .about__content.aos-init.aos-animate {
+        padding-top: 75px;
+    }
+    .element-1-e-l {
+        padding-top: 165px !important;
+    }
+    .ai-copy-trade a.btn-action {
+        margin-top: 20px !important;
+    }
+    h3.title-ssgd {
+        font-size: 28px;
+        background: linear-gradient(#BCFE08, #86F969);
+        color: transparent;
+        background-clip: text;
+        padding-top: 4px;
+        margin-bottom: 16px;
+    }
+    .san-sang-gd-container {
+        text-align: center;
+    }
+    p.text-desc-san-sang {
+        padding: 0 27%;
+    }
+    .about-first-title-container {
+        text-align: center;
+        margin-bottom: 10%;
+    }
+    .about-first-title-container .about-first-title {
+        font-size: 56px; /* để cho nó chung padding với section ở trên */
+    }
+    section.about {
+        padding-top: 0 !important;
+    }
+    section.work .col-md-12 {
+        padding-left: 0 !important;
+    }
+    .limit-width {
+        width: 45% !important;
+        margin-left: 5% !important;
+    }
+    .about__content.element-1-e-l {
+        padding-left: 4px !important;
+    }
+
+}
+/* iPad Pro 1024 */
+@media (min-width: 1020px) and (max-width: 1179px) {
+     .ai-copy-trade h3.heading {
+        font-size: 28px  !important;
+    }
+    .about__content.aos-init.aos-animate {
+        padding-top: 75px;
+    }
+    .ai-copy-trade a.btn-action {
+        margin-top: 20px !important;
+    }
+    h3.title-ssgd {
+        font-size: 28px;
+        background: linear-gradient(#BCFE08, #86F969);
+        color: transparent;
+        background-clip: text;
+        padding-top: 4px;
+        margin-bottom: 16px;
+    }
+    .san-sang-gd-container {
+        text-align: center;
+    }
+    p.text-desc-san-sang {
+        padding: 0 27%;
+    }
+    .about-first-title-container {
+        text-align: center;
+        margin-bottom: 10%;
+    }
+    .about-first-title-container .about-first-title {
+        font-size: 56px;
+    }
+    section.about {
+        padding-top: 0 !important;
+    }
+    section.work .col-md-12 {
+        padding-left: 0 !important;
+    }
+    .col-xl-6.col-md-12.adaptive {
+        display: none;
+    }
+    .adaptive-small {
+        display: block !important;
+    }
+    .about_image .img0-ai {
+        width: 70%;
+        display: block;
+        margin: 0 auto;
+    }
+    section.san-sang-giao-dich {
+        margin-bottom: 6%;
+    }
+}
+/* iPad Air 1180 */
+@media (min-width: 1180px) and (max-width: 1359px) {
+     .ai-copy-trade h3.heading {
+        font-size: 28px  !important;
+    }
+    .about__content.aos-init.aos-animate {
+        padding-top: 150px;
+    }
+    .ai-copy-trade a.btn-action {
+        margin-top: 20px !important;
+    }
+    h3.title-ssgd {
+        font-size: 28px;
+        background: linear-gradient(#BCFE08, #86F969);
+        color: transparent;
+        background-clip: text;
+        padding-top: 4px;
+        margin-bottom: 16px;
+    }
+    .san-sang-gd-container {
+        text-align: center;
+    }
+    p.text-desc-san-sang {
+        padding: 0 27%;
+    }
+    .about-first-title-container {
+        text-align: center;
+        margin-bottom: 10%;
+    }
+    .about-first-title-container .about-first-title {
+        font-size: 50.5px;
+    }
+    section.about {
+        padding-top: 0 !important;
+    }
+    section.work .col-md-12 {
+        padding-left: 0 !important;
+    }
+    .about_image .img0-ai {
+        width: 70%;
+        display: block;
+        margin: 0 auto;
+    }
+    section.san-sang-giao-dich {
+        margin-bottom: 5%;
     }
 }
