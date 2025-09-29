@@ -7,6 +7,7 @@ import Layout from "../../components/layout/Layout"
 import Link from "next/link"
 import './style.css';
 import styles from '../kien-thuc-tong-quan/knowledge.module.css'
+import { usePathname } from "next/navigation";
 
 
 const COINS = [
@@ -40,8 +41,9 @@ export default function BlogDetails() {
     const [news, setNews] = useState([]);
     const [hotNews, setHotNews] = useState([]);
     const { id } = useParams()
+    const pathname = usePathname();
 
-
+    
     useEffect(() => {
         document.title = "Tin tức"
     }, []);
@@ -269,7 +271,7 @@ export default function BlogDetails() {
                                             {news[0] && (
                                                     <div className="heading-title-main">
                                                         <Link href={`/tin-tuc/${news[0].id}`}>
-                                                            <h3 className="title">
+                                                            <h3 className="tin-tuc">
                                                                 {news[0].title}
                                                             </h3>
                                                         </Link>
@@ -291,7 +293,7 @@ export default function BlogDetails() {
                                                                     <div className="wrap-video"></div>
                                                                 </div>
                                                                 <div className="box-content title-news-duoc-xem-nhieu">
-                                                                    <Link href={`/tin-tuc/${item.id}`} className="title">{item.title}</Link>
+                                                                    <Link href={`/tin-tuc/${item.id}`} className="title-news">{item.title}</Link>
                                                                 </div>
                                                             </div>
                                                         </div>

@@ -372,3 +372,242 @@ p.text.fs-14 {
         margin-bottom: 5%;
     }
 }
+/* iPad Air 820 */
+@media (min-width: 800px) and (max-width: 1019px) {
+    .ai-copy-trade h3.heading {
+        font-size: 28px  !important;
+    }
+    .about__content.aos-init.aos-animate {
+        padding-top: 50px !important;
+    }
+    .ai-copy-trade a.btn-action {
+        margin-top: 20px !important;
+    }
+    h3.title-ssgd {
+        font-size: 28px;
+        background: linear-gradient(#BCFE08, #86F969);
+        color: transparent;
+        background-clip: text;
+        padding-top: 4px;
+        margin-bottom: 16px;
+    }
+    .san-sang-gd-container {
+        text-align: center;
+    }
+    p.text-desc-san-sang {
+        padding: 0 13%;
+    }
+    .about-first-title-container {
+        text-align: center;
+        margin-bottom: 10%;
+    }
+    .about-first-title-container .about-first-title {
+        font-size: 50.5px;
+    }
+    section.about {
+        padding-top: 0 !important;
+    }
+    section.work .col-md-12 {
+        padding-left: 0 !important;
+    }
+    .about_image .img0-ai {
+        width: 70%;
+        display: block;
+        margin: 0 auto;
+    }
+    section.san-sang-giao-dich {
+        margin-bottom: 5%;
+    }
+
+    .col-xl-6.col-md-12.adaptive {
+        display: none;
+    }
+    .adaptive-small {
+        display: block !important;
+    }
+    .about_image .img0-ai {
+        width: 70%;
+        display: block;
+        margin: 0 auto;
+    }
+    
+}
+/* iPad Mini 768 */
+@media (min-width: 600px) and (max-width: 799px) {
+    .ai-copy-trade h3.heading {
+        font-size: 28px  !important;
+    }
+    .about__content.aos-init.aos-animate {
+        padding-top: 50px !important;
+    }
+    .ai-copy-trade a.btn-action {
+        margin-top: 20px !important;
+    }
+    h3.title-ssgd {
+        font-size: 28px;
+        background: linear-gradient(#BCFE08, #86F969);
+        color: transparent;
+        background-clip: text;
+        padding-top: 4px;
+        margin-bottom: 16px;
+    }
+    .san-sang-gd-container {
+        text-align: center;
+    }
+    p.text-desc-san-sang {
+        padding: 0 13%;
+    }
+    .about-first-title-container {
+        text-align: center;
+        margin-bottom: 10%;
+    }
+    .about-first-title-container .about-first-title {
+        font-size: 50.5px;
+    }
+    section.about {
+        padding-top: 0 !important;
+    }
+    section.work .col-md-12 {
+        padding-left: 0 !important;
+    }
+    .about_image .img0-ai {
+        width: 70%;
+        display: block;
+        margin: 0 auto;
+    }
+    section.san-sang-giao-dich {
+        margin-bottom: 5%;
+    }
+
+    .col-xl-6.col-md-12.adaptive {
+        display: none;
+    }
+    .adaptive-small {
+        display: block !important;
+    }
+    .about_image .img0-ai {
+        width: 70%;
+        display: block;
+        margin: 0 auto;
+    }
+    
+}
+/* Mobile */
+@media (min-width: 400px) and (max-width: 550px) {
+    .ai-copy-trade h3.heading {
+        font-size: 28px  !important;
+    }
+    .about__content.aos-init.aos-animate {
+        padding-top: 50px !important;
+    }
+    .ai-copy-trade a.btn-action {
+        margin-top: 20px !important;
+    }
+    h3.title-ssgd {
+        font-size: 28px;
+        background: linear-gradient(#BCFE08, #86F969);
+        color: transparent;
+        background-clip: text;
+        padding-top: 4px;
+        margin-bottom: 16px;
+    }
+    .san-sang-gd-container {
+        text-align: center;
+    }
+    p.text-desc-san-sang {
+        padding: 0 13%;
+    }
+    .about-first-title-container {
+        text-align: center;
+        margin-bottom: 10%;
+    }
+    .about-first-title-container .about-first-title {
+        font-size: 50.5px;
+    }
+    section.about {
+        padding-top: 0 !important;
+    }
+    section.work .col-md-12 {
+        padding-left: 0 !important;
+    }
+    .about_image .img0-ai {
+        width: 70%;
+        display: block;
+        margin: 0 auto;
+    }
+    section.san-sang-giao-dich {
+        margin-bottom: 5%;
+    }
+
+    .col-xl-6.col-md-12.adaptive {
+        display: none;
+    }
+    .adaptive-small {
+        display: block !important;
+    }
+    .about_image .img0-ai {
+        width: 70%;
+        display: block;
+        margin: 0 auto;
+    }
+    
+}
+@media (max-width: 399px) {
+    .ai-copy-trade h3.heading {
+        font-size: 28px  !important;
+    }
+    .about__content.aos-init.aos-animate {
+        padding-top: 50px !important;
+    }
+    .ai-copy-trade a.btn-action {
+        margin-top: 20px !important;
+    }
+    h3.title-ssgd {
+        font-size: 28px;
+        background: linear-gradient(#BCFE08, #86F969);
+        color: transparent;
+        background-clip: text;
+        padding-top: 4px;
+        margin-bottom: 16px;
+    }
+    .san-sang-gd-container {
+        text-align: center;
+    }
+    p.text-desc-san-sang {
+        padding: 0 13%;
+    }
+    .about-first-title-container {
+        text-align: center;
+        margin-bottom: 10%;
+    }
+    .about-first-title-container .about-first-title {
+        font-size: 50.5px;
+    }
+    section.about {
+        padding-top: 0 !important;
+    }
+    section.work .col-md-12 {
+        padding-left: 0 !important;
+    }
+    .about_image .img0-ai {
+        width: 70%;
+        display: block;
+        margin: 0 auto;
+    }
+    section.san-sang-giao-dich {
+        margin-bottom: 5%;
+    }
+
+    .col-xl-6.col-md-12.adaptive {
+        display: none;
+    }
+    .adaptive-small {
+        display: block !important;
+    }
+    .about_image .img0-ai {
+        width: 70%;
+        display: block;
+        margin: 0 auto;
+    }
+    
+}

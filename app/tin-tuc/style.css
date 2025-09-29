@@ -11,6 +11,9 @@
 }
 
 @media (min-width: 1440px) and (max-width: 1600px) {
+    .blog-details .content-tab {
+        margin-top: 20px !important;
+    }
     section.duoc-xem-nhieu.col-md-12 {
         padding: 3.5% 8% !important;
     }
@@ -254,10 +257,13 @@ footer.footer.style-2.footer-main {
 
 /* pc 1440 */
 @media (min-width: 1440px) and (max-width: 1599px) {
+    .blog-details .blog-main .tin-tuc {
+        margin-bottom: 29px !important;
+    }
     .blog-details .box-image {
         margin-bottom: 75px;
     }
-    .heading-title-main h3.title {
+    .heading-title-main h3.tin-tuc {
         font-size: 32px;
     }
     .blog-details h6.heading {
@@ -374,7 +380,7 @@ footer.footer.style-2.footer-main {
     .content-tab .blog-box .box-image {
         margin-bottom: 10px;
     }
-    .content-tab .blog-box .box-content .title {
+    .content-tab .blog-box .box-content .title-news {
         font-size: 13.2px;
         font-weight: 700;
         line-height: 1.4;
@@ -389,11 +395,11 @@ footer.footer.style-2.footer-main {
     }
     .heading-title-main {
         margin-top: -19%;
-        padding: 0 3%;
+        padding: 0 3% !important;
         position: relative;
         z-index: 100;
     }
-    h3.title {
+    h3.title.tin-tuc {
         position: relative;
         top: -4px;
     }
