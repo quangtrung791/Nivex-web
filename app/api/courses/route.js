@@ -43,11 +43,6 @@ export async function GET(request) {
     if (filter !== 'all') {
       const vietnamTime = getVietnamTime()
       
-      console.log('Filter debug:', { 
-        filter, 
-        vietnamTime: vietnamTime.toISOString(),
-        vietnamTimeLocal: vietnamTime.toString()
-      })
       
       if (filter === 'online') { // Đang diễn ra
         sqlQuery += ` AND start_date <= $${paramIndex} AND (end_date IS NULL OR end_date >= $${paramIndex})`
@@ -75,15 +70,6 @@ export async function GET(request) {
       
       // Sử dụng utility function để xác định status
       const courseStatus = getCourseStatus(course.start_date, course.end_date)
-      
-      console.log('Debug course status:', {
-        courseId: course.id,
-        title: course.title,
-        startDate: course.start_date,
-        endDate: course.end_date,
-        status: courseStatus,
-        vietnamTime: getVietnamTime().toISOString()
-      })
 
       // Determine button text and class
       let buttonText = 'Xem ngay'
