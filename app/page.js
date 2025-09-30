@@ -9,6 +9,8 @@ import Testimonials1 from "../components/sections/Testimonials1"
 import Work1 from "../components/sections/Work1"
 import Propose from "../components/sections/Propose"
 import MenuListNew from "../components/sections/MenuListNew"
+import SanSangGiaoDich from '../components/sections/SanSangGiaoDich'
+
 export default function Home() {
 
     return (
@@ -21,10 +23,11 @@ export default function Home() {
                 {/* <Coinlist1 /> */}
                 <Work1 />
                 <About1 />
+                <SanSangGiaoDich />
                 {/* <Download /> */}
-                <Testimonials1 />
+                {/* <Testimonials1 /> */}
                 {/* <Sale /> */}
-                <Propose />
+                {/* <Propose /> */}
 
             </Layout>
         </>

@@ -6,6 +6,7 @@ import { useEffect, useState } from "react"
 import Link from "next/link"
 import { useParams } from "next/navigation"
 import './style.css'
+// import '/public/app/dist/tin-tuc-details.css';
 
 
 export default function BlogDetails() {
@@ -17,6 +18,25 @@ export default function BlogDetails() {
     // useEffect(() => {
     //     document.title = "Chi tiết tin tức"
     // }, []);
+    // useEffect(() => {
+    //     const link = document.getElementById("navigate-link-content");
+    //         if (link) {
+    //         link.addEventListener("click", handleClick);
+    //     }
+
+    //     function handleClick(e) {
+    //         e.preventDefault(); 
+    //         window.location.reload();
+    //     }
+
+    //     return () => {
+    //         if (link) {
+    //             link.removeEventListener("click", handleClick);
+    //         }
+    //     };
+    // }, []);
+
+
     useEffect(() => {
         if (news && news.title) {
             document.title = news.title;
@@ -89,7 +109,7 @@ export default function BlogDetails() {
                             <div className="row">
                                 <div className="col-xl-8 col-md-12">
                                     <div className="navigate-link">
-                                        <span className="navigate-link-content">
+                                        <span className="navigate-link-content" id="navigate-link-content">
                                             <Link href='/tin-tuc'>Tin tức&nbsp;&nbsp;&gt;</Link>
                                             {/* <span>&nbsp;&nbsp;Virtual Land in the Metaverse Is Selling for Millions of Dollars</span> */}
                                             <span>&nbsp;&nbsp;{news.title}</span>

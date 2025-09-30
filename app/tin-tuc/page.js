@@ -7,6 +7,7 @@ import Layout from "../../components/layout/Layout"
 import Link from "next/link"
 import './style.css';
 import styles from '../kien-thuc-tong-quan/knowledge.module.css'
+import { usePathname } from "next/navigation";
 
 
 const COINS = [
@@ -40,8 +41,24 @@ export default function BlogDetails() {
     const [news, setNews] = useState([]);
     const [hotNews, setHotNews] = useState([]);
     const { id } = useParams()
+    const pathname = usePathname();
 
+    const [visibleCount, setVisibleCount] = useState(3);
 
+    useEffect(() => {
+        function handleResize() {
+            if (window.innerWidth >= 900) {
+                setVisibleCount(3);
+            } else {
+                setVisibleCount(4);
+            }
+        }
+        handleResize(); // Gọi khi mount
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    
     useEffect(() => {
         document.title = "Tin tức"
     }, []);
@@ -260,16 +277,16 @@ export default function BlogDetails() {
                                             {news[0] && (
                                                 <div className="box-image trigger-full-w">
                                                     <img src={news[0].thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={news[0].title} />
-                                                    <div className="wrap-video">
+                                                    {/* <div className="wrap-video"> */}
                                                         {/* <VideoPopup /> */}
-                                                    </div>
+                                                    {/* </div> */}
                                                 </div>
                                             )}
                                             
                                             {news[0] && (
                                                     <div className="heading-title-main">
                                                         <Link href={`/tin-tuc/${news[0].id}`}>
-                                                            <h3 className="title">
+                                                            <h3 className="title tin-tuc">
                                                                 {news[0].title}
                                                             </h3>
                                                         </Link>
@@ -283,15 +300,15 @@ export default function BlogDetails() {
                                                         <p style={{ textAlign: "center", padding: "20px", color: "#888" }}>
                                                             Không có dữ liệu
                                                         </p>
-                                                    ) : filteredNews.slice(0, 3).map(item => (
+                                                    ) : filteredNews.slice(0, visibleCount).map(item => (
                                                         <div className="col-md-4" key={item.id}>
                                                             <div className="blog-box">
                                                                 <div className="box-image">
                                                                     <img src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
-                                                                    <div className="wrap-video"></div>
+                                                                    {/* <div className="wrap-video"></div> */}
                                                                 </div>
                                                                 <div className="box-content title-news-duoc-xem-nhieu">
-                                                                    <Link href={`/tin-tuc/${item.id}`} className="title">{item.title}</Link>
+                                                                    <Link href={`/tin-tuc/${item.id}`} className="title-news headline-news">{item.title}</Link>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -394,7 +411,7 @@ export default function BlogDetails() {
                                                         <div className="blog-box">
                                                             <div className="box-image">
                                                                 <img src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
-                                                                <div className="wrap-video"></div>
+                                                                {/* <div className="wrap-video"></div> */}
                                                             </div>
                                                             <div className="box-content title-news-duoc-xem-nhieu">
                                                                 <Link href={`/tin-tuc/${item.id}`} className="title">{item.title}</Link>

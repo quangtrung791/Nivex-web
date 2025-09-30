@@ -1,4 +1,25 @@
 /* Fixed */
+.meta, .blog-list a.title {
+    padding-left: 0 !important;
+}
+
+.blog-list .text {
+    color: #b1b5c3 !important;
+    display: block;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.blog-list .text {
+	color: #b1b5c3 !important;
+}
+
+.blog-list .blog-main .blog-box .box-image {
+    height: fit-content;
+}
 .text {
     padding-right: 10px !important;
 }
