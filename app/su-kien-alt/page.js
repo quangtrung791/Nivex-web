@@ -43,7 +43,7 @@ export default function SuKienAlt() {
                             <div className="row">
                                 <div className="col-md-12">
                                     <div className="flat-tabs">
-                                        <h2 className="cung-nivex-heading">Cùng Nivex tham gia <span className="gradient-text">sự kiện toàn cầu</span></h2>
+                                        <h2 className="cung-nivex-heading">Nivex tham gia <span className="gradient-text">sự kiện toàn cầu</span></h2>
                                         {/* <ul className="menu-tab">
                                             <li className={flatTabs === 1 ? "active" : ""} onClick={() => handleFlatTabs(1)}><h6 className="fs-16">View All</h6></li>
                                             <li className={flatTabs === 2 ? "active" : ""} onClick={() => handleFlatTabs(2)}><h6 className="fs-16">Learn &amp; Earn</h6></li>
@@ -76,7 +76,24 @@ export default function SuKienAlt() {
                                                         </div>
                                                         <div className="box-content">
                                                             {/* <Link href="#" className="category btn-action">learn &amp; earn</Link> */}
-                                                            <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
+                                                            <div>
+                                                                <Link href="#" className="title">Nivex Dẫn Dắt Tương Lai Giao Dịch AI tại PopMax Summit 2025</Link>
+                                                                <p className="text-desc-su-kien">Tháng 9/2025, sự kiện blockchain quốc tế PopMax Summit tại Bali đã chứng kiến sự hiện diện của Nivex - sàn giao dịch tiên phong ứng dụng Trí tuệ nhân tạo (AI) vào giao dịch crypto.</p>
+                                                            </div>
+                                                            <div className="event-meta-row">
+                                                                <div className="event-meta-info">
+                                                                    <div className="event-time-date">
+                                                                        <span className="event-time">15:00 – 16:30</span>
+                                                                        <span className="event-date">06/09/2025</span>
+                                                                    </div>
+                                                                    <div className="event-tags">
+                                                                        <span>Hợp đồng</span>
+                                                                        <span>Spot</span>
+                                                                        <span>CopyTrade</span>
+                                                                    </div>
+                                                                </div>
+                                                                <a href="#" className="event-btn">Xem thêm</a>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -90,11 +107,24 @@ export default function SuKienAlt() {
                                                         </div>
                                                         <div className="box-content">
                                                             {/* <Link href="#" className="category btn-action">learn &amp; earn</Link> */}
-                                                            <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
-                                                            {/* <div className="meta">
-                                                                <Link href="#" className="name"><span />Floyd Buckridge</Link>
-                                                                <Link href="#" className="time">Feb 03, 2021</Link>
-                                                            </div> */}
+                                                            <div>
+                                                                <Link href="#" className="title">Nivex Dẫn Dắt Tương Lai Giao Dịch AI tại PopMax Summit 2025</Link>
+                                                                <p className="text-desc-su-kien">Tháng 9/2025, sự kiện blockchain quốc tế PopMax Summit tại Bali đã chứng kiến sự hiện diện của Nivex - sàn giao dịch tiên phong ứng dụng Trí tuệ nhân tạo (AI) vào giao dịch crypto.</p>
+                                                            </div>
+                                                            <div className="event-meta-row">
+                                                                <div className="event-meta-info">
+                                                                    <div className="event-time-date">
+                                                                        <span className="event-time">15:00 – 16:30</span>
+                                                                        <span className="event-date">06/09/2025</span>
+                                                                    </div>
+                                                                    <div className="event-tags">
+                                                                        <span>Hợp đồng</span>
+                                                                        <span>Spot</span>
+                                                                        <span>CopyTrade</span>
+                                                                    </div>
+                                                                </div>
+                                                                <a href="#" className="event-btn">Xem thêm</a>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -108,8 +138,24 @@ export default function SuKienAlt() {
                                                         </div>
                                                         <div className="box-content">
                                                             {/* <Link href="#" className="category btn-action">learn &amp; earn</Link> */}
-                                                            <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
-                                                            
+                                                            <div>
+                                                                <Link href="#" className="title">Nivex Dẫn Dắt Tương Lai Giao Dịch AI tại PopMax Summit 2025</Link>
+                                                                <p className="text-desc-su-kien">Tháng 9/2025, sự kiện blockchain quốc tế PopMax Summit tại Bali đã chứng kiến sự hiện diện của Nivex - sàn giao dịch tiên phong ứng dụng Trí tuệ nhân tạo (AI) vào giao dịch crypto.</p>
+                                                            </div>
+                                                            <div className="event-meta-row">
+                                                                <div className="event-meta-info">
+                                                                    <div className="event-time-date">
+                                                                        <span className="event-time">15:00 – 16:30</span>
+                                                                        <span className="event-date">06/09/2025</span>
+                                                                    </div>
+                                                                    <div className="event-tags">
+                                                                        <span>Hợp đồng</span>
+                                                                        <span>Spot</span>
+                                                                        <span>CopyTrade</span>
+                                                                    </div>
+                                                                </div>
+                                                                <a href="#" className="event-btn">Xem thêm</a>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -123,8 +169,24 @@ export default function SuKienAlt() {
                                                         </div>
                                                         <div className="box-content">
                                                             {/* <Link href="#" className="category btn-action">learn &amp; earn</Link> */}
-                                                            <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
-                                                            
+                                                            <div>
+                                                                <Link href="#" className="title">Nivex Dẫn Dắt Tương Lai Giao Dịch AI tại PopMax Summit 2025</Link>
+                                                                <p className="text-desc-su-kien">Tháng 9/2025, sự kiện blockchain quốc tế PopMax Summit tại Bali đã chứng kiến sự hiện diện của Nivex - sàn giao dịch tiên phong ứng dụng Trí tuệ nhân tạo (AI) vào giao dịch crypto.</p>
+                                                            </div>
+                                                            <div className="event-meta-row">
+                                                                <div className="event-meta-info">
+                                                                    <div className="event-time-date">
+                                                                        <span className="event-time">15:00 – 16:30</span>
+                                                                        <span className="event-date">06/09/2025</span>
+                                                                    </div>
+                                                                    <div className="event-tags">
+                                                                        <span>Hợp đồng</span>
+                                                                        <span>Spot</span>
+                                                                        <span>CopyTrade</span>
+                                                                    </div>
+                                                                </div>
+                                                                <a href="#" className="event-btn">Xem thêm</a>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
