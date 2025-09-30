@@ -7,6 +7,7 @@ import { NewsList, NewsCreate, NewsEdit, NewsShow } from '@/components/admin/New
 import { CateNewsCreate, CateNewsEdit, CateNewsList, CateNewsShow } from '@/components/admin/CategoryNewsAdmin'
 import { KnowledgeList, KnowledgeCreate, KnowledgeEdit, KnowledgeShow } from '@/components/admin/KnowledgeAdmin'
 import { EventList, EventCreate, EventEdit, EventShow } from '@/components/admin/EventAdmin'
+import { JoinedEventList, JoinedEventCreate, JoinedEventEdit, JoinedEventShow } from '@/components/admin/JoinedEventAdmin'
 import { DictionaryCreate, DictionaryEdit, DictionaryShow, DictionaryList } from '@/components/admin/DictionaryAdmin';
 import AuthWrapper from '@/components/admin/AuthWrapper'
 
@@ -200,6 +201,27 @@ const Dashboard = () => {
 
           </a>
 
+          {/* Quản lý sự kiện Nivex tham gia */}
+        <a href='/admin#/joined_events' style={{ 
+            background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', 
+            padding: '25px', 
+            borderRadius: '12px', 
+            boxShadow: '0 4px 15px rgba(0,0,0,0.2)',
+            color: '#fff', 
+            textDecoration: 'none',
+            transition: 'transform 0.2s'
+          }}>
+            <h3 style={{ margin: '0 0 10px 0', fontSize: '1.4em' }}>📝 Quản lý Sự kiện Nivex tham gia</h3>
+            <p style={{ margin: '0 0 10px 0', opacity: 0.8 }}>Tạo và chỉnh sửa Sự kiện</p>
+            <small style={{ 
+              background: 'rgba(139,69,19,0.2)', 
+              padding: '4px 8px', 
+              borderRadius: '12px',
+              fontSize: '0.8em'
+            }}>Truy cập</small>
+
+          </a>
+
 
           {/* Quản lý từ khóa thuật ngữ  */}
         <a href='/admin#/dictionary' style={{ 
@@ -221,15 +243,6 @@ const Dashboard = () => {
             }}>Truy cập</small>
 
           </a>
-        {/* <div style={{ 
-          background: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)', 
-          padding: '25px', 
-          borderRadius: '12px', 
-          boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
-          color: '#8b4513' 
-        }}>
-          
-      </div> */}
     </div>
     
     <div style={{ 
@@ -324,6 +337,14 @@ export default function AdminPage() {
           edit={EventEdit}
           show={EventShow}
           options={{ label: 'Sự kiện tại Nivex' }}
+        />
+        <Resource 
+          name="joined_events" 
+          list={JoinedEventList}
+          create={JoinedEventCreate}
+          edit={JoinedEventEdit}
+          show={JoinedEventShow}
+          options={{ label: 'Sự kiện Nivex đã tham dự' }}
         />
         <Resource 
           name="dictionary" 

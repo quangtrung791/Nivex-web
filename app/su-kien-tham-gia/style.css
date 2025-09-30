@@ -24,7 +24,7 @@
 }
 
 .blog-grid .blog-box:hover .event-btn {
-    background: linear-gradient(90deg, #B6FF4D 0%, #00FFA3 100%);
+    background: linear-gradient(#BCFE08, #86F969);
     color: #222;
     border: none;
 }
@@ -128,9 +128,12 @@ section.blog-grid .blog-box {
     }
 
     .event-meta-info {
-        border-left: 4px solid #B6FF4D;
+        border-left: 4px solid gray;
         padding-left: 15px;
         flex: 1;
+    }
+    .blog-grid .blog-box:hover .event-meta-info {
+        border-left: 4px solid #B6FF4D;
     }
 
     .event-time-date {
@@ -163,7 +166,7 @@ section.blog-grid .blog-box {
     }
 
     .event-btn {
-        /* background: linear-gradient(90deg, #B6FF4D 0%, #00FFA3 100%); */
+        /* background: linear-gradient(#BCFE08, #86F969); */
         background: transparent;
         color: white;
         border: 1px solid;
@@ -320,9 +323,12 @@ section.blog-grid .blog-box {
     }
 
     .event-meta-info {
-        border-left: 4px solid #B6FF4D;
+        border-left: 4px solid gray;
         padding-left: 15px;
         flex: 1;
+    }
+    .blog-grid .blog-box:hover .event-meta-info {
+        border-left: 4px solid #B6FF4D;
     }
 
     .event-time-date {
@@ -355,7 +361,7 @@ section.blog-grid .blog-box {
     }
 
     .event-btn {
-        background: linear-gradient(90deg, #B6FF4D 0%, #00FFA3 100%);
+        background: linear-gradient(#BCFE08, #86F969);
         color: #222;
         font-weight: 700;
         font-size: 14px;
@@ -510,10 +516,19 @@ section.blog-grid .blog-box {
         margin-bottom: 18px;
     }
 
-    .event-meta-info {
+    /* .event-meta-info {
         border-left: 4px solid #B6FF4D;
         padding-left: 15px;
         flex: 1;
+    } */
+
+    .event-meta-info {
+        border-left: 4px solid gray;
+        padding-left: 15px;
+        flex: 1;
+    }
+    .blog-grid .blog-box:hover .event-meta-info {
+        border-left: 4px solid #B6FF4D;
     }
 
     .event-time-date {
@@ -546,7 +561,7 @@ section.blog-grid .blog-box {
     }
 
     .event-btn {
-        background: linear-gradient(90deg, #B6FF4D 0%, #00FFA3 100%);
+        background: linear-gradient(#BCFE08, #86F969);
         color: #222;
         font-weight: 700;
         font-size: 14px;
@@ -703,10 +718,18 @@ section.blog-grid .blog-box {
         margin-bottom: 18px;
     }
 
-    .event-meta-info {
+    /* .event-meta-info {
         border-left: 4px solid #B6FF4D;
         padding-left: 15px;
         flex: 1;
+    } */
+    .event-meta-info {
+        border-left: 4px solid gray;
+        padding-left: 15px;
+        flex: 1;
+    }
+    .blog-grid .blog-box:hover .event-meta-info {
+        border-left: 4px solid #B6FF4D;
     }
 
     .event-time-date {
@@ -739,7 +762,7 @@ section.blog-grid .blog-box {
     }
 
     .event-btn {
-        background: linear-gradient(90deg, #B6FF4D 0%, #00FFA3 100%);
+        background: linear-gradient(#BCFE08, #86F969);
         color: #222;
         font-weight: 700;
         font-size: 14px;
@@ -888,10 +911,18 @@ section.blog-grid .blog-box {
         margin-bottom: 18px;
     }
 
-    .event-meta-info {
+    /* .event-meta-info {
         border-left: 4px solid #B6FF4D;
         padding-left: 15px;
         flex: 1;
+    } */
+    .event-meta-info {
+        border-left: 4px solid gray;
+        padding-left: 15px;
+        flex: 1;
+    }
+    .blog-grid .blog-box:hover .event-meta-info {
+        border-left: 4px solid #B6FF4D;
     }
 
     .event-time-date {
@@ -924,7 +955,7 @@ section.blog-grid .blog-box {
     }
 
     .event-btn {
-        background: linear-gradient(90deg, #B6FF4D 0%, #00FFA3 100%);
+        background: linear-gradient(#BCFE08, #86F969);
         color: #222;
         font-weight: 700;
         font-size: 14px;
@@ -1079,10 +1110,18 @@ section.blog-grid .blog-box {
         margin-bottom: 18px;
     }
 
-    .event-meta-info {
+    /* .event-meta-info {
         border-left: 4px solid #B6FF4D;
         padding-left: 15px;
         flex: 1;
+    } */
+    .event-meta-info {
+        border-left: 4px solid gray;
+        padding-left: 15px;
+        flex: 1;
+    }
+    .blog-grid .blog-box:hover .event-meta-info {
+        border-left: 4px solid #B6FF4D;
     }
 
     .event-time-date {
@@ -1115,7 +1154,7 @@ section.blog-grid .blog-box {
     }
 
     .event-btn {
-        background: linear-gradient(90deg, #B6FF4D 0%, #00FFA3 100%);
+        background: linear-gradient(#BCFE08, #86F969);
         color: #222;
         font-weight: 700;
         font-size: 14px;
@@ -1277,10 +1316,18 @@ section.blog-grid .blog-box {
         margin-bottom: 18px;
     }
 
-    .event-meta-info {
+    /* .event-meta-info {
         border-left: 4px solid #B6FF4D;
         padding-left: 15px;
         flex: 1;
+    } */
+    .event-meta-info {
+        border-left: 4px solid gray;
+        padding-left: 15px;
+        flex: 1;
+    }
+    .blog-grid .blog-box:hover .event-meta-info {
+        border-left: 4px solid #B6FF4D;
     }
 
     .event-time-date {
@@ -1313,7 +1360,7 @@ section.blog-grid .blog-box {
     }
 
     .event-btn {
-        background: linear-gradient(90deg, #B6FF4D 0%, #00FFA3 100%);
+        background: linear-gradient(#BCFE08, #86F969);
         color: #222;
         font-weight: 700;
         font-size: 14px;
@@ -1475,10 +1522,18 @@ section.blog-grid .blog-box {
         margin-bottom: 18px;
     }
 
-    .event-meta-info {
+    /* .event-meta-info {
         border-left: 4px solid #B6FF4D;
         padding-left: 15px;
         flex: 1;
+    } */
+    .event-meta-info {
+        border-left: 4px solid gray;
+        padding-left: 15px;
+        flex: 1;
+    }
+    .blog-grid .blog-box:hover .event-meta-info {
+        border-left: 4px solid #B6FF4D;
     }
 
     .event-time-date {
@@ -1512,7 +1567,7 @@ section.blog-grid .blog-box {
     }
 
     .event-btn {
-        background: linear-gradient(90deg, #B6FF4D 0%, #00FFA3 100%);
+        background: linear-gradient(#BCFE08, #86F969);
         color: #222;
         font-weight: 700;
         font-size: 12px;
@@ -1674,9 +1729,12 @@ section.blog-grid .blog-box {
     }
 
     .event-meta-info {
-        border-left: 4px solid #B6FF4D;
+        border-left: 4px solid gray;
         padding-left: 15px;
         flex: 1;
+    }
+    .blog-grid .blog-box:hover .event-meta-info {
+        border-left: 4px solid #B6FF4D;
     }
 
     .event-time-date {
@@ -1709,7 +1767,7 @@ section.blog-grid .blog-box {
     }
 
     .event-btn {
-        background: linear-gradient(90deg, #B6FF4D 0%, #00FFA3 100%);
+        background: linear-gradient(#BCFE08, #86F969);
         color: #222;
         font-weight: 700;
         font-size: 14px;
@@ -1868,9 +1926,12 @@ section.blog-grid .blog-box {
     }
 
     .event-meta-info {
-        border-left: 4px solid #B6FF4D;
+        border-left: 4px solid gray;
         padding-left: 15px;
         flex: 1;
+    }
+    .blog-grid .blog-box:hover .event-meta-info {
+        border-left: 4px solid #B6FF4D;
     }
 
     .event-time-date {
@@ -1903,7 +1964,7 @@ section.blog-grid .blog-box {
     }
 
     .event-btn {
-        background: linear-gradient(90deg, #B6FF4D 0%, #00FFA3 100%);
+        background: linear-gradient(#BCFE08, #86F969);
         color: #222;
         font-weight: 700;
         font-size: 14px;
@@ -2064,9 +2125,12 @@ section.blog-grid .blog-box {
     }
 
     .event-meta-info {
-        border-left: 4px solid #B6FF4D;
+        border-left: 4px solid gray;
         padding-left: 15px;
         flex: 1;
+    }
+    .blog-grid .blog-box:hover .event-meta-info {
+        border-left: 4px solid #B6FF4D;
     }
 
     .event-time-date {
@@ -2099,7 +2163,7 @@ section.blog-grid .blog-box {
     }
 
     .event-btn {
-        background: linear-gradient(90deg, #B6FF4D 0%, #00FFA3 100%);
+        background: linear-gradient(#BCFE08, #86F969);
         color: #222;
         font-weight: 700;
         font-size: 14px;
@@ -2258,9 +2322,12 @@ section.blog-grid .blog-box {
     }
 
     .event-meta-info {
-        border-left: 4px solid #B6FF4D;
+        border-left: 4px solid gray;
         padding-left: 15px;
         flex: 1;
+    }
+    .blog-grid .blog-box:hover .event-meta-info {
+        border-left: 4px solid #B6FF4D;
     }
 
     .event-time-date {
@@ -2293,7 +2360,7 @@ section.blog-grid .blog-box {
     }
 
     .event-btn {
-        background: linear-gradient(90deg, #B6FF4D 0%, #00FFA3 100%);
+        background: linear-gradient(#BCFE08, #86F969);
         color: #222;
         font-weight: 700;
         font-size: 14px;
@@ -2457,9 +2524,12 @@ section.blog-grid .blog-box {
     }
 
     .event-meta-info {
-        border-left: 4px solid #B6FF4D;
+        border-left: 4px solid gray;
         padding-left: 15px;
         flex: 1;
+    }
+    .blog-grid .blog-box:hover .event-meta-info {
+        border-left: 4px solid #B6FF4D;
     }
 
     .event-time-date {
@@ -2492,7 +2562,7 @@ section.blog-grid .blog-box {
     }
 
     .event-btn {
-        background: linear-gradient(90deg, #B6FF4D 0%, #00FFA3 100%);
+        background: linear-gradient(#BCFE08, #86F969);
         color: #222;
         font-weight: 700;
         font-size: 14px;
@@ -2744,9 +2814,12 @@ section.blog-grid .blog-box {
     }
 
     .event-meta-info {
-        border-left: 4px solid #B6FF4D;
+        border-left: 4px solid gray;
         padding-left: 15px;
         flex: 1;
+    }
+    .blog-grid .blog-box:hover .event-meta-info {
+        border-left: 4px solid #B6FF4D;
     }
 
     .event-time-date {
@@ -2779,7 +2852,7 @@ section.blog-grid .blog-box {
     }
 
     .event-btn {
-        background: linear-gradient(90deg, #B6FF4D 0%, #00FFA3 100%);
+        background: linear-gradient(#BCFE08, #86F969);
         color: #222;
         font-weight: 700;
         font-size: 14px;
@@ -2838,9 +2911,12 @@ section.blog-grid .blog-box {
     }
 
     .event-meta-info {
-        border-left: 4px solid #B6FF4D;
+        border-left: 4px solid gray;
         padding-left: 15px;
         flex: 1;
+    }
+    .blog-grid .blog-box:hover .event-meta-info {
+        border-left: 4px solid #B6FF4D;
     }
 
     .event-time-date {
@@ -2873,7 +2949,7 @@ section.blog-grid .blog-box {
     }
 
     .event-btn {
-        background: linear-gradient(90deg, #B6FF4D 0%, #00FFA3 100%);
+        background: linear-gradient(#BCFE08, #86F969);
         color: #222;
         font-weight: 700;
         font-size: 14px;
@@ -2932,9 +3008,12 @@ section.blog-grid .blog-box {
     }
 
     .event-meta-info {
-        border-left: 4px solid #B6FF4D;
+        border-left: 4px solid gray;
         padding-left: 15px;
         flex: 1;
+    }
+    .blog-grid .blog-box:hover .event-meta-info {
+        border-left: 4px solid #B6FF4D;
     }
 
     .event-time-date {
@@ -2967,7 +3046,7 @@ section.blog-grid .blog-box {
     }
 
     .event-btn {
-        background: linear-gradient(90deg, #B6FF4D 0%, #00FFA3 100%);
+        background: linear-gradient(#BCFE08, #86F969);
         color: #222;
         font-weight: 700;
         font-size: 14px;
@@ -3026,9 +3105,12 @@ section.blog-grid .blog-box {
     }
 
     .event-meta-info {
-        border-left: 4px solid #B6FF4D;
-        padding-left: 7px;
+        border-left: 4px solid gray;
+        padding-left: 15px;
         flex: 1;
+    }
+    .blog-grid .blog-box:hover .event-meta-info {
+        border-left: 4px solid #B6FF4D;
     }
 
     .event-time-date {
@@ -3061,7 +3143,7 @@ section.blog-grid .blog-box {
     }
 
     .event-btn {
-        background: linear-gradient(90deg, #B6FF4D 0%, #00FFA3 100%);
+        background: linear-gradient(#BCFE08, #86F969);
         color: #222;
         font-weight: 700;
         font-size: 14px;
@@ -3120,9 +3202,12 @@ section.blog-grid .blog-box {
     }
 
     .event-meta-info {
-        border-left: 4px solid #B6FF4D;
-        padding-left: 7px;
+        border-left: 4px solid gray;
+        padding-left: 15px;
         flex: 1;
+    }
+    .blog-grid .blog-box:hover .event-meta-info {
+        border-left: 4px solid #B6FF4D;
     }
 
     .event-time-date {
@@ -3155,7 +3240,7 @@ section.blog-grid .blog-box {
     }
 
     .event-btn {
-        background: linear-gradient(90deg, #B6FF4D 0%, #00FFA3 100%);
+        background: linear-gradient(#BCFE08, #86F969);
         color: #222;
         font-weight: 700;
         font-size: 12px;
@@ -3321,6 +3406,9 @@ li.listing.active {
     padding: 8px 10px;
     background: linear-gradient(90deg, #bcfe08, #86f869);
 }
+li.listing.active .fs-16 {
+    color: black;
+}
 li.listing {
     cursor: pointer;
     padding: 8px 10px;
@@ -3329,6 +3417,9 @@ li.listing {
 li.listing:hover {
     cursor: pointer;
     background: linear-gradient(90deg, #bcfe08, #86f869);
+}
+li.listing:hover .fs-16 {
+    color: black;
 }
 .listing h6.fs-16 {
     margin-bottom: 0px !important;
