@@ -3315,3 +3315,122 @@ section.blog-grid .blog-box {
         display: block;
     }
 }
+
+
+li.listing.active {
+    padding: 8px 10px;
+    background: linear-gradient(90deg, #bcfe08, #86f869);
+}
+li.listing {
+    cursor: pointer;
+    padding: 8px 10px;
+    background: transparent;
+}
+li.listing:hover {
+    cursor: pointer;
+    background: linear-gradient(90deg, #bcfe08, #86f869);
+}
+.listing h6.fs-16 {
+    margin-bottom: 0px !important;
+}
+
+@media (max-width: 769px) {
+    ul.menu-tab.menu-on-line {
+        display: none !important;
+    }
+}
+
+@media (min-width: 1440px) and (max-width: 1599px) {
+ul.menu-tab.menu-on-line {
+        display: flex;
+        gap: 1.5%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 1600px) and (max-width: 1919px) {
+ul.menu-tab.menu-on-line {
+        display: flex;
+        gap: 1.5%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 1920px) and (max-width: 2100px) {
+	ul.menu-tab.menu-on-line {
+        display: flex;
+        gap: 1.5%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 2101px) {
+	ul.menu-tab.menu-on-line {
+        display: flex;
+        gap: 1.5%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 1280px) and (max-width: 1366px) {
+	ul.menu-tab.menu-on-line {
+        display: flex;
+        gap: 1.4%;
+        margin-bottom: 18px;
+        flex-wrap: wrap;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+ul.menu-tab.menu-on-line {
+        display: flex;
+        gap: 1%;
+        margin-bottom: 15px;
+        flex-wrap: wrap;
+    }
+}
+
+@media (min-width: 1100px) and (max-width: 1180px) {
+ul.menu-tab.menu-on-line {
+        display: flex;
+        gap: 1.2%;
+        margin-bottom: 16px;
+        flex-wrap: wrap;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 820px) {
+ul.menu-tab.menu-on-line {
+        display: flex;
+        gap: 1%;
+        margin-bottom: 12px;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 767px) {
+ul.menu-tab.menu-on-line {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2%;
+        margin-bottom: 12px;
+    }
+}
+
+@media (min-width: 821px) and (max-width: 1023px) {
+ ul.menu-tab.menu-on-line {
+        display: flex;
+        gap: 1%;
+        margin-bottom: 12px;
+        flex-wrap: wrap;
+    }
+}
+
+@media (min-width: 1367px) and (max-width: 1439px) {
+ul.menu-tab.menu-on-line {
+        display: flex;
+        gap: 1.4%;
+        margin-bottom: 18px;
+        flex-wrap: wrap;
+    }
+}
