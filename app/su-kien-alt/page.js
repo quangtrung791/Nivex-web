@@ -68,6 +68,39 @@ export default function SuKienAlt() {
 
                                                 <div className="col-md-6">
                                                     <div className="blog-box">
+                                                        <div className="tag-status">
+                                                            <p>Online</p>
+                                                        </div>
+                                                        <div className="box-image">
+                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
+                                                        </div>
+                                                        <div className="box-content">
+                                                            <div>
+                                                                <Link href="#" className="title">Nivex Dẫn Dắt Tương Lai Giao Dịch AI tại PopMax Summit 2025</Link>
+                                                                <p className="text-desc-su-kien">Tháng 9/2025, sự kiện blockchain quốc tế PopMax Summit tại Bali đã chứng kiến sự hiện diện của Nivex - sàn giao dịch tiên phong ứng dụng Trí tuệ nhân tạo (AI) vào giao dịch crypto.</p>
+                                                            </div>
+                                                            <div className="event-meta-row">
+                                                                <div className="event-meta-info">
+                                                                    <div className="event-time-date">
+                                                                        <span className="event-time">15:00 – 16:30</span>
+                                                                        <span className="event-date">06/09/2025</span>
+                                                                    </div>
+                                                                    <div className="event-tags">
+                                                                        <span>Hợp đồng</span>
+                                                                        <span>Spot</span>
+                                                                        <span>CopyTrade</span>
+                                                                    </div>
+                                                                </div>
+                                                                <a href="#" className="event-btn">Xem thêm</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="col-md-6">
+                                                    <div className="blog-box">
+                                                        <div className="tag-status">
+                                                            <p>Online</p>
+                                                        </div>
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             {/* <div className="wrap-video">
@@ -99,6 +132,9 @@ export default function SuKienAlt() {
                                                 </div>
                                                 <div className="col-md-6">
                                                     <div className="blog-box">
+                                                        <div className="tag-status">
+                                                            <p>Online</p>
+                                                        </div>
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             {/* <div className="wrap-video">
@@ -130,37 +166,9 @@ export default function SuKienAlt() {
                                                 </div>
                                                 <div className="col-md-6">
                                                     <div className="blog-box">
-                                                        <div className="box-image">
-                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
-                                                            {/* <div className="wrap-video">
-                                                                <VideoPopup />
-                                                            </div> */}
+                                                        <div className="tag-status">
+                                                            <p>Online</p>
                                                         </div>
-                                                        <div className="box-content">
-                                                            {/* <Link href="#" className="category btn-action">learn &amp; earn</Link> */}
-                                                            <div>
-                                                                <Link href="#" className="title">Nivex Dẫn Dắt Tương Lai Giao Dịch AI tại PopMax Summit 2025</Link>
-                                                                <p className="text-desc-su-kien">Tháng 9/2025, sự kiện blockchain quốc tế PopMax Summit tại Bali đã chứng kiến sự hiện diện của Nivex - sàn giao dịch tiên phong ứng dụng Trí tuệ nhân tạo (AI) vào giao dịch crypto.</p>
-                                                            </div>
-                                                            <div className="event-meta-row">
-                                                                <div className="event-meta-info">
-                                                                    <div className="event-time-date">
-                                                                        <span className="event-time">15:00 – 16:30</span>
-                                                                        <span className="event-date">06/09/2025</span>
-                                                                    </div>
-                                                                    <div className="event-tags">
-                                                                        <span>Hợp đồng</span>
-                                                                        <span>Spot</span>
-                                                                        <span>CopyTrade</span>
-                                                                    </div>
-                                                                </div>
-                                                                <a href="#" className="event-btn">Xem thêm</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className="col-md-6">
-                                                    <div className="blog-box">
                                                         <div className="box-image">
                                                             <img src="/assets/images/blog/blog-02.jpg" alt="" />
                                                             {/* <div className="wrap-video">
