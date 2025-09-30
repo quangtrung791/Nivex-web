@@ -10,11 +10,10 @@ export async function GET(request) {
     // Query courses table with explicit schema
     const rows = await query('SELECT * FROM public.news ORDER BY id ASC');
     
-    // Transform courses data for React Admin (thêm link_zoom)
+    // Transform courses data for React Admin
     const news = rows.map(row => ({
       id: row.id,
       title: row.title,
-      // type: row.type || 'online',
       category_id: row.category_id || [],
       status: row.status || 'active',
       content: row.content || '',
