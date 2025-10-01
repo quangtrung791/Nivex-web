@@ -1,8 +1,22 @@
 /* Fixed */
-section.blog-details .content p span, section.blog-details .content p, section.blog-details .content {
+section.blog-details .content,
+section.blog-details .content p span, 
+section.blog-details .content p, 
+section.blog-details .content strong, 
+section.blog-details .content * {
     color: white !important;
 }
- /* Fixed */
+
+section.duoc-xem-nhieu .blog-box .box-content .title {
+    display: block; /* Fallback for non-webkit */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Fixed */
 .gradient-text {
    background: linear-gradient(90deg, #bcfe08, #86f869);
    -webkit-background-clip: text;
