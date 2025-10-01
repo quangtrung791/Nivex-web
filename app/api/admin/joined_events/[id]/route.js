@@ -6,7 +6,7 @@ export async function GET(request, { params }) {
   try {
     const id = parseInt(params.id)
     const result = await query(
-      `SELECT id, title, content, short_desc, thumbnail_url, time_event, created_at, updated_at
+      `SELECT id, title, content, short_desc, thumbnail_url, time_event, tag1, tag2, tag3, type, time_from_and_to, created_at, updated_at
        FROM public.joined_events WHERE id = $1`,
       [id]
     )
@@ -30,13 +30,19 @@ export async function PUT(request, { params }) {
       data.short_desc ?? null,
       data.thumbnail_url ?? null,
       data.time_event ?? '01/01/1990',
+      data.tag1 ?? 'Hợp đồng',
+      data.tag2 ?? 'Spot',
+      data.tag3 ?? 'CopyTrade',
+      data.type ?? 'Online',
+      data.time_from_and_to ?? '00:00 - 01:00',
+      data.time_event ?? '01/01/1990',
       id,
     ]
     const updateSQL = `
       UPDATE public.joined_events SET
-        title=$1, content=$2, short_desc=$3, thumbnail_url=$4, time_event=$5, updated_at=NOW()
+        title=$1, content=$2, short_desc=$3, thumbnail_url=$4, tag1=$5, tag2=$6, tag3=$7, type=$8, time_from_and_to=$9, time_event=$10, updated_at=NOW()
       WHERE id=$6
-      RETURNING id, title, content, short_desc, thumbnail_url, time_event, created_at, updated_at
+      RETURNING id, title, content, short_desc, thumbnail_url, tag1, tag2, tag3, type, time_from_and_to, time_event, created_at, updated_at
     `
     const result = await query(updateSQL, paramsArr)
     if (result.length === 0) return NextResponse.json({ error: 'Not found' }, { status: 404 })

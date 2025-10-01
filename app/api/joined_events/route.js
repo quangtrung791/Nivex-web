@@ -19,6 +19,11 @@ export async function GET(request) {
         short_desc,
         thumbnail_url,
         time_event,
+        time_from_and_to,
+        tag1,
+        tag2,
+        tag3,
+        type,
         created_at,
         updated_at
       FROM public.joined_events
@@ -52,7 +57,12 @@ export async function GET(request) {
         time_event: n.time_event,
         content: n.content,
         short_desc: n.short_desc,
-        thumbnail_url: n.thumbnail_url
+        thumbnail_url: n.thumbnail_url,
+        time_from_and_to: n.time_from_and_to,
+        tag1: n.tag1,
+        tag2: n.tag2,
+        tag3: n.tag3,
+        type: n.type,
       }
     })
 

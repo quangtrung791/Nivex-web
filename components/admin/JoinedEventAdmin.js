@@ -163,18 +163,12 @@ export const JoinedEventList = () => (
       <TextField source="title" label="Tên sự kiện" />
       <TextField source="content" label="Mô tả đầy đủ" />
       <TextField source="short_desc" label="Mô tả ngắn" />
-      {/* <TextField source="author" label="Tác giả bài đăng" /> */}
-      {/* <SelectField 
-        source="type" 
-        label="Loại" 
-        choices={[
-          { id: 'online', name: 'Online' },
-          { id: 'offline', name: 'Offline' },
-          { id: 'hybrid', name: 'Hybrid' },
-        ]}
-      /> */}
       <DateField source="time_event" label="Ngày diễn ra sự kiện" showTime />
-      {/* <DateField source="end_date" label="Ngày kết thúc" showTime /> */}
+      <TextField source="tag1" label="Thẻ tag 1" />
+      <TextField source="tag2" label="Thẻ tag 2" />
+      <TextField source="tag3" label="Thẻ tag 3" />
+      <TextField source="type" label="Phân loại (Online/Offline)" />
+      <TextField source="time_from_and_to" label="Thời gian diễn ra" />
       <StatusField />
       <EditButton label="Sửa" />
       <ShowButton label="Xem" />
@@ -222,14 +216,42 @@ export const JoinedEventCreate = () => (
         fullWidth
         helperText="Nội dung giới thiệu đầy đủ cho sự kiện"
       />
-      <RichTextInput 
+      <TextInput 
         source="short_desc" 
         label="Nội dung giới thiệu ngắn gọn cho sự kiện"
         multiline
         rows={5}
-        fullWidth
         helperText="Nội dung giới thiệu ngắn gọn cho sự kiện"
       />
+
+      <TextInput 
+        source="tag1" 
+        label="Thẻ tag 1" 
+        validate={[required()]}
+        fullWidth
+        helperText="Nhập thẻ tag 1"
+      required />
+      <TextInput 
+        source="tag2" 
+        label="Thẻ tag 2" 
+        validate={[required()]}
+        fullWidth
+        helperText="Nhập thẻ tag 2"
+      required />
+      <TextInput 
+        source="tag3" 
+        label="Thẻ tag 3" 
+        validate={[required()]}
+        fullWidth
+        helperText="Nhập thẻ tag 3"
+      required />
+      <TextInput 
+        source="type" 
+        label="Phân loại (Online/Offline)" 
+        validate={[required()]}
+        fullWidth
+        helperText="Phân loại sự kiện (Chỉ được nhập Online hoặc Offline)"
+      required />
       {/* <TextField source="author" label="Tác giả bài đăng" /> */}
     </SimpleForm>
   </Create>
@@ -307,13 +329,49 @@ export const JoinedEventEdit = () => (
         rows={15}
         fullWidth
       />
-      <RichTextInput 
+      <TextInput 
         source="short_desc" 
         label="Mô tả ngắn cho sự kiện"
         multiline
         rows={15}
-        fullWidth
       />
+      
+      <TextInput 
+        source="tag1" 
+        label="Thẻ tag 1" 
+        validate={[required()]}
+        fullWidth
+        helperText="Nhập thẻ tag 1"
+      required />
+      <TextInput 
+        source="tag2" 
+        label="Thẻ tag 2" 
+        validate={[required()]}
+        fullWidth
+        helperText="Nhập thẻ tag 2"
+      required />
+      <TextInput 
+        source="tag3" 
+        label="Thẻ tag 3" 
+        validate={[required()]}
+        fullWidth
+        helperText="Nhập thẻ tag 3"
+      required />
+      <TextInput 
+        source="type" 
+        label="Phân loại (Online/Offline)" 
+        validate={[required()]}
+        fullWidth
+        helperText="Phân loại sự kiện (Chỉ được nhập Online hoặc Offline)"
+      required />
+      <TextInput 
+        source="time_from_and_to" 
+        label="Thời gian diễn ra" 
+        validate={[required()]}
+        fullWidth
+        helperText="Thời gian diễn ra (nhập theo định dạng 00:00 - 01:00)"
+      required />
+
       {/* <TextField source="author" label="Tác giả bài đăng" /> */}
       <span>Ngày tạo: </span><DateField source="created_at" label="Ngày tạo" showTime disabled />
       <span>Ngày cập nhật: </span><DateField source="updated_at" label="Cập nhật lần cuối" showTime disabled />
@@ -325,31 +383,20 @@ export const JoinedEventEdit = () => (
 export const JoinedEventShow = () => (
   <Show title="👁️ Chi tiết sự kiện">
     <SimpleShowLayout>
-
-      {/* Chọn ID danh mục tin tức */}
-      {/* <ReferenceField source="category_id" reference="category_news" label="Danh mục">
-        <TextField source="category_id" label="ID Danh mục" />
-      </ReferenceField> */}
-
       <TextField source="id" label="ID sự kiện" />
       <TextField source="title" label="Tên sự kiện" />
-      {/* <TextField source="author" label="Tác giả bài đăng" /> */}
-      {/* <SelectField 
-        source="type" 
-        label="Loại"
-        choices={[
-          { id: 'online', name: 'Online' },
-          { id: 'offline', name: 'Offline' },
-          { id: 'hybrid', name: 'Hybrid' },
-        ]}
-      /> */}
       <StatusField />
       <DateField source="time_event" label="Thời gian diễn ra sự kiện" showTime />
-      {/* <DateField source="end_date" label="Ngày giờ kết thúc" showTime /> */}
-      {/* <TextField source="link_zoom" label="Link Zoom" /> */}
       <ImageField source="thumbnail_url" label="Hình ảnh quảng bá sự kiện" sx={{ '& img': { maxWidth: '300px', borderRadius: '8px' } }} />
       <RichTextField source="content" label="Nội dung giới thiệu đầy đủ" />
-      <RichTextField source="short_desc" label="Nội dung mô tả ngắn gọn" />
+      <TextField source="short_desc" label="Nội dung mô tả ngắn gọn" />
+
+      <TextField source="tag1" label="Thẻ tag 1" />
+      <TextField source="tag2" label="Thẻ tag 2" />
+      <TextField source="tag3" label="Thẻ tag 3" />
+      <TextField source="type" label="Phân loại sự kiện (Online/Offline)" />
+      <TextField source="time_from_and_to" label="Thời gian diễn ra (định dạng 00:00 - 01:00)" />
+
       <DateField source="created_at" label="Ngày tạo" showTime />
       <DateField source="updated_at" label="Cập nhật lần cuối" showTime />
     </SimpleShowLayout>

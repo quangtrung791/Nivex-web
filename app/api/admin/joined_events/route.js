@@ -17,6 +17,11 @@ export async function GET(request) {
       content: row.content || '',
       short_desc: row.short_desc || '',
       thumbnail_url: row.thumbnail_url,
+      time_from_and_to: row.time_from_and_to,
+      tag1: row.tag1,
+      tag2: row.tag2,
+      tag3: row.tag3,
+      type: row.type,
       time_event: row.time_event,
       created_at: row.created_at,
       updated_at: row.updated_at      
@@ -47,13 +52,18 @@ export async function POST(request) {
     
     // Insert into events table
     const result = await query(
-      'INSERT INTO public.joined_events (title, content, short_desc, thumbnail_url, time_event) VALUES ($1, $2, $3, $4, $5) RETURNING *',
+      'INSERT INTO public.joined_events (title, content, short_desc, thumbnail_url, time_event, tag1, tag2, tag3, type, time_from_and_to) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *',
       [
         data.title || 'Untitled',
         data.content || '',
         data.short_desc || '',
         data.thumbnail_url || null,
-        data.time_event || '01/01/1990'
+        data.time_event || '01/01/1990',
+        data.tag1 || 'Hợp đồng',
+        data.tag2 || 'Spot',
+        data.tag3 || 'CopyTrade',
+        data.type || 'Online',
+        data.time_from_and_to || '00:00 - 01:00',
       ]
     );
     

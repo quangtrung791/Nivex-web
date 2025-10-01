@@ -21,6 +21,11 @@ export async function GET(request, { params }) {
         short_desc,
         thumbnail_url,
         time_event,
+        time_from_and_to,
+        tag1,
+        tag2,
+        tag3,
+        type,
         created_at,
         updated_at,
       FROM public.joined_events
