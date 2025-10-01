@@ -69,7 +69,7 @@ section.section-news-header {
         height: 380px;
     }
 	a.title {
-        height: 78px;
+        height: 68px;
     }
     p.text-desc-su-kien {
         height: 40px;
@@ -81,7 +81,8 @@ section.section-news-header {
         height: 400px;
     }
 	a.title {
-        height: 78px;
+        /* height: 78px; */
+        height: 69px;
     }
     p.text-desc-su-kien {
         height: 40px;
@@ -96,7 +97,8 @@ section.section-news-header {
         height: 480px;
     }
 	a.title {
-        height: 78px;
+        /* height: 78px; */
+        height: 59px;
     }
     p.text-desc-su-kien {
         height: 40px;
@@ -108,7 +110,7 @@ section.section-news-header {
         height: 336px;
     }
     a.title {
-        height: 67px;
+        height: 62px;
     }
     p.text-desc-su-kien {
         height: 40px;
@@ -120,7 +122,7 @@ section.section-news-header {
         height: 372px;
     }
     a.title {
-        height: 67px;
+        height: 64px;
     }
     p.text-desc-su-kien {
         height: 40px;
@@ -132,7 +134,7 @@ section.section-news-header {
         height: 340px;
     }
     a.title {
-        height: 67px;
+        height: 65px;
     }
     p.text-desc-su-kien {
         height: 40px;
@@ -144,7 +146,7 @@ section.section-news-header {
         height: 300px;
     }
     a.title {
-        height: 67px;
+        height: 65px;
     }
     p.text-desc-su-kien {
         height: 40px;
@@ -156,7 +158,7 @@ section.section-news-header {
         height: 320px;
     }
     a.title {
-        height: 67px;
+        height: 65px;
     }
     p.text-desc-su-kien {
         height: 40px;
@@ -170,7 +172,7 @@ section.section-news-header {
         height: 337px;
     }
     a.title {
-        height: 67px;
+        height: 65px;
     }
     p.text-desc-su-kien {
         height: 40px;
@@ -181,7 +183,7 @@ section.section-news-header {
         height: 338px;
     }
     a.title {
-        height: 67px;
+        height: 65px;
     }
     p.text-desc-su-kien {
         height: 40px;
@@ -192,7 +194,7 @@ section.section-news-header {
         height: 375px;
     }
     a.title {
-        height: 69px;
+        height: 65px;
     }
     p.text-desc-su-kien {
         height: 40px;
@@ -203,7 +205,7 @@ section.section-news-header {
         height: 370px;
     }
     a.title {
-        height: 67px;
+        height: 65px;
     }
     p.text-desc-su-kien {
         height: 40px;

@@ -22,7 +22,7 @@ export default function BlogDetails() {
     useEffect(() => {
         if (!id) return
         setLoading(true)
-        fetch(`/api/event/${id}`)
+        fetch(`/api/joined_events/${id}`)
             .then(res => res.json())
             .then(data => {
                 setEvents(data)
@@ -34,7 +34,7 @@ export default function BlogDetails() {
     useEffect(() => {
     if (!id) return;
         setLoading(true);
-        fetch(`/api/event/${id}`)
+        fetch(`/api/joined_events/${id}`)
             .then(res => res.json())
             .then(data => {
                 setEvents(data);
@@ -42,7 +42,7 @@ export default function BlogDetails() {
             })
             .catch(() => setLoading(false));
         // Fetch danh sách event
-        fetch('/api/event?hot=1')
+        fetch('/api/joined_events?hot=1')
             .then(res => res.json())
             .then(data => setHotEvents(Array.isArray(data.data) ? data.data : []));
     }, [id]);
