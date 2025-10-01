@@ -6,12 +6,11 @@ export const runtime = "nodejs";
 
 export async function GET(request) {
   try {
-    console.log("GET /api/admin/courses called");
     
     // Query courses table with explicit schema
     const rows = await query('SELECT * FROM public.courses ORDER BY id ASC');
     
-    // Transform courses data for React Admin với timezone đúng
+    // Transform courses data for React Admin - giữ nguyên raw data để VietnamDateField xử lý
     const courses = rows.map(row => {
       console.log('Admin API - Raw database dates:', {
         id: row.id,
@@ -19,21 +18,14 @@ export async function GET(request) {
         end_date: row.end_date
       });
       
-      // Format dates để hiển thị đúng trong admin (tương tự code cũ hoạt động)
-      const formatDateForDisplay = (dateStr) => {
-        if (!dateStr) return null;
-        const date = new Date(dateStr);
-        return date.toISOString(); // Giữ ISO format để DateField tự xử lý timezone
-      };
-      
       return {
         id: row.id,
         title: row.title,
         type: row.type || 'online',
         status: row.status || 'active',
-        // Sử dụng format tương tự code cũ
-        start_date: formatDateForDisplay(row.start_date),
-        end_date: formatDateForDisplay(row.end_date),
+        // Giữ nguyên raw database dates để VietnamDateField component tự xử lý timezone
+        start_date: row.start_date,
+        end_date: row.end_date,
         link_zoom: row.link_zoom,
         content: row.content || '',
         image_url: row.image_url,
@@ -43,7 +35,6 @@ export async function GET(request) {
       };
     });
     
-    console.log("Returning courses:", courses.length);
     
     return NextResponse.json(courses, {
       headers: {
@@ -53,7 +44,6 @@ export async function GET(request) {
     });
     
   } catch (error) {
-    console.error("GET /api/admin/courses error:", error);
     return NextResponse.json({
       ok: false,
       error: error.message
@@ -65,13 +55,11 @@ export async function POST(request) {
   try {
     const data = await request.json();
     
-    console.log("POST course data received:", data);
     
     // Parse và validate datetime inputs
     const startDate = data.start_date ? new Date(data.start_date).toISOString() : null;
     const endDate = data.end_date ? new Date(data.end_date).toISOString() : null;
     
-    console.log("Parsed dates:", { startDate, endDate });
     
     // Insert into courses table với timezone handling
     const result = await query(
@@ -95,7 +83,6 @@ export async function POST(request) {
     return NextResponse.json(course, { status: 201 });
     
   } catch (error) {
-    console.error("POST /api/admin/courses error:", error);
     return NextResponse.json({
       ok: false,
       error: error.message

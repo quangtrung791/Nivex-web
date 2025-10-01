@@ -84,7 +84,7 @@ export default function CoursesPage() {
                 <div className="container">
                     <div className={styles.displayFlexForHeader}>
                         <div className="col-md-6">
-                            <h1 className={`heading ${styles.pageTitleHeading}`}>Khóa học <span>tại Nivex</span>
+                            <h1 className={`heading ${styles.pageTitleHeading}`}><span>Khóa học</span> tại Nivex
                             </h1>
                         </div>
                         <div className={`col-md-6 ${styles.col6mdCenter}`}>

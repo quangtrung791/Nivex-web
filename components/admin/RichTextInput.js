@@ -22,20 +22,95 @@ const RichTextInput = (props) => {
     setMounted(true)
   }, [])
 
+  // Upload image to Cloudinary
+  const uploadImageToCloudinary = async (file) => {
+    const formData = new FormData()
+    formData.append('file', file)
+
+    try {
+      const response = await fetch('/api/upload', {
+        method: 'POST',
+        body: formData
+      })
+      
+      const result = await response.json()
+      if (result.success) {
+        return result.data.url
+      } else {
+        throw new Error(result.error || 'Upload failed')
+      }
+    } catch (error) {
+      console.error('Upload error:', error)
+      throw error
+    }
+  }
+
+  // Custom image handler for Cloudinary upload
+  const imageHandler = async () => {
+    const input = document.createElement('input')
+    input.setAttribute('type', 'file')
+    input.setAttribute('accept', 'image/*')
+    input.click()
+
+    input.onchange = async () => {
+      const file = input.files[0]
+      if (!file) return
+
+      if (file.size > 5 * 1024 * 1024) { // 5MB limit
+        alert('Ảnh quá lớn. Kích thước tối đa 5MB.')
+        return
+      }
+
+      try {
+        // Get Quill instance
+        const quillContainer = document.querySelector('.ql-container')
+        const quill = quillContainer?.__quill
+        
+        if (!quill) {
+          alert('Lỗi: Không tìm thấy editor')
+          return
+        }
+
+        const range = quill.getSelection(true)
+        
+        // Insert loading text
+        quill.insertText(range.index, 'Đang tải ảnh...', 'user')
+        quill.setSelection(range.index + 17)
+
+        // Upload to Cloudinary
+        const imageUrl = await uploadImageToCloudinary(file)
+
+        // Remove loading text and insert image
+        quill.deleteText(range.index, 17)
+        quill.insertEmbed(range.index, 'image', imageUrl)
+        quill.setSelection(range.index + 1)
+
+      } catch (error) {
+        console.error('Upload error:', error)
+        alert('Lỗi khi tải ảnh lên: ' + error.message)
+      }
+    }
+  }
+
   // Quill modules configuration
   const modules = {
-    toolbar: [
-      [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-      [{ 'font': [] }],
-      [{ 'size': [] }],
-      ['bold', 'italic', 'underline', 'strike', 'blockquote'],
-      [{ 'list': 'ordered'}, { 'list': 'bullet' }, { 'indent': '-1'}, { 'indent': '+1' }],
-      ['link', 'image', 'video'],
-      [{ 'align': [] }],
-      [{ 'color': [] }, { 'background': [] }],
-      ['code-block'],
-      ['clean']
-    ],
+    toolbar: {
+      container: [
+        [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+        [{ 'font': [] }],
+        [{ 'size': [] }],
+        ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+        [{ 'list': 'ordered'}, { 'list': 'bullet' }, { 'indent': '-1'}, { 'indent': '+1' }],
+        ['link', 'image', 'video'],
+        [{ 'align': [] }],
+        [{ 'color': [] }, { 'background': [] }],
+        ['code-block'],
+        ['clean']
+      ],
+      handlers: {
+        image: imageHandler
+      }
+    },
     clipboard: {
       // toggle to add extra line breaks when pasting HTML:
       matchVisual: false,
@@ -87,6 +162,46 @@ const RichTextInput = (props) => {
           modules={modules}
           formats={formats}
           placeholder="Nhập nội dung bài viết..."
+          ref={(el) => {
+            if (el && el.getEditor) {
+              const quill = el.getEditor()
+              // Store Quill instance for image handler access
+              quill.container.__quill = quill
+              
+              // Handle paste events for image upload
+              quill.root.addEventListener('paste', async (e) => {
+                const clipboardData = e.clipboardData || e.originalEvent.clipboardData
+                const items = clipboardData.items
+                
+                for (let item of items) {
+                  if (item.type.indexOf('image') !== -1) {
+                    e.preventDefault()
+                    const file = item.getAsFile()
+                    
+                    if (file.size > 5 * 1024 * 1024) {
+                      alert('Ảnh paste quá lớn. Kích thước tối đa 5MB.')
+                      return
+                    }
+                    
+                    try {
+                      const range = quill.getSelection(true)
+                      quill.insertText(range.index, 'Đang tải ảnh...', 'user')
+                      
+                      const imageUrl = await uploadImageToCloudinary(file)
+                      
+                      quill.deleteText(range.index, 17)
+                      quill.insertEmbed(range.index, 'image', imageUrl)
+                      quill.setSelection(range.index + 1)
+                    } catch (error) {
+                      console.error('Paste upload error:', error)
+                      alert('Lỗi khi tải ảnh paste: ' + error.message)
+                    }
+                    break
+                  }
+                }
+              })
+            }
+          }}
           style={{
             backgroundColor: 'white',
             border: fieldState.error ? '2px solid #d32f2f' : '1px solid #ccc',
