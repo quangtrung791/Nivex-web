@@ -66,7 +66,7 @@ section.section-news-header {
 /* fix height of text */
 @media (min-width: 1440px) and (max-width: 1599px) {
 	.blog-box .box-image img {
-        height: 370px;
+        height: 380px;
     }
 	a.title {
         height: 78px;
@@ -78,7 +78,7 @@ section.section-news-header {
 
 @media (min-width: 1600px) and (max-width: 1919px) {
  .blog-box .box-image img {
-        height: 370px;
+        height: 400px;
     }
 	a.title {
         height: 78px;
@@ -93,7 +93,7 @@ section.section-news-header {
 
 @media (min-width: 1920px) {
 .blog-box .box-image img {
-        height: 370px;
+        height: 480px;
     }
 	a.title {
         height: 78px;
@@ -105,7 +105,7 @@ section.section-news-header {
 /* ipad pro 1024 */
 @media (min-width: 992px) and (max-width: 1024px) {
 .blog-box .box-image img {
-        height: 270px;
+        height: 336px;
     }
     a.title {
         height: 67px;
@@ -117,7 +117,7 @@ section.section-news-header {
 /* ipad pro 1366 */
 @media (min-width: 1280px) and (max-width: 1366px) {
 .blog-box .box-image img {
-        height: 370px;
+        height: 372px;
     }
     a.title {
         height: 67px;
@@ -129,7 +129,7 @@ section.section-news-header {
 /* ipad air 1180 */
 @media (min-width: 1100px) and (max-width: 1180px) {
 .blog-box .box-image img {
-        height: 320px;
+        height: 340px;
     }
     a.title {
         height: 67px;
@@ -141,7 +141,7 @@ section.section-news-header {
 /* ipad air 820 */
 @media (min-width: 768px) and (max-width: 860px) {
  .blog-box .box-image img {
-        height: 220px;
+        height: 300px;
     }
     a.title {
         height: 67px;
@@ -167,7 +167,7 @@ section.section-news-header {
 }
 @media (min-width: 1025px) and (max-width: 1099px) {
 .blog-box .box-image img {
-        height: 370px;
+        height: 337px;
     }
     a.title {
         height: 67px;
@@ -178,7 +178,7 @@ section.section-news-header {
 }
 @media (min-width: 1181px) and (max-width: 1279px) {
 .blog-box .box-image img {
-        height: 370px;
+        height: 338px;
     }
     a.title {
         height: 67px;
@@ -189,7 +189,7 @@ section.section-news-header {
 }
 @media (min-width: 1367px) and (max-width: 1439px) {
 .blog-box .box-image img {
-        height: 370px;
+        height: 375px;
     }
     a.title {
         height: 69px;
@@ -1434,7 +1434,7 @@ a.read-more-btn.btn-action {
         margin: 0 auto;
     }
     .blog-list .blog-main .blog-box .box-content {
-        padding: 28px 0 !important;
+        padding: 20px 10px !important;
         margin-left: 0 !important;
     }
 
