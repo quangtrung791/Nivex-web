@@ -121,7 +121,7 @@ export default function BlogDetails() {
                                                             </div>
                                                         </div>
                                                         <div className="content">
-                                                            <Link href={`/tin-tuc/${item.id}`} className="title navigate-child-news">
+                                                            <Link href={`/su-kien/${item.id}`} className="title navigate-child-news">
                                                                 {item.title}
                                                             </Link>
                                                         </div>
@@ -151,7 +151,7 @@ export default function BlogDetails() {
                                                             </div>
                                                         </div>
                                                         <div className="content">
-                                                            <Link href={`/tin-tuc/${item.id}`} className="title navigate-child-news">
+                                                            <Link href={`/su-kien/${item.id}`} className="title navigate-child-news">
                                                                 {item.title}
                                                             </Link>
                                                         </div>
@@ -182,14 +182,14 @@ export default function BlogDetails() {
                                                                 <div className="wrap-video"></div>
                                                             </div>
                                                             <div className="box-content title-news-duoc-xem-nhieu">
-                                                                <Link href={`/tin-tuc/${item.id}`} className="title">{item.title}</Link>
+                                                                <Link href={`/su-kien/${item.id}`} className="title">{item.title}</Link>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 ))}
                                                 <div className="col-md-12">
                                                     <div className="button-loadmore">
-                                                        <Link href="/tin-tuc" className="btn-action">
+                                                        <Link href="/su-kien" className="btn-action">
                                                             Xem thêm
                                                         </Link>
                                                     </div>
