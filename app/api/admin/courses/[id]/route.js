@@ -13,7 +13,6 @@ export async function GET(request, { params }) {
     if (result.length === 0) return NextResponse.json({ error: 'Course not found' }, { status: 404 })
     return NextResponse.json(result[0])
   } catch (error) {
-    console.error('DB GET /courses/:id error:', error)
     return NextResponse.json({ error: 'Database error' }, { status: 500 })
   }
 }
@@ -23,13 +22,11 @@ export async function PUT(request, { params }) {
     const id = parseInt(params.id)
     const data = await request.json()
     
-    console.log("PUT course data received:", data);
     
     // Parse và validate datetime inputs
     const startDate = data.start_date ? new Date(data.start_date).toISOString() : null;
     const endDate = data.end_date ? new Date(data.end_date).toISOString() : null;
     
-    console.log("Parsed dates for update:", { startDate, endDate });
     
     const paramsArr = [
       data.title,
@@ -53,7 +50,6 @@ export async function PUT(request, { params }) {
     if (result.length === 0) return NextResponse.json({ error: 'Course not found' }, { status: 404 })
     return NextResponse.json(result[0])
   } catch (error) {
-    console.error('DB PUT /courses/:id error:', error)
     return NextResponse.json({ error: 'Database error' }, { status: 500 })
   }
 }
@@ -65,7 +61,6 @@ export async function DELETE(request, { params }) {
     if (result.length === 0) return NextResponse.json({ error: 'Course not found' }, { status: 404 })
     return NextResponse.json({ id: result[0].id })
   } catch (error) {
-    console.error('DB DELETE /courses/:id error:', error)
     return NextResponse.json({ error: 'Database error' }, { status: 500 })
   }
 }

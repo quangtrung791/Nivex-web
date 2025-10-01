@@ -135,8 +135,8 @@ export default function Knowledge() {
                 <div className="container">
                     <div className={styles.displayFlexForHeader}>
                         <div className="col-md-6">
-                            <h3 className={`heading ${styles.pageTitleHeading}`}><span>KIẾN THỨC</span> TỔNG QUAN
-                            </h3>
+                            <h1 className={`heading ${styles.pageTitleHeading}`}><span>Kiến thức</span> tổng quan
+                            </h1>
                         </div>
                         <div className={`col-md-6 ${styles.col6mdCenter}`}>
                             <p className={`${styles.pageHeaderKnowledgeSubtitle}`}>Trang bị nền tảng cơ bản để tự tin bước vào thế giới blockchain và tài sản số</p>
