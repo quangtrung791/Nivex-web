@@ -1,4 +1,7 @@
 /* Fixed */
+section.section-news-header {
+    background: #1e1f22;
+}
 .meta, .blog-list a.title {
     padding-left: 0 !important;
 }

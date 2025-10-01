@@ -1,359 +1,202 @@
+
 'use client'
 import VideoPopup from "@/components/elements/VideoPopup"
 import Layout from "@/components/layout/Layout"
+import { useEffect, useState } from "react"
 import Link from "next/link"
-import { Autoplay, Navigation, Pagination } from "swiper/modules"
-import ChatList from "@/components/chart/ChatList"
-import IconStar from "@/components/elements/IconStar"
-import { useState, useEffect } from "react";
-import { Swiper, SwiperSlide } from "swiper/react"
-import styles from '../../kien-thuc-tong-quan/knowledge.module.css'
-import './style.css';
+import { useParams } from "next/navigation"
+import './style.css'
 
+export default function BlogDetails() {
+    const { id } = useParams()
+    const [events, setEvents] = useState(null);
+    const [hotEvents, setHotEvents] = useState([]);
+    const [loading, setLoading] = useState(true)
 
-export default function ChiTietSuKien() {
-//    const [users, setUsers] = useState([]);
+    useEffect(() => {
+        if (events && events.title) {
+            document.title = events.title;
+        }
+    }, [events]);
 
-//     useEffect(() => {
-//         fetch('/data.json')
-//             .then(res => res.json())
-//             .then(json => {
-//                 // Sắp xếp theo revenue giảm dần
-//                 const sorted = json.users.sort((a, b) => b.revenue - a.revenue);
-//                 setUsers(sorted);
-//             });
-//     }, []);
-    const [flatTabs, setFlatTabs] = useState(1)
-    const [flatTabs1, setFlatTabs1] = useState(1)
-    const [flatTabs2, setFlatTabs2] = useState(1)
-    const [flatTabs3, setFlatTabs3] = useState(1)
-    const handleFlatTabs = (index) => {
-        setFlatTabs(index)
-    }
-    const handleFlatTabs1 = (index) => {
-        setFlatTabs1(index)
-    }
-    const handleFlatTabs2 = (index) => {
-        setFlatTabs2(index)
-    }
-    const handleFlatTabs3 = (index) => {
-        setFlatTabs3(index)
-    }
+    useEffect(() => {
+        if (!id) return
+        setLoading(true)
+        fetch(`/api/event/${id}`)
+            .then(res => res.json())
+            .then(data => {
+                setEvents(data)
+                setLoading(false)
+            })
+            .catch(() => setLoading(false))
+    }, [id]);
+
+    useEffect(() => {
+    if (!id) return;
+        setLoading(true);
+        fetch(`/api/event/${id}`)
+            .then(res => res.json())
+            .then(data => {
+                setEvents(data);
+                setLoading(false);
+            })
+            .catch(() => setLoading(false));
+        // Fetch danh sách event
+        fetch('/api/event?hot=1')
+            .then(res => res.json())
+            .then(data => setHotEvents(Array.isArray(data.data) ? data.data : []));
+    }, [id]);
+
+    if (loading) return 
+        <div style={{'display': 'flex', 'justifyContent': 'center', 'alignItems': 'center'}}>
+            <p>Đang tải dữ liệu...</p>
+        </div>
+    if (!events) return 
+        <div style={{ 'display': 'flex', 'justifyContent': 'center', 'alignItems': 'center' }}>
+            <p>Lỗi kết nối với máy chủ.</p>
+        </div>
+
 
     return (
         <>
-
             <Layout headerStyle={1} footerStyle={2} >
                 <div>
-                    <section className="banner-section">
-                        <div>
-                            <img src='https://learningchain.vn/wp-content/uploads/nivex/banner_proto.png' className="banner-img" />
-                        </div>
-                        <div className="countdown-container">
-                            <p className="countdown-text">Sự kiện kết thúc sau &nbsp;</p>
-                            <p className="time-countdown">00 ngày 00:00:00</p>
-                        </div>
-                    </section>
-                    <section className="thong-tin-su-kien">
-                        <h3 className="thong-tin-title">
-                            THÔNG TIN SỰ KIỆN
-                        </h3>
-                        <p className="thong-tin-content">
-                            Khám phá 3 chiến lược AI của Nivex, tối ưu hóa lợi nhuận và tự động quản lý rủi ro từ giao dịch xu hướng đến altcoin và tần số cao.
-                        </p>
-                        <div className="child-image-container">
-                            <img src='https://learningchain.vn/wp-content/uploads/nivex/banner_proto.png' className="child-img" />
+                    <section className="section-news-header">
+                        <div className="news-header-container">
+                            <h1 className="news-title">Chi tiết <span className="gradient-text">sự kiện</span></h1>
+                            <form className="news-search-form">
+                                <input
+                                    type="text"
+                                    placeholder="Tìm kiếm"
+                                    className="news-search-input"
+                                />
+                                <button type="submit" className="news-search-btn">
+                                    <svg width="20" height="20" viewBox="0 0 24 24">
+                                        <circle cx="11" cy="11" r="8" stroke="#222" strokeWidth="2" fill="none"/>
+                                        <line x1="17" y1="17" x2="22" y2="22" stroke="#222" strokeWidth="2"/>
+                                    </svg>
+                                </button>
+                            </form>
                         </div>
                     </section>
 
-                    <section className="bang-xep-hang">
-                         <div className="content-tab1">
-                                            <div className="content-inner" style={{ display: `${flatTabs1 === 1 ? "block" : "block"}` }}>
-                                                <div className="flat-tabs2">
-                                                   
-                                                    <div className="content-tab2">
-                                                        <div className="content-inner" style={{ display: `${flatTabs2 === 1 ? "block" : "block"}` }}>
-                                                            <div className="coin-list__main">
-                                                                <div className="flat-tabs bxh-container">
-                                                                    <h3 className="text-center"><span className="gradient-text">
-                                                                        <img src='https://learningchain.vn/wp-content/uploads/nivex/fra-in.svg' />
-                                                                        &nbsp;TOP NHÀ GIAO DỊCH </span>DẪN ĐẦU CUỘC THI &nbsp;
-                                                                        <img src='https://learningchain.vn/wp-content/uploads/nivex/fra-out.svg' />
-                                                                    </h3>
-                                                                    <p className="text-center bxh-desc">BXH những anh tài có lợi nhuận cao nhất được cập nhật hàng ngày.</p>
-                                                                    <div className="content-tab bxh">
-                                                                        <div className="content-inner" style={{ display: `${flatTabs3 === 1 ? "block" : "block"}` }}>
-                                                                            <table className="table">
-                                                                                <thead>
-                                                                                    <tr>
-                                                                                        {/* <th scope="col" /> */}
-                                                                                        <th scope="col">HẠNG</th>
-                                                                                        <th scope="col">NICKNAME</th>
-                                                                                        <th scope="col">USER ID</th>
-                                                                                        <th scope="col">DOANH THU</th>
-                                                                                        <th scope="col">PnL%</th>
-                                                                                        <th scope="col">TIỀN THƯỞNG</th>
-                                                                                    </tr>
-                                                                                </thead>
-                                                                                <tbody>
-                                                                                    <tr className="tr-top-1">
-                                                                                        <td>
-                                                                                            <img className="cup-champ" src="https://learningchain.vn/wp-content/uploads/nivex/1st.png" />
-                                                                                        </td>
-                                                                                        <td>
-                                                                                           user name 09123124 
-                                                                                        </td>
-                                                                                        <td className="boild">2.236</td>
-                                                                                        <td className="boild">5.04B(USD)</td>
-                                                                                        <td className="boild">5.04B(USD)</td>
-                                                                                        <td>2.000.000 VND</td>
-                                                                                    </tr>
+                    <section className="blog-details">
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-xl-8 col-md-12">
+                                    <div className="navigate-link">
+                                        <span className="navigate-link-content" id="navigate-link-content">
+                                            <Link href='/su-kien'>Sự kiện&nbsp;&nbsp;&gt;</Link>
+                                            <span>&nbsp;&nbsp;{events.title}</span>
+                                        </span>
+                                    </div>
+                                    <div className="blog-main">
+                                         <div className="box-image">
+                                             <img src={events.thumbnail_url || "/assets/images/blog/blog-01.jpg"} alt={events.title} />
+                                        </div>
+                                        <h3 className="title">
+                                            {events.title}
+                                        </h3>
+                                        <div className="content" dangerouslySetInnerHTML={{ __html: events.content }} >
+                                            
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                                <div className="col-xl-4 col-md-12">
+                                    <h6 className="heading tin-nong-heading">Tin nóng</h6>
+                                    <div className="sidebar">
+                                        <div className="widget recent mt-0">
+                                            {/* <h6 className="heading">Tin nóng</h6> */}
+                                            <ul className="tin-nong">
+                                                {Array.isArray(hotEvents) && hotEvents.slice(0, 10).map(item => (
+                                                    <li key={item.id}>
+                                                        <div style={{ display: 'block' }}>
+                                                            <p className="time-stamp-p">
+                                                                {item.time_upload
+                                                                    ? new Date(item.time_upload).toLocaleString('vi-VN', { hour12: false })
+                                                                    : ''}
+                                                            </p>
+                                                            <div className="image">
+                                                                <img src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
+                                                            </div>
+                                                        </div>
+                                                        <div className="content">
+                                                            <Link href={`/tin-tuc/${item.id}`} className="title navigate-child-news">
+                                                                {item.title}
+                                                            </Link>
+                                                        </div>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div> 
+                                    </div>
 
-                                                                                    <tr  className="tr-top-2">
-                                                                                        <td>
-                                                                                            <img className="cup-champ" src="https://learningchain.vn/wp-content/uploads/nivex/2nd.png" />
-                                                                                        </td>
-                                                                                        <td>
-                                                                                            user name 09123124 
-                                                                                        </td>
-                                                                                        <td className="boild">2.236</td>
-                                                                                        <td className="boild">5.04B(USD)</td>
-                                                                                        <td className="boild">5.04B(USD)</td>
-                                                                                        <td>2.000.000 VND</td>
-                                                                                    </tr>
-                                                                                   
-                                                                                    <tr className="tr-top-3">
-                                                                                        <td>
-                                                                                            <img className="cup-champ" src="https://learningchain.vn/wp-content/uploads/nivex/3rd.png" />
-                                                                                        </td>
-                                                                                        <td>
-                                                                                            user name 09123124 
-                                                                                        </td>
-                                                                                        <td className="boild">2.236</td>
-                                                                                       
-                                                                                        <td className="boild">5.04B(USD)</td>
-                                                                                        <td className="boild">5.04B(USD)</td>
-                                                                                        <td>2.000.000 VND</td>
-                                                                                    </tr>
 
-                                                                                    <tr>
-                                                                                        <td className="normal-rank-number">&nbsp;&nbsp;4</td>
-                                                                                        <td>
-                                                                                            user name 09123124 
-                                                                                        </td>
-                                                                                        <td className="boild">2.236</td>
-                                                                                       
-                                                                                        <td className="boild">5.04B(USD)</td>
-                                                                                        <td className="boild">5.04B(USD)</td>
-                                                                                        <td>2.000.000 VND</td>
-                                                                                    </tr>
-                                                                                   
-                                                                                   <tr>
-                                                                                        <td className="normal-rank-number">&nbsp;&nbsp;5</td>
-                                                                                        <td>
-                                                                                            user name 09123124 
-                                                                                        </td>
-                                                                                        <td className="boild">2.236</td>
-                                                                                       
-                                                                                        <td className="boild">5.04B(USD)</td>
-                                                                                        <td className="boild">5.04B(USD)</td>
-                                                                                        <td>2.000.000 VND</td>
-                                                                                    </tr>
-                                                                                   
-                                                                                   <tr>
-                                                                                        <td className="normal-rank-number">&nbsp;&nbsp;6</td>
-                                                                                        <td>
-                                                                                            user name 09123124 
-                                                                                        </td>
-                                                                                        <td className="boild">2.236</td>
-                                                                                       
-                                                                                        <td className="boild">5.04B(USD)</td>
-                                                                                        <td className="boild">5.04B(USD)</td>
-                                                                                        <td>2.000.000 VND</td>
-                                                                                    </tr>
-                                                                                   
-                                                                                   <tr>
-                                                                                        <td className="normal-rank-number">&nbsp;&nbsp;7</td>
-                                                                                        <td>
-                                                                                            user name 09123124 
-                                                                                        </td>
-                                                                                        <td className="boild">2.236</td>
-                                                                                       
-                                                                                        <td className="boild">5.04B(USD)</td>
-                                                                                        <td className="boild">5.04B(USD)</td>
-                                                                                        <td>2.000.000 VND</td>
-                                                                                    </tr>
-                                                                                   
-                                                                                   <tr>
-                                                                                        <td className="normal-rank-number">&nbsp;&nbsp;8</td>
-                                                                                        <td>
-                                                                                            user name 09123124 
-                                                                                        </td>
-                                                                                        <td className="boild">2.236</td>
-                                                                                       
-                                                                                        <td className="boild">5.04B(USD)</td>
-                                                                                        <td className="boild">5.04B(USD)</td>
-                                                                                        <td>2.000.000 VND</td>
-                                                                                    </tr>
-                                                                                   
-                                                                                   <tr>
-                                                                                        <td className="normal-rank-number">&nbsp;&nbsp;9</td>
-                                                                                        <td>
-                                                                                            user name 09123124 
-                                                                                        </td>
-                                                                                        <td className="boild">2.236</td>
-                                                                                       
-                                                                                        <td className="boild">5.04B(USD)</td>
-                                                                                        <td className="boild">5.04B(USD)</td>
-                                                                                        <td>2.000.000 VND</td>
-                                                                                    </tr>
-                                                                                   
-                                                                                   <tr>
-                                                                                        <td className="normal-rank-number">&nbsp;&nbsp;10</td>
-                                                                                        <td>
-                                                                                            user name 09123124 
-                                                                                        </td>
-                                                                                        <td className="boild">2.236</td>
-                                                                                       
-                                                                                        <td className="boild">5.04B(USD)</td>
-                                                                                        <td className="boild">5.04B(USD)</td>
-                                                                                        <td>2.000.000 VND</td>
-                                                                                    </tr>
-                                                                                   
-                                                                                   <tr>
-                                                                                        <td className="normal-rank-number">&nbsp;&nbsp;11</td>
-                                                                                        <td>
-                                                                                            user name 09123124 
-                                                                                        </td>
-                                                                                        <td className="boild">2.236</td>
-                                                                                       
-                                                                                        <td className="boild">5.04B(USD)</td>
-                                                                                        <td className="boild">5.04B(USD)</td>
-                                                                                        <td>2.000.000 VND</td>
-                                                                                    </tr>
-                                                                                   
-                                                                                   <tr>
-                                                                                        <td className="normal-rank-number">&nbsp;&nbsp;12</td>
-                                                                                        <td>
-                                                                                            user name 09123124 
-                                                                                        </td>
-                                                                                        <td className="boild">2.236</td>
-                                                                                       
-                                                                                        <td className="boild">5.04B(USD)</td>
-                                                                                        <td className="boild">5.04B(USD)</td>
-                                                                                        <td>2.000.000 VND</td>
-                                                                                    </tr>
-                                                                                   
-                                                                                   <tr>
-                                                                                        <td className="normal-rank-number">&nbsp;&nbsp;13</td>
-                                                                                        <td>
-                                                                                            user name 09123124 
-                                                                                        </td>
-                                                                                        <td className="boild">2.236</td>
-                                                                                       
-                                                                                        <td className="boild">5.04B(USD)</td>
-                                                                                        <td className="boild">5.04B(USD)</td>
-                                                                                        <td>2.000.000 VND</td>
-                                                                                    </tr>
-                                                                                   
-                                                                                   <tr>
-                                                                                        <td className="normal-rank-number">&nbsp;&nbsp;14</td>
-                                                                                        <td>
-                                                                                            user name 09123124 
-                                                                                        </td>
-                                                                                        <td className="boild">2.236</td>
-                                                                                       
-                                                                                        <td className="boild">5.04B(USD)</td>
-                                                                                        <td className="boild">5.04B(USD)</td>
-                                                                                        <td>2.000.000 VND</td>
-                                                                                    </tr>
-                                                                                   
-                                                                                   <tr>
-                                                                                        <td className="normal-rank-number">&nbsp;&nbsp;15</td>
-                                                                                        <td>
-                                                                                            user name 09123124 
-                                                                                        </td>
-                                                                                        <td className="boild">2.236</td>
-                                                                                       
-                                                                                        <td className="boild">5.04B(USD)</td>
-                                                                                        <td className="boild">5.04B(USD)</td>
-                                                                                        <td>2.000.000 VND</td>
-                                                                                    </tr>
-                                                                                   
-                                                                                   <tr>
-                                                                                        <td className="normal-rank-number">&nbsp;&nbsp;16</td>
-                                                                                        <td>
-                                                                                            user name 09123124 
-                                                                                        </td>
-                                                                                        <td className="boild">2.236</td>
-                                                                                       
-                                                                                        <td className="boild">5.04B(USD)</td>
-                                                                                        <td className="boild">5.04B(USD)</td>
-                                                                                        <td>2.000.000 VND</td>
-                                                                                    </tr>
-                                                                                   
-                                                                                   <tr>
-                                                                                        <td className="normal-rank-number">&nbsp;&nbsp;17</td>
-                                                                                        <td>
-                                                                                            user name 09123124 
-                                                                                        </td>
-                                                                                        <td className="boild">2.236</td>
-                                                                                       
-                                                                                        <td className="boild">5.04B(USD)</td>
-                                                                                        <td className="boild">5.04B(USD)</td>
-                                                                                        <td>2.000.000 VND</td>
-                                                                                    </tr>
-                                                                                   
-                                                                                   <tr>
-                                                                                        <td className="normal-rank-number">&nbsp;&nbsp;18</td>
-                                                                                        <td>
-                                                                                            user name 09123124 
-                                                                                        </td>
-                                                                                        <td className="boild">2.236</td>
-                                                                                       
-                                                                                        <td className="boild">5.04B(USD)</td>
-                                                                                        <td className="boild">5.04B(USD)</td>
-                                                                                        <td>2.000.000 VND</td>
-                                                                                    </tr>
-                                                                                   
-                                                                                   <tr>
-                                                                                        <td className="normal-rank-number">&nbsp;&nbsp;19</td>
-                                                                                        <td>
-                                                                                            user name 09123124 
-                                                                                        </td>
-                                                                                        <td className="boild">2.236</td>
-                                                                                       
-                                                                                        <td className="boild">5.04B(USD)</td>
-                                                                                        <td className="boild">5.04B(USD)</td>
-                                                                                        <td>2.000.000 VND</td>
-                                                                                    </tr>
-                                                                                   
-                                                                                   <tr>
-                                                                                        <td className="normal-rank-number">&nbsp;&nbsp;20</td>
-                                                                                        <td>
-                                                                                            user name 09123124 
-                                                                                        </td>
-                                                                                        <td className="boild">2.236</td>
-                                                                                       
-                                                                                        <td className="boild">5.04B(USD)</td>
-                                                                                        <td className="boild">5.04B(USD)</td>
-                                                                                        <td>2.000.000 VND</td>
-                                                                                    </tr>
-                                                                                   
-                                                                                </tbody>
-                                                                            </table>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
+                                    {/* Tin xem nhiều */}
+                                    {/* <div className="sidebar tin-xem-nhieu">
+                                        <div className="widget recent mt-0">
+                                            <h6 className="heading">Tin xem nhiều</h6>
+                                            
+                                            <ul className="tin-nong">
+                                                {hotEvents.slice(0, 3).map(item => (
+                                                    <li key={item.id}>
+                                                        <div style={{ display: 'block' }}>
+                                                            <p className="time-stamp-p">
+                                                                {item.time_upload
+                                                                    ? new Date(item.time_upload).toLocaleString('vi-VN', { hour12: false })
+                                                                    : ''}
+                                                            </p>
+                                                            <div className="image">
+                                                                <img src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
+                                                            </div>
+                                                        </div>
+                                                        <div className="content">
+                                                            <Link href={`/tin-tuc/${item.id}`} className="title navigate-child-news">
+                                                                {item.title}
+                                                            </Link>
+                                                        </div>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    </div> */}
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                      <section className="duoc-xem-nhieu col-md-12">
+                        <div className="title-container">
+                            <h5>Được xem nhiều</h5>
+                        </div>
+                                            
+
+                                            <div className="content-inner row div-duoc-xem-nhieu">
+                                                {hotEvents.slice(0, 3).map(item => (
+                                                    <div className="col-md-4" key={item.id}>
+                                                        <div className="blog-box">
+                                                            <div className="box-image">
+                                                                <img src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
+                                                                <div className="wrap-video"></div>
+                                                            </div>
+                                                            <div className="box-content title-news-duoc-xem-nhieu">
+                                                                <Link href={`/tin-tuc/${item.id}`} className="title">{item.title}</Link>
                                                             </div>
                                                         </div>
                                                     </div>
+                                                ))}
+                                                <div className="col-md-12">
+                                                    <div className="button-loadmore">
+                                                        <Link href="/tin-tuc" className="btn-action">
+                                                            Xem thêm
+                                                        </Link>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
                     </section>
-                    
-                   
                 </div>
 
             </Layout>

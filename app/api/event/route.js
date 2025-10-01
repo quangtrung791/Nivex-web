@@ -5,7 +5,7 @@ export const runtime = 'nodejs';
 
 export async function GET(request) {
   try {
-    console.log("GET /api/events called");
+    console.log("GET /api/event called");
     
     const { searchParams } = new URL(request.url)
     const filter = searchParams.get('filter') || 'all'

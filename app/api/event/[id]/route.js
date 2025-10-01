@@ -22,8 +22,9 @@ export async function GET(request, { params }) {
         thumbnail_url,
         time_event,
         created_at,
-        updated_at,
+        updated_at
       FROM public.event
+      WHERE id = $1
       LIMIT 1
     `;
     const result = await query(sqlQuery, [id]);
