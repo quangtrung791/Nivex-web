@@ -35,7 +35,7 @@ const RichTextInput = (props) => {
       
       const result = await response.json()
       if (result.success) {
-        return result.data.url
+        return result.url
       } else {
         throw new Error(result.error || 'Upload failed')
       }
