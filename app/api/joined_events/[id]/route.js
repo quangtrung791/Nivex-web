@@ -27,8 +27,9 @@ export async function GET(request, { params }) {
         tag3,
         type,
         created_at,
-        updated_at,
+        updated_at
       FROM public.joined_events
+      WHERE id = $1
       LIMIT 1
     `;
     const result = await query(sqlQuery, [id]);

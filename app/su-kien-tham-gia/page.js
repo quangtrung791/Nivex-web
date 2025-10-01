@@ -187,25 +187,6 @@ export default function SuKienAlt() {
                                         </div>
                                     <div className="flat-tabs">
                                         <h2 className="cung-nivex-heading">Nivex tham gia <span className="gradient-text">sự kiện toàn cầu</span></h2>
-                                        {/* <ul className="menu-tab">
-                                            <li className={flatTabs === 1 ? "active" : ""} onClick={() => handleFlatTabs(1)}><h6 className="fs-16">View All</h6></li>
-                                            <li className={flatTabs === 2 ? "active" : ""} onClick={() => handleFlatTabs(2)}><h6 className="fs-16">Learn &amp; Earn</h6></li>
-                                            <li className={flatTabs === 3 ? "active" : ""} onClick={() => handleFlatTabs(3)}><h6 className="fs-16">Metaverse</h6></li>
-                                            <li className={flatTabs === 4 ? "active" : ""} onClick={() => handleFlatTabs(4)}><h6 className="fs-16">Energy</h6></li>
-                                            <li className={flatTabs === 5 ? "active" : ""} onClick={() => handleFlatTabs(5)}><h6 className="fs-16">NFT</h6></li>
-                                            <li className={flatTabs === 6 ? "active" : ""} onClick={() => handleFlatTabs(6)}><h6 className="fs-16">Gaming</h6></li>
-                                            <li className={flatTabs === 7 ? "active" : ""} onClick={() => handleFlatTabs(7)}><h6 className="fs-16">Music</h6></li>
-                                        </ul> */}
-                                        {/* <div className="search">
-                                            <form >
-                                                <div className="form-group">
-                                                    <input type="text" className="form-control" placeholder="Search Post" />
-                                                    <button type="submit" className="search">
-                                                        <i className="fa-solid fa-magnifying-glass" />
-                                                    </button>
-                                                </div>
-                                            </form>
-                                        </div> */}
                                         <div className="content-tab">
                                             <div className="content-inner row" style={{ display: `${flatTabs === 1 ? "flex" : "none"}` }}>
                                                 {filteredNews.length === 0 ? (
@@ -237,7 +218,7 @@ export default function SuKienAlt() {
                                                                     </div>
                                                                     <div className="box-content">
                                                                         <div>
-                                                                            <Link href="#" className="title">{item.title}</Link>
+                                                                            <Link href={`/su-kien-tham-gia/${item.id}`} className="title">{item.title}</Link>
                                                                             <p className="text-desc-su-kien">{item.short_desc}</p>
                                                                         </div>
                                                                         <div className="event-meta-row">
@@ -252,7 +233,7 @@ export default function SuKienAlt() {
                                                                                     <span>{item.tag3 || "CopyTrade"}</span>
                                                                                 </div>
                                                                             </div>
-                                                                            <Link href="#" className="event-btn">Xem thêm</Link>
+                                                                            <Link href={`/su-kien-tham-gia/${item.id}`} className="event-btn">Xem thêm</Link>
                                                                         </div>
                                                                     </div>
                                                                 </div>
