@@ -17,6 +17,7 @@ const RichTextInput = (props) => {
   const { source, label, validate, helperText, multiline, rows, ...rest } = props
   const { field, fieldState } = useInput({ source, validate })
   const [mounted, setMounted] = useState(false)
+  const [quillRef, setQuillRef] = useState(null)
 
   useEffect(() => {
     setMounted(true)
@@ -62,32 +63,47 @@ const RichTextInput = (props) => {
       }
 
       try {
-        // Get Quill instance
-        const quillContainer = document.querySelector('.ql-container')
-        const quill = quillContainer?.__quill
-        
-        if (!quill) {
-          alert('Lỗi: Không tìm thấy editor')
+        if (!quillRef) {
+          alert('Lỗi: Editor chưa sẵn sàng')
           return
         }
 
-        const range = quill.getSelection(true)
+        const range = quillRef.getSelection(true)
+        if (!range) {
+          alert('Vui lòng click vào vị trí muốn chèn ảnh')
+          return
+        }
         
         // Insert loading text
-        quill.insertText(range.index, 'Đang tải ảnh...', 'user')
-        quill.setSelection(range.index + 17)
+        quillRef.insertText(range.index, 'Đang tải ảnh...', 'user')
+        quillRef.setSelection(range.index + 17)
 
         // Upload to Cloudinary
         const imageUrl = await uploadImageToCloudinary(file)
 
         // Remove loading text and insert image
-        quill.deleteText(range.index, 17)
-        quill.insertEmbed(range.index, 'image', imageUrl)
-        quill.setSelection(range.index + 1)
+        quillRef.deleteText(range.index, 17)
+        quillRef.insertEmbed(range.index, 'image', imageUrl)
+        quillRef.setSelection(range.index + 1)
 
       } catch (error) {
         console.error('Upload error:', error)
         alert('Lỗi khi tải ảnh lên: ' + error.message)
+        
+        // Clean up loading text on error
+        if (quillRef) {
+          try {
+            const range = quillRef.getSelection()
+            if (range) {
+              const text = quillRef.getText(Math.max(0, range.index - 17), 17)
+              if (text.includes('Đang tải ảnh...')) {
+                quillRef.deleteText(Math.max(0, range.index - 17), 17)
+              }
+            }
+          } catch (cleanupError) {
+            console.error('Cleanup error:', cleanupError)
+          }
+        }
       }
     }
   }
@@ -165,18 +181,22 @@ const RichTextInput = (props) => {
           ref={(el) => {
             if (el && el.getEditor) {
               const quill = el.getEditor()
-              // Store Quill instance for image handler access
-              quill.container.__quill = quill
+              setQuillRef(quill)
               
               // Handle paste events for image upload
               quill.root.addEventListener('paste', async (e) => {
                 const clipboardData = e.clipboardData || e.originalEvent.clipboardData
+                if (!clipboardData) return
+                
                 const items = clipboardData.items
+                if (!items) return
                 
                 for (let item of items) {
                   if (item.type.indexOf('image') !== -1) {
                     e.preventDefault()
                     const file = item.getAsFile()
+                    
+                    if (!file) continue
                     
                     if (file.size > 5 * 1024 * 1024) {
                       alert('Ảnh paste quá lớn. Kích thước tối đa 5MB.')
@@ -185,7 +205,10 @@ const RichTextInput = (props) => {
                     
                     try {
                       const range = quill.getSelection(true)
+                      if (!range) return
+                      
                       quill.insertText(range.index, 'Đang tải ảnh...', 'user')
+                      quill.setSelection(range.index + 17)
                       
                       const imageUrl = await uploadImageToCloudinary(file)
                       
