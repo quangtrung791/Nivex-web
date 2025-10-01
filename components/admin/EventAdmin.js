@@ -269,7 +269,7 @@ export const EventCreate = () => (
         fullWidth
         helperText="Nội dung giới thiệu đầy đủ cho sự kiện"
       />
-      <RichTextInput 
+      <TextInput 
         source="short_desc" 
         label="Nội dung giới thiệu ngắn gọn cho sự kiện"
         multiline
@@ -354,12 +354,11 @@ export const EventEdit = () => (
         rows={15}
         fullWidth
       />
-      <RichTextInput 
+      <TextInput 
         source="short_desc" 
         label="Mô tả ngắn cho sự kiện"
         multiline
-        rows={15}
-        fullWidth
+        rows={10}
       />
       {/* <TextField source="author" label="Tác giả bài đăng" /> */}
       <span>Ngày tạo: </span><DateField source="created_at" label="Ngày tạo" showTime disabled />
@@ -396,7 +395,7 @@ export const EventShow = () => (
       {/* <TextField source="link_zoom" label="Link Zoom" /> */}
       <ImageField source="thumbnail_url" label="Hình ảnh quảng bá sự kiện" sx={{ '& img': { maxWidth: '300px', borderRadius: '8px' } }} />
       <RichTextField source="content" label="Nội dung giới thiệu đầy đủ" />
-      <RichTextField source="short_desc" label="Nội dung mô tả ngắn gọn" />
+      <TextField source="short_desc" label="Nội dung mô tả ngắn gọn" />
       <DateField source="created_at" label="Ngày tạo" showTime />
       <DateField source="updated_at" label="Cập nhật lần cuối" showTime />
     </SimpleShowLayout>
