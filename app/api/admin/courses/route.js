@@ -2,21 +2,6 @@ import { query } from "@/app/lib/neon";
 import { NextResponse } from "next/server";
 
 // Helper function to format date to Vietnam time
-const formatToVietnamTime = (dateString) => {
-  if (!dateString) return null;
-  const date = new Date(dateString);
-  if (isNaN(date.getTime())) return null;
-  
-  return date.toLocaleString('vi-VN', {
-    timeZone: 'Asia/Ho_Chi_Minh',
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit'
-  });
-};
 
 export const runtime = "nodejs";
 
@@ -33,11 +18,9 @@ export async function GET(request) {
         title: row.title,
         type: row.type || 'online',
         status: row.status || 'active',
-        // Format dates on the server before sending to client
-        start_date: row.start_date, // Keep raw for editing
-        end_date: row.end_date,     // Keep raw for editing
-        start_date_formatted: formatToVietnamTime(row.start_date),
-        end_date_formatted: formatToVietnamTime(row.end_date),
+        start_date:  row.start_date ? new Date(new Date(row.start_date).getTime() - 7 * 60 * 60 * 1000).toISOString() : '',
+        end_date : row.end_date ? new Date(new Date(row.end_date).getTime() - 7 * 60 * 60 * 1000).toISOString() : '',
+
         link_zoom: row.link_zoom,
         content: row.content || '',
         image_url: row.image_url,

@@ -11,7 +11,23 @@ export async function GET(request, { params }) {
       [id]
     )
     if (result.length === 0) return NextResponse.json({ error: 'Course not found' }, { status: 404 })
-    return NextResponse.json(result[0])
+    const row = result[0]
+
+    // Subtract 7 hours from start_date and end_date for edit form display
+    const minus7h = (val) => {
+      if (!val) return null
+      const d = new Date(val)
+      if (isNaN(d.getTime())) return null
+      return new Date(d.getTime() - 7 * 60 * 60 * 1000).toISOString()
+    }
+
+    const response = {
+      ...row,
+      start_date: minus7h(row.start_date),
+      end_date: minus7h(row.end_date),
+    }
+
+    return NextResponse.json(response)
   } catch (error) {
     return NextResponse.json({ error: 'Database error' }, { status: 500 })
   }

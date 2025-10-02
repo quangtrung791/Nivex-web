@@ -30,7 +30,7 @@ const HomepagePopup = () => {
 
   return (
     <div className={`${styles.overlay} ${isClosing ? styles.fadeOut : ''}`} onClick={handleOverlayClick}>
-      <a className={`${styles.modal} ${isClosing ? styles.fadeOut : ''}`} href="https://learningchain.vn/cuoc-thi-rise-to-riches-season3-seeding/" target="_blank" rel="noopener noreferrer">
+      <a className={`${styles.modal} ${isClosing ? styles.fadeOut : ''}`} href="https://learningchain.vn/cuoc-thi-rise-to-riches-mua3/" target="_blank" rel="noopener noreferrer">
         <button className={styles.closeButton} onClick={handleClose}>
           <img 
             src="https://learningchain.vn/wp-content/uploads/nivex/arrow-right-nivex.svg" 

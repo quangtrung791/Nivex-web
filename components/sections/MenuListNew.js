@@ -5,34 +5,35 @@ import { useEffect, useState } from "react";
 
 export default function MenuListNew() {
   const [isMobile, setIsMobile] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
   const menuItems = [
     {
       title: 'Khóa học',
-      icon: 'https://learningchain.vn/wp-content/uploads/nivex/a1.png',
+      icon: 'assets/images/icon-list-menu-homepage/khoahoc_homepage.png',
       href: '/#',
       description: 'Học crypto từ cơ bản đến nâng cao'
     },
     {
       title: 'AI Copy Trade',
-      icon: 'https://learningchain.vn/wp-content/uploads/nivex/a2.png',
+      icon: 'assets/images/icon-list-menu-homepage/aicopytrade_homepage.png',
       href: '/ai-copy-trade',
       description: 'Giao dịch tự động với AI'
     },
     {
       title: 'Kiến thức tổng quan',
-      icon: 'https://learningchain.vn/wp-content/uploads/nivex/a3.png',
+      icon: 'assets/images/icon-list-menu-homepage/khienthuctongquan_homepage.png',
       href: '/kien-thuc-tong-quan',
       description: 'Tổng hợp kiến thức crypto'
     },
     {
       title: 'Sự kiện',
-      icon: 'https://learningchain.vn/wp-content/uploads/nivex/a4.png',
+      icon: 'assets/images/icon-list-menu-homepage/sukien_homepage.png',
       href: '/su-kien',
       description: 'Tin tức và sự kiện mới nhất'
     },
     {
       title: 'Hướng dẫn sử dụng App Nivex',
-      icon: 'https://learningchain.vn/wp-content/uploads/nivex/a5.png',
+      icon: 'assets/images/icon-list-menu-homepage/huongdansudungappnivex.png',
       href: '/huong-dan-su-dung-app-nivex',
       description: 'Hướng dẫn chi tiết sử dụng app'
     }
@@ -49,12 +50,21 @@ export default function MenuListNew() {
       <div className={`container ${styles.containerCustom}`}>
         {/* <div className="row"> */}
           {/* <div className="col-md-12"> */}
-            <div className={`${styles.menuGrid} customed-menu-grid`}>
-              {menuItems.map((item, index) => (
-                <Link href={item.href} key={index} className={styles.menuCard}>
+            <div className={`${styles.menuGrid}`}>
+              {menuItems.map((item, index) => {
+                const hoverIcon = item.icon.replace(/(\.[a-zA-Z0-9]+)$/,'_hover$1');
+                const isHovered = hoveredIndex === index;
+                return (
+                <Link 
+                  href={item.href} 
+                  key={index} 
+                  className={styles.menuCard}
+                  onMouseEnter={() => setHoveredIndex(index)}
+                  onMouseLeave={() => setHoveredIndex(null)}
+                >
                   <div className={styles.iconContainer}>
                     <img 
-                      src={item.icon} 
+                      src={isHovered ? hoverIcon : item.icon} 
                       alt={item.title}
                       className={styles.menuIcon}
                     />
@@ -63,7 +73,7 @@ export default function MenuListNew() {
                     <h3 className={styles.menuTitle}>{item.title}</h3>
                   </div>
                 </Link>
-              ))}
+              )})}
             </div>
           {/* </div> */}
         {/* </div> */}
