@@ -61,8 +61,20 @@ export default function MainMenu() {
                 <li className={`menu-item ${pathname === "/khoa-hoc" ? "current-menu-item" : ""}`}>
                     <Link href="/khoa-hoc"  className='master-item'>Khóa học</Link>
                 </li>
-                <li className={`menu-item ${pathname === "/#" ? "current-menu-item" : ""}`}>
+                {/* <li className={`menu-item ${pathname === "/#" ? "current-menu-item" : ""}`}>
                     <Link href="/su-kien"  className='master-item'>Sự kiện</Link>
+                </li> */}
+                <li className={`menu-item menu-item-has-children ${checkParentActive(["/su-kien",
+                    "/su-kien-tham-gia",])}`}>
+                    <Link href="/su-kien" className='master-item'>Sự kiện</Link>
+                    <ul className="sub-menu">
+                        <li className={`menu-item ${checkCurrentMenuItem("/kien-thuc-tong-quan")}`}>
+                            <Link href="/su-kien">Sự kiện Nivex tổ chức</Link>
+                        </li>
+                        <li className={`menu-item ${checkCurrentMenuItem("/thuat-ngu")}`}>
+                            <Link href="/su-kien-tham-gia">Sự kiện Nivex tham dự</Link>
+                        </li>
+                    </ul>
                 </li>
                 <li className={`menu-item ${pathname === "/tin-tuc" ? "current-menu-item" : ""}`}>
                     <Link href="/tin-tuc"  className='master-item'>Tin tức </Link>
