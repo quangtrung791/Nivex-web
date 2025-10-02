@@ -179,6 +179,11 @@ const courseFilters = [
     { id: 'hybrid', name: 'Hybrid' },
   ]} />
 ]
+const nowForDatetimeLocal = () => {
+  const d = new Date();
+  const pad = n => String(n).padStart(2, '0');
+  return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`;
+};
 
 // Custom Actions cho List
 const ListActions = () => (
@@ -305,7 +310,7 @@ export const CourseCreate = () => (
         parse={parseDateTimeLocal}
         format={formatDateTimeLocal}
         type="datetime-local"
-        sx={{ width: '100%' }}
+        defaultValue={nowForDatetimeLocal()}
       />
       
       <TextInput 
@@ -315,7 +320,7 @@ export const CourseCreate = () => (
         parse={parseDateTimeLocal}
         format={formatDateTimeLocal}
         type="datetime-local"
-        sx={{ width: '100%' }}
+        defaultValue={nowForDatetimeLocal()}
       />
       
       <TextInput 
