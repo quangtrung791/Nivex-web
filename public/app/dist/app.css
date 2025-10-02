@@ -3504,10 +3504,10 @@ img.img-src-2-el {
     }
 }
 
-.blog-details .blog-main .title {
+/* .blog-details .blog-main .title {
     text-transform: capitalize;
     margin-bottom: 29px;
-}
+} */
 
 .blog-details .blog-main .meta {
     display: flex;

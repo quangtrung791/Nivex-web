@@ -8,6 +8,29 @@
 }
 
 /* fixed */
+.box-image {
+    position: relative;
+}
+.image-overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));
+    z-index: 1;
+    pointer-events: none;
+    height: 40%;
+}
+.box-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.heading-title-main, .heading-title-main * {
+    position: relative;
+    z-index: 2;
+}
+
 .ttuc .tin-tuc,
 .ttuc .headline-news {
     text-align: left !important;
@@ -111,9 +134,9 @@ li.active h6 {
     font-weight: 600 !important;
      color: black;
 }
-.heading-title-main {
+/* .heading-title-main {
     background: linear-gradient(0deg, rgb(0 0 0 / 80%), rgb(0 0 0 / 0%) 70%);
-}
+} */
 a.title.navigate-child-news:hover {
     color:  #BCFE08  !important; 
 }
@@ -291,7 +314,8 @@ footer.footer.style-2.footer-main {
 /* pc 1440 */
 @media (min-width: 1440px) and (max-width: 1599px) {
     .blog-details.ttuc .blog-main .tin-tuc {
-        margin-bottom: 29px !important;
+        /* margin-bottom: 29px !important; */
+        margin-bottom: 10px !important;
     }
     .blog-details.ttuc .box-image {
         margin-bottom: 75px !important;
@@ -434,7 +458,8 @@ footer.footer.style-2.footer-main {
     }
     h3.tin-tuc, h3.title {
         position: relative;
-        top: -4px;
+        /* top: -4px; */
+        top: -10px;
     }
     .blog-details.ttuc .sidebar {
         padding-left: 0 !important;

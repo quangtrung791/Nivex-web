@@ -277,9 +277,7 @@ export default function BlogDetails() {
                                             {news[0] && (
                                                 <div className="box-image trigger-full-w">
                                                     <img src={news[0].thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={news[0].title} />
-                                                    {/* <div className="wrap-video"> */}
-                                                        {/* <VideoPopup /> */}
-                                                    {/* </div> */}
+                                                    <div className="image-overlay"></div>
                                                 </div>
                                             )}
                                             
