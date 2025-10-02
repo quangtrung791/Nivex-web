@@ -233,7 +233,7 @@ export default function SuKienAlt() {
                                                                                     <span>{item.tag3 || "CopyTrade"}</span>
                                                                                 </div>
                                                                             </div>
-                                                                            <Link href={`/su-kien-tham-gia/${item.id}`} className="event-btn">Xem thêm</Link>
+                                                                            <Link href={`/su-kien-tham-gia/${item.id}`} className="event-btn btn-action">Xem thêm</Link>
                                                                         </div>
                                                                     </div>
                                                                 </div>

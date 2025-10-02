@@ -82,7 +82,7 @@ section.blog-grid .blog-box {
 
 /* 1440 PC */
 @media (min-width: 1440px) and (max-width: 1599px) {
-    .blog-box .box-image img {
+    .su-kien-tg .blog-box .box-image img {
         height: 370px;
     }
     section.blog-grid,
@@ -111,8 +111,8 @@ section.blog-grid .blog-box {
         /* top: -90px; */
         padding: 15px 15px 0 15px;
     }
-    .blog-box .box-content .title {
-        font-size: 28px;
+    .su-kien-tg .blog-box .box-content .title {
+        font-size: 28px !important;
         font-weight: 700;
         margin: 0;
     }
@@ -288,7 +288,7 @@ section.blog-grid .blog-box {
 
 /* 1600 PC */
 @media (min-width: 1600px) and (max-width: 1919px) {
-    .blog-box .box-image img {
+    .su-kien-tg .blog-box .box-image img {
         height: 370px;
     }
     section.blog-grid,
@@ -309,8 +309,8 @@ section.blog-grid .blog-box {
         /* top: -90px; */
         padding: 0 15px;
     }
-    .blog-box .box-content .title {
-        font-size: 28px;
+    .su-kien-tg .blog-box .box-content .title {
+        font-size: 28px !important;
         font-weight: 700;
         margin: 0;
     }
@@ -484,7 +484,7 @@ section.blog-grid .blog-box {
 
 /* 1920 PC */
 @media (min-width: 1920px) and (max-width: 2109px) {
-    .blog-box .box-image img {
+    .su-kien-tg .blog-box .box-image img {
         height: 370px;
     }
     section.blog-grid,
@@ -505,8 +505,8 @@ section.blog-grid .blog-box {
         /* top: -50px; */
         padding: 20px 20px 0 20px;
     }
-    .blog-box .box-content .title {
-        font-size: 28px;
+    .su-kien-tg .blog-box .box-content .title {
+        font-size: 28px !important;
         font-weight: 700;
         margin: 0;
     }
@@ -685,7 +685,7 @@ section.blog-grid .blog-box {
 }
 
 @media (min-width: 2110px) {
-    .blog-box .box-image img {
+    .su-kien-tg .blog-box .box-image img {
         height: 380px;
     }
      section.blog-grid,
@@ -710,8 +710,8 @@ section.blog-grid .blog-box {
         /* top: -50px; */
         padding: 20px 20px 0 20px;
     }
-    .blog-box .box-content .title {
-        font-size: 28px;
+    .su-kien-tg .blog-box .box-content .title {
+        font-size: 28px !important;
         font-weight: 700;
         margin: 0;
     }
@@ -887,7 +887,7 @@ section.blog-grid .blog-box {
 
 /* iPad Pro 1024 */
 @media (min-width: 992px) and (max-width: 1024px) {
-    .blog-box .box-image img {
+    .su-kien-tg .blog-box .box-image img {
         height: 270px;
     }
     .su-kien-tg .blog-box .box-content {
@@ -909,8 +909,8 @@ section.blog-grid .blog-box {
         /* top: -72px; */
         padding: 0 10px;
     }
-    .blog-box .box-content .title {
-        font-size: 23.68px;
+    .su-kien-tg .blog-box .box-content .title {
+        font-size: 23.68px !important;
         font-weight: 700;
         margin: 0;
     }
@@ -1091,7 +1091,7 @@ section.blog-grid .blog-box {
 
 /* iPad Pro 1366 */
 @media (min-width: 1280px) and (max-width: 1366px) {
-    .blog-box .box-image img {
+    .su-kien-tg .blog-box .box-image img {
         height: 370px;
     }
     .su-kien-tg .blog-box .box-content {
@@ -1114,8 +1114,8 @@ section.blog-grid .blog-box {
         /* top: -72px; */
         padding: 0 20px;
     }
-    .blog-box .box-content .title {
-        font-size: 23.68px;
+    .su-kien-tg .blog-box .box-content .title {
+        font-size: 23.68px !important;
         font-weight: 700;
         margin: 0;
     }
@@ -1300,7 +1300,7 @@ section.blog-grid .blog-box {
 
 /* iPad Air 1180 */
 @media (min-width: 1100px) and (max-width: 1180px) {
-    .blog-box .box-image img {
+    .su-kien-tg .blog-box .box-image img {
         height: 320px;
     }
     .su-kien-tg .blog-box .box-content {
@@ -1326,8 +1326,8 @@ section.blog-grid .blog-box {
         /* top: -74px; */
         padding: 0 20px;
     }
-    .blog-box .box-content .title {
-        font-size: 23.68px;
+    .su-kien-tg .blog-box .box-content .title {
+        font-size: 23.68px !important;
         font-weight: 700;
         margin: 0;
     }
@@ -1511,7 +1511,7 @@ section.blog-grid .blog-box {
 
 /* iPad Air 820 */
 @media (min-width: 768px) and (max-width: 860px) {
-    .blog-box .box-image img {
+    .su-kien-tg .blog-box .box-image img {
         height: 220px;
     }
     .su-kien-tg .blog-box .box-content {
@@ -1537,8 +1537,8 @@ section.blog-grid .blog-box {
         /* top: -74px; */
         padding: 0 10px;
     }
-    .blog-box .box-content .title {
-        font-size: 23.68px;
+    .su-kien-tg .blog-box .box-content .title {
+        font-size: 23.68px !important;
         font-weight: 700;
         margin: 0;
     }
@@ -1723,7 +1723,7 @@ section.blog-grid .blog-box {
 
 /* other responsive */
 @media (min-width: 861px) and (max-width: 991px) {
-    .blog-box .box-image img {
+    .su-kien-tg .blog-box .box-image img {
         height: 370px;
     }
     .su-kien-tg .blog-box .box-content {
@@ -1750,8 +1750,8 @@ section.blog-grid .blog-box {
         /* top: -74px; */
         padding: 0 20px;
     }
-    .blog-box .box-content .title {
-        font-size: 23.68px;
+    .su-kien-tg .blog-box .box-content .title {
+        font-size: 23.68px !important;
         font-weight: 700;
         margin: 0;
     }
@@ -1929,7 +1929,7 @@ section.blog-grid .blog-box {
 }
 
 @media (min-width: 1025px) and (max-width: 1099px) {
-    .blog-box .box-image img {
+    .su-kien-tg .blog-box .box-image img {
         height: 370px;
     }
     .su-kien-tg .blog-box .box-content {
@@ -1952,8 +1952,8 @@ section.blog-grid .blog-box {
         /* top: -72px; */
         padding: 0 20px;
     }
-    .blog-box .box-content .title {
-        font-size: 23.68px;
+    .su-kien-tg .blog-box .box-content .title {
+        font-size: 23.68px !important; 
         font-weight: 700;
         margin: 0;
     }
@@ -2130,7 +2130,7 @@ section.blog-grid .blog-box {
 }
 
 @media (min-width: 1181px) and (max-width: 1279px) {
-    .blog-box .box-image img {
+    .su-kien-tg .blog-box .box-image img {
         height: 370px;
     }
     .su-kien-tg .blog-box .box-content {
@@ -2157,8 +2157,8 @@ section.blog-grid .blog-box {
         padding: 0 20px;
         margin-top: 14px;
     }
-    .blog-box .box-content .title {
-        font-size: 23.68px;
+    .su-kien-tg .blog-box .box-content .title {
+        font-size: 23.68px !important;
         font-weight: 700;
         margin: 0;
     }
@@ -2337,7 +2337,7 @@ section.blog-grid .blog-box {
 }
 
 @media (min-width: 1367px) and (max-width: 1439px) {
-    .blog-box .box-image img {
+    .su-kien-tg .blog-box .box-image img {
         height: 370px;
     }
     .su-kien-tg .blog-box .box-content {
@@ -2360,8 +2360,8 @@ section.blog-grid .blog-box {
         /* top: -72px; */
         padding: 0 20px;
     }
-    .blog-box .box-content .title {
-        font-size: 23.68px;
+    .su-kien-tg .blog-box .box-content .title {
+        font-size: 23.68px !important;
         font-weight: 700;
         margin: 0;
     }
@@ -2539,7 +2539,7 @@ section.blog-grid .blog-box {
 }
 
 @media (min-width: 601px) and (max-width: 767px) {
-    .blog-box .box-image img {
+    .su-kien-tg .blog-box .box-image img {
         height: 370px;
     }
     .su-kien-tg .blog-box .box-content {
@@ -2565,8 +2565,8 @@ section.blog-grid .blog-box {
         /* top: -74px; */
         padding: 0 20px;
     }
-    .blog-box .box-content .title {
-        font-size: 23.68px;
+    .su-kien-tg .blog-box .box-content .title {
+        font-size: 23.68px !important;
         font-weight: 700;
         margin: 0;
     }
@@ -2742,7 +2742,7 @@ section.blog-grid .blog-box {
 
 /* mobile responsive */
 @media (min-width: 400px) and (max-width: 600px) {
-    .blog-box .box-image img {
+    .su-kien-tg .blog-box .box-image img {
         height: 220px;
     }
     .su-kien-tg .blog-box .box-content {
@@ -2769,7 +2769,7 @@ section.blog-grid .blog-box {
         padding: 0 15px;
     }
     .su-kien-tg .blog-box .box-content .title {
-        font-size: 20px;
+        font-size: 20px !important;
         font-weight: 700;
         margin: 0;
     }
@@ -3362,7 +3362,7 @@ section.blog-grid .blog-box {
 
 /* small phones */
 @media (max-width: 399px) {
-    .blog-box .box-image img {
+    .su-kien-tg .blog-box .box-image img {
         height: 200px;
     }
     .su-kien-tg .blog-box .box-content {
@@ -3690,7 +3690,7 @@ ul.menu-tab.menu-on-line {
     p.text-desc-su-kien {
         height: 40px;
     }
-    .blog-grid .blog-box .box-image img {
+    .blog-grid.su-kien-tg .blog-box .box-image img {
         height: 300px !important;
     }
 }
