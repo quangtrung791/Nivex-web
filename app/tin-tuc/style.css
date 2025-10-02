@@ -317,8 +317,11 @@ footer.footer.style-2.footer-main {
         /* margin-bottom: 29px !important; */
         margin-bottom: 10px !important;
     }
-    .blog-details.ttuc .box-image {
+    /* .blog-details.ttuc .box-image {
         margin-bottom: 75px !important;
+    } */
+    .blog-details.ttuc .content-tab .blog-box .box-image {
+        margin-bottom: 10px !important;
     }
     .heading-title-main h3.tin-tuc {
         font-size: 32px;
