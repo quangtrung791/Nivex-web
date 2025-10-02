@@ -127,7 +127,7 @@ export default function SuKien() {
                             </form>
                         </div>
                     </section>
-                    <section className="blog-list">
+                    <section className="blog-list skien">
                         <div className="container">
                             <div className="row">
                                 

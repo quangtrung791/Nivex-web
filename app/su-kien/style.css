@@ -2,7 +2,7 @@
 section.section-news-header {
     background: #1e1f22;
 }
-.meta, .blog-list a.title {
+.meta, .blog-list.skien a.title {
     padding-left: 0 !important;
 }
 
@@ -14,7 +14,7 @@ section.section-news-header {
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.blog-list .text {
+.blog-list.skien .text {
     color: #b1b5c3 !important;
     display: block;
     display: -webkit-box;
@@ -24,11 +24,11 @@ section.section-news-header {
     text-overflow: ellipsis;
 }
 
-.blog-list .text {
+.blog-list.skien .text {
 	color: #b1b5c3 !important;
 }
 
-.blog-list .blog-main .blog-box .box-image {
+.blog-list.skien .blog-main .blog-box .box-image {
     height: fit-content;
 }
 .text {
@@ -98,7 +98,7 @@ section.section-news-header {
     }
 	a.title {
         /* height: 78px; */
-        height: 59px;
+        height: 68px;
     }
     p.text-desc-su-kien {
         height: 40px;
@@ -302,7 +302,7 @@ a.read-more-btn.btn-action {
     section.section-news-header {
         padding: 3.5% 8%;
     }
-    section.blog-list {
+    section.blog-list.skien {
         padding: 3.5% 7%;
     }
     
@@ -311,16 +311,16 @@ a.read-more-btn.btn-action {
         gap: 1.5%;
         margin-bottom: 20px;
     }
-    .blog-list .blog-main .blog-box .box-image {
+    .blog-list.skien .blog-main .blog-box .box-image {
         width: 70% !important;
     }
-    .blog-list .blog-main .blog-box .box-content {
+    .blog-list.skien .blog-main .blog-box .box-content {
         padding: 50px 0 !important;
     }
     .meta {
         margin-bottom: 20px;
     }
-    .blog-list .blog-main .blog-box .box-content .text {
+    .blog-list.skien .blog-main .blog-box .box-content .text {
         margin-top: 30px !important;
         margin-bottom: 30px !important;
     }
@@ -332,7 +332,7 @@ a.read-more-btn.btn-action {
         font-size: 12px !important;
         font-weight: 300 !important;
     }
-    .blog-list .blog-main .blog-box .box-content .meta {
+    .blog-list.skien .blog-main .blog-box .box-content .meta {
         justify-content: space-between;
     }
     p.text {
@@ -351,15 +351,15 @@ a.read-more-btn.btn-action {
     a.read-more-btn.btn-action {
         font-size: 14px;
     }
-    .blog-list .blog-main .blog-box .box-content {
+    .blog-list.skien .blog-main .blog-box .box-content {
         margin-left: 10px !important;
     }
 
 
-    .blog-list .blog-main .blog-box .box-content .meta a {
+    .blog-list.skien .blog-main .blog-box .box-content .meta a {
         margin-right: unset !important;
     }
-    .blog-list .blog-main .blog-box .box-content .title {
+    .blog-list.skien .blog-main .blog-box .box-content .title {
         margin-bottom: 0 !important;
     }
 
@@ -431,7 +431,7 @@ a.read-more-btn.btn-action {
     section.section-news-header {
         padding: 3.5% 8%;
     }
-    section.blog-list {
+    section.blog-list.skien {
         padding: 3.5% 7%;
     }
     
@@ -440,16 +440,16 @@ a.read-more-btn.btn-action {
         gap: 1.5%;
         margin-bottom: 20px;
     }
-    .blog-list .blog-main .blog-box .box-image {
+    .blog-list.skien .blog-main .blog-box .box-image {
         width: 70% !important;
     }
-    .blog-list .blog-main .blog-box .box-content {
+    .blog-list.skien .blog-main .blog-box .box-content {
         padding: 60px 0 !important;
     }
     .meta {
         margin-bottom: 20px;
     }
-    .blog-list .blog-main .blog-box .box-content .text {
+    .blog-list.skien .blog-main .blog-box .box-content .text {
         margin-top: 30px !important;
         margin-bottom: 30px !important;
     }
@@ -461,7 +461,7 @@ a.read-more-btn.btn-action {
         font-size: 12px !important;
         font-weight: 300 !important;
     }
-    .blog-list .blog-main .blog-box .box-content .meta {
+    .blog-list.skien .blog-main .blog-box .box-content .meta {
         justify-content: space-between;
     }
     p.text {
@@ -480,15 +480,15 @@ a.read-more-btn.btn-action {
     a.read-more-btn.btn-action {
         font-size: 14px;
     }
-    .blog-list .blog-main .blog-box .box-content {
+    .blog-list.skien .blog-main .blog-box .box-content {
         margin-left: 10px !important;
     }
 
 
-    .blog-list .blog-main .blog-box .box-content .meta a {
+    .blog-list.skien .blog-main .blog-box .box-content .meta a {
         margin-right: unset !important;
     }
-    .blog-list .blog-main .blog-box .box-content .title {
+    .blog-list.skien .blog-main .blog-box .box-content .title {
         margin-bottom: 0 !important;
     }
 
@@ -560,7 +560,7 @@ a.read-more-btn.btn-action {
     section.section-news-header {
         padding: 3.5% 13%;
     }
-    section.blog-list {
+    section.blog-list.skien {
         padding: 3.5% 7%;
     }
     
@@ -569,21 +569,21 @@ a.read-more-btn.btn-action {
         gap: 1.5%;
         margin-bottom: 20px;
     }
-    .blog-list .blog-main .blog-box .box-image {
+    .blog-list.skien .blog-main .blog-box .box-image {
         width: 70% !important;
     }
-    .blog-list .blog-main .blog-box .box-content {
+    .blog-list.skien .blog-main .blog-box .box-content {
         padding: 100px 0 !important;
     }
     .meta {
         margin-bottom: 20px;
     }
-    .blog-list .blog-main .blog-box .box-content .text {
+    .blog-list.skien .blog-main .blog-box .box-content .text {
         margin-top: 30px !important;
         margin-bottom: 30px !important;
     }
 
-    .blog-list .blog-main .blog-box .box-content .meta {
+    .blog-list.skien .blog-main .blog-box .box-content .meta {
         justify-content: space-between;
     }
     a.time {
@@ -609,15 +609,15 @@ a.read-more-btn.btn-action {
     a.read-more-btn.btn-action {
         font-size: 14px;
     }
-    .blog-list .blog-main .blog-box .box-content {
+    .blog-list.skien .blog-main .blog-box .box-content {
         margin-left: 10px !important;
     }
 
 
-    .blog-list .blog-main .blog-box .box-content .meta a {
+    .blog-list.skien .blog-main .blog-box .box-content .meta a {
         margin-right: unset !important;
     }
-    .blog-list .blog-main .blog-box .box-content .title {
+    .blog-list.skien .blog-main .blog-box .box-content .title {
         margin-bottom: 0 !important;
     }
 
@@ -691,7 +691,7 @@ a.read-more-btn.btn-action {
     section.section-news-header {
         padding: 3.5% 15.5%;
     }
-    section.blog-list {
+    section.blog-list.skien {
         padding: 3.5% 7%;
     }
     
@@ -700,21 +700,21 @@ a.read-more-btn.btn-action {
         gap: 1.5%;
         margin-bottom: 20px;
     }
-    .blog-list .blog-main .blog-box .box-image {
+    .blog-list.skien .blog-main .blog-box .box-image {
         width: 70% !important;
     }
-    .blog-list .blog-main .blog-box .box-content {
+    .blog-list.skien .blog-main .blog-box .box-content {
         padding: 100px 0 !important;
     }
     .meta {
         margin-bottom: 20px;
     }
-    .blog-list .blog-main .blog-box .box-content .text {
+    .blog-list.skien .blog-main .blog-box .box-content .text {
         margin-top: 30px !important;
         margin-bottom: 30px !important;
     }
 
-    .blog-list .blog-main .blog-box .box-content .meta {
+    .blog-list.skien .blog-main .blog-box .box-content .meta {
         justify-content: space-between;
     }
     a.time {
@@ -740,15 +740,15 @@ a.read-more-btn.btn-action {
     a.read-more-btn.btn-action {
         font-size: 14px;
     }
-    .blog-list .blog-main .blog-box .box-content {
+    .blog-list.skien .blog-main .blog-box .box-content {
         margin-left: 10px !important;
     }
 
 
-    .blog-list .blog-main .blog-box .box-content .meta a {
+    .blog-list.skien .blog-main .blog-box .box-content .meta a {
         margin-right: unset !important;
     }
-    .blog-list .blog-main .blog-box .box-content .title {
+    .blog-list.skien .blog-main .blog-box .box-content .title {
         margin-bottom: 0 !important;
     }
 
@@ -821,7 +821,7 @@ a.read-more-btn.btn-action {
     section.section-news-header {
         padding: 3% 3.5%;
     }
-    section.blog-list {
+    section.blog-list.skien {
         padding: 3% 3.5%;
     }
     .col-xl-12.col-md-12 {
@@ -835,10 +835,10 @@ a.read-more-btn.btn-action {
         flex-wrap: wrap;
     }
 
-    .blog-list .blog-main .blog-box .box-image {
+    .blog-list.skien .blog-main .blog-box .box-image {
         width: 72% !important;
     }
-    .blog-list .blog-main .blog-box .box-content {
+    .blog-list.skien .blog-main .blog-box .box-content {
         padding: 55px 0 !important;
         margin-left: 10px !important;
     }
@@ -847,7 +847,7 @@ a.read-more-btn.btn-action {
         margin-bottom: 18px;
     }
 
-    .blog-list .blog-main .blog-box .box-content .text {
+    .blog-list.skien .blog-main .blog-box .box-content .text {
         margin-top: 28px !important;
         margin-bottom: 28px !important;
     }
@@ -862,7 +862,7 @@ a.read-more-btn.btn-action {
         display: inline-block;
     }
 
-    .blog-list .blog-main .blog-box .box-content .meta {
+    .blog-list.skien .blog-main .blog-box .box-content .meta {
         justify-content: space-between;
         align-items: center;
     }
@@ -888,15 +888,15 @@ a.read-more-btn.btn-action {
         font-size: 14px;
     }
 
-    .blog-list .blog-main .blog-box .box-content {
+    .blog-list.skien .blog-main .blog-box .box-content {
         margin-left: 10px !important;
     }
 
-    .blog-list .blog-main .blog-box .box-content .meta a {
+    .blog-list.skien .blog-main .blog-box .box-content .meta a {
         margin-right: unset !important;
     }
 
-    .blog-list .blog-main .blog-box .box-content .title {
+    .blog-list.skien .blog-main .blog-box .box-content .title {
         margin-bottom: 0 !important;
     }
 
@@ -968,7 +968,7 @@ a.read-more-btn.btn-action {
     section.section-news-header {
         padding: 2.5% 3.5%;
     }
-    section.blog-list {
+    section.blog-list.skien {
         padding: 2.5% 3.5%;
     }
     
@@ -982,10 +982,10 @@ a.read-more-btn.btn-action {
         padding: unset;
     }
 
-    .blog-list .blog-main .blog-box .box-image {
+    .blog-list.skien .blog-main .blog-box .box-image {
         width: 80% !important;
     }
-    .blog-list .blog-main .blog-box .box-content {
+    .blog-list.skien .blog-main .blog-box .box-content {
         padding: 45px 0 !important;
         margin-left: 6px !important;
     }
@@ -994,7 +994,7 @@ a.read-more-btn.btn-action {
         margin-bottom: 15px;
     }
 
-    .blog-list .blog-main .blog-box .box-content .text {
+    .blog-list.skien .blog-main .blog-box .box-content .text {
         margin-top: 22px !important;
         margin-bottom: 22px !important;
     }
@@ -1008,7 +1008,7 @@ a.read-more-btn.btn-action {
         display: inline-block;
     }
 
-    .blog-list .blog-main .blog-box .box-content .meta {
+    .blog-list.skien .blog-main .blog-box .box-content .meta {
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
@@ -1037,15 +1037,15 @@ a.read-more-btn.btn-action {
         padding: 8px 12px;
     }
 
-    .blog-list .blog-main .blog-box .box-content {
+    .blog-list.skien .blog-main .blog-box .box-content {
         margin-left: 6px !important;
     }
 
-    .blog-list .blog-main .blog-box .box-content .meta a {
+    .blog-list.skien .blog-main .blog-box .box-content .meta a {
         margin-right: unset !important;
     }
 
-    .blog-list .blog-main .blog-box .box-content .title {
+    .blog-list.skien .blog-main .blog-box .box-content .title {
         margin-bottom: 0 !important;
     }
 
@@ -1120,7 +1120,7 @@ a.read-more-btn.btn-action {
     section.section-news-header {
         padding: 2.8% 3.5%;
     }
-    section.blog-list {
+    section.blog-list.skien {
         padding: 2.8% 3.5%;
     }
     
@@ -1131,10 +1131,10 @@ a.read-more-btn.btn-action {
         flex-wrap: wrap;
     }
 
-    .blog-list .blog-main .blog-box .box-image {
+    .blog-list.skien .blog-main .blog-box .box-image {
         width: 78% !important;
     }
-    .blog-list .blog-main .blog-box .box-content {
+    .blog-list.skien .blog-main .blog-box .box-content {
         padding: 45px 0 !important;
         margin-left: 6px !important;
     }
@@ -1143,7 +1143,7 @@ a.read-more-btn.btn-action {
         margin-bottom: 16px;
     }
 
-    .blog-list .blog-main .blog-box .box-content .text {
+    .blog-list.skien .blog-main .blog-box .box-content .text {
         margin-top: 24px !important;
         margin-bottom: 24px !important;
     }
@@ -1154,7 +1154,7 @@ a.read-more-btn.btn-action {
         font-weight: 300 !important;
     }
 
-    .blog-list .blog-main .blog-box .box-content .meta {
+    .blog-list.skien .blog-main .blog-box .box-content .meta {
         justify-content: space-between;
         align-items: center;
         gap: 8px;
@@ -1181,11 +1181,11 @@ a.read-more-btn.btn-action {
         font-size: 13px;
     }
 
-    .blog-list .blog-main .blog-box .box-content .meta a {
+    .blog-list.skien .blog-main .blog-box .box-content .meta a {
         margin-right: unset !important;
     }
 
-    .blog-list .blog-main .blog-box .box-content .title {
+    .blog-list.skien .blog-main .blog-box .box-content .title {
         margin-bottom: 0 !important;
     }
 
@@ -1263,7 +1263,7 @@ a.read-more-btn.btn-action {
     section.section-news-header {
         padding: 2% 3.5%;
     }
-    section.blog-list {
+    section.blog-list.skien {
         padding: 2% 3.5%;
     }
     .col-xl-12.col-md-12 {
@@ -1277,10 +1277,10 @@ a.read-more-btn.btn-action {
         flex-wrap: wrap;
     }
 
-    .blog-list .blog-main .blog-box .box-image {
+    .blog-list.skien .blog-main .blog-box .box-image {
         width: 55% !important;
     }
-    .blog-list .blog-main .blog-box .box-content {
+    .blog-list.skien .blog-main .blog-box .box-content {
         padding: 35px 0 !important;
         margin-left: 4px !important;
     }
@@ -1289,7 +1289,7 @@ a.read-more-btn.btn-action {
         margin-bottom: 12px;
     }
 
-    .blog-list .blog-main .blog-box .box-content .text {
+    .blog-list.skien .blog-main .blog-box .box-content .text {
         margin-top: 18px !important;
         margin-bottom: 18px !important;
     }
@@ -1300,7 +1300,7 @@ a.read-more-btn.btn-action {
         font-weight: 300 !important;
     }
 
-    .blog-list .blog-main .blog-box .box-content .meta {
+    .blog-list.skien .blog-main .blog-box .box-content .meta {
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
@@ -1329,11 +1329,11 @@ a.read-more-btn.btn-action {
         padding: 6px 10px;
     }
 
-    .blog-list .blog-main .blog-box .box-content .meta a {
+    .blog-list.skien .blog-main .blog-box .box-content .meta a {
         margin-right: unset !important;
     }
 
-    .blog-list .blog-main .blog-box .box-content .title {
+    .blog-list.skien .blog-main .blog-box .box-content .title {
         margin-bottom: 0 !important;
     }
 
@@ -1420,7 +1420,7 @@ a.read-more-btn.btn-action {
     section.section-news-header {
         padding: 4% 5%;
     }
-    section.blog-list {
+    section.blog-list.skien {
         padding: 4% 5%;
     }
     
@@ -1431,11 +1431,11 @@ a.read-more-btn.btn-action {
         margin-bottom: 12px;
     }
 
-    .blog-list .blog-main .blog-box .box-image {
+    .blog-list.skien .blog-main .blog-box .box-image {
         width: 100% !important;
         margin: 0 auto;
     }
-    .blog-list .blog-main .blog-box .box-content {
+    .blog-list.skien .blog-main .blog-box .box-content {
         padding: 20px 10px !important;
         margin-left: 0 !important;
     }
@@ -1461,7 +1461,7 @@ a.read-more-btn.btn-action {
         margin-right: 15px;
      }
 
-    .blog-list .blog-main .blog-box .box-content .text {
+    .blog-list.skien .blog-main .blog-box .box-content .text {
         margin: 16px 0 !important;
     }
 
@@ -1470,7 +1470,7 @@ a.read-more-btn.btn-action {
         font-weight: 300 !important;
     }
 
-    .blog-list .blog-main .blog-box .box-content .meta {
+    .blog-list.skien .blog-main .blog-box .box-content .meta {
         justify-content: flex-start;
         flex-wrap: wrap;
         gap: 6px;
@@ -1498,11 +1498,11 @@ a.read-more-btn.btn-action {
         padding: 6px 10px;
     }
 
-    .blog-list .blog-main .blog-box .box-content .meta a {
+    .blog-list.skien .blog-main .blog-box .box-content .meta a {
         margin-right: unset !important;
     }
 
-    .blog-list .blog-main .blog-box .box-content .title {
+    .blog-list.skien .blog-main .blog-box .box-content .title {
         margin-bottom: 0 !important;
     }
 
@@ -1578,7 +1578,7 @@ a.read-more-btn.btn-action {
     section.section-news-header {
         padding: 2% 3.5%;
     }
-    section.blog-list {
+    section.blog-list.skien {
         padding: 2% 3.5%;
     }
     .col-xl-12.col-md-12 {
@@ -1592,10 +1592,10 @@ a.read-more-btn.btn-action {
         flex-wrap: wrap;
     }
 
-    .blog-list .blog-main .blog-box .box-image {
+    .blog-list.skien .blog-main .blog-box .box-image {
         width: 55% !important;
     }
-    .blog-list .blog-main .blog-box .box-content {
+    .blog-list.skien .blog-main .blog-box .box-content {
         padding: 35px 0 !important;
         margin-left: 4px !important;
     }
@@ -1604,7 +1604,7 @@ a.read-more-btn.btn-action {
         margin-bottom: 12px;
     }
 
-    .blog-list .blog-main .blog-box .box-content .text {
+    .blog-list.skien .blog-main .blog-box .box-content .text {
         margin-top: 18px !important;
         margin-bottom: 18px !important;
     }
@@ -1615,7 +1615,7 @@ a.read-more-btn.btn-action {
         font-weight: 300 !important;
     }
 
-    .blog-list .blog-main .blog-box .box-content .meta {
+    .blog-list.skien .blog-main .blog-box .box-content .meta {
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
@@ -1644,11 +1644,11 @@ a.read-more-btn.btn-action {
         padding: 6px 10px;
     }
 
-    .blog-list .blog-main .blog-box .box-content .meta a {
+    .blog-list.skien .blog-main .blog-box .box-content .meta a {
         margin-right: unset !important;
     }
 
-    .blog-list .blog-main .blog-box .box-content .title {
+    .blog-list.skien .blog-main .blog-box .box-content .title {
         margin-bottom: 0 !important;
     }
 
@@ -1722,7 +1722,7 @@ a.read-more-btn.btn-action {
     section.section-news-header {
         padding: 3% 3.5%;
     }
-    section.blog-list {
+    section.blog-list.skien {
         padding: 3% 3.5%;
     }
     .col-xl-12.col-md-12 {
@@ -1736,10 +1736,10 @@ a.read-more-btn.btn-action {
         flex-wrap: wrap;
     }
 
-    .blog-list .blog-main .blog-box .box-image {
+    .blog-list.skien .blog-main .blog-box .box-image {
         width: 72% !important;
     }
-    .blog-list .blog-main .blog-box .box-content {
+    .blog-list.skien .blog-main .blog-box .box-content {
         padding: 55px 0 !important;
         margin-left: 10px !important;
     }
@@ -1748,7 +1748,7 @@ a.read-more-btn.btn-action {
         margin-bottom: 18px;
     }
 
-    .blog-list .blog-main .blog-box .box-content .text {
+    .blog-list.skien .blog-main .blog-box .box-content .text {
         margin-top: 28px !important;
         margin-bottom: 28px !important;
     }
@@ -1763,7 +1763,7 @@ a.read-more-btn.btn-action {
         display: inline-block;
     }
 
-    .blog-list .blog-main .blog-box .box-content .meta {
+    .blog-list.skien .blog-main .blog-box .box-content .meta {
         justify-content: space-between;
         align-items: center;
     }
@@ -1789,15 +1789,15 @@ a.read-more-btn.btn-action {
         font-size: 14px;
     }
 
-    .blog-list .blog-main .blog-box .box-content {
+    .blog-list.skien .blog-main .blog-box .box-content {
         margin-left: 10px !important;
     }
 
-    .blog-list .blog-main .blog-box .box-content .meta a {
+    .blog-list.skien .blog-main .blog-box .box-content .meta a {
         margin-right: unset !important;
     }
 
-    .blog-list .blog-main .blog-box .box-content .title {
+    .blog-list.skien .blog-main .blog-box .box-content .title {
         margin-bottom: 0 !important;
     }
 

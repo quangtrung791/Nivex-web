@@ -104,7 +104,7 @@ export default function BlogDetails() {
                         </div>
                     </section>
 
-                    <section className="blog-details">
+                    <section className="blog-details tin-tuc-id">
                         <div className="container">
                             <div className="row">
                                 <div className="col-xl-8 col-md-12">
