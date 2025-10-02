@@ -9,15 +9,25 @@ export default function UserGuideForNivexApp() {
   const [isSearching, setIsSearching] = useState(false)
   // Static data to render structure; replace text as needed
   const popularCategories = useMemo(() => ([
-    { title: 'Đăng ký & Đăng nhập', icon: '/assets/images/icon/user_guide_icon_1.png', href:'/huong-dan-dang-ky-dang-nhap' },
-    { title: 'Xác minh KYC', icon: '/assets/images/icon/user_guide_icon_2.png', href:'/xac-minh-danh-tinh-kyc' },
-    { title: 'Hướng dẫn nạp tiền', icon: '/assets/images/icon/user_guide_icon_3.png', href:'/huong-dan-nap-tien' },
-    { title: 'Hướng dẫn rút tiền', icon: '/assets/images/icon/user_guide_icon_4.png' },
-    { title: 'Giao dịch P2P', icon: '/assets/images/icon/user_guide_icon_5.png' },
-    { title: 'Giao dịch hợp đồng', icon: '/assets/images/icon/user_guide_icon_6.png' },
-    { title: 'Chiến lược AI', icon: '/assets/images/icon/user_guide_icon_7.png' },
-    { title: 'Mua coin bản địa', icon: '/assets/images/icon/user_guide_icon_8.png' },
+    { title: 'Đăng ký & Đăng nhập', icon: '/assets/images/icon/b1.svg', href:'/huong-dan-dang-ky-dang-nhap' },
+    { title: 'Xác minh KYC', icon: '/assets/images/icon/b2.svg', href:'/xac-minh-danh-tinh-kyc' },
+    { title: 'Hướng dẫn nạp tiền', icon: '/assets/images/icon/b3.svg', href:'/huong-dan-nap-tien' },
+    { title: 'Hướng dẫn rút tiền', icon: '/assets/images/icon/b4.svg' },
+    { title: 'Giao dịch P2P', icon: '/assets/images/icon/b5.svg' },
+    { title: 'Giao dịch hợp đồng', icon: '/assets/images/icon/b6.svg' },
+    { title: 'Chiến lược AI', icon: '/assets/images/icon/b7.svg' },
+    { title: 'Mua coin bản địa', icon: '/assets/images/icon/b8.svg' },
   ]), [])
+  // const popularCategories = useMemo(() => ([
+  //   { title: 'Đăng ký & Đăng nhập', icon: '/assets/images/icon/user_guide_icon_1.png', href:'/huong-dan-dang-ky-dang-nhap' },
+  //   { title: 'Xác minh KYC', icon: '/assets/images/icon/user_guide_icon_2.png', href:'/xac-minh-danh-tinh-kyc' },
+  //   { title: 'Hướng dẫn nạp tiền', icon: '/assets/images/icon/user_guide_icon_3.png', href:'/huong-dan-nap-tien' },
+  //   { title: 'Hướng dẫn rút tiền', icon: '/assets/images/icon/user_guide_icon_4.png' },
+  //   { title: 'Giao dịch P2P', icon: '/assets/images/icon/user_guide_icon_5.png' },
+  //   { title: 'Giao dịch hợp đồng', icon: '/assets/images/icon/user_guide_icon_6.png' },
+  //   { title: 'Chiến lược AI', icon: '/assets/images/icon/user_guide_icon_7.png' },
+  //   { title: 'Mua coin bản địa', icon: '/assets/images/icon/user_guide_icon_8.png' },
+  // ]), [])
 
   const accountSecurity = useMemo(() => ([
     { text: 'Liên kết Google'},
