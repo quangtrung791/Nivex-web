@@ -172,7 +172,7 @@ export const EventList = () => (
       <TextField source="id" label="ID" />
       <ImageField source="thumbnail_url" label="Ảnh" sx={{ '& img': { maxWidth: '60px', maxHeight: '45px', objectFit: 'cover' } }} />
       <TextField source="title" label="Tên sự kiện" />
-      <TextField source="content" label="Mô tả đầy đủ" />
+      {/* <TextField source="content" label="Mô tả đầy đủ" /> */}
       <TextField source="short_desc" label="Mô tả ngắn" />
       {/* <TextField source="author" label="Tác giả bài đăng" /> */}
       {/* <SelectField 

@@ -161,7 +161,7 @@ export const JoinedEventList = () => (
       <TextField source="id" label="ID" />
       <ImageField source="thumbnail_url" label="Ảnh" sx={{ '& img': { maxWidth: '60px', maxHeight: '45px', objectFit: 'cover' } }} />
       <TextField source="title" label="Tên sự kiện" />
-      <TextField source="content" label="Mô tả đầy đủ" />
+      {/* <TextField source="content" label="Mô tả đầy đủ" /> */}
       <TextField source="short_desc" label="Mô tả ngắn" />
       <DateField source="time_event" label="Ngày diễn ra sự kiện" showTime />
       <TextField source="tag1" label="Thẻ tag 1" />
