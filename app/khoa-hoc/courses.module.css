@@ -140,6 +140,12 @@ h1.pageTitleHeading span {
   background: #242529;
 }
 
+.courseCard:hover .courseTitle  {
+  background: linear-gradient(90deg, #bcfe08, #86f869);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .courseImage {
   position: relative;
   width: auto;
@@ -191,14 +197,10 @@ h1.pageTitleHeading span {
 
 .courseTitle {
   color: #fff;
-  font-size: 19px;
+  font-size: 20px;
   font-weight: 600;
-  line-height: 1.4;
-  margin-bottom: 16px;
-  /* Clamp to 2 lines with ellipsis */
-
-  /* keep a reasonable min-height for layout but allow clamp to work */
-  min-height: 48px;
+  line-height: 1.2;
+  margin-bottom: 0px;
   letter-spacing: 0.4px;
 }
 
@@ -263,8 +265,7 @@ h1.pageTitleHeading span {
   flex: 1;
 }
 .courseButton {
-  background: linear-gradient(90deg, #BCFE08, #86F969);
-  color: #000;
+  color: #ffffff;
   border: none;
   padding: 11px 17px;
   font-weight: 600;
@@ -272,22 +273,11 @@ h1.pageTitleHeading span {
   width: fit-content;
   font-size: 14px;
   margin-top: auto;
-}
-
-.courseButton:hover {
-  transform: translateY(-1px);
-}
-
-.courseButton.replay {
-  background: none;
-  color: #ffffff;
   border: 1px solid #434449;
+  background: none;
 }
 
-.courseButton.replay:hover {
-  background: #353945;
-  transform: none;
-}
+
 
 /* Search Results */
 .searchResults {
