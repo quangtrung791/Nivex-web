@@ -26,50 +26,37 @@ export const ImageUploadInput = ({ source, label, helperText, ...props }) => {
   const { field, fieldState } = useInput({ source, ...props })
   const [uploading, setUploading] = useState(false)
   const [uploadError, setUploadError] = useState('')
-  const [images, setImages] = useState([])
+  const [images, setImages] = useState<any[]>([])
   const [showGallery, setShowGallery] = useState(false)
-  const [preview, setPreview] = useState(null)
 
-  // Load existing images
-  const loadImages = useCallback(async () => {
-    try {
-      const response = await fetch('/api/upload/images')
-      const data = await response.json()
-      if (data.images) {
-        setImages(data.images)
-      }
-    } catch (error) {
-      console.error('Failed to load images:', error)
+  async function uploadToCloudinary(file: File) {
+    const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME!
+    const preset = process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET!
+    const form = new FormData()
+    form.append('file', file)
+    form.append('upload_preset', preset)
+
+    const res = await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/image/upload`, {
+      method: 'POST',
+      body: form
+    })
+    const json = await res.json()
+    if (!res.ok || !json.secure_url) {
+      throw new Error(json?.error?.message || 'Upload failed')
     }
-  }, [])
+    return json as { secure_url: string; original_filename?: string; public_id?: string }
+  }
 
-  // Handle file upload
-  const handleFileUpload = async (event) => {
-    const file = event.target.files[0]
+  const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0]
     if (!file) return
-
-    setUploading(true)
-    setUploadError('')
-
+    setUploading(true); setUploadError('')
     try {
-      const formData = new FormData()
-      formData.append('file', file)
-
-      const response = await fetch('/api/upload/images', {
-        method: 'POST',
-        body: formData
-      })
-
-      const result = await response.json()
-
-      if (result.success) {
-        field.onChange(result.url)
-        setImages(prev => [result, ...prev])
-      } else {
-        setUploadError(result.error || 'Upload failed')
-      }
-    } catch (error) {
-      setUploadError('Upload failed: ' + error.message)
+      const result = await uploadToCloudinary(file)
+      field.onChange(result.secure_url)  // <— LƯU URL vào cột
+      setImages(prev => [{ url: result.secure_url, filename: result.original_filename, public_id: result.public_id }, ...prev])
+    } catch (err:any) {
+      setUploadError(err?.message || 'Upload failed')
     } finally {
       setUploading(false)
     }
