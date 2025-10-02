@@ -162,8 +162,8 @@ export default function UserGuideForNivexApp() {
                 <div className="container">
                     <div className={styles.displayFlexForHeader}>
                         <div className="col-md-6">
-                            <h3 className={`heading ${styles.pageTitleHeading}`}>Hướng dẫn sử dụng <span>app Nivex</span>
-                            </h3>
+                            <h1 className={`heading ${styles.pageTitleHeading}`}>Hướng dẫn sử dụng <span>app Nivex</span>
+                            </h1>
                         </div>
                         <div className={`col-md-6 ${styles.col6mdCenter}`}>
                             <p className={`${styles.pageHeaderKnowledgeSubtitle}`}>Tổng hợp các bước cài đặt, thao tác và giải pháp nhanh để sử dụng Nivex hiệu quả.</p>
@@ -176,7 +176,7 @@ export default function UserGuideForNivexApp() {
 
           {/* Header row: title + search */}
           <div className={styles.headerRow}>
-            <h2 className={styles.pageTitle}>Danh mục <span>phổ biến</span> </h2>
+            <h2 className={styles.pageTitle}>DANH MỤC <span>PHỔ BIẾN</span> </h2>
             <div className={styles.searchBox}>
               <input 
                 className={styles.searchInput} 

@@ -102,8 +102,8 @@
 
 /* Icon Container */
 .iconContainer {
-  width: 64.25px;
-  height: 64px;
+  width: 68px;
+  height: 68px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -116,15 +116,11 @@
 .menuIcon {
   width: 100%;
   height: auto;
-  /* object-fit: contain; */
 }
 
 /* Menu Content */
 .menuContent {
   flex: 1;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center; */
 }
 
 /* Menu Title */
@@ -135,6 +131,12 @@
   margin: 0 0 16px 0;
   letter-spacing: 0.6px;
 }
+@media (max-width:1440px) {
+  .menuGrid {
+    padding: 20px;
+  }
+}
+
 
 /* Responsive Design */
 @media (max-width: 1200px) {

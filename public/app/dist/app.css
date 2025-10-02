@@ -9206,17 +9206,6 @@ section.background-container-custom .work-box:hover {
     }
 }
 
-.customed-menu-grid {
-  box-shadow: 0 0 20px 2px #BCFE0833 !important;
-  transition: box-shadow 0.3s ease-in-out !important;
-}
-
-.customed-menu-grid img {
-    width: 80px;
-    height: 80px;
-    scale: 1.15;
-}
-
 @media (min-width: 1440px) {
     p.fs-14.desc.main-description {
         line-height: 1.6 !important;

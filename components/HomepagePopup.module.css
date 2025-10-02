@@ -16,10 +16,10 @@
 .modal {
   position: relative;
   width: 100%;
-  max-width: 63vw;
+  max-width: 62vw;
   height: auto;
-  aspect-ratio: 1576/883;
-  background-image: url('https://learningchain.vn/wp-content/uploads/2025/10/bg_2ladipage_s3_2x.webp');
+  aspect-ratio: 1313/736;
+  background-image: url('https://learningchain.vn/wp-content/uploads/2025/10/bg_popup_new_s3_2x_new_2.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -131,7 +131,7 @@
 
 @media (max-width: 480px) {
   .modal {
-    aspect-ratio: 369/620;
-    background-image: url('https://learningchain.vn/wp-content/uploads/2025/10/MOBLIE_POPUP_s3.webp');
+    aspect-ratio: 492/826;
+    background-image: url('https://learningchain.vn/wp-content/uploads/2025/10/mobile_pop_up_s3_2x_new.webp');
   }
 }
