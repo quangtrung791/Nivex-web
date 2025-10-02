@@ -144,6 +144,7 @@ h1.pageTitleHeading span {
   background: linear-gradient(90deg, #bcfe08, #86f869);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-weight: 600;
 }
 
 .courseImage {
@@ -384,9 +385,6 @@ h1.pageTitleHeading span {
   .col6mdCenter {
     align-self: start;
   }
-  .courseCardContent {
-    margin-bottom: 15px;
-  }
   .pageTitle {
     font-size: 32px;
   }
@@ -394,7 +392,9 @@ h1.pageTitleHeading span {
     width: 100%;
     height: auto;
   }
-  
+  .courseContent {
+    gap: 15px;
+  }
 
   .coursesGrid {
     grid-template-columns: 1fr;
