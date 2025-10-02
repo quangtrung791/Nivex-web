@@ -38,6 +38,44 @@ import { ImageUploadInput } from './ImageUploadInput'
 import { useState } from 'react'
 import { convertToVietnamTime } from '@/utils/timezone'
 
+// Helper to format UTC date from DB to a local datetime string for the input
+const formatDateTimeLocal = (value) => {
+    if (!value) return '';
+    try {
+        // Create a date object assuming the value is a UTC string
+        const date = new Date(value);
+        if (isNaN(date.getTime())) return '';
+
+        // Get the timezone offset in minutes and convert it to milliseconds
+        const timezoneOffset = date.getTimezoneOffset() * 60000;
+        // Create a new date object adjusted for the local timezone
+        const localDate = new Date(date.getTime() - timezoneOffset);
+        
+        // Convert to an ISO string and slice to get the 'YYYY-MM-DDTHH:mm' format
+        return localDate.toISOString().slice(0, 16);
+    } catch (e) {
+        console.error("Error formatting date:", e);
+        return '';
+    }
+};
+
+// Helper to parse local datetime string back to a UTC ISO string for the DB
+const parseDateTimeLocal = (value) => {
+    if (!value) return null;
+    try {
+        // The input 'value' is a string like '2025-09-26T20:00' from the datetime-local input.
+        // new Date() will parse this as a local time.
+        const localDate = new Date(value);
+        if (isNaN(localDate.getTime())) return null;
+        
+        // Convert the local date object to a full UTC ISO string.
+        return localDate.toISOString();
+    } catch (e) {
+        console.error("Error parsing date:", e);
+        return null;
+    }
+};
+
 // VietnamDateField component - đơn giản và chính xác
 const VietnamDateField = ({ source, label, showTime = false }) => {
   const record = useRecordContext()
@@ -75,58 +113,7 @@ const VietnamDateField = ({ source, label, showTime = false }) => {
   return <span title={dateValue}>{formatted}</span>
 }
 
-// VietnamDateTimeInput component cho form input - tích hợp với React Admin
-const VietnamDateTimeInput = ({ source, label, validate, ...props }) => {
-  const { field, fieldState: { error } } = useInput({ source, validate })
-  
-  // Chuyển từ UTC (database) sang local datetime-local format
-  const getLocalDateTime = (utcString) => {
-    if (!utcString) return ''
-    const utcDate = new Date(utcString)
-    // Thêm 7h để chuyển từ UTC về Vietnam time
-    const vietnamDate = new Date(utcDate.getTime() + (7 * 60 * 60 * 1000))
-    return vietnamDate.toISOString().slice(0, 16) // Format: YYYY-MM-DDTHH:mm
-  }
-  
-  // Chuyển từ local datetime-local về UTC để lưu database
-  const getUTCFromLocal = (localString) => {
-    if (!localString) return null
-    const localDate = new Date(localString)
-    // Trừ 7h để chuyển từ Vietnam time về UTC
-    const utcDate = new Date(localDate.getTime() - (7 * 60 * 60 * 1000))
-    return utcDate.toISOString()
-  }
-  
-  const handleChange = (e) => {
-    const localValue = e.target.value
-    const utcValue = getUTCFromLocal(localValue)
-    field.onChange(utcValue)
-  }
-  
-  return (
-    <div style={{ marginBottom: '16px' }}>
-      <label style={{ display: 'block', marginBottom: '8px', fontSize: '12px', color: 'rgba(0,0,0,0.6)' }}>
-        {label} {validate && validate.includes(required) && ' *'}
-      </label>
-      <input
-        type="datetime-local"
-        value={getLocalDateTime(field.value)}
-        onChange={handleChange}
-        style={{
-          width: '100%',
-          padding: '8px',
-          border: error ? '1px solid #f44336' : '1px solid #ccc',
-          borderRadius: '4px'
-        }}
-      />
-      {error && (
-        <div style={{ color: '#f44336', fontSize: '12px', marginTop: '4px' }}>
-          {error.message || error}
-        </div>
-      )}
-    </div>
-  )
-}
+
 
 // Custom Delete Button với confirmation rõ ràng
 const CustomDeleteButton = () => {
@@ -311,16 +298,24 @@ export const CourseCreate = () => (
         validate={[required()]}
       />
       
-      <VietnamDateTimeInput 
+      <TextInput 
         source="start_date" 
         label="Ngày giờ bắt đầu"
-        validate={[required]}
+        validate={[required()]}
+        parse={parseDateTimeLocal}
+        format={formatDateTimeLocal}
+        type="datetime-local"
+        sx={{ width: '100%' }}
       />
       
-      <VietnamDateTimeInput 
+      <TextInput 
         source="end_date"
         label="Ngày giờ kết thúc"
-        validate={[required]}
+        validate={[required()]}
+        parse={parseDateTimeLocal}
+        format={formatDateTimeLocal}
+        type="datetime-local"
+        sx={{ width: '100%' }}
       />
       
       <TextInput 
@@ -384,16 +379,24 @@ export const CourseEdit = () => (
         validate={[required()]}
       />
       
-      <VietnamDateTimeInput 
+      <TextInput 
         source="start_date" 
         label="Ngày giờ bắt đầu"
-        validate={[required]}
+        validate={[required()]}
+        parse={parseDateTimeLocal}
+        format={formatDateTimeLocal}
+        type="datetime-local"
+        sx={{ width: '100%' }}
       />
       
-      <VietnamDateTimeInput 
+      <TextInput 
         source="end_date" 
         label="Ngày giờ kết thúc"
-        validate={[required]}
+        validate={[required()]}
+        parse={parseDateTimeLocal}
+        format={formatDateTimeLocal}
+        type="datetime-local"
+        sx={{ width: '100%' }}
       />
       
       <TextInput 

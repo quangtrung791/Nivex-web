@@ -23,9 +23,9 @@ export async function PUT(request, { params }) {
     const data = await request.json()
     
     
-    // Parse và validate datetime inputs
-    const startDate = data.start_date ? new Date(data.start_date).toISOString() : null;
-    const endDate = data.end_date ? new Date(data.end_date).toISOString() : null;
+    // Parse và validate datetime inputs, sau đó cộng thêm 7 giờ
+    const startDate = data.start_date ? new Date(new Date(data.start_date).getTime() + 7 * 60 * 60 * 1000).toISOString() : null;
+    const endDate = data.end_date ? new Date(new Date(data.end_date).getTime() + 7 * 60 * 60 * 1000).toISOString() : null;
     
     
     const paramsArr = [

@@ -1,6 +1,22 @@
 import { query } from "@/app/lib/neon";
 import { NextResponse } from "next/server";
-import { formatDateForAdmin } from '@/utils/timezone';
+
+// Helper function to format date to Vietnam time
+const formatToVietnamTime = (dateString) => {
+  if (!dateString) return null;
+  const date = new Date(dateString);
+  if (isNaN(date.getTime())) return null;
+  
+  return date.toLocaleString('vi-VN', {
+    timeZone: 'Asia/Ho_Chi_Minh',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit'
+  });
+};
 
 export const runtime = "nodejs";
 
@@ -10,22 +26,18 @@ export async function GET(request) {
     // Query courses table with explicit schema
     const rows = await query('SELECT * FROM public.courses ORDER BY id ASC');
     
-    // Transform courses data for React Admin - giữ nguyên raw data để VietnamDateField xử lý
+    // Transform courses data for React Admin
     const courses = rows.map(row => {
-      console.log('Admin API - Raw database dates:', {
-        id: row.id,
-        start_date: row.start_date,
-        end_date: row.end_date
-      });
-      
       return {
         id: row.id,
         title: row.title,
         type: row.type || 'online',
         status: row.status || 'active',
-        // Giữ nguyên raw database dates để VietnamDateField component tự xử lý timezone
-        start_date: row.start_date,
-        end_date: row.end_date,
+        // Format dates on the server before sending to client
+        start_date: row.start_date, // Keep raw for editing
+        end_date: row.end_date,     // Keep raw for editing
+        start_date_formatted: formatToVietnamTime(row.start_date),
+        end_date_formatted: formatToVietnamTime(row.end_date),
         link_zoom: row.link_zoom,
         content: row.content || '',
         image_url: row.image_url,
@@ -56,9 +68,9 @@ export async function POST(request) {
     const data = await request.json();
     
     
-    // Parse và validate datetime inputs
-    const startDate = data.start_date ? new Date(data.start_date).toISOString() : null;
-    const endDate = data.end_date ? new Date(data.end_date).toISOString() : null;
+    // Parse và validate datetime inputs, sau đó cộng thêm 7 giờ
+    const startDate = data.start_date ? new Date(new Date(data.start_date).getTime() + 7 * 60 * 60 * 1000).toISOString() : null;
+    const endDate = data.end_date ? new Date(new Date(data.end_date).getTime() + 7 * 60 * 60 * 1000).toISOString() : null;
     
     
     // Insert into courses table với timezone handling
