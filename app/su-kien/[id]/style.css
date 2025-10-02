@@ -1,4 +1,7 @@
 /* Fixed */
+.blog-details .content img {
+    max-width: 100%;
+}
 section.blog-details .content,
 section.blog-details .content p span, 
 section.blog-details .content p, 
