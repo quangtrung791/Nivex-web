@@ -388,7 +388,7 @@ export const JoinedEventShow = () => (
       <StatusField />
       <DateField source="time_event" label="Thời gian diễn ra sự kiện" showTime />
       <ImageField source="thumbnail_url" label="Hình ảnh quảng bá sự kiện" sx={{ '& img': { maxWidth: '300px', borderRadius: '8px' } }} />
-      <RichTextField source="content" label="Nội dung giới thiệu đầy đủ" />
+      {/* <RichTextField source="content" label="Nội dung giới thiệu đầy đủ" /> */}
       <TextField source="short_desc" label="Nội dung mô tả ngắn gọn" />
 
       <TextField source="tag1" label="Thẻ tag 1" />
