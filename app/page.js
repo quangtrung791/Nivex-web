@@ -10,12 +10,13 @@ import Work1 from "../components/sections/Work1"
 import Propose from "../components/sections/Propose"
 import MenuListNew from "../components/sections/MenuListNew"
 import SanSangGiaoDich from '../components/sections/SanSangGiaoDich'
+import HomepagePopup from '../components/HomepagePopup'
 
 export default function Home() {
 
     return (
         <>
-
+            <HomepagePopup />
             <Layout headerStyle={1} footerStyle={2}>
                 <Banner1 />
                 <MenuListNew />
