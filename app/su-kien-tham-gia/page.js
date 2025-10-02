@@ -94,7 +94,7 @@ export default function SuKienAlt() {
                             </form>
                         </div>
                     </section>
-                    <section className="blog-grid">
+                    <section className="blog-grid su-kien-tg">
                         <div className="container">
                             <div className="row">
                                 <div className="col-md-12">
