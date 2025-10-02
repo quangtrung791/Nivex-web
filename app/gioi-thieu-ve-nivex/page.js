@@ -33,9 +33,11 @@ export default function AboutNivex() {
                                 
                                 <div className={styles.heroDescription}>
                                     <h2 className={styles.mainHeading}>
-                                        <span className={styles.highlight}>Nivex</span> là nền tảng tài sản số an toàn & minh bạch, được AI hỗ trợ phân tích
+                                        {/* <span className={styles.highlight}>Nivex</span> là nền tảng tài sản số an toàn & minh bạch, được AI hỗ trợ phân tích */}
+                                        Nền tảng giao dịch tài sản số, bảo mật & minh bạch do AI hỗ trợ giao dịch
                                     </h2>
                                     <p className={styles.description}>
+                                        {/* Nivex là nền tảng tài sản số hướng tới bảo mật, minh bạch phí và trải nghiệm mượt mà. Nivex cung cấp Spot, Futures và AI Copy Trade – nơi AI hỗ trợ phân tích dữ liệu để người dùng ra quyết định tốt hơn. Bạn luôn giữ quyền kiểm soát: phân bổ vốn, chốt lời/dừng lỗ và có thể dừng sao chép bất kỳ lúc nào. */}
                                         Nivex xây dựng một nền tảng giao dịch tập trung vào bảo mật, minh bạch phí và trải nghiệm mượt mà, với bộ công cụ AI cùng với các tín hiệu quỹ tổ chức hàng đầu
                                     </p>
                                 </div>
@@ -83,6 +85,9 @@ export default function AboutNivex() {
                     </div>
                     
                     <div className={styles.aiStrategySection}>
+                        {/* <h3 className={styles.strategyTitle}>AI + CHIẾN LƯỢC</h3>
+                        <p className={styles.strategySubtitle}>QUẢN LÝ TÀI SẢN TỐT NHẤT HIỆN NAY</p> */}
+                        
                         <div className={styles.displayFlexHeroContent}>
                             <div className="col-lg-6">
                                 <div className={styles.productIcons}>
@@ -90,24 +95,21 @@ export default function AboutNivex() {
                             </div>
                             <div className={`col-lg-6 ${styles.displayFlexPropductStats}`}>
                                 <div className={styles.productStats}>
-
                                     <div className={styles.statItem}>
                                         <div className={styles.statValue}>AI + CHIẾN LƯỢC</div>
                                         <div className={styles.statLabel}>Quản lý tài sản tốt nhất hiện nay</div>
                                     </div>
-
                                     <div className={styles.statItem}>
-                                        <div className={styles.statValue}>60%-3500%</div>
-                                        <div className={styles.statLabel}>Tỷ suất lợi nhuận hàng năm</div>
+                                        <div className={styles.statValue}>85-95%</div>
+                                        <div className={styles.statLabel}>Tỷ lệ thành công của chiến lược</div>
                                     </div>
-                                    
                                     <div className={styles.statItem}>
                                         <div className={styles.statValue}>100 triệu - 10 tỷ USD</div>
                                         <div className={styles.statLabel}>Quy mô vốn hiện tại</div>
                                     </div>
                                     <div className={styles.statItem}>
-                                        <div className={styles.statValue}>85-95%</div>
-                                        <div className={styles.statLabel}>Tỷ lệ thành công của chiến lược</div>
+                                        <div className={styles.statValue}>60%-3500%</div>
+                                        <div className={styles.statLabel}>Tỷ suất lợi nhuận hàng năm</div>
                                     </div>
                                     
                                 </div>

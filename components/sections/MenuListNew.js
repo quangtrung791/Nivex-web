@@ -8,31 +8,31 @@ export default function MenuListNew() {
   const menuItems = [
     {
       title: 'Khóa học',
-      icon: 'https://learningchain.vn/wp-content/uploads/2025/09/course_icon_nivex.webp',
+      icon: 'https://learningchain.vn/wp-content/uploads/nivex/a1.png',
       href: '/#',
       description: 'Học crypto từ cơ bản đến nâng cao'
     },
     {
       title: 'AI Copy Trade',
-      icon: 'https://learningchain.vn/wp-content/uploads/2025/09/ai_copy_trade_icon_nivex.webp',
+      icon: 'https://learningchain.vn/wp-content/uploads/nivex/a2.png',
       href: '/ai-copy-trade',
       description: 'Giao dịch tự động với AI'
     },
     {
       title: 'Kiến thức tổng quan',
-      icon: 'https://learningchain.vn/wp-content/uploads/2025/09/knowledge_general_icon_nivex.webp',
+      icon: 'https://learningchain.vn/wp-content/uploads/nivex/a3.png',
       href: '/kien-thuc-tong-quan',
       description: 'Tổng hợp kiến thức crypto'
     },
     {
       title: 'Sự kiện',
-      icon: 'https://learningchain.vn/wp-content/uploads/2025/09/event_icon_nivex.webp',
+      icon: 'https://learningchain.vn/wp-content/uploads/nivex/a4.png',
       href: '/su-kien',
       description: 'Tin tức và sự kiện mới nhất'
     },
     {
       title: 'Hướng dẫn sử dụng App Nivex',
-      icon: 'https://learningchain.vn/wp-content/uploads/2025/09/nivex_logo_only_nivex_homepage.webp',
+      icon: 'https://learningchain.vn/wp-content/uploads/nivex/a5.png',
       href: '/huong-dan-su-dung-app-nivex',
       description: 'Hướng dẫn chi tiết sử dụng app'
     }

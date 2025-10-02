@@ -35,18 +35,18 @@ export async function PUT(request, { params }) {
       data.tag3 ?? 'CopyTrade',
       data.type ?? 'Online',
       data.time_from_and_to ?? '00:00 - 01:00',
-      data.time_event ?? '01/01/1990',
       id,
     ]
     const updateSQL = `
       UPDATE public.joined_events SET
-        title=$1, content=$2, short_desc=$3, thumbnail_url=$4, tag1=$5, tag2=$6, tag3=$7, type=$8, time_from_and_to=$9, time_event=$10, updated_at=NOW()
-      WHERE id=$6
-      RETURNING id, title, content, short_desc, thumbnail_url, tag1, tag2, tag3, type, time_from_and_to, time_event, created_at, updated_at
+        title=$1, content=$2, short_desc=$3, thumbnail_url=$4, time_event=$5, tag1=$6, tag2=$7, tag3=$8, type=$9, time_from_and_to=$10, updated_at=NOW()
+      WHERE id=$11
+      RETURNING id, title, content, short_desc, thumbnail_url, time_event, tag1, tag2, tag3, type, time_from_and_to, created_at, updated_at
     `
     const result = await query(updateSQL, paramsArr)
     if (result.length === 0) return NextResponse.json({ error: 'Not found' }, { status: 404 })
-    return NextResponse.json(result[0])
+    // return NextResponse.json(result[0])
+    return NextResponse.json({ data: result[0] })
   } catch (error) {
     console.error('DB PUT /joined_events/:id error:', error)
     return NextResponse.json({ error: 'Database error' }, { status: 500 })

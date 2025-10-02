@@ -655,3 +655,9 @@ p.text.fs-14 {
     }
     
 }
+
+@media (max-width: 600px) {
+    section.banner {
+        background-color: #0000003d;
+    }
+}
