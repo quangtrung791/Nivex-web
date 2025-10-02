@@ -19,7 +19,7 @@ export default function AboutNivex() {
                             </h3>
                         </div>
                         <div className={`col-md-6 ${styles.col6mdCenter}`}>
-                            <p className={`${styles.pageHeaderKnowledgeSubtitle}`}>Tận dụng công nghệ AI để tự động sao chép chiến lược, tối ưu hóa lợi nhuận và quản lý rủi ro trong thời gian thực.</p>
+                            <p className={`${styles.pageHeaderKnowledgeSubtitle}`}>Sao chép chiến lược từ các tổ chức AI; Tận dụng công nghệ AI tối ưu lợi nhuận và quản lý rủi ro trong giao dịch.</p>
                         </div>
                     </div>
                 </div>
@@ -91,15 +91,6 @@ export default function AboutNivex() {
                         <div className={styles.displayFlexHeroContent}>
                             <div className="col-lg-6">
                                 <div className={styles.productIcons}>
-                                        <div className={styles.productIcon}>
-                                            <div />
-                                        </div>
-                                        <div className={styles.productIcon}>
-                                            <div  />
-                                        </div>
-                                        <div className={styles.productIcon}>
-                                            <div />
-                                        </div>
                                 </div>
                             </div>
                             <div className={`col-lg-6 ${styles.displayFlexPropductStats}`}>

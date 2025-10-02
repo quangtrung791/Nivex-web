@@ -66,7 +66,7 @@ export async function GET(request) {
     // Process courses data với timezone utility
     const courses = result.map(course => {
       const startDate = new Date(course.start_date)
-      const endDate = course.end_date ? new Date(course.end_date) : null
+      // const endDate = course.end_date ? new Date(course.end_date) : null
       
       // Sử dụng utility function để xác định status
       const courseStatus = getCourseStatus(course.start_date, course.end_date)
