@@ -10,6 +10,10 @@ section.blog-details .content * {
     color: white !important;
 }
 
+.su-kien-id .content h3, .su-kien-id .content h4, .su-kien-id .content h5, .su-kien-id .content h6, .su-kien-id .content h1, .su-kien-id .content h2 {
+    font-size: 28px;
+}
+
 section.duoc-xem-nhieu .blog-box .box-content .title {
     display: block; /* Fallback for non-webkit */
     display: -webkit-box;
