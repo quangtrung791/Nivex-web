@@ -91,7 +91,7 @@ h1.pageTitleHeading span {
   color: #fff;
   padding: 9px 16px;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 800;
   transition: all 0.3s ease;
 }
 
@@ -142,9 +142,9 @@ h1.pageTitleHeading span {
 
 .courseCard:hover .courseTitle  {
   background: linear-gradient(90deg, #bcfe08, #86f869);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 600;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
 }
 
 .courseImage {

@@ -42,7 +42,7 @@ export default function AICopyTrade() {
                         {/* Hero Section */}
                         <div className={styles.heroSection}>
                             <div className={styles.heroImage}>
-                                <img src="/assets/images/background/AI_Trade.webp" alt="Crypto Wallet" />
+                                <img src="https://learningchain.vn/wp-content/uploads/2025/10/AITrade_aicopytrade_nivex.webp" alt="Crypto Wallet" />
                             </div>
                             <div className={styles.heroContent}>
                                 <div>
@@ -94,13 +94,13 @@ export default function AICopyTrade() {
                             </div>
 
                             <div className={`${styles.heroImage} ${styles.orderMobileFirst}`}>
-                                <img src="/assets/images/background/astrabit-Pica.webp" alt="Crypto Wallet" />
+                                <img src="https://learningchain.vn/wp-content/uploads/2025/10/astrabit_aicopytrade_nive.webp" alt="Crypto Wallet" />
                             </div>
                         </div>
 
                         <div className={styles.heroSection}>
                             <div className={styles.heroImage}>
-                                <img src="/assets/images/background/Alpha10.webp" alt="Crypto Wallet" />
+                                <img src="https://learningchain.vn/wp-content/uploads/2025/10/Alpha10_aicopytra_nivex.webp" alt="Crypto Wallet" />
                             </div>
                             <div className={styles.heroContent}>
                                 <div>
@@ -132,11 +132,11 @@ export default function AICopyTrade() {
                             <div className={styles.faqList}>
                                 <div className={styles.faqItem}>
                                     <div className={styles.faqQuestion} onClick={() => toggleFaq(0)}>
-                                        <span>AI Copy Trade có đảm bảo lợi nhuận không??</span>
+                                        <span>AI Copy Trade có đảm bảo lợi nhuận không?</span>
                                         <span className={`${styles.faqIcon} ${openFaq[0] ? styles.faqIconOpen : ''}`}></span>
                                     </div>
                                     <div className={`${styles.faqAnswer} ${openFaq[0] ? styles.faqAnswerOpen : ''}`}>
-                                        <p>Không. Mặc dù AI giúp tối ưu hóa chiến lược giao dịch và quản lý rủi ro, nhưng không thể loại bỏ hoàn toàn rủi ro.</p>
+                                        <p>Các chiến lược của chúng tôi được thiết kế với quy trình backtest và quản lý rủi ro cực kỳ nghiêm ngặt để duy trì hiệu suất ổn định và hạn chế tối đa rủi ro thua lỗ nặng trong các điều kiện thị trường khác nhau.</p>
                                     </div>
                                 </div>
 
@@ -146,7 +146,7 @@ export default function AICopyTrade() {
                                         <span className={`${styles.faqIcon} ${openFaq[1] ? styles.faqIconOpen : ''}`}></span>
                                     </div>
                                     <div className={`${styles.faqAnswer} ${openFaq[1] ? styles.faqAnswerOpen : ''}`}>
-                                        <p>Có. Bạn có thể dừng hoặc điều chỉnh chiến lược sao chép bất kỳ lúc nào.</p>
+                                        <p>Chiến lược Copytrade không giới hạn thời điểm dừng lệnh. Việc dừng lệnh sao chép có thể mất phí (được tính phụ thuộc vào thời gian lệnh đang đi, khối lượng giao dịch và đồng mà lệnh đang đi)</p>
                                     </div>
                                 </div>
 
@@ -156,19 +156,42 @@ export default function AICopyTrade() {
                                         <span className={`${styles.faqIcon} ${openFaq[2] ? styles.faqIconOpen : ''}`}></span>
                                     </div>
                                     <div className={`${styles.faqAnswer} ${openFaq[2] ? styles.faqAnswerOpen : ''}`}>
-                                        <p>Bạn có thể bắt đầu với một số vốn nhỏ, tùy chỉnh tỷ lệ vốn phù hợp với chiến lược của mình.</p>
+                                        <p>Bạn có thể bắt đầu với số vốn nhỏ và tùy chỉnh tỷ lệ vốn theo chiến lược; nền tảng hỗ trợ mọi quy mô vốn, nên người dùng vốn nhỏ vẫn có thể tham gia Copy Trade để tích lũy lợi nhuận ổn định.</p>
                                     </div>
                                 </div>
 
-                                {/* <div className={styles.faqItem}>
+                                <div className={styles.faqItem}>
                                     <div className={styles.faqQuestion} onClick={() => toggleFaq(3)}>
-                                        <span>Số tiền tối thiểu để mua crypto trên Nivex là bao nhiêu?</span>
-                                        <span className={`${styles.faqIcon} ${openFaq === 3 ? styles.faqIconOpen : ''}`}></span>
+                                        <span>Bắt đầu Copy Trading trên Nivex như thế nào?</span>
+                                        <span className={`${styles.faqIcon} ${openFaq[3] ? styles.faqIconOpen : ''}`}></span>
                                     </div>
-                                    <div className={`${styles.faqAnswer} ${openFaq === 3 ? styles.faqAnswerOpen : ''}`}>
-                                        <p>Số tiền tối thiểu để mua crypto trên Nivex là 100,000 VNĐ. Bạn có thể bắt đầu với số tiền nhỏ để làm quen với giao dịch.</p>
+                                    <div className={`${styles.faqAnswer} ${openFaq[3] ? styles.faqAnswerOpen : ''}`}>
+                                        <p>Chỉ với vài bước:
+                                            <br />&nbsp;1. Chọn sản phẩm AI Copy Trade Cấp Tổ Chức → nhấn Bắt đầu.
+                                            &nbsp;<br />&nbsp;2. Nhập số tiền muốn đầu tư → Xác nhận.
+                                            &nbsp;<br />&nbsp;3. Hệ thống tự động sao chép mọi tín hiệu giao dịch; bạn theo dõi lợi nhuận theo thời gian thực, không cần thao tác thêm.</p>
                                     </div>
-                                </div> */}
+                                </div>
+
+                                <div className={styles.faqItem}>
+                                    <div className={styles.faqQuestion} onClick={() => toggleFaq(4)}>
+                                        <span>Làm sao để chọn chiến lược phù hợp với tôi?</span>
+                                        <span className={`${styles.faqIcon} ${openFaq[4] ? styles.faqIconOpen : ''}`}></span>
+                                    </div>
+                                    <div className={`${styles.faqAnswer} ${openFaq[4] ? styles.faqAnswerOpen : ''}`}>
+                                        <p>Nền tảng cung cấp đầy đủ dữ liệu về hiệu suất lịch sử, kết quả backtest, và các chỉ số rủi ro. Dựa trên khả năng chấp nhận rủi ro và mục tiêu lợi nhuận, bạn có thể chọn chiến lược "An toàn - Ổn định" hoặc "Tấn công - Mạo hiểm".</p>
+                                    </div>
+                                </div>
+
+                                <div className={styles.faqItem}>
+                                    <div className={styles.faqQuestion} onClick={() => toggleFaq(5)}>
+                                        <span>Rủi ro & kiểm soát rủi ro ra sao?</span>
+                                        <span className={`${styles.faqIcon} ${openFaq[5] ? styles.faqIconOpen : ''}`}></span>
+                                    </div>
+                                    <div className={`${styles.faqAnswer} ${openFaq[5] ? styles.faqAnswerOpen : ''}`}>
+                                        <p>Hệ thống sử dụng cơ chế quản lý rủi ro linh hoạt, quản lý vị thế thông minh và stop-loss tự động. Rủi ro thị trường được theo dõi 24/7 để đảm bảo kiểm soát hiệu quả trong mọi tình huống.</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

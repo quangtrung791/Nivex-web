@@ -192,12 +192,12 @@
 }
 
 .COFounderImage {
-    background: url(https://learningchain.vn/wp-content/uploads/2025/09/simon_hardy_co_founder.webp) center no-repeat;
-    width: 120%;
+    background: url(https://learningchain.vn/wp-content/uploads/2025/10/simon_hardy_gioithieunivex.webp) center no-repeat;
+    width: 124%;
     height: auto;
-    aspect-ratio: 13/9;
+    aspect-ratio: 922/705;
     background-size: contain;
-    margin-left: -20%;
+    margin-left: -21.5%;
 }
 .firstFounderStats {
     display: flex;
@@ -224,19 +224,41 @@
 }
 
 .secondFounderSection {
-    margin-top: 85px;
+    margin-top: 40px;
 }
-.secondFounderImage {
-    background: url(https://learningchain.vn/wp-content/uploads/2025/09/becky_cofounder.webp) center no-repeat;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 13/9;
-    background-size: contain;
-}
+
 .secondFounderStats {
     display: flex;
     align-items: flex-end;
 }
+
+.secondFounderImage {
+  position: relative;
+  width: 100%;
+  max-height: 510px;
+  aspect-ratio: 1 / 1;
+}
+
+.secondFounderImage::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url(https://learningchain.vn/wp-content/uploads/2025/10/becky_nivex_gioi_thieu.webp)
+              center / contain no-repeat;
+  z-index: 2;   
+}
+
+.secondFounderImage::after {
+  content: '';
+  position: absolute;
+  left: 2.5%;
+  right: 2.5%;
+  height: 64px;
+  bottom: 0;
+  background: linear-gradient(90deg, #bcfe08, #86f869);
+  z-index: 1;
+}
+
 
 .pageTitleKnowLedge, .heroSection, .visionMissionSection, .productSection, .COFounderSectionContainer {
     padding-left: 7% !important;
@@ -280,6 +302,9 @@
 }
 
 @media (max-width: 991px) {
+  .secondFounderImage::after {
+    height: 48px;
+  }
   .displayFlexForHeader {
     flex-direction: column;
     gap:10px;
