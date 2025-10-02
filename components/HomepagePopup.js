@@ -38,8 +38,8 @@ const HomepagePopup = () => {
             className={styles.closeIcon}
           />
         </button>
-          
-          <button className={styles.joinButton}>
+
+          <button className={`${styles.joinButton} btn-cta-simple`}>
             THAM GIA NGAY
           </button>
       </a>
