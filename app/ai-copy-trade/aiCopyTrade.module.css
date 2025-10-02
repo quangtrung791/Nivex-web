@@ -54,17 +54,17 @@
 }
 
 .heroContent {
-    padding: 35px 35px;
+    padding: 35px;
     background-color:#18191D;
 }
 .AITradeText {
-    font-size: 40px;
+    font-size: 43px;
     font-weight: 700;
 }
 
 .heroContentText2 {
     font-size: 32px;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .heroDescription {
@@ -112,9 +112,11 @@
 }
 .displayFlexTextDescription2 p {
     font-size: 14px;
+    font-weight: 700;
 }
 .displayFlexTextDescription2 p span, .introText p {
     color: rgb(166,170,183);
+    font-weight: 400;
 }
 .heroTitle {
     font-size: 36px;
@@ -135,8 +137,11 @@
 } */
 
 .heroImage img {
-    width: 260px;
-    height: auto;
+    width: auto;
+    height: 350px;
+    aspect-ratio: 916/705;
+    object-fit: contain;
+    object-position: center;
 }
 
 
@@ -221,17 +226,18 @@
 }
 /* Responsive Design */
 @media only screen and (max-width: 1024px) {
-    .heroImage img {
-        width: 205px;
+    .heroContent {
+        padding: 20px;
     }
-
+    .heroImage img {
+        height: 240px;
+    }
+    .displayFlexTextDescription {
+        gap: 30px;
+    }
     .subtitle {
         max-width: 450px;
     }
-    .heroSection {
-        gap: 40px;
-    }
-    
     
     .mainTitle {
         font-size: 36px;
@@ -248,7 +254,7 @@
 
 @media only screen and (max-width: 768px) {
     .heroImage img {
-        width: 75%;
+        height: 350px;
     }
     .howToBuyCryptoSection {
         padding: 40px 0;
