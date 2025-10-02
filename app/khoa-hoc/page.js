@@ -235,7 +235,7 @@ export default function CoursesPage() {
                         </div>
                         
                         <button 
-                            className={`btn-cta-simple ${styles.courseButton} ${course.buttonClass ? styles[course.buttonClass] : ''}`}
+                            className={`${styles.courseButton} ${course.buttonClass ? styles[course.buttonClass] : ''}`}
                             onClick={() => handleCourseClick(course)}
                             >
                             {course.buttonText}
