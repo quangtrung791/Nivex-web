@@ -11,11 +11,11 @@
 .pageTitleKnowLedge {
     background: #18191D;
 }
-.pageTitleKnowLedge .displayFlexForHeader h3.pageTitleHeading {
+.pageTitleKnowLedge .displayFlexForHeader h1.pageTitleHeading {
     font-size: 36px;
 }
 
-.pageTitleKnowLedge .displayFlexForHeader h3.pageTitleHeading span {
+.pageTitleKnowLedge .displayFlexForHeader h1.pageTitleHeading span {
     color: #bcfe08
 }
 

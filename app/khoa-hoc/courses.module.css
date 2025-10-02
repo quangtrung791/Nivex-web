@@ -8,12 +8,12 @@
     display: flex;
 }
 
-h3.pageTitleHeading {
+h1.pageTitleHeading {
     font-size: 36px;
     margin: 0;
 }
 
-h3.pageTitleHeading span {
+h1.pageTitleHeading span {
     color: #BCFE08;
 }
 

@@ -31,14 +31,15 @@ import {
   useDelete,
   useNotify,
   useRefresh,
-  Button
+  Button,
+  useInput
 } from 'react-admin'
 import { ImageUploadInput } from './ImageUploadInput'
-import { formatDateForAdmin } from '@/utils/timezone'
 import { useState } from 'react'
+import { convertToVietnamTime } from '@/utils/timezone'
 
-// Simple DateField component giống như code cũ đã hoạt động
-const SimpleDateField = ({ source, label, showTime = false }) => {
+// VietnamDateField component - đơn giản và chính xác
+const VietnamDateField = ({ source, label, showTime = false }) => {
   const record = useRecordContext()
   
   if (!record || !record[source]) {
@@ -46,24 +47,85 @@ const SimpleDateField = ({ source, label, showTime = false }) => {
   }
   
   const dateValue = record[source]
+  
+  // Parse thành Date object từ ISO string
   const date = new Date(dateValue)
   
-  // Sử dụng format giống hệt code cũ đã hoạt động
+  if (isNaN(date.getTime())) {
+    return <span>-</span>
+  }
+  
+  // Format với timezone Vietnam
   const formatted = showTime ? 
     date.toLocaleString('vi-VN', {
+      timeZone: 'Asia/Ho_Chi_Minh',
       day: '2-digit',
-      month: '2-digit',
+      month: '2-digit', 
       year: 'numeric',
       hour: '2-digit',
       minute: '2-digit'
-    }) :
+    }) : 
     date.toLocaleDateString('vi-VN', {
+      timeZone: 'Asia/Ho_Chi_Minh',
       day: '2-digit',
       month: '2-digit',
       year: 'numeric'
     })
   
-  return <span>{formatted}</span>
+  return <span title={dateValue}>{formatted}</span>
+}
+
+// VietnamDateTimeInput component cho form input - tích hợp với React Admin
+const VietnamDateTimeInput = ({ source, label, validate, ...props }) => {
+  const { field, fieldState: { error } } = useInput({ source, validate })
+  
+  // Chuyển từ UTC (database) sang local datetime-local format
+  const getLocalDateTime = (utcString) => {
+    if (!utcString) return ''
+    const utcDate = new Date(utcString)
+    // Thêm 7h để chuyển từ UTC về Vietnam time
+    const vietnamDate = new Date(utcDate.getTime() + (7 * 60 * 60 * 1000))
+    return vietnamDate.toISOString().slice(0, 16) // Format: YYYY-MM-DDTHH:mm
+  }
+  
+  // Chuyển từ local datetime-local về UTC để lưu database
+  const getUTCFromLocal = (localString) => {
+    if (!localString) return null
+    const localDate = new Date(localString)
+    // Trừ 7h để chuyển từ Vietnam time về UTC
+    const utcDate = new Date(localDate.getTime() - (7 * 60 * 60 * 1000))
+    return utcDate.toISOString()
+  }
+  
+  const handleChange = (e) => {
+    const localValue = e.target.value
+    const utcValue = getUTCFromLocal(localValue)
+    field.onChange(utcValue)
+  }
+  
+  return (
+    <div style={{ marginBottom: '16px' }}>
+      <label style={{ display: 'block', marginBottom: '8px', fontSize: '12px', color: 'rgba(0,0,0,0.6)' }}>
+        {label} {validate && validate.includes(required) && ' *'}
+      </label>
+      <input
+        type="datetime-local"
+        value={getLocalDateTime(field.value)}
+        onChange={handleChange}
+        style={{
+          width: '100%',
+          padding: '8px',
+          border: error ? '1px solid #f44336' : '1px solid #ccc',
+          borderRadius: '4px'
+        }}
+      />
+      {error && (
+        <div style={{ color: '#f44336', fontSize: '12px', marginTop: '4px' }}>
+          {error.message || error}
+        </div>
+      )}
+    </div>
+  )
 }
 
 // Custom Delete Button với confirmation rõ ràng
@@ -201,8 +263,8 @@ export const CourseList = () => (
           { id: 'hybrid', name: 'Hybrid' },
         ]}
       />
-      <SimpleDateField source="start_date" label="Ngày bắt đầu" showTime />
-      <SimpleDateField source="end_date" label="Ngày kết thúc" showTime />
+      <VietnamDateField source="start_date" label="Ngày bắt đầu" showTime />
+      <VietnamDateField source="end_date" label="Ngày kết thúc" showTime />
       <StatusField />
       <EditButton label="Sửa" />
       <ShowButton label="Xem" />
@@ -249,15 +311,17 @@ export const CourseCreate = () => (
         validate={[required()]}
       />
       
-      <DateTimeInput 
+      <VietnamDateTimeInput 
         source="start_date" 
         label="Ngày giờ bắt đầu"
-      required/>
+        validate={[required]}
+      />
       
-      <DateTimeInput 
+      <VietnamDateTimeInput 
         source="end_date"
         label="Ngày giờ kết thúc"
-      required/>
+        validate={[required]}
+      />
       
       <TextInput 
         source="link_zoom" 
@@ -320,15 +384,17 @@ export const CourseEdit = () => (
         validate={[required()]}
       />
       
-      <DateTimeInput 
+      <VietnamDateTimeInput 
         source="start_date" 
         label="Ngày giờ bắt đầu"
-      required />
+        validate={[required]}
+      />
       
-      <DateTimeInput 
+      <VietnamDateTimeInput 
         source="end_date" 
         label="Ngày giờ kết thúc"
-      required />
+        validate={[required]}
+      />
       
       <TextInput 
         source="link_zoom" 
@@ -351,8 +417,8 @@ export const CourseEdit = () => (
         fullWidth
       />
       
-      <span>Ngày tạo: </span><DateField source="created_at" label="Ngày tạo" showTime disabled />
-      <span>Ngày cập nhật: </span><DateField source="updated_at" label="Cập nhật lần cuối" showTime disabled />
+      <span>Ngày tạo: </span><VietnamDateField source="created_at" label="Ngày tạo" showTime />
+      <span>Ngày cập nhật: </span><VietnamDateField source="updated_at" label="Cập nhật lần cuối" showTime />
     </SimpleForm>
   </Edit>
 )
@@ -373,13 +439,13 @@ export const CourseShow = () => (
         ]}
       />
       <StatusField />
-      <DateField source="start_date" label="Ngày giờ bắt đầu" showTime />
-      <DateField source="end_date" label="Ngày giờ kết thúc" showTime />
+      <VietnamDateField source="start_date" label="Ngày giờ bắt đầu" showTime />
+      <VietnamDateField source="end_date" label="Ngày giờ kết thúc" showTime />
       <TextField source="link_zoom" label="Link Zoom" />
       <ImageField source="image_url" label="Hình ảnh" sx={{ '& img': { maxWidth: '300px', borderRadius: '8px' } }} />
       <RichTextField source="content" label="Nội dung" />
-      <DateField source="created_at" label="Ngày tạo" showTime />
-      <DateField source="updated_at" label="Cập nhật lần cuối" showTime />
+      <VietnamDateField source="created_at" label="Ngày tạo" showTime />
+      <VietnamDateField source="updated_at" label="Cập nhật lần cuối" showTime />
     </SimpleShowLayout>
   </Show>
 )
