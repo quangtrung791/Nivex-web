@@ -172,7 +172,7 @@ export const EventList = () => (
       <TextField source="id" label="ID" />
       <ImageField source="thumbnail_url" label="Ảnh" sx={{ '& img': { maxWidth: '60px', maxHeight: '45px', objectFit: 'cover' } }} />
       <TextField source="title" label="Tên sự kiện" />
-      <TextField source="content" label="Mô tả đầy đủ" />
+      {/* <TextField source="content" label="Mô tả đầy đủ" /> */}
       <TextField source="short_desc" label="Mô tả ngắn" />
       {/* <TextField source="author" label="Tác giả bài đăng" /> */}
       {/* <SelectField 
@@ -394,7 +394,7 @@ export const EventShow = () => (
       {/* <DateField source="end_date" label="Ngày giờ kết thúc" showTime /> */}
       {/* <TextField source="link_zoom" label="Link Zoom" /> */}
       <ImageField source="thumbnail_url" label="Hình ảnh quảng bá sự kiện" sx={{ '& img': { maxWidth: '300px', borderRadius: '8px' } }} />
-      {/* <RichTextField source="content" label="Nội dung giới thiệu đầy đủ" /> */}
+      <RichTextField source="content" label="Nội dung giới thiệu đầy đủ" />
       <TextField source="short_desc" label="Nội dung mô tả ngắn gọn" />
       <DateField source="created_at" label="Ngày tạo" showTime />
       <DateField source="updated_at" label="Cập nhật lần cuối" showTime />

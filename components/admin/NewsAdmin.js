@@ -375,8 +375,10 @@ export const NewsShow = () => (
       /> */}
       <StatusField />
       <DateField source="time_upload" label="Thời gian đã đăng" showTime />
+      {/* <DateField source="end_date" label="Ngày giờ kết thúc" showTime /> */}
+      {/* <TextField source="link_zoom" label="Link Zoom" /> */}
       <ImageField source="thumbnail_url" label="Hình ảnh" sx={{ '& img': { maxWidth: '300px', borderRadius: '8px' } }} />
-      {/* <RichTextField source="content" label="Nội dung" /> */}
+      <RichTextField source="content" label="Nội dung" />
       <DateField source="created_at" label="Ngày tạo" showTime />
       <DateField source="updated_at" label="Cập nhật lần cuối" showTime />
     </SimpleShowLayout>

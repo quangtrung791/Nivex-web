@@ -161,7 +161,7 @@ export const JoinedEventList = () => (
       <TextField source="id" label="ID" />
       <ImageField source="thumbnail_url" label="Ảnh" sx={{ '& img': { maxWidth: '60px', maxHeight: '45px', objectFit: 'cover' } }} />
       <TextField source="title" label="Tên sự kiện" />
-      <TextField source="content" label="Mô tả đầy đủ" />
+      {/* <TextField source="content" label="Mô tả đầy đủ" /> */}
       <TextField source="short_desc" label="Mô tả ngắn" />
       <DateField source="time_event" label="Ngày diễn ra sự kiện" showTime />
       <TextField source="tag1" label="Thẻ tag 1" />
@@ -388,7 +388,7 @@ export const JoinedEventShow = () => (
       <StatusField />
       <DateField source="time_event" label="Thời gian diễn ra sự kiện" showTime />
       <ImageField source="thumbnail_url" label="Hình ảnh quảng bá sự kiện" sx={{ '& img': { maxWidth: '300px', borderRadius: '8px' } }} />
-      {/* <RichTextField source="content" label="Nội dung giới thiệu đầy đủ" /> */}
+      <RichTextField source="content" label="Nội dung giới thiệu đầy đủ" />
       <TextField source="short_desc" label="Nội dung mô tả ngắn gọn" />
 
       <TextField source="tag1" label="Thẻ tag 1" />
