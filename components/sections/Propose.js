@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
+import Link from 'next/link';
 
 export default function Propose() {
     const [dictionary, setDictionary] = useState({});
@@ -55,7 +56,7 @@ export default function Propose() {
                                                                 <h4 className='title-propose-card'>{item.keyword}</h4>
                                                                 <p className='text-propose-card'>{shortDesc}</p>
                                                                 <div className="card-meta card-meta-propose">
-                                                                    <a className="author card-button-propose">Định nghĩa đầy đủ<i className="icon-button-propose"></i></a>
+                                                                    <Link href={`/thuat-ngu/${item.id}`}  className="author card-button-propose">Định nghĩa đầy đủ<i className="icon-button-propose"></i></Link>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -77,7 +78,10 @@ ZK-SNARKS được thực hiện bằng cách tạo ra một khóa riêng tư ho
                                     </div> */}
                                 </div>
                                 
-                                <button className="btn-crypto-card-learning btn-action">Xem thêm</button>
+                                
+                                    <button className="btn-crypto-card-learning btn-action">
+                                        <Link href="/thuat-ngu" style={{'color': 'black'}}>Xem thêm</Link>
+                                    </button>
                             </div>
                     </div>
                 </div>
