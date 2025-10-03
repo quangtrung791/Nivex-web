@@ -52,12 +52,12 @@ section.section-news-header {
 }
 
 /* @media (min-width: 1440px) and (max-width: 1919px) {
-    .blog-box .box-image img {
+    .skien .blog-box .box-image img {
         max-height: 450px;
     }
 }
 @media (min-width: 1920px) {
-    .blog-box .box-image img {
+    .skien .blog-box .box-image img {
         max-height: 476px;
     }
 } */
@@ -65,10 +65,10 @@ section.section-news-header {
 
 /* fix height of text */
 @media (min-width: 1440px) and (max-width: 1599px) {
-	.blog-box .box-image img {
+	.skien .blog-box .box-image img {
         height: 380px;
     }
-	a.title {
+	.skien a.title {
         height: 68px;
     }
     p.text-desc-su-kien {
@@ -77,10 +77,10 @@ section.section-news-header {
 }
 
 @media (min-width: 1600px) and (max-width: 1919px) {
- .blog-box .box-image img {
+ .skien .blog-box .box-image img {
         height: 400px;
     }
-	a.title {
+	.skien a.title {
         /* height: 78px; */
         height: 69px;
     }
@@ -93,10 +93,10 @@ section.section-news-header {
 }
 
 @media (min-width: 1920px) {
-.blog-box .box-image img {
+.skien .blog-box .box-image img {
         height: 480px;
     }
-	a.title {
+	.skien a.title {
         /* height: 78px; */
         height: 68px;
     }
@@ -106,10 +106,10 @@ section.section-news-header {
 }
 /* ipad pro 1024 */
 @media (min-width: 992px) and (max-width: 1024px) {
-.blog-box .box-image img {
+.skien .blog-box .box-image img {
         height: 336px;
     }
-    a.title {
+    .skien a.title {
         height: 62px;
     }
     p.text-desc-su-kien {
@@ -118,10 +118,10 @@ section.section-news-header {
 }
 /* ipad pro 1366 */
 @media (min-width: 1280px) and (max-width: 1366px) {
-.blog-box .box-image img {
+.skien .blog-box .box-image img {
         height: 372px;
     }
-    a.title {
+    .skien a.title {
         height: 64px;
     }
     p.text-desc-su-kien {
@@ -130,10 +130,10 @@ section.section-news-header {
 }
 /* ipad air 1180 */
 @media (min-width: 1100px) and (max-width: 1180px) {
-.blog-box .box-image img {
+.skien .blog-box .box-image img {
         height: 340px;
     }
-    a.title {
+    .skien a.title {
         height: 65px;
     }
     p.text-desc-su-kien {
@@ -142,10 +142,10 @@ section.section-news-header {
 }
 /* ipad air 820 */
 @media (min-width: 768px) and (max-width: 860px) {
- .blog-box .box-image img {
+ .skien .blog-box .box-image img {
         height: 300px;
     }
-    a.title {
+    .skien a.title {
         height: 65px;
     }
     p.text-desc-su-kien {
@@ -154,24 +154,24 @@ section.section-news-header {
 }
 /* others */
 @media (min-width: 861px) and (max-width: 991px) {
-.blog-box .box-image img {
+    .skien .blog-box .box-image img {
         height: 320px;
     }
-    a.title {
+    .skien a.title {
         height: 65px;
     }
     p.text-desc-su-kien {
         height: 40px;
     }
-    .blog-grid .blog-box .box-image img {
+    .skien .blog-box .box-image img {
         height: 300px !important;
     }
 }
 @media (min-width: 1025px) and (max-width: 1099px) {
-.blog-box .box-image img {
+    .skien .blog-box .box-image img {
         height: 337px;
     }
-    a.title {
+    .skien a.title {
         height: 65px;
     }
     p.text-desc-su-kien {
@@ -179,10 +179,10 @@ section.section-news-header {
     }
 }
 @media (min-width: 1181px) and (max-width: 1279px) {
-.blog-box .box-image img {
+.skien .blog-box .box-image img {
         height: 338px;
     }
-    a.title {
+    .skien a.title {
         height: 65px;
     }
     p.text-desc-su-kien {
@@ -190,10 +190,10 @@ section.section-news-header {
     }
 }
 @media (min-width: 1367px) and (max-width: 1439px) {
-.blog-box .box-image img {
+.skien .blog-box .box-image img {
         height: 375px;
     }
-    a.title {
+    .skien a.title {
         height: 65px;
     }
     p.text-desc-su-kien {
@@ -201,10 +201,10 @@ section.section-news-header {
     }
 }
 @media (min-width: 601px) and (max-width: 767px) {
-.blog-box .box-image img {
+.skien .blog-box .box-image img {
         height: 370px;
     }
-    a.title {
+    .skien a.title {
         height: 65px;
     }
     p.text-desc-su-kien {
@@ -213,12 +213,12 @@ section.section-news-header {
 }
 
 @media (min-width: 400px) and (max-width: 600px) {
-.blog-box .box-image img {
+.skien .blog-box .box-image img {
         height: 220px;
     }
 }
 @media (max-width: 399px) {
-.blog-box .box-image img {
+.skien .blog-box .box-image img {
         height: 200px;
     }
 }

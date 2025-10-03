@@ -400,10 +400,10 @@ footer.footer.style-2.footer-main {
         padding: 3.5% 7%;
     }
 
-    ul.menu-tab.menu-on-line {
+    /* ul.menu-tab.menu-on-line {
         display: flex;
         gap: 4%;
-    }
+    } */
     .button-loadmore a {
         padding: 14px 35px;
         font-weight: 600;
@@ -487,9 +487,9 @@ footer.footer.style-2.footer-main {
     .blog-box .box-content .title {
         margin-bottom: 0;
     }
-    ul.menu-tab.menu-on-line {
+    /* ul.menu-tab.menu-on-line {
         margin-top: 29px;
-    }
+    } */
     
 }
 
@@ -594,10 +594,10 @@ footer.footer.style-2.footer-main {
         padding: 3.5% 7%;
     }
 
-    ul.menu-tab.menu-on-line {
+    /* ul.menu-tab.menu-on-line {
         display: flex;
         gap: 4%;
-    }
+    } */
     section.duoc-xem-nhieu .blog-box .box-content .title {
         font-size: 20px;
         font-weight: 700;
@@ -681,9 +681,9 @@ footer.footer.style-2.footer-main {
     .blog-box .box-content .title {
         margin-bottom: 0;
     }
-    ul.menu-tab.menu-on-line {
+    /* ul.menu-tab.menu-on-line {
         margin-top: 29px;
-    }
+    } */
    
 }
 /* 1920+ */
@@ -788,10 +788,10 @@ footer.footer.style-2.footer-main {
         padding: 3.5% 7%;
     }
 
-    ul.menu-tab.menu-on-line {
+    /* ul.menu-tab.menu-on-line {
         display: flex;
         gap: 4%;
-    }
+    } */
     .button-loadmore a {
         padding: 14px 35px;
         font-weight: 600;
@@ -882,9 +882,9 @@ footer.footer.style-2.footer-main {
     .blog-box .box-content .title {
         margin-bottom: 0;
     }
-    ul.menu-tab.menu-on-line {
+    /* ul.menu-tab.menu-on-line {
         margin-top: 29px;
-    }
+    } */
    
 }
 
@@ -989,11 +989,11 @@ footer.footer.style-2.footer-main {
         padding: 2.5% 3.5%;
     }
 
-    ul.menu-tab.menu-on-line {
+    /* ul.menu-tab.menu-on-line {
         display: flex;
         gap: 3%;
         margin-top: 25px;
-    }
+    } */
 
     .button-loadmore a {
         padding: 12px 30px;
@@ -1193,12 +1193,12 @@ footer.footer.style-2.footer-main {
         padding-top: 0 !important;
     }
 
-    ul.menu-tab.menu-on-line {
+    /* ul.menu-tab.menu-on-line {
         display: flex;
         flex-wrap: wrap;
         gap: 2%;
         margin-top: 24px;
-    }
+    } */
     .blog-box .box-content {
         padding: 1px 0 32px 0;
     }
@@ -1412,12 +1412,12 @@ footer.footer.style-2.footer-main {
         margin-bottom: 4%;
     }
 
-    ul.menu-tab.menu-on-line {
+    /* ul.menu-tab.menu-on-line {
         display: flex;
         flex-wrap: wrap;
         gap: 2.5%;
         margin-top: 25px;
-    }
+    } */
 
     section.duoc-xem-nhieu .blog-box .box-content {
         padding: 0 0 30px 0;
@@ -1609,12 +1609,12 @@ footer.footer.style-2.footer-main {
         padding: 4% 3%;
     }
 
-    ul.menu-tab.menu-on-line {
+    /* ul.menu-tab.menu-on-line {
         display: flex;
         flex-wrap: wrap;
         gap: 2%;
         margin-top: 22px;
-    }
+    } */
     .blog-details.su-kien-id .sidebar {
         padding-top: 0 !important;
     }
@@ -2278,12 +2278,12 @@ footer.footer.style-2.footer-main {
         padding: 4% 3%;
     }
 
-    ul.menu-tab.menu-on-line {
+    /* ul.menu-tab.menu-on-line {
         display: flex;
         flex-wrap: wrap;
         gap: 2%;
         margin-top: 22px;
-    }
+    } */
     .blog-details.su-kien-id .sidebar {
         padding-top: 0 !important;
     }
@@ -2496,12 +2496,12 @@ footer.footer.style-2.footer-main {
         padding-top: 0 !important;
     }
 
-    ul.menu-tab.menu-on-line {
+    /* ul.menu-tab.menu-on-line {
         display: flex;
         flex-wrap: wrap;
         gap: 2%;
         margin-top: 24px;
-    }
+    } */
     .blog-box .box-content {
         padding: 1px 0 32px 0;
     }
@@ -2716,12 +2716,12 @@ footer.footer.style-2.footer-main {
         margin-bottom: 4%;
     }
 
-    ul.menu-tab.menu-on-line {
+    /* ul.menu-tab.menu-on-line {
         display: flex;
         flex-wrap: wrap;
         gap: 2.5%;
         margin-top: 25px;
-    }
+    } */
 
     section.duoc-xem-nhieu .blog-box .box-content {
         padding: 0 0 30px 0;
@@ -2917,11 +2917,11 @@ footer.footer.style-2.footer-main {
         padding: 2.5% 3.5%;
     }
 
-    ul.menu-tab.menu-on-line {
+    /* ul.menu-tab.menu-on-line {
         display: flex;
         gap: 3%;
         margin-top: 25px;
-    }
+    } */
 
     .button-loadmore a {
         padding: 12px 30px;

@@ -96,47 +96,89 @@ export default function BuyCryptoSelect() {
                           Object.values(filteredDictionary).every(arr => arr.length === 0) ? (
                             <p style={{ textAlign: "center" }}>Không có dữ liệu</p>
                         ) : (
-                            Object.entries(filteredDictionary).map(([letter, items]) => (
-                                <div key={letter} className="glossary-group">
-                                    <div className="glossary-letter">{letter}</div>
-                                    <div className="glossary-items">
-                                        {items.map((item, idx) => (
-                                            <Link
-                                                href={`/thuat-ngu/${item.id}`}
-                                                key={item.id}
-                                                className={
-                                                    "glossary-item selected-item" +
-                                                    ((selected.letter === letter && selected.idx === idx) ? " active" : "")
-                                                }
-                                                onClick={() => setSelected({ letter, idx })}
-                                            >
-                                                <div className="glossary-term">{item.keyword}</div>
-                                                {/* <div className="glossary-desc">{item.description}</div> */}
-                                                {/* <div className="glossary-desc" dangerouslySetInnerHTML={{ __html: item.description }}></div> */}
-                                                <div className="glossary-desc">
-                                                    {
-                                                        (() => {
-                                                            // Tách theo thẻ <p> hoặc xuống dòng
-                                                            const lines = item.description
-                                                                .replace(/<div[^>]*>/gi, '') // bỏ thẻ <div>
-                                                                .replace(/<p[^>]*>/gi, '') // bỏ thẻ <p>
-                                                                .replace(/<\/p>/gi, '\n')  // thay thẻ đóng bằng xuống dòng
-                                                                .replace(/<[^>]+>/g, '')   // bỏ các thẻ HTML khác
-                                                                .split('\n')
-                                                                .map(line => line.trim())
-                                                                .filter(line => line.length > 0);
+                            // Object.entries(filteredDictionary).map(([letter, items]) => (
+                            //     <div key={letter} className="glossary-group">
+                            //         <div className="glossary-letter">{letter}</div>
+                            //         <div className="glossary-items">
+                            //             {items.map((item, idx) => (
+                            //                 <Link
+                            //                     href={`/thuat-ngu/${item.id}`}
+                            //                     key={item.id}
+                            //                     className={
+                            //                         "glossary-item selected-item" +
+                            //                         ((selected.letter === letter && selected.idx === idx) ? " active" : "")
+                            //                     }
+                            //                     onClick={() => setSelected({ letter, idx })}
+                            //                 >
+                            //                     <div className="glossary-term">{item.keyword}</div>
+                            //                     {/* <div className="glossary-desc">{item.description}</div> */}
+                            //                     {/* <div className="glossary-desc" dangerouslySetInnerHTML={{ __html: item.description }}></div> */}
+                            //                     <div className="glossary-desc">
+                            //                         {
+                            //                             (() => {
+                            //                                 // Tách theo thẻ <p> hoặc xuống dòng
+                            //                                 const lines = item.description
+                            //                                     .replace(/<div[^>]*>/gi, '') // bỏ thẻ <div>
+                            //                                     .replace(/<p[^>]*>/gi, '') // bỏ thẻ <p>
+                            //                                     .replace(/<\/p>/gi, '\n')  // thay thẻ đóng bằng xuống dòng
+                            //                                     .replace(/<[^>]+>/g, '')   // bỏ các thẻ HTML khác
+                            //                                     .split('\n')
+                            //                                     .map(line => line.trim())
+                            //                                     .filter(line => line.length > 0);
 
-                                                            return lines.slice(0, 3).map((line, i) => (
-                                                                <div key={i}>{line}</div>
-                                                            ));
-                                                        })()
+                            //                                 return lines.slice(0, 3).map((line, i) => (
+                            //                                     <div key={i}>{line}</div>
+                            //                                 ));
+                            //                             })()
+                            //                         }
+                            //                     </div>
+                            //                 </Link>
+                            //             ))}
+                            //         </div>
+                            //     </div>
+                            // ))
+
+                            Object.entries(filteredDictionary)
+                                .sort(([a], [b]) => a.localeCompare(b)) // sắp xếp theo chữ cái
+                                .map(([letter, items]) => (
+                                    <div key={letter} className="glossary-group">
+                                        <div className="glossary-letter">{letter}</div>
+                                        <div className="glossary-items">
+                                            {items.map((item, idx) => (
+                                                <Link
+                                                    href={`/thuat-ngu/${item.id}`}
+                                                    key={item.id}
+                                                    className={
+                                                        "glossary-item selected-item" +
+                                                        ((selected.letter === letter && selected.idx === idx) ? " active" : "")
                                                     }
-                                                </div>
-                                            </Link>
-                                        ))}
+                                                    onClick={() => setSelected({ letter, idx })}
+                                                >
+                                                    <div className="glossary-term">{item.keyword}</div>
+                                                    <div className="glossary-desc">
+                                                        {
+                                                            (() => {
+                                                                const lines = item.description
+                                                                    .replace(/<div[^>]*>/gi, '')
+                                                                    .replace(/<p[^>]*>/gi, '')
+                                                                    .replace(/<\/p>/gi, '\n')
+                                                                    .replace(/<[^>]+>/g, '')
+                                                                    .split('\n')
+                                                                    .map(line => line.trim())
+                                                                    .filter(line => line.length > 0);
+
+                                                                return lines.slice(0, 3).map((line, i) => (
+                                                                    <div key={i}>{line}</div>
+                                                                ));
+                                                            })()
+                                                        }
+                                                    </div>
+                                                </Link>
+                                            ))}
+                                        </div>
                                     </div>
-                                </div>
-                            ))
+                                ))
+
                         )}
                     </div>
                 </section>
