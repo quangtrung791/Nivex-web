@@ -70,7 +70,7 @@ export default function Footer2() {
                                     </p>
                                     <form >
                                         <input className="input-email-footer-subscribe" style={{'padding': '6px 19px'}} type="email" placeholder="Enter your email" required />
-                                        <button type="submit" className="btn-action" style={{'fontSize': 12, 'fontWeight': 500, 'padding': '10px 23px' }}>Đăng ký</button>
+                                        <button type="submit" className="btn-action btn-cta-simple" style={{'color':'black','fontSize': 12, 'fontWeight': 500, 'padding': '10px 23px', 'background': 'linear-gradient(90deg,#BCFE08, #86F969)'}} >Đăng ký</button>
                                     </form>
                                     <ul className="list-social">
                                         <li>

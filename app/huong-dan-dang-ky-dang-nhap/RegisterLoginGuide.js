@@ -9,8 +9,8 @@ export default function RegisterLoginGuide() {
                 <div className="container">
                     <div className={styles.displayFlexForHeader}>
                         <div className="col-md-6">
-                            <h3 className={`heading ${styles.pageTitleHeading}`}>Hướng dẫn <span>đăng ký & đăng nhập</span> Nivex
-                            </h3>
+                            <h1 className={`heading ${styles.pageTitleHeading}`}>Hướng dẫn <span>đăng ký & đăng nhập</span> Nivex
+                            </h1>
                         </div>
                         <div className={`col-md-6 ${styles.col6mdCenter}`}>
                             <p className={`${styles.pageHeaderKnowledgeSubtitle}`}>Nivex hướng dẫn bạn chi tiết từ đăng ký, xác minh cho đến xử lý sự cố đăng nhập, 
@@ -34,13 +34,13 @@ export default function RegisterLoginGuide() {
                                     Chi tiết vài bước đơn giản:
                                 </p>
                                 <ul className={styles.stepList}>
-                                    <li>• Truy cập trang web chính thức của <span className={styles.highlightGreen}>Nivex</span>.</li>
-                                    <li>• Nhấp nút <span className={styles.highlightGreen}>ĐĂNG KÝ</span> ở góc trên phải.</li>
+                                    <li>• Truy cập trang web chính thức của <span className={styles.highlightGreen} style={{textDecoration: 'underline'}}>Nivex</span>.</li>
+                                    <li>• Nhấp nút <span className={`${styles.highlightGreen} ${styles.hightlightTextDecoration}`}>ĐĂNG KÝ</span> ở góc trên phải.</li>
                                     <li>• Điền đầy đủ thông tin cần thiết (email, mật khẩu, các thông tin cá nhân cơ bản).</li>
-                                    <li>• Đọc và đồng ý với Điều khoản dịch vụ & Chính sách bảo mật.</li>
+                                    <li>• Đọc và <span className={styles.highlightGreen }>Đồng ý với Điều khoản dịch vụ & Chính sách bảo mật.</span></li>
                                 </ul>
                                 <p className={styles.stepNote}>
-                                    Nhấp <span className={styles.highlightGreen}>TẠO TÀI KHOẢN</span> để hoàn tất.
+                                    Nhấp <span className={`${styles.highlightGreen} ${styles.hightlightTextDecoration}`}>TẠO TÀI KHOẢN</span> để hoàn tất.
                                 </p>
                             </div>
 
@@ -79,9 +79,9 @@ export default function RegisterLoginGuide() {
                             <div className={styles.supportSection}>
                                 <h3 className={styles.supportTitle}>Liên hệ hỗ trợ</h3>
                                 <p className={styles.supportText}>
-                                    Nếu cần, hãy truy cập trang chính thức của <span className={styles.highlight}>Nivex</span> và chọn{' '}
-                                    <span className={styles.highlightGreen}>liên hệ chúng tôi</span> hoặc{' '}
-                                    <span className={styles.highlightGreen}>hỗ trợ trực tuyến</span> để được trợ giúp{' '}
+                                    Nếu cần, hãy truy cập trang chính thức của <span className={styles.highlightGreen} style={{textDecoration: 'underline'}}>Nivex</span> và chọn{' '}
+                                    <span className={styles.highlightGreen} style={{textDecoration: 'underline'}}>liên hệ chúng tôi</span> hoặc{' '}
+                                    <span className={styles.highlightGreen} style={{textDecoration: 'underline'}}>hỗ trợ trực tuyến</span> để được trợ giúp{' '}
                                     <span className={styles.highlight247}>24/7</span>.
                                 </p>
                             </div>

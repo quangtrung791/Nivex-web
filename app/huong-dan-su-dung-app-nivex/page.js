@@ -7,40 +7,31 @@ export default function UserGuideForNivexApp() {
   const [searchTerm, setSearchTerm] = useState('')
   const [searchResults, setSearchResults] = useState([])
   const [isSearching, setIsSearching] = useState(false)
+  const [hoveredCategoryIndex, setHoveredCategoryIndex] = useState(null)
   // Static data to render structure; replace text as needed
   const popularCategories = useMemo(() => ([
-    { title: 'Đăng ký & Đăng nhập', icon: '/assets/images/icon/b1.svg', href:'/huong-dan-dang-ky-dang-nhap' },
-    { title: 'Xác minh KYC', icon: '/assets/images/icon/b2.svg', href:'/xac-minh-danh-tinh-kyc' },
-    { title: 'Hướng dẫn nạp tiền', icon: '/assets/images/icon/b3.svg', href:'/huong-dan-nap-tien' },
-    { title: 'Hướng dẫn rút tiền', icon: '/assets/images/icon/b4.svg' },
-    { title: 'Giao dịch P2P', icon: '/assets/images/icon/b5.svg' },
-    { title: 'Giao dịch hợp đồng', icon: '/assets/images/icon/b6.svg' },
-    { title: 'Chiến lược AI', icon: '/assets/images/icon/b7.svg' },
-    { title: 'Mua coin bản địa', icon: '/assets/images/icon/b8.svg' },
+    { title: 'Đăng ký & Đăng nhập', icon: 'https://learningchain.vn/wp-content/uploads/2025/10/dangky_dangnhap_guide_nivex.webp', href:'/huong-dan-dang-ky-dang-nhap' },
+    { title: 'Xác minh KYC', icon: 'https://learningchain.vn/wp-content/uploads/2025/10/xacminhKYC_guide_nivex.webp', href:'/xac-minh-danh-tinh-kyc' },
+    { title: 'Hướng dẫn nạp tiền', icon: 'https://learningchain.vn/wp-content/uploads/2025/10/guidenaptien_guide_nivex.webp', href:'/huong-dan-nap-tien' },
+    { title: 'Hướng dẫn rút tiền', icon: 'https://learningchain.vn/wp-content/uploads/2025/10/guideruttien_guide_nivex.webp' },
+    { title: 'Giao dịch P2P', icon: 'https://learningchain.vn/wp-content/uploads/2025/10/giaodichp2p_guide_nivex.webp' },
+    { title: 'Giao dịch hợp đồng', icon: 'https://learningchain.vn/wp-content/uploads/2025/10/giaodichhopdong_guide_nivex.webp' },
+    { title: 'Chiến lược AI', icon: 'https://learningchain.vn/wp-content/uploads/2025/10/aicoptrade_guide_nivex.webp' },
+    { title: 'Mua coin bên thứ 3', icon: 'https://learningchain.vn/wp-content/uploads/2025/10/chuyentiennoibo_guide_nivex.webp' },
   ]), [])
-  // const popularCategories = useMemo(() => ([
-  //   { title: 'Đăng ký & Đăng nhập', icon: '/assets/images/icon/user_guide_icon_1.png', href:'/huong-dan-dang-ky-dang-nhap' },
-  //   { title: 'Xác minh KYC', icon: '/assets/images/icon/user_guide_icon_2.png', href:'/xac-minh-danh-tinh-kyc' },
-  //   { title: 'Hướng dẫn nạp tiền', icon: '/assets/images/icon/user_guide_icon_3.png', href:'/huong-dan-nap-tien' },
-  //   { title: 'Hướng dẫn rút tiền', icon: '/assets/images/icon/user_guide_icon_4.png' },
-  //   { title: 'Giao dịch P2P', icon: '/assets/images/icon/user_guide_icon_5.png' },
-  //   { title: 'Giao dịch hợp đồng', icon: '/assets/images/icon/user_guide_icon_6.png' },
-  //   { title: 'Chiến lược AI', icon: '/assets/images/icon/user_guide_icon_7.png' },
-  //   { title: 'Mua coin bản địa', icon: '/assets/images/icon/user_guide_icon_8.png' },
-  // ]), [])
 
   const accountSecurity = useMemo(() => ([
     { text: 'Liên kết Google'},
     { text: 'Tài khoản Gmail'},
-    { text: 'Chuyển tiền nội bộ'},
     { text: 'Thêm địa chỉ rút tiền vào Whitelist'},
   ]), [])
 
   const copyTradeAdvanced = useMemo(() => ([
     { text: 'Cơ chế Copy Trade'},
     { text: 'Nguyên lý Copy Trade'},
-    { text: 'Lợi ích AI T-Order'},
-    { text: 'Rủi ro Copy Trade AI'},
+    { text: 'Lợi thế AI Tổ chức'},
+    { text: 'Robot Copy Trade AI'},
+    { text: 'Lịch sử hoàn phí'},
   ]), [])
 
   const inviteFriendsAndRewards = useMemo(() => ([
@@ -48,23 +39,22 @@ export default function UserGuideForNivexApp() {
     { text: 'Tạo link giới thiệu bạn bè'},
   ]), [])
 
-  const communityDevelopment = useMemo(() => ([
-    { text: 'Tạo link ref & phần trăm hoa hồng'},
-    { text: 'Cách nâng phần trăm hoàn phí'},
-    { text: 'Kiểm tra UID của khách hàng'},
-    { text: 'Kiểm tra link khách hàng & phần trăm hoàn phí'},
-    { text: 'Minh hoạ cách để hoàn hoa hồng'},
-    { text: 'Lấy banner QR chia sẻ'},
-  ]), [])
+  // const communityDevelopment = useMemo(() => ([
+  //   { text: 'Tạo link ref & phần trăm hoa hồng'},
+  //   { text: 'Cách nâng phần trăm hoàn phí'},
+  //   { text: 'Kiểm tra UID của khách hàng'},
+  //   { text: 'Kiểm tra link khách hàng & phần trăm hoàn phí'},
+  //   { text: 'Minh hoạ cách để hoàn hoa hồng'},
+  //   { text: 'Lấy banner QR chia sẻ'},
+  // ]), [])
 
   // Tổng hợp tất cả items để search
   const allItems = useMemo(() => [
     ...popularCategories.map(item => ({ ...item, type: 'category', section: 'Danh mục phổ biến' })),
     ...accountSecurity.map(item => ({ ...item, type: 'chip', section: 'Tài khoản & Bảo mật', title: item.text })),
     ...copyTradeAdvanced.map(item => ({ ...item, type: 'chip', section: 'Copy Trade & AI nâng cao', title: item.text })),
-    ...inviteFriendsAndRewards.map(item => ({ ...item, type: 'chip', section: 'Mời bạn bè & Phần thưởng', title: item.text })),
-    ...communityDevelopment.map(item => ({ ...item, type: 'chip', section: 'Chương trình giới thiệu/đại lý & phát triển cộng đồng', title: item.text }))
-  ], [popularCategories, accountSecurity, copyTradeAdvanced, inviteFriendsAndRewards, communityDevelopment])
+    ...inviteFriendsAndRewards.map(item => ({ ...item, type: 'chip', section: 'Mời bạn bè & Phần thưởng', title: item.text }))
+  ], [popularCategories, accountSecurity, copyTradeAdvanced, inviteFriendsAndRewards])
 
   // Search function
   const handleSearch = (term) => {
@@ -85,7 +75,6 @@ export default function UserGuideForNivexApp() {
 
   // Scroll to element function
   const scrollToElement = (elementText) => {
-    console.log('Searching for:', elementText)
     
     // Tìm kiếm theo các selector cụ thể
     const selectors = [
@@ -115,7 +104,6 @@ export default function UserGuideForNivexApp() {
             parentCard = element // Section title tự nó là target
           }
           
-          console.log('Found element:', element, 'with selector:', selector)
           break
         }
       }
@@ -123,7 +111,6 @@ export default function UserGuideForNivexApp() {
     }
     
     if (targetElement && parentCard) {
-      console.log('Scrolling to element:', targetElement)
       
       // Scroll to element
       targetElement.scrollIntoView({ 
@@ -157,8 +144,6 @@ export default function UserGuideForNivexApp() {
         parentCard.style.boxShadow = ''
         parentCard.style.transform = ''
       }, 3000)
-    } else {
-      console.log('Element not found for:', elementText)
     }
     
     setSearchTerm('')
@@ -186,7 +171,7 @@ export default function UserGuideForNivexApp() {
 
           {/* Header row: title + search */}
           <div className={styles.headerRow}>
-            <h2 className={styles.pageTitle}>DANH MỤC <span>PHỔ BIẾN</span> </h2>
+            <h2 className={styles.pageTitle}>THAO TÁC <span>PHỔ BIẾN</span> </h2>
             <div className={styles.searchBox}>
               <input 
                 className={styles.searchInput} 
@@ -231,14 +216,28 @@ export default function UserGuideForNivexApp() {
 
           {/* Popular category grid */}
           <div className={styles.categoryGrid}>
-            {popularCategories.map((item, idx) => (
-              <a href={item.href} key={idx} className={styles.categoryCard}>
-                <div className={styles.cardIcon} aria-hidden>
-                  <img src={item.icon} alt={`${item.title} icon`} className={styles.iconImage} />
-                </div>
-                <div className={styles.cardTitle}>{item.title}</div>
-              </a>
-            ))}
+            {popularCategories.map((item, idx) => {
+              const hoverIcon = item.icon.replace(/(\.[a-zA-Z0-9]+)$/, '_hover$1');
+              const isHovered = hoveredCategoryIndex === idx;
+              return (
+                <a 
+                  href={item.href} 
+                  key={idx} 
+                  className={styles.categoryCard}
+                  onMouseEnter={() => setHoveredCategoryIndex(idx)}
+                  onMouseLeave={() => setHoveredCategoryIndex(null)}
+                >
+                  <div className={styles.cardIcon} aria-hidden>
+                    <img 
+                      src={isHovered ? hoverIcon : item.icon} 
+                      alt={`${item.title} icon`} 
+                      className={styles.iconImage} 
+                    />
+                  </div>
+                  <div className={styles.cardTitle}>{item.title}</div>
+                </a>
+              );
+            })}
           </div>
 
           {/* Account & Security section */}
@@ -280,16 +279,11 @@ export default function UserGuideForNivexApp() {
           </div> 
 
 
-          <div className={styles.section}>
+          <div className={styles.section} style={{ display: 'flex', flexDirection: 'column'}}>
             <h3 className={styles.sectionTitle}>Chương trình giới thiệu/đại lý & phát triển cộng đồng</h3>
-            <div className={styles.chipsRow}>
-              {communityDevelopment.map((item, i) => (
-                <a key={i} href='#' className={styles.chip}>
-                  <span className={styles.chipText}>{item.text}</span>
-                  <span className={styles.chipArrow} aria-hidden>›</span>
-                </a>
-              ))}
-            </div>
+            <p className={styles.sectionDescription}>Chương trình Đại lý & Phát triển Cộng đồng Nivex là cơ hội để bạn hợp tác cùng Nivex trong việc mở rộng hệ sinh thái người dùng, chia sẻ lợi ích và cùng nhau phát triển bền vững.</p>
+            <p className={styles.sectionDescription}>Để nhận thông tin chi tiết về Chính sách Đại lý & Phát triển Cộng đồng Nivex, vui lòng liên hệ trực tiếp bộ phận <span style={{ fontWeight: 800 }} >Chăm sóc Khách hàng (CSKH)</span> để được hỗ trợ đầy đủ nhất.</p>
+            <a href="https://zalo.me/g/xhcwjb384" target="_blank" className={`btn-cta-simple ${styles.contactButton}`}>Liên hệ ngay</a>
           </div>   
         </div>
       </section>

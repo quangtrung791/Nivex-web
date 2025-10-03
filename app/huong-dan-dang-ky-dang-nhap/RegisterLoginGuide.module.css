@@ -14,11 +14,11 @@
     background: #18191D;
     padding: 40px 0;
 }
-.pageTitleKnowLedge .displayFlexForHeader h3.pageTitleHeading {
+.pageTitleKnowLedge .displayFlexForHeader h1.pageTitleHeading {
     font-size: 36px;
 }
 
-.pageTitleKnowLedge .displayFlexForHeader h3.pageTitleHeading span, .pageTitle span {
+.pageTitleKnowLedge .displayFlexForHeader h1.pageTitleHeading span, .pageTitle span {
     color: #bcfe08
 }
 
@@ -98,6 +98,11 @@
     color: #BCFE08;
 }
 
+.hightlightTextDecoration {
+    text-decoration: underline;
+    font-weight: 600;
+}
+
 .highlightRed {
     color: rgb(211,53,53);
 }
@@ -105,6 +110,7 @@
 .supportSection {
     margin: 40px 0 40px 0;
     padding: 10px 0;
+    
 }
 
 .supportTitle {
@@ -156,9 +162,32 @@
 /* Robot Illustration */
 .illustrationWrapper {
     width: 100%;
-    background: url(https://learningchain.vn/wp-content/uploads/nivex/logo_mc.svg) top no-repeat;
+    background: url(https://learningchain.vn/wp-content/uploads/2025/10/cocktail.webp)no-repeat;
     background-size: contain;
     height: 500px;
+    background-position: top center;
+}
+
+/* .illustrationWrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 10%;
+    width: 650px;
+    height: 650px;
+    opacity: 0.5;
+    background: url('https://learningchain.vn/wp-content/uploads/2025/10/Ellipse-43592-768x658.webp') no-repeat center; 
+    background-size: contain;
+} */
+
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .contentColumn {
+        width: 60%;
+    }
+    .illustrationColumn {
+        width: 40%;
+    }
 }
 
 @media (min-width: 650px) and (max-width: 1439px) {
@@ -174,12 +203,6 @@
         font-size: 40px;
     }
     
-}
-
-@media (max-width: 992px) {
-    .guideSection {
-        padding: 60px 0;
-    }
 }
 
 @media (max-width: 768px) {

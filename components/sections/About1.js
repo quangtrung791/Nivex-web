@@ -28,7 +28,7 @@ export default function About1() {
                                 <p className="fs-14 decs text-white">
                                    <b>Nivex</b> tự hào góp mặt tại các hội nghị và sự kiện blockchain hàng đầu thế giới, kết nối với các nhà lãnh đạo ngành và mang về những kiến thức chuyên sâu độc quyền cho cộng đồng của mình.
                                 </p>
-                                <Link href="#" className="btn-action" style={{'color':'black', 'padding': '13px 25px'}}>Xem thêm</Link>
+                                <Link href="#" className="btn-action" style={{'padding': '13px 25px'}}>Xem thêm</Link>
                             </div>
                         </div>
 
@@ -44,7 +44,7 @@ export default function About1() {
                                 <p className="fs-14 decs text-white">
                                    <b>Nivex</b> tự hào góp mặt tại các hội nghị và sự kiện blockchain hàng đầu thế giới, kết nối với các nhà lãnh đạo ngành và mang về những kiến thức chuyên sâu độc quyền cho cộng đồng của mình.
                                 </p>
-                                <Link href="#" className="btn-action" style={{'color':'black', 'padding': '13px 25px'}}>Xem thêm</Link>
+                                <Link href="#" className="btn-action" style={{'padding': '13px 25px'}}>Xem thêm</Link>
                             </div>
                         </div>
                     </div>
@@ -112,7 +112,7 @@ export default function About1() {
                                         </div>
                                     </li>
                                 </ul> */}
-                                <Link href="#" className="btn-action" style={{'color':'black', 'padding': '13px 25px'}}>Xem thêm</Link>
+                                <Link href="#" className="btn-action" style={{'padding': '13px 25px'}}>Xem thêm</Link>
                             </div>
                         </div>
                     </div>

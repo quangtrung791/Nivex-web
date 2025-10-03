@@ -144,7 +144,6 @@ h1.pageTitleHeading span {
   background: linear-gradient(90deg, #bcfe08, #86f869);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-weight: 800;
 }
 
 .courseImage {
@@ -197,11 +196,10 @@ h1.pageTitleHeading span {
 
 .courseTitle {
   color: #fff;
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 24px;
+  font-weight: 700;
   line-height: 1.2;
   margin-bottom: 0px;
-  letter-spacing: 0.4px;
 }
 
 .courseCardContent, .courseTitle {
@@ -358,6 +356,13 @@ h1.pageTitleHeading span {
     padding-right: 3.5%;
   }
 }
+
+@media (max-width: 1440px) {
+   .courseTitle {
+     font-size: 20px;
+   }
+}
+
 
 /* Responsive Design */
 @media (max-width: 1024px) {

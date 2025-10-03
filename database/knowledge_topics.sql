@@ -7,6 +7,9 @@ CREATE TABLE IF NOT EXISTS knowledge_topics (
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+-- Migration: Update knowledge table to use topic_id instead of topic string
+-- Step 1: Add new topic_id column
+
 
 -- Index cho tìm kiếm
 CREATE INDEX IF NOT EXISTS idx_knowledge_topics_name ON knowledge_topics(name);
