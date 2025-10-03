@@ -8360,6 +8360,11 @@ span.block {
   color: #fff;
 }
 
+.btn-cta-simple {
+    position: relative;
+    overflow: hidden;
+}
+
 .list li .text {
   margin: 4px 0 0;
   color: #aaa;
