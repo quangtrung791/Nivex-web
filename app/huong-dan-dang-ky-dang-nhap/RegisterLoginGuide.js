@@ -94,8 +94,6 @@ export default function RegisterLoginGuide() {
                                     <li>• Không chia sẻ thông tin tài khoản, bao gồm mật khẩu.</li>
                                     <li>• Thay đổi mật khẩu định kỳ để tăng cường bảo mật.</li>
                                 </ul>
-                                
-                                
                             </div>
                         </div>
                     </div>
