@@ -16,6 +16,13 @@ export default function Knowledge() {
     const [categories, setCategories] = useState([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
+    
+    // Pagination state
+    const [viewedOffset, setViewedOffset] = useState(0)
+    const [newestOffset, setNewestOffset] = useState(0)
+    const [hasMoreViewed, setHasMoreViewed] = useState(false)
+    const [hasMoreNewest, setHasMoreNewest] = useState(false)
+    const [loadingMore, setLoadingMore] = useState(false)
 
     const difficulties = [
         { id: 'easy', label: 'Người mới', color: 'blue' },
@@ -46,26 +53,35 @@ export default function Knowledge() {
     }
 
     // Fetch knowledge articles from API
-    const fetchKnowledgeArticles = async () => {
+    const fetchKnowledgeArticles = async (resetPagination = true) => {
         try {
             setLoading(true)
             setError(null)
             
+            if (resetPagination) {
+                setViewedOffset(0)
+                setNewestOffset(0)
+            }
+            
             // Fetch filtered articles for current category and difficulty (for "Được xem nhiều")
             const filteredResponse = await fetch(
-                `/api/knowledge?topic=${activeCategory}&difficulty=${activeDifficulty}&limit=6`
+                `/api/knowledge?topic=${activeCategory}&difficulty=${activeDifficulty}&limit=6&offset=0`
             )
             const filteredData = await filteredResponse.json()
             
             // Fetch newest articles with same filters (for "Mới nhất")
             const newestResponse = await fetch(
-                `/api/knowledge?topic=${activeCategory}&difficulty=${activeDifficulty}&limit=3`
+                `/api/knowledge?topic=${activeCategory}&difficulty=${activeDifficulty}&limit=6&offset=0`
             )
             const newestData = await newestResponse.json()
             
             if (filteredData.success && newestData.success) {
                 setKnowledgeArticles(filteredData.data || [])
                 setNewestArticles(newestData.data || [])
+                setHasMoreViewed(filteredData.pagination?.hasMore || false)
+                setHasMoreNewest(newestData.pagination?.hasMore || false)
+                setViewedOffset(6)
+                setNewestOffset(6)
             } else {
                 throw new Error('Failed to fetch articles')
             }
@@ -74,6 +90,8 @@ export default function Knowledge() {
             // Fallback to empty arrays
             setKnowledgeArticles([])
             setNewestArticles([])
+            setHasMoreViewed(false)
+            setHasMoreNewest(false)
         } finally {
             setLoading(false)
         }
@@ -110,6 +128,47 @@ export default function Knowledge() {
             case 'intermediate': return 'Trung cấp'
             case 'advanced': return 'Nâng cao'
             default: return 'Người mới'
+        }
+    }
+
+    // Load more functions
+    const loadMoreViewed = async () => {
+        try {
+            setLoadingMore(true)
+            const response = await fetch(
+                `/api/knowledge?topic=${activeCategory}&difficulty=${activeDifficulty}&limit=6&offset=${viewedOffset}`
+            )
+            const data = await response.json()
+            
+            if (data.success) {
+                setKnowledgeArticles(prev => [...prev, ...(data.data || [])])
+                setHasMoreViewed(data.pagination?.hasMore || false)
+                setViewedOffset(prev => prev + 6)
+            }
+        } catch (error) {
+            console.error('Error loading more articles:', error)
+        } finally {
+            setLoadingMore(false)
+        }
+    }
+
+    const loadMoreNewest = async () => {
+        try {
+            setLoadingMore(true)
+            const response = await fetch(
+                `/api/knowledge?topic=${activeCategory}&difficulty=${activeDifficulty}&limit=6&offset=${newestOffset}`
+            )
+            const data = await response.json()
+            
+            if (data.success) {
+                setNewestArticles(prev => [...prev, ...(data.data || [])])
+                setHasMoreNewest(data.pagination?.hasMore || false)
+                setNewestOffset(prev => prev + 6)
+            }
+        } catch (error) {
+            console.error('Error loading more articles:', error)
+        } finally {
+            setLoadingMore(false)
         }
     }
     // const [thumbsSwiper, setThumbsSwiper] = useState(null)
@@ -262,11 +321,18 @@ export default function Knowledge() {
                             </div>
                         )}
 
-                        <div className={styles.loadMoreSection}>
-                            <button className={`btn-cta-simple ${styles.loadMoreBtn}`}>
-                                Xem thêm
-                            </button>
-                        </div>
+                        {hasMoreViewed && (
+                            <div className={styles.loadMoreSection}>
+                                <button 
+                                    className={`btn-cta-simple ${styles.loadMoreBtn}`} 
+                                    id="loadMoreBtnViewed"
+                                    onClick={loadMoreViewed}
+                                    disabled={loadingMore}
+                                >
+                                    {loadingMore ? 'Đang tải...' : 'Xem thêm'}
+                                </button>
+                            </div>
+                        )}
                     </div>
 
                     <div className={styles.contentSection} style={{marginTop: '70px'}}>
@@ -297,11 +363,18 @@ export default function Knowledge() {
                             </div>
                         )}
 
-                        <div className={styles.loadMoreSection}>
-                            <button className={`btn-cta-simple ${styles.loadMoreBtn}`}>
-                                Xem thêm
-                            </button>
-                        </div>
+                        {hasMoreNewest && (
+                            <div className={styles.loadMoreSection}>
+                                <button 
+                                    className={`btn-cta-simple ${styles.loadMoreBtn}`} 
+                                    id="loadMoreBtnNewest"
+                                    onClick={loadMoreNewest}
+                                    disabled={loadingMore}
+                                >
+                                    {loadingMore ? 'Đang tải...' : 'Xem thêm'}
+                                </button>
+                            </div>
+                        )}
                     </div>
 
                 </div>

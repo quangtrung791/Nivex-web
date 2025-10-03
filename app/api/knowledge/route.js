@@ -11,7 +11,48 @@ export async function GET(request) {
     const topic = searchParams.get('topic')
     const difficulty = searchParams.get('difficulty')  
     const search = searchParams.get('search')
+    const offset = parseInt(searchParams.get('offset') || '0')
+    const limit = parseInt(searchParams.get('limit') || '6')
 
+    // Base WHERE condition
+    let baseWhere = `WHERE k.status = 'active' AND (kt.status = 'active' OR kt.status IS NULL)`
+    
+    const queryParams = []
+    let paramIndex = 1
+
+    // Build filter conditions
+    let additionalFilters = ''
+    if (topic) {
+      additionalFilters += ` AND kt.name = $${paramIndex}`
+      queryParams.push(topic)
+      paramIndex++
+    }
+
+    if (difficulty) {
+      additionalFilters += ` AND k.difficulty = $${paramIndex}`
+      queryParams.push(difficulty)
+      paramIndex++
+    }
+
+    if (search) {
+      additionalFilters += ` AND (k.title ILIKE $${paramIndex} OR k.content ILIKE $${paramIndex})`
+      queryParams.push(`%${search}%`)
+      paramIndex++
+    }
+
+    const fullWhere = baseWhere + additionalFilters
+
+    // First, get total count
+    const countQuery = `
+      SELECT COUNT(*) as total
+      FROM knowledge k
+      LEFT JOIN knowledge_topics kt ON k.topic_id = kt.id
+      ${fullWhere}
+    `
+    const countResult = await query(countQuery, queryParams)
+    const totalCount = parseInt(countResult[0]?.total || 0)
+
+    // Then get paginated results
     let sqlQuery = `
       SELECT 
         k.id, k.title, k.difficulty, k.status, k.content, k.image_url, 
@@ -19,34 +60,12 @@ export async function GET(request) {
         kt.name as topic
       FROM knowledge k
       LEFT JOIN knowledge_topics kt ON k.topic_id = kt.id
-      WHERE k.status = 'active' AND (kt.status = 'active' OR kt.status IS NULL)
+      ${fullWhere}
+      ORDER BY k.created_at DESC 
+      LIMIT $${paramIndex} OFFSET $${paramIndex + 1}
     `
     
-    const queryParams = []
-    let paramIndex = 1
-
-    // Add filters
-    if (topic) {
-      sqlQuery += ` AND kt.name = $${paramIndex}`
-      queryParams.push(topic)
-      paramIndex++
-    }
-
-    if (difficulty) {
-      sqlQuery += ` AND difficulty = $${paramIndex}`
-      queryParams.push(difficulty)
-      paramIndex++
-    }
-
-    if (search) {
-      sqlQuery += ` AND (k.title ILIKE $${paramIndex} OR k.content ILIKE $${paramIndex})`
-      queryParams.push(`%${search}%`)
-      paramIndex++
-    }
-
-    // Order by created_at DESC and limit to 30 records
-    sqlQuery += ` ORDER BY k.created_at DESC LIMIT 30`
-
+    queryParams.push(limit, offset)
     const result = await query(sqlQuery, queryParams)
 
     // Transform data to match frontend format (result is already an array with neon)
@@ -70,7 +89,13 @@ export async function GET(request) {
 
     return NextResponse.json({
       success: true,
-      data: articles
+      data: articles,
+      pagination: {
+        total: totalCount,
+        offset: offset,
+        limit: limit,
+        hasMore: offset + limit < totalCount
+      }
     })
 
   } catch (error) {

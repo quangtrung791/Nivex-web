@@ -11,3 +11,10 @@
 .MuiFormControl-root.MuiTextField-root.css-10c21ck {
     display: none;
 }
+div.quill .ql-tooltip.ql-editing {
+    top: unset !important;
+    left: unset !important;
+}
+div.quill .ql-tooltip.ql-editing input[type=text] {
+    width: 300px;
+}
