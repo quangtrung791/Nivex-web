@@ -15,7 +15,11 @@
 }
 
 .pageTitleKnowLedge .displayFlexForHeader h1.pageTitleHeading span, .pageTitle span {
-    color: #bcfe08
+    background: linear-gradient(90deg, #bcfe08,  #86f869);
+   -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-top: 8px;
+    
 }
 
 .pageHeaderKnowledgeSubtitle {
@@ -107,8 +111,9 @@ section.pageTitleKnowLedge, section.wrapper {
 }
 
 .cardIcon {
-  width: 45%;
-  height: 38.5%;
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
 }
 
 .iconImage {
@@ -119,7 +124,7 @@ section.pageTitleKnowLedge, section.wrapper {
 
 .cardTitle, .chip .chipText {
   color: #ffffff;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 14px;
   
 }
@@ -136,7 +141,7 @@ section.pageTitleKnowLedge, section.wrapper {
   color: #fff;
   font-size: 32px;
   font-weight: 700;
-  margin: 0 0 12px;
+  margin: 0 0 16px;
 }
 
 /* Chips row */
@@ -175,6 +180,24 @@ section.pageTitleKnowLedge, section.wrapper {
   font-weight: lighter;
 }
 
+.sectionDescription {
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 25px;
+    font-weight: 300;
+    letter-spacing: 0.28px;
+}
+
+.contactButton {
+  padding: 14px 28px;
+  background: linear-gradient(90deg, #bcfe08, #86f969 50%, #86f969);
+  color: #000;
+  align-self: flex-end;
+  margin-top: 10px;
+}
+.contactButton:hover {
+  color:#000;
+}
 /* Responsive */
 @media (max-width: 1024px) {
   .categoryGrid {
