@@ -1,6 +1,11 @@
 
 /* TRANG: BẢNG THUẬT NGỮ */
-
+/* fixed */
+@media (min-width: 1920px) {
+    .page-title.custom h3.heading {
+        padding-right: 40% !important;
+    }
+}
 
 @media (min-width: 1920px) {
   header#header_main .container-fluid {

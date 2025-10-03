@@ -1,3 +1,32 @@
+/* Fixed */
+.chi-tiet-thuat-ngu .content img {
+    max-width: 100%;
+}
+
+section.chi-tiet-thuat-ngu .main-text-p,
+section.chi-tiet-thuat-ngu .main-text-p p span, 
+section.chi-tiet-thuat-ngu .main-text-p p, 
+section.chi-tiet-thuat-ngu .main-text-p strong, 
+section.chi-tiet-thuat-ngu .main-text-p * {
+    color: white !important;
+}
+.chi-tiet-thuat-ngu .content h3, 
+.chi-tiet-thuat-ngu .content h4, 
+.chi-tiet-thuat-ngu .content h5, 
+.chi-tiet-thuat-ngu .content h6, 
+.chi-tiet-thuat-ngu .content h1, 
+.chi-tiet-thuat-ngu .content h2 {
+    font-size: 24px;
+}
+section.chi-tiet-thuat-ngu .main-text-p strong {
+    font-size: 14px;
+}
+
+.link-nav-back-custom {
+    font-weight: 300 !important;
+    color: #a6aab7 !important;
+}
+
 section.page-title {
     background-color: transparent !important;
 }
