@@ -214,8 +214,8 @@ nhanh chóng, an toàn và thuận tiện.</p>
                     {/* Contact Support */}
                     <h4 className={styles.supportTitle}>Liên hệ hỗ trợ</h4>
                     <p className={styles.supportText}>
-                        Truy cập trang web chính thức của <span className={styles.highlightGreen}>Nivex</span>, nhấp vào nút
-                        <span className={styles.highlightGreen}> [Liên hệ chúng tôi]</span> hoặc <span className={styles.highlightGreen}>[Hỗ trợ trực tuyến]</span> ở cuối trang.
+                        Truy cập trang web chính thức của <span className={styles.highlightGreen} style={{textDecoration: 'underline'}}>Nivex</span>, nhấp vào nút
+                        <span className={styles.highlightGreen} style={{textDecoration: 'underline'}}> [Liên hệ chúng tôi]</span> hoặc <span className={styles.highlightGreen} style={{textDecoration: 'underline'}}>[Hỗ trợ trực tuyến]</span> ở cuối trang.
                     </p>
                 </div>
             </section>
