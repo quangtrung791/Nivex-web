@@ -131,38 +131,6 @@ export default function BlogDetails() {
                                         </div> 
                                     </div>
 
-
-                                    {/* Tin xem nhiều */}
-                                    {/* <div className="sidebar tin-xem-nhieu">
-                                        <div className="widget recent mt-0">
-                                            <h6 className="heading">Tin xem nhiều</h6>
-                                            
-                                            <ul className="tin-nong">
-                                                {hotEvents.slice(0, 3).map(item => (
-                                                    <li key={item.id}>
-                                                        <div style={{ display: 'block' }}>
-                                                            <p className="time-stamp-p">
-                                                                {item.time_upload
-                                                                    ? new Date(item.time_upload).toLocaleString('vi-VN', { hour12: false })
-                                                                    : ''}
-                                                            </p>
-                                                            <div className="image">
-                                                                <img src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
-                                                            </div>
-                                                        </div>
-                                                        <div className="content">
-                                                            <Link href={`/su-kien/${item.id}`} className="title navigate-child-news">
-                                                                {item.title}
-                                                            </Link>
-                                                        </div>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                    </div> */}
-
-
-
                                 </div>
                             </div>
                         </div>

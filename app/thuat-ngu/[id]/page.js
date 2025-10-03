@@ -60,12 +60,12 @@ export default function ChiTietThuatNgu({ params }) {
                 footerStyle={2} 
             >
                 <div>
-                    <section className="blog-details">
+                    <section className="blog-details chi-tiet-thuat-ngu">
                         <div className="container">
                             <div className="row">
                                 <div className="col-xl-8 col-md-12 w100">
                                     <div className="blog-main">
-                                        <p className="navigate-top">Bảng thuật ngữ &nbsp; {'>'} &nbsp; <span style={{'color' : '#ffffff'}}>{term.keyword}</span></p>
+                                        <Link href="/thuat-ngu" className="navigate-top link-nav-back-custom">Bảng thuật ngữ &nbsp; {'>'} &nbsp; <span style={{'color' : '#fff'}}>{term.keyword}</span></Link>
                                         <h3 className="title">
                                             {term.keyword}
                                         </h3>
@@ -74,7 +74,8 @@ export default function ChiTietThuatNgu({ params }) {
                                         </div>
                                         <div className="content">
                                             <p className="main-text-p">
-                                                <span className="block">{term.description}</span>
+                                                {/* <span className="block">{term.description}</span> */}
+                                                <span className="block" dangerouslySetInnerHTML={{ __html: term.description }}></span>
                                                 {/* <span className="block">Thuật ngữ "altcoin" viết tắt của "alternative coin" và được sử dụng để miêu tả bất kỳ loại tiền điện tử nào ngoài Bitcoin. Bitcoin là đồng tiền điện tử phi tập trung đầu tiên, và từ khi ra mắt vào năm 2009, hàng ngàn loại tiền điện tử khác đã được tạo ra, được gọi chung là altcoins.</span>
 
 <span className="block" >

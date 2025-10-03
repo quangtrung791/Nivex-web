@@ -37,6 +37,7 @@ import {
 } from 'react-admin'
 import { ImageUploadInput } from './ImageUploadInput'
 import { useState } from 'react'
+import RichTextInput from './RichTextInput'
 
 // Custom Delete Button với confirmation rõ ràng
 const CustomDeleteButton = () => {
@@ -136,7 +137,7 @@ export const DictionaryList = () => (
       <TextField source="id" label="ID" />
       {/* <ImageField source="thumbnail_url" label="Ảnh" sx={{ '& img': { maxWidth: '60px', maxHeight: '45px', objectFit: 'cover' } }} /> */}
       <TextField source="keyword" label="Từ khóa thuật ngữ" />
-      <TextField source="description" label="Giải thích thuật ngữ" />
+      {/* <RichTextField source="description" label="Giải thích thuật ngữ" /> */}
       {/* <DateField source="time_event" label="Ngày diễn ra sự kiện" showTime /> */}
       <StatusField />
       <EditButton label="Sửa" />
@@ -162,7 +163,7 @@ export const DictionaryCreate = () => (
         helperText="Nhập Từ khóa thuật ngữ (bắt buộc)"
       required />
       
-      <TextInput 
+      <RichTextInput 
         source="description" 
         label="Giải thích từ khóa thuật ngữ"
         multiline
@@ -188,7 +189,7 @@ export const DictionaryEdit = () => (
         fullWidth
       required />
       
-      <TextInput 
+      <RichTextInput 
         source="description" 
         label="Giải thích từ khóa thuật ngữ"
         multiline
@@ -208,7 +209,7 @@ export const DictionaryShow = () => (
       <TextField source="id" label="ID" />
       <TextField source="keyword" label="Từ khóa thuật ngữ" />
       <StatusField />
-      <RichTextField source="description" label="Giải thích từ khóa thuật ngữ" />
+      {/* <RichTextField source="description" label="Giải thích từ khóa thuật ngữ" /> */}
       <DateField source="created_at" label="Ngày tạo" showTime />
       <DateField source="updated_at" label="Cập nhật lần cuối" showTime />
     </SimpleShowLayout>

@@ -111,7 +111,27 @@ export default function BuyCryptoSelect() {
                                                 onClick={() => setSelected({ letter, idx })}
                                             >
                                                 <div className="glossary-term">{item.keyword}</div>
-                                                <div className="glossary-desc">{item.description}</div>
+                                                {/* <div className="glossary-desc">{item.description}</div> */}
+                                                {/* <div className="glossary-desc" dangerouslySetInnerHTML={{ __html: item.description }}></div> */}
+                                                <div className="glossary-desc">
+                                                    {
+                                                        (() => {
+                                                            // Tách theo thẻ <p> hoặc xuống dòng
+                                                            const lines = item.description
+                                                                .replace(/<div[^>]*>/gi, '') // bỏ thẻ <div>
+                                                                .replace(/<p[^>]*>/gi, '') // bỏ thẻ <p>
+                                                                .replace(/<\/p>/gi, '\n')  // thay thẻ đóng bằng xuống dòng
+                                                                .replace(/<[^>]+>/g, '')   // bỏ các thẻ HTML khác
+                                                                .split('\n')
+                                                                .map(line => line.trim())
+                                                                .filter(line => line.length > 0);
+
+                                                            return lines.slice(0, 3).map((line, i) => (
+                                                                <div key={i}>{line}</div>
+                                                            ));
+                                                        })()
+                                                    }
+                                                </div>
                                             </Link>
                                         ))}
                                     </div>
