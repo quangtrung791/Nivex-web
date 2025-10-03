@@ -79,7 +79,7 @@ export async function GET(request) {
         buttonText = 'Xem lại'
         buttonClass = 'replay'
       } else if (courseStatus === 'upcoming') {
-        buttonText = 'Sắp diễn ra'
+        buttonText = 'Xem ngay'
         buttonClass = 'upcoming'
       } else {
         buttonText = 'Xem ngay'
