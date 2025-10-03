@@ -15,11 +15,12 @@ section.chi-tiet-thuat-ngu .main-text-p * {
 .chi-tiet-thuat-ngu .content h5, 
 .chi-tiet-thuat-ngu .content h6, 
 .chi-tiet-thuat-ngu .content h1, 
-.chi-tiet-thuat-ngu .content h2 {
-    font-size: 24px;
+.chi-tiet-thuat-ngu .content h2,
+.chi-tiet-thuat-ngu .ql-size-large {
+    font-size: 24px !important;
 }
 section.chi-tiet-thuat-ngu .main-text-p strong {
-    font-size: 14px;
+    /* font-size: 14px; */
 }
 
 .link-nav-back-custom {
