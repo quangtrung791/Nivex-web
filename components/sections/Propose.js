@@ -40,20 +40,28 @@ export default function Propose() {
                                             .flat()
                                             .sort((a, b) => b.id - a.id)
                                             .slice(0, 3)
-                                            .map((item, idx) => (
-                                                <div key={item.id || idx} className="crypto-card crypto-card-propose">
-                                                    <div className="card-content">
-                                                        <div className="card-info card-info-propose">
-                                                            <h4 className='title-propose-card'>{item.keyword}</h4>
-                                                            <p className='text-propose-card'>{item.description}</p>
-                                                            <div className="card-meta card-meta-propose">
-                                                                <a className="author card-button-propose">Định nghĩa đầy đủ<i className="icon-button-propose"></i></a>
+                                            .map((item, idx) => {
+                                                const plainText = item.description
+                                                    .replace(/<[^>]+>/g, '') // bỏ thẻ HTML
+                                                    .trim();
+
+                                                const lines = plainText.split(/\r?\n/).map(l => l.trim()).filter(l => l);
+                                                const shortDesc = lines.slice(0, 2).join(" "); // gộp 2 dòng đầu
+
+                                                return (
+                                                    <div key={item.id || idx} className="crypto-card crypto-card-propose">
+                                                        <div className="card-content">
+                                                            <div className="card-info card-info-propose">
+                                                                <h4 className='title-propose-card'>{item.keyword}</h4>
+                                                                <p className='text-propose-card'>{shortDesc}</p>
+                                                                <div className="card-meta card-meta-propose">
+                                                                    <a className="author card-button-propose">Định nghĩa đầy đủ<i className="icon-button-propose"></i></a>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            ))
-                                    )}
+                                                )}
+                                        ))}
                                     {/* <div className="crypto-card crypto-card-propose">
                                         <div className="card-content">
                                             <div className="card-info card-info-propose">
