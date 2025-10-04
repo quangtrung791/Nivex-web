@@ -2,6 +2,7 @@
 import Layout from '@/components/layout/Layout'
 import styles from './courses.module.css'
 import { useState, useEffect, useMemo } from 'react'
+import CourseRegistrationModal from '@/components/CourseRegistrationModal'
 
 export default function CoursesPage() {
   const [searchTerm, setSearchTerm] = useState('')
@@ -11,6 +12,8 @@ export default function CoursesPage() {
   const [isFilterDropdownOpen, setIsFilterDropdownOpen] = useState(false)
   const [courses, setCourses] = useState([])
   const [loading, setLoading] = useState(true)
+  const [showRegistrationModal, setShowRegistrationModal] = useState(false)
+  const [selectedCourse, setSelectedCourse] = useState(null)
 
   // Fetch courses from API
   const fetchCourses = async (filter = 'all', search = '') => {
@@ -73,9 +76,18 @@ export default function CoursesPage() {
 
   // Handle course button click
   const handleCourseClick = (course) => {
-    if (course.link_zoom) {
+    if (course.buttonText === 'Đăng ký ngay') {
+      setSelectedCourse(course)
+      setShowRegistrationModal(true)
+    } else if (course.link_zoom) {
       window.open(course.link_zoom, '_blank')
     }
+  }
+
+  // Handle close registration modal
+  const handleCloseRegistrationModal = () => {
+    setShowRegistrationModal(false)
+    setSelectedCourse(null)
   }
 
   return (
@@ -258,6 +270,13 @@ export default function CoursesPage() {
         </div>
 
       </section>
+      
+      {/* Registration Modal */}
+      <CourseRegistrationModal 
+        isOpen={showRegistrationModal}
+        onClose={handleCloseRegistrationModal}
+        course={selectedCourse}
+      />
     </Layout>
   )
 }

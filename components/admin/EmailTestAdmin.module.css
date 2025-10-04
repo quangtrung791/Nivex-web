@@ -1,0 +1,289 @@
+.emailTestAdmin {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.section {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+}
+
+.section h2 {
+  margin: 0 0 20px 0;
+  color: #1f2937;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Status Card */
+.statusCard {
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid;
+}
+
+.statusCard.success {
+  background: #f0fdf4;
+  border-left-color: #22c55e;
+}
+
+.statusCard.warning {
+  background: #fffbeb;
+  border-left-color: #f59e0b;
+}
+
+.statusCard.error {
+  background: #fef2f2;
+  border-left-color: #ef4444;
+}
+
+.statusHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.statusIcon {
+  font-size: 1.2rem;
+}
+
+.configDetails {
+  display: grid;
+  gap: 8px;
+}
+
+.configItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.configItem:last-child {
+  border-bottom: none;
+}
+
+.configItem span:first-child {
+  font-weight: 500;
+  color: #6b7280;
+}
+
+.configItem span:last-child {
+  font-family: 'Courier New', monospace;
+  color: #1f2937;
+}
+
+.statusMessage {
+  margin-top: 12px;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+/* Test Form */
+.testForm {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.inputGroup label {
+  font-weight: 500;
+  color: #374151;
+}
+
+.emailInput {
+  padding: 12px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.emailInput:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.testButton {
+  padding: 12px 24px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.testButton:hover:not(:disabled) {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+.testButton:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Result Card */
+.resultCard {
+  margin-top: 20px;
+  padding: 16px;
+  border-radius: 8px;
+  border-left: 4px solid;
+}
+
+.resultCard.success {
+  background: #f0fdf4;
+  border-left-color: #22c55e;
+}
+
+.resultCard.error {
+  background: #fef2f2;
+  border-left-color: #ef4444;
+}
+
+.resultHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.resultIcon {
+  font-size: 1.1rem;
+}
+
+.resultMessage {
+  color: #6b7280;
+  margin-bottom: 8px;
+}
+
+.messageId {
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  color: #9ca3af;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+
+/* Guide Card */
+.guideCard h3 {
+  margin: 0 0 16px 0;
+  color: #1f2937;
+}
+
+.guideCard ol {
+  margin: 16px 0;
+  padding-left: 20px;
+}
+
+.guideCard li {
+  margin: 8px 0;
+  color: #4b5563;
+}
+
+.codeBlock {
+  margin: 16px 0;
+  background: #1f2937;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.codeBlock pre {
+  margin: 0;
+  padding: 20px;
+  color: #f9fafb;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  overflow-x: auto;
+}
+
+.codeBlock code {
+  background: #374151;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+}
+
+.note {
+  margin-top: 20px;
+  padding: 16px;
+  background: #f8fafc;
+  border-radius: 8px;
+  border-left: 4px solid #3b82f6;
+}
+
+.note h4 {
+  margin: 0 0 12px 0;
+  color: #1f2937;
+}
+
+.note ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.note li {
+  margin: 6px 0;
+  color: #4b5563;
+}
+
+/* Template Info */
+.templateInfo p {
+  margin: 0 0 12px 0;
+  color: #4b5563;
+}
+
+.templateInfo ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.templateInfo li {
+  margin: 6px 0;
+  color: #6b7280;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .emailTestAdmin {
+    padding: 16px;
+  }
+  
+  .section {
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .configItem {
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .testForm {
+    gap: 12px;
+  }
+}

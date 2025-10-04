@@ -79,7 +79,7 @@ export async function GET(request) {
         buttonText = 'Xem lại'
         buttonClass = 'replay'
       } else if (courseStatus === 'upcoming') {
-        buttonText = 'Xem ngay'
+        buttonText = 'Đăng ký ngay'
         buttonClass = 'upcoming'
       } else {
         buttonText = 'Xem ngay'
@@ -93,6 +93,8 @@ export async function GET(request) {
         category: course.category || [],
         status: courseStatus,
         date: startDate.toLocaleDateString('vi-VN', {
+          hour: '2-digit',
+          minute: '2-digit',
           day: '2-digit',
           month: '2-digit', 
           year: 'numeric'
