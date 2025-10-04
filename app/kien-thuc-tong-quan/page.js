@@ -390,8 +390,6 @@ export default function Knowledge() {
                                 <div className="crypto-cards">
                                     <div className="crypto-card crypto-card-propose">
                                         <div className="card-content">
-                                            {/* <div className="play-button"> */}
-                                            {/* </div> */}
                                             <div className="card-info card-info-propose">
                                                 <div className="quotation-mark-propose"></div>
                                                 <h4 className='title-propose-card'>ZL-SNARKS</h4>
@@ -399,7 +397,7 @@ export default function Knowledge() {
 ZK-SNARKS được thực hiện bằng cách tạo ra một khóa riêng tư hoặc bí mật trước khi một giao dịch mật mã diễn ra. Giao thức mật mã Z-cash sử dụng loại chứng minh mật mã này. Loại chứng minh mật mã này đã được giới thiệu lần đầu trong những năm 1980 như một phương pháp mã hóa.</p>
                                                 <div className="card-meta card-meta-propose">
                                                     <a className="author card-button-propose" >Định nghĩa đầy đủ<i className="icon-button-propose"></i></a>
-                                                    {/* <span className="date"  >7/9/2025</span> */}
+
                                                 </div>
                                             </div>
                                         </div>
@@ -407,15 +405,12 @@ ZK-SNARKS được thực hiện bằng cách tạo ra một khóa riêng tư ho
 
                                     <div className="crypto-card crypto-card-propose">
                                         <div className="card-content">
-                                            {/* <div className="play-button">
-                                            </div> */}
                                             <div className="card-info card-info-propose">
                                                 <div className="quotation-mark-propose"></div>
                                                 <h4  className='title-propose-card'>Demo Trading</h4>
                                                 <p className='text-propose-card'>Giao dịch thử nghiệm là gì?Giao dịch thử nghiệm (demo trading) đề cập đến một hình thức giao dịch mô phỏng cho phép bạn thử giao dịch tiền mã hóa bằng</p>
                                                 <div className="card-meta card-meta-propose">
                                                     <a className="author card-button-propose" >Định nghĩa đầy đủ<i className="icon-button-propose"></i></a>
-                                                    {/* <span className="date"  >7/9/2025</span> */}
                                                 </div>
                                             </div>
                                         </div>
@@ -423,15 +418,12 @@ ZK-SNARKS được thực hiện bằng cách tạo ra một khóa riêng tư ho
 
                                     <div className="crypto-card crypto-card-propose">
                                         <div className="card-content">
-                                            {/* <div className="play-button">
-                                            </div> */}
                                             <div className="card-info card-info-propose">
                                                 <div className="quotation-mark-propose"></div>
                                                 <h4 className='title-propose-card'>Token</h4>
                                                 <p className='text-propose-card'>Trong ngữ cảnh giao dịch, một token là một đơn vị giá trị đại diện cho một tài sản hoặc tiện ích cụ thể. Các token thường được tạo và quản lý bằng công nghệ blockchain, một hệ thống sổ cái kỹ thuật số phi tập trung và an toàn.</p>
                                                 <div className="card-meta card-meta-propose">
                                                     <a className="author card-button-propose"  >Định nghĩa đầy đủ<i className="icon-button-propose"></i></a>
-                                                    {/* <span className="date" >7/9/2025</span> */}
                                                 </div>
                                             </div>
                                         </div>

@@ -391,7 +391,6 @@ export const CourseEdit = () => (
         parse={parseDateTimeLocal}
         format={formatDateTimeLocal}
         type="datetime-local"
-        sx={{ width: '100%' }}
       />
       
       <TextInput 
@@ -401,7 +400,6 @@ export const CourseEdit = () => (
         parse={parseDateTimeLocal}
         format={formatDateTimeLocal}
         type="datetime-local"
-        sx={{ width: '100%' }}
       />
       
       <TextInput 
