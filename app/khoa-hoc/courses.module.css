@@ -178,9 +178,8 @@ h1.pageTitleHeading span {
     display: inline-block;
     width: 15px;
     height: 15px;
-    /* background-size: contain; */
     vertical-align: middle;
-    margin-bottom: 2px;
+    margin-bottom: 2.5px;
 }
 
 .courseMeta {
