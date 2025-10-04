@@ -18,3 +18,15 @@ div.quill .ql-tooltip.ql-editing {
 div.quill .ql-tooltip.ql-editing input[type=text] {
     width: 300px;
 }
+div.quill .ql-container.ql-snow .ql-editor h1,
+div.quill .ql-container.ql-snow .ql-editor h2,
+div.quill .ql-container.ql-snow .ql-editor h3,
+div.quill .ql-container.ql-snow .ql-editor h4,
+div.quill .ql-container.ql-snow .ql-editor h5,
+div.quill .ql-container.ql-snow .ql-editor h6 {
+    color: black;
+}
+
+div.quill .ql-container.ql-snow .ql-editor {
+    font-size: 14px;
+}
