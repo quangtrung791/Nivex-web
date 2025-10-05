@@ -56,7 +56,7 @@ const CustomDeleteButton = () => {
     
     if (isConfirmed) {
       deleteOne(
-        'news',
+        'events',
         { id: record.id },
         {
           onSuccess: () => {

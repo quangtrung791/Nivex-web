@@ -49,7 +49,8 @@ export async function PUT(request, { params }) {
 
 export async function DELETE(request, { params }) {
   try {
-    const id = parseInt(params.id)
+    const id = parseInt(params.id);
+    console.log("DELETE id:", id);
     const result = await query('DELETE FROM public.event WHERE id = $1 RETURNING id', [id])
     if (result.length === 0) return NextResponse.json({ error: 'Not found' }, { status: 404 })
     return NextResponse.json({ id: result[0].id })

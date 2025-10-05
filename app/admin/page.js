@@ -336,7 +336,7 @@ export default function AdminPage() {
           create={EventCreate}
           edit={EventEdit}
           show={EventShow}
-          options={{ label: 'Sự kiện tại Nivex' }}
+          options={{ label: 'Sự kiện Nivex tổ chức' }}
         />
         <Resource 
           name="joined_events" 
