@@ -6,7 +6,7 @@ export async function GET(request, { params }) {
   try {
     const id = parseInt(params.id)
     const result = await query(
-      `SELECT id, keyword, description, created_at, updated_at
+      `SELECT id, keyword, short_desc, description, created_at, updated_at
        FROM public.dictionary WHERE id = $1`,
       [id]
     )
@@ -31,9 +31,9 @@ export async function PUT(request, { params }) {
     ]
     const updateSQL = `
       UPDATE public.dictionary SET
-        keyword=$1, description=$2, updated_at=NOW()
-      WHERE id=$3
-      RETURNING id, keyword, description, created_at, updated_at`
+        keyword=$1, short_desc=$2, description=$3, updated_at=NOW()
+      WHERE id=$4
+      RETURNING id, keyword, short_desc, description, created_at, updated_at`
 
     const result = await query(updateSQL, paramsArr)
     if (result.length === 0) return NextResponse.json({ error: 'Not found' }, { status: 404 })

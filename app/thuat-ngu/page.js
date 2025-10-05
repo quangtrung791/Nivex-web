@@ -158,7 +158,7 @@ export default function BuyCryptoSelect() {
                                                     <div className="glossary-desc">
                                                         {
                                                             (() => {
-                                                                const lines = item.description
+                                                                const lines = item.short_desc
                                                                     .replace(/<div[^>]*>/gi, '')
                                                                     .replace(/<p[^>]*>/gi, '')
                                                                     .replace(/<\/p>/gi, '\n')

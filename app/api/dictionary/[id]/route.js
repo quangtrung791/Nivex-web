@@ -17,6 +17,7 @@ export async function GET(request, { params }) {
       SELECT 
         id,
         keyword,
+        short_desc,
         description,
         created_at,
         updated_at

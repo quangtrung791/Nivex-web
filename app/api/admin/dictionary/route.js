@@ -14,6 +14,7 @@ export async function GET(request) {
     const dictionary = rows.map(row => ({
       id: row.id,
       keyword: row.keyword,
+      short_desc: row.short_desc,
       description: row.description || '',
       created_at: row.created_at,
       updated_at: row.updated_at      
@@ -44,9 +45,10 @@ export async function POST(request) {
     
     // Insert into dictionary table
     const result = await query(
-      'INSERT INTO public.dictionary (keyword, description) VALUES ($1, $2) RETURNING *',
+      'INSERT INTO public.dictionary (keyword, short_desc, description) VALUES ($1, $2, $3) RETURNING *',
       [
         data.keyword || 'Untitled',
+        data.short_desc || "null",
         data.description || ''
       ]
     );
