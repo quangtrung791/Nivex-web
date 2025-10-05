@@ -2,6 +2,7 @@
 CREATE TABLE IF NOT EXISTS dictionary (
   id SERIAL PRIMARY KEY,
   keyword VARCHAR(500) NOT NULL,
+  short_desc VARCHAR(500) NOT NULL,
   description TEXT,
 
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,

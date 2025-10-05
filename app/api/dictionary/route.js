@@ -15,6 +15,7 @@ export async function GET(request) {
       SELECT 
         id,
         keyword,
+        short_desc,
         description,
         created_at,
         updated_at
@@ -46,8 +47,9 @@ export async function GET(request) {
         id: n.id,
         keyword: n.keyword,
         // time_event: n.time_event,
-        description: n.description,
-        // short_desc: n.short_desc,
+        short_desc: n.short_desc,
+        description: n.description
+        // 
         // thumbnail_url: n.thumbnail_url
       }
     })

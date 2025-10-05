@@ -1,4 +1,19 @@
 /* Homepage Popup Styles */
+/* Fade out chỉ dành cho overlay (không zoom) */
+@keyframes overlayFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.overlayFadeOut {
+  animation: overlayFadeOut 0.9s ease-out forwards !important;
+}
+
+
 .overlay {
   position: fixed;
   top: 0;

@@ -137,8 +137,7 @@ export const DictionaryList = () => (
       <TextField source="id" label="ID" />
       {/* <ImageField source="thumbnail_url" label="Ảnh" sx={{ '& img': { maxWidth: '60px', maxHeight: '45px', objectFit: 'cover' } }} /> */}
       <TextField source="keyword" label="Từ khóa thuật ngữ" />
-      {/* <RichTextField source="description" label="Giải thích thuật ngữ" /> */}
-      {/* <DateField source="time_event" label="Ngày diễn ra sự kiện" showTime /> */}
+      <TextField source="short_desc" label="Mô tả ngắn về từ khóa" />
       <StatusField />
       <EditButton label="Sửa" />
       <ShowButton label="Xem" />
@@ -161,6 +160,14 @@ export const DictionaryCreate = () => (
         validate={[required()]}
         fullWidth
         helperText="Nhập Từ khóa thuật ngữ (bắt buộc)"
+      required />
+
+      <TextInput 
+        source="short_desc" 
+        label="Mô tả ngắn về từ khóa" 
+        validate={[required()]}
+        fullWidth
+        helperText="Nhập Mô tả ngắn về từ khóa (bắt buộc)"
       required />
       
       <RichTextInput 
@@ -188,6 +195,13 @@ export const DictionaryEdit = () => (
         validate={[required()]}
         fullWidth
       required />
+
+      <TextInput 
+        source="short_desc" 
+        label="Mô tả ngắn về từ khóa" 
+        validate={[required()]}
+        fullWidth
+      required />
       
       <RichTextInput 
         source="description" 
@@ -208,6 +222,7 @@ export const DictionaryShow = () => (
     <SimpleShowLayout>
       <TextField source="id" label="ID" />
       <TextField source="keyword" label="Từ khóa thuật ngữ" />
+      <TextField source="short_desc" label="Mô tả ngắn về từ khóa" />
       <StatusField />
       {/* <RichTextField source="description" label="Giải thích từ khóa thuật ngữ" /> */}
       <DateField source="created_at" label="Ngày tạo" showTime />

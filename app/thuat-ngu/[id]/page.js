@@ -70,7 +70,7 @@ export default function ChiTietThuatNgu({ params }) {
                                             {term.keyword}
                                         </h3>
                                         <div className="meta">
-                                            <Link href="#" className="category btn-action" style={{'letterSpacing': '0px'}}>Người mới</Link>
+                                            <Link href="#" className="category btn-action" style={{'letterSpacing': '0px'}}>Giải thích thuật ngữ</Link>
                                         </div>
                                         <div className="content">
                                             <p className="main-text-p">
