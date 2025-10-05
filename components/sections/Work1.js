@@ -6,7 +6,7 @@ export default function Work1() {
     return (
         <>
 
-            <section className="work background-container-custom">
+            <section className="work background-container-custom hanh-trinh-cua-ban-tri-truc">
                 <div className="container gioi-thieu-nivex">
                     <div className="row">
                         <div className="col-md-12">
