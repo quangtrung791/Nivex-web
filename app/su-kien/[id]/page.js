@@ -11,7 +11,8 @@ export default function BlogDetails() {
     const { id } = useParams()
     const [events, setEvents] = useState(null);
     const [hotEvents, setHotEvents] = useState([]);
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(true);
+    const [moreNewsCount, setMoreNewsCount] = useState(3);
 
     useEffect(() => {
         if (events && events.title) {
@@ -167,14 +168,12 @@ export default function BlogDetails() {
                             </div>
                         </div>
                     </section>
-                      <section className="duoc-xem-nhieu col-md-12">
+                      <section className="duoc-xem-nhieu col-md-12 duoc-xem-nhieu-chi-tiet-su-kien">
                         <div className="title-container">
                             <h5>Được xem nhiều</h5>
                         </div>
-                                            
-
                                             <div className="content-inner row div-duoc-xem-nhieu">
-                                                {hotEvents.slice(0, 3).map(item => (
+                                                {hotEvents.slice(0, moreNewsCount).map(item => (
                                                     <div className="col-md-4" key={item.id}>
                                                         <div className="blog-box">
                                                             <div className="box-image">
@@ -187,13 +186,24 @@ export default function BlogDetails() {
                                                         </div>
                                                     </div>
                                                 ))}
-                                                <div className="col-md-12">
+                                                {/* <div className="col-md-12">
                                                     <div className="button-loadmore">
                                                         <Link href="/su-kien" className="btn-action">
                                                             Xem thêm
                                                         </Link>
                                                     </div>
-                                                </div>
+                                                </div> */}
+                                                {moreNewsCount < hotEvents.length && (
+                                                    <div className="col-md-12">
+                                                        <div className="button-loadmore">
+                                                            <button
+                                                                className="btn-action"
+                                                                onClick={() => setVisibleCount(moreNewsCount + 3)}>
+                                                                    Xem thêm
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                )}
                                             </div>
                     </section>
                 </div>

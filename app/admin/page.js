@@ -252,13 +252,13 @@ const Dashboard = () => {
       borderRadius: '8px',
       border: '1px solid #e9ecef'
     }}>
-      <h3 style={{ color: '#495057', marginBottom: '15px' }}>Hướng dẫn sử dụng</h3>
+      <h3 style={{ color: '#495057', marginBottom: '15px' }}>Hướng dẫn sử dụng NivexHub Admin Panel</h3>
       <ul style={{ color: '#6c757d', lineHeight: '1.6' }}>
-        <li><strong>Thêm khóa học:</strong> Click vào "Quản lý Khóa học" → "Tạo khóa học mới"</li>
+        <li><strong>Thêm khóa học:</strong> Click vào một module cần quản lý (Ví dụ: "Quản lý Khóa học" → "Tạo khóa học mới" để tạo khóa học hoàn toàn mới)</li>
         <li><strong>Chỉnh sửa:</strong> Click vào nút "Sửa" bên cạnh khóa học cần chỉnh sửa</li>
         <li><strong>Xem chi tiết:</strong> Click vào tên khóa học hoặc nút "Xem"</li>
         <li><strong>Tìm kiếm:</strong> Sử dụng ô tìm kiếm và các bộ lọc</li>
-        <li><strong>Xóa:</strong> Click nút "Xóa" (cần xác nhận)</li>
+        <li><strong>Xóa:</strong> Click nút "Xóa" (cần xác nhận bởi admin)</li>
       </ul>
     </div>
   </div>

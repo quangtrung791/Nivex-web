@@ -1,7 +1,14 @@
 /* Fixed */
 .blog-details.su-kien-id .content img {
     max-width: 100%;
+    width: 100%;
 }
+@media (min-width: 768px) {
+    .duoc-xem-nhieu-chi-tiet-su-kien .button-loadmore a.btn-action {
+        margin-top: 20px;
+    }
+}
+
 section.blog-details .content,
 section.blog-details .content p span, 
 section.blog-details .content p, 
