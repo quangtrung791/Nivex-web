@@ -399,7 +399,7 @@ export default function BlogDetails() {
 
                     
 
-                    <section className="duoc-xem-nhieu col-md-12">
+                    <section className="duoc-xem-nhieu col-md-12 ttuc-duoc-xem-nhieu">
                         <div className="title-container">
                             <h5>Được xem nhiều</h5>
                         </div>
