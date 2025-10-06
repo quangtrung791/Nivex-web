@@ -4,6 +4,15 @@ import { sendEmail } from '@/lib/emailService';
 
 export const runtime = 'nodejs';
 
+// Middleware kiểm tra API Key
+function checkApiKey(request) {
+  const apiKey = request.headers.get('x-api-key');
+  if (!apiKey || apiKey !== process.env.ADMIN_API_KEY) {
+    return NextResponse.json({ error: 'Unauthorized - Invalid API Key' }, { status: 401 });
+  }
+  return null;
+}
+
 export async function GET(request) {
   try {
     console.log("GET /api/admin/news called");
@@ -44,6 +53,8 @@ export async function GET(request) {
 }
 
 export async function POST(request) {
+  const unauthorized = checkApiKey(request);
+  if (unauthorized) return unauthorized;
   try {
     const data = await request.json();
     console.log("POST /api/admin/news - data:", data);

@@ -1,0 +1,277 @@
+/* Deposit Guide Styles */
+.pageTitleDeposit {
+    background: #18191D;
+    padding: 60px 0;
+}
+
+.displayFlexContainer {
+    display: flex;
+}
+
+.displayFlexForHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
+.displayFlexForHeader h1.pageTitleHeading {
+    font-size: 36px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.pageTitleHeading span {
+    color: #BCFE08;
+}
+
+.col4mdCenter {
+    display: flex;
+    width: 33%;
+}
+
+.pageHeaderKnowledgeSubtitle {
+    text-align: right;
+    color: rgb(166, 170, 183);
+    font-size: 14px;
+}
+
+/* Deposit Steps Section */
+.depositSection {
+    background: #141416;
+    padding: 60px 0 50px;
+    color: white;
+}
+h2.depositSectionTitle {
+    font-size: 48px;
+    margin-bottom: 50px;
+}
+h2.depositSectionTitle span {
+    background: linear-gradient(90deg, #bcfe08, #86f869);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;;
+}
+.stepContainer {
+    margin-bottom: 23px;
+}
+
+.stepContainer:last-child {
+    margin-bottom: 0;
+}
+
+.stepTitle {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    letter-spacing: 0.6px;
+}
+
+.stepDescription, .troubleshootingSubtitle, .supportText {
+    font-size: 14px;
+    margin: 0;
+    font-weight: 300;
+}
+
+.highlightGreen {
+    color: #BCFE08;
+}
+
+.displayFlexForStepDescription {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.imagePlaceholder1, .imagePlaceholder2, .imagePlaceholder3 {
+    width: 323px;
+    height: auto;
+    aspect-ratio: 323/ 335;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.imagePlaceholder1 {
+    background-image: url(https://learningchain.vn/wp-content/uploads/2025/10/imageWithdrawGuideNivex.webp);
+}
+
+.imagePlaceholder2 {
+    background-image: url(https://learningchain.vn/wp-content/uploads/2025/10/imageWithdrawGuideNivex2.webp);
+}
+
+.imagePlaceholder3 {
+    background-image: url(https://learningchain.vn/wp-content/uploads/2025/10/imageWithdrawGuideNivex3.webp);
+}
+
+/* FAQ Section */
+.faqSection {
+    margin-top: 80px;
+    padding-bottom: 55px;
+}
+
+.faqTitle {
+    font-size: 36px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.faqItem {
+    border-bottom: 1px solid #71737a;
+    margin-bottom: 0;
+}
+
+.faqQuestion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    transition: color 0.3s ease;
+}
+.faqQuestion span {
+    font-size: 18px;
+}
+
+.faqQuestion:hover {
+    color: #BCFE08;
+}
+
+.faqIcon {
+    background: url(/assets/images/icon/vector-bottom-arrow.png) no-repeat center;
+    width: 18px;
+    height: 18px;
+    background-size: contain;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.faqIconOpen {
+    color: #BCFE08;
+    transform: rotate(180deg);
+}
+
+.faqQuestion:hover .faqIcon {
+    color: #BCFE08;
+}
+
+.faqAnswer {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.faqAnswerOpen {
+    max-height: 200px;
+    opacity: 1;
+    padding-bottom: 20px;
+}
+
+.faqAnswer p {
+    font-size: 14px;
+    color: #aaa;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.subTitleFeeSection {
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 35px;
+}
+
+.highlightGreen {
+    color: #BCFE08;
+    font-weight: 600;
+}
+.depositSectionTitleMobile {
+    display: none;
+}
+
+.pageTitleDeposit, .faqSection {
+    padding-left: 7%;
+    padding-right: 7%;
+}
+
+@media (min-width: 650px) and (max-width: 1439px) {
+    section.pageTitleDeposit, section.faqSection, section.depositSection {
+        padding-left: 3.5%;
+        padding-right: 3.5%;
+    }  
+}
+
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    
+    .displayFlexForHeader h1.pageTitleHeading {
+        font-size: 30px;
+    }
+    
+    h2.depositSectionTitle {
+        font-size: 34px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    section.pageTitleDeposit, section.faqSection, section.depositSection {
+        padding-left: 3%;
+        padding-right: 3%;
+    } 
+    .displayFlexForHeader {
+        flex-direction: column;
+        gap: 10px;
+        align-items: unset;
+    }
+
+    .displayFlexForStepDescription {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .col4mdCenter {
+        width: 100%;
+    }
+    .col4mdCenter p {
+        text-align: left;
+    }
+    .displayFlexForHeader h1.pageTitleHeading {
+        font-size: 24px !important;
+    }
+    
+    .displayFlexContainer {
+        flex-direction: column;
+    }
+    
+
+    h2.depositSectionTitle, .faqTitle  {
+        font-size: 28px;
+    }
+    
+    .subTitleFeeSection {
+        font-size: 16px;
+    }
+
+    h2.depositSectionTitle {
+        margin-bottom: 20px;
+    }
+    .pageTitleDeposit {
+        padding: 40px 0;
+    }
+    
+}
+
+@media (max-width: 480px) {
+    section.pageTitleDeposit, section.faqSection, section.depositSection  {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .pageTitleHeading {
+        font-size: 28px;
+    }
+}
