@@ -44,6 +44,17 @@ export async function GET(request) {
 }
 
 export async function POST(request) {
+  // backdoor cho con quần què n8n
+  const validKey = process.env.N8N_API_KEY;
+  const apiKey = request.headers.get('x-api-key');
+
+  if (apiKey !== validKey) {
+    return NextResponse.json(
+      { success: false, error: 'Unauthorized - Invalid API Key' },
+      { status: 401 }
+    )
+  }
+
   try {
     const data = await request.json();
     console.log("POST /api/admin/news - data:", data);
@@ -73,12 +84,19 @@ export async function POST(request) {
     
     // Return the created course
     const n = Array.isArray(result) ? result[0] : result.rows?.[0];
+    if (!n) {
+      throw new Error('Không có dữ liệu bài viết');
+    }
 
     // Lấy danh sách email subscriber
     const subs = await query('SELECT email FROM public.subscribe');
     const subscribers = Array.isArray(subs)
       ? subs.map(s => s.email)
       : subs.rows.map(s => s.email);
+
+    if (subscribers.length === 0) {
+      console.log('Không có email đăng ký, bỏ qua gửi email');
+    }
 
     // email content
     const subject = `Thông báo bài viết mới từ Nivex: ${n.title}`;
