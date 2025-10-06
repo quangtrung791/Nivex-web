@@ -16,8 +16,8 @@ export default function UserGuideForNivexApp() {
     { title: 'Hướng dẫn rút tiền', icon: 'https://learningchain.vn/wp-content/uploads/2025/10/guideruttien_guide_nivex.webp' },
     { title: 'Giao dịch P2P', icon: 'https://learningchain.vn/wp-content/uploads/2025/10/giaodichp2p_guide_nivex.webp' },
     { title: 'Giao dịch hợp đồng', icon: 'https://learningchain.vn/wp-content/uploads/2025/10/giaodichhopdong_guide_nivex.webp' },
-    { title: 'Chiến lược AI', icon: 'https://learningchain.vn/wp-content/uploads/2025/10/aicoptrade_guide_nivex.webp' },
-    { title: 'Mua coin bên thứ 3', icon: 'https://learningchain.vn/wp-content/uploads/2025/10/chuyentiennoibo_guide_nivex.webp' },
+    { title: 'AI Copy Trade', icon: 'https://learningchain.vn/wp-content/uploads/2025/10/aicoptrade_guide_nivex.webp' },
+    { title: 'Chuyển tiền nội bộ', icon: 'https://learningchain.vn/wp-content/uploads/2025/10/chuyentiennoibo_guide_nivex.webp' },
   ]), [])
 
   const accountSecurity = useMemo(() => ([

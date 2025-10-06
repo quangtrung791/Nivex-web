@@ -175,7 +175,7 @@ const generateCourseRegistrationEmail = (registrationData) => {
                 </ul>
             </div>
             
-            <p>Nếu bạn có bất kỳ câu hỏi nào, đừng ngần ngại liên hệ với chúng tôi qua email này hoặc hotline: <strong>1900-xxxx</strong></p>
+            <p>Nếu bạn có bất kỳ câu hỏi nào, đừng ngần ngại liên hệ với chúng tôi qua email này hoặc hotline: <strong>0974 743 849</strong></p>
             
             <p>Chúc bạn có trải nghiệm học tập tuyệt vời!</p>
             
@@ -187,7 +187,7 @@ const generateCourseRegistrationEmail = (registrationData) => {
         
         <div class="footer">
             <p>Email này được gửi tự động từ hệ thống Nivex</p>
-            <p>© 2025 Nivex. Tất cả quyền được bảo lưu.</p>
+            <p>© 2025 Nivex. All rights reserved.</p>
             <p>
                 <a href="mailto:support@nivex.vn">nivexvietnam@gmail.com</a> | 
                 <a href="https://nivex.vn">nivex.vn</a>
@@ -199,37 +199,37 @@ const generateCourseRegistrationEmail = (registrationData) => {
   `
 
   const textTemplate = `
-Kính chào ${fullName},
+    Kính chào ${fullName},
 
-Cảm ơn bạn đã đăng ký khóa học tại Học viện Nivex. Chúng tôi xin gửi thông tin chi tiết về khóa học mà bạn đã đăng ký.
+    Cảm ơn bạn đã đăng ký khóa học tại Học viện Nivex. Chúng tôi xin gửi thông tin chi tiết về khóa học mà bạn đã đăng ký.
 
-THÔNG TIN KHÓA HỌC:
-Tên khóa học: ${courseName}
-Ngày bắt đầu: ${courseDate}
-${courseTime ? `Thời gian: ${courseTime}` : ''}
-Mã số đăng ký: ${registrationId}
+    THÔNG TIN KHÓA HỌC:
+    Tên khóa học: ${courseName}
+    Ngày bắt đầu: ${courseDate}
+    ${courseTime ? `Thời gian: ${courseTime}` : ''}
+    Mã số đăng ký: ${registrationId}
 
-${zoomLink ? `
-THÔNG TIN THAM GIA:
-Link tham gia: ${zoomLink}
+    ${zoomLink ? `
+    THÔNG TIN THAM GIA:
+    Link tham gia: ${zoomLink}
 
-Lưu ý: Vui lòng tham gia đúng thời gian để không bỏ lỡ nội dung học tập quan trọng.
-` : `
-THÔNG TIN LIÊN HỆ:
-Link tham gia lớp học sẽ được gửi đến bạn trước 24 giờ.
-Bộ phận hỗ trợ sẽ liên hệ với bạn trong thời gian sớm nhất.
-`}
+    Lưu ý: Vui lòng tham gia đúng thời gian để không bỏ lỡ nội dung học tập quan trọng.
+    ` : `
+    THÔNG TIN LIÊN HỆ:
+    Link tham gia lớp học sẽ được gửi đến bạn trước 24 giờ.
+    Bộ phận hỗ trợ sẽ liên hệ với bạn trong thời gian sớm nhất.
+    `}
 
-HƯỚNG DẪN CHUẨN BỊ:
-- Chuẩn bị thiết bị máy tính hoặc điện thoại có kết nối internet ổn định
-- Kiểm tra chức năng âm thanh và video trước khi tham gia
-- Chuẩn bị sẵn các câu hỏi để trao đổi trong buổi học
+    HƯỚNG DẪN CHUẨN BỊ:
+    - Chuẩn bị thiết bị máy tính hoặc điện thoại có kết nối internet ổn định
+    - Kiểm tra chức năng âm thanh và video trước khi tham gia
+    - Chuẩn bị sẵn các câu hỏi để trao đổi trong buổi học
 
-Nếu bạn có thắc mắc, xin vui lòng liên hệ với chúng tôi qua email support@nivex.vn hoặc số hotline 1900-xxxx
+    Nếu bạn có thắc mắc, xin vui lòng liên hệ với chúng tôi qua email support@nivex.vn hoặc số hotline 1900-xxxx
 
-Trân trọng,
-Học viện Đào tạo Nivex
-Website: https://nivex.vn
+    Trân trọng,
+    Học viện Đào tạo Nivex
+    Website: https://nivex.vn
   `
 
   return { html: htmlTemplate, text: textTemplate }
