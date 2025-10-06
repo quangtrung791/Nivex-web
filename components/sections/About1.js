@@ -33,7 +33,7 @@ export default function About1() {
                         </div>
 
                         <div className="col-xl-6 col-md-12 limit-width">
-                            <div className="about_image">                                
+                            <div className="about_image" data-aos="fade-up" data-aos-duration={1000}>                                
                                  <img className="img0-ai pic-1" src="https://learningchain.vn/wp-content/uploads/nivex/framei.png" ></img>
                             </div>
                         </div>
@@ -52,7 +52,7 @@ export default function About1() {
                     {/* Sự kiện quốc tế */}
                     <div className="row">
                         <div className="col-xl-6 col-md-12">
-                            <div className="about_image">
+                            <div className="about_image" data-aos="fade-up" data-aos-duration={1000}>
                                  {/* <img className="img0-ai" src="https://learningchain.vn/wp-content/uploads/nivex/world_map.svg" ></img> */}
                                 
                                  <img className="img0-ai" src="https://learningchain.vn/wp-content/uploads/nivex/world.png" ></img>
