@@ -78,7 +78,7 @@ export default function BuyCryptoSelect() {
                                     style={{
                                         cursor: "pointer",
                                         fontWeight: l === activeLetter ? "bold" : "normal",
-                                        color: l === activeLetter ? "#ff6600" : "#fff"
+                                        color: l === activeLetter ? "#bcfe08" : "#fff"
                                     }}
                                 >
                                     {l}
