@@ -2,9 +2,18 @@
 /* .widget {
     flex-direction: column !important;
 } */
-.widget.recent.mt-0 {
+section.ttuc .widget.recent.mt-0 {
     /* padding-left: 15px;
     padding-right: 15px; */
+}
+
+@media (min-width: 768px) {
+    section.ttuc-duoc-xem-nhieu .title-container {
+        margin-bottom: 20px;
+    }
+    section.ttuc-duoc-xem-nhieu .button-loadmore {
+        margin-top: 10px;
+    }
 }
 
 /* fixed */
@@ -51,14 +60,8 @@
         top: -35%;
     }
 }
-/* @media (min-width: 1440px) and (max-width: 1599px) {
-    .heading-title-main {
-        margin-top: unset !important;
-        top: -123px;
-    }
-} */
 
-.widget.recent.mt-0 {
+section.ttuc .widget.recent.mt-0 {
     flex-direction: column !important;
 }
 
@@ -134,9 +137,7 @@ li.active h6 {
     font-weight: 600 !important;
      color: black;
 }
-/* .heading-title-main {
-    background: linear-gradient(0deg, rgb(0 0 0 / 80%), rgb(0 0 0 / 0%) 70%);
-} */
+
 a.title.navigate-child-news:hover {
     color:  #BCFE08  !important; 
 }
@@ -454,12 +455,13 @@ footer.footer.style-2.footer-main {
         padding: 5px 0;
     }
     .heading-title-main {
-        margin-top: -19%;
+        /* margin-top: -19%; */
+        margin-top: -17%;
         padding: 0 3% !important;
         position: relative;
         z-index: 100;
     }
-    h3.tin-tuc, h3.title {
+    h3.tin-tuc, .ttuc .heading-title-main h3.title {
         position: relative;
         /* top: -4px; */
         top: -10px;
@@ -470,7 +472,7 @@ footer.footer.style-2.footer-main {
     .blog-details.ttuc .blog-main {
         margin-right: 0 !important;
     }
-    .widget.recent.mt-0 {
+    section.ttuc .widget.recent.mt-0 {
         padding-top: 20px;
         border-radius: 10px;
     }
@@ -640,14 +642,20 @@ footer.footer.style-2.footer-main {
         letter-spacing: 0;
     }
     .heading-title-main {
-        margin-top: -19%;
+        /* margin-top: -18%; */
+        margin-top: -14%;
         padding: 0 3%;
         position: relative;
         z-index: 100;
     }
-    h3.title, h3.tin-tuc {
+    section.ttuc h3.tin-tuc {
         position: relative;
-        top: -4px;
+        /* top: -4px; */
+        top: -15px;
+    }
+
+    .ttuc .heading-title-main .tin-tuc {
+        font-size: 36px;
     }
     
     .blog-details.ttuc .sidebar {
@@ -656,7 +664,7 @@ footer.footer.style-2.footer-main {
     .blog-details.ttuc .blog-main {
         margin-right: 0 !important;
     }
-    .widget.recent.mt-0 {
+    section.ttuc .widget.recent.mt-0 {
         padding-top: 20px;
         border-radius: 10px;
     }
@@ -836,16 +844,21 @@ footer.footer.style-2.footer-main {
         z-index: 100;
     }
     .heading-title-main h3.title {
-        top: -15px;
+        /* top: -15px; */
+        top: 14px;
         position: relative;
     }
+    .ttuc .heading-title-main h3.title.tin-tuc {
+        font-size: 32px;
+    }
+
     .blog-details.ttuc .sidebar {
         padding-left: 0 !important;
     }
     .blog-details.ttuc .blog-main {
         margin-right: 0 !important;
     }
-    .widget.recent.mt-0 {
+    section.ttuc .widget.recent.mt-0 {
         padding-top: 20px;
         border-radius: 10px;
     }
@@ -1015,7 +1028,7 @@ footer.footer.style-2.footer-main {
         position: relative;
         z-index: 100;
     }
-    h3.title {
+    .ttuc .heading-title-main h3.title {
         position: relative;
         top: -10px;
     }
@@ -1031,7 +1044,7 @@ footer.footer.style-2.footer-main {
         margin-right: 0 !important;
     }
 
-    .widget.recent.mt-0 {
+    section.ttuc .widget.recent.mt-0 {
         padding-top: 20px;
         border-radius: 10px;
     }
@@ -1209,7 +1222,7 @@ footer.footer.style-2.footer-main {
         position: relative;
         z-index: 100;
     }
-    h3.title {
+    .ttuc .heading-title-main h3.title {
         position: relative;
         top: -8px;
     }
@@ -1225,7 +1238,7 @@ footer.footer.style-2.footer-main {
         margin-right: 0 !important;
     }
 
-    .widget.recent.mt-0 {
+    section.ttuc .widget.recent.mt-0 {
         padding-top: 15px;
         border-radius: 10px;
     }
@@ -1423,7 +1436,7 @@ footer.footer.style-2.footer-main {
         margin-right: 0 !important;
     }
 
-    .widget.recent.mt-0 {
+    section.ttuc .widget.recent.mt-0 {
         padding-top: 20px;
         border-radius: 10px;
     }
@@ -1601,7 +1614,7 @@ footer.footer.style-2.footer-main {
         z-index: 100;
         position: relative;
     }
-    h3.title {
+    .ttuc .heading-title-main h3.title {
         position: relative;
         top: -10px;
         font-size: 32px;
@@ -1615,7 +1628,7 @@ footer.footer.style-2.footer-main {
         margin-right: 0 !important;
     }
 
-    .widget.recent.mt-0 {
+    section.ttuc .widget.recent.mt-0 {
         padding-top: 15px;
         border-radius: 10px;
         padding-left: 25px;
@@ -1695,7 +1708,7 @@ footer.footer.style-2.footer-main {
         max-height: 800px; 
         overflow-y: auto;
     }
-    .widget.recent.mt-0 {
+    section.ttuc .widget.recent.mt-0 {
         padding-right: 5px !important;
     }
 
@@ -1818,7 +1831,7 @@ footer.footer.style-2.footer-main {
         padding-top: 20px;
         background: rgb(93 91 91 / 22%);
     }
-    .widget.recent.mt-0 {
+    section.ttuc .widget.recent.mt-0 {
         padding: 0 15px;
     }
     a.title.navigate-child-news {
@@ -1889,7 +1902,7 @@ footer.footer.style-2.footer-main {
         max-height: 650px; 
         overflow-y: auto;
     }
-    .widget.recent.mt-0 {
+    section.ttuc .widget.recent.mt-0 {
         padding-right: 5px !important;
     }
 
@@ -2012,7 +2025,7 @@ footer.footer.style-2.footer-main {
         padding-top: 20px;
         background: rgb(93 91 91 / 22%);
     }
-    .widget.recent.mt-0 {
+    section.ttuc .widget.recent.mt-0 {
         padding: 0 15px;
     }
     a.title.navigate-child-news {
@@ -2220,7 +2233,7 @@ footer.footer.style-2.footer-main {
         margin-right: 0 !important;
     }
 
-    .widget.recent.mt-0 {
+    section.ttuc .widget.recent.mt-0 {
         padding-top: 15px;
         border-radius: 10px;
         padding-left: 25px;
@@ -2410,7 +2423,7 @@ footer.footer.style-2.footer-main {
         margin-right: 0 !important;
     }
 
-    .widget.recent.mt-0 {
+    section.ttuc .widget.recent.mt-0 {
         padding-top: 15px;
         border-radius: 10px;
     }
@@ -2608,7 +2621,7 @@ footer.footer.style-2.footer-main {
         margin-right: 0 !important;
     }
 
-    .widget.recent.mt-0 {
+    section.ttuc .widget.recent.mt-0 {
         padding-top: 20px;
         border-radius: 10px;
     }
@@ -2788,7 +2801,7 @@ footer.footer.style-2.footer-main {
         margin-right: 0 !important;
     }
 
-    .widget.recent.mt-0 {
+    section.ttuc .widget.recent.mt-0 {
         padding-top: 20px;
         border-radius: 10px;
     }

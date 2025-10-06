@@ -2,13 +2,33 @@
 /* .widget {
     flex-direction: column !important;
 } */
+ /* Fix */
+.title-link-right-panel a.navigate-child-news {
+   text-align: left !important;
+}
+
+@media (min-width: 768px) {
+    section.chi-tiet-ttuc-duoc-xem-nhieu .title-container {
+        margin-bottom: 20px;
+    }
+    section.chi-tiet-ttuc-duoc-xem-nhieu .button-loadmore {
+        margin-top: 10px;
+    }
+}
+
+@media (min-width: 1024px) {
+    section.tin-tuc-id .right-side-panel-blog-details {
+        padding-left: 0px !important;
+    }
+}
+
  .blog-details.tin-tuc-id .content img {
     max-width: 100%;
 }
 section.blog-details.tin-tuc-id .col-xl-4.col-md-12 {
     background-image: none !important;
 }
-.widget.recent.mt-0 {
+section.tin-tuc-id .widget.recent.mt-0 {
     flex-direction: column !important;
 }
 
@@ -276,7 +296,7 @@ footer.footer.style-2.footer-main {
     .tin-xem-nhieu  {
         margin-top: 30px;
     }
-    h6.heading {
+    section.tin-tuc-id h6.heading {
         background: #242529;
         margin-bottom: unset;
         padding-top: 20px;
@@ -287,7 +307,7 @@ footer.footer.style-2.footer-main {
         padding: 32px 8%;
         border-bottom: 2px solid #232326;
     }
-    .sidebar .widget ul li {
+    section.tin-tuc-id .sidebar .widget ul li {
         padding-left: 14px;
         padding-right: 14px;
     }
@@ -424,7 +444,7 @@ footer.footer.style-2.footer-main {
     .blog-details.tin-tuc-id .blog-main {
         margin-right: 0 !important;
     }
-    .widget.recent.mt-0 {
+    section.tin-tuc-id .widget.recent.mt-0 {
         /* padding-top: 20px; */
         border-radius: 10px;
     }
@@ -475,13 +495,13 @@ footer.footer.style-2.footer-main {
     .tin-xem-nhieu {
         margin-top: 30px;
     }
-    h6.heading {
+    section.tin-tuc-id h6.heading {
         background: #242529;
         margin-bottom: unset;
         padding-top: 20px;
         padding-left: 14px;
     }
-    .sidebar .widget ul li {
+    section.tin-tuc-id .sidebar .widget ul li {
         padding-left: 14px;
         padding-right: 14px;
     }
@@ -618,7 +638,7 @@ footer.footer.style-2.footer-main {
     .blog-details.tin-tuc-id .blog-main {
         margin-right: 0 !important;
     }
-    .widget.recent.mt-0 {
+    section.tin-tuc-id .widget.recent.mt-0 {
         /* padding-top: 20px; */
         border-radius: 10px;
     }
@@ -668,13 +688,13 @@ footer.footer.style-2.footer-main {
     .tin-xem-nhieu  {
         margin-top: 30px;
     }
-    h6.heading {
+    section.tin-tuc-id h6.heading {
         background: #242529;
         margin-bottom: unset;
         padding-top: 20px;
         padding-left: 14px;
     }
-    .sidebar .widget ul li {
+    section.tin-tuc-id .sidebar .widget ul li {
         padding-left: 14px;
         padding-right: 14px;
     }
@@ -818,7 +838,7 @@ footer.footer.style-2.footer-main {
     .blog-details.tin-tuc-id .blog-main {
         margin-right: 0 !important;
     }
-    .widget.recent.mt-0 {
+    section.tin-tuc-id .widget.recent.mt-0 {
         /* padding-top: 20px; */
         border-radius: 10px;
     }
@@ -867,13 +887,13 @@ footer.footer.style-2.footer-main {
     .tin-xem-nhieu  {
         margin-top: 30px;
     }
-    h6.heading {
+    section.tin-tuc-id h6.heading {
         background: #242529;
         margin-bottom: unset;
         padding-top: 20px;
         padding-left: 14px;
     }
-    .sidebar .widget ul li {
+    section.tin-tuc-id .sidebar .widget ul li {
         padding-left: 14px;
         padding-right: 14px;
     }
@@ -1018,7 +1038,7 @@ footer.footer.style-2.footer-main {
         margin-right: 0 !important;
     }
 
-    .widget.recent.mt-0 {
+    section.tin-tuc-id .widget.recent.mt-0 {
         /* padding-top: 20px; */
         border-radius: 10px;
     }
@@ -1068,13 +1088,13 @@ footer.footer.style-2.footer-main {
     .tin-xem-nhieu {
         margin-top: 30px;
     }
-    h6.heading {
+    section.tin-tuc-id h6.heading {
         background: #242529;
         margin-bottom: unset;
         padding-top: 20px;
         padding-left: 14px;
     }
-    .sidebar .widget ul li {
+    section.tin-tuc-id .sidebar .widget ul li {
         padding-left: 14px;
         padding-right: 14px;
     }
@@ -1226,7 +1246,7 @@ footer.footer.style-2.footer-main {
         margin-right: 0 !important;
     }
 
-    .widget.recent.mt-0 {
+    section.tin-tuc-id .widget.recent.mt-0 {
         /* padding-top: 15px; */
         border-radius: 10px;
     }
@@ -1276,13 +1296,13 @@ footer.footer.style-2.footer-main {
     .tin-xem-nhieu  {
         margin-top: 30px;
     }
-    h6.heading {
+    section.tin-tuc-id h6.heading {
         background: #242529;
         margin-bottom: unset;
         padding-top: 20px;
         padding-left: 14px;
     }
-    .sidebar .widget ul li {
+    section.tin-tuc-id .sidebar .widget ul li {
         padding-left: 14px;
         padding-right: 14px;
     }
@@ -1442,7 +1462,7 @@ footer.footer.style-2.footer-main {
         margin-right: 0 !important;
     }
 
-    .widget.recent.mt-0 {
+    section.tin-tuc-id .widget.recent.mt-0 {
         /* padding-top: 20px; */
         border-radius: 10px;
     }
@@ -1492,13 +1512,13 @@ footer.footer.style-2.footer-main {
     .tin-xem-nhieu  {
         margin-top: 30px;
     }
-    h6.heading {
+    section.tin-tuc-id h6.heading {
         background: #242529;
         margin-bottom: unset;
         padding-top: 20px;
         padding-left: 14px;
     }
-    .sidebar .widget ul li {
+    section.tin-tuc-id .sidebar .widget ul li {
         padding-left: 14px;
         padding-right: 14px;
     }
@@ -1649,7 +1669,7 @@ footer.footer.style-2.footer-main {
         margin-right: 0 !important;
     }
 
-    .widget.recent.mt-0 {
+    section.tin-tuc-id .widget.recent.mt-0 {
         /* padding-top: 15px; */
         border-radius: 10px;
         padding-left: 25px;
@@ -1700,13 +1720,13 @@ footer.footer.style-2.footer-main {
     .tin-xem-nhieu  {
         margin-top: 30px;
     }
-    h6.heading {
+    section.tin-tuc-id h6.heading {
         background: #242529;
         margin-bottom: unset;
         padding-top: 20px;
         padding-left: 14px;
     }
-    .sidebar .widget ul li {
+    section.tin-tuc-id .sidebar .widget ul li {
         padding-right: 14px;
     }
     .navigate-link {
@@ -1729,7 +1749,7 @@ footer.footer.style-2.footer-main {
         max-height: 1000px; 
         overflow-y: auto;
     }
-    .widget.recent.mt-0 {
+    section.tin-tuc-id .widget.recent.mt-0 {
         padding-right: 5px !important;
     }
 
@@ -1860,7 +1880,7 @@ footer.footer.style-2.footer-main {
         padding-top: 20px;
         background: rgb(93 91 91 / 22%);
     }
-    .widget.recent.mt-0 {
+    section.tin-tuc-id .widget.recent.mt-0 {
         padding: 0 15px;
     }
     a.title.navigate-child-news {
@@ -1928,13 +1948,13 @@ footer.footer.style-2.footer-main {
     .tin-xem-nhieu  {
         margin-top: 30px;
     }
-    h6.heading {
+    section.tin-tuc-id h6.heading {
         background: #242529;
         margin-bottom: unset;
         padding-top: 20px;
         padding-left: 14px;
     }
-    .sidebar .widget ul li {
+    section.tin-tuc-id .sidebar .widget ul li {
         padding-right: 14px;
     }
     .navigate-link {
@@ -1957,7 +1977,7 @@ footer.footer.style-2.footer-main {
         max-height: 1000px; 
         overflow-y: auto;
     }
-    .widget.recent.mt-0 {
+    section.tin-tuc-id .widget.recent.mt-0 {
         padding-right: 5px !important;
     }
 
@@ -2088,7 +2108,7 @@ footer.footer.style-2.footer-main {
         padding-top: 20px;
         background: rgb(93 91 91 / 22%);
     }
-    .widget.recent.mt-0 {
+    section.tin-tuc-id .widget.recent.mt-0 {
         padding: 0 15px;
     }
     a.title.navigate-child-news {
@@ -2161,13 +2181,13 @@ footer.footer.style-2.footer-main {
     .tin-xem-nhieu  {
         margin-top: 30px;
     }
-    h6.heading {
+    section.tin-tuc-id h6.heading {
         background: #242529;
         margin-bottom: unset;
         padding-top: 20px;
         padding-left: 14px;
     }
-    .sidebar .widget ul li {
+    section.tin-tuc-id .sidebar .widget ul li {
         padding-left: 14px;
         padding-right: 14px;
     }
@@ -2318,7 +2338,7 @@ footer.footer.style-2.footer-main {
         margin-right: 0 !important;
     }
 
-    .widget.recent.mt-0 {
+    section.tin-tuc-id .widget.recent.mt-0 {
         /* padding-top: 15px; */
         border-radius: 10px;
         padding-left: 25px;
@@ -2369,13 +2389,13 @@ footer.footer.style-2.footer-main {
     .col-xl-4.col-md-12 {
         padding: unset;
     }
-    h6.heading {
+    section.tin-tuc-id h6.heading {
         background: #242529;
         margin-bottom: unset;
         padding-top: 20px;
         padding-left: 14px;
     }
-    .sidebar .widget ul li {
+    section.tin-tuc-id .sidebar .widget ul li {
         padding-left: 14px;
         padding-right: 14px;
     }
@@ -2529,7 +2549,7 @@ footer.footer.style-2.footer-main {
         margin-right: 0 !important;
     }
 
-    .widget.recent.mt-0 {
+    section.tin-tuc-id .widget.recent.mt-0 {
         /* padding-top: 15px; */
         border-radius: 10px;
     }
@@ -2575,13 +2595,13 @@ footer.footer.style-2.footer-main {
     .tin-xem-nhieu  {
         margin-top: 30px;
     }
-    h6.heading {
+    section.tin-tuc-id h6.heading {
         background: #242529;
         margin-bottom: unset;
         padding-top: 20px;
         padding-left: 14px;
     }
-    .sidebar .widget ul li {
+    section.tin-tuc-id .sidebar .widget ul li {
         padding-left: 14px;
         padding-right: 14px;
     }
@@ -2746,7 +2766,7 @@ footer.footer.style-2.footer-main {
         margin-right: 0 !important;
     }
 
-    .widget.recent.mt-0 {
+    section.tin-tuc-id .widget.recent.mt-0 {
         /* padding-top: 20px; */
         border-radius: 10px;
     }
@@ -2793,13 +2813,13 @@ footer.footer.style-2.footer-main {
     .tin-xem-nhieu  {
         margin-top: 30px;
     }
-    h6.heading {
+    section.tin-tuc-id h6.heading {
         background: #242529;
         margin-bottom: unset;
         padding-top: 20px;
         padding-left: 14px;
     }
-    .sidebar .widget ul li {
+    section.tin-tuc-id .sidebar .widget ul li {
         padding-left: 14px;
         padding-right: 14px;
     }
@@ -2946,7 +2966,7 @@ footer.footer.style-2.footer-main {
         margin-right: 0 !important;
     }
 
-    .widget.recent.mt-0 {
+    section.tin-tuc-id .widget.recent.mt-0 {
         /* padding-top: 20px; */
         border-radius: 10px;
     }

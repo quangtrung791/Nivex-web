@@ -199,10 +199,10 @@ export default function BlogDetails() {
                                         </form> */}
                                     </div>
                                 </div>
-                                <div className="col-xl-4 col-md-12">
+                                <div className="col-xl-4 col-md-12 right-side-panel-blog-details">
                                     <h6 className="heading tin-nong-heading">Tin nóng</h6>
                                     <div className="sidebar">
-                                        <div className="widget recent mt-0">
+                                        <div className="widget recent mt-0 title-link-right-panel">
                                             {/* <h6 className="heading">Tin nóng</h6> */}
                                             <ul className="tin-nong">
                                                 {Array.isArray(hotNews) && hotNews.slice(0, 10).map(item => (
@@ -231,7 +231,7 @@ export default function BlogDetails() {
 
                                     {/* Tin xem nhiều */}
                                     <div className="sidebar tin-xem-nhieu">
-                                        <div className="widget recent mt-0">
+                                        <div className="widget recent mt-0 title-link-right-panel">
                                             <h6 className="heading">Tin xem nhiều</h6>
                                             
                                             <ul className="tin-nong">
@@ -281,7 +281,7 @@ export default function BlogDetails() {
                             </div>
                         </div>
                     </section>
-                      <section className="duoc-xem-nhieu col-md-12">
+                      <section className="duoc-xem-nhieu col-md-12 chi-tiet-ttuc-duoc-xem-nhieu">
                         <div className="title-container">
                             <h5>Được xem nhiều</h5>
                         </div>
