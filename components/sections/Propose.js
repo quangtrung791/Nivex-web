@@ -53,6 +53,9 @@ export default function Propose() {
                                                     <div key={item.id || idx} className="crypto-card crypto-card-propose">
                                                         <div className="card-content">
                                                             <div className="card-info card-info-propose">
+                                                                <div className='quot-mark-container'>
+                                                                    <img src="/assets/images/icon/quot_mark.svg" className='quot-mark-icon' />
+                                                                </div>
                                                                 <h4 className='title-propose-card'>{item.keyword}</h4>
                                                                 <p className='text-propose-card'>{shortDesc}</p>
                                                                 <div className="card-meta card-meta-propose">
@@ -63,19 +66,7 @@ export default function Propose() {
                                                     </div>
                                                 )}
                                         ))}
-                                    {/* <div className="crypto-card crypto-card-propose">
-                                        <div className="card-content">
-                                            <div className="card-info card-info-propose">
-                                                <div className="quotation-mark-propose"></div>
-                                                <h4 className='title-propose-card'>ZL-SNARKS</h4>
-                                                <p className='text-propose-card'>ZK-SNARKS (viết tắt của Zero-Knowledge Succinct Non-Interactive Argument of Knowledge) là một dạng chứng minh mật mã. Đó là một dạng chứng minh mật mã cho phép một bên truy cập thông tin mà không tiết lộ cách hoặc loại thông tin đã được truy cập.
-ZK-SNARKS được thực hiện bằng cách tạo ra một khóa riêng tư hoặc bí mật trước khi một giao dịch mật mã diễn ra. Giao thức mật mã Z-cash sử dụng loại chứng minh mật mã này. Loại chứng minh mật mã này đã được giới thiệu lần đầu trong những năm 1980 như một phương pháp mã hóa.</p>
-                                                <div className="card-meta card-meta-propose">
-                                                    <a className="author card-button-propose" >Định nghĩa đầy đủ<i className="icon-button-propose"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> */}
+                                    
                                 </div>
                                 
                                 

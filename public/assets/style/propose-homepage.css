@@ -68,3 +68,10 @@
 .crypto-learning-section.propose-section {
     padding-top: 30px;
 }
+
+.quot-mark-container {
+    /* padding-left: 15px; */
+}
+.quot-mark-container .quot-mark-icon {
+    width: 18px;
+}

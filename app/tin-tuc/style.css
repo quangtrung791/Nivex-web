@@ -7,6 +7,14 @@ section.ttuc .widget.recent.mt-0 {
     padding-right: 15px; */
 }
 
+.ttuc .trigger-full-w img {
+    max-height: 443px;
+}
+
+.ttuc .div-duoc-xem-nhieu img {
+    max-height: 135px;
+}
+
 @media (min-width: 768px) {
     section.ttuc-duoc-xem-nhieu .title-container {
         margin-bottom: 20px;
