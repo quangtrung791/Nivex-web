@@ -1,6 +1,7 @@
 import { query } from "@/app/lib/neon";
 import { NextResponse } from "next/server";
 import { sendEmail } from '@/lib/emailService';
+import { isAuthorized } from '@/lib/adminAuth';
 
 export const runtime = 'nodejs';
 
@@ -139,15 +140,9 @@ export async function GET(request) {
 // }
 
 export async function POST(request) {
-  // backdoor cho con quần què n8n
-  const validKey = process.env.N8N_API_KEY;
-  const apiKey = request.headers.get('x-api-key');
-
-  if (apiKey !== validKey) {
-    return NextResponse.json(
-      { success: false, error: 'Unauthorized - Invalid API Key' },
-      { status: 401 }
-    )
+  // unified authorization: accepts N8N_API_KEY / ADMIN_API_KEY (header) OR browser cookies
+  if (!isAuthorized(request)) {
+    return NextResponse.json({ success: false, error: 'Unauthorized - Invalid API Key or not authenticated' }, { status: 401 })
   }
 
   try {
