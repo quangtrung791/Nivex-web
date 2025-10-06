@@ -2,12 +2,6 @@ import { NextResponse } from 'next/server'
 import { cookies } from 'next/headers'
 import jwt from 'jsonwebtoken'
 
-// Hardcoded admin credentials (trong production nên lưu trong database hoặc env)
-const ADMIN_CREDENTIALS = {
-  username: 'adminnivex',
-  password: 'nivex293849@', 
-}
-
 const JWT_SECRET = process.env.JWT_SECRET || 'your-super-secret-jwt-key-change-this-in-production'
 
 export async function POST(request) {
@@ -15,12 +9,8 @@ export async function POST(request) {
     const body = await request.json()
     const { username, password } = body
 
-    console.log('🔍 Login attempt:', { username, password })
-    console.log('🔑 Expected credentials:', ADMIN_CREDENTIALS)
-
     // Validate input
     if (!username || !password) {
-      console.log('❌ Missing credentials')
       return NextResponse.json(
         { error: 'Username và password là bắt buộc' },
         { status: 400 }
@@ -28,15 +18,13 @@ export async function POST(request) {
     }
 
     // Check credentials
-    if (username !== ADMIN_CREDENTIALS.username || password !== ADMIN_CREDENTIALS.password) {
-      console.log('❌ Invalid credentials')
+    if (username !== process.env.ADMIN_USERNAME || password !== process.env.ADMIN_PASSWORD) {
+
       return NextResponse.json(
         { error: 'Thông tin đăng nhập không chính xác' },
         { status: 401 }
       )
     }
-
-    console.log('✅ Login successful for:', username)
 
     // Create JWT token
     const token = jwt.sign(
