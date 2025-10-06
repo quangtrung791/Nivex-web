@@ -236,9 +236,8 @@ Website: https://nivex.vn
 }
 
 // Local course registration email sender
-const sendCourseRegistrationEmail = async (email, registrationData) => {
+const sendCourseRegistrationEmailRouter = async (email, registrationData) => {
   try {
-    console.log('📧 Sending course registration email to:', email)
     
     // Generate email content locally
     const { html, text } = generateCourseRegistrationEmail(registrationData)
@@ -252,7 +251,6 @@ const sendCourseRegistrationEmail = async (email, registrationData) => {
     return result
     
   } catch (error) {
-    console.error('❌ Failed to send course registration email:', error)
     return { 
       success: false, 
       message: 'Failed to send email',
@@ -362,12 +360,9 @@ export async function POST(request) {
     }
 
     // Send registration confirmation email (don't fail the registration if email fails)
-    try {
-      const emailResult = await sendCourseRegistrationEmail(email, emailData)
-    } catch (emailError) {
-      // Continue with successful registration response even if email fails
-    }
-
+   
+    sendCourseRegistrationEmailRouter(email, emailData)
+    
     return NextResponse.json({
       success: true,
       message: 'Đăng ký thành công! Vui lòng kiểm tra email để xem thông tin chi tiết.',
