@@ -2,8 +2,59 @@ import Link from "next/link"
 import styles from "./footer2.module.css"
 import BackToTop from '../../elements/BackToTop'
 import '../../sections/addtion.css';
+import { useState } from "react";
 
 export default function Footer2() {
+    const [formData, setFormData] = useState({
+        email: ''
+    })
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState(false);
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target
+            setFormData(prev => ({
+                ...prev,
+                [name]: value
+            }))
+        // Clear error when user starts typing
+        if (error) setError('')
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        setIsSubmitting(true)
+        setError('')
+
+        try {
+            const response = await fetch('/api/subscribe-news-footer', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email: formData.email
+                })
+        })
+
+        const result = await response.json()
+
+        if (result.success) {
+            setSuccess(true)
+            // Auto close after 2 seconds
+            setTimeout(() => {
+                console.log('Thành công');
+            }, 2000)
+        } else {
+            setError(result.error || 'Có lỗi xảy ra khi đăng ký');
+        }
+        } catch (err) {
+            setError('Không thể kết nối!');
+        } finally {
+            setIsSubmitting(false);
+        }
+    }
     return (
         <>
 
@@ -68,9 +119,30 @@ export default function Footer2() {
                                     <p className="link-footer">
                                         Subscribe our newsletter to get more interested resources from Nivex.
                                     </p>
-                                    <form >
-                                        <input className="input-email-footer-subscribe" style={{'padding': '6px 19px'}} type="email" placeholder="Enter your email" required />
-                                        <button type="submit" className="btn-action btn-cta-simple" style={{'color':'black','fontSize': 12, 'fontWeight': 500, 'padding': '10px 23px', 'background': 'linear-gradient(90deg,#BCFE08, #86F969)'}} >Đăng ký</button>
+                                    <form onSubmit={handleSubmit}>
+                                        <input className="input-email-footer-subscribe" 
+                                            style={{'padding': '6px 19px'}} type="email"
+                                            id="email"
+                                            name="email"
+                                            value={formData.email}
+                                            onChange={handleInputChange}
+                                            placeholder="Enter your email" 
+                                            required
+                                            disabled={isSubmitting}
+                                        />
+
+
+                                        {error && (
+                                            <div className={styles.errorMessage}>
+                                            {error}
+                                            </div>
+                                        )}
+
+                                        <button type="submit" className="btn-action btn-cta-simple" style={{'color':'black','fontSize': 12, 'fontWeight': 500, 'padding': '10px 23px', 'background': 'linear-gradient(90deg,#BCFE08, #86F969)'}} 
+                                        disabled={isSubmitting}
+                                        >
+                                            {isSubmitting ? 'Đang đăng ký...' : 'Đăng ký ngay' }
+                                        </button>
                                     </form>
                                     <ul className="list-social">
                                         <li>
