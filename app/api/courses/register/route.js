@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 import { query } from "@/app/lib/neon"
-import { sendCourseRegistrationEmail as sendEmail } from "@/lib/emailService"
+import { sendEmail } from "@/lib/emailService"
 
 export const runtime = 'nodejs';
 
@@ -362,7 +362,7 @@ export async function POST(request) {
     // Send registration confirmation email (don't fail the registration if email fails)
    
     sendCourseRegistrationEmailRouter(email, emailData)
-    
+
     return NextResponse.json({
       success: true,
       message: 'Đăng ký thành công! Vui lòng kiểm tra email để xem thông tin chi tiết.',
