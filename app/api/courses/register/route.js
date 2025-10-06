@@ -107,9 +107,7 @@ export async function POST(request) {
     // Send registration confirmation email (don't fail the registration if email fails)
     try {
       const emailResult = await sendCourseRegistrationEmail(email, emailData)
-      console.log('Email send result:', emailResult.success ? '✅ Sent' : '❌ Failed', emailResult.message)
     } catch (emailError) {
-      console.error('Email send error:', emailError)
       // Continue with successful registration response even if email fails
     }
 
@@ -124,7 +122,6 @@ export async function POST(request) {
     })
 
   } catch (error) {
-    console.error('Course registration error:', error)
     return NextResponse.json(
       {
         success: false,
