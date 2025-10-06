@@ -187,7 +187,7 @@ const generateCourseRegistrationEmail = (registrationData) => {
         
         <div class="footer">
             <p>Email này được gửi tự động từ hệ thống Nivex</p>
-            <p>© 2025 Nivex. Tất cả quyền được bảo lưu.</p>
+            <p>© 2025 Nivex. All rights reserved.</p>
             <p>
                 <a href="mailto:support@nivex.vn">nivexvietnam@gmail.com</a> | 
                 <a href="https://nivex.vn">nivex.vn</a>
