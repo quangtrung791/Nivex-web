@@ -64,8 +64,6 @@ export async function POST(request) {
       maxAge: 24 * 60 * 60, // 24 hours
       path: '/'
     })
-
-    console.log('🍪 Cookies set - admin-token (httpOnly) + admin-auth (readable)')
     
     return response
 

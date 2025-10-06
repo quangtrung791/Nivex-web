@@ -1,7 +1,7 @@
 /* Wrapper */
 .wrapper {
   background: #141414;
-  padding: 48px 0 140px;
+  padding: 48px 0 125px;
 }
 .displayFlexForHeader {
     display: flex;
@@ -16,7 +16,7 @@
 
 .pageTitleKnowLedge .displayFlexForHeader h1.pageTitleHeading span, .pageTitle span {
     background: linear-gradient(90deg, #bcfe08,  #86f869);
-   -webkit-background-clip: text;
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     padding-top: 8px;
     
@@ -134,7 +134,7 @@ section.pageTitleKnowLedge, section.wrapper {
 
 /* Sections */
 .section {
-  margin-top: 60px;
+  margin-top: 80px;
 }
 
 .sectionTitle {
