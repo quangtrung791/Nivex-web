@@ -24,11 +24,28 @@ export function middleware(request) {
   if (request.nextUrl.pathname.startsWith('/api/admin') && 
       !request.nextUrl.pathname.startsWith('/api/admin/auth')) {
     
+    // Check API key from headers (for external systems like n8n)
+    const apiKey = request.headers.get('x-api-key') || request.headers.get('x-api');
+    const authHeader = request.headers.get('authorization');
+    const bearerToken = authHeader?.toLowerCase().startsWith('bearer ') ? authHeader.slice(7) : null;
+    
+    // Check if valid API key is provided
+    const validApiKey = apiKey === process.env.N8N_API_KEY || 
+                        apiKey === process.env.ADMIN_API_KEY ||
+                        bearerToken === process.env.N8N_API_KEY ||
+                        bearerToken === process.env.ADMIN_API_KEY;
+    
+    if (validApiKey) {
+      // Valid API key, allow access
+      return NextResponse.next();
+    }
+    
+    // No valid API key, check cookie token (for browser sessions)
     const token = request.cookies.get('admin-token')?.value;
 
     if (!token) {
       return NextResponse.json(
-        { error: 'Unauthorized - Token required' },
+        { error: 'Unauthorized - Token or API Key required' },
         { status: 401 }
       );
     }

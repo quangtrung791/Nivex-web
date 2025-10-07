@@ -1,6 +1,7 @@
 'use client'
 import Layout from "@/components/layout/Layout"
 import { useState, useEffect } from "react"
+import Link from "next/link"
 import styles from './knowledge.module.css'
 
 export default function Knowledge() {
@@ -299,7 +300,7 @@ export default function Knowledge() {
                         {!loading && !error && (
                             <div className={styles.articlesGrid}>
                                 {filteredArticles.length > 0 ? filteredArticles.map(article => (
-                                    <div key={article.id} className={styles.articleCard}>
+                                    <Link href={`/chi-tiet-kien-thuc/${article.id}`} key={article.id} className={styles.articleCard}>
                                         <div className={styles.cardImage}>
                                             <img src={article.image} alt={article.title} />
                                         </div>
@@ -312,7 +313,7 @@ export default function Knowledge() {
                                             </div>
                                             <h4 className={styles.cardTitle}>{article.title}</h4>
                                         </div>
-                                    </div>
+                                    </Link>
                                 )) : (
                                     <div style={{ textAlign: 'center', padding: '40px', gridColumn: '1 / -1' }}>
                                         <p>Không có bài viết nào phù hợp với bộ lọc này.</p>
@@ -341,7 +342,7 @@ export default function Knowledge() {
                         {!loading && !error && (
                             <div className={styles.articlesGrid}>
                                 {filteredArticlesNewest.length > 0 ? filteredArticlesNewest.map(article => (
-                                    <div key={article.id} className={styles.articleCard}>
+                                    <Link href={`/chi-tiet-kien-thuc/${article.id}`} key={article.id} className={styles.articleCard}>
                                         <div className={styles.cardImage}>
                                             <img src={article.image} alt={article.title} />
                                         </div>
@@ -354,7 +355,7 @@ export default function Knowledge() {
                                             </div>
                                             <h4 className={styles.cardTitle}>{article.title}</h4>
                                         </div>
-                                    </div>
+                                    </Link>
                                 )) : (
                                     <div style={{ textAlign: 'center', padding: '40px', gridColumn: '1 / -1' }}>
                                         <p>Không có bài viết mới nào.</p>
