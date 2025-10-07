@@ -63,7 +63,7 @@ export default function BlogDetails() {
                 <div>
                     <section className="section-news-header">
                         <div className="news-header-container">
-                            <h1 className="news-title">Chi tiết <span className="gradient-text">sự kiện</span></h1>
+                            <h1 className="news-title">Thông tin <span className="gradient-text">sự kiện</span></h1>
                             <form className="news-search-form">
                                 <input
                                     type="text"
