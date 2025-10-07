@@ -28,11 +28,11 @@ const TABS = [
     { label: "Âm nhạc", value: "music" }
 ];
 
-function getRandomItems(arr, n) {
-    if (!Array.isArray(arr)) return [];
-    const shuffled = arr.slice().sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, n);
-}
+// function getRandomItems(arr, n) {
+//     if (!Array.isArray(arr)) return [];
+//     const shuffled = arr.slice().sort(() => 0.5 - Math.random());
+//     return shuffled.slice(0, n);
+// }
 
 export default function BlogDetails() {
     const [coinData, setCoinData] = useState([]);
@@ -447,7 +447,7 @@ export default function BlogDetails() {
                             <h5>Được xem nhiều</h5>
                         </div>
                                             <div className="content-inner row div-duoc-xem-nhieu">
-                                                {Array.isArray(news) && getRandomItems(news, 3).map(item => (
+                                                {Array.isArray(news) && news.slice(0, 3).map(item => (
                                                     <div className="col-md-4" key={item.id}>
                                                         <div className="blog-box">
                                                             <div className="box-image">
