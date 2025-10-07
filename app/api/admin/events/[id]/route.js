@@ -1,6 +1,7 @@
 // API endpoint cho single course dùng database
 import { NextResponse } from 'next/server'
 import { query } from '@/app/lib/neon'
+import { isAuthorized } from '@/lib/adminAuth'
 
 export async function GET(request, { params }) {
   try {
@@ -19,6 +20,10 @@ export async function GET(request, { params }) {
 }
 
 export async function PUT(request, { params }) {
+  if (!isAuthorized(request)) {
+    return NextResponse.json({ success: false, error: 'Unauthorized - Invalid API Key or not authenticated' }, { status: 401 })
+  }
+
   try {
     const id = parseInt(params.id)
     const data = await request.json()
@@ -48,6 +53,10 @@ export async function PUT(request, { params }) {
 }
 
 export async function DELETE(request, { params }) {
+  if (!isAuthorized(request)) {
+    return NextResponse.json({ success: false, error: 'Unauthorized - Invalid API Key or not authenticated' }, { status: 401 })
+  }
+
   try {
     const id = parseInt(params.id);
     console.log("DELETE id:", id);

@@ -1,0 +1,404 @@
+
+.displayFlexForHeader {
+    display: flex;
+    justify-content: space-between;
+}
+.pageTitleKnowLedge {
+    background: #18191D;
+}
+.pageTitleKnowLedge .displayFlexForHeader h1.pageTitleHeading {
+    font-size: 36px;
+}
+
+.pageTitleKnowLedge .displayFlexForHeader h1.pageTitleHeading span {
+    color: #bcfe08
+}
+
+.pageHeaderKnowledgeSubtitle {
+    text-align: right;
+}
+.col6mdCenter {
+    align-self: center;
+    width: 31%;
+}
+
+/* Breadcrumb Section */
+.breadcrumbSection {
+    background: #141414;
+    padding: 35px 0 0px 0;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.breadcrumb a {
+    color: rgb(166, 170, 183);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.breadcrumb a:hover {
+    color: #bcfe08;
+}
+
+.separator {
+    color: #777e90;
+}
+
+.current {
+    color: #ffff;
+    overflow: hidden;
+}
+
+/* Main Section */
+.mainSection {
+    background: #141414;
+    padding: 25px 0 120px 0;
+}
+
+.contentWrapper {
+    display: grid;
+    grid-template-columns: 6.6fr 3.4fr;
+    gap: 25px;
+}
+
+.articleHeader {
+    margin-bottom: 25px;
+}
+
+.articleTitle {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.3;
+    margin-bottom: 0;
+}
+
+.featuredImage {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+
+.featuredImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.articleBody {
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.articleBody p {
+    margin-bottom: 20px;
+}
+
+.articleFooter {
+    margin-top: 60px;
+}
+
+.sectionTitle {
+    font-size: 28px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+.popularGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.popularCard {
+    background: #141414;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+}
+
+.popularCard:hover .popularCardTitle {
+    color: #bcfe08;
+}
+
+.popularCardImage {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+}
+
+.popularCardImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.popularCardContent {
+    padding: 18px 0 18px 0;
+}
+
+.popularCardTitle {
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.4;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    transition: color 0.3s ease;
+}
+
+.viewMoreSection {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.viewMoreBtn {
+    background: linear-gradient(to right, #BCFE08, #86F869);
+    color: black;
+    border: none;
+    padding: 12px 30px;
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-block;
+}
+.viewMoreBtn:hover {
+    color: #000;
+}
+.newsImageWrapper {
+    display: flex;
+    gap: 10px;
+}
+
+
+/* Sidebar */
+.sidebar {
+    height:584px;
+}
+
+.sidebarWidget {
+    background: #1e1f22;
+    padding: 15px 2px 15px 15px;
+    height: 100%;
+    overflow: hidden; 
+    display: flex;              /* QUAN TRỌNG */
+    flex-direction: column; 
+}
+
+.sidebarTitle {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.25px;
+    margin-top: 5px;
+    margin-bottom: 12px;
+}
+
+.newsList {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    flex: 1;                     /* chiếm phần còn lại */
+    min-height: 0; 
+}
+
+/* Áp dụng đúng vào vùng cuộn */
+.newsList{
+    overflow-y: auto;
+    scrollbar-color: #8ea0a6 #1e1f22;   
+    scrollbar-width: thin;              
+    scrollbar-gutter: stable;       
+}
+  
+
+.newsItem {
+    display: flex;
+    gap: 4px;
+    flex-direction: column;
+}
+
+.newsItem:hover .newsTitle {
+    color: #bcfe08;
+}
+
+.newsImage {
+    width: auto;
+    height: 60px;
+    aspect-ratio: 16/9;
+    flex-shrink: 0;
+}
+
+.newsImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.newsContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.newsDate {
+    font-size: 11px;
+    color: #777e90;
+}
+
+.newsTitle {
+    font-size: 14px;
+    font-weight: 400;
+    color: #ffffff;
+    line-height: 1.4;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    transition: color 0.3s ease;
+    padding-right: 4px;
+}
+
+/* Loading and Error States */
+.loadingContainer,
+.errorContainer {
+    background: #141414;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.loadingContainer p,
+.errorContainer p {
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.pageTitleKnowLedge, .mainSection, .breadcrumbSection {
+    padding-left: 7%;
+    padding-right: 7%;
+}
+
+/* Responsive Design */
+@media (min-width: 900px) and (max-width: 1439px) {
+    .pageTitleKnowLedge, .mainSection, .breadcrumbSection {
+        padding-left: 3.5%;
+        padding-right: 3.5%;
+    }
+}
+
+/* Responsive Design */
+@media (min-width: 768px) and (max-width: 900px) {
+    .pageTitleKnowLedge, .mainSection, .breadcrumbSection {
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .contentWrapper {
+        grid-template-columns: 1fr 300px;
+        gap: 30px;
+    }
+
+
+    .popularGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .pageTitleKnowLedge, .mainSection, .breadcrumbSection {
+        padding-left: 0%;
+        padding-right: 0%;
+    }
+    .displayFlexForHeader {
+        flex-direction: column;
+        gap:10px;
+    }
+    .col6mdCenter {
+        width: 100%;
+    }
+    .col6mdCenter .pageHeaderKnowledgeSubtitle {
+        text-align: left;
+    }
+    .knowledgeSection {
+     padding: 40px 0;
+    }
+    section.pageTitleKnowLedge{
+        padding-top: 40px;
+        padding-bottom: 40px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .breadcrumb a {
+        min-width: 138px;
+    }
+    .mainSection {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .contentWrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .articleTitle {
+        font-size: 24px;
+    }
+
+    .featuredImage, .articleHeader {
+        margin-bottom: 18px;
+    }
+
+    .popularGrid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .sidebar {
+        position: relative;
+        top: 0;
+    }
+
+    .sectionTitle {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .articleTitle {
+        font-size: 20px;
+    }
+
+    .sectionTitle {
+        font-size: 18px;
+    }
+
+    .popularCardTitle {
+        font-size: 16px;
+    }
+}
+
