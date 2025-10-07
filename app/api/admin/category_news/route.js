@@ -44,7 +44,6 @@ export async function GET(request) {
 }
 
 export async function POST(request) {
-
   try {
     const data = await request.json();
     console.log("POST /api/admin/category_news - data:", data);
