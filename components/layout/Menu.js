@@ -30,7 +30,7 @@ export default function MainMenu() {
                     "/xac-minh-danh-tinh-kyc",
                     "/ai-copy-trade",
                     "/gioi-thieu-ve-nivex",
-                    ""])}`}>
+                    "/huong-dan-rut-tien"])}`}>
                     <Link href="/gioi-thieu-ve-nivex" className='master-item'>Về Nivex</Link>
                     <ul className="sub-menu">
                         <li className={`menu-item ${checkCurrentMenuItem("/gioi-thieu-ve-nivex")}`}>
