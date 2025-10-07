@@ -8,8 +8,6 @@ export async function GET(request, { params }) {
         // In Next.js 13+ App Router, params is a Promise
         const { id } = await params
 
-        console.log('Fetching knowledge article with ID:', id)
-
         if (!id) {
             return NextResponse.json({
                 success: false,
@@ -38,10 +36,8 @@ export async function GET(request, { params }) {
         
         const result = await query(sqlQuery, [id])
 
-        console.log('Query result:', result)
 
         if (result.length === 0) {
-            console.log('No article found with ID:', id)
             return NextResponse.json({
                 success: false,
                 error: 'Article not found'
@@ -60,35 +56,21 @@ export async function GET(request, { params }) {
             status: article.status,
             topic: article.topic,
             topic_id: article.topic_id,
-            description: getTopicDisplayName(article.topic),
+            description: article.topic,
             created_at: article.created_at,
             updated_at: article.updated_at
         }
-
-        console.log('Successfully fetched and transformed article:', transformedArticle.id, transformedArticle.title)
 
         return NextResponse.json({
             success: true,
             data: transformedArticle
         })
     } catch (error) {
-        console.error('Error fetching knowledge article:', error)
         return NextResponse.json({
             success: false,
             error: 'Internal server error',
             details: error.message
         }, { status: 500 })
     }
-}
-
-// Helper function
-function getTopicDisplayName(topic) {
-    const topicMap = {
-        blockchain: 'Blockchain',
-        defi: 'DeFi', 
-        copy_trade: 'Copy Trade',
-        ai: 'AI'
-    }
-    return topicMap[topic] || topic
 }
 

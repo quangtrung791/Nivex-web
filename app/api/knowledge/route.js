@@ -79,7 +79,7 @@ export async function GET(request) {
       content: article.content,
       image: article.image_url || "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
       image_url: article.image_url,
-      description: getTopicDisplayName(article.topic),
+      description: article.topic,
       readTime: `${Math.max(3, Math.ceil(article.content?.length / 200) || 5)} phút đọc`,
       publishDate: formatDate(article.created_at),
       created_at: article.created_at,
@@ -108,17 +108,6 @@ export async function GET(request) {
       { status: 500 }
     )
   }
-}
-
-// Helper functions
-function getTopicDisplayName(topic) {
-  const topicMap = {
-    blockchain: 'Blockchain',
-    defi: 'DeFi', 
-    copy_trade: 'Copy Trade',
-    ai: 'AI'
-  }
-  return topicMap[topic] || topic
 }
 
 function formatDate(dateString) {

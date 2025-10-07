@@ -172,23 +172,6 @@ export default function Knowledge() {
             setLoadingMore(false)
         }
     }
-    // const [thumbsSwiper, setThumbsSwiper] = useState(null)
-
-    // // Swiper options for the main slider
-    // const mainSwiperOptions = {
-    //     spaceBetween: 10,
-    //     thumbs: { swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null },
-    //     modules: [FreeMode, Navigation, Thumbs],
-    // }
-
-    // // Swiper options for the thumbnail slider
-    // const thumbnailSwiperOptions = {
-    //     modules: [FreeMode, Navigation, Thumbs],
-    //     spaceBetween: 10,
-    //     slidesPerView: 3,
-    //     freeMode: true,
-    //     watchSlidesProgress: true,
-    // }
     return (
         <Layout headerStyle={1} footerStyle={2}>
             <section className={`page-title ${styles.pageTitleKnowLedge}`}>

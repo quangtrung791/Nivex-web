@@ -48,8 +48,6 @@ export async function GET(request) {
 }
 
 export async function POST(request) {
-  // Authentication already handled by middleware.js
-  
   try {
     const data = await request.json();
     
