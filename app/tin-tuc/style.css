@@ -519,9 +519,9 @@ footer.footer.style-2.footer-main {
     p.time-stamp-p {
         padding-bottom: 5px;
     }
-    section.blog-details.ttuc .tin-nong{
-        /* max-height: 650px;  */
-        max-height: 700px; 
+    section.blog-details.ttuc .tin-nong {
+        max-height: 660px; 
+        /* max-height: 700px;  */
         overflow-y: auto;
     }
     .blog-box .box-content .title {
@@ -711,7 +711,7 @@ footer.footer.style-2.footer-main {
     p.time-stamp-p {
         padding-bottom: 5px;
     }
-    section.blog-details.ttuc .tin-nong{
+    section.blog-details.ttuc .tin-nong {
         max-height: 700px; 
         overflow-y: auto;
     }
@@ -906,8 +906,9 @@ footer.footer.style-2.footer-main {
     p.time-stamp-p {
         padding-bottom: 5px;
     }
-    section.blog-details.ttuc .tin-nong{
-        max-height: 840px; 
+    section.blog-details.ttuc .tin-nong {
+        /* max-height: 840px;  */
+        max-height: 760px;
         overflow-y: auto;
     }
     .blog-box .box-content .title {
@@ -1299,7 +1300,12 @@ footer.footer.style-2.footer-main {
 
 /* iPad Air 1180 */
 @media (min-width: 1100px) and (max-width: 1180px) {
-     .section-news-header {
+    /* fixed */
+    section.ttuc .blog-main .content-tab {
+        margin-top: 15px;
+    }
+
+    .section-news-header {
         background: #1e1f22;
         padding: 32px 3.5%;
         border-bottom: 2px solid #232326;
@@ -1497,6 +1503,11 @@ footer.footer.style-2.footer-main {
 
 /* ipad Air 820 */
 @media (min-width: 768px) and (max-width: 860px) {
+    /* fixed */
+    section.ttuc .div-duoc-xem-nhieu .col-md-4:nth-child(4) {
+        display: none;
+    }
+
     .section-news-header {
         background: #1e1f22;
         padding: 32px 3.5%;
@@ -1717,7 +1728,13 @@ footer.footer.style-2.footer-main {
     }
 }
 @media (min-width: 390px) and (max-width: 500px) {
-     .section-news-header {
+    /* fixed */
+    section.ttuc .row.div-duoc-xem-nhieu {
+        position: relative;
+        top: -33px;
+    }
+    
+    .section-news-header {
         background: #1e1f22;
         padding: 32px 16px 56px 16px;
         border-bottom: 2px solid #232326;
@@ -1911,6 +1928,16 @@ footer.footer.style-2.footer-main {
 }
 /* small phones */ 
 @media (max-width: 389px) {
+    /* fixed */
+    section.ttuc .row.div-duoc-xem-nhieu {
+        position: relative;
+        top: -33px;
+    }
+    section.ttuc .div-duoc-xem-nhieu a.title-news.headline-news {
+        font-size: 12px;
+        margin-top: 7px;
+    }
+    
     .section-news-header {
         background: #1e1f22;
         padding: 32px 16px 56px 16px;
