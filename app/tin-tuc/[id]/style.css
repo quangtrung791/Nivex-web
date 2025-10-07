@@ -31,9 +31,25 @@ section.tin-tuc-id .content .ql-size-large {
 .blog-details.tin-tuc-id .blog-main .content h4,
 .blog-details.tin-tuc-id .blog-main .content h5 {
     margin-top: 20px !important;
-    font-size: 24px !important;
+    /* font-size: 24px !important; */
     font-weight: 700 !important;
 }
+.blog-details.tin-tuc-id .blog-main .content h1 {
+    font-size: 28px !important;
+}
+.blog-details.tin-tuc-id .blog-main .content h2 {
+    font-size: 24px !important;
+}
+.blog-details.tin-tuc-id .blog-main .content h3 {
+    font-size: 22px !important;
+}
+.blog-details.tin-tuc-id .blog-main .content h4 {
+    font-size: 21px !important;
+}
+.blog-details.tin-tuc-id .blog-main .content h5 {
+    font-size: 20px !important;
+}
+
 .blog-details.tin-tuc-id .blog-main .content {
     line-height: 1.6 !important;
 }
