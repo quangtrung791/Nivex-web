@@ -7,6 +7,15 @@ section.ttuc .widget.recent.mt-0 {
     padding-right: 15px; */
 }
 
+section.ttuc .title-news-duoc-xem-nhieu a.title-news.headline-news {
+    display: block;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .ttuc .trigger-full-w img {
     max-height: 443px;
 }
@@ -818,7 +827,8 @@ footer.footer.style-2.footer-main {
         justify-content: flex-end;
     }
     .blog-details.ttuc .content-inner.row.div-duoc-xem-nhieu {
-        margin-top: 5%;
+        /* margin-top: 5%; */
+        margin-top: 10%;
     }
     section.duoc-xem-nhieu .title-container {
         margin-bottom: 20px;
