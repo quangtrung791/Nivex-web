@@ -33,7 +33,7 @@ export async function GET(request) {
 
 
   // Order by start date and limit to 20 records
-  sqlQuery += ` ORDER BY created_at DESC LIMIT 20`
+  sqlQuery += ` ORDER BY created_at DESC`
 
     console.log("Executing query:", { sqlQuery, queryParams });
     const result = await query(sqlQuery, queryParams)
