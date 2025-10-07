@@ -8,7 +8,7 @@ export const runtime = 'nodejs';
 // Middleware kiểm tra API Key
 function checkApiKey(request) {
   const apiKey = request.headers.get('x-api-key');
-  if (!apiKey || apiKey !== process.env.ADMIN_API_KEY) {
+  if (!apiKey || apiKey !== process.env.N8N_API_KEY) {
     return NextResponse.json({ error: 'Unauthorized - Invalid API Key' }, { status: 401 });
   }
   return null;
