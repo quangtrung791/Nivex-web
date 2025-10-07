@@ -31,7 +31,7 @@ export default function SuKien() {
     const [news, setNews] = useState([]);
     const [hotNews, setHotNews] = useState([]);
     const { id } = useParams();
-
+    const [ searchQuery, setSearchQuery ] = useState("");
 
     // useEffect(() => {
     //     // Lấy danh mục từ API
@@ -48,6 +48,20 @@ export default function SuKien() {
     //             ])
     //         })
     // }, [])
+
+    // Hàm xử lý sau khi submit form search
+    const handleSearch = (e) => {
+        e.preventDefault();
+    };
+
+    // Helper: chuẩn hóa chuỗi để so sánh (lowercase + bỏ dấu)
+    const normalizeString = (str = "") => {
+        return String(str)
+            .toLowerCase()
+            .normalize('NFD')                // tách ký tự và dấu
+            .replace(/[\u0300-\u036f]/g, '') // bỏ dấu
+            .trim();
+    };
 
     useEffect(() => {
         // Lấy danh sách event từ API
@@ -84,24 +98,36 @@ export default function SuKien() {
 
         const today = new Date();
         const todayDay = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+        let tabMatch = true; // biến flag
 
         const filteredNews = news.filter(item => {
             const eventDate = new Date(item.time_event);
             const eventDay = new Date(eventDate.getFullYear(), eventDate.getMonth(), eventDate.getDate());
 
-            if (activeTab === "all") {
-                return true; // tất cả
-            }
+            // if (activeTab === "all") {
+            //     return true; // tất cả
+            // }
             if (activeTab === "happening") {
-                return eventDay.getTime() === todayDay.getTime();
+                tabMatch = eventDay.getTime() === todayDay.getTime();
             }
             if (activeTab === "will") {
-                return eventDay.getTime() > todayDay.getTime();
+                tabMatch = eventDay.getTime() > todayDay.getTime();
             }
             if (activeTab === "ended") {
-                return eventDay.getTime() < todayDay.getTime();
+                tabMatch = eventDay.getTime() < todayDay.getTime();
             }
-            return true;
+            if (!tabMatch) return false;
+
+            // nếu không có từ khóa thì giữ lại
+            const q = normalizeString(searchQuery);
+            if (!q) return true;
+
+            // kiểm tra title / short_desc (bỏ dấu)
+            const title = normalizeString(item.title || "");
+            const desc = normalizeString(item.short_desc || "");
+
+            return title.includes(q) || desc.includes(q);
+            // return true;
         });
 
     return (
@@ -112,11 +138,13 @@ export default function SuKien() {
                     <section className="section-news-header">
                         <div className="news-header-container">
                             <h1 className="news-title">Trung tâm <span className="gradient-text">sự kiện Nivex</span></h1>
-                            <form className="news-search-form">
+                            <form className="news-search-form" onSubmit={handleSearch}>
                                 <input
                                     type="text"
                                     placeholder="Tìm kiếm"
                                     className="news-search-input"
+                                    value={searchQuery}
+                                    onChange={(e) => setSearchQuery(e.target.value)}
                                 />
                                 <button type="submit" className="news-search-btn">
                                     <svg width="20" height="20" viewBox="0 0 24 24">
