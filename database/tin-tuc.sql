@@ -29,3 +29,6 @@ CREATE TABLE IF NOT EXISTS cate_news (
 
 -- Index cho tìm kiếm (cập nhật)
 CREATE INDEX IF NOT EXISTS idx_catenews_name ON cate_news(name);
+
+
+DROP INDEX public.idx_news_content;
