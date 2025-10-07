@@ -4,6 +4,32 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
+        position: relative;
+    }
+    
+    /* Gradient overlay for smooth transition at top and bottom */
+    section.hanh-trinh-cua-ban-tri-truc::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+            to bottom,
+            #141414 0%,
+            transparent 15%,
+            transparent 85%,
+            #141414 100%
+        );
+        pointer-events: none;
+        z-index: 1;
+    }
+    
+    /* Ensure content is above the overlay */
+    section.hanh-trinh-cua-ban-tri-truc .container {
+        position: relative;
+        z-index: 2;
     }
 }
 
@@ -40,7 +66,24 @@ p.text.fs-14 {
     background: #18191d17 !important;
 }
 
+.container.ai-copy-trade .row:nth-child(2) {
+    padding-top: 5%;
+}
+
+.img-san-sang-giao-dich {
+    width: 710px;
+    height: auto;
+    aspect-ratio: 835/666;
+    object-fit: contain;
+    object-position: center;
+    margin: 0 auto 25px;
+}
+
 @media (min-width: 1440px) {
+    .img-san-sang-giao-dich {
+        width: 620px;
+    }
+
     .main-description {
         margin-bottom: 24px;
     }
@@ -66,6 +109,9 @@ p.text.fs-14 {
 }
 /* Responsive */
 @media (min-width: 1440px) and (max-width: 1599px) {
+    .img-san-sang-giao-dich {
+        width: 650px;
+    }
     .ai-copy-trade h3.heading {
         font-size: 28px  !important;
     }
@@ -73,7 +119,7 @@ p.text.fs-14 {
         /* width: 75% !important; */
     }
     .about__content.aos-init.aos-animate {
-        padding-top: 75px;
+        padding-top: 100px;
     }
     .element-1-e-l {
         padding-top: 165px !important;
@@ -102,9 +148,6 @@ p.text.fs-14 {
     .about-first-title-container .about-first-title {
         font-size: 56px; /* để cho nó chung padding với section ở trên */
     }
-    section.about {
-        padding-top: 0 !important;
-    }
     section.work .col-md-12 {
         padding-left: 0 !important;
     }
@@ -118,7 +161,7 @@ p.text.fs-14 {
         /* width: 75% !important; */
     }
     .about__content.aos-init.aos-animate {
-        padding-top: 75px;
+        padding-top: 110px;
     }
     .element-1-e-l {
         padding-top: 165px !important;
@@ -149,8 +192,7 @@ p.text.fs-14 {
         font-size: 48px;
     }
     section.about {
-        padding-top: 0 !important;
-        padding: 0% 6% 5% 6% !important;
+        padding: 1% 6% 3% 6% !important;
     }
     section.work .col-md-12 {
         padding-left: 0 !important;
@@ -177,7 +219,7 @@ p.text.fs-14 {
         /* width: 75% !important; */
     }
     .about__content.aos-init.aos-animate {
-        padding-top: 75px;
+        padding-top: 120px;
     }
     .element-1-e-l {
         padding-top: 165px !important;
@@ -208,8 +250,7 @@ p.text.fs-14 {
         font-size: 48px;
     }
     section.about {
-        padding-top: 0 !important;
-        padding: 0% 6% 5% 6% !important;
+        padding: 1% 6% 3% 6% !important;
     }
     section.work .col-md-12 {
         padding-left: 0 !important;
@@ -266,9 +307,6 @@ p.text.fs-14 {
     .about-first-title-container .about-first-title {
         font-size: 56px; /* để cho nó chung padding với section ở trên */
     }
-    section.about {
-        padding-top: 0 !important;
-    }
     section.work .col-md-12 {
         padding-left: 0 !important;
     }
@@ -312,9 +350,6 @@ p.text.fs-14 {
     }
     .about-first-title-container .about-first-title {
         font-size: 56px;
-    }
-    section.about {
-        padding-top: 0 !important;
     }
     section.work .col-md-12 {
         padding-left: 0 !important;
@@ -366,9 +401,6 @@ p.text.fs-14 {
     .about-first-title-container .about-first-title {
         font-size: 50.5px;
     }
-    section.about {
-        padding-top: 0 !important;
-    }
     section.work .col-md-12 {
         padding-left: 0 !important;
     }
@@ -383,6 +415,9 @@ p.text.fs-14 {
 }
 /* iPad Air 820 */
 @media (min-width: 800px) and (max-width: 1019px) {
+    .img-san-sang-giao-dich {
+        width: 500px;
+    }
     .ai-copy-trade h3.heading {
         font-size: 28px  !important;
     }
@@ -412,9 +447,6 @@ p.text.fs-14 {
     }
     .about-first-title-container .about-first-title {
         font-size: 50.5px;
-    }
-    section.about {
-        padding-top: 0 !important;
     }
     section.work .col-md-12 {
         padding-left: 0 !important;
@@ -443,6 +475,9 @@ p.text.fs-14 {
 }
 /* iPad Mini 768 */
 @media (min-width: 600px) and (max-width: 799px) {
+    .img-san-sang-giao-dich {
+        width: 400px;
+    }
     .ai-copy-trade h3.heading {
         font-size: 28px  !important;
     }
@@ -473,9 +508,6 @@ p.text.fs-14 {
     .about-first-title-container .about-first-title {
         font-size: 50.5px;
     }
-    section.about {
-        padding-top: 0 !important;
-    }
     section.work .col-md-12 {
         padding-left: 0 !important;
     }
@@ -503,6 +535,9 @@ p.text.fs-14 {
 }
 /* Mobile */
 @media (min-width: 400px) and (max-width: 550px) {
+    .img-san-sang-giao-dich {
+        width: 360px;
+    }
     .ai-copy-trade h3.heading {
         font-size: 28px  !important;
     }
@@ -533,9 +568,6 @@ p.text.fs-14 {
     .about-first-title-container .about-first-title {
         font-size: 28px;
         text-align: left;
-    }
-    section.about {
-        padding-top: 0 !important;
     }
     section.work .col-md-12 {
         /* padding-left: 0 !important; */
@@ -584,6 +616,9 @@ p.text.fs-14 {
 }
 
 @media (max-width: 399px) {
+    .img-san-sang-giao-dich {
+        width: 320px;
+    }
     .ai-copy-trade h3.heading {
         font-size: 28px  !important;
     }
@@ -614,9 +649,6 @@ p.text.fs-14 {
     .about-first-title-container .about-first-title {
         font-size: 28px;
         text-align: left;
-    }
-    section.about {
-        padding-top: 0 !important;
     }
     section.work .col-md-12 {
         /* padding-left: 0 !important; */
