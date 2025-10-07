@@ -1,4 +1,14 @@
 /* Fixed */
+/* .su-kien-tg-id .col-xl-4.col-md-12 {
+    padding-left: 0 !important;
+} */
+.su-kien-tg-id .col-xl-8 .blog-main .content p {
+    font-size: 15px !important;
+}
+.su-kien-tg-id a.title.navigate-child-news {
+    text-align: left !important;
+}
+
 .blog-details .content img {
     max-width: 100%;
     width: 100%;

@@ -2,7 +2,12 @@
 /* .widget {
     flex-direction: column !important;
 } */
- /* Fix */
+
+/* Fix */
+.tin-tuc-id .col-xl-8 .content img {
+    width: 100%;
+}
+
 .title-link-right-panel a.navigate-child-news {
    text-align: left !important;
 }
@@ -22,7 +27,7 @@
     }
 }
 
- .blog-details.tin-tuc-id .content img {
+.blog-details.tin-tuc-id .content img {
     max-width: 100%;
 }
 section.blog-details.tin-tuc-id .col-xl-4.col-md-12 {

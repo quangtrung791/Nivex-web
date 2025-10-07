@@ -1,4 +1,8 @@
 /* Fixed */
+section.su-kien-id a.title.navigate-child-news {
+    text-align: left !important;
+}
+
 .blog-details.su-kien-id .content img {
     max-width: 100%;
     width: 100%;
