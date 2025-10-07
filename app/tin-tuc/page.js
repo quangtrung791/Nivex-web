@@ -42,6 +42,7 @@ export default function BlogDetails() {
     const [hotNews, setHotNews] = useState([]);
     const { id } = useParams()
     const pathname = usePathname();
+    const [ searchQuery, setSearchQuery ] = useState("");
 
     const [visibleCount, setVisibleCount] = useState(3);
 
@@ -69,6 +70,20 @@ export default function BlogDetails() {
             .then(res => res.json())
             .then(data => setCoinData(data));
     }, []);
+
+     // Hàm xử lý sau khi submit form search
+    const handleSearch = (e) => {
+        e.preventDefault();
+    };
+
+    // Helper: chuẩn hóa chuỗi để so sánh (lowercase + bỏ dấu)
+    const normalizeString = (str = "") => {
+        return String(str)
+            .toLowerCase()
+            .normalize('NFD')                // tách ký tự và dấu
+            .replace(/[\u0300-\u036f]/g, '') // bỏ dấu
+            .trim();
+    };
 
 
     // useEffect(() => {
@@ -132,21 +147,43 @@ export default function BlogDetails() {
             .then(data => setHotNews(data));
     }, []);
 
-    const filteredNews = activeTab === "all"
-    ? news
-    : news.filter(item => String(item.category_id) === String(activeTab));
+    // let tabMatch = true; // biến flag
+    // const filteredNews = activeTab === "all"
+    // ? news
+    // : news.filter(item => String(item.category_id) === String(activeTab));
+    
+    // chuẩn hóa query 1 lần để tiết kiệm hiệu năng
+    const q = normalizeString(searchQuery);
+
+    const filteredNews = news.filter(item => {
+        // --- Lọc theo danh mục ---
+        let tabMatch = true;
+        if (activeTab !== "all") {
+            tabMatch = String(item.category_id) === String(activeTab);
+        }
+        if (!tabMatch) return false;
+
+        // --- Lọc theo từ khóa (nếu có) ---
+        if (!q) return true;
+
+        const title = normalizeString(item.title || "");
+        const desc = normalizeString(item.short_desc || "");
+        return title.includes(q) || desc.includes(q);
+    });
+
     return (
         <>
-
             <Layout headerStyle={1} footerStyle={2} >
                 <section className="section-news-header">
                     <div className="news-header-container">
                         <h1 className="news-title">Tin tức</h1>
-                        <form className="news-search-form">
+                        <form className="news-search-form" onSubmit={handleSearch}>
                             <input
                                 type="text"
                                 placeholder="Tìm kiếm"
                                 className="news-search-input"
+                                value={searchQuery}
+                                onChange={(e) => setSearchQuery(e.target.value)}
                             />
                             <button type="submit" className="news-search-btn">
                                 <svg width="20" height="20" viewBox="0 0 24 24">
