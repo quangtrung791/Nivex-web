@@ -213,7 +213,8 @@
 
 /* Sidebar */
 .sidebar {
-    height:584px;
+    height: fit-content;
+    max-height:584px;
 }
 
 .sidebarWidget {
