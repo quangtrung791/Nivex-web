@@ -100,6 +100,7 @@ export default function CoursesPage() {
                             </h1>
                         </div>
                         <div className={`col-md-6 ${styles.col6mdCenter}`}>
+                            {/* Search box khoa hoc */}
                             <div className={styles.searchBox}>
                                 <input 
                                     className={styles.searchInput} 
@@ -110,7 +111,7 @@ export default function CoursesPage() {
                                     aria-label='Tìm kiếm khóa học' 
                                 />
                                 <button className={styles.searchBtn} aria-label='Tìm kiếm'>
-                                    <img src="/assets/images/icon/icon_search_user_guide_app.png"/>
+                                    <img src="https://learningchain.vn/wp-content/uploads/2025/10/icon_search_nivex.svg"/>
                                 </button>
                                 
                                 {/* Search Results Dropdown */}
@@ -132,9 +133,9 @@ export default function CoursesPage() {
                                             }}
                                             >
                                             <div className={styles.searchResultTitle}>{result.title}</div>
-                      <div className={styles.searchResultMeta}>
-                        {(Array.isArray(result.category) ? result.category.join(', ') : result.category)}
-                      </div>
+                                                <div className={styles.searchResultMeta}>
+                                                  {(Array.isArray(result.category) ? result.category.join(', ') : result.category)}
+                                                </div>
                                             </div>
                                         ))}
                                         </>
