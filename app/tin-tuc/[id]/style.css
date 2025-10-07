@@ -4,6 +4,9 @@
 } */
 
 /* Fix */
+.blog-details.tin-tuc-id .blog-main .content img {
+    width: 100%;
+}
 .blog-details.tin-tuc-id .blog-main .content p {
     font-size: 15px !important;
 }
