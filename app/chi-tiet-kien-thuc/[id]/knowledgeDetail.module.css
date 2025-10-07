@@ -21,6 +21,143 @@
     width: 31%;
 }
 
+/* Search Box */
+.searchBox {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.searchInput {
+    background: #1a1d29;
+    border: 1px solid #353945;
+    color: #fff;
+    padding: 6px 16px;
+    min-width: 250px;
+    font-size: 14px;
+}
+
+.searchInput:focus {
+    outline: none;
+    border: 1px solid #9ea3b1;
+    border-right: none;
+}
+
+.searchInput::placeholder {
+    color: #777e90;
+}
+
+.searchBtn {
+    width: 34px;
+    height: 34px;
+    border: none;
+    margin-bottom: 1px;
+    background: linear-gradient(90deg, #bcfe08, #86f969 50%, #86f969);
+    cursor: pointer;
+}
+
+.searchBtn img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+    object-position: center;
+    margin-left: 1.5px;
+}
+
+/* Search Results Dropdown */
+.searchResults {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #1a1d29;
+    border: 1px solid #353945;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.searchResultsHeader {
+    padding: 12px 16px;
+    background: #242731;
+    color: #BCFE08;
+    font-weight: 600;
+    font-size: 14px;
+    border-bottom: 1px solid #353945;
+}
+
+.searchResultItem {
+    padding: 12px 16px;
+    border-bottom: 1px solid #2a2d3a;
+    transition: all 0.2s ease;
+    display: block;
+    text-decoration: none;
+}
+
+.searchResultItem:hover {
+    background: #BCFE08;
+    color: #000;
+}
+
+.searchResultItem:last-child {
+    border-bottom: none;
+}
+
+.searchResultTitle {
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 4px;
+    font-size: 14px;
+}
+
+.searchResultItem:hover .searchResultTitle {
+    color: #000;
+}
+
+.searchResultMeta {
+    color: #A6AAB7;
+    font-size: 12px;
+}
+
+.searchResultItem:hover .searchResultMeta {
+    color: #333;
+}
+
+.noResults {
+    padding: 16px;
+    text-align: center;
+    color: #A6AAB7;
+    font-style: italic;
+}
+
+/* Custom Scrollbar for Search Results */
+.searchResults::-webkit-scrollbar {
+    width: 8px;
+}
+
+.searchResults::-webkit-scrollbar-track {
+    background: #1a1d29;
+    border-radius: 4px;
+}
+
+.searchResults::-webkit-scrollbar-thumb {
+    background: #BCFE08;
+    border-radius: 4px;
+}
+
+.searchResults::-webkit-scrollbar-thumb:hover {
+    background: #a8e607;
+}
+
+.searchResults {
+    scrollbar-width: thin;
+    scrollbar-color: #BCFE08 #1a1d29;
+}
+
 /* Breadcrumb Section */
 .breadcrumbSection {
     background: #141414;
@@ -364,9 +501,17 @@
     }
     .col6mdCenter {
         width: 100%;
+        align-self: start;
     }
     .col6mdCenter .pageHeaderKnowledgeSubtitle {
         text-align: left;
+    }
+    .searchInput {
+        min-width: unset;
+    }
+    .searchBox {
+        width: 100%;
+        justify-content: flex-start;
     }
     .knowledgeSection {
      padding: 40px 0;

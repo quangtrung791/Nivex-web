@@ -182,7 +182,7 @@ export default function UserGuideForNivexApp() {
                 aria-label='Tìm kiếm hướng dẫn' 
               />
               <button className={styles.searchBtn} aria-label='Tìm kiếm'>
-                <img src="/assets/images/icon/icon_search_user_guide_app.png"/>
+                <img src="https://learningchain.vn/wp-content/uploads/2025/10/icon_search_nivex.svg"/>
               </button>
               
               {/* Search Results Dropdown */}

@@ -56,8 +56,11 @@ h1.pageTitleHeading span {
 }
 
 .searchBtn img {
-  width: 65%;
-  height: 65%;
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+  object-position: center;
+  margin-left: 1.5px;
 }
 
 .filterTabs {
