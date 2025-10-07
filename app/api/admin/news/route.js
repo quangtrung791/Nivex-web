@@ -1,18 +1,8 @@
 import { query } from "@/app/lib/neon";
 import { NextResponse } from "next/server";
 import { sendEmail } from '@/lib/emailService';
-import { isAuthorized } from '@/lib/adminAuth';
 
 export const runtime = 'nodejs';
-
-// Middleware kiểm tra API Key
-function checkApiKey(request) {
-  const apiKey = request.headers.get('x-api-key');
-  if (!apiKey || apiKey !== process.env.ADMIN_API_KEY) {
-    return NextResponse.json({ error: 'Unauthorized - Invalid API Key' }, { status: 401 });
-  }
-  return null;
-}
 
 export async function GET(request) {
   try {
@@ -140,11 +130,9 @@ export async function GET(request) {
 // }
 
 export async function POST(request) {
-  // unified authorization: accepts N8N_API_KEY / ADMIN_API_KEY (header) OR browser cookies
-  if (!isAuthorized(request)) {
-    return NextResponse.json({ success: false, error: 'Unauthorized - Invalid API Key or not authenticated' }, { status: 401 })
-  }
-
+  // Authentication already handled by middleware.js
+  // No need to check again here
+  
   try {
     const data = await request.json();
     console.log("POST /api/admin/news - data:", data);

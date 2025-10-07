@@ -264,10 +264,10 @@ Facilisis ac morbi in sem rhoncus sit magna odio. Urna non euismod tortor sed. S
                         {/* Sidebar */}
                         <aside className={styles.sidebar}>
                             <div className={styles.sidebarWidget}>
-                                <h3 className={styles.sidebarTitle}>Bài viết mới nhất</h3>
+                                <h3 className={styles.sidebarTitle}>Thông tin mới nhất</h3>
                                 <div className={styles.newsList}>
                                     {latestNews.map((news) => (
-                                        <Link href={`/chi-tiet-kien-thuc/${news.id}`} key={news.id} className={styles.newsItem}>
+                                        <Link href={`/chi-tiet-tin-tuc?id=${news.id}`} key={news.id} className={styles.newsItem}>
                                             <span className={styles.newsDate}>{news.date}</span>
                                             <div className={styles.newsImageWrapper}>
                                                 <div className={styles.newsImage}>

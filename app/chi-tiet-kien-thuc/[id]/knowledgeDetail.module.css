@@ -1,4 +1,3 @@
-
 .displayFlexForHeader {
     display: flex;
     justify-content: space-between;
@@ -96,8 +95,33 @@
 .articleBody {
     color: #ffffff;
     font-size: 16px;
-    line-height: 1.8;
+    line-height: 1.4;
     margin-bottom: 30px;
+}
+
+.articleBody h1, .articleBody h2, .articleBody h3, .articleBody h4, .articleBody h5, .articleBody h6, 
+.articleBody p, .articleBody ul, .articleBody ol, .articleBody li, .articleBody blockquote, .articleBody span  {
+    color: #ffffff;
+}
+
+.articleBody h1 {
+    font-size: 28px;
+}
+
+.articleBody h2 {
+    font-size: 23.5px;
+}
+
+.articleBody h3 {
+    font-size: 18px;
+}
+
+.articleBody h4 {
+    font-size: 16px;
+}
+
+.articleBody p {
+    margin-bottom: 20px;
 }
 
 .articleBody p {
