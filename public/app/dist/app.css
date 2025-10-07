@@ -8191,14 +8191,13 @@ img.ai-icon-small {
     text-align: right;
 }
 
-/* .crypto-box .add-position-right { */
-    /* right: -40% !important; */
-/* } */
+
 
 .content-tab .crypto-box.active {
     /* height: 200px; */
     min-width: unset !important;
 }
+
 /* ipad pro 1366px - horizontal */
 @media (min-width: 1360px) and (max-width: 1380px) {
     .header .header__body {
@@ -8245,7 +8244,6 @@ img.ai-icon-small {
     }
     section.work.background-container-custom,
     section.crypto-learning-section,
-    section.about,
     section.coin-list
     {
         padding: 5% 5%;
@@ -8264,84 +8262,15 @@ img.ai-icon-small {
 }
 /* ipad pro 1024px - vertical */
 @media (min-width: 1010px) and (max-width: 1050px) {
-    /* section.banner .banner__content,
-    .coin-list,
-    .header .header__body
-    {
-        padding: 0 5%;
-    } 
 
-    section.work.background-container-custom,
-    section.crypto-learning-section
-    {
-        padding: 5% 5%;
-    }
-    .work.background-container-custom .col-md-12,
-    section.coin-list .col-md-12,
-    .banner .col-xl-6.col-md-12
-    {
-        padding-left: unset !important;
-        padding-right: unset !important;
-    }
-    .work .work__main .work-box:last-child {
-        width: 31vw !important;
-        margin-right: 0 !important;
-    }
-    section.about {
-        display: flex;
-    }
-    .about .ai-copy-trade {
-        max-width: 1050px !important;
-        width: 100%;
-    }
-    .about .row {
-        width: 100%;
-    }
-    section.about .col-xl-6.col-md-12 {
-        width: 25% !important;
-        flex: auto !important;
-    }
-    .about .about_image {
-        margin-left: -16px;
-        margin-top: 30%;
-        position: relative;
-    }
-    img.img0-ai {
-        width: 460px !important;
-        height: auto !important;
-    }
-    section.crypto-learning-section .crypto-content,
-    .container-fluid .col-12
-    {
-        padding-left: unset !important;
-        padding-right: unset !important;
-    }
-    .footer.style-2 .footer__main {
-        padding: 0;
-    }
-    footer.footer .row {
-        margin: 0 auto;
-        width: 100% !important;
-    }
-    /* footer.footer .col-xl-4.col-md-6:nth-child(1) {
-        margin-left: 3% !important;
-    } */
     footer.footer .col-md-6 {
         flex: 0 0 auto;
         width: 40% !important;
     }
-    /* footer.footer .footer-contact {
-        padding: 2.5% !important;
-    } */
     .footer.style-2 .footer__main .footer-contact form input {
         width: 95% !important;
     }
-    /* footer.footer button.btn-action {
-        margin-right: 2% !important;
-    } */
-     /* .footer.style-2 .footer__main .widget .widget-link.s2 {
-        padding-left: 130px !important;
-     } */
+
 }
 
 @media (max-width: 1200px) {
@@ -8365,7 +8294,6 @@ img.ai-icon-small {
     section.banner,
     section.work.background-container-custom,
     section.coin-list,
-    section.about,
     section.crypto-learning-section
     {
         padding: 5% 3%;
