@@ -3,6 +3,10 @@
     flex-direction: column !important;
 } */
  /* Fix */
+.tin-tuc-id .col-xl-8 .content img {
+    width: 100%;
+}
+
 .title-link-right-panel a.navigate-child-news {
    text-align: left !important;
 }
