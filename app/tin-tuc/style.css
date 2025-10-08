@@ -2079,7 +2079,8 @@ footer.footer.style-2.footer-main {
         padding: 0 15px;
     }
     a.title.navigate-child-news {
-        font-size: 14px;
+        /* font-size: 14px; */
+        font-size: 12px;
         font-weight: 400;
         letter-spacing: 0;
         line-height: 1.4;
