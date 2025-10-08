@@ -163,18 +163,46 @@ export const DictionaryList = () => (
 )
 // const { setValue } = useFormContext?.() || {};
 // Hook tùy chỉnh để cập nhật slug khi keyword thay đổi
-  const AutoSlug = () => {
-      const { control, setValue } = useFormContext();
-      const keyword = useWatch({ control, name: "keyword" });
+  // const AutoSlug = () => {
+  //     const { control, setValue } = useFormContext();
+  //     const keyword = useWatch({ control, name: "keyword" });
 
-      useEffect(() => {
-        if (keyword) {
-          const newSlug = generateSlug(keyword);
-          setValue("slug", newSlug, { shouldValidate: true });
+  //     useEffect(() => {
+  //       if (keyword) {
+  //         const newSlug = generateSlug(keyword);
+  //         setValue("slug", newSlug, { shouldValidate: true });
+  //       }
+  //     }, [keyword, setValue]);
+
+  //     return null;
+  // };
+  export const AutoSlug = () => {
+    const { control, setValue } = useFormContext();
+    const keyword = useWatch({ control, name: "keyword" });
+
+    useEffect(() => {
+      if (!keyword) return;
+
+      const generateUniqueSlug = async () => {
+        let baseSlug = generateSlug(keyword);
+        let slug = baseSlug;
+        let counter = 1;
+
+        // Kiểm tra tồn tại slug trên server
+        while (true) {
+          const res = await fetch(`/api/admin/dictionary?slug=${slug}`);
+          if (res.status === 404) break; // chưa tồn tại => dùng được
+          if (!res.ok) break; // lỗi khác => thoát
+          slug = `${baseSlug}-${counter++}`;
         }
-      }, [keyword, setValue]);
 
-      return null;
+        setValue("slug", slug, { shouldValidate: true });
+      };
+
+      generateUniqueSlug();
+    }, [keyword, setValue]);
+
+    return null;
   };
 // Create component (loại bỏ level, thêm DateTimeInput)
 export const DictionaryCreate = () => {
