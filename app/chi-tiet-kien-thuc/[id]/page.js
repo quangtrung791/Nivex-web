@@ -114,53 +114,53 @@ Facilisis ac morbi in sem rhoncus sit magna odio. Urna non euismod tortor sed. S
                     }))
                     setLatestNews(transformedNews)
                 } else {
-                    setFallbackNews()
+                    // setFallbackNews()
                 }
             } else {
                 // No data from API, use fallback
-                setFallbackNews()
+                // setFallbackNews()
             }
         } catch (error) {
-            console.error('Error fetching latest knowledge articles:', error)
+            // console.error('Error fetching latest knowledge articles:', error)
             // API error, use fallback
-            setFallbackNews()
+            // setFallbackNews()
         }
     }
 
-    const setFallbackNews = () => {
-        setLatestNews([
-            {
-                id: 2,
-                title: "Blockchain là gì? Tìm hiểu công nghệ chuỗi khối từ cơ bản đến nâng cao",
-                image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
-                date: "1 ngày trước"
-            },
-            {
-                id: 3,
-                title: "Hướng dẫn sử dụng MetaMask: Ví crypto an toàn cho người mới",
-                image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
-                date: "2 ngày trước"
-            },
-            {
-                id: 4,
-                title: "DeFi là gì? Tài chính phi tập trung và cơ hội đầu tư",
-                image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
-                date: "3 ngày trước"
-            },
-            {
-                id: 5,
-                title: "Copy Trade: Chiến lược đầu tư thông minh cho người mới",
-                image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
-                date: "4 ngày trước"
-            },
-            {
-                id: 6,
-                title: "AI trong Crypto: Ứng dụng trí tuệ nhân tạo trong giao dịch",
-                image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
-                date: "5 ngày trước"
-            }
-        ])
-    }
+    // const setFallbackNews = () => {
+    //     setLatestNews([
+    //         {
+    //             id: 2,
+    //             title: "Blockchain là gì? Tìm hiểu công nghệ chuỗi khối từ cơ bản đến nâng cao",
+    //             image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
+    //             date: "1 ngày trước"
+    //         },
+    //         {
+    //             id: 3,
+    //             title: "Hướng dẫn sử dụng MetaMask: Ví crypto an toàn cho người mới",
+    //             image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
+    //             date: "2 ngày trước"
+    //         },
+    //         {
+    //             id: 4,
+    //             title: "DeFi là gì? Tài chính phi tập trung và cơ hội đầu tư",
+    //             image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
+    //             date: "3 ngày trước"
+    //         },
+    //         {
+    //             id: 5,
+    //             title: "Copy Trade: Chiến lược đầu tư thông minh cho người mới",
+    //             image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
+    //             date: "4 ngày trước"
+    //         },
+    //         {
+    //             id: 6,
+    //             title: "AI trong Crypto: Ứng dụng trí tuệ nhân tạo trong giao dịch",
+    //             image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
+    //             date: "5 ngày trước"
+    //         }
+    //     ])
+    // }
 
     const formatNewsDate = (dateString) => {
         if (!dateString) return 'Vừa xong'
