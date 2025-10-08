@@ -1,10 +1,10 @@
 'use client'
 import { useState } from 'react'
-import styles from './WithdrawGuide.module.css'
+import styles from './P2PTrading.module.css'
 
 
 
-export default function WithdrawGuide() {
+export default function P2PTrading() {
     const [openFaq, setOpenFaq] = useState({})
 
     const toggleFaq = (index) => {
@@ -21,22 +21,22 @@ export default function WithdrawGuide() {
                     <div className={styles.displayFlexForHeader}>
                         <div className="col-md-8">
                             <h1 className={`heading ${styles.pageTitleHeading}`}>
-                                <span>Rút tiền</span> từ Nivex
+                                 Giao dịch <span>P2P</span>
                             </h1>
                         </div>
                         <div className={`col-md-4 ${styles.col4mdCenter}`}>
                              <p className={`${styles.pageHeaderKnowledgeSubtitle}`}>Hướng dẫn chi tiết giúp bạn rút tiền từ Nivex nhanh chóng,
-an toàn và thuận tiện.</p>
+                             an toàn và thuận tiện.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
             {/* Deposit Steps Section */}
-            <section className={styles.depositSection + ' ' + styles.withdrawSectionImageAfter}>
+            <section className={styles.depositSection}>
                 <div className="container">
                     <h2 className={`${styles.depositSectionTitle}`}>
-                                Làm thế nào để <span>rút tiền mã hóa?</span>
+                            Giao dịch P2P là gì?
                     </h2>
                     {/* Step 1 */}
                     <div className={`${styles.displayFlexContainer}`}>

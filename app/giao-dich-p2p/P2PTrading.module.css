@@ -41,20 +41,7 @@
     background: #141416;
     padding: 60px 0 50px;
     color: white;
-    position: relative;
 }
-.withdrawSectionImageAfter::after {
-    content: "";
-    position: absolute;
-    top: 6.5%;
-    right: 3.5%;
-    width: 30vw;
-    height:auto;
-    aspect-ratio: 770/620;
-    background: url('https://learningchain.vn/wp-content/uploads/2025/10/imageWithDraw4_Nivex.webp') no-repeat center; 
-    background-size: contain;
-}
-
 h2.depositSectionTitle {
     font-size: 48px;
     margin-bottom: 50px;
@@ -96,7 +83,7 @@ h2.depositSectionTitle span {
 }
 
 .imagePlaceholder1, .imagePlaceholder2, .imagePlaceholder3 {
-    width: 300px;
+    width: 323px;
     height: auto;
     aspect-ratio: 323/ 335;
     background-position: center;
@@ -210,17 +197,6 @@ h2.depositSectionTitle span {
     padding-right: 7%;
 }
 
-@media screen and (min-width: 1440px) and (max-width: 1750px) {
-    .withdrawSectionImageAfter::after {
-        right: 2%;
-    }
-}
-
-@media screen and (min-width: 1200px) and (max-width: 1440px) {
-    .withdrawSectionImageAfter::after {
-        right: 0.5%;
-    }
-}
 @media (min-width: 650px) and (max-width: 1439px) {
     section.pageTitleDeposit, section.faqSection, section.depositSection {
         padding-left: 3.5%;
@@ -231,13 +207,7 @@ h2.depositSectionTitle span {
 
 /* Responsive Design */
 @media (max-width: 1200px) {
-    .withdrawSectionImageAfter::after {
-        display: none;
-    }
-    .imagePlaceholder1, .imagePlaceholder2, .imagePlaceholder3 {
-        width: 280px;
-    }
-
+    
     .displayFlexForHeader h1.pageTitleHeading {
         font-size: 30px;
     }
@@ -245,36 +215,10 @@ h2.depositSectionTitle span {
     h2.depositSectionTitle {
         font-size: 34px;
     }
-    .displayFlexForStepDescription {
-        gap: 10px;
-    }
-}
 
-@media (max-width: 1024px) {
-    .imagePlaceholder1, .imagePlaceholder2, .imagePlaceholder3 {
-        width: 240px;
-    }
-    .displayFlexForStepDescription {
-        gap: 6px;
-    }
 }
 
 @media (max-width: 768px) {
-    .withdrawSectionImageAfter::after {
-        top: 1%;
-        right: 50%;
-        transform: translateX(50%);
-        display: block;
-        width: 350px;
-    }
-    .displayFlexForStepDescription {
-        gap: 15px;
-    }
-
-    .imagePlaceholder1, .imagePlaceholder2, .imagePlaceholder3 {
-        width: 350px;
-    }
-
     section.pageTitleDeposit, section.faqSection, section.depositSection {
         padding-left: 3%;
         padding-right: 3%;
@@ -303,6 +247,7 @@ h2.depositSectionTitle span {
     .displayFlexContainer {
         flex-direction: column;
     }
+    
 
     h2.depositSectionTitle, .faqTitle  {
         font-size: 28px;
@@ -314,7 +259,6 @@ h2.depositSectionTitle span {
 
     h2.depositSectionTitle {
         margin-bottom: 20px;
-        margin-top: 300px;
     }
     .pageTitleDeposit {
         padding: 40px 0;
@@ -323,21 +267,11 @@ h2.depositSectionTitle span {
 }
 
 @media (max-width: 480px) {
-    .imagePlaceholder1, .imagePlaceholder2, .imagePlaceholder3 {
-        width: 100%;
-    }
-
     section.pageTitleDeposit, section.faqSection, section.depositSection  {
         padding-left: 0;
         padding-right: 0;
     }
     .pageTitleHeading {
         font-size: 28px;
-    }
-}
-
-@media (max-width: 390px) {
-    .withdrawSectionImageAfter::after {
-        width: 340px;
     }
 }

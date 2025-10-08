@@ -3,6 +3,7 @@ import Layout from "@/components/layout/Layout"
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import styles from './knowledge.module.css'
+import Propose from "@/components/sections/Propose"
 
 export default function Knowledge() {
     useEffect(() => {
@@ -365,7 +366,8 @@ export default function Knowledge() {
 
                 
             </section>
-             <section className="crypto-learning-section propose-section">
+            <Propose />
+             {/* <section className="crypto-learning-section propose-section">
                 <div className="container">
                     <div className="row">
                             <div className="crypto-content propose">
@@ -417,7 +419,7 @@ ZK-SNARKS được thực hiện bằng cách tạo ra một khóa riêng tư ho
                             </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
         </Layout>
     )
 }
