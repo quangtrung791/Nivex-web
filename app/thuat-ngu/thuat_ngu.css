@@ -11,6 +11,165 @@
     }
 }
 
+@media (width: 1912px) {
+  header#header_main {
+    padding: 0 !important;
+  }
+  header#header_main .container-fluid {
+    padding: 0 6.5% !important;
+  }
+  section.page-title.custom {
+    padding: 5% 12.5% !important;
+  }
+  section.glossary-search-section {
+    background: #000;
+    padding: 3% 12.5% 0 !important;
+  }
+  .dictionary-list-alphabet {
+    padding: 5% 12.5% !important;
+    padding-top: 3% !important;
+  }
+}
+
+@media (min-width: 1367px) and (max-width: 1439px) {
+  section.glossary-search-section {
+    background: #000;
+    padding: 5% 3%;
+  }
+  .nivex-heading-title-gradient {
+    font-size: 2rem;
+    font-weight: bold;
+    background: linear-gradient(to right, #BCFE08, #86F869);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .heading-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+  }
+  .heading-row .heading {
+      margin: 0;
+      font-size: 56px;
+      font-weight: 800;
+      line-height: 1.1;
+  }
+  .heading-row .heading-desc {
+      margin: 0;
+      color: #b0b3c2;
+      font-size: 14px;
+      font-weight: 400;
+      text-align: right;
+      min-width: 340px;
+  }
+  section.page-title {
+    padding: 5% 4%;
+  }
+    section.buy-crypto,
+    section.section-sale,
+    footer.footer
+    {
+        padding: 5% 7%;
+    }
+    h3.heading.nivex-heading-title,
+    .nivex-heading-title-gradient
+    {
+        font-size: 36px !important;
+    }
+    .heading-desc.desc {
+        font-size: 14px;
+    }
+    .glossary-search-btn {
+    background: #bcfe08;
+    border: none;
+    width: 40px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .glossary-search-btn:hover {
+    background: #d6ff5e;
+  }
+  .glossary-alphabet-list {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .glossary-alphabet-list li {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  .glossary-alphabet-list li:hover {
+    color: #bcfe08;
+  }
+  .container.glossary-search-row {
+      max-width: 100% !important;
+      width: 100% !important;
+  }
+  .dictionary-list-alphabet .container {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  .dictionary-list-alphabet {
+    padding: 5% 3%;
+    padding-top: 0px;
+  }
+  .glossary-group {
+    margin-bottom: 48px;
+  }
+  .glossary-letter {
+    font-size: 56px;
+    font-weight: 800;
+    color: #bcfe08;
+    margin-bottom: 32px;
+    margin-top: 0;
+    line-height: 1;
+  }
+  .glossary-items {
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+  }
+  .glossary-item {
+    background: black;
+    padding: 32px 24px;
+    border-radius: 8px;
+    transition: background 0.2s;
+  }
+  .glossary-item.selected-item {
+    background: transparent;
+    padding: 32px 24px;
+    border-radius: 8px;
+    transition: background 0.2s;
+    cursor: pointer;
+  }
+  .glossary-item.selected-item:hover,
+  .glossary-item.selected-item.active {
+    background: #2d2e36;
+  }
+  .glossary-term {
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  .glossary-desc {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
 
 @media (min-width: 1440px) and (max-width: 1599px) {
   .nivex-heading-title-gradient {

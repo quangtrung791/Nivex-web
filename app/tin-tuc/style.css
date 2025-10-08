@@ -6,6 +6,21 @@ section.ttuc .widget.recent.mt-0 {
     /* padding-left: 15px;
     padding-right: 15px; */
 }
+@media (width: 1912px) {
+    header#header_main {
+        padding: 0 !important;
+    }
+    header#header_main .container-fluid {
+        padding: 0 6.5% !important;
+    }
+    section.section-news-header {
+        padding: 32px 12.5% !important;
+        padding-right: 12.8% !important;
+    }
+    section.duoc-xem-nhieu.col-md-12 {
+        padding: 1.5% 13% !important;
+    }
+}
 
 .button-loadmore .btn-action:hover {
     color: black;
@@ -815,7 +830,8 @@ footer.footer.style-2.footer-main {
         padding: 3.5% 7%;
     }
     section.duoc-xem-nhieu.col-md-12 {
-        padding: 1.5% 12.5%;
+        /* padding: 1.5% 12.5%; */
+        padding: 1.5% 13%;
     }
     section.page-title {
         padding: 3.5% 7%;
@@ -2721,7 +2737,8 @@ footer.footer.style-2.footer-main {
     }
 
     section.blog-details.ttuc .tin-nong {
-        max-height: 580px;
+        /* max-height: 580px; */
+        max-height: 630px;
         overflow-y: auto;
     }
 

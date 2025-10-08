@@ -1,4 +1,10 @@
 /* Fixed */
+@media (min-width: 921px) and (max-width: 1023px) {
+	section.blog-details.chi-tiet-thuat-ngu {
+	    padding: 3%;
+	}
+}
+
 .chi-tiet-thuat-ngu .content img {
     max-width: 100%;
 }
