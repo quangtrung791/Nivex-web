@@ -76,18 +76,18 @@ export default function KnowledgeDetail() {
             // console.error('Error fetching article:', error)
             setError('Không thể tải bài viết. Vui lòng thử lại sau.')
             // Fallback data for demo
-            setArticle({
-                id: params.id,
-                title: "Lorem ipsum dolor sit amet consectetur. Nisi semper condimentum varius et.",
-                image: "/assets/images/layout/knowledge-detail-hero.jpg",
-                content: `Lorem ipsum dolor sit amet consectetur. Sollicitudin ac porttitor eget vitae ipsum vitae ultrices ullamcorper nulla. Fames donec eu dui enim urna amet at. Nullam ornare nisl vitae. Lorem ipsum dolor tris fringilla gravida amet elit ut aliquam. Accumsan vel aliquam tempus diam eget pulvinar montes vulputate. Morbi volutpat semper tincidunt ornare ornare elit arcu mi ultrices. Vulputate nunc hendrerit odio pellentesque fusce aliquam fermentum at. Blandit cursus egestas viverra viverra vitae consequat accumsan leo ultricies. Sapien vulputate ornare enim non in amet faucibus ut.
+//             setArticle({
+//                 id: params.id,
+//                 title: "Lorem ipsum dolor sit amet consectetur. Nisi semper condimentum varius et.",
+//                 image: "/assets/images/layout/knowledge-detail-hero.jpg",
+//                 content: `Lorem ipsum dolor sit amet consectetur. Sollicitudin ac porttitor eget vitae ipsum vitae ultrices ullamcorper nulla. Fames donec eu dui enim urna amet at. Nullam ornare nisl vitae. Lorem ipsum dolor tris fringilla gravida amet elit ut aliquam. Accumsan vel aliquam tempus diam eget pulvinar montes vulputate. Morbi volutpat semper tincidunt ornare ornare elit arcu mi ultrices. Vulputate nunc hendrerit odio pellentesque fusce aliquam fermentum at. Blandit cursus egestas viverra viverra vitae consequat accumsan leo ultricies. Sapien vulputate ornare enim non in amet faucibus ut.
 
-Facilisis ac morbi in sem rhoncus sit magna odio. Urna non euismod tortor sed. Sagittis id viverra amet eu elementum orci. Vestibulum enim in platea nulla ornare interdum. Id neque leo tempor erat sed. Arcu sed nisl egestas nibh pharetra faucibus ut. Tempus interdum quesque ac senean duis morci. Erat ac rhoncus rhoncus praesent. Tempus vitae nec senectus faucibus non. Tincidunt sed ullamcorper donec justo faucibus sit vestibulum. Laoreet eu leo sem interdum orci ultrices vulputate interdum in. Et iaculis diam ut id mauris id enim. Sit tristique ultricies aliquam egestas dolor placerat et tincidunt.`,
-                difficulty: 'easy',
-                topic: 'Blockchain',
-                description: 'Blockchain cơ bản',
-                created_at: new Date().toISOString()
-            })
+// Facilisis ac morbi in sem rhoncus sit magna odio. Urna non euismod tortor sed. Sagittis id viverra amet eu elementum orci. Vestibulum enim in platea nulla ornare interdum. Id neque leo tempor erat sed. Arcu sed nisl egestas nibh pharetra faucibus ut. Tempus interdum quesque ac senean duis morci. Erat ac rhoncus rhoncus praesent. Tempus vitae nec senectus faucibus non. Tincidunt sed ullamcorper donec justo faucibus sit vestibulum. Laoreet eu leo sem interdum orci ultrices vulputate interdum in. Et iaculis diam ut id mauris id enim. Sit tristique ultricies aliquam egestas dolor placerat et tincidunt.`,
+//                 difficulty: 'easy',
+//                 topic: 'Blockchain',
+//                 description: 'Blockchain cơ bản',
+//                 created_at: new Date().toISOString()
+//             })
         } finally {
             setLoading(false)
         }
