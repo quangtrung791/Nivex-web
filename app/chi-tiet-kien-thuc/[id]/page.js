@@ -36,7 +36,7 @@ export default function KnowledgeDetail() {
                 setAllKnowledgeArticles(data.data)
             }
         } catch (error) {
-            console.error('Error fetching all knowledge articles:', error)
+            // console.error('Error fetching all knowledge articles:', error)
         }
     }
 
@@ -73,7 +73,7 @@ export default function KnowledgeDetail() {
                 throw new Error('Failed to fetch article')
             }
         } catch (error) {
-            console.error('Error fetching article:', error)
+            // console.error('Error fetching article:', error)
             setError('Không thể tải bài viết. Vui lòng thử lại sau.')
             // Fallback data for demo
             setArticle({
@@ -188,7 +188,6 @@ Facilisis ac morbi in sem rhoncus sit magna odio. Urna non euismod tortor sed. S
                 setPopularArticles(data.data || [])
             }
         } catch (error) {
-            console.error('Error fetching popular articles:', error)
             // Fallback data
             setPopularArticles([
                 {
