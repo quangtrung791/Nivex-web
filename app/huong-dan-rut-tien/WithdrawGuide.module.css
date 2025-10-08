@@ -336,8 +336,8 @@ h2.depositSectionTitle span {
     }
 }
 
-@media (max-width: 390px) {
+@media (max-width: 385px) {
     .withdrawSectionImageAfter::after {
-        width: 340px;
+        width: 335px;
     }
 }
