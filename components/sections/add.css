@@ -71,17 +71,17 @@ p.text.fs-14 {
 }
 
 .img-san-sang-giao-dich {
-    width: 710px;
+    width: 780px;
     height: auto;
-    aspect-ratio: 835/666;
+    aspect-ratio: 889/620;
     object-fit: contain;
     object-position: center;
-    margin: 0 auto 25px;
+    margin: 0 auto 10px;
 }
 
-@media (min-width: 1440px) {
+@media (max-width: 1440px) {
     .img-san-sang-giao-dich {
-        width: 620px;
+        width: 650px;
     }
 
     .main-description {
@@ -110,7 +110,7 @@ p.text.fs-14 {
 /* Responsive */
 @media (min-width: 1440px) and (max-width: 1599px) {
     .img-san-sang-giao-dich {
-        width: 650px;
+        width: 700px;
     }
     .ai-copy-trade h3.heading {
         font-size: 28px  !important;
@@ -192,7 +192,7 @@ p.text.fs-14 {
         font-size: 48px;
     }
     section.about {
-        padding: 1% 6% 3% 6% !important;
+        padding: 1% 6% 1% 6% !important;
     }
     section.work .col-md-12 {
         padding-left: 0 !important;
@@ -250,7 +250,7 @@ p.text.fs-14 {
         font-size: 48px;
     }
     section.about {
-        padding: 1% 6% 3% 6% !important;
+        padding: 1% 6% 1% 6% !important;
     }
     section.work .col-md-12 {
         padding-left: 0 !important;
@@ -416,7 +416,7 @@ p.text.fs-14 {
 /* iPad Air 820 */
 @media (min-width: 800px) and (max-width: 1019px) {
     .img-san-sang-giao-dich {
-        width: 500px;
+        width: 550px;
     }
     .ai-copy-trade h3.heading {
         font-size: 28px  !important;
