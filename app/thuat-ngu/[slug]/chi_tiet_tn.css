@@ -8,6 +8,9 @@
 .chi-tiet-thuat-ngu .content img {
     max-width: 100%;
 }
+.chi-tiet-thuat-ngu a.navigate-top.link-nav-back-custom {
+    font-size: 14px;
+}
 
 section.chi-tiet-thuat-ngu .main-text-p,
 section.chi-tiet-thuat-ngu .main-text-p p span, 
@@ -27,6 +30,12 @@ section.chi-tiet-thuat-ngu .main-text-p * {
 }
 section.chi-tiet-thuat-ngu .main-text-p strong {
     /* font-size: 14px; */
+}
+section.chi-tiet-thuat-ngu p.main-text-p p {
+    font-size: 14px !important;
+}
+section.chi-tiet-thuat-ngu h3.title {
+    margin-bottom: 20px;
 }
 
 .link-nav-back-custom {

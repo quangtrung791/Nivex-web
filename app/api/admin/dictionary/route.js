@@ -5,20 +5,62 @@ export const runtime = 'nodejs';
 
 export async function GET(request) {
   try {
-    console.log("GET /api/admin/dictionary called");
+    const { searchParams } = new URL(request.url);
+    const slug = searchParams.get("slug");
+
+    // if (!slug) {
+    //   return NextResponse.json(
+    //     { error: "Thiếu slug" },
+    //     { status: 400 }
+    //   );
+    // }
+
+    // console.log("GET /api/admin/dictionary called");
     
-    // Query courses table with explicit schema
-    const rows = await query('SELECT * FROM public.dictionary ORDER BY id ASC');
-    
-    // Transform courses data for React Admin 
-    const dictionary = rows.map(row => ({
+    // Query
+    if (slug) {
+      console.log(`GET /api/admin/dictionary?slug=${slug}`);
+      
+      const rows = await query(
+        "SELECT * FROM public.dictionary WHERE slug = $1 LIMIT 1",
+        [slug]
+      );
+
+      if (rows.length === 0) {
+        return NextResponse.json(
+          { error: "Không tìm thấy slug này" },
+          { status: 404 }
+        );
+      }
+
+      const row = rows[0];
+      return NextResponse.json({
+        id: row.id,
+        slug: row.slug,
+        keyword: row.keyword,
+        short_desc: row.short_desc,
+        description: row.description || "",
+        created_at: row.created_at,
+        updated_at: row.updated_at,
+      });
+    }
+    // const rows = await query('SELECT * FROM public.dictionary ORDER BY id ASC');
+
+    // TH ko có slug
+    const rows = await query(
+      "SELECT * FROM public.dictionary ORDER BY id ASC"
+    );
+
+    const dictionary = rows.map((row) => ({
       id: row.id,
+      slug: row.slug,
       keyword: row.keyword,
       short_desc: row.short_desc,
-      description: row.description || '',
+      description: row.description || "",
       created_at: row.created_at,
-      updated_at: row.updated_at      
+      updated_at: row.updated_at,
     }));
+  
     
     console.log("Returning event:", dictionary.length);
     
@@ -45,8 +87,9 @@ export async function POST(request) {
     
     // Insert into dictionary table
     const result = await query(
-      'INSERT INTO public.dictionary (keyword, short_desc, description) VALUES ($1, $2, $3) RETURNING *',
+      'INSERT INTO public.dictionary (slug, keyword, short_desc, description) VALUES ($1, $2, $3, $4) RETURNING *',
       [
+        data.slug,
         data.keyword || 'Untitled',
         data.short_desc || "null",
         data.description || ''

@@ -1,6 +1,7 @@
 -- Schema cho bảng dictionary (từ điển thuật ngữ)
 CREATE TABLE IF NOT EXISTS dictionary (
   id SERIAL PRIMARY KEY,
+  slug VARCHAR(200) NOT NULL,
   keyword VARCHAR(500) NOT NULL,
   short_desc VARCHAR(500) NOT NULL,
   description TEXT,
@@ -11,4 +12,3 @@ CREATE TABLE IF NOT EXISTS dictionary (
 
 -- Index cho tìm kiếm
 CREATE INDEX IF NOT EXISTS idx_dictionary_keyword ON dictionary(keyword);
-CREATE INDEX IF NOT EXISTS idx_dictionary_description ON dictionary(description);
