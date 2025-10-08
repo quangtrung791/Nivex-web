@@ -5,14 +5,6 @@ import styles from './P2PTrading.module.css'
 
 
 export default function P2PTrading() {
-    const [openFaq, setOpenFaq] = useState({})
-
-    const toggleFaq = (index) => {
-        setOpenFaq(prev => ({
-            ...prev,
-            [index]: !prev[index]
-        }))
-    }
     return (
         <>
             {/* Page Title Section */}
@@ -25,7 +17,7 @@ export default function P2PTrading() {
                             </h1>
                         </div>
                         <div className={`col-md-4 ${styles.col4mdCenter}`}>
-                             <p className={`${styles.pageHeaderKnowledgeSubtitle}`}>Hướng dẫn chi tiết giúp bạn rút tiền từ Nivex nhanh chóng,
+                             <p className={`${styles.pageHeaderKnowledgeSubtitle}`}>Hướng dẫn chi tiết giúp bạn giao dịch P2P nhanh chóng,
 an toàn và thuận tiện.</p>
                         </div>
                     </div>
@@ -59,40 +51,45 @@ an toàn và thuận tiện.</p>
                                     <p className={styles.stepDescription}>
                                         Từ trang chủ, nhấn vào nút <span className={styles.hightlightP2P}>Thêm</span> → Chọn <span className={styles.hightlightP2P}>P2P</span> trong mục Giao dịch. (Hoặc vào P2P nếu có sẵn trên trang chủ).
                                     </p>
+                                    <div className={styles.displayFlexForStepDescription}>
+                                        <div className={styles.imagePlaceholder + ' ' + styles.imagePlaceholder1}></div>
+                                        <div className={styles.imagePlaceholder + ' ' + styles.imagePlaceholder2}></div>
+                                    </div>
                                 </div>
                             </div>
 
                             {/* Step 2 */}
                             <div className={styles.stepContainer}>
                                 <div className={styles.stepContent}>
-                                    <h3 className={styles.stepTitle}>2. Truy cập mục “Tài sản” trên trang chủ</h3>
+                                    <h3 className={styles.stepTitle}>2. Chọn người bán:</h3>
                                     <p className={styles.stepDescription}>
-                                        Trên trang tài khoản của bạn, chọn <span className={styles.highlightGreen}>[Rút tiền]</span>.
+                                    Nhấn <span className={styles.hightlightP2P}>Mua vào</span> để xem danh sách. Bạn cần kiểm tra kỹ giá, phương thức thanh toán, số lượng và giới hạn giao dịch.<br />
+                                        (Lưu ý: Giao dịch nhanh tiện lợi nhưng giá có thể không tốt nhất)
                                     </p>
-                                    <div className={styles.displayFlexForStepDescription}>
-                                        <div className={styles.imagePlaceholder1}></div>
-                                        <div className={styles.imagePlaceholder2}></div>
-                                        <div className={styles.imagePlaceholder3}></div>
-                                    </div>
                                 </div>
                             </div>
 
                             {/* Step 3 */}
                             <div className={styles.stepContainer}>
                                 <div className={styles.stepContent}>
-                                    <h3 className={styles.stepTitle}>3. Chọn loại coin muốn rút</h3>
+                                    <h3 className={styles.stepTitle}>3. Tạo đơn hàng:</h3>
                                     <p className={styles.stepDescription}>
-                                        Lựa chọn loại tiền mã hóa bạn muốn rút.
+                                    Chọn người bán ưng ý và nhấn <span className={styles.hightlightP2P}>Mua</span>. Sau đó nhập số tiền hoặc số lượng muốn mua. (Dùng nút [↔] để chuyển đổi cách nhập).<br />
+                                    Chọn <span className={styles.hightlightP2P}>Phương thức thanh toán</span> → <span className={styles.hightlightP2P}>Xác nhận mua</span>.
                                     </p>
+                                    <div className={styles.displayFlexForStepDescription}>
+                                        <div className={styles.imagePlaceholder + ' ' + styles.imagePlaceholder3}></div>
+                                        <div className={styles.imagePlaceholder + ' ' + styles.imagePlaceholder4}></div>
+                                    </div>
                                 </div>
                             </div>
 
                             {/* Step 4 */}
                             <div className={styles.stepContainer}>
                                 <div className={styles.stepContent}>
-                                    <h3 className={styles.stepTitle}>4. Nhập địa chỉ Rút tiền</h3>
+                                    <h3 className={styles.stepTitle}>4. Nhận Thông Tin:</h3>
                                     <p className={styles.stepDescription}>
-                                        Nhập địa chỉ ví của bạn. Vui lòng đảm bảo địa chỉ chính xác tuyệt đối.
+                                        Hệ thống gửi đơn hàng, người bán sẽ cung cấp thông tin tài khoản nhận tiền.
                                     </p>
                                 </div>
                             </div>
@@ -100,19 +97,24 @@ an toàn và thuận tiện.</p>
                             {/* Step 5 */}
                             <div className={styles.stepContainer}>
                                 <div className={styles.stepContent}>
-                                    <h3 className={styles.stepTitle}>5. Xác nhận số tiền rút</h3>
+                                    <h3 className={styles.stepTitle}>5. Thanh Toán:</h3>
                                     <p className={styles.stepDescription}>
-                                        Nhập số tiền bạn muốn rút và xác nhận.
+                                        Bạn dùng ứng dụng ngân hàng hoặc nền tảng khác để chuyển tiền vào tài khoản của người bán.<br />
+                                        <span className={styles.hightlightP2P}>Quan trọng: Phải chụp lại ảnh màn hình biên lai thanh toán để làm bằng chứng.</span> 
                                     </p>
+                                    <div className={styles.displayFlexForStepDescription}>
+                                        <div className={styles.imagePlaceholder + ' ' + styles.imagePlaceholder5}></div>
+                                        <div className={styles.imagePlaceholder + ' ' + styles.imagePlaceholder6}></div>
+                                    </div>
                                 </div>
                             </div>
 
                             {/* Step 6 */}
                             <div className={styles.stepContainer}>
                                 <div className={styles.stepContent}>
-                                    <h3 className={styles.stepTitle}>6. Thanh toán phí mạng lưới</h3>
+                                    <h3 className={styles.stepTitle}>6. Xác Nhận Thanh Toán:</h3>
                                     <p className={styles.stepDescription}>
-                                        Tùy thuộc vào tình trạng mạng lưới, bạn có thể cần thanh toán một khoản phí mạng lưới nhất định.
+                                        Quay lại ứng dụng Nivex, nhấn <span className={styles.hightlightP2P}>Tôi đã thanh toán</span>.
                                     </p>
                                 </div>
                             </div>
@@ -120,27 +122,31 @@ an toàn và thuận tiện.</p>
                             {/* Step 7 */}
                             <div className={styles.stepContainer}>
                                 <div className={styles.stepContent}>
-                                    <h3 className={styles.stepTitle}>7. Gửi yêu cầu rút tiền</h3>
+                                    <h3 className={styles.stepTitle}>7. Tải Ảnh Lên:</h3>
                                     <p className={styles.stepDescription}>
-                                        Sau khi mạng lưới xác nhận giao dịch, tiền sẽ tự động hiển thị trong tài khoản Nivex của bạn.
+                                        Tải lên ảnh chụp màn hình biên lai thanh toán vừa lưu → <span className={styles.hightlightP2P}>Xác nhận tải lên</span> → <span className={styles.hightlightP2P}>Xác nhận</span>.
                                     </p>
                                 </div>
                             </div>
 
                             <div className={styles.stepContainer}>
                                 <div className={styles.stepContent}>
-                                    <h3 className={styles.stepTitle}>8.  Chờ xử lý</h3>
+                                    <h3 className={styles.stepTitle}>8. Chờ Giải Phóng Coin:</h3>
                                     <p className={styles.stepDescription}>
-                                        Yêu cầu của bạn sẽ được Nivex xử lý trong thời gian sớm nhất.
+                                        Gửi ảnh chụp màn hình thanh toán cho người bán qua giao diện trò chuyện nếu cần, sau đó chờ họ kiểm tra và giải phóng coin.
                                     </p>
+                                    <div className={styles.displayFlexForStepDescription}>  
+                                        <div className={styles.imagePlaceholder + ' ' + styles.imagePlaceholder7}></div>
+                                        <div className={styles.imagePlaceholder + ' ' + styles.imagePlaceholder8}></div>
+                                    </div>
                                 </div>
                             </div>
 
                             <div className={styles.stepContainer}>
                                 <div className={styles.stepContent}>
-                                    <h3 className={styles.stepTitle}>9.  Theo dõi giao dịch</h3>
+                                    <h3 className={styles.stepTitle}>9. Kiểm Tra:</h3>
                                     <p className={styles.stepDescription}>
-                                        Bạn có thể theo dõi giao dịch trên Blockchain Explorer.
+                                    Sau khi người bán hoàn tất, USDT sẽ vào tài khoản của bạn. Quay lại trang chủ để kiểm tra Tổng tài sản. Nếu số dư thay đổi, giao dịch đã thành công!
                                     </p>
                                 </div>
                             </div>
@@ -148,192 +154,6 @@ an toàn và thuận tiện.</p>
                     </div>
                 </div>
             </section>
-            <section className={styles.faqSection}>
-                <div className="container">
-                    <h2 className={styles.faqTitle}>Câu hỏi thường gặp</h2>
-                    <div className={styles.faqList}>
-                        <div className={styles.faqItem}>
-                            <div className={styles.faqQuestion} onClick={() => toggleFaq(0)}>
-                                <span>Rút tiền mất bao lâu?</span>
-                                <span className={`${styles.faqIcon} ${openFaq[0] ? styles.faqIconOpen : ''}`}></span>
-                            </div>
-                            <div className={`${styles.faqAnswer} ${openFaq[0] ? styles.faqAnswerOpen : ''}`}>
-                                <p>Thời gian rút tiền phụ thuộc vào loại tiền tệ và phương thức rút. Rút tiền mã hóa thường nhanh hơn, trong khi rút tiền pháp định có thể cần thời gian xử lý lâu hơn.</p>
-                            </div>
-                        </div>
-
-                        <div className={styles.faqItem}>
-                            <div className={styles.faqQuestion} onClick={() => toggleFaq(1)}>
-                                <span>Tôi có thể hủy lệnh rút tiền không?</span>
-                                <span className={`${styles.faqIcon} ${openFaq[1] ? styles.faqIconOpen : ''}`}></span>
-                            </div>
-                            <div className={`${styles.faqAnswer} ${openFaq[1] ? styles.faqAnswerOpen : ''}`}>
-                                <p>Một khi yêu cầu rút tiền đã được xử lý, thông thường sẽ không thể hủy. Nếu cần hỗ trợ, vui lòng liên hệ đội ngũ Hỗ trợ Khách hàng (CSKH) của chúng tôi ngay lập tức.</p>
-                            </div>
-                        </div>
-
-                        <div className={styles.faqItem}>
-                            <div className={styles.faqQuestion} onClick={() => toggleFaq(2)}>
-                                <span>Phải làm gì khi rút tiền thất bại?</span>
-                                <span className={`${styles.faqIcon} ${openFaq[2] ? styles.faqIconOpen : ''}`}></span>
-                            </div>
-                            <div className={`${styles.faqAnswer} ${openFaq[2] ? styles.faqAnswerOpen : ''}`}>
-                                <p>Nếu rút tiền thất bại, nguyên nhân có thể do sai địa chỉ, sự cố mạng lưới hoặc vượt quá hạn mức. Vui lòng kiểm tra lại thông tin rút tiền và liên hệ CSKH.</p>
-                            </div>
-                        </div>
-
-                        <div className={styles.faqItem}>
-                            <div className={styles.faqQuestion} onClick={() => toggleFaq(3)}>
-                                <span>Làm thế nào để đảm bảo an toàn khi rút tiền?</span>
-                                <span className={`${styles.faqIcon} ${openFaq[3] ? styles.faqIconOpen : ''}`}></span>
-                            </div>
-                            <div className={`${styles.faqAnswer} ${openFaq[3] ? styles.faqAnswerOpen : ''}`}>
-                                Hãy chắc chắn rằng bạn đang sử dụng đúng địa chỉ ví và ví của bạn được bảo mật. Không chia sẻ khóa riêng tư (private key) hoặc mật khẩu của bạn với bất kỳ ai.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>  
-
-            <section className={styles.depositSection}>
-                <div className="container">
-                    <h2 className={`${styles.faqTitle}`} style={{marginBottom: '8px' }}>
-                                Phí và hạn mức
-                    </h2>
-                    <p className={styles.subTitleFeeSection}>Giải thích về phí nạp và rút tiền</p>
-                    {/* Step 1 */}
-                    <div className={`${styles.displayFlexContainer}`}>
-                        <div className={`${styles.contentColumn}`}>
-                            <div className={styles.stepContainer}>
-                                <div className={styles.stepContent}>
-                                    <h3 className={styles.stepTitle}>Nạp tiền mã hóa</h3>
-                                    <p className={styles.stepDescription}>
-                                        Hãy chắc chắn rằng bạn đang sử dụng đúng địa chỉ ví và ví của bạn được bảo mật. Không chia sẻ khóa riêng tư (private key) hoặc mật khẩu với bất kỳ ai.
-                                    </p>
-                                </div>
-                            </div>
-
-                            {/* Step 2 */}
-                            <div className={styles.stepContainer}>
-                                <div className={styles.stepContent}>
-                                    <h3 className={styles.stepTitle}>Nạp tiền pháp định</h3>
-                                    <p className={styles.stepDescription}>
-                                       Nạp tiền pháp định có thể phát sinh phí, tùy thuộc vào phương thức nạp và tổ chức tài chính bạn sử dụng. Ví dụ, nạp tiền qua chuyển khoản ngân hàng hoặc dịch vụ thanh toán của bên thứ ba có thể mất một khoản phí nhất định.
-                                    </p>
-                                </div>
-                            </div>
-
-                            {/* Step 3 */}
-                            <div className={styles.stepContainer}>
-                                <div className={styles.stepContent}>
-                                    <h3 className={styles.stepTitle}>Rút tiền mã hóa</h3>
-                                    <p className={styles.stepDescription}>
-                                        Khi rút tiền mã hóa, bạn cần thanh toán phí giao dịch mạng lưới. Đây là khoản phí do mạng lưới blockchain thu để xác nhận và xử lý giao dịch.
-                                    </p>
-                                </div>
-                            </div>
-
-                            {/* Step 4 */}
-                            <div className={styles.stepContainer}>
-                                <div className={styles.stepContent}>
-                                    <h3 className={styles.stepTitle}>Rút tiền pháp định</h3>
-                                    <p className={styles.stepDescription}>
-                                        Rút tiền về tài khoản ngân hàng có thể phát sinh phí và có thể bị giới hạn bởi hạn mức rút hàng ngày hoặc hàng tháng.
-                                    </p>
-                                </div>
-                            </div>
-
-                         
-                        </div>
-                    </div>
-                </div>
-            </section> 
-
-            <section className={styles.depositSection}>
-                <div className="container">
-                    <h2 className={`${styles.faqTitle}`} style={{marginBottom: '8px' }}>
-                                Chi tiết hạn mức hàng ngày
-                    </h2>
-                    <p className={styles.subTitleFeeSection}>Hạn mức rút tiền mã hóa</p>
-                    {/* Step 1 */}
-                    <div className={`${styles.displayFlexContainer}`}>
-                        <div className={`${styles.contentColumn}`}>
-                            <div className={styles.stepContainer}>
-                                <div className={styles.stepContent}>
-                                    <h3 className={styles.stepTitle}>Hạn mức rút hàng ngày có thể khác nhau tùy theo loại coin và điều kiện mạng lưới.</h3>
-                                    <p className={styles.stepDescription}>
-                                        Ví dụ: mạng lưới Bitcoin trong thời gian tắc nghẽn có thể yêu cầu phí giao dịch cao hơn để đảm bảo giao dịch được xác nhận.
-                                    </p>
-                                </div>
-                            </div>
-
-                            {/* Step 2 */}
-                            <div className={styles.stepContainer}>
-                                <div className={styles.stepContent}>
-                                    <h3 className={styles.stepTitle}>Nạp tiền pháp định</h3>
-                                    <p className={styles.stepDescription}>
-                                       Nạp tiền pháp định có thể phát sinh phí, tùy thuộc vào phương thức nạp và tổ chức tài chính bạn sử dụng. Ví dụ, nạp tiền qua chuyển khoản ngân hàng hoặc dịch vụ thanh toán của bên thứ ba có thể mất một khoản phí nhất định.
-                                    </p>
-                                </div>
-                            </div>
-                         
-                        </div>
-                    </div>
-                </div>
-            </section> 
-
-
-            <section className={styles.depositSection}>
-                <div className="container">
-                    <h2 className={`${styles.faqTitle}`} style={{marginBottom: '8px' }}>
-                               Xử lý khi rút tiền chưa về tài khoản
-                    </h2>
-                    <p className={styles.subTitleFeeSection}>Nếu tiền rút của bạn chưa về tài khoản trong thời gian dự kiến, vui lòng kiểm tra các nguyên nhân sau:</p>
-                    {/* Step 1 */}
-                    <div className={`${styles.displayFlexContainer}`}>
-                        <div className={`${styles.contentColumn}`}>
-                            <div className={styles.stepContainer}>
-                                <div className={styles.stepContent}>
-                                    <h3 className={styles.stepTitle}>Xác nhận địa chỉ chính xác</h3>
-                                    <p className={styles.stepDescription}>
-                                        Vui lòng kiểm tra kỹ và đảm bảo bạn đã dán đúng địa chỉ ví người nhận.
-                                    </p>
-                                </div>
-                            </div>
-
-                            {/* Step 2 */}
-                            <div className={styles.stepContainer}>
-                                <div className={styles.stepContent}>
-                                    <h3 className={styles.stepTitle}>Nghẽn mạng lưới</h3>
-                                    <p className={styles.stepDescription}>
-                                       Trong thời gian mạng lưới tắc nghẽn, việc rút tiền có thể mất nhiều thời gian hơn để được xác nhận.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div className={styles.stepContainer}>
-                                <div className={styles.stepContent}>
-                                    <h3 className={styles.stepTitle}>Vấn đề về hạn mức</h3>
-                                    <p className={styles.stepDescription}>
-                                       Kiểm tra xem bạn có vượt quá hạn mức rút tiền hàng ngày/hàng tháng không.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section> 
-
-            
-            <section className={styles.depositSection} style={{marginBottom: '70px' }}>
-                <div className="container">
-                    <h2 className={`${styles.faqTitle}`} style={{marginBottom: '8px' }}>
-                               Hỗ trợ trực tuyến
-                    </h2>
-                    <p className={styles.subTitleFeeSection}>Truy cập trang web chính thức của Nivex, nhấp vào nút “Liên hệ chúng tôi” hoặc “Hỗ trợ trực tuyến” ở cuối trang.
-Nivex cam kết mang đến cho bạn trải nghiệm giao dịch tài sản số an toàn, nhanh chóng và tiện lợi.</p>
-                </div>
-            </section> 
         </>
     )
 }
