@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 import './chi_tiet_tn.css';
 
 export default function ChiTietThuatNgu({ params }) {
-    const { id } = params
+    const { slug } = params
     const [term, setTerm] = useState(null)
     const [loading, setLoading] = useState(true)
     
@@ -25,17 +25,17 @@ export default function ChiTietThuatNgu({ params }) {
     // }, [id])
     
     useEffect(() => {
-        fetch(`/api/dictionary/${id}`)
+        fetch(`/api/dictionary/${slug}`)
             .then((res) => res.json())
             .then((data) => {
                 // Nếu data là object có id, keyword, description thì setTerm luôn
-                if (data && data.id) {
+                if (data && data.slug) {
                     setTerm(data)
                 }
                 setLoading(false)
             })
             .catch(() => setLoading(false))
-    }, [id])
+    }, [slug])
 
     if (loading) {
         return (

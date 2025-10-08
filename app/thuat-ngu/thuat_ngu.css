@@ -1,6 +1,15 @@
 
 /* TRANG: BẢNG THUẬT NGỮ */
 /* fixed */
+section.dictionary-list-alphabet .glossary-desc {
+  display: block; /* Fallback for non-webkit */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 @media (min-width: 1920px) {
     .page-title.custom h3.heading {
         padding-right: 40% !important;

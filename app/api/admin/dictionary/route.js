@@ -13,6 +13,7 @@ export async function GET(request) {
     // Transform courses data for React Admin 
     const dictionary = rows.map(row => ({
       id: row.id,
+      slug: row.slug,
       keyword: row.keyword,
       short_desc: row.short_desc,
       description: row.description || '',
@@ -45,8 +46,9 @@ export async function POST(request) {
     
     // Insert into dictionary table
     const result = await query(
-      'INSERT INTO public.dictionary (keyword, short_desc, description) VALUES ($1, $2, $3) RETURNING *',
+      'INSERT INTO public.dictionary (slug, keyword, short_desc, description) VALUES ($1, $2, $3, $4) RETURNING *',
       [
+        data.slug,
         data.keyword || 'Untitled',
         data.short_desc || "null",
         data.description || ''

@@ -141,7 +141,7 @@ export default function Footer2() {
                                         <button type="submit" className="btn-action btn-cta-simple" style={{'color':'black','fontSize': 12, 'fontWeight': 500, 'padding': '10px 23px', 'background': 'linear-gradient(90deg,#BCFE08, #86F969)'}} 
                                         disabled={isSubmitting}
                                         >
-                                            {isSubmitting ? 'Đang đăng ký...' : 'Đăng ký ngay' }
+                                            {isSubmitting ? 'Đang xử lý...' : 'Đăng ký' }
                                         </button>
                                     </form>
                                     <ul className="list-social">

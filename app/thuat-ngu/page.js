@@ -161,7 +161,7 @@ export default function BuyCryptoSelect() {
                                         <div className="glossary-items">
                                             {items.map((item, idx) => (
                                                 <Link
-                                                    href={`/thuat-ngu/${item.id}`}
+                                                    href={`/thuat-ngu/${item.slug}`}
                                                     key={item.id}
                                                     className={
                                                         "glossary-item selected-item" +

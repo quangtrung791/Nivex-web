@@ -38,6 +38,21 @@ import {
 import { ImageUploadInput } from './ImageUploadInput'
 import { useState } from 'react'
 import RichTextInput from './RichTextInput'
+import { useWatch, useFormContext } from 'react-hook-form'
+import { useEffect } from 'react'
+
+// Hàm tạo slug tự động từ keyword
+const generateSlug = (str = "") => {
+  return String(str)
+    .toLowerCase()
+    .normalize('NFD') // tách ký tự và dấu
+    .replace(/[\u0300-\u036f]/g, '') // bỏ dấu
+    .replace(/đ/g, 'd') // thay đ → d
+    .replace(/[^a-z0-9\s-]/g, '') // bỏ ký tự đặc biệt
+    .trim()
+    .replace(/\s+/g, '-') // thay khoảng trắng bằng gạch ngang
+    .replace(/-+/g, '-'); // tránh trùng dấu '-'
+};
 
 // Custom Delete Button với confirmation rõ ràng
 const CustomDeleteButton = () => {
@@ -137,6 +152,7 @@ export const DictionaryList = () => (
       <TextField source="id" label="ID" />
       {/* <ImageField source="thumbnail_url" label="Ảnh" sx={{ '& img': { maxWidth: '60px', maxHeight: '45px', objectFit: 'cover' } }} /> */}
       <TextField source="keyword" label="Từ khóa thuật ngữ" />
+      <TextField source="slug" label="Slug URL" />
       <TextField source="short_desc" label="Mô tả ngắn về từ khóa" />
       <StatusField />
       <EditButton label="Sửa" />
@@ -145,42 +161,65 @@ export const DictionaryList = () => (
     </Datagrid>
   </List>
 )
+// const { setValue } = useFormContext?.() || {};
+// Hook tùy chỉnh để cập nhật slug khi keyword thay đổi
+  const AutoSlug = () => {
+      const { control, setValue } = useFormContext();
+      const keyword = useWatch({ control, name: "keyword" });
 
+      useEffect(() => {
+        if (keyword) {
+          const newSlug = generateSlug(keyword);
+          setValue("slug", newSlug, { shouldValidate: true });
+        }
+      }, [keyword, setValue]);
+
+      return null;
+  };
 // Create component (loại bỏ level, thêm DateTimeInput)
-export const DictionaryCreate = () => (
-  <Create 
-    title="➕ Tạo từ khóa thuật ngữ mới"
-    redirect="list"
-  >
-    <SimpleForm>
+export const DictionaryCreate = () => {
+  return (
+    <Create 
+      title="➕ Tạo từ khóa thuật ngữ mới"
+      redirect="list"
+    >
+      <SimpleForm>
+        <AutoSlug />{/* Component tự động cập nhật slug */}
+        <TextInput 
+          source="keyword" 
+          label="Từ khóa thuật ngữ" 
+          validate={[required()]}
+          fullWidth
+          helperText="Nhập Từ khóa thuật ngữ (bắt buộc)"
+        required />
 
-      <TextInput 
-        source="keyword" 
-        label="Từ khóa thuật ngữ" 
-        validate={[required()]}
-        fullWidth
-        helperText="Nhập Từ khóa thuật ngữ (bắt buộc)"
-      required />
+        <TextInput 
+          source="slug" 
+          label="Slug URL" 
+          fullWidth
+          helperText="Slug được tự động tạo từ từ khóa (bạn có thể chỉnh lại nếu muốn)"
+        />
 
-      <TextInput 
-        source="short_desc" 
-        label="Mô tả ngắn về từ khóa" 
-        validate={[required()]}
-        fullWidth
-        helperText="Nhập Mô tả ngắn về từ khóa (bắt buộc)"
-      required />
-      
-      <RichTextInput 
-        source="description" 
-        label="Giải thích từ khóa thuật ngữ"
-        multiline
-        rows={15}
-        fullWidth
-        helperText="Giải thích từ khóa thuật ngữ"
-      />
-    </SimpleForm>
-  </Create>
-)
+        <TextInput 
+          source="short_desc" 
+          label="Mô tả ngắn về từ khóa" 
+          validate={[required()]}
+          fullWidth
+          helperText="Nhập Mô tả ngắn về từ khóa (bắt buộc)"
+        required />
+        
+        <RichTextInput 
+          source="description" 
+          label="Giải thích từ khóa thuật ngữ"
+          multiline
+          rows={15}
+          fullWidth
+          helperText="Giải thích từ khóa thuật ngữ"
+        />
+      </SimpleForm>
+    </Create>
+  )
+}
 
 // Edit component (loại bỏ level, thêm DateTimeInput)
 export const DictionaryEdit = () => (
@@ -188,12 +227,30 @@ export const DictionaryEdit = () => (
     title="✏️ Chỉnh sửa thông tin thuật ngữ"
   >
     <SimpleForm>
+      <AutoSlug />{/* Component tự động cập nhật slug */}
+
       <TextInput source="id" label="ID" disabled />
       <TextInput 
         source="keyword" 
         label="Từ khóa thuật ngữ" 
         validate={[required()]}
         fullWidth
+      required />
+
+      {/* <TextInput 
+        source="slug" 
+        label="Slug URL" 
+        validate={[required()]}
+        fullWidth
+        helperText="Nhập Slug URL (nếu bỏ qua thì sẽ tự động tạo slug)"
+      required />
+       */}
+      <TextInput 
+        source="slug" 
+        label="Slug URL" 
+        // validate={[required()]}
+        fullWidth
+        helperText="Nhập Slug URL (nếu bỏ qua thì sẽ tự động tạo slug)"
       required />
 
       <TextInput 
@@ -222,6 +279,7 @@ export const DictionaryShow = () => (
     <SimpleShowLayout>
       <TextField source="id" label="ID" />
       <TextField source="keyword" label="Từ khóa thuật ngữ" />
+      <TextField source="slug" label="Slug URL" />
       <TextField source="short_desc" label="Mô tả ngắn về từ khóa" />
       <StatusField />
       {/* <RichTextField source="description" label="Giải thích từ khóa thuật ngữ" /> */}

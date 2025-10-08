@@ -14,6 +14,7 @@ export async function GET(request) {
     let sqlQuery = `
       SELECT 
         id,
+        slug,
         keyword,
         short_desc
       FROM public.dictionary`
@@ -42,12 +43,9 @@ export async function GET(request) {
 
     return {
         id: n.id,
+        slug: n.slug,
         keyword: n.keyword,
-        // time_event: n.time_event,
         short_desc: n.short_desc
-        // description: n.description
-        // 
-        // thumbnail_url: n.thumbnail_url
       }
     })
 
