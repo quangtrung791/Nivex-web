@@ -1729,6 +1729,10 @@ footer.footer.style-2.footer-main {
 }
 @media (min-width: 390px) and (max-width: 500px) {
     /* fixed */
+    section.ttuc .div-duoc-xem-nhieu .title-news-duoc-xem-nhieu a.title-news.headline-news {
+        font-size: 13px;
+        margin-top: 6px;
+    }
     section.ttuc .row.div-duoc-xem-nhieu {
         position: relative;
         top: -33px;
@@ -1919,7 +1923,8 @@ footer.footer.style-2.footer-main {
     }
 
     .xem-them-btn-mobile-only {
-        margin-bottom: 20%;
+        /* margin-bottom: 20%; */
+        margin-bottom: 15%;
         /* padding-right: 14px; */
         display: flex;
         justify-content: end;
