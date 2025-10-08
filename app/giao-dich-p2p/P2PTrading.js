@@ -21,31 +21,43 @@ export default function P2PTrading() {
                     <div className={styles.displayFlexForHeader}>
                         <div className="col-md-8">
                             <h1 className={`heading ${styles.pageTitleHeading}`}>
-                                 Giao dịch <span>P2P</span>
+                            Giao dịch <span>P2P</span>
                             </h1>
                         </div>
                         <div className={`col-md-4 ${styles.col4mdCenter}`}>
                              <p className={`${styles.pageHeaderKnowledgeSubtitle}`}>Hướng dẫn chi tiết giúp bạn rút tiền từ Nivex nhanh chóng,
-                             an toàn và thuận tiện.</p>
+an toàn và thuận tiện.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
             {/* Deposit Steps Section */}
-            <section className={styles.depositSection}>
+            <section className={styles.depositSection + ' ' + styles.withdrawSectionImageAfter}>
                 <div className="container">
                     <h2 className={`${styles.depositSectionTitle}`}>
-                            Giao dịch P2P là gì?
+                            <span>Giao dịch P2P</span> là gì?
                     </h2>
+                    <p className={`${styles.p2pTradingDescription}`}>Giao dịch P2P tiền mã hóa là bước đầu tiên để người mới tham gia vào thị trường tiền mã hóa. 
+                        Ngay cả khi bạn là một nhà giao dịch giàu kinh nghiệm, bạn cũng cần phải thực hiện giao dịch P2P 
+                        để duy trì dòng tiền luân chuyển liên tục giữa tiền pháp định và tiền mã hóa. Bây giờ, 
+                        hãy theo dõi hướng dẫn này để bắt đầu giao dịch P2P đầu tiên của bạn trên Nivex.</p>
+                    <p className={`${styles.p2pTradingDescription2}`}><span>Lưu ý</span>:<br />
+                        Trước khi tiến hành giao dịch P2P, bạn cần đảm bảo rằng mình đã hoàn thành xác minh KYC trước. Nếu chưa hoàn thành xác minh KYC, Nivex sẽ không thể cung cấp dịch vụ giao dịch P2P cho bạn.</p>
                     {/* Step 1 */}
+
+                    <h3 className={`${styles.depositSectionTitle}`}>
+                            Cách <span>thực hiện giao dịch P2P</span> trên Nivex
+                    </h3>
+                    <p className={styles.p2pTradingDescription3}>Gồm 9 bước:</p>
+
                     <div className={`${styles.displayFlexContainer}`}>
                         <div className={`${styles.contentColumn}`}>
                             <div className={styles.stepContainer}>
                                 <div className={styles.stepContent}>
-                                    <h3 className={styles.stepTitle}>1. Đăng nhập tài khoản</h3>
+                                    <h3 className={styles.stepTitle}>1. Vào P2P</h3>
                                     <p className={styles.stepDescription}>
-                                        Đầu tiên, hãy chắc chắn bạn đã đăng nhập vào tài khoản <span className={styles.highlightGreen} style={{ textDecoration: 'underline' }}>Nivex</span>.
+                                        Từ trang chủ, nhấn vào nút <span className={styles.hightlightP2P}>Thêm</span> → Chọn <span className={styles.hightlightP2P}>P2P</span> trong mục Giao dịch. (Hoặc vào P2P nếu có sẵn trên trang chủ).
                                     </p>
                                 </div>
                             </div>

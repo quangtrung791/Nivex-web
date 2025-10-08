@@ -9,31 +9,31 @@ export default function MenuListNew() {
   const menuItems = [
     {
       title: 'Khóa học',
-      icon: 'assets/images/icon-list-menu-homepage/khoahoc_homepage.png',
+      icon: 'assets/images/icon-list-menu-homepage/khoahoc_homepage_hover.png',
       href: '/#',
       description: 'Học crypto từ cơ bản đến nâng cao'
     },
     {
       title: 'AI Copy Trade',
-      icon: 'assets/images/icon-list-menu-homepage/aicopytrade_homepage.png',
+      icon: 'assets/images/icon-list-menu-homepage/aicopytrade_homepage_hover.png',
       href: '/ai-copy-trade',
       description: 'Giao dịch tự động với AI'
     },
     {
       title: 'Kiến thức tổng quan',
-      icon: 'assets/images/icon-list-menu-homepage/khienthuctongquan_homepage.png',
+      icon: 'assets/images/icon-list-menu-homepage/khienthuctongquan_homepage_hover.png',
       href: '/kien-thuc-tong-quan',
       description: 'Tổng hợp kiến thức crypto'
     },
     {
       title: 'Sự kiện',
-      icon: 'assets/images/icon-list-menu-homepage/sukien_homepage.png',
+      icon: 'assets/images/icon-list-menu-homepage/sukien_homepage_hover.png',
       href: '/su-kien',
       description: 'Tin tức và sự kiện mới nhất'
     },
     {
       title: 'Hướng dẫn sử dụng App Nivex',
-      icon: 'assets/images/icon-list-menu-homepage/huongdansudungappnivex.png',
+      icon: 'assets/images/icon-list-menu-homepage/huongdansudungappnivex_hover.png',
       href: '/huong-dan-su-dung-app-nivex',
       description: 'Hướng dẫn chi tiết sử dụng app'
     }
@@ -52,8 +52,6 @@ export default function MenuListNew() {
           {/* <div className="col-md-12"> */}
             <div className={`${styles.menuGrid}`}>
               {menuItems.map((item, index) => {
-                const hoverIcon = item.icon.replace(/(\.[a-zA-Z0-9]+)$/,'_hover$1');
-                const isHovered = hoveredIndex === index;
                 return (
                 <Link 
                   href={item.href} 
@@ -64,7 +62,7 @@ export default function MenuListNew() {
                 >
                   <div className={styles.iconContainer}>
                     <img 
-                      src={isHovered ? hoverIcon : item.icon} 
+                      src={item.icon} 
                       alt={item.title}
                       className={styles.menuIcon}
                     />
