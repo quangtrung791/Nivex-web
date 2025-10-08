@@ -46,8 +46,8 @@
 .withdrawSectionImageAfter::after {
     content: "";
     position: absolute;
-    top: 2.5%;
-    right: 3.5%;
+    top: 1%;
+    right: 3%;
     width: 30vw;
     height:auto;
     aspect-ratio: 608/489;
@@ -92,7 +92,7 @@ h2.depositSectionTitle {
 }
 
 .hightlightP2P {
-    font-weight: 800;
+    font-weight: 700;
 }
 
 .stepTitle {
@@ -118,25 +118,45 @@ h2.depositSectionTitle {
     margin-top: 20px;
 }
 
-.imagePlaceholder1, .imagePlaceholder2, .imagePlaceholder3 {
-    width: 300px;
+.imagePlaceholder {
+    width: 391px;
     height: auto;
-    aspect-ratio: 323/ 335;
+    aspect-ratio: 391/ 845;
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
 }
 
 .imagePlaceholder1 {
-    background-image: url(https://learningchain.vn/wp-content/uploads/2025/10/ruttienmahoa_nivex.webp);
+    background-image: url(https://learningchain.vn/wp-content/uploads/2025/10/imageP2PNivex1.webp);
 }
 
 .imagePlaceholder2 {
-    background-image: url(https://learningchain.vn/wp-content/uploads/2025/10/ruttienmahoa2_nivex.webp);
+    background-image: url(https://learningchain.vn/wp-content/uploads/2025/10/imageP2PNivex2.webp);
 }
 
 .imagePlaceholder3 {
-    background-image: url(https://learningchain.vn/wp-content/uploads/2025/10/ruttienmahoa3_nivex.webp);
+    background-image: url(https://learningchain.vn/wp-content/uploads/2025/10/imageP2PNivex3.webp);
+}
+
+.imagePlaceholder4 {
+    background-image: url(https://learningchain.vn/wp-content/uploads/2025/10/imageP2PNivex4.webp);
+}   
+
+.imagePlaceholder5 {
+    background-image: url(https://learningchain.vn/wp-content/uploads/2025/10/imageP2PNivex5.webp);
+}
+
+.imagePlaceholder6 {
+    background-image: url(https://learningchain.vn/wp-content/uploads/2025/10/imageP2PNivex6.webp);
+}
+
+.imagePlaceholder7 {
+    background-image: url(https://learningchain.vn/wp-content/uploads/2025/10/imageP2PNivex7.webp);
+}
+
+.imagePlaceholder8 {
+    background-image: url(https://learningchain.vn/wp-content/uploads/2025/10/imageP2PNivex8.webp);
 }
 
 /* FAQ Section */
@@ -235,7 +255,7 @@ h2.depositSectionTitle {
 
 @media screen and (min-width: 1440px) and (max-width: 1750px) {
     .withdrawSectionImageAfter::after {
-        right: 2%;
+        right: 1.5%;
     }
 }
 
@@ -255,9 +275,9 @@ h2.depositSectionTitle {
 /* Responsive Design */
 @media (max-width: 1200px) {
     .withdrawSectionImageAfter::after {
-        display: none;
+        right: 0.25%;
     }
-    .imagePlaceholder1, .imagePlaceholder2, .imagePlaceholder3 {
+    .imagePlaceholder {
         width: 280px;
     }
 
@@ -265,7 +285,7 @@ h2.depositSectionTitle {
         font-size: 30px;
     }
     
-    h2.depositSectionTitle {
+    h2.depositSectionTitle, h3.depositSectionTitle {
         font-size: 34px;
     }
     .displayFlexForStepDescription {
@@ -274,7 +294,7 @@ h2.depositSectionTitle {
 }
 
 @media (max-width: 1024px) {
-    .imagePlaceholder1, .imagePlaceholder2, .imagePlaceholder3 {
+    .imagePlaceholder {
         width: 240px;
     }
     .displayFlexForStepDescription {
@@ -283,8 +303,13 @@ h2.depositSectionTitle {
 }
 
 @media (max-width: 768px) {
+
+    .p2pTradingDescription, .p2pTradingDescription2 {
+        width: 100%;
+        text-align: justify;
+    }
     .withdrawSectionImageAfter::after {
-        top: 1%;
+        top: 0.15%;
         right: 50%;
         transform: translateX(50%);
         display: block;
@@ -294,7 +319,7 @@ h2.depositSectionTitle {
         gap: 15px;
     }
 
-    .imagePlaceholder1, .imagePlaceholder2, .imagePlaceholder3 {
+    .imagePlaceholder {
         width: 350px;
     }
 
@@ -327,17 +352,14 @@ h2.depositSectionTitle {
         flex-direction: column;
     }
 
-    h2.depositSectionTitle, .faqTitle  {
+    h2.depositSectionTitle, h3.depositSectionTitle {
         font-size: 28px;
     }
     
-    .subTitleFeeSection {
-        font-size: 16px;
-    }
 
     h2.depositSectionTitle {
         margin-bottom: 20px;
-        margin-top: 300px;
+        margin-top: 250px;
     }
     .pageTitleDeposit {
         padding: 40px 0;
@@ -346,7 +368,7 @@ h2.depositSectionTitle {
 }
 
 @media (max-width: 480px) {
-    .imagePlaceholder1, .imagePlaceholder2, .imagePlaceholder3 {
+    .imagePlaceholder {
         width: 100%;
     }
 
