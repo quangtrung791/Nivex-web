@@ -17,7 +17,8 @@ export default function BuyCryptoSelect() {
     const [ searchQuery, setSearchQuery ] = useState("");
 
     useEffect(() => {
-        fetch('/api/dictionary')
+        // fetch('/api/dictionary')
+        fetch('/api/vocabulary')
             .then(res => res.json())
             .then(data => {
                 if (!data.success) return;
