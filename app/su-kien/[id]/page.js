@@ -16,7 +16,7 @@ async function getTermBySlug(slug) {
 }
 
 // Tạo metadata động
-export async function generateMetadataSuKien({ params }) {
+export async function generateMetadata({ params }) {
     const { slug } = params
     const data = await getTermBySlug(slug);
     const title = data?.title || "Sự kiện Nivex";

@@ -16,7 +16,7 @@ async function getTermBySlug(slug) {
 }
 
 // Tạo metadata động
-export async function generateMetadataNewsDetails({ params }) {
+export async function generateMetadata({ params }) {
     const { slug } = params
     const data = await getTermBySlug(slug);
     const keyword = data?.title || "Chi tiết tin tức";
