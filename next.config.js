@@ -47,6 +47,13 @@ const nextConfig = {
     }
     return config
   },
+  async redirects() {
+    return [
+      // chính xác 2 biến thể có/không slash
+      { source: '/landing-page-nivex',  destination: 'https://learningchain.vn/landing-page-nivex', permanent: true },
+      { source: '/landing-page-nivex/', destination: 'https://learningchain.vn/landing-page-nivex', permanent: true },
+    ];
+  },
 }
 
 module.exports = nextConfig
