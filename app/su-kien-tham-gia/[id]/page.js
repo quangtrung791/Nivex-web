@@ -7,7 +7,7 @@ async function getTermBySlug(slug) {
     const productionUrl = 'https://nivex.vn';
     const developedUrl = 'http://localhost:3000'
     const res = await fetch(
-        `${process.env.NODE_ENV === "production" ? productionUrl : developedUrl}/api/event/${slug}`,
+        `${process.env.NODE_ENV === "production" ? productionUrl : developedUrl}/api/joined_events/${slug}`,
         { cache: "no-store" }
     );
     
@@ -28,7 +28,7 @@ export async function generateMetadataSuKienTG({ params }) {
         openGraph: {
             title: `${title} | Chi tiết sự kiện Nivex`,
             description: desc,
-            url: `https://nivex.vn/su-kien/${slug}`,
+            url: `https://nivex.vn/su-kien-tham-gia/${slug}`,
             siteName: "Nivex",
             images: [
                 {
