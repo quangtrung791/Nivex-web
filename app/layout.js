@@ -18,8 +18,8 @@ const inter = Inter({
 })
 
 export const metadata = {
-    title: 'Nivex hub',
-    description: 'Nivex Website Vietnam - nivex.vn',
+    title: 'Nivex',
+    description: 'Nivex – nền tảng giao dịch crypto bằng trí tuệ nhân tạo, cung cấp spot và futures an toàn, nhanh chóng, dành cho cộng đồng người dùng Việt.',
 }
 
 export default function RootLayout({ children }) {
