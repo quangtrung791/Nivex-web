@@ -5,7 +5,7 @@ import Layout from "@/components/layout/Layout"
 import { useEffect } from "react"
 import Link from "next/link"
 import './style.css'
-export default function BlogDetails() {
+export default function BlogDetailsUI() {
 
 
     useEffect(() => {
