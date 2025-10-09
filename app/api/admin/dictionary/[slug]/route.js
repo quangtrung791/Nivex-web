@@ -24,11 +24,6 @@ export async function GET(request, { params }) {
         )
     }
     
-    // const result = await query(
-    //   `SELECT id, slug, keyword, short_desc, description, created_at, updated_at
-    //    FROM public.dictionary WHERE slug = $1`,
-    //   [slug]
-    // )
     if (result.length === 0) return NextResponse.json({ error: 'Not found' }, { status: 404 })
     return NextResponse.json(result[0])
   } catch (error) {

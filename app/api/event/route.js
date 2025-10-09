@@ -14,6 +14,7 @@ export async function GET(request) {
     let sqlQuery = `
       SELECT 
         id,
+        slug,
         title,
         content,
         short_desc,
@@ -21,22 +22,21 @@ export async function GET(request) {
         time_event,
         created_at,
         updated_at
-      FROM public.event
-    `
+      FROM public.event`
     
     const queryParams = []
     let paramIndex = 1
 
     // Apply search filter
     if (search.trim()) {
-      sqlQuery += ` AND (title ILIKE $${paramIndex} OR content ILIKE $${paramIndex})`
+      sqlQuery += ` AND (title ILIKE $${paramIndex} OR short_desc ILIKE $${paramIndex})`
       queryParams.push(`%${search}%`)
       paramIndex++
     }
 
 
   // Order by start date and limit to 20 records
-  sqlQuery += ` ORDER BY time_event DESC LIMIT 20`
+  sqlQuery += ` ORDER BY time_event DESC LIMIT 50`
 
     console.log("Executing query:", { sqlQuery, queryParams });
     const result = await query(sqlQuery, queryParams)
@@ -48,6 +48,7 @@ export async function GET(request) {
 
     return {
         id: n.id,
+        slug: n.slug,
         title: n.title,
         time_event: n.time_event,
         content: n.content,

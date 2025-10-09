@@ -5,10 +5,10 @@ export const runtime = 'nodejs';
 
 export async function GET(request, { params }) {
   try {
-    const { id } = params;
-    if (!id) {
+    const { slug } = params;
+    if (!slug) {
       return NextResponse.json(
-        { success: false, error: "Thiếu id thông tin sự kiện" },
+        { success: false, error: "Thiếu slug thông tin sự kiện" },
         { status: 400 }
       );
     }
@@ -16,6 +16,7 @@ export async function GET(request, { params }) {
     const sqlQuery = `
       SELECT 
         id,
+        slug,
         title,
         content,
         short_desc,
@@ -24,10 +25,10 @@ export async function GET(request, { params }) {
         created_at,
         updated_at
       FROM public.event
-      WHERE id = $1
+      WHERE slug = $1
       LIMIT 1
     `;
-    const result = await query(sqlQuery, [id]);
+    const result = await query(sqlQuery, [slug]);
 
     if (!result || result.length === 0) {
       return NextResponse.json(

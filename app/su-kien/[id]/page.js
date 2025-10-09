@@ -46,10 +46,7 @@ export async function generateMetadataSuKien({ params }) {
 
 export default function EventDetailsPage() {
     return (
-        // <Layout headerStyle={1} footerStyle={2}>
-        //     <ChiTietThuatNgu />
-        // </Layout>
-        <Layout>
+        <Layout headerStyle={1} footerStyle={2}>
             <EventDetails />
         </Layout>
     )

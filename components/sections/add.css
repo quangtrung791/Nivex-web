@@ -93,6 +93,9 @@ p.text.fs-14 {
         position: relative;
         top: -50px !important;
     }
+    .main-description {
+        margin-bottom: 24px;
+    }
 }
 
 .ai-copy-trade h3.heading {

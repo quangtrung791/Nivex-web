@@ -76,10 +76,7 @@ export default function SuKien() {
             .then(data => setHotNews(data));
     }, []);
 
-    // const filteredNews = activeTab === "all"
-    //     ? news
-    //     : news.filter(item => String(item.category_id) === String(activeTab));
-
+   
         const today = new Date();
         const todayDay = new Date(today.getFullYear(), today.getMonth(), today.getDate());
         let tabMatch = true; // biến flag
@@ -264,9 +261,9 @@ export default function SuKien() {
                                                                     {item.time_event ? new Date(item.time_event).toLocaleDateString("vi-VN") : ""}
                                                                 </Link>
                                                             </div>
-                                                            <Link href={`/su-kien/${item.id}`} className="title">{item.title}</Link>
+                                                            <Link href={`/su-kien/${item.slug}`} className="title">{item.title}</Link>
                                                             <div className="text" dangerouslySetInnerHTML={{ __html: item.short_desc }}></div>
-                                                            <Link href={`/su-kien/${item.id}`} className="read-more-btn btn-action">Xem thêm</Link>
+                                                            <Link href={`/su-kien/${item.slug}`} className="read-more-btn btn-action">Xem thêm</Link>
                                                         </div>
                                                     </div>
                                                 );
