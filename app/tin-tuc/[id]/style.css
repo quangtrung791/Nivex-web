@@ -21,6 +21,20 @@
 }
 
 /* News text content */
+section.tin-tuc-id .news-details-display-markdown ul {
+    list-style-type: disc !important;       /* Hiển thị gạch đầu dòng dạng chấm tròn */
+    margin-left: 1.5rem;         /* Thụt lề trái */
+    padding-left: 1.5rem;        /* Tăng khoảng cách giữa viền và nội dung */
+}
+section.tin-tuc-id .news-details-display-markdown ol {
+    list-style-type: decimal !important;    /* Nếu có danh sách đánh số */
+    margin-left: 1.5rem;
+    padding-left: 1.5rem;
+}
+section.tin-tuc-id .news-details-display-markdown li {
+    /* margin-bottom: 0.5rem; */
+    line-height: 1.4;            /* Giúp dễ đọc hơn */
+}
 section.tin-tuc-id .content ul,
 section.tin-tuc-id .content li {
     padding-left: 15px;

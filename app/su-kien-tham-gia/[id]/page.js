@@ -97,8 +97,8 @@ export default function BlogDetails() {
                                         <h3 className="title">
                                             {events.title}
                                         </h3>
-                                        <div className="content" dangerouslySetInnerHTML={{ __html: events.content }} >
-                                            
+                                        <div className="joined-event-details-display-markdown content" dangerouslySetInnerHTML={{ __html: events.content }} >
+                                            {/* Noi dung */}
                                         </div>
                                        
                                     </div>
