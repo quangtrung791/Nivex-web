@@ -1,6 +1,5 @@
 import Layout from '@/components/layout/Layout'
 import CoursesPage from './CoursesPage'
-import Header2 from '@/components/layout/header/Header2.css'
 
 export const metadata = {
   title: 'Khóa học | Nivex Hub',
