@@ -159,7 +159,7 @@ export default function SuKienAlt() {
                                                                     </div>
                                                                     <div className="box-content">
                                                                         <div>
-                                                                            <Link href={`/su-kien-tham-gia/${item.id}`} className="title">{item.title}</Link>
+                                                                            <Link href={`/su-kien-tham-gia/${item.slug}`} className="title">{item.title}</Link>
                                                                             <p className="text-desc-su-kien">{item.short_desc}</p>
                                                                         </div>
                                                                         <div className="event-meta-row">
@@ -174,7 +174,7 @@ export default function SuKienAlt() {
                                                                                     <span>{item.tag3 || "CopyTrade"}</span>
                                                                                 </div>
                                                                             </div>
-                                                                            <Link href={`/su-kien-tham-gia/${item.id}`} className="event-btn btn-action">Xem thêm</Link>
+                                                                            <Link href={`/su-kien-tham-gia/${item.slug}`} className="event-btn btn-action">Xem thêm</Link>
                                                                         </div>
                                                                     </div>
                                                                 </div>

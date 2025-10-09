@@ -121,7 +121,7 @@ export default function JoinedEventDetailsComponent() {
                                                             </div>
                                                         </div>
                                                         <div className="content">
-                                                            <Link href={`/su-kien-tham-gia/${item.id}`} className="title navigate-child-news">
+                                                            <Link href={`/su-kien-tham-gia/${item.slug}`} className="title navigate-child-news">
                                                                 {item.title}
                                                             </Link>
                                                         </div>
@@ -150,7 +150,7 @@ export default function JoinedEventDetailsComponent() {
                                                                 <div className="wrap-video"></div>
                                                             </div>
                                                             <div className="box-content title-news-duoc-xem-nhieu">
-                                                                <Link href={`/su-kien-tham-gia/${item.id}`} className="title">{item.title}</Link>
+                                                                <Link href={`/su-kien-tham-gia/${item.slug}`} className="title">{item.title}</Link>
                                                             </div>
                                                         </div>
                                                     </div>
