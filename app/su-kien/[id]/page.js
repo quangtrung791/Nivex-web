@@ -1,214 +1,53 @@
-
-'use client'
-import VideoPopup from "@/components/elements/VideoPopup"
 import Layout from "@/components/layout/Layout"
-import { useEffect, useState } from "react"
-import Link from "next/link"
-import { useParams } from "next/navigation"
-import './style.css'
+import { Metadata } from "next"
+import EventDetails from "./ChiTietSuKienComponent";
 
-export default function BlogDetails() {
-    const { id } = useParams()
-    const [events, setEvents] = useState(null);
-    const [hotEvents, setHotEvents] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [moreNewsCount, setMoreNewsCount] = useState(3);
+// Hàm lấy dữ liệu từ API theo slug
+async function getTermBySlug(slug) {
+    const productionUrl = 'https://nivex.vn';
+    const developedUrl = 'http://localhost:3000'
+    const res = await fetch(
+        `${process.env.NODE_ENV === "production" ? productionUrl : developedUrl}/api/event/${slug}`,
+        { cache: "no-store" }
+    );
+    
+    if (!res.ok) return null;
+    return await res.json();
+}
 
-    useEffect(() => {
-        if (events && events.title) {
-            document.title = events.title;
+// Tạo metadata động
+export async function generateMetadataSuKien({ params }) {
+    const { slug } = params
+    const data = await getTermBySlug(slug);
+    const title = data?.title || "Sự kiện Nivex";
+    const desc = data?.short_desc?.replace(/<[^>]+>/g, '') || "Sự kiện tại Nivex tổ chức";
+
+    return {
+        title: `${title} | Chi tiết sự kiện Nivex`,
+        description: desc,
+        openGraph: {
+            title: `${title} | Chi tiết sự kiện Nivex`,
+            description: desc,
+            url: `https://nivex.vn/su-kien/${slug}`,
+            siteName: "Nivex",
+            images: [
+                {
+                    url: "/assets/images/logo/Nivex_icon_bg.png",
+                    width: 1200,
+                    height: 630,
+                    alt: `Sự kiện ${title} do chính Nivex tổ chức`
+                }
+            ],
+            locale: "vi_VN",
+            type: "website"
         }
-    }, [events]);
+    }
+}
 
-    useEffect(() => {
-        if (!id) return
-        setLoading(true)
-        fetch(`/api/event/${id}`)
-            .then(res => res.json())
-            .then(data => {
-                setEvents(data)
-                setLoading(false)
-            })
-            .catch(() => setLoading(false))
-    }, [id]);
-
-    useEffect(() => {
-    if (!id) return;
-        setLoading(true);
-        fetch(`/api/event/${id}`)
-            .then(res => res.json())
-            .then(data => {
-                setEvents(data);
-                setLoading(false);
-            })
-            .catch(() => setLoading(false));
-        // Fetch danh sách event
-        fetch('/api/event?hot=1')
-            .then(res => res.json())
-            .then(data => setHotEvents(Array.isArray(data.data) ? data.data : []));
-    }, [id]);
-
-    if (loading) return 
-        <div style={{'display': 'flex', 'justifyContent': 'center', 'alignItems': 'center'}}>
-            <p>Đang tải dữ liệu...</p>
-        </div>
-    if (!events) return 
-        <div style={{ 'display': 'flex', 'justifyContent': 'center', 'alignItems': 'center' }}>
-            <p>Lỗi kết nối với máy chủ.</p>
-        </div>
-
-
+export default function EventDetailsPage() {
     return (
-        <>
-            <Layout headerStyle={1} footerStyle={2} >
-                <div>
-                    <section className="section-news-header">
-                        <div className="news-header-container">
-                            <h1 className="news-title">Chi tiết <span className="gradient-text">sự kiện</span></h1>
-                            <form className="news-search-form">
-                                <input
-                                    type="text"
-                                    placeholder="Tìm kiếm"
-                                    className="news-search-input"
-                                />
-                                <button type="submit" className="news-search-btn">
-                                    <svg width="20" height="20" viewBox="0 0 24 24">
-                                        <circle cx="11" cy="11" r="8" stroke="#222" strokeWidth="2" fill="none"/>
-                                        <line x1="17" y1="17" x2="22" y2="22" stroke="#222" strokeWidth="2"/>
-                                    </svg>
-                                </button>
-                            </form>
-                        </div>
-                    </section>
-
-                    <section className="blog-details su-kien-id">
-                        <div className="container">
-                            <div className="row">
-                                <div className="col-xl-8 col-md-12">
-                                    <div className="navigate-link">
-                                        <span className="navigate-link-content" id="navigate-link-content">
-                                            <Link href='/su-kien'>Sự kiện&nbsp;&nbsp;&gt;</Link>
-                                            <span>&nbsp;&nbsp;{events.title}</span>
-                                        </span>
-                                    </div>
-                                    <div className="blog-main">
-                                         <div className="box-image">
-                                             <img src={events.thumbnail_url || "/assets/images/blog/blog-01.jpg"} alt={events.title} />
-                                        </div>
-                                        <h3 className="title">
-                                            {events.title}
-                                        </h3>
-                                        <div className="event-details-display-markdown content" dangerouslySetInnerHTML={{ __html: events.content }} >
-                                            {/* Noi dung */}
-                                        </div>
-                                       
-                                    </div>
-                                </div>
-                                <div className="col-xl-4 col-md-12">
-                                    <h6 className="heading tin-nong-heading">Sự kiện khác</h6>
-                                    <div className="sidebar">
-                                        <div className="widget recent mt-0">
-                                            <ul className="tin-nong">
-                                                {Array.isArray(hotEvents) && hotEvents.slice(0, 10).map(item => (
-                                                    <li key={item.id}>
-                                                        <div style={{ display: 'block' }}>
-                                                            <p className="time-stamp-p">
-                                                                {item.time_event
-                                                                    ? new Date(item.time_event).toLocaleString('vi-VN', { hour12: false })
-                                                                    : ''}
-                                                            </p>
-                                                            <div className="image">
-                                                                <img src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
-                                                            </div>
-                                                        </div>
-                                                        <div className="content">
-                                                            <Link href={`/su-kien/${item.id}`} className="title navigate-child-news">
-                                                                {item.title}
-                                                            </Link>
-                                                        </div>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </div> 
-                                    </div>
-
-
-                                    {/* Tin xem nhiều */}
-                                    {/* <div className="sidebar tin-xem-nhieu">
-                                        <div className="widget recent mt-0">
-                                            <h6 className="heading">Tin xem nhiều</h6>
-                                            
-                                            <ul className="tin-nong">
-                                                {hotEvents.slice(0, 3).map(item => (
-                                                    <li key={item.id}>
-                                                        <div style={{ display: 'block' }}>
-                                                            <p className="time-stamp-p">
-                                                                {item.time_upload
-                                                                    ? new Date(item.time_upload).toLocaleString('vi-VN', { hour12: false })
-                                                                    : ''}
-                                                            </p>
-                                                            <div className="image">
-                                                                <img src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
-                                                            </div>
-                                                        </div>
-                                                        <div className="content">
-                                                            <Link href={`/su-kien/${item.id}`} className="title navigate-child-news">
-                                                                {item.title}
-                                                            </Link>
-                                                        </div>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                    </div> */}
-
-
-
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                      <section className="duoc-xem-nhieu col-md-12 duoc-xem-nhieu-chi-tiet-su-kien">
-                        <div className="title-container">
-                            <h5>Được xem nhiều</h5>
-                        </div>
-                                            <div className="content-inner row div-duoc-xem-nhieu">
-                                                {hotEvents.slice(0, moreNewsCount).map(item => (
-                                                    <div className="col-md-4" key={item.id}>
-                                                        <div className="blog-box">
-                                                            <div className="box-image">
-                                                                <img src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
-                                                                <div className="wrap-video"></div>
-                                                            </div>
-                                                            <div className="box-content title-news-duoc-xem-nhieu">
-                                                                <Link href={`/su-kien/${item.id}`} className="title">{item.title}</Link>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                ))}
-                                                {/* <div className="col-md-12">
-                                                    <div className="button-loadmore">
-                                                        <Link href="/su-kien" className="btn-action">
-                                                            Xem thêm
-                                                        </Link>
-                                                    </div>
-                                                </div> */}
-                                                {moreNewsCount < hotEvents.length && (
-                                                    <div className="col-md-12">
-                                                        <div className="button-loadmore">
-                                                            <button
-                                                                className="btn-action"
-                                                                onClick={() => setVisibleCount(moreNewsCount + 3)}>
-                                                                    Xem thêm
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                )}
-                                            </div>
-                    </section>
-                </div>
-
-            </Layout>
-        </>
+        <Layout headerStyle={1} footerStyle={2}>
+            <EventDetails />
+        </Layout>
     )
 }

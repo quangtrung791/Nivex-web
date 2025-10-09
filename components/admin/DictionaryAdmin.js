@@ -278,8 +278,8 @@ export const DictionaryEdit = () => (
         label="Slug URL" 
         // validate={[required()]}
         fullWidth
-        helperText="Nhập Slug URL (nếu bỏ qua thì sẽ tự động tạo slug)"
-      required />
+        helperText="Sửa Slug"
+      />
 
       <TextInput 
         source="short_desc" 

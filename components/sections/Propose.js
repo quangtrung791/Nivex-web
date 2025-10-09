@@ -59,7 +59,7 @@ export default function Propose() {
                                                                 <h4 className='title-propose-card'>{item.keyword}</h4>
                                                                 <p className='text-propose-card'>{shortDesc}</p>
                                                                 <div className="card-meta card-meta-propose">
-                                                                    <Link href={`/thuat-ngu/${item.id}`}  className="author card-button-propose">Định nghĩa đầy đủ<i className="icon-button-propose"></i></Link>
+                                                                    <Link href={`/thuat-ngu/${item.slug}`}  className="author card-button-propose">Định nghĩa đầy đủ<i className="icon-button-propose"></i></Link>
                                                                 </div>
                                                             </div>
                                                         </div>

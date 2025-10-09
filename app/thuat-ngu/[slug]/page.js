@@ -1,83 +1,56 @@
-
-'use client'
-import VideoPopup from "@/components/elements/VideoPopup"
 import Layout from "@/components/layout/Layout"
-import Propose from "@/components/sections/Propose"
-import Link from "next/link"
-import { useState, useEffect } from "react";
-import './chi_tiet_tn.css';
+import ChiTietThuatNgu from "./DictionaryDetailsPage"
+import { Metadata } from "next"
 
-export default function ChiTietThuatNgu({ params }) {
+// Hàm lấy dữ liệu từ API theo slug
+async function getTermBySlug(slug) {
+    const productionUrl = 'https://nivex.vn';
+    const developedUrl = 'http://localhost:3000'
+    const res = await fetch(
+        `${process.env.NODE_ENV === "production" ? productionUrl : developedUrl}/api/vocabulary/${slug}`,
+        { cache: "no-store" }
+    );
+    
+    if (!res.ok) return null;
+    return await res.json();
+}
+
+// Tạo metadata động
+export async function generateMetadata({ params }) {
     const { slug } = params
-    const [term, setTerm] = useState(null)
-    const [loading, setLoading] = useState(true)
-    
-    useEffect(() => {
-        fetch(`/api/dictionary/${slug}`)
-            .then((res) => res.json())
-            .then((data) => {
-                // Nếu data là object có id, keyword, description thì setTerm luôn
-                if (data && data.slug) {
-                    setTerm(data)
+    const data = await getTermBySlug(slug);
+    const keyword = data?.keyword || "Thuật ngữ";
+    const desc = data?.short_desc?.replace(/<[^>]+>/g, '') || "Tìm hiểu về các từ khóa của ngành blockchain chỉ trong vài phút.";
+
+    return {
+        title: `${keyword} | Bảng thuật ngữ Nivex`,
+        description: desc,
+        openGraph: {
+            title: `${keyword} | Bảng thuật ngữ Nivex`,
+            description: desc,
+            url: `https://nivex.vn/thuat-ngu/${slug}`,
+            siteName: "Nivex",
+            images: [
+                {
+                    url: "/assets/images/logo/Nivex_icon_bg.png",
+                    width: 1200,
+                    height: 630,
+                    alt: `Thuật ngữ ${keyword}`
                 }
-                setLoading(false)
-            })
-            .catch(() => setLoading(false))
-    }, [slug])
-
-    if (loading) {
-        return (
-        <Layout headerStyle={1} footerStyle={2}>
-            <p style={{ textAlign: "center" }}>Đang tải dữ liệu...</p>
-        </Layout>
-        )
+            ],
+            locale: "vi_VN",
+            type: "website"
+        }
     }
+}
 
-    if (!term) {
-        return (
-        <Layout headerStyle={1} footerStyle={2}>
-            <p style={{ textAlign: "center" }}>Không tìm thấy thuật ngữ</p>
-        </Layout>
-        )
-    }
-    
+export default function ThuatNguDetails() {
     return (
-        <>
-            <Layout 
-                headerStyle={1} 
-                footerStyle={2} 
-            >
-                <div>
-                    <section className="blog-details chi-tiet-thuat-ngu">
-                        <div className="container">
-                            <div className="row">
-                                <div className="col-xl-8 col-md-12 w100">
-                                    <div className="blog-main">
-                                        <Link href="/thuat-ngu" className="navigate-top link-nav-back-custom">Bảng thuật ngữ &nbsp; {'>'} &nbsp; <span style={{'color' : '#fff'}}>{term.keyword}</span></Link>
-                                        <h3 className="title">
-                                            {term.keyword}
-                                        </h3>
-                                        <div className="meta">
-                                            <Link href="#" className="category btn-action" style={{'letterSpacing': '0px'}}>Giải thích thuật ngữ</Link>
-                                        </div>
-                                        <div className="content">
-                                            <p className="main-text-p">
-                                                <span className="dictionary-details-display-markdown block" dangerouslySetInnerHTML={{ __html: term.description }}></span>
-                                            </p>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                               
-                            </div>
-                        </div>
-                    </section>
-                   <div>
-                     <Propose />
-                   </div>
-                </div>
-
-            </Layout>
-        </>
+        // <Layout headerStyle={1} footerStyle={2}>
+        //     <ChiTietThuatNgu />
+        // </Layout>
+        <Layout>
+            <ChiTietThuatNgu />
+        </Layout>
     )
 }
