@@ -1,0 +1,29 @@
+.logoHeaderNivex {
+    transform: translate(0%, -1%) !important;
+    aspect-ratio: 269/60;
+    object-fit: contain;
+    width: 115px !important;
+}
+
+.logoHeaderLearningChain {
+    transform: translate(0%, 1%) !important;
+    aspect-ratio: 386/112;
+    object-fit: contain;
+    width: 178px !important;
+}
+
+
+.newClass1 p {
+    color: #978a8a;
+    font-size: 20px;
+    margin: 0 25px 0 25px;
+}
+
+.textHeaderRight {
+    color: #ffffff;
+    margin-right: 20px;
+}
+
+.textHeaderRight2 {
+    color: #ffffff;
+}
