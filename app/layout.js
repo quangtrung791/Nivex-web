@@ -17,9 +17,21 @@ const inter = Inter({
     display: 'swap',
 })
 
+// Thêm index, follow cho trực quan...
 export const metadata = {
     title: 'Nivex',
     description: 'Nivex – nền tảng giao dịch crypto bằng trí tuệ nhân tạo, cung cấp spot và futures an toàn, nhanh chóng, dành cho cộng đồng người dùng Việt.',
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          maxSnippet: -1,
+          maxImagePreview: 'large',
+          maxVideoPreview: -1,
+        },
+    },
 }
 
 export default function RootLayout({ children }) {
