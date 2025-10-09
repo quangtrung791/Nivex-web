@@ -122,7 +122,7 @@ export default function EventDetails() {
                                                             </div>
                                                         </div>
                                                         <div className="content">
-                                                            <Link href={`/su-kien/${item.id}`} className="title navigate-child-news">
+                                                            <Link href={`/su-kien/${item.slug}`} className="title navigate-child-news">
                                                                 {item.title}
                                                             </Link>
                                                         </div>

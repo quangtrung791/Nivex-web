@@ -70,11 +70,11 @@ export default function SuKien() {
             .then(data => setHotNews(data));
     }, [id]);
 
-    useEffect(() => {
-        fetch('/api/event?hot=1')
-            .then(res => res.json())
-            .then(data => setHotNews(data));
-    }, []);
+    // useEffect(() => {
+    //     fetch('/api/event?hot=1')
+    //         .then(res => res.json())
+    //         .then(data => setHotNews(data));
+    // }, []);
 
    
         const today = new Date();
@@ -231,7 +231,7 @@ export default function SuKien() {
                                         {/* Hiển thị dữ liệu sự kiện dựa trên bộ lọc thời gian (time_event) */}
                                         {filteredNews.length === 0 ? (
                                             <p style={{ textAlign: "center", padding: "20px", color: "#888" }}>
-                                                Không có dữ liệu
+                                                Đang tải dữ liệu
                                             </p>
                                         ) : (
                                             filteredNews.map(item => {
