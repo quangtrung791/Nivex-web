@@ -263,7 +263,7 @@ export default function KnowledgePage() {
                         <h3 className={styles.sectionTitle}>Được xem nhiều</h3>
                         
                         {loading && (
-                            <div style={{ textAlign: 'center', padding: '40px' }}>
+                            <div style={{ textAlign: 'center' }}>
                                 <p>Đang tải dữ liệu...</p>
                             </div>
                         )}

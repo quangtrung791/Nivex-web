@@ -15,8 +15,8 @@ export default function AboutNivex() {
                 <div className="container">
                     <div className={styles.displayFlexForHeader}>
                         <div className="col-md-6">
-                            <h3 className={`heading ${styles.pageTitleHeading}`}>Giới thiệu về <span>Nivex</span>
-                            </h3>
+                            <h1 className={`heading ${styles.pageTitleHeading}`}>Giới thiệu về <span>Nivex</span>
+                            </h1>
                         </div>
                         <div className={`col-md-6 ${styles.col6mdCenter}`}>
                             <p className={`${styles.pageHeaderKnowledgeSubtitle}`}>Sao chép chiến lược từ các tổ chức AI; Tận dụng công nghệ AI tối ưu lợi nhuận và quản lý rủi ro trong giao dịch.</p>
@@ -79,9 +79,9 @@ export default function AboutNivex() {
             <section className={styles.productSection}>
                 <div className="container">
                     <div className={styles.productHeader}>
-                        <h2 className={styles.productTitle}>
+                        <h3 className={styles.productTitle}>
                             KHÁM PHÁ <span className={styles.highlight}>SẢN PHẨM NỔI BẬT</span> CỦA NIVEX
-                        </h2>
+                        </h3>
                     </div>
                     
                     <div className={styles.aiStrategySection}>
