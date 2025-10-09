@@ -19,41 +19,29 @@ export default function UserGuidePage() {
     { title: 'Chuyển tiền nội bộ', icon: 'https://learningchain.vn/wp-content/uploads/2025/10/chuyentiennoibo_guide_nivex.webp' },
   ]), [])
 
-  const accountSecurity = useMemo(() => ([
-    { text: 'Liên kết Google'},
-    { text: 'Tài khoản Gmail'},
-    { text: 'Thêm địa chỉ rút tiền vào Whitelist'},
+  const linkOperation = useMemo(() => ([
+    { text: 'Xác thực 2 lớp (2FA)'},
+    { text: 'Tạo tài khoản Gmail'},
   ]), [])
 
   const copyTradeAdvanced = useMemo(() => ([
-    { text: 'Cơ chế Copy Trade'},
     { text: 'Nguyên lý Copy Trade'},
-    { text: 'Lợi thế AI Tổ chức'},
-    { text: 'Robot Copy Trade AI'},
-    { text: 'Lịch sử hoàn phí'},
+    { text: 'Năng lực cạnh tranh Copy Trade'},
+    { text: 'Tìm hiểu tiềm năng lợi nhuận'},
   ]), [])
 
   const inviteFriendsAndRewards = useMemo(() => ([
-    { text: 'Tạo hoặc gửi tiền thưởng Nivex'},
-    { text: 'Tạo link giới thiệu bạn bè'},
+    { text: 'Lì xì Nivex'},
+    { text: 'Tạo liên kết giới thiệu bạn bè'},
   ]), [])
-
-  // const communityDevelopment = useMemo(() => ([
-  //   { text: 'Tạo link ref & phần trăm hoa hồng'},
-  //   { text: 'Cách nâng phần trăm hoàn phí'},
-  //   { text: 'Kiểm tra UID của khách hàng'},
-  //   { text: 'Kiểm tra link khách hàng & phần trăm hoàn phí'},
-  //   { text: 'Minh hoạ cách để hoàn hoa hồng'},
-  //   { text: 'Lấy banner QR chia sẻ'},
-  // ]), [])
 
   // Tổng hợp tất cả items để search
   const allItems = useMemo(() => [
     ...popularCategories.map(item => ({ ...item, type: 'category', section: 'Danh mục phổ biến' })),
-    ...accountSecurity.map(item => ({ ...item, type: 'chip', section: 'Tài khoản & Bảo mật', title: item.text })),
+    ...linkOperation.map(item => ({ ...item, type: 'chip', section: 'Thao tác liên kết', title: item.text })),
     ...copyTradeAdvanced.map(item => ({ ...item, type: 'chip', section: 'Copy Trade & AI nâng cao', title: item.text })),
     ...inviteFriendsAndRewards.map(item => ({ ...item, type: 'chip', section: 'Mời bạn bè & Phần thưởng', title: item.text }))
-  ], [popularCategories, accountSecurity, copyTradeAdvanced, inviteFriendsAndRewards])
+  ], [popularCategories, linkOperation, copyTradeAdvanced, inviteFriendsAndRewards])
 
   // Search function
   const handleSearch = (term) => {
@@ -241,9 +229,9 @@ export default function UserGuidePage() {
 
           {/* Account & Security section */}
           <div className={styles.section}>
-            <h3 className={styles.sectionTitle}>Tài khoản & Bảo mật</h3>
+            <h3 className={styles.sectionTitle}>Thao tác liên kết</h3>
             <div className={styles.chipsRow}>
-              {accountSecurity.map((item, i) => (
+              {linkOperation.map((item, i) => (
                 <a key={i} href='#' className={styles.chip}>
                   <span className={styles.chipText}>{item.text}</span>
                   <span className={styles.chipArrow} aria-hidden>›</span>
