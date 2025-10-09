@@ -284,7 +284,7 @@ export default function Knowledge() {
                         {!loading && !error && (
                             <div className={styles.articlesGrid}>
                                 {filteredArticles.length > 0 ? filteredArticles.map(article => (
-                                    <Link href={`/chi-tiet-kien-thuc/${article.id}`} key={article.id} className={styles.articleCard}>
+                                    <Link href={`/chi-tiet-kien-thuc/${article.slug || article.id}`} key={article.id} className={styles.articleCard}>
                                         <div className={styles.cardImage}>
                                             <img src={article.image} alt={article.title} />
                                         </div>
@@ -326,7 +326,7 @@ export default function Knowledge() {
                         {!loading && !error && (
                             <div className={styles.articlesGrid}>
                                 {filteredArticlesNewest.length > 0 ? filteredArticlesNewest.map(article => (
-                                    <Link href={`/chi-tiet-kien-thuc/${article.id}`} key={article.id} className={styles.articleCard}>
+                                    <Link href={`/chi-tiet-kien-thuc/${article.slug || article.id}`} key={article.id} className={styles.articleCard}>
                                         <div className={styles.cardImage}>
                                             <img src={article.image} alt={article.title} />
                                         </div>
