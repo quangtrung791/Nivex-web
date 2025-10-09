@@ -17,10 +17,16 @@ const inter = Inter({
     display: 'swap',
 })
 
-// Thêm index, follow cho trực quan...
+
 export const metadata = {
+
+    //metadataBase giúp Next.js tạo URL tuyệt đối cho các thẻ/meta liên quan (OG images, canonical...)
+    metadataBase: new URL('https://nivex.vn'),
+
     title: 'Nivex',
     description: 'Nivex – nền tảng giao dịch crypto bằng trí tuệ nhân tạo, cung cấp spot và futures an toàn, nhanh chóng, dành cho cộng đồng người dùng Việt.',
+    
+    // Thêm index, follow cho trực quan...
     robots: {
         index: true,
         follow: true,
