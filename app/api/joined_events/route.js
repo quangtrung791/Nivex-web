@@ -14,6 +14,7 @@ export async function GET(request) {
     let sqlQuery = `
       SELECT 
         id,
+        slug,
         title,
         content,
         short_desc,
@@ -52,6 +53,7 @@ export async function GET(request) {
 
     return {
         id: n.id,
+        slug: n.slug,
         title: n.title,
         time_event: n.time_event,
         content: n.content,

@@ -141,7 +141,7 @@ export async function DELETE(request, { params }) {
     if (result.length === 0) return NextResponse.json({ error: 'Not found' }, { status: 404 })
     return NextResponse.json({ id: result[0].id })
   } catch (error) {
-    console.error('DB DELETE /events/:id error:', error)
+    // console.error('DB DELETE /events/:id error:', error)
     return NextResponse.json({ error: 'Database error' }, { status: 500 })
   }
 }

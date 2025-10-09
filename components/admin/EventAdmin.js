@@ -107,17 +107,6 @@ const CustomDeleteButton = () => {
 // Filters cho tìm kiếm (loại bỏ level)
 const eventFilters = [
   <SearchInput key="q" source="q" placeholder="Tìm kiếm sự kiện hiện có..." alwaysOn />,
-//   <SelectInput key="status" source="status" label="Trạng thái" choices={[
-//     { id: 'active', name: 'Đang công khai' },
-//     { id: 'draft', name: 'Bản nháp riêng tư' },
-//     { id: 'removed', name: 'Đã xóa tạm thời' },
-//   ]} />
-  // ,
-//   <SelectInput key="type" source="type" label="Loại" choices={[
-//     { id: 'online', name: 'Online' },
-//     { id: 'offline', name: 'Offline' },
-//     { id: 'hybrid', name: 'Hybrid' },
-//   ]} />
 ]
 
 // Custom Actions cho List
