@@ -15,3 +15,7 @@ CREATE TABLE IF NOT EXISTS joined_events (
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+
+CREATE INDEX IF NOT EXISTS idx_joined_events_title ON joined_events(title);
+CREATE INDEX IF NOT EXISTS idx_joined_events_short_desc ON joined_events(short_desc);

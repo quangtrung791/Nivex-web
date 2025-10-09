@@ -50,12 +50,12 @@ export default function SuKienAlt() {
     //         .then(res => res.json())
     //         .then(data => setHotNews(data));
     // }, []);
-    useEffect(() => {
-        fetch('/api/joined_events?hot=1')
-            .then(res => res.json())
-            .then(data => setHotNews(data))
-            .catch(() => setHotNews([]));
-    }, []);
+    // useEffect(() => {
+    //     fetch('/api/joined_events?hot=1')
+    //         .then(res => res.json())
+    //         .then(data => setHotNews(data))
+    //         .catch(() => setHotNews([]));
+    // }, []);
 
     // Helper: chuẩn hóa chuỗi để so sánh (lowercase + bỏ dấu)
     const normalizeString = (str = "") => {
@@ -133,7 +133,7 @@ export default function SuKienAlt() {
                                                 {filteredNews.length === 0 ? (
                                                     <div className="col-md-12">
                                                         <p style={{ textAlign: "center", padding: "20px", color: "#888" }}>
-                                                            Không có dữ liệu
+                                                            Đang tải dữ liệu
                                                         </p>
                                                     </div>
                                                 ) : (
