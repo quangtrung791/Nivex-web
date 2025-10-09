@@ -46,10 +46,7 @@ export async function generateMetadata({ params }) {
 
 export default function JoinedEventDetailsPage() {
     return (
-        // <Layout headerStyle={1} footerStyle={2}>
-        //     <ChiTietThuatNgu />
-        // </Layout>
-        <Layout>
+        <Layout headerStyle={1} footerStyle={2}>
             <JoinedEventDetailsComponent />
         </Layout>
     )
