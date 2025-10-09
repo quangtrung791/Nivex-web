@@ -1,5 +1,6 @@
 import { query } from "@/app/lib/neon";
 import { NextResponse } from "next/server";
+import { slugify, generateUniqueSlug } from "@/utils/slugify";
 
 export const runtime = 'nodejs';
 
@@ -20,6 +21,7 @@ export async function GET(request) {
     const knowledge = rows.map(row => ({
       id: row.id,
       title: row.title,
+      slug: row.slug,
       status: row.status || 'active',
       topic: row.topic || 'blockchain', // Keep old field for compatibility during migration
       topic_id: row.topic_id,
@@ -51,11 +53,26 @@ export async function POST(request) {
   try {
     const data = await request.json();
     
+    // Generate slug from title
+    let slug = data.slug || slugify(data.title || 'New Article');
+    
+    // Check if slug exists and make it unique
+    const checkSlugExists = async (checkSlug) => {
+      const existing = await query(
+        'SELECT id FROM public.knowledge WHERE slug = $1',
+        [checkSlug]
+      );
+      return existing.length > 0;
+    };
+    
+    slug = await generateUniqueSlug(slug, checkSlugExists);
+    
     // Insert into knowledge table
     const result = await query(
-      'INSERT INTO public.knowledge (title, status, topic_id, difficulty, content, image_url) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *',
+      'INSERT INTO public.knowledge (title, slug, status, topic_id, difficulty, content, image_url) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *',
       [
         data.title || 'New Article',
+        slug,
         data.status || 'active',
         data.topic_id || 1, // Default to first topic (usually Blockchain)
         data.difficulty || 'easy',

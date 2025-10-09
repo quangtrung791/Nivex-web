@@ -55,7 +55,7 @@ export async function GET(request) {
     // Then get paginated results
     let sqlQuery = `
       SELECT 
-        k.id, k.title, k.difficulty, k.status, k.content, k.image_url, 
+        k.id, k.title, k.slug, k.difficulty, k.status, k.content, k.image_url, 
         k.created_at, k.updated_at,
         kt.name as topic
       FROM knowledge k
@@ -72,6 +72,7 @@ export async function GET(request) {
     const articles = result.map(article => ({
       id: article.id,
       title: article.title,
+      slug: article.slug,
       category: article.topic, // Map topic to category for frontend compatibility
       topic: article.topic,
       difficulty: article.difficulty,
