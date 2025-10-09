@@ -203,7 +203,7 @@ export default function CoursesPage() {
         {/* Loading state */}
         {loading && (
           <div className={styles.loadingContainer}>
-            <div className={styles.loading}>Đang tải khóa học...</div>
+            <p >Đang tải khóa học...</p>
           </div>
         )}
 
@@ -247,7 +247,7 @@ export default function CoursesPage() {
                         </div>
                         
                         <button 
-                            className={`${styles.courseButton} ${course.buttonClass ? styles[course.buttonClass] : ''}`}
+                            className={`${styles.courseButton}}`}
                             onClick={() => handleCourseClick(course)}
                             >
                             {course.buttonText}

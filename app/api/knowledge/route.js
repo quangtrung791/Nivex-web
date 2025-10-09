@@ -55,7 +55,7 @@ export async function GET(request) {
     // Then get paginated results
     let sqlQuery = `
       SELECT 
-        k.id, k.title, k.slug, k.difficulty, k.status, k.content, k.image_url, 
+        k.id, k.title, k.slug, k.difficulty, k.status, k.image_url, 
         k.created_at, k.updated_at,
         kt.name as topic
       FROM knowledge k
@@ -77,11 +77,9 @@ export async function GET(request) {
       topic: article.topic,
       difficulty: article.difficulty,
       status: article.status,
-      content: article.content,
       image: article.image_url || "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
       image_url: article.image_url,
       description: article.topic,
-      readTime: `${Math.max(3, Math.ceil(article.content?.length / 200) || 5)} phút đọc`,
       publishDate: formatDate(article.created_at),
       created_at: article.created_at,
       updated_at: article.updated_at
