@@ -26,8 +26,9 @@ export default function LandingPagePopUp({ isOpen, onClose, course }) {
     e.preventDefault()
     setIsSubmitting(true)
     setError('')
-
+    
     try {
+      setSuccess(true)
       const response = await fetch('/api/landing-register-v2', {
         method: 'POST',
         headers: {
@@ -37,9 +38,9 @@ export default function LandingPagePopUp({ isOpen, onClose, course }) {
       })
 
       const result = await response.json()
-
+      
       if (response.ok) {
-        setSuccess(true)
+        
         // Reset form after successful submission
         setFormData({ fullName: '', email: '', phone: '' })
       } else {
