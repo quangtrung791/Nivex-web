@@ -11,12 +11,12 @@ export default function P2PTrading() {
             <section className={`page-title ${styles.pageTitleDeposit}`}>
                 <div className="container">
                     <div className={styles.displayFlexForHeader}>
-                        <div className="col-md-8">
+                        <div className="col-md-6">
                             <h1 className={`heading ${styles.pageTitleHeading}`}>
                             Giao dịch <span>P2P</span>
                             </h1>
                         </div>
-                        <div className={`col-md-4 ${styles.col4mdCenter}`}>
+                        <div className={`col-md-6 ${styles.col4mdCenter}`}>
                              <p className={`${styles.pageHeaderKnowledgeSubtitle}`}>Hướng dẫn chi tiết giúp bạn giao dịch P2P nhanh chóng,
 an toàn và thuận tiện.</p>
                         </div>

@@ -9,14 +9,16 @@ export const revalidate = 6 * 60 * 60
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Các trang tĩnh của bạn (điền đúng những page đang có)
-  const staticPages = [
-    '',                            
+  const staticPages = [          
     'giao-dich-p2p',
     'guide-for-beginners',
     'huong-dan-dang-ky-dang-nhap',
     'huong-dan-rut-tien',
     'huong-dan-nap-tien',
     'xac-minh-danh-tinh-kyc',
+    'chuyen-tien-noi-bo',
+    'ai-copy-trade',
+    'huong-dan-su-dung-app-nivex',
   ].map((p) => ({
     url: `${BASE_URL}/${p}`,
     lastModified: new Date(),
