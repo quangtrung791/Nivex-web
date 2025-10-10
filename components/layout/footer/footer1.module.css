@@ -1,0 +1,41 @@
+.footer__bottom_custom {
+    display: block;
+    text-align: center;
+    padding: 16px 0;
+    background: linear-gradient(to right, #BCFE08, #86F869);
+}
+.footer__bottom_custom p {
+    font-weight: 600;
+    font-size: 20px;
+    color: black
+}
+
+.logoFooterLearningChain {
+    width: 220px;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 386/112;
+    object-position: left;
+    margin-left: -6px;
+    margin-bottom: 12px;
+}
+
+.listSocialFooter {
+    display: flex;
+    gap: 20px;
+}
+
+.listSocialFooter li span {
+    font-size: 24px;
+    filter: brightness(2.5);
+}
+
+.widgetTextFooter {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.footerContainer::before {
+    display: none;
+}
