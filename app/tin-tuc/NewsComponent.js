@@ -130,11 +130,11 @@ export default function BlogDetails() {
             .then(data => setHotNews(data));
     }, [id]);
 
-    useEffect(() => {
-        fetch('/api/news?hot=1')
-            .then(res => res.json())
-            .then(data => setHotNews(data));
-    }, []);
+    // useEffect(() => {
+    //     fetch('/api/news?hot=1')
+    //         .then(res => res.json())
+    //         .then(data => setHotNews(data));
+    // }, []);
 
     // let tabMatch = true; // biến flag
     // const filteredNews = activeTab === "all"

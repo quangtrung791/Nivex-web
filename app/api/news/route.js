@@ -16,30 +16,28 @@ export async function GET(request) {
         id,
         title,
         status,
-        content,
         thumbnail_url,
-        author,
         time_upload,
         created_at,
         updated_at,
         category_id
       FROM public.news
       WHERE public.news.status = 'active'
-    `
+      `
 
     const queryParams = []
     let paramIndex = 1
 
     // Apply search filter
     if (search.trim()) {
-      sqlQuery += ` AND (title ILIKE $${paramIndex} OR content ILIKE $${paramIndex})`
+      sqlQuery += ` AND (title ILIKE $${paramIndex})`
       queryParams.push(`%${search}%`)
       paramIndex++
     }
 
 
-  // Order by start date and limit to 20 records
-  sqlQuery += ` ORDER BY time_upload DESC LIMIT 20`
+  // Order by start date and limit to 50 records
+  sqlQuery += ` ORDER BY time_upload DESC LIMIT 50`
 
     console.log("Executing query:", { sqlQuery, queryParams });
     const result = await query(sqlQuery, queryParams)
@@ -56,7 +54,7 @@ export async function GET(request) {
         category_id: n.category_id,
         status: n.status,
         time_upload: n.time_upload,
-        content: n.content,
+        // content: n.content,
         thumbnail_url: n.thumbnail_url
       }
     })

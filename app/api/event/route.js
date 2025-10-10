@@ -16,7 +16,6 @@ export async function GET(request) {
         id,
         slug,
         title,
-        content,
         short_desc,
         thumbnail_url,
         time_event,
@@ -51,7 +50,7 @@ export async function GET(request) {
         slug: n.slug,
         title: n.title,
         time_event: n.time_event,
-        content: n.content,
+        // content: n.content,
         short_desc: n.short_desc,
         thumbnail_url: n.thumbnail_url
       }
