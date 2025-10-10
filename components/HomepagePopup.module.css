@@ -84,7 +84,7 @@
 }
 
 .fadeOut {
-  animation: fadeOut 0.9s ease-out forwards !important;
+  animation: fadeOut 0.6s ease-out forwards !important;
 }
 
 .closeButton {
