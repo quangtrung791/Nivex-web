@@ -1,6 +1,7 @@
 -- Schema cho bảng news (tin tức)
 CREATE TABLE IF NOT EXISTS news (
   id SERIAL PRIMARY KEY,
+  slug VARCHAR(200) NOT NULL,
   title VARCHAR(500) NOT NULL,
   -- category JSONB NOT NULL DEFAULT '[]',
   status VARCHAR(50) NOT NULL DEFAULT 'active',

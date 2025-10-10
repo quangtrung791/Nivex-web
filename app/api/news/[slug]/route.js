@@ -5,10 +5,11 @@ export const runtime = 'nodejs';
 
 export async function GET(request, { params }) {
   try {
-    const { id } = params;
-    if (!id) {
+    // const { id } = params;
+    const { slug } = params;
+    if (!slug) {
       return NextResponse.json(
-        { success: false, error: "Thiếu id bài viết" },
+        { success: false, error: "Thiếu slug cuar bài viết" },
         { status: 400 }
       );
     }
@@ -16,6 +17,7 @@ export async function GET(request, { params }) {
     const sqlQuery = `
       SELECT 
         id,
+        slug,
         title,
         status,
         content,
@@ -29,7 +31,7 @@ export async function GET(request, { params }) {
       WHERE id = $1 AND status = 'active'
       LIMIT 1
     `;
-    const result = await query(sqlQuery, [id]);
+    const result = await query(sqlQuery, [slug]);
 
     if (!result || result.length === 0) {
       return NextResponse.json(

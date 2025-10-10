@@ -11,9 +11,11 @@ export async function GET(request) {
     const filter = searchParams.get('filter') || 'all'
     const search = searchParams.get('search') || ''
 
+    // truy vấn chỉ lấy ra những tin tức có status = active
     let sqlQuery = `
       SELECT 
         id,
+        slug,
         title,
         status,
         thumbnail_url,
@@ -37,7 +39,7 @@ export async function GET(request) {
 
 
   // Order by start date and limit to 50 records
-  sqlQuery += ` ORDER BY time_upload DESC LIMIT 50`
+  sqlQuery += ` ORDER BY COALESCE(time_upload, created_at) DESC LIMIT 50`
 
     console.log("Executing query:", { sqlQuery, queryParams });
     const result = await query(sqlQuery, queryParams)
@@ -50,6 +52,7 @@ export async function GET(request) {
 
       return {
         id: n.id,
+        slug: n.slug,
         title: n.title,
         category_id: n.category_id,
         status: n.status,

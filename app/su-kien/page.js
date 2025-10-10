@@ -5,6 +5,17 @@ import SuKien from "./EventComponent"
 export const metadata = {
     title: "Sự kiện tổ chức tại Nivex",
     description: "Hãy tham dự các sự kiện do chính Nivex tổ chức.",
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          maxSnippet: -1,
+          maxImagePreview: 'large',
+          maxVideoPreview: -1,
+        },
+    },
     openGraph: {
         title: "Sự kiện tổ chức tại Nivex",
         description: "Hãy tham dự các sự kiện do chính Nivex tổ chức.",

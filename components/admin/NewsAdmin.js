@@ -38,6 +38,22 @@ import {
 import { ImageUploadInput } from './ImageUploadInput'
 import { useState } from 'react'
 import RichTextInput from './RichTextInput'
+import { useWatch, useFormContext } from 'react-hook-form'
+import { useEffect } from 'react'
+
+// Hàm tạo slug tự động từ keyword
+const generateSlug = (str = "") => {
+  return String(str)
+    .toLowerCase()
+    .normalize('NFD') // tách ký tự và dấu
+    .replace(/[\u0300-\u036f]/g, '') // bỏ dấu
+    .replace(/đ/g, 'd') // thay đ → d
+    .replace(/[^a-z0-9\s-]/g, '') // bỏ ký tự đặc biệt
+    .trim()
+    .replace(/\s+/g, '-') // thay khoảng trắng bằng gạch ngang
+    .replace(/-+/g, '-'); // tránh trùng dấu '-'
+};
+
 
 // Custom Delete Button với confirmation rõ ràng
 const CustomDeleteButton = () => {
@@ -172,6 +188,7 @@ export const NewsList = () => (
       <TextField source="id" label="ID" />
       <ImageField source="thumbnail_url" label="Ảnh" sx={{ '& img': { maxWidth: '60px', maxHeight: '45px', objectFit: 'cover' } }} />
       <TextField source="title" label="Tiêu đề bài đăng" />
+      <TextField source="slug" label="Slug URL" />
       <TextField source="author" label="Tác giả bài đăng" />
       {/* <SelectField 
         source="type" 
@@ -192,6 +209,36 @@ export const NewsList = () => (
   </List>
 )
 
+export const AutoSlug = () => {
+    const { control, setValue } = useFormContext();
+    const keyword = useWatch({ control, name: "title" });
+
+    useEffect(() => {
+      if (!keyword) return;
+
+      const generateUniqueSlug = async () => {
+        let baseSlug = generateSlug(keyword);
+        let slug = baseSlug;
+        let counter = 1;
+
+        // Kiểm tra tồn tại slug trên server
+        while (true) {
+          const res = await fetch(`/api/admin/news?slug=${slug}`);
+          if (res.status === 404) break; // chưa tồn tại => dùng được
+          if (!res.ok) break; // lỗi khác => thoát
+          slug = `${baseSlug}-${counter++}`;
+        }
+
+        setValue("slug", slug, { shouldValidate: true });
+      };
+
+      generateUniqueSlug();
+    }, [keyword, setValue]);
+
+    return null;
+  };
+
+
 // Create component (loại bỏ level, thêm DateTimeInput)
 export const NewsCreate = () => (
   <Create 
@@ -199,6 +246,7 @@ export const NewsCreate = () => (
     redirect="list"
   >
     <SimpleForm>
+      <AutoSlug />{/* Component tự động cập nhật slug */}
       {/* Chọn danh mục tin tức */}
       <ReferenceInput source="category_id" reference="category_news" label="Danh mục">
         <SelectInput optionText="name" />
@@ -211,6 +259,13 @@ export const NewsCreate = () => (
         fullWidth
         helperText="Nhập tiêu đề của bài đăng tin tức (bắt buộc)"
       required />
+
+      <TextInput 
+          source="slug" 
+          label="Slug URL" 
+          fullWidth
+          helperText="Slug được tự động tạo từ từ khóa (bạn có thể chỉnh lại nếu muốn)"
+        />
       
       {/* <SelectInput 
         source="type" 
@@ -278,6 +333,7 @@ export const NewsEdit = () => (
     title="✏️ Chỉnh sửa bài đăng"
   >
     <SimpleForm>
+      <AutoSlug />{/* Component tự động cập nhật slug */}
       {/* Chọn id danh mục */}
       <ReferenceInput source="category_id" reference="category_news" label="Danh mục">
         <SelectInput optionText="name" />
@@ -291,17 +347,13 @@ export const NewsEdit = () => (
         validate={[required()]}
         fullWidth
       required />
-      
-      {/* <SelectInput 
-        source="type" 
-        label="Loại khóa học"
-        choices={[
-          { id: 'online', name: 'Online' },
-          { id: 'offline', name: 'Offline' },
-          { id: 'hybrid', name: 'Hybrid' },
-        ]}
-        validate={[required()]}
-      disabled /> */}
+
+      <TextInput 
+          source="slug" 
+          label="Slug URL" 
+          fullWidth
+          helperText="Sửa slug"
+        />
       
       <SelectInput 
         source="status" 
@@ -363,6 +415,7 @@ export const NewsShow = () => (
 
       <TextField source="id" label="ID bài đăng" />
       <TextField source="title" label="Tiêu đề bài đăng" />
+       <TextField source="slug" label="Slug URL" />
       <TextField source="author" label="Tác giả bài đăng" />
       {/* <SelectField 
         source="type" 
