@@ -1,4 +1,5 @@
 import { query } from "@/app/lib/neon";
+import { slugify, generateUniqueSlug } from "@/utils/slugify";
 import { NextResponse } from "next/server";
 
 export const runtime = 'nodejs';
@@ -81,15 +82,31 @@ export async function GET(request) {
 }
 
 export async function POST(request) {
+  let slugCustom;
   try {
     const data = await request.json();
     console.log("POST /api/admin/dictionary - data:", data);
+
+    if(!data.slug || data.slug === null) {
+      slugCustom = slugify(data.keyword)
+    }
+
+     // Tránh slug bị ttrùng
+    const checkSlugExists = async (checkSlug) => {
+      const existing = await query(
+        'SELECT id FROM public.dictionary WHERE slug = $1',
+        [checkSlug]
+      );
+      return existing.length > 0;
+    };
+    
+    slugCustom = await generateUniqueSlug(slugCustom, checkSlugExists);
     
     // Insert into dictionary table
     const result = await query(
       'INSERT INTO public.dictionary (slug, keyword, short_desc, description) VALUES ($1, $2, $3, $4) RETURNING *',
       [
-        data.slug,
+        data.slug || slugCustom,
         data.keyword || 'Untitled',
         data.short_desc || "null",
         data.description || ''
@@ -97,9 +114,11 @@ export async function POST(request) {
     );
     
     // Return the created course
+    // console.log(slugCustom)
     const n = result[0];
     
-    return NextResponse.json(n, { status: 201 });
+    return NextResponse.json( n,
+       { status: 201 });
     
   } catch (error) {
     console.error("POST /api/admin/dictionary error:", error);
