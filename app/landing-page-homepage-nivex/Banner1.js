@@ -46,15 +46,15 @@ export default function Banner1({ onOpenPopup }) {
                                     Kiến thức dễ hiểu cho người mới, tin tức chọn lọc mỗi ngày và lớp học trực tuyến hàng tuần.
                                     <br></br>Cùng khám phá Nivex & AI Copy Trade – nơi bạn không chỉ nhận công cụ, mà còn được trang bị nền tảng kiến thức và sự tự tin để đưa ra những quyết định giao dịch thông minh trong kỷ nguyên số.
                                 </p>
-                                {/* <Link href="#" className="btn-action btn-action-landingpage-nivex" id="button-master-homepg" style={{'borderRadius':'0px'}}><span >Xem thêm</span></Link> */}
-                                <a 
+                                <Link href="#" className="btn-action btn-action-landingpage-nivex" id="button-master-homepg" style={{'borderRadius':'0px'}}><span >Xem thêm</span></Link>
+                                {/* <a 
                                     className="btn-action btn-action-landingpage-nivex" 
                                     id="button-master-homepg" 
                                     style={{'borderRadius':'0px'}}
                                     onClick={onOpenPopup}
                                 >
                                     <span>Xem thêm</span>
-                                </a>
+                                </a> */}
                                 {/* <div className="partner">
                                     <h6>Our Partners</h6>
                                     <div className="partner__list">
