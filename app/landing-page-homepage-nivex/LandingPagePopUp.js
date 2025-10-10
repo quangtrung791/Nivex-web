@@ -28,7 +28,7 @@ export default function LandingPagePopUp({ isOpen, onClose, course }) {
     setError('')
 
     try {
-      const response = await fetch('/api/landing-register', {
+      const response = await fetch('/api/landing-register-v2', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
