@@ -247,7 +247,7 @@ export default function CoursesPage() {
                         </div>
                         
                         <button 
-                            className={`${styles.courseButton}}`}
+                            className={`${styles.courseButton}`}
                             onClick={() => handleCourseClick(course)}
                             >
                             {course.buttonText}
