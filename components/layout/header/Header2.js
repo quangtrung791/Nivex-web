@@ -12,7 +12,7 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu }) {
     return (
         <>
 
-            <header id="header_main" className={`header ${scroll ? "is-fixed is-small" : ""}`}>
+            <header id="header_main" className={`header ${scroll ? "is-fixed is-small" : ""}`} style={{'height': '60px'}}>
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-12">

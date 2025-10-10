@@ -59,7 +59,7 @@ export async function POST(request) {
 
     // Use Google Apps Script webhook (recommended for easier setup)
     // Thay YOUR_SCRIPT_ID bằng ID thực tế từ Google Apps Script
-    const webhookUrl = `https://script.google.com/macros/s/AKfycbyBV1tKXFO2OBckmEBHlrO7v8ulYm5zxDSQhYZ0sNGtk_OCI2LLdapQyQd9QpXA3zc8_g/exec`
+    const webhookUrl = `https://script.google.com/macros/s/AKfycbzG95sRHqZ0LutVMhmqAw4f4rO5qtoP0YG47iGopJVpOJTHVUXqsU1pQFU3IPVqecYTaw/exec`
     
     try {
       const webhookResponse = await fetch(webhookUrl, {
