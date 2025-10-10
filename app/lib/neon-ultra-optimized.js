@@ -10,7 +10,6 @@ function getPool() {
   if (!pool) {
     pool = new Pool({
       connectionString: process.env.DATABASE_URL,
-      // Optimized pool configuration
       max: 20, // Maximum number of clients in the pool
       min: 2, // Minimum number of clients in the pool
       idleTimeoutMillis: 30000, // Close idle clients after 30 seconds
@@ -85,10 +84,6 @@ async function query(text, params = [], options = {}) {
     
     const duration = Date.now() - start
     
-    // Log performance metrics
-    if (duration > 1000) {
-    } else if (duration > 500) {
-    }
     
     // Cache result if caching is enabled
     if (useCache && result.rows.length > 0) {
