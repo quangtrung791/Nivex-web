@@ -54,7 +54,7 @@ section.section-news-header {
 }
 
 @media (max-width: 769px) {
-    ul.menu-tab.menu-on-line {
+    section.skien ul.menu-tab.menu-on-line {
         display: none !important;
     }
 }
@@ -321,7 +321,7 @@ a.read-more-btn.btn-action {
         padding: 3.5% 7%;
     }
     
-    ul.menu-tab.menu-on-line {
+    section.skien ul.menu-tab.menu-on-line {
         display: flex;
         gap: 1.5%;
         margin-bottom: 20px;
@@ -451,7 +451,7 @@ a.read-more-btn.btn-action {
         padding: 3.5% 7%;
     }
     
-    ul.menu-tab.menu-on-line {
+    section.skien ul.menu-tab.menu-on-line {
         display: flex;
         gap: 1.5%;
         margin-bottom: 20px;
@@ -581,7 +581,7 @@ a.read-more-btn.btn-action {
         padding: 3.5% 7%;
     }
     
-    ul.menu-tab.menu-on-line {
+    section.skien ul.menu-tab.menu-on-line {
         display: flex;
         gap: 1.5%;
         margin-bottom: 20px;
@@ -713,7 +713,7 @@ a.read-more-btn.btn-action {
         padding: 3.5% 7%;
     }
     
-    ul.menu-tab.menu-on-line {
+    section.skien ul.menu-tab.menu-on-line {
         display: flex;
         gap: 1.5%;
         margin-bottom: 20px;
@@ -847,7 +847,7 @@ a.read-more-btn.btn-action {
         padding: unset;
     }
     
-    ul.menu-tab.menu-on-line {
+    section.skien ul.menu-tab.menu-on-line {
         display: flex;
         gap: 1.4%;
         margin-bottom: 18px;
@@ -991,7 +991,7 @@ a.read-more-btn.btn-action {
         padding: 2.5% 3.5%;
     }
     
-    ul.menu-tab.menu-on-line {
+    section.skien ul.menu-tab.menu-on-line {
         display: flex;
         gap: 1%;
         margin-bottom: 15px;
@@ -1143,7 +1143,7 @@ a.read-more-btn.btn-action {
         padding: 2.8% 3.5%;
     }
     
-    ul.menu-tab.menu-on-line {
+    section.skien ul.menu-tab.menu-on-line {
         display: flex;
         gap: 1.2%;
         margin-bottom: 16px;
@@ -1289,7 +1289,7 @@ a.read-more-btn.btn-action {
         padding: unset;
     }
     
-    ul.menu-tab.menu-on-line {
+    section.skien ul.menu-tab.menu-on-line {
         display: flex;
         gap: 1%;
         margin-bottom: 12px;
@@ -1443,7 +1443,7 @@ a.read-more-btn.btn-action {
         padding: 4% 5%;
     }
     
-    ul.menu-tab.menu-on-line {
+    section.skien ul.menu-tab.menu-on-line {
         display: flex;
         flex-wrap: wrap;
         gap: 2%;
@@ -1604,7 +1604,7 @@ a.read-more-btn.btn-action {
         padding: unset;
     }
     
-    ul.menu-tab.menu-on-line {
+    section.skien ul.menu-tab.menu-on-line {
         display: flex;
         gap: 1%;
         margin-bottom: 12px;
@@ -1748,7 +1748,7 @@ a.read-more-btn.btn-action {
         padding: unset;
     }
     
-    ul.menu-tab.menu-on-line {
+    section.skien ul.menu-tab.menu-on-line {
         display: flex;
         gap: 1.4%;
         margin-bottom: 18px;
