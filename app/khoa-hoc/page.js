@@ -248,7 +248,7 @@ export default function CoursesPage() {
                         </div>
                         
                         <button 
-                            className={`${styles.courseButton} ${course.buttonClass ? styles[course.buttonClass] : ''}`}
+                            className={`${styles.courseButton} btn-action ${course.buttonClass ? styles[course.buttonClass] : ''}`}
                             onClick={() => handleCourseClick(course)}
                             >
                             {course.buttonText}
