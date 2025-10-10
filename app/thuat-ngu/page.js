@@ -5,6 +5,17 @@ import DictionaryPage from "./DictionaryPage"
 export const metadata = {
     title: "Danh sách thuật ngữ | Nivex",
     description: "Tìm hiểu các từ khóa thông dụng về ngành blockchain chỉ trong vài phút.",
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          maxSnippet: -1,
+          maxImagePreview: 'large',
+          maxVideoPreview: -1,
+        },
+    },
     openGraph: {
         title: "Danh sách thuật ngữ | Nivex",
         description: "Tìm hiểu các từ khóa thông dụng về ngành blockchain chỉ trong vài phút.",

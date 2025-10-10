@@ -28,7 +28,7 @@ export async function GET(request, { params }) {
         updated_at,
         category_id
       FROM public.news
-      WHERE id = $1 AND status = 'active'
+      WHERE slug = $1 AND status = 'active'
       LIMIT 1
     `;
     const result = await query(sqlQuery, [slug]);
