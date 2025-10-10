@@ -309,7 +309,7 @@ export default function BlogDetails() {
                                             
                                             {news[0] && (
                                                     <div className="heading-title-main">
-                                                        <Link href={`/tin-tuc/${news[0].id}`}>
+                                                        <Link href={`/tin-tuc/${news[0].slug}`}>
                                                             <h3 className="title tin-tuc">
                                                                 {news[0].title}
                                                             </h3>
@@ -332,7 +332,7 @@ export default function BlogDetails() {
                                                                     {/* <div className="wrap-video"></div> */}
                                                                 </div>
                                                                 <div className="box-content title-news-duoc-xem-nhieu">
-                                                                    <Link href={`/tin-tuc/${item.id}`} className="title-news headline-news">{item.title}</Link>
+                                                                    <Link href={`/tin-tuc/${item.slug}`} className="title-news headline-news">{item.title}</Link>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -372,7 +372,7 @@ export default function BlogDetails() {
                                                         </div>
                                                         <div className="content">
                                                             {/* <Link href="#" className="category">{item.category_name}</Link> */}
-                                                            <Link href={`/tin-tuc/${item.id}`} className="title navigate-child-news">
+                                                            <Link href={`/tin-tuc/${item.slug}`} className="title navigate-child-news">
                                                                 {item.title}
                                                             </Link>
                                                         </div>
@@ -438,7 +438,7 @@ export default function BlogDetails() {
                                                                 {/* <div className="wrap-video"></div> */}
                                                             </div>
                                                             <div className="box-content title-news-duoc-xem-nhieu">
-                                                                <Link href={`/tin-tuc/${item.id}`} className="title">{item.title}</Link>
+                                                                <Link href={`/tin-tuc/${item.slug}`} className="title">{item.title}</Link>
                                                             </div>
                                                         </div>
                                                     </div>

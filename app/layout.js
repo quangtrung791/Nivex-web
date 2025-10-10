@@ -38,6 +38,22 @@ export const metadata = {
           maxVideoPreview: -1,
         },
     },
+    openGraph: {
+        title: "Nivex Hub",
+        description: "Nivex – nền tảng giao dịch crypto bằng trí tuệ nhân tạo, cung cấp spot và futures an toàn, nhanh chóng, dành cho cộng đồng người dùng Việt.",
+        url: "https://nivex.vn",
+        siteName: "Nivex",
+        images: [
+            {
+                url: "/assets/images/logo/Nivex_icon_bg.png",
+                width: 1200,
+                height: 630,
+                alt: "Nivex – nền tảng giao dịch crypto bằng trí tuệ nhân tạo, cung cấp spot và futures an toàn, nhanh chóng, dành cho cộng đồng người dùng Việt."
+            }
+        ],
+        locale: "vi_VN",
+        type: "website"
+    }
 }
 
 export default function RootLayout({ children }) {

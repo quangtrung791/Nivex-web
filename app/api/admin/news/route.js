@@ -6,26 +6,62 @@ export const runtime = 'nodejs';
 
 export async function GET(request) {
   try {
-    console.log("GET /api/admin/news called");
+    const { searchParams } = new URL(request.url);
+    const slug = searchParams.get("slug");
+    
+    // console.log("GET /api/admin/news called");
     
     // Query courses table with explicit schema
-    const rows = await query('SELECT * FROM public.news ORDER BY id ASC');
+    // const rows = await query('SELECT * FROM public.news ORDER BY id ASC');
     
     // Transform courses data for React Admin
-    const news = rows.map(row => ({
-      id: row.id,
-      title: row.title,
-      category_id: row.category_id || [],
-      status: row.status || 'active',
-      content: row.content || '',
-      author: row.author || 'admin',
-      thumbnail_url: row.thumbnail_url,
-      time_upload: row.time_upload,
-      created_at: row.created_at,
-      updated_at: row.updated_at      
-    }));
+    if (slug) {     
+      const rows = await query(
+        "SELECT * FROM public.news WHERE slug = $1 LIMIT 1",
+        [slug]
+      );
+
+      if (rows.length === 0) {
+        return NextResponse.json(
+          { error: "Không tìm thấy slug này" },
+          { status: 404 }
+        );
+      }
+
+      const row = rows[0];
+      return NextResponse.json({
+        id: row.id,
+        slug: row.slug,
+        title: row.title,
+        content: row.content || "",
+        thumbnail_url: row.thumbnail_url,
+        author: row.author,
+        time_upload: row.time_upload,
+        status: row.status,
+        created_at: row.created_at,
+        updated_at: row.updated_at,
+        category_id: row.category_id
+      });
+    }
     
-    console.log("Returning news:", news.length);
+    // TH ko có slug
+    const rows = await query(
+      "SELECT * FROM public.news ORDER BY id ASC"
+    );
+
+    const news = rows.map((row) => ({
+        id: row.id,
+        slug: row.slug,
+        title: row.title,
+        content: row.content || "",
+        thumbnail_url: row.thumbnail_url,
+        author: row.author,
+        time_upload: row.time_upload,
+        status: row.status,
+        created_at: row.created_at,
+        updated_at: row.updated_at,
+        category_id: row.category_id
+    }));
     
     return NextResponse.json(news, {
       headers: {
@@ -57,17 +93,24 @@ export async function POST(request) {
       }, { status: 400 })
     }
     
+    const now = new Date();
+    // Cộng thêm 7 tiếng để ra giờ Việt Nam (GMT+7)
+    const vnTime = new Date(now.getTime() + 7 * 60 * 60 * 1000);
+    const serverTime = vnTime.toISOString(); // định dạng ISO chuẩn PostgreSQL
+    
+    const timeUpload = data.time_upload ? new Date(data.time_upload).toISOString() : serverTime;
     // Insert into news table
     const result = await query(
-      'INSERT INTO public.news (title, category_id, status, content, author, thumbnail_url, time_upload) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *',
+      'INSERT INTO public.news (slug, title, category_id, status, content, author, thumbnail_url, time_upload) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *',
       [
+        data.slug,
         data.title || 'Untitled',
         data.category_id || '',
         data.status || 'active',
         data.content || '',
         data.author || 'admin',
         data.thumbnail_url || null,
-        data.time_upload || '01/01/1990'
+        timeUpload
       ]
     );
     
