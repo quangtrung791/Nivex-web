@@ -5,7 +5,6 @@ import Link from "next/link"
 import { Autoplay, Navigation, Pagination } from "swiper/modules"
 import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react"
-// import styles from '../kien-thuc-tong-quan/knowledge.module.css'
 import styles from '../kien-thuc-tong-quan/knowledge.module.css';
 import './style.css';
 import { useParams } from "next/navigation"
@@ -17,6 +16,7 @@ const swiperOptions = {
         clickable: true,
     },
 }
+
 const TABS = [
     { label: "Tất cả", value: "all" },
     { label: "Đang diễn ra", value: "happening" },
