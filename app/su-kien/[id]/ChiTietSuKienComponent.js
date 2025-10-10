@@ -181,7 +181,7 @@ export default function EventDetails() {
                                                                 <div className="wrap-video"></div>
                                                             </div>
                                                             <div className="box-content title-news-duoc-xem-nhieu">
-                                                                <Link href={`/su-kien/${item.id}`} className="title">{item.title}</Link>
+                                                                <Link href={`/su-kien/${item.slug}`} className="title">{item.title}</Link>
                                                             </div>
                                                         </div>
                                                     </div>
