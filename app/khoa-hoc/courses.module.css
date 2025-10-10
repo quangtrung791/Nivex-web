@@ -531,12 +531,6 @@ h1.pageTitleHeading span {
   min-height: 200px;
 }
 
-.loading {
-  color: #BCFE08;
-  font-size: 18px;
-  font-weight: 500;
-}
-
 .noCoursesMessage {
   text-align: center;
   color: #777e90;

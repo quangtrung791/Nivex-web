@@ -17,9 +17,27 @@ const inter = Inter({
     display: 'swap',
 })
 
+
 export const metadata = {
-    title: 'Nivex hub',
-    description: 'Nivex Website Vietnam - nivex.vn',
+
+    //metadataBase giúp Next.js tạo URL tuyệt đối cho các thẻ/meta liên quan (OG images, canonical...)
+    metadataBase: new URL('https://nivex.vn'),
+
+    title: 'Nivex Hub',
+    description: 'Nivex – nền tảng giao dịch crypto bằng trí tuệ nhân tạo, cung cấp spot và futures an toàn, nhanh chóng, dành cho cộng đồng người dùng Việt.',
+    
+    // Thêm index, follow cho trực quan...
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          maxSnippet: -1,
+          maxImagePreview: 'large',
+          maxVideoPreview: -1,
+        },
+    },
 }
 
 export default function RootLayout({ children }) {
@@ -47,9 +65,7 @@ export default function RootLayout({ children }) {
             </head> */}
             {/* 4. Sử dụng biến của font Inter */}
             <body className={`${inter.variable} body header-fixed is_dark`}>
-                {/* <CoinDataProvider> */}
                     {children}
-                {/* </CoinDataProvider> */}
             </body>
         </html>
     )

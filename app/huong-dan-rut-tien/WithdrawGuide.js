@@ -58,9 +58,9 @@ an toàn và thuận tiện.</p>
                                         Trên trang tài khoản của bạn, chọn <span className={styles.highlightGreen}>[Rút tiền]</span>.
                                     </p>
                                     <div className={styles.displayFlexForStepDescription}>
-                                        <div className={styles.imagePlaceholder1}></div>
-                                        <div className={styles.imagePlaceholder2}></div>
-                                        <div className={styles.imagePlaceholder3}></div>
+                                        <div className={styles.imagePlaceholder + ' ' + styles.imagePlaceholder1}></div>
+                                        <div className={styles.imagePlaceholder + ' ' + styles.imagePlaceholder2}></div>
+                                        <div className={styles.imagePlaceholder + ' ' + styles.imagePlaceholder3}></div>
                                     </div>
                                 </div>
                             </div>

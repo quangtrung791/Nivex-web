@@ -232,8 +232,9 @@
 .articleBody {
     color: #ffffff;
     font-size: 16px;
-    line-height: 1.4;
     margin-bottom: 30px;
+    font-weight: 300;
+    text-align: justify;
 }
 
 .articleBody h1, .articleBody h2, .articleBody h3, .articleBody h4, .articleBody h5, .articleBody h6, 

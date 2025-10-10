@@ -22,9 +22,7 @@ export async function GET(request) {
         end_date,
         link_zoom,
         content,
-        image_url,
-        created_at,
-        updated_at
+        image_url
       FROM public.courses
       WHERE public.courses.status = 'active'
     `
@@ -73,17 +71,13 @@ export async function GET(request) {
 
       // Determine button text and class
       let buttonText = 'Xem ngay'
-      let buttonClass = ''
       
       if (courseStatus === 'completed') {
         buttonText = 'Xem lại'
-        buttonClass = 'replay'
       } else if (courseStatus === 'upcoming') {
         buttonText = 'Đăng ký ngay'
-        buttonClass = 'upcoming'
       } else {
         buttonText = 'Xem ngay'
-        buttonClass = 'active'
       }
 
       return {
@@ -104,8 +98,7 @@ export async function GET(request) {
         link_zoom: course.link_zoom,
         content: course.content,
         image: course.image_url || '/assets/images/background/course_image_test1.png',
-        buttonText: buttonText,
-        buttonClass: buttonClass
+        buttonText: buttonText
       }
     })
 
