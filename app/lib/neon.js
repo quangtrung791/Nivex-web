@@ -29,9 +29,7 @@ async function query(text, params = []) {
   const pool = getPool()
   
   try {
-    const start = Date.now()
     const result = await pool.query(text, params)
-    const duration = Date.now() - start
     
     
     return result.rows
