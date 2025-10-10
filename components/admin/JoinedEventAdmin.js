@@ -38,6 +38,8 @@ import {
 import { ImageUploadInput } from './ImageUploadInput'
 import { useState } from 'react'
 import RichTextInput from './RichTextInput'
+import { useWatch, useFormContext } from 'react-hook-form'
+import { useEffect } from 'react'
 
 
 // Hàm tạo slug tự động từ keyword
