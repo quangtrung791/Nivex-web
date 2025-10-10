@@ -1,5 +1,5 @@
 import Link from "next/link"
-import styles from "./footer2.module.css"
+import styles from "./footer1.module.css"
 import '../../sections/addtion.css';
 import { useState } from "react";
 
@@ -57,93 +57,16 @@ export default function Footer2() {
     return (
         <>
 
-            <footer className="footer style-2 footer-main">
+            <footer className={`footer style-2 footer-main ${styles.footerContainer}`} style={{'backgroundColor': '#000'}}>
                 <div className="container" style={{'position':'relative'}}>
                     <div className="footer__main">
                         <div className="row">
                             <div className="col-xl-4 col-md-6">
                                 <div className="info">
-                                    <Link href="/" className="logo">
-                                        <img src="/assets/images/logo/Nivex_icon_bg.png" alt="" />
+                                    <Link href="/">
+                                        <img className={styles.logoFooterLearningChain} src="https://learningchain.vn/wp-content/uploads/2025/10/White-Logo-Learning-Chain-Text-01-1.webp" alt="" />
                                     </Link>
-                                    <h6 >Hãy liên hệ với chúng tôi</h6>
-                                    <ul className="list">
-                                        <li>
-                                            <p className="link-footer">+84 974 743 849</p>
-                                        </li>
-                                        <li>
-                                            <p className="link-footer">nivexvietnam@gmail.com</p>
-                                        </li>
-                                        <li>
-                                            <p className="link-footer">
-                                                29 Trần Quý Kiên, Cát Lái, Tp. Hồ Chí Minh
-                                            </p>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div className="col-xl-4 col-md-6">
-                                <div className="widget" style={{'marginLeft': '0%'}}>
-                                    <div className="widget-link s1">
-                                        <h6 className="title">VỀ NIVEX</h6>
-                                        <ul>
-                                            <li className="link-footer" style={{ 'fontWeight': 300 }}><Link href="/gioi-thieu-ve-nivex"  style={{ 'fontWeight': 300 }}>Giới thiệu</Link></li>
-                                            <li className="link-footer" style={{ 'fontWeight': 300 }}><Link href="#"  style={{ 'fontWeight': 300 }}>Tải App</Link></li>
-                                            <li className="link-footer" style={{ 'fontWeight': 300 }}><Link href="/huong-dan-su-dung-app-nivex"  style={{ 'fontWeight': 300 }}>Hướng dẫn sử dụng App Nivex</Link></li>
-                                            <li className="link-footer" style={{ 'fontWeight': 300 }}><Link href="/su-kien"  style={{ 'fontWeight': 300 }}>Sự kiện</Link></li>
-                                        </ul>
-                                    </div>
-                                    <div className="widget-link s2 custom-s2" >
-                                        <h6 className="title">KIẾN THỨC</h6>
-                                        <ul>
-                                            <li className="link-footer" ><Link style={{ 'fontWeight': 300 }} href="/kien-thuc-tong-quan" >Tổng quan</Link></li>
-                                            <li className="link-footer" ><Link style={{ 'fontWeight': 300 }} href="/thuat-ngu">Thuật ngữ</Link></li>
-                                        </ul>
-                                    </div>
-                                    <div className="widget-link s3" >
-                                        <h6 className="title">HỖ TRỢ</h6>
-                                        <ul>
-                                            <li className="link-footer" ><Link style={{ 'fontWeight': 300 }} href="/" >Tài khoản & Bảo mật</Link></li>
-                                            <li className="link-footer" ><Link style={{ 'fontWeight': 300 }} href="/">Nạp & Rút tiền</Link></li>
-                                            <li className="link-footer" ><Link style={{ 'fontWeight': 300 }} href="/">Chương trình đại lý</Link></li>
-                                            <li className="link-footer" ><Link style={{ 'fontWeight': 300 }} href="/">An toàn & Bảo mật</Link></li>
-                                            
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-xl-4 col-md-12 footer-contact-container">
-                                <div className="footer-contact" >
-                                    <h5 style={{'fontWeight': '500'}}>Chúng tôi có thể giúp gì cho bạn?</h5>
-                                    <p className="link-footer">
-                                        Subscribe our newsletter to get more interested resources from Nivex.
-                                    </p>
-                                    <form onSubmit={handleSubmit}>
-                                        <input className="input-email-footer-subscribe" 
-                                            style={{'padding': '6px 19px'}} type="email"
-                                            id="email"
-                                            name="email"
-                                            value={formData.email}
-                                            onChange={handleInputChange}
-                                            placeholder="Enter your email" 
-                                            required
-                                            disabled={isSubmitting}
-                                        />
-
-
-                                        {error && (
-                                            <div className={styles.errorMessage}>
-                                            {error}
-                                            </div>
-                                        )}
-
-                                        <button type="submit" className="btn-action btn-cta-simple" style={{'color':'black','fontSize': 12, 'fontWeight': 500, 'padding': '10px 23px', 'background': 'linear-gradient(90deg,#BCFE08, #86F969)'}} 
-                                        disabled={isSubmitting}
-                                        >
-                                            {isSubmitting ? 'Đang đăng ký...' : 'Đăng ký ngay' }
-                                        </button>
-                                    </form>
-                                    <ul className="list-social">
+                                    <ul className={`${styles.listSocialFooter}`}>
                                         <li>
                                             <Link href="https://www.facebook.com/NivexVN" target="_blank"><span className="icon-facebook-f" /></Link>
                                         </li>
@@ -159,13 +82,28 @@ export default function Footer2() {
                                     </ul>
                                 </div>
                             </div>
+                            <div className="col-xl-4 col-md-6">
+                                <div className="widget" style={{'marginLeft': '0%'}}>
+                                    <div className="widget-link">
+                                       <p className={styles.widgetTextFooter}>29 Trần Quý Kiên, P. Cát Lát, Tp. Hồ Chí Minh</p>
+                                       <p className={styles.widgetTextFooter}>Hotline: 1800 3338</p>
+                                       <p className={styles.widgetTextFooter}>Email: contact@learningchain.vn</p>
+                                       <p className={styles.widgetTextFooter}>Website: https://learningchain.vn/</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-xl-4 col-md-12 footer-contact-container">
+                                <div className="footer-contact" >
+                                       <p className={styles.widgetTextFooter}>Return & Shipping Policy</p>
+                                       <p className={styles.widgetTextFooter}>Contact us</p>
+                                       <p className={styles.widgetTextFooter}>Term of use</p>
+                                       <p className={styles.widgetTextFooter}>Privacy policy</p>
+                                </div>
+                            </div>
                             
                         </div>
                         
                     </div>
-                </div>
-                <div className="container-fluid">
-
                 </div>
             </footer>
             

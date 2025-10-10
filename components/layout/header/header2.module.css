@@ -27,3 +27,13 @@
 .textHeaderRight2 {
     color: #ffffff;
 }
+
+@media (max-width: 768px) {
+    .headerRight {
+        display: none !important;
+    }
+    .headerLeft {
+        margin: 0 auto;
+        padding-left: 8px;
+    }
+}

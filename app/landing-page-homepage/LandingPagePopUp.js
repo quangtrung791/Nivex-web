@@ -1,8 +1,8 @@
 'use client'
 import { useState } from 'react'
-import styles from './CourseRegistrationModal.module.css'
+import styles from './LandingPagePopUp.module.css'
 
-export default function CourseRegistrationModal({ isOpen, onClose, course }) {
+export default function LandingPagePopUp({ isOpen, onClose, course }) {
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -23,6 +23,34 @@ export default function CourseRegistrationModal({ isOpen, onClose, course }) {
   }
 
   const handleSubmit = async (e) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setError('')
+
+    try {
+      const response = await fetch('/api/landing-register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const result = await response.json()
+
+      if (response.ok) {
+        setSuccess(true)
+        // Reset form after successful submission
+        setFormData({ fullName: '', email: '', phone: '' })
+      } else {
+        setError(result.error || 'Có lỗi xảy ra, vui lòng thử lại')
+      }
+    } catch (error) {
+      console.error('Registration error:', error)
+      setError('Có lỗi xảy ra, vui lòng thử lại sau')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleClose = () => {
@@ -39,7 +67,7 @@ export default function CourseRegistrationModal({ isOpen, onClose, course }) {
     <div className={styles.modalOverlay} onClick={handleClose}>
       <div className={styles.modalContent} onClick={e => e.stopPropagation()}>
         <div className={styles.modalHeader}>
-          <h2 className={styles.modalTitle}>Đăng ký khóa học</h2>
+          <h2 className={styles.modalTitle}>Đăng ký</h2>
           <button className={styles.closeButton} onClick={handleClose}>
             ×
           </button>
@@ -49,13 +77,11 @@ export default function CourseRegistrationModal({ isOpen, onClose, course }) {
           <div className={styles.successMessage}>
             <div className={styles.successIcon}>✓</div>
             <h3>Đăng ký thành công!</h3>
-            <p>Hãy kiểm tra email của bạn.</p>
           </div>
         ) : (
           <>
             <div className={styles.courseInfo}>
-              <h3 className={styles.courseName}>{course?.title}</h3>
-              <p className={styles.courseDate}>{course?.date}</p>
+              <h3 className={styles.courseName}>Nivex Hub</h3>
             </div>
 
             <form onSubmit={handleSubmit} className={styles.form}>
