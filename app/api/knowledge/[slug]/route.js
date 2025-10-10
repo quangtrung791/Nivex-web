@@ -6,20 +6,21 @@ export const runtime = 'nodejs'
 export async function GET(request, { params }) {
     try {
         // In Next.js 13+ App Router, params is a Promise
-        const { id } = await params
+        const { slug } = await params
 
-        if (!id) {
+        if (!slug) {
             return NextResponse.json({
                 success: false,
-                error: 'ID is required'
+                error: 'Slug is required'
             }, { status: 400 })
         }
 
-        // Fetch the article from database with topic join
+        // Fetch the article from database by slug with topic join
         const sqlQuery = `
             SELECT 
                 k.id,
                 k.title,
+                k.slug,
                 k.content,
                 k.image_url,
                 k.difficulty,
@@ -30,11 +31,11 @@ export async function GET(request, { params }) {
                 k.topic_id
             FROM knowledge k
             LEFT JOIN knowledge_topics kt ON k.topic_id = kt.id
-            WHERE k.id = $1
+            WHERE k.slug = $1 AND k.status = 'active'
             LIMIT 1
         `
         
-        const result = await query(sqlQuery, [id])
+        const result = await query(sqlQuery, [slug])
 
 
         if (result.length === 0) {
@@ -49,6 +50,7 @@ export async function GET(request, { params }) {
         const transformedArticle = {
             id: article.id,
             title: article.title,
+            slug: article.slug,
             content: article.content,
             image: article.image_url || "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
             image_url: article.image_url,

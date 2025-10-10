@@ -46,20 +46,39 @@
 .withdrawSectionImageAfter::after {
     content: "";
     position: absolute;
-    top: 6.5%;
-    right: 3.5%;
+    top: 1%;
+    right: 3%;
     width: 30vw;
     height:auto;
-    aspect-ratio: 770/620;
-    background: url('https://learningchain.vn/wp-content/uploads/2025/10/imageWithDraw4_Nivex.webp') no-repeat center; 
+    aspect-ratio: 608/489;
+    background: url('https://learningchain.vn/wp-content/uploads/2025/10/giaodichp2p_image_nivex.webp') no-repeat center; 
     background-size: contain;
 }
 
+.p2pTradingDescription, .p2pTradingDescription2 {
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 400;
+    margin-bottom: 16px;
+    width: 70%;
+}
+
+.p2pTradingDescription2 {
+    margin-bottom: 60px;
+}
+
+.p2pTradingDescription3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+
+
 h2.depositSectionTitle {
     font-size: 48px;
-    margin-bottom: 50px;
+    margin-bottom: 14px;
 }
-h2.depositSectionTitle span {
+.depositSectionTitle span {
     background: linear-gradient(90deg, #bcfe08, #86f869);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;;
@@ -72,14 +91,18 @@ h2.depositSectionTitle span {
     margin-bottom: 0;
 }
 
-.stepTitle {
-    font-size: 20px;
+.hightlightP2P {
     font-weight: 700;
-    margin: 0 0 10px 0;
-    letter-spacing: 0.6px;
 }
 
-.stepDescription, .troubleshootingSubtitle, .supportText {
+.stepTitle {
+    font-size: 20px;
+    font-weight: 300;
+    margin: 0 0 10px 0;
+    letter-spacing: 0.2px;
+}
+
+.stepDescription, .supportText {
     font-size: 14px;
     margin: 0;
     font-weight: 300;
@@ -96,25 +119,38 @@ h2.depositSectionTitle span {
 }
 
 .imagePlaceholder {
-    width: 300px;
+    width: 391px;
     height: auto;
-    aspect-ratio: 323/ 335;
+    aspect-ratio: 391/ 845;
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
 }
 
 .imagePlaceholder1 {
-    background-image: url(https://learningchain.vn/wp-content/uploads/2025/10/ruttienmahoa_nivex.webp);
+    background-image: url(https://learningchain.vn/wp-content/uploads/2025/10/imageInternalTransfer_nivex.webp);
 }
 
 .imagePlaceholder2 {
-    background-image: url(https://learningchain.vn/wp-content/uploads/2025/10/ruttienmahoa2_nivex.webp);
+    background-image: url(https://learningchain.vn/wp-content/uploads/2025/10/imageInternalTransfer_nivex.webp);
 }
 
 .imagePlaceholder3 {
-    background-image: url(https://learningchain.vn/wp-content/uploads/2025/10/ruttienmahoa3_nivex.webp);
+    background-image: url(https://learningchain.vn/wp-content/uploads/2025/10/imageInternalTransfer_nivex.webp);
 }
+
+.imagePlaceholder4 {
+    background-image: url(https://learningchain.vn/wp-content/uploads/2025/10/imageInternalTransfer_nivex.webp);
+}   
+
+.imagePlaceholder5 {
+    background-image: url(https://learningchain.vn/wp-content/uploads/2025/10/imageInternalTransfer_nivex.webp);
+}
+
+.imagePlaceholder6 {
+    background-image: url(https://learningchain.vn/wp-content/uploads/2025/10/imageInternalTransfer_nivex.webp);
+}
+
 
 /* FAQ Section */
 .faqSection {
@@ -146,7 +182,6 @@ h2.depositSectionTitle span {
     color: white;
     transition: color 0.3s ease;
 }
-
 .faqQuestion span {
     font-size: 18px;
 }
@@ -211,9 +246,27 @@ h2.depositSectionTitle span {
     padding-right: 7%;
 }
 
+@media (max-width:991px) {
+    .depositSection.withdrawSectionImageAfter::after {
+        top: 0.15%;
+        right: 50%;
+        transform: translateX(50%);
+        display: block;
+        width: 350px;
+    }
+    .p2pTradingDescription, .p2pTradingDescription2 {
+        width: 100%;
+        text-align: justify;
+    }
+    h2.depositSectionTitle {
+        margin-bottom: 20px;
+        margin-top: 250px;
+    }
+}
+
 @media screen and (min-width: 1440px) and (max-width: 1750px) {
     .withdrawSectionImageAfter::after {
-        right: 2%;
+        right: 1.5%;
     }
 }
 
@@ -229,71 +282,46 @@ h2.depositSectionTitle span {
     }  
 }
 
-@media (min-width: 1340px) and (max-width: 1440px) {
-    .displayFlexForStepDescription {
-        gap: 10px;
-    }
-    .imagePlaceholder  {
-        width: 275px;
-    }
-}
-
-@media (min-width: 1200px) and (max-width: 1340px) {
-    .displayFlexForStepDescription {
-        gap: 10px;
-    }
-    .imagePlaceholder  {
-        width: 260px;
-    }
-}
 
 /* Responsive Design */
 @media (max-width: 1200px) {
-
-    .depositSectionTitle {
-        margin-top: 350px;
-    }    
-
     .withdrawSectionImageAfter::after {
-        top: 1%;
-        right: 50%;
-        transform: translateX(50%);
-        display: block;
-        width: 450px;
+        right: 0.25%;
     }
-
-
+    .imagePlaceholder {
+        width: 280px;
+    }
 
     .displayFlexForHeader h1.pageTitleHeading {
         font-size: 30px;
     }
     
-    h2.depositSectionTitle {
+    h2.depositSectionTitle, h3.depositSectionTitle {
         font-size: 34px;
+    }
+    .displayFlexForStepDescription {
+        gap: 10px;
     }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1024px) {
+    .imagePlaceholder {
+        width: 240px;
+    }
+    .displayFlexForStepDescription {
+        gap: 6px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .displayFlexForStepDescription {
+        gap: 15px;
+    }
+
     .imagePlaceholder {
         width: 350px;
     }
-    .displayFlexForStepDescription {
-        flex-direction: column;
-        align-items: left;
-    }
-}
-
-
-@media (max-width: 768px) { 
-    .withdrawSectionImageAfter::after {
-        width: 350px;
-    }
-
-    .depositSectionTitle {
-        margin-top: 290px;
-    }  
-
-
 
     section.pageTitleDeposit, section.faqSection, section.depositSection {
         padding-left: 3%;
@@ -305,7 +333,10 @@ h2.depositSectionTitle span {
         align-items: unset;
     }
 
-
+    .displayFlexForStepDescription {
+        flex-direction: column;
+        align-items: center;
+    }
 
     .col4mdCenter {
         width: 100%;
@@ -321,14 +352,10 @@ h2.depositSectionTitle span {
         flex-direction: column;
     }
 
-    h2.depositSectionTitle, .faqTitle  {
+    h2.depositSectionTitle, h3.depositSectionTitle {
         font-size: 28px;
     }
     
-    .subTitleFeeSection {
-        font-size: 16px;
-    }
-
     .pageTitleDeposit {
         padding: 40px 0;
     }
@@ -336,10 +363,7 @@ h2.depositSectionTitle span {
 }
 
 @media (max-width: 480px) {
-    .displayFlexForStepDescription {
-        align-items: left;
-    }
-    .imagePlaceholder1, .imagePlaceholder2, .imagePlaceholder3 {
+    .imagePlaceholder {
         width: 100%;
     }
 

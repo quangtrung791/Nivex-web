@@ -253,6 +253,24 @@ h2.depositSectionTitle {
     padding-right: 7%;
 }
 
+@media (max-width:991px) {
+    .depositSection.withdrawSectionImageAfter::after {
+        top: 0.15%;
+        right: 50%;
+        transform: translateX(50%);
+        display: block;
+        width: 350px;
+    }
+    .p2pTradingDescription, .p2pTradingDescription2 {
+        width: 100%;
+        text-align: justify;
+    }
+    h2.depositSectionTitle {
+        margin-bottom: 20px;
+        margin-top: 250px;
+    }
+}
+
 @media screen and (min-width: 1440px) and (max-width: 1750px) {
     .withdrawSectionImageAfter::after {
         right: 1.5%;
@@ -304,17 +322,6 @@ h2.depositSectionTitle {
 
 @media (max-width: 768px) {
 
-    .p2pTradingDescription, .p2pTradingDescription2 {
-        width: 100%;
-        text-align: justify;
-    }
-    .withdrawSectionImageAfter::after {
-        top: 0.15%;
-        right: 50%;
-        transform: translateX(50%);
-        display: block;
-        width: 350px;
-    }
     .displayFlexForStepDescription {
         gap: 15px;
     }
@@ -356,10 +363,6 @@ h2.depositSectionTitle {
         font-size: 28px;
     }
     
-    h2.depositSectionTitle {
-        margin-bottom: 20px;
-        margin-top: 250px;
-    }
     .pageTitleDeposit {
         padding: 40px 0;
     }

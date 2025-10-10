@@ -25,7 +25,6 @@ export default function BackToTop({ target }) {
             {hasScrolled && (
                 <a className="back_to_top-btn" onClick={handleClick}>
                 </a>
-
             )}
         </>
     )

@@ -18,13 +18,13 @@ export default function KnowledgeDetail() {
     const [allKnowledgeArticles, setAllKnowledgeArticles] = useState([])
 
     useEffect(() => {
-        if (params.id) {
+        if (params.slug) {
             fetchArticleDetail()
             fetchLatestNews()
             fetchPopularArticles()
             fetchAllKnowledgeArticles()
         }
-    }, [params.id])
+    }, [params.slug])
 
     // Fetch all knowledge articles for search
     const fetchAllKnowledgeArticles = async () => {
@@ -62,8 +62,8 @@ export default function KnowledgeDetail() {
     const fetchArticleDetail = async () => {
         try {
             setLoading(true)
-            // Replace with your actual API endpoint
-            const response = await fetch(`/api/knowledge/${params.id}`)
+            // Fetch article by slug
+            const response = await fetch(`/api/knowledge/${params.slug}`)
             const data = await response.json()
             
             if (data.success) {
@@ -75,19 +75,6 @@ export default function KnowledgeDetail() {
         } catch (error) {
             // console.error('Error fetching article:', error)
             setError('Không thể tải bài viết. Vui lòng thử lại sau.')
-            // Fallback data for demo
-//             setArticle({
-//                 id: params.id,
-//                 title: "Lorem ipsum dolor sit amet consectetur. Nisi semper condimentum varius et.",
-//                 image: "/assets/images/layout/knowledge-detail-hero.jpg",
-//                 content: `Lorem ipsum dolor sit amet consectetur. Sollicitudin ac porttitor eget vitae ipsum vitae ultrices ullamcorper nulla. Fames donec eu dui enim urna amet at. Nullam ornare nisl vitae. Lorem ipsum dolor tris fringilla gravida amet elit ut aliquam. Accumsan vel aliquam tempus diam eget pulvinar montes vulputate. Morbi volutpat semper tincidunt ornare ornare elit arcu mi ultrices. Vulputate nunc hendrerit odio pellentesque fusce aliquam fermentum at. Blandit cursus egestas viverra viverra vitae consequat accumsan leo ultricies. Sapien vulputate ornare enim non in amet faucibus ut.
-
-// Facilisis ac morbi in sem rhoncus sit magna odio. Urna non euismod tortor sed. Sagittis id viverra amet eu elementum orci. Vestibulum enim in platea nulla ornare interdum. Id neque leo tempor erat sed. Arcu sed nisl egestas nibh pharetra faucibus ut. Tempus interdum quesque ac senean duis morci. Erat ac rhoncus rhoncus praesent. Tempus vitae nec senectus faucibus non. Tincidunt sed ullamcorper donec justo faucibus sit vestibulum. Laoreet eu leo sem interdum orci ultrices vulputate interdum in. Et iaculis diam ut id mauris id enim. Sit tristique ultricies aliquam egestas dolor placerat et tincidunt.`,
-//                 difficulty: 'easy',
-//                 topic: 'Blockchain',
-//                 description: 'Blockchain cơ bản',
-//                 created_at: new Date().toISOString()
-//             })
         } finally {
             setLoading(false)
         }
@@ -102,65 +89,24 @@ export default function KnowledgeDetail() {
             if (data.success && data.data && data.data.length > 0) {
                 // Filter out current article and take only first 5
                 const filteredArticles = data.data
-                    .filter(article => article.id !== parseInt(params.id))
+                    .filter(article => article.slug !== params.slug)
                     .slice(0, 5)
                 
                 if (filteredArticles.length > 0) {
                     const transformedNews = filteredArticles.map(article => ({
                         id: article.id,
+                        slug: article.slug,
                         title: article.title,
                         image: article.image_url || article.image || "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
                         date: formatNewsDate(article.created_at)
                     }))
                     setLatestNews(transformedNews)
-                } else {
-                    // setFallbackNews()
                 }
-            } else {
-                // No data from API, use fallback
-                // setFallbackNews()
             }
         } catch (error) {
             // console.error('Error fetching latest knowledge articles:', error)
-            // API error, use fallback
-            // setFallbackNews()
         }
     }
-
-    // const setFallbackNews = () => {
-    //     setLatestNews([
-    //         {
-    //             id: 2,
-    //             title: "Blockchain là gì? Tìm hiểu công nghệ chuỗi khối từ cơ bản đến nâng cao",
-    //             image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
-    //             date: "1 ngày trước"
-    //         },
-    //         {
-    //             id: 3,
-    //             title: "Hướng dẫn sử dụng MetaMask: Ví crypto an toàn cho người mới",
-    //             image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
-    //             date: "2 ngày trước"
-    //         },
-    //         {
-    //             id: 4,
-    //             title: "DeFi là gì? Tài chính phi tập trung và cơ hội đầu tư",
-    //             image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
-    //             date: "3 ngày trước"
-    //         },
-    //         {
-    //             id: 5,
-    //             title: "Copy Trade: Chiến lược đầu tư thông minh cho người mới",
-    //             image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
-    //             date: "4 ngày trước"
-    //         },
-    //         {
-    //             id: 6,
-    //             title: "AI trong Crypto: Ứng dụng trí tuệ nhân tạo trong giao dịch",
-    //             image: "https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp",
-    //             date: "5 ngày trước"
-    //         }
-    //     ])
-    // }
 
     const formatNewsDate = (dateString) => {
         if (!dateString) return 'Vừa xong'
@@ -189,23 +135,7 @@ export default function KnowledgeDetail() {
             }
         } catch (error) {
             // Fallback data
-            setPopularArticles([
-                {
-                    id: 1,
-                    title: "Lorem ipsum dolor sit amet consectetur. Dui et convallis hac...",
-                    image: "/assets/images/layout/knowledge-card.jpg"
-                },
-                {
-                    id: 2,
-                    title: "Lorem ipsum dolor sit amet consectetur. Dui et convallis hac...",
-                    image: "/assets/images/layout/knowledge-card.jpg"
-                },
-                {
-                    id: 3,
-                    title: "Lorem ipsum dolor sit amet consectetur. Dui et convallis hac...",
-                    image: "/assets/images/layout/knowledge-card.jpg"
-                }
-            ])
+            setPopularArticles([])
         }
     }
 
@@ -284,7 +214,7 @@ export default function KnowledgeDetail() {
                                                 </div>
                                                 {searchResults.map((result) => (
                                                     <Link
-                                                        href={`/chi-tiet-kien-thuc/${result.id}`}
+                                                        href={`/chi-tiet-kien-thuc/${result.slug || result.id}`}
                                                         key={result.id} 
                                                         className={styles.searchResultItem}
                                                         onClick={() => {
@@ -351,7 +281,7 @@ export default function KnowledgeDetail() {
                                 <h3 className={styles.sidebarTitle}>Kiến thức mới nhất</h3>
                                 <div className={styles.newsList}>
                                     {latestNews.map((news) => (
-                                        <Link href={`/chi-tiet-kien-thuc/${news.id}`} key={news.id} className={styles.newsItem}>
+                                        <Link href={`/chi-tiet-kien-thuc/${news.slug || news.id}`} key={news.id} className={styles.newsItem}>
                                             <span className={styles.newsDate}>{news.date}</span>
                                             <div className={styles.newsImageWrapper}>
                                                 <div className={styles.newsImage}>
@@ -372,7 +302,7 @@ export default function KnowledgeDetail() {
                                 <h3 className={styles.sectionTitle}>Được xem nhiều</h3>
                                 <div className={styles.popularGrid}>
                                     {popularArticles.map((item, index) => (
-                                        <Link href={`/chi-tiet-kien-thuc/${item.id}`} key={item.id} className={styles.popularCard}>
+                                        <Link href={`/chi-tiet-kien-thuc/${item.slug || item.id}`} key={item.id} className={styles.popularCard}>
                                             <div className={styles.popularCardImage}>
                                                 <img src={item.image} alt={item.title} />
                                             </div>
@@ -393,4 +323,3 @@ export default function KnowledgeDetail() {
         </Layout>
     )
 }
-

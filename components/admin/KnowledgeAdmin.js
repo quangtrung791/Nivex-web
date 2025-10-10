@@ -28,6 +28,7 @@ import { Chip } from '@mui/material'
 import { ImageUploadInput } from './ImageUploadInput'
 import RichTextInput from './RichTextInput'
 import { useState, useEffect } from 'react'
+import { slugify } from '@/utils/slugify'
 
 // ===== Dynamic Topic Select Component =====
 const DynamicTopicSelect = ({ source, label, validate, ...props }) => {
@@ -214,23 +215,80 @@ export const KnowledgeList = () => (
   </List>
 )
 
-// ===== Create =====
-export const KnowledgeCreate = () => (
-  <Create title="➕ Tạo bài viết mới" redirect="list">
-    <SimpleForm>
+// ===== Slug Input with Auto-generation =====
+const SlugInput = ({ source, label, ...props }) => {
+  const [slugValue, setSlugValue] = useState('')
+  const record = useRecordContext()
+  
+  useEffect(() => {
+    if (record?.slug) {
+      setSlugValue(record.slug)
+    }
+  }, [record])
+  
+  const handleTitleChange = (e) => {
+    const title = e.target.value
+    if (title && !slugValue) {
+      const generatedSlug = slugify(title)
+      setSlugValue(generatedSlug)
+    }
+  }
+  
+  return (
+    <div style={{ width: '100%' }}>
       <TextInput
-        source="title"
-        label="Tiêu đề bài viết"
-        validate={[required()]}
+        source={source}
+        label={label}
+        value={slugValue}
+        onChange={(e) => setSlugValue(e.target.value)}
         fullWidth
-        helperText="Nhập tiêu đề bài viết (bắt buộc)"
+        helperText="URL thân thiện (tự động tạo từ tiêu đề, có thể chỉnh sửa)"
+        {...props}
       />
-      <DynamicTopicSelect
-        source="topic_id"
-        label="Chủ đề"
-        defaultValue={1}
-        validate={[required()]}
-      />
+    </div>
+  )
+}
+
+// ===== Create =====
+export const KnowledgeCreate = () => {
+  const [titleValue, setTitleValue] = useState('')
+  const [slugValue, setSlugValue] = useState('')
+  
+  const handleTitleChange = (e) => {
+    const title = e.target.value
+    setTitleValue(title)
+    // Auto-generate slug from title
+    if (title) {
+      const generatedSlug = slugify(title)
+      setSlugValue(generatedSlug)
+    }
+  }
+  
+  return (
+    <Create title="➕ Tạo bài viết mới" redirect="list">
+      <SimpleForm>
+        <TextInput
+          source="title"
+          label="Tiêu đề bài viết"
+          validate={[required()]}
+          fullWidth
+          helperText="Nhập tiêu đề bài viết (bắt buộc)"
+          onChange={handleTitleChange}
+        />
+        <TextInput
+          source="slug"
+          label="Đường dẫn URL (Slug)"
+          value={slugValue}
+          fullWidth
+          helperText="Tự động tạo từ tiêu đề, có thể chỉnh sửa thủ công"
+          hidden
+        />
+        <DynamicTopicSelect
+          source="topic_id"
+          label="Chủ đề"
+          defaultValue={1}
+          validate={[required()]}
+        />
       <SelectInput
         source="difficulty"
         label="Độ khó"
@@ -257,29 +315,60 @@ export const KnowledgeCreate = () => (
         label="Hình ảnh bài viết (Nên là tỉ lệ 16:9)"
         helperText="Tải lên hoặc chọn ảnh từ thư viện. Kích thước tối đa: 5MB. Định dạng: JPG, PNG, GIF, WebP"
       />
-      <RichTextInput
-        source="content"
-        label="Nội dung bài viết"
-        fullWidth
-        helperText="Nội dung chi tiết của bài viết kiến thức với định dạng HTML"
-        validate={[required()]}
-      />
-    </SimpleForm>
-  </Create>
-)
+        <RichTextInput
+          source="content"
+          label="Nội dung bài viết"
+          fullWidth
+          helperText="Nội dung chi tiết của bài viết kiến thức với định dạng HTML"
+          validate={[required()]}
+        />
+      </SimpleForm>
+    </Create>
+  )
+}
 
 // ===== Edit =====
-export const KnowledgeEdit = () => (
-  <Edit title="✏️ Chỉnh sửa bài viết">
-    <SimpleForm>
-      <TextInput source="id" label="ID" disabled />
-      <TextInput source="title" label="Tiêu đề bài viết" validate={[required()]} fullWidth />
-
-      <DynamicTopicSelect
-        source="topic_id"
-        label="Chủ đề"
-        validate={[required()]}
-      />
+export const KnowledgeEdit = () => {
+  const [slugValue, setSlugValue] = useState('')
+  const record = useRecordContext()
+  
+  useEffect(() => {
+    if (record?.slug) {
+      setSlugValue(record.slug)
+    }
+  }, [record])
+  
+  const handleTitleBlur = (e) => {
+    const title = e.target.value
+    if (title && !slugValue) {
+      const generatedSlug = slugify(title)
+      setSlugValue(generatedSlug)
+    }
+  }
+  
+  return (
+    <Edit title="✏️ Chỉnh sửa bài viết">
+      <SimpleForm>
+        <TextInput source="id" label="ID" disabled />
+        <TextInput 
+          source="title" 
+          label="Tiêu đề bài viết" 
+          validate={[required()]} 
+          fullWidth 
+          onBlur={handleTitleBlur}
+        />
+        <TextInput
+          source="slug"
+          label="Đường dẫn URL (Slug)"
+          fullWidth
+          helperText="URL thân thiện SEO (tự động cập nhật khi thay đổi tiêu đề)"
+          hidden
+        />
+        <DynamicTopicSelect
+          source="topic_id"
+          label="Chủ đề"
+          validate={[required()]}
+        />
       <SelectInput
         source="difficulty"
         label="Độ khó"
@@ -310,11 +399,12 @@ export const KnowledgeEdit = () => (
         fullWidth
         validate={[required()]}
       />
-      <DateField source="created_at" label="Ngày tạo" showTime disabled />
-      <DateField source="updated_at" label="Cập nhật lần cuối" showTime disabled />
-    </SimpleForm>
-  </Edit>
-)
+        <DateField source="created_at" label="Ngày tạo" showTime disabled />
+        <DateField source="updated_at" label="Cập nhật lần cuối" showTime disabled />
+      </SimpleForm>
+    </Edit>
+  )
+}
 
 // ===== Show =====
 export const KnowledgeShow = () => (
