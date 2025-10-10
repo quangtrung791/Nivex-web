@@ -63,9 +63,9 @@ export default function Footer2() {
                         <div className="row">
                             <div className="col-xl-4 col-md-6">
                                 <div className="info">
-                                    <Link href="/">
+                                    <div>
                                         <img className={styles.logoFooterLearningChain} src="https://learningchain.vn/wp-content/uploads/2025/10/White-Logo-Learning-Chain-Text-01-1.webp" alt="" />
-                                    </Link>
+                                    </div>
                                     <ul className={`${styles.listSocialFooter}`}>
                                         <li>
                                             <Link href="https://www.facebook.com/NivexVN" target="_blank"><span className="icon-facebook-f" /></Link>
