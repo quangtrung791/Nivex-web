@@ -2,7 +2,7 @@
 'use client'
 import Link from "next/link"
 import { Autoplay, Navigation, Pagination } from "swiper/modules"
-import { Swiper, SwiperSlide } from "swiper/react"
+// import { Swiper, SwiperSlide } from "swiper/react"
 
 const swiperOptions = {
     modules: [Autoplay, Pagination, Navigation],
@@ -12,7 +12,7 @@ const swiperOptions = {
     },
 }
 
-export default function About1() {
+export default function About1({ onOpenPopup }) {
     return (
         <>
             <section className="about">
@@ -29,6 +29,14 @@ export default function About1() {
                                    <b>Nivex</b> tự hào góp mặt tại các hội nghị và sự kiện blockchain hàng đầu thế giới, kết nối với các nhà lãnh đạo ngành và mang về những kiến thức chuyên sâu độc quyền cho cộng đồng của mình.
                                 </p>
                                 <Link href="#" className="btn-action" style={{'padding': '13px 25px'}}>Xem thêm</Link>
+                                {/* <a 
+                                    className="btn-action btn-action-landingpage-nivex" 
+                                    id="button-master-homepg" 
+                                    style={{'padding': '13px 25px'}}
+                                    onClick={onOpenPopup}
+                                >
+                                    <span>Xem thêm</span>
+                                </a> */}
                             </div>
                         </div>
 
@@ -45,6 +53,14 @@ export default function About1() {
                                    <b>Nivex</b> tự hào góp mặt tại các hội nghị và sự kiện blockchain hàng đầu thế giới, kết nối với các nhà lãnh đạo ngành và mang về những kiến thức chuyên sâu độc quyền cho cộng đồng của mình.
                                 </p>
                                 <Link href="#" className="btn-action" style={{'padding': '13px 25px'}}>Xem thêm</Link>
+                                {/* <a 
+                                    className="btn-action btn-action-landingpage-nivex" 
+                                    id="button-master-homepg" 
+                                    style={{'padding': '13px 25px'}}
+                                    onClick={onOpenPopup}
+                                >
+                                    <span>Xem thêm</span>
+                                </a> */}
                             </div>
                         </div>
                     </div>
@@ -113,6 +129,14 @@ export default function About1() {
                                     </li>
                                 </ul> */}
                                 <Link href="#" className="btn-action" style={{'padding': '13px 25px'}}>Xem thêm</Link>
+                                {/* <a 
+                                    className="btn-action btn-action-landingpage-nivex" 
+                                    id="button-master-homepg" 
+                                    style={{'padding': '13px 25px'}}
+                                    onClick={onOpenPopup}
+                                >
+                                    <span>Xem thêm</span>
+                                </a> */}
                             </div>
                         </div>
                     </div>

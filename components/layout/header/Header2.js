@@ -12,12 +12,12 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu }) {
     return (
         <>
 
-            <header id="header_main" className={`header ${scroll ? "is-fixed is-small" : ""}`}>
+            <header id="header_main" className={`header ${scroll ? "is-fixed is-small" : ""}`} style={{'height': '60px'}}>
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-12">
                             <div className="header__body d-flex justify-content-between">
-                                <div className="header__left">
+                                <div className={`header__left ${styles.headerLeft}`}>
                                     <div className="logo">
                                         <div className="dark" >
                                             <img className={styles.logoHeaderNivex } src="https://learningchain.vn/wp-content/uploads/2025/10/Nivex_icon_handicape.webp" alt=""/>
@@ -32,7 +32,7 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu }) {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="header__right">
+                                <div className={`header__right ${styles.headerRight}`}>
                                    <div className={styles.textHeaderRight}>
                                         Learningchain.vn
                                    </div>
@@ -44,7 +44,6 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu }) {
                         </div>
                     </div>
                 </div>
-                <MobileMenu isMobileMenu={isMobileMenu} />
             </header>
 
         </>

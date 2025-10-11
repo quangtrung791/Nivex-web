@@ -8,7 +8,6 @@ function getPool() {
   if (!pool) {
     pool = new Pool({
       connectionString: process.env.DATABASE_URL,
-      // Pool configuration for optimal performance
       max: 20, // Maximum number of clients in the pool
       min: 2, // Minimum number of clients in the pool
       idleTimeoutMillis: 30000, // Close idle clients after 30 seconds
@@ -17,9 +16,9 @@ function getPool() {
     })
 
     // Handle pool errors
-    // pool.on('error', (err) => {
-    //   console.error('Unexpected error on idle client', err)
-    // })
+    pool.on('error', (err) => {
+      // console.error('Unexpected error on idle client', err)
+    })
   }
   return pool
 }
@@ -29,8 +28,11 @@ async function query(text, params = []) {
   const pool = getPool()
   
   try {
+    const start = Date.now()
     const result = await pool.query(text, params)
+    const duration = Date.now() - start
     
+    // Log slow queries for optimization
     
     return result.rows
   } catch (error) {
@@ -52,14 +54,14 @@ async function closePool() {
 }
 
 // Health check function
-// async function healthCheck() {
-//   try {
-//     const result = await query('SELECT 1 as health')
-//     return result[0]?.health === 1
-//   } catch (error) {
-//     // console.error('Database health check failed:', error)
-//     // return false
-//   }
-// }
+async function healthCheck() {
+  try {
+    const result = await query('SELECT 1 as health')
+    return result[0]?.health === 1
+  } catch (error) {
+    // console.error('Database health check failed:', error)
+    // return false
+  }
+}
 
-export { query, closePool}
+export { query, closePool, healthCheck }

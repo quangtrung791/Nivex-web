@@ -1,5 +1,5 @@
 .logoHeaderNivex {
-    transform: translate(0%, -1%) !important;
+    transform: translate(0%, -2%) !important;
     aspect-ratio: 269/60;
     object-fit: contain;
     width: 115px !important;
@@ -26,4 +26,14 @@
 
 .textHeaderRight2 {
     color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .headerRight {
+        display: none !important;
+    }
+    .headerLeft {
+        margin: 0 auto;
+        padding-left: 8px;
+    }
 }
