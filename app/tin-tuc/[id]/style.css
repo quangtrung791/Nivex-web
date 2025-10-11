@@ -21,6 +21,10 @@
 }
 
 /* News text content */
+em {
+    color: gray;
+    font-size: 14px;
+}
 section.tin-tuc-id .news-details-display-markdown ul {
     list-style-type: disc !important;       /* Hiển thị gạch đầu dòng dạng chấm tròn */
     margin-left: 1.5rem;         /* Thụt lề trái */
