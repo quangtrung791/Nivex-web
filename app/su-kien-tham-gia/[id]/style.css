@@ -3,7 +3,7 @@
     padding-left: 0 !important;
 } */
 .su-kien-tg-id .col-xl-8 .blog-main .content p {
-    font-size: 15px !important;
+    font-size: 16px !important;
 }
 .su-kien-tg-id a.title.navigate-child-news {
     text-align: left !important;
@@ -106,14 +106,15 @@ section.duoc-xem-nhieu .blog-box .box-content .title {
 section.section-sale {
     display: none;
 }
-.blog-details .blog-main .content p {
-    font-weight: 400 !important;
+.blog-details.su-kien-tg-id .blog-main .content p {
+    font-weight: 300 !important;
     letter-spacing: 0;
     line-height: 1.4;
     text-align: justify;
     color: #fff;
+    font-size: 16px;
 }
-.blog-details .blog-main .title {
+.blog-details.su-kien-tg-id .blog-main .title {
     font-weight: 700 !important;
     letter-spacing: 0;
     line-height: 1;

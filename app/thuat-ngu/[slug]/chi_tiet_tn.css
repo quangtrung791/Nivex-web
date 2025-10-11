@@ -1,4 +1,15 @@
 /* Fixed */
+section.chi-tiet-thuat-ngu .dictionary-details-display-markdown p,
+section.chi-tiet-thuat-ngu .dictionary-details-display-markdown li {
+    font-size: 16px !important;
+    font-weight: 300 !important;
+    line-height: 1.4 !important;
+    text-align: justify !important;
+    letter-spacing: 0;
+    color: white;
+}
+
+
 @media (min-width: 921px) and (max-width: 1023px) {
 	section.blog-details.chi-tiet-thuat-ngu {
 	    padding: 3%;

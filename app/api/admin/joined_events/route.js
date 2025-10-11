@@ -1,5 +1,6 @@
 import { query } from "@/app/lib/neon";
 import { NextResponse } from "next/server";
+import { slugify, generateUniqueSlug } from "@/utils/slugify";
 
 export const runtime = 'nodejs';
 
@@ -86,12 +87,29 @@ export async function POST(request) {
   try {
     const data = await request.json();
     console.log("POST /api/admin/joined_events - data:", data);
+
+    let slugCustom;
+
+    if(!data.slug || data.slug === null) {
+          slugCustom = slugify(data.title)
+        }
+    
+         // Tránh slug bị ttrùng
+        const checkSlugExists = async (checkSlug) => {
+          const existing = await query(
+            'SELECT id FROM public.joined_events WHERE slug = $1',
+            [checkSlug]
+          );
+          return existing.length > 0;
+        };
+        
+        slugCustom = await generateUniqueSlug(slugCustom, checkSlugExists);
     
     // Insert into events table
     const result = await query(
       'INSERT INTO public.joined_events (slug, title, content, short_desc, thumbnail_url, time_event, tag1, tag2, tag3, type, time_from_and_to) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING *',
       [
-        data.slug,
+        data.slug || slugCustom,
         data.title || 'Untitled',
         data.content || '',
         data.short_desc || '',
