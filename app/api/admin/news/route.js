@@ -100,8 +100,26 @@ export async function POST(request) {
     
     const timeUpload = data.time_upload ? new Date(data.time_upload).toISOString() : serverTime;
     // Insert into news table
+    // const result = await query(
+    //   'INSERT INTO public.news (slug, title, category_id, status, content, author, thumbnail_url, time_upload) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *',
+    //   [
+    //     data.slug,
+    //     data.title || 'Untitled',
+    //     data.category_id || '',
+    //     data.status || 'active',
+    //     data.content || '',
+    //     data.author || 'admin',
+    //     data.thumbnail_url || null,
+    //     timeUpload
+    //   ]
+    // );
     const result = await query(
-      'INSERT INTO public.news (slug, title, category_id, status, content, author, thumbnail_url, time_upload) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *',
+      `
+      INSERT INTO public.news 
+      (slug, title, category_id, status, content, author, thumbnail_url, time_upload)
+      VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+      RETURNING *
+      `,
       [
         data.slug,
         data.title || 'Untitled',
@@ -113,18 +131,24 @@ export async function POST(request) {
         timeUpload
       ]
     );
+
     
     // Return the created course
-    const n = Array.isArray(result) ? result[0] : result.rows?.[0];
+    // const n = Array.isArray(result) ? result[0] : result.rows?.[0];
+    const n = Array.isArray(result) ? result[0] : result?.rows?.[0];
+
     if (!n) {
       throw new Error('Không có dữ liệu bài viết');
     }
 
     // Lấy danh sách email subscriber
     const subs = await query('SELECT email FROM public.subscribe');
+    // const subscribers = Array.isArray(subs)
+    //   ? subs.map(s => s.email)
+    //   : subs.rows.map(s => s.email);
     const subscribers = Array.isArray(subs)
       ? subs.map(s => s.email)
-      : subs.rows.map(s => s.email);
+      : subs?.rows?.map(s => s.email) || [];
 
     if (subscribers.length === 0) {
       console.log('Không có email đăng ký, bỏ qua gửi email');
