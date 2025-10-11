@@ -10,7 +10,7 @@ export default function MenuListNew() {
     {
       title: 'Khóa học',
       icon: 'assets/images/icon-list-menu-homepage/khoahoc_homepage_hover.png',
-      href: '/#',
+      href: '/khoa-hoc',
       description: 'Học crypto từ cơ bản đến nâng cao'
     },
     {

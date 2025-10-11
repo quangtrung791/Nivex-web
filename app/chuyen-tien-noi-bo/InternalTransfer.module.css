@@ -27,7 +27,6 @@
 
 .col4mdCenter {
     display: flex;
-    width: 33%;
 }
 
 .pageHeaderKnowledgeSubtitle {
@@ -39,7 +38,7 @@
 /* Deposit Steps Section */
 .depositSection {
     background: #141416;
-    padding: 60px 0 50px;
+    padding: 60px 0 120px;
     color: white;
     position: relative;
 }
@@ -132,23 +131,23 @@ h2.depositSectionTitle {
 }
 
 .imagePlaceholder2 {
-    background-image: url(https://learningchain.vn/wp-content/uploads/2025/10/imageInternalTransfer_nivex.webp);
+    background-image: url(https://learningchain.vn/wp-content/uploads/2025/10/imageInternalTransfer2_nivex.webp);
 }
 
 .imagePlaceholder3 {
-    background-image: url(https://learningchain.vn/wp-content/uploads/2025/10/imageInternalTransfer_nivex.webp);
+    background-image: url(https://learningchain.vn/wp-content/uploads/2025/10/imageInternalTransfer3_nivex.webp);
 }
 
 .imagePlaceholder4 {
-    background-image: url(https://learningchain.vn/wp-content/uploads/2025/10/imageInternalTransfer_nivex.webp);
+    background-image: url(https://learningchain.vn/wp-content/uploads/2025/10/imageInternalTransfer4_nivex.webp);
 }   
 
 .imagePlaceholder5 {
-    background-image: url(https://learningchain.vn/wp-content/uploads/2025/10/imageInternalTransfer_nivex.webp);
+    background-image: url(https://learningchain.vn/wp-content/uploads/2025/10/imageInternalTransfer5_nivex.webp);
 }
 
 .imagePlaceholder6 {
-    background-image: url(https://learningchain.vn/wp-content/uploads/2025/10/imageInternalTransfer_nivex.webp);
+    background-image: url(https://learningchain.vn/wp-content/uploads/2025/10/imageInternalTransfer6_nivex.webp);
 }
 
 
