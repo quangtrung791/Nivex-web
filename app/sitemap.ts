@@ -21,6 +21,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     'su-kien-tham-gia',
     'thuat-ngu',
     'tin-tuc',
+    'chuyen-tien-noi-bo',
+    'ai-copy-trade',
+    'huong-dan-su-dung-app-nivex',
   ].map((p) => ({
     url: `${BASE_URL}/${p}`,
     lastModified: new Date(),
