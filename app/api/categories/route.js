@@ -2,6 +2,7 @@ import { query } from "@/app/lib/neon";
 import { NextResponse } from "next/server";
 
 export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
 
 export async function GET(request) {
   try {
