@@ -1,6 +1,7 @@
 import { query } from "@/app/lib/neon";
 import { NextResponse } from "next/server";
 import { sendEmail } from '@/lib/emailService';
+import { slugify, generateUniqueSlug } from "@/utils/slugify";
 
 export const runtime = 'nodejs';
 
@@ -99,6 +100,23 @@ export async function POST(request) {
     const serverTime = vnTime.toISOString(); // định dạng ISO chuẩn PostgreSQL
     
     const timeUpload = data.time_upload ? new Date(data.time_upload).toISOString() : serverTime;
+    let slugCustom;
+
+    if(!data.slug || data.slug === null) {
+      slugCustom = slugify(data.title)
+    }
+
+     // Tránh slug bị ttrùng
+    const checkSlugExists = async (checkSlug) => {
+      const existing = await query(
+        'SELECT id FROM public.news WHERE slug = $1',
+        [checkSlug]
+      );
+      return existing.length > 0;
+    };
+    
+    slugCustom = await generateUniqueSlug(slugCustom, checkSlugExists);
+
     // Insert into news table
     // const result = await query(
     //   'INSERT INTO public.news (slug, title, category_id, status, content, author, thumbnail_url, time_upload) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *',
@@ -121,7 +139,7 @@ export async function POST(request) {
       RETURNING *
       `,
       [
-        data.slug,
+        data.slug || slugCustom,
         data.title || 'Untitled',
         data.category_id || '',
         data.status || 'active',
@@ -131,7 +149,6 @@ export async function POST(request) {
         timeUpload
       ]
     );
-
     
     // Return the created course
     // const n = Array.isArray(result) ? result[0] : result.rows?.[0];
@@ -160,7 +177,7 @@ export async function POST(request) {
       <div style="font-family:Arial,sans-serif;">
         <h2>${n.title}</h2>
         <p>${n.content.substring(0, 200)}...</p>
-          <a href="https://nivex.vn/tin-tuc/${n.id}"
+          <a href="https://nivex.vn/tin-tuc/${n.slug}"
             style="background:#0070f3;color:#fff;padding:10px 20px;text-decoration:none;border-radius:5px;">
             Xem chi tiết
           </a>
@@ -168,7 +185,7 @@ export async function POST(request) {
           <p style="font-size:12px;color:#777">Bạn nhận được email này vì đã đăng ký nhận tin tại website Nivex.vn.</p>
         </div>
       `;
-      const textContent = `${n.title}\n\n${n.content.substring(0, 200)}...\nXem chi tiết: https://nivex.vn/tin-tuc/${n.id}`;
+      const textContent = `${n.title}\n\n${n.content.substring(0, 200)}...\nXem chi tiết: https://nivex.vn/tin-tuc/${n.slug}`;
     
 
     // Thực thi gửi email
