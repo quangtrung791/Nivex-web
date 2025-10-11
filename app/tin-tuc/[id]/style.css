@@ -50,7 +50,7 @@ section.tin-tuc-id .content .ql-size-large {
     width: 100%;
 }
 .blog-details.tin-tuc-id .blog-main .content p {
-    font-size: 15px !important;
+    font-size: 16px !important;
 }
 .blog-details.tin-tuc-id .blog-main .content a {
     font-weight: 300 !important;
@@ -185,7 +185,7 @@ section.section-sale {
     display: none;
 }
 .blog-details.tin-tuc-id .blog-main .content p {
-    font-weight: 400 !important;
+    font-weight: 300 !important;
     letter-spacing: 0;
     line-height: 1.4;
     text-align: justify;
