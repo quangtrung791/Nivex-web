@@ -1,3 +1,9 @@
+@media (min-width: 1600px) and (max-width: 1919px) {
+    p.fs-14.desc.main-description {
+        margin-bottom: 20px;
+    }
+}
+
 @media (min-width: 768px) {
     section.hanh-trinh-cua-ban-tri-truc {
         background-image: url(https://learningchain.vn/wp-content/uploads/nivex/knowledge_background.png);
@@ -92,6 +98,9 @@ p.text.fs-14 {
     section.MenuListNew_menuListSection__geRaI.aos-init.aos-animate {
         position: relative;
         top: -50px !important;
+    }
+    .main-description {
+        margin-bottom: 24px;
     }
 }
 

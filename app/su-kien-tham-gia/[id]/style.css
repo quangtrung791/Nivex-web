@@ -3,7 +3,7 @@
     padding-left: 0 !important;
 } */
 .su-kien-tg-id .col-xl-8 .blog-main .content p {
-    font-size: 15px !important;
+    font-size: 16px !important;
 }
 .su-kien-tg-id a.title.navigate-child-news {
     text-align: left !important;
@@ -13,6 +13,27 @@
     max-width: 100%;
     width: 100%;
 }
+
+/* text content fixed */
+em {
+    color: gray;
+    font-size: 14px;
+}
+section.su-kien-tg-id .joined-event-details-display-markdown ul {
+    list-style-type: disc !important;       /* Hiển thị gạch đầu dòng dạng chấm tròn */
+    margin-left: 1.5rem;         /* Thụt lề trái */
+    padding-left: 1.5rem;        /* Tăng khoảng cách giữa viền và nội dung */
+}
+section.su-kien-tg-id .joined-event-details-display-markdown ol {
+    list-style-type: decimal !important;    /* Nếu có danh sách đánh số */
+    margin-left: 1.5rem;
+    padding-left: 1.5rem;
+}
+section.su-kien-tg-id .joined-event-details-display-markdown li {
+    /* margin-bottom: 0.5rem; */
+    line-height: 1.4;            /* Giúp dễ đọc hơn */
+}
+
 section.blog-details .content,
 section.blog-details .content p span, 
 section.blog-details .content p, 
@@ -89,14 +110,15 @@ section.duoc-xem-nhieu .blog-box .box-content .title {
 section.section-sale {
     display: none;
 }
-.blog-details .blog-main .content p {
-    font-weight: 400 !important;
+.blog-details.su-kien-tg-id .blog-main .content p {
+    font-weight: 300 !important;
     letter-spacing: 0;
     line-height: 1.4;
     text-align: justify;
     color: #fff;
+    font-size: 16px;
 }
-.blog-details .blog-main .title {
+.blog-details.su-kien-tg-id .blog-main .title {
     font-weight: 700 !important;
     letter-spacing: 0;
     line-height: 1;
@@ -429,9 +451,9 @@ footer.footer.style-2.footer-main {
     .content-tab .blog-box a.title {
         margin-top: 0;
     }
-    .content-tab .blog-box .box-content {
+    /* .content-tab .blog-box .box-content {
         padding: 0;
-    }
+    } */
     .content-tab .blog-box .box-image {
         margin-bottom: 10px;
     }
@@ -630,9 +652,9 @@ footer.footer.style-2.footer-main {
     .content-tab .blog-box a.title {
         margin-top: 0;
     }
-    .content-tab .blog-box .box-content {
+    /* .content-tab .blog-box .box-content {
         padding: 0;
-    }
+    } */
     .content-tab .blog-box .box-image {
         margin-bottom: 10px;
     }
@@ -823,9 +845,9 @@ footer.footer.style-2.footer-main {
     .content-tab .blog-box a.title {
         margin-top: 0;
     }
-    .content-tab .blog-box .box-content {
+    /* .content-tab .blog-box .box-content {
         padding: 0;
-    }
+    } */
     .content-tab .blog-box .box-image {
         margin-bottom: 10px;
     }
@@ -1022,9 +1044,9 @@ footer.footer.style-2.footer-main {
         margin-top: 0;
     }
 
-    .content-tab .blog-box .box-content {
+    /* .content-tab .blog-box .box-content {
         padding: 0;
-    }
+    } */
 
     .content-tab .blog-box .box-image {
         margin-bottom: 10px;
@@ -1230,9 +1252,9 @@ footer.footer.style-2.footer-main {
         margin-top: 0;
     }
 
-    .content-tab .blog-box .box-content {
+    /* .content-tab .blog-box .box-content {
         padding: 0;
-    }
+    } */
 
     .content-tab .blog-box .box-image {
         margin-bottom: 8px;
@@ -1449,9 +1471,9 @@ footer.footer.style-2.footer-main {
         margin-top: 0;
     }
 
-    .content-tab .blog-box .box-content {
+    /* .content-tab .blog-box .box-content {
         padding: 0;
-    }
+    } */
 
     .content-tab .blog-box .box-image {
         margin-bottom: 8px;
@@ -1656,9 +1678,9 @@ footer.footer.style-2.footer-main {
         margin-top: 0;
     }
 
-    .content-tab .blog-box .box-content {
+    /* .content-tab .blog-box .box-content {
         padding: 0;
-    }
+    } */
 
     .content-tab .blog-box .box-image {
         margin-bottom: 7px;
@@ -2325,9 +2347,9 @@ footer.footer.style-2.footer-main {
         margin-top: 0;
     }
 
-    .content-tab .blog-box .box-content {
+    /* .content-tab .blog-box .box-content {
         padding: 0;
-    }
+    } */
 
     .content-tab .blog-box .box-image {
         margin-bottom: 7px;
@@ -2533,9 +2555,9 @@ footer.footer.style-2.footer-main {
         margin-top: 0;
     }
 
-    .content-tab .blog-box .box-content {
+    /* .content-tab .blog-box .box-content {
         padding: 0;
-    }
+    } */
 
     .content-tab .blog-box .box-image {
         margin-bottom: 8px;
@@ -2753,9 +2775,9 @@ footer.footer.style-2.footer-main {
         margin-top: 0;
     }
 
-    .content-tab .blog-box .box-content {
+    /* .content-tab .blog-box .box-content {
         padding: 0;
-    }
+    } */
 
     .content-tab .blog-box .box-image {
         margin-bottom: 8px;
@@ -2950,9 +2972,9 @@ footer.footer.style-2.footer-main {
         margin-top: 0;
     }
 
-    .content-tab .blog-box .box-content {
+    /* .content-tab .blog-box .box-content {
         padding: 0;
-    }
+    } */
 
     .content-tab .blog-box .box-image {
         margin-bottom: 10px;

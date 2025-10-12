@@ -38,7 +38,8 @@
 .blog-grid .blog-box:hover .event-btn {
     background: linear-gradient(#BCFE08, #86F969);
     color: #222;
-    border: none;
+    /* border: none; */
+    border: 1px solid #bcfe08;
 }
 
 .event-tags span {

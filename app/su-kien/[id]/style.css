@@ -1,4 +1,19 @@
 /* Fixed */
+@media (width: 1912px) {
+    header#header_main {
+        padding: 0 !important;
+    }
+    header#header_main .container-fluid {
+        padding: 0 6.5% !important;
+    }
+    section.section-news-header {
+        padding: 3.5% 13% !important;
+    }
+    section.duoc-xem-nhieu.col-md-12 {
+        padding: 1.5% 13% !important;
+    }
+}
+
 section.su-kien-id a.title.navigate-child-news {
     text-align: left !important;
 }
@@ -11,6 +26,30 @@ section.su-kien-id a.title.navigate-child-news {
     .duoc-xem-nhieu-chi-tiet-su-kien .button-loadmore a.btn-action {
         margin-top: 20px;
     }
+}
+
+/* Event text content */
+em {
+    color: gray;
+    font-size: 14px;
+}
+section.su-kien-id .event-details-display-markdown ul {
+    list-style-type: disc !important;       /* Hiển thị gạch đầu dòng dạng chấm tròn */
+    margin-left: 1.5rem;         /* Thụt lề trái */
+    padding-left: 1.5rem;        /* Tăng khoảng cách giữa viền và nội dung */
+}
+section.su-kien-id .event-details-display-markdown ol {
+    list-style-type: decimal !important;    /* Nếu có danh sách đánh số */
+    margin-left: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+section.su-kien-id .event-details-display-markdown li,
+section.su-kien-id .event-details-display-markdown p {
+    /* margin-bottom: 0.5rem; */
+    line-height: 1.4;            /* Giúp dễ đọc hơn */
+    font-size: 16px;
+    font-weight: 300;
 }
 
 section.blog-details .content,

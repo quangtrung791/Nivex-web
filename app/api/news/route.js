@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server'
 import { query } from "@/app/lib/neon"
 
 export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
 
 export async function GET(request) {
   try {
@@ -11,35 +12,35 @@ export async function GET(request) {
     const filter = searchParams.get('filter') || 'all'
     const search = searchParams.get('search') || ''
 
+    // truy vấn chỉ lấy ra những tin tức có status = active
     let sqlQuery = `
       SELECT 
         id,
+        slug,
         title,
         status,
-        content,
         thumbnail_url,
-        author,
         time_upload,
         created_at,
         updated_at,
         category_id
       FROM public.news
       WHERE public.news.status = 'active'
-    `
+      `
 
     const queryParams = []
     let paramIndex = 1
 
     // Apply search filter
     if (search.trim()) {
-      sqlQuery += ` AND (title ILIKE $${paramIndex} OR content ILIKE $${paramIndex})`
+      sqlQuery += ` AND (title ILIKE $${paramIndex})`
       queryParams.push(`%${search}%`)
       paramIndex++
     }
 
 
-  // Order by start date and limit to 20 records
-  sqlQuery += ` ORDER BY time_upload DESC LIMIT 20`
+  // Order by start date and limit to 50 records
+  sqlQuery += ` ORDER BY COALESCE(time_upload, created_at) DESC LIMIT 50`
 
     console.log("Executing query:", { sqlQuery, queryParams });
     const result = await query(sqlQuery, queryParams)
@@ -52,11 +53,12 @@ export async function GET(request) {
 
       return {
         id: n.id,
+        slug: n.slug,
         title: n.title,
         category_id: n.category_id,
         status: n.status,
         time_upload: n.time_upload,
-        content: n.content,
+        // content: n.content,
         thumbnail_url: n.thumbnail_url
       }
     })

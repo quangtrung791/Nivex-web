@@ -1,0 +1,71 @@
+import { NextResponse } from 'next/server'
+import { query } from "@/app/lib/neon"
+
+export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
+
+export async function GET(request) {
+  try {
+    console.log("GET /api/vocabulary called");
+    
+    const { searchParams } = new URL(request.url)
+    const filter = searchParams.get('filter') || 'all'
+    const search = searchParams.get('search') || ''
+
+    let sqlQuery = `
+      SELECT 
+        id,
+        slug,
+        keyword,
+        short_desc
+      FROM public.dictionary`
+    
+    const queryParams = []
+    let paramIndex = 1
+
+    // Apply search filter
+    if (search.trim()) {
+      sqlQuery += ` AND (keyword ILIKE $${paramIndex})`
+      queryParams.push(`%${search}%`)
+      paramIndex++
+    }
+
+
+    // Select all and Order by keyword (alphabet A to Z)
+    sqlQuery += ` ORDER BY keyword ASC`
+
+    console.log("Executing query:", { sqlQuery, queryParams });
+    const result = await query(sqlQuery, queryParams)
+
+    // Process courses data
+    const dictionary = result.map(n => {
+    // const now = new Date()
+    // const timeUpload = n.time_event
+
+    return {
+        id: n.id,
+        slug: n.slug,
+        keyword: n.keyword,
+        short_desc: n.short_desc
+      }
+    })
+
+    console.log("Returning data:", dictionary.length);
+
+    return NextResponse.json({
+      success: true,
+      data: dictionary
+    })
+
+  } catch (error) {
+    console.error('Error fetching data:', error)
+    return NextResponse.json(
+      {
+        success: false,
+        error: 'Không thể tải danh sách sự kiện',
+        details: error.message
+      },
+      { status: 500 }
+    )
+  }
+}

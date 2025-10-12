@@ -1,6 +1,42 @@
 /* Fixed */
+section.chi-tiet-thuat-ngu .dictionary-details-display-markdown p,
+section.chi-tiet-thuat-ngu .dictionary-details-display-markdown li {
+    font-size: 16px !important;
+    font-weight: 300 !important;
+    line-height: 1.4 !important;
+    text-align: justify !important;
+    letter-spacing: 0;
+    color: white;
+}
+
+
+@media (min-width: 921px) and (max-width: 1023px) {
+	section.blog-details.chi-tiet-thuat-ngu {
+	    padding: 3%;
+	}
+}
+
 .chi-tiet-thuat-ngu .content img {
     max-width: 100%;
+}
+.chi-tiet-thuat-ngu a.navigate-top.link-nav-back-custom {
+    font-size: 14px;
+}
+
+section.chi-tiet-thuat-ngu .dictionary-details-display-markdown ul {
+    list-style-type: disc !important;       /* Hiển thị gạch đầu dòng dạng chấm tròn */
+    margin-left: 1.5rem;         /* Thụt lề trái */
+    padding-left: 1.5rem;        /* Tăng khoảng cách giữa viền và nội dung */
+}
+section.chi-tiet-thuat-ngu .dictionary-details-display-markdown ol {
+    list-style-type: decimal !important;    /* Nếu có danh sách đánh số */
+    margin-left: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+section.chi-tiet-thuat-ngu .dictionary-details-display-markdown li {
+    /* margin-bottom: 0.5rem; */
+    line-height: 1.4;            /* Giúp dễ đọc hơn */
 }
 
 section.chi-tiet-thuat-ngu .main-text-p,
@@ -21,6 +57,12 @@ section.chi-tiet-thuat-ngu .main-text-p * {
 }
 section.chi-tiet-thuat-ngu .main-text-p strong {
     /* font-size: 14px; */
+}
+section.chi-tiet-thuat-ngu p.main-text-p p {
+    font-size: 14px !important;
+}
+section.chi-tiet-thuat-ngu h3.title {
+    margin-bottom: 20px;
 }
 
 .link-nav-back-custom {

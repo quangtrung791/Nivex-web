@@ -38,6 +38,21 @@ import {
 import { ImageUploadInput } from './ImageUploadInput'
 import { useState } from 'react'
 import RichTextInput from './RichTextInput'
+import { useWatch, useFormContext } from 'react-hook-form'
+import { useEffect } from 'react'
+
+// Hàm tạo slug tự động từ keyword
+const generateSlug = (str = "") => {
+  return String(str)
+    .toLowerCase()
+    .normalize('NFD') // tách ký tự và dấu
+    .replace(/[\u0300-\u036f]/g, '') // bỏ dấu
+    .replace(/đ/g, 'd') // thay đ → d
+    .replace(/[^a-z0-9\s-]/g, '') // bỏ ký tự đặc biệt
+    .trim()
+    .replace(/\s+/g, '-') // thay khoảng trắng bằng gạch ngang
+    .replace(/-+/g, '-'); // tránh trùng dấu '-'
+};
 
 // Custom Delete Button với confirmation rõ ràng
 const CustomDeleteButton = () => {
@@ -92,17 +107,6 @@ const CustomDeleteButton = () => {
 // Filters cho tìm kiếm (loại bỏ level)
 const eventFilters = [
   <SearchInput key="q" source="q" placeholder="Tìm kiếm sự kiện hiện có..." alwaysOn />,
-//   <SelectInput key="status" source="status" label="Trạng thái" choices={[
-//     { id: 'active', name: 'Đang công khai' },
-//     { id: 'draft', name: 'Bản nháp riêng tư' },
-//     { id: 'removed', name: 'Đã xóa tạm thời' },
-//   ]} />
-  // ,
-//   <SelectInput key="type" source="type" label="Loại" choices={[
-//     { id: 'online', name: 'Online' },
-//     { id: 'offline', name: 'Offline' },
-//     { id: 'hybrid', name: 'Hybrid' },
-//   ]} />
 ]
 
 // Custom Actions cho List
@@ -172,6 +176,7 @@ export const EventList = () => (
       <TextField source="id" label="ID" />
       <ImageField source="thumbnail_url" label="Ảnh" sx={{ '& img': { maxWidth: '60px', maxHeight: '45px', objectFit: 'cover' } }} />
       <TextField source="title" label="Tên sự kiện" />
+      <TextField source="slug" label="Slug URL" />
       {/* <TextField source="content" label="Mô tả đầy đủ" /> */}
       <TextField source="short_desc" label="Mô tả ngắn" />
       {/* <TextField source="author" label="Tác giả bài đăng" /> */}
@@ -194,6 +199,37 @@ export const EventList = () => (
   </List>
 )
 
+
+export const AutoSlug = () => {
+    const { control, setValue } = useFormContext();
+    const keyword = useWatch({ control, name: "title" });
+
+    useEffect(() => {
+      if (!keyword) return;
+
+      const generateUniqueSlug = async () => {
+        let baseSlug = generateSlug(keyword);
+        let slug = baseSlug;
+        let counter = 1;
+
+        // Kiểm tra tồn tại slug trên server
+        while (true) {
+          const res = await fetch(`/api/admin/events?slug=${slug}`);
+          if (res.status === 404) break; // chưa tồn tại => dùng được
+          if (!res.ok) break; // lỗi khác => thoát
+          slug = `${baseSlug}-${counter++}`;
+        }
+
+        setValue("slug", slug, { shouldValidate: true });
+      };
+
+      generateUniqueSlug();
+    }, [keyword, setValue]);
+
+    return null;
+  };
+
+
 // Create component (loại bỏ level, thêm DateTimeInput)
 export const EventCreate = () => (
   <Create 
@@ -201,6 +237,7 @@ export const EventCreate = () => (
     redirect="list"
   >
     <SimpleForm>
+      <AutoSlug />{/* Component tự động cập nhật slug */}
       {/* Chọn danh mục tin tức */}
       {/* <ReferenceInput source="category_id" reference="category_news" label="Danh mục">
         <SelectInput optionText="name" />
@@ -213,6 +250,13 @@ export const EventCreate = () => (
         fullWidth
         helperText="Nhập tên của sự kiện (bắt buộc)"
       required />
+
+       <TextInput 
+          source="slug" 
+          label="Slug URL" 
+          fullWidth
+          helperText="Slug được tự động tạo từ từ khóa (bạn có thể chỉnh lại nếu muốn)"
+        />
       
       {/* <SelectInput 
         source="type" 
@@ -288,6 +332,7 @@ export const EventEdit = () => (
     title="✏️ Chỉnh sửa thông tin sự kiện"
   >
     <SimpleForm>
+      <AutoSlug />{/* Component tự động cập nhật slug */}
       {/* Chọn id danh mục */}
       {/* <ReferenceInput source="category_id" reference="category_news" label="Danh mục">
         <SelectInput optionText="name" />
@@ -301,6 +346,13 @@ export const EventEdit = () => (
         validate={[required()]}
         fullWidth
       required />
+
+       <TextInput 
+          source="slug" 
+          label="Slug URL" 
+          fullWidth
+          helperText="Sửa slug"
+        />
       
       {/* <SelectInput 
         source="type" 
@@ -379,6 +431,7 @@ export const EventShow = () => (
 
       <TextField source="id" label="ID sự kiện" />
       <TextField source="title" label="Tên sự kiện" />
+      <TextField source="slug" label="Slug URL" />
       {/* <TextField source="author" label="Tác giả bài đăng" /> */}
       {/* <SelectField 
         source="type" 

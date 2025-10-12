@@ -7,7 +7,7 @@ export default function Propose() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('/api/dictionary')
+        fetch('/api/vocabulary')
             .then(res => res.json())
             .then(data => {
                 if (!data.success) return;
@@ -42,7 +42,7 @@ export default function Propose() {
                                             .sort((a, b) => b.id - a.id)
                                             .slice(0, 3)
                                             .map((item, idx) => {
-                                                const plainText = item.description
+                                                const plainText = item.short_desc
                                                     .replace(/<[^>]+>/g, '') // bỏ thẻ HTML
                                                     .trim();
 
@@ -50,7 +50,7 @@ export default function Propose() {
                                                 const shortDesc = lines.slice(0, 2).join(" "); // gộp 2 dòng đầu
 
                                                 return (
-                                                    <div key={item.id || idx} className="crypto-card crypto-card-propose">
+                                                    <div key={item.slug || idx} className="crypto-card crypto-card-propose">
                                                         <div className="card-content">
                                                             <div className="card-info card-info-propose">
                                                                 <div className='quot-mark-container'>
@@ -59,7 +59,7 @@ export default function Propose() {
                                                                 <h4 className='title-propose-card'>{item.keyword}</h4>
                                                                 <p className='text-propose-card'>{shortDesc}</p>
                                                                 <div className="card-meta card-meta-propose">
-                                                                    <Link href={`/thuat-ngu/${item.id}`}  className="author card-button-propose">Định nghĩa đầy đủ<i className="icon-button-propose"></i></Link>
+                                                                    <Link href={`/thuat-ngu/${item.slug}`}  className="author card-button-propose">Định nghĩa đầy đủ<i className="icon-button-propose"></i></Link>
                                                                 </div>
                                                             </div>
                                                         </div>

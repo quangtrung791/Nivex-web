@@ -5,10 +5,11 @@ export const runtime = 'nodejs';
 
 export async function GET(request, { params }) {
   try {
-    const { id } = params;
-    if (!id) {
+    // const { id } = params;
+    const { slug } = params;
+    if (!slug) {
       return NextResponse.json(
-        { success: false, error: "Thiếu id thông tin sự kiện" },
+        { success: false, error: "Thiếu slug cuar bài viết" },
         { status: 400 }
       );
     }
@@ -16,34 +17,37 @@ export async function GET(request, { params }) {
     const sqlQuery = `
       SELECT 
         id,
+        slug,
         title,
+        status,
         content,
-        short_desc,
         thumbnail_url,
-        time_event,
+        author,
+        time_upload,
         created_at,
-        updated_at
-      FROM public.event
-      WHERE id = $1
+        updated_at,
+        category_id
+      FROM public.news
+      WHERE slug = $1 AND status = 'active'
       LIMIT 1
     `;
-    const result = await query(sqlQuery, [id]);
+    const result = await query(sqlQuery, [slug]);
 
     if (!result || result.length === 0) {
       return NextResponse.json(
-        { success: false, error: "Không tìm thấy dữ liệu" },
+        { success: false, error: "Không tìm thấy bài viết" },
         { status: 404 }
       );
     }
 
-    // Trả về thông tin sự kiện đầu tiên
+    // Trả về bài viết đầu tiên
     return NextResponse.json(result[0]);
   } catch (error) {
-    console.error('Error fetching by id:', error)
+    console.error('Error fetching news by id:', error)
     return NextResponse.json(
       {
         success: false,
-        error: 'Không thể tải dữ liệu chi tiết',
+        error: 'Không thể tải chi tiết tin tức',
         details: error.message
       },
       { status: 500 }

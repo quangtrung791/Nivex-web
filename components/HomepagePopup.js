@@ -12,7 +12,7 @@ const HomepagePopup = () => {
     setIsClosing(true)
     setTimeout(() => {
       setIsVisible(false)
-    }, 900) // khớp với animation
+    }, 600) // khớp với animation
   }
 
   const handleOverlayClick = (e) => {
@@ -20,7 +20,7 @@ const HomepagePopup = () => {
       setIsClosing(true)
       setTimeout(() => {
         setIsVisible(false)
-      }, 900)
+      }, 600)
     }
   }
 

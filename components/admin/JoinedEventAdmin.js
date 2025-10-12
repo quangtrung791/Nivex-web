@@ -38,6 +38,23 @@ import {
 import { ImageUploadInput } from './ImageUploadInput'
 import { useState } from 'react'
 import RichTextInput from './RichTextInput'
+import { useWatch, useFormContext } from 'react-hook-form'
+import { useEffect } from 'react'
+
+
+// Hàm tạo slug tự động từ keyword
+const generateSlug = (str = "") => {
+  return String(str)
+    .toLowerCase()
+    .normalize('NFD') // tách ký tự và dấu
+    .replace(/[\u0300-\u036f]/g, '') // bỏ dấu
+    .replace(/đ/g, 'd') // thay đ → d
+    .replace(/[^a-z0-9\s-]/g, '') // bỏ ký tự đặc biệt
+    .trim()
+    .replace(/\s+/g, '-') // thay khoảng trắng bằng gạch ngang
+    .replace(/-+/g, '-'); // tránh trùng dấu '-'
+};
+
 
 // Custom Delete Button với confirmation rõ ràng
 const CustomDeleteButton = () => {
@@ -161,7 +178,7 @@ export const JoinedEventList = () => (
       <TextField source="id" label="ID" />
       <ImageField source="thumbnail_url" label="Ảnh" sx={{ '& img': { maxWidth: '60px', maxHeight: '45px', objectFit: 'cover' } }} />
       <TextField source="title" label="Tên sự kiện" />
-      {/* <TextField source="content" label="Mô tả đầy đủ" /> */}
+      <TextField source="slug" label="Slug URL" />
       <TextField source="short_desc" label="Mô tả ngắn" />
       <DateField source="time_event" label="Ngày diễn ra sự kiện" showTime />
       <TextField source="tag1" label="Thẻ tag 1" />
@@ -177,6 +194,37 @@ export const JoinedEventList = () => (
   </List>
 )
 
+
+export const AutoSlug = () => {
+    const { control, setValue } = useFormContext();
+    const keyword = useWatch({ control, name: "title" });
+
+    useEffect(() => {
+      if (!keyword) return;
+
+      const generateUniqueSlug = async () => {
+        let baseSlug = generateSlug(keyword);
+        let slug = baseSlug;
+        let counter = 1;
+
+        // Kiểm tra tồn tại slug trên server
+        while (true) {
+          const res = await fetch(`/api/admin/joined_events?slug=${slug}`);
+          if (res.status === 404) break; // chưa tồn tại => dùng được
+          if (!res.ok) break; // lỗi khác => thoát
+          slug = `${baseSlug}-${counter++}`;
+        }
+
+        setValue("slug", slug, { shouldValidate: true });
+      };
+
+      generateUniqueSlug();
+    }, [keyword, setValue]);
+
+    return null;
+  };
+
+
 // Create component (loại bỏ level, thêm DateTimeInput)
 export const JoinedEventCreate = () => (
   <Create 
@@ -184,6 +232,7 @@ export const JoinedEventCreate = () => (
     redirect="list"
   >
     <SimpleForm>
+      <AutoSlug />{/* Component tự động cập nhật slug */}
       {/* Chọn danh mục tin tức */}
       {/* <ReferenceInput source="category_id" reference="category_news" label="Danh mục">
         <SelectInput optionText="name" />
@@ -196,6 +245,13 @@ export const JoinedEventCreate = () => (
         fullWidth
         helperText="Nhập tên của sự kiện (bắt buộc)"
       required />
+
+        <TextInput 
+          source="slug" 
+          label="Slug URL" 
+          fullWidth
+          helperText="Slug được tự động tạo từ từ khóa (bạn có thể chỉnh lại nếu muốn)"
+        />
       
       <DateTimeInput 
         source="time_event" 
@@ -276,6 +332,13 @@ export const JoinedEventEdit = () => (
         validate={[required()]}
         fullWidth
       required />
+
+      <TextInput 
+          source="slug" 
+          label="Slug URL" 
+          fullWidth
+          helperText="Sửa slug"
+        />
       
       {/* <SelectInput 
         source="type" 
@@ -385,6 +448,7 @@ export const JoinedEventShow = () => (
     <SimpleShowLayout>
       <TextField source="id" label="ID sự kiện" />
       <TextField source="title" label="Tên sự kiện" />
+      <TextField source="slug" label="Slug URL" />
       <StatusField />
       <DateField source="time_event" label="Thời gian diễn ra sự kiện" showTime />
       <ImageField source="thumbnail_url" label="Hình ảnh quảng bá sự kiện" sx={{ '& img': { maxWidth: '300px', borderRadius: '8px' } }} />

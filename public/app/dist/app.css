@@ -5856,10 +5856,8 @@ img.img-src-2-el {
 .btn-action:hover {
     color: black;
     background: linear-gradient(90deg,#BCFE08, #86F969);
-    border: none;
+    border: solid 1px #BCFE08;
 }
-
-
 
 /* #btn-master-homepg {
     border-radius: unset !important;
