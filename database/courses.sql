@@ -8,7 +8,6 @@ CREATE TABLE IF NOT EXISTS courses (
   start_date TIMESTAMP,
   end_date TIMESTAMP,
   link_zoom VARCHAR(300),
-  link_zoom VARCHAR(500),
   image_url VARCHAR(300),
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
