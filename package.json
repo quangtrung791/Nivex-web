@@ -5,7 +5,6 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postinstall": "prisma generate",
     "start": "next start",
     "lint": "next lint",
     "sass": "sass --watch public/assets/scss/main.scss:public/assets/css/main.css"
@@ -13,7 +12,6 @@
   "dependencies": {
     "@headlessui/react": "^1.7.18",
     "@neondatabase/serverless": "^1.0.1",
-    "@prisma/client": "^5.0.0",
     "aos": "^2.3.4",
     "cloudinary": "^2.7.0",
     "dotenv": "^17.2.2",
@@ -23,7 +21,7 @@
     "node-fetch": "^2.7.0",
     "nodemailer": "^7.0.6",
     "pg": "^8.16.3",
-    "prisma": "^5.0.0",
+
     "quill": "^2.0.3",
     "ra-data-json-server": "^5.11.3",
     "react": "^18.2.0",
@@ -41,4 +39,5 @@
     "@types/react": "19.1.13",
     "typescript": "5.9.2"
   }
+  
 }

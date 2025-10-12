@@ -35,8 +35,7 @@ const nextConfig = {
   
   // Enable static generation cho các trang có thể
   experimental: {
-    largePageDataBytes: 128 * 1000, // 128KB
-    serverComponentsExternalPackages: ['@prisma/client', 'prisma']
+    largePageDataBytes: 128 * 1000
   },
   
   // Webpack config for @ alias
