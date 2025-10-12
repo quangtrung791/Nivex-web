@@ -1,4 +1,29 @@
 /* Fixed */
+@media (min-width: 1440px) and (max-width: 1919px) {
+    img.img-suggest-chi-tiet-su-kien {
+        height: 200px !important;
+    }  
+}
+@media (min-width: 1920px) and (max-width: 2110px) {
+    img.img-suggest-chi-tiet-su-kien {
+        height: 250px !important;
+    }  
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+    img.img-suggest-chi-tiet-su-kien {
+        height: 130px !important;
+    }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+    img.img-suggest-chi-tiet-su-kien {
+        height: 175px !important;
+    }  
+}
+@media (min-width: 1280px) and (max-width: 1439px) {
+    img.img-suggest-chi-tiet-su-kien {
+        height: 190px !important;
+    }  
+}
 @media (width: 1912px) {
     header#header_main {
         padding: 0 !important;
