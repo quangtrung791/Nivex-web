@@ -7,7 +7,7 @@ let pool = null
 function getPool() {
   if (!pool) {
     pool = new Pool({
-      connectionString: process.env.DATABASE_URL_MYSQL,
+      connectionString: process.env.DATABASE_URL,
       // Pool configuration for optimal performance
       max: 20, // Maximum number of clients in the pool
       min: 2, // Minimum number of clients in the pool
