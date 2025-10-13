@@ -42,17 +42,6 @@
     color: white;
     position: relative;
 }
-.withdrawSectionImageAfter::after {
-    content: "";
-    position: absolute;
-    top: 1%;
-    right: 3%;
-    width: 30vw;
-    height:auto;
-    aspect-ratio: 608/489;
-    background: url('https://learningchain.vn/wp-content/uploads/2025/10/giaodichp2p_image_nivex.webp') no-repeat center; 
-    background-size: contain;
-}
 
 .p2pTradingDescription, .p2pTradingDescription2 {
     font-size: 14px;
@@ -83,7 +72,7 @@ h2.depositSectionTitle {
     -webkit-text-fill-color: transparent;;
 }
 .stepContainer {
-    margin-bottom: 23px;
+    margin-bottom: 20px;
 }
 
 .stepContainer:last-child {
@@ -118,27 +107,27 @@ h2.depositSectionTitle {
 }
 
 .imagePlaceholder {
-    width: 391px;
+    width: 330px;
     height: auto;
-    aspect-ratio: 391/ 845;
+    aspect-ratio: 323/ 371;
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
 }
 
 .imagePlaceholder1 {
-    background-image: url(https://learningchain.vn/wp-content/uploads/2025/10/imageInternalTransfer_nivex.webp);
+    background-image: url(https://learningchain.vn/wp-content/uploads/2025/10/image2FANivex.webp);
 }
 
 .imagePlaceholder2 {
-    background-image: url(https://learningchain.vn/wp-content/uploads/2025/10/imageInternalTransfer2_nivex.webp);
+    background-image: url(https://learningchain.vn/wp-content/uploads/2025/10/image2FANivex2.webp);
 }
 
 .imagePlaceholder3 {
-    background-image: url(https://learningchain.vn/wp-content/uploads/2025/10/imageInternalTransfer3_nivex.webp);
+    background-image: url(https://learningchain.vn/wp-content/uploads/2025/10/image2FANivex3.webp);
 }
 
-.imagePlaceholder4 {
+/* .imagePlaceholder4 {
     background-image: url(https://learningchain.vn/wp-content/uploads/2025/10/imageInternalTransfer4_nivex.webp);
 }   
 
@@ -148,13 +137,18 @@ h2.depositSectionTitle {
 
 .imagePlaceholder6 {
     background-image: url(https://learningchain.vn/wp-content/uploads/2025/10/imageInternalTransfer6_nivex.webp);
+} */
+
+.subTitleFeeSection {
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 35px;
 }
 
 .highlightGreen {
     color: #BCFE08;
     font-weight: 600;
 }
-
 .depositSectionTitleMobile {
     display: none;
 }
@@ -165,34 +159,22 @@ section.pageTitleDeposit, section.depositSection {
 }
 
 @media (max-width:991px) {
-    .depositSection.withdrawSectionImageAfter::after {
-        top: 0.15%;
-        right: 50%;
-        transform: translateX(50%);
-        display: block;
-        width: 350px;
-    }
     .p2pTradingDescription, .p2pTradingDescription2 {
         width: 100%;
         text-align: justify;
     }
     h2.depositSectionTitle {
         margin-bottom: 20px;
-        margin-top: 250px;
     }
 }
 
-@media screen and (min-width: 1440px) and (max-width: 1750px) {
-    .withdrawSectionImageAfter::after {
-        right: 1.5%;
+@media (max-width: 1439px) {
+    .imagePlaceholder {
+        width: 300px;
     }
 }
 
-@media screen and (min-width: 1200px) and (max-width: 1440px) {
-    .withdrawSectionImageAfter::after {
-        right: 0.5%;
-    }
-}
+
 @media (min-width: 650px) and (max-width: 1439px) {
     section.pageTitleDeposit, section.depositSection {
         padding-left: 3.5%;
@@ -203,9 +185,6 @@ section.pageTitleDeposit, section.depositSection {
 
 /* Responsive Design */
 @media (max-width: 1200px) {
-    .withdrawSectionImageAfter::after {
-        right: 0.25%;
-    }
     .imagePlaceholder {
         width: 280px;
     }
@@ -292,10 +271,7 @@ section.pageTitleDeposit, section.depositSection {
     .pageTitleHeading {
         font-size: 28px;
     }
-}
-
-@media (max-width: 385px) {
-    .withdrawSectionImageAfter::after {
-        width: 335px;
+    section.depositSection {
+        padding-top: 30px;
     }
 }

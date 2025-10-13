@@ -206,7 +206,7 @@ h2.depositSectionTitle span {
     display: none;
 }
 
-.pageTitleDeposit, .faqSection {
+section.pageTitleDeposit, section.faqSection, section.depositSection {
     padding-left: 7%;
     padding-right: 7%;
 }

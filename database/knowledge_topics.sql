@@ -1,7 +1,7 @@
 -- Schema cho bảng knowledge_topics (Chủ đề kiến thức)
 CREATE TABLE IF NOT EXISTS knowledge_topics (
   id SERIAL PRIMARY KEY,
-  name VARCHAR(100) NOT NULL UNIQUE,
+  name VARCHAR(100) NOT NULL,
   description TEXT,
   status VARCHAR(20) NOT NULL DEFAULT 'active',
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,

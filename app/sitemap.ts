@@ -25,6 +25,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       'chuyen-tien-noi-bo',
       'ai-copy-trade',
       'huong-dan-su-dung-app-nivex',
+      'xac-thuc-hai-lop-2fa',
     ].map((p) => ({
       url: `${BASE_URL}/${p}`,
       lastModified: new Date(),

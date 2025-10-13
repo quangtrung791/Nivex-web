@@ -158,87 +158,6 @@ h2.depositSectionTitle {
     background-image: url(https://learningchain.vn/wp-content/uploads/2025/10/imageP2PNivex8.webp);
 }
 
-/* FAQ Section */
-.faqSection {
-    margin-top: 80px;
-    padding-bottom: 55px;
-}
-
-.faqTitle {
-    font-size: 36px;
-    font-weight: 700;
-    color: white;
-    margin-bottom: 30px;
-    text-align: left;
-}
-
-.faqItem {
-    border-bottom: 1px solid #71737a;
-    margin-bottom: 0;
-}
-
-.faqQuestion {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 500;
-    color: white;
-    transition: color 0.3s ease;
-}
-.faqQuestion span {
-    font-size: 18px;
-}
-
-.faqQuestion:hover {
-    color: #BCFE08;
-}
-
-.faqIcon {
-    background: url(/assets/images/icon/vector-bottom-arrow.png) no-repeat center;
-    width: 18px;
-    height: 18px;
-    background-size: contain;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.faqIconOpen {
-    color: #BCFE08;
-    transform: rotate(180deg);
-}
-
-.faqQuestion:hover .faqIcon {
-    color: #BCFE08;
-}
-
-.faqAnswer {
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    opacity: 0;
-}
-
-.faqAnswerOpen {
-    max-height: 200px;
-    opacity: 1;
-    padding-bottom: 20px;
-}
-
-.faqAnswer p {
-    font-size: 14px;
-    color: #aaa;
-    line-height: 1.6;
-    margin: 0;
-}
-
-.subTitleFeeSection {
-    font-size: 18px;
-    color: #fff;
-    margin-bottom: 35px;
-}
-
 .highlightGreen {
     color: #BCFE08;
     font-weight: 600;
@@ -247,7 +166,7 @@ h2.depositSectionTitle {
     display: none;
 }
 
-.pageTitleDeposit, .faqSection {
+section.pageTitleDeposit, section.depositSection {
     padding-left: 7%;
     padding-right: 7%;
 }
@@ -282,7 +201,7 @@ h2.depositSectionTitle {
     }
 }
 @media (min-width: 650px) and (max-width: 1439px) {
-    section.pageTitleDeposit, section.faqSection, section.depositSection {
+    section.pageTitleDeposit, section.depositSection {
         padding-left: 3.5%;
         padding-right: 3.5%;
     }  
@@ -329,7 +248,7 @@ h2.depositSectionTitle {
         width: 350px;
     }
 
-    section.pageTitleDeposit, section.faqSection, section.depositSection {
+    section.pageTitleDeposit, section.depositSection {
         padding-left: 3%;
         padding-right: 3%;
     } 
@@ -373,7 +292,7 @@ h2.depositSectionTitle {
         width: 100%;
     }
 
-    section.pageTitleDeposit, section.faqSection, section.depositSection  {
+    section.pageTitleDeposit, section.depositSection  {
         padding-left: 0;
         padding-right: 0;
     }
