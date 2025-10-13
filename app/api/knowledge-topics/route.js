@@ -5,12 +5,14 @@ export const runtime = 'nodejs';
 
 export async function GET(request) {
   try {
+    console.log("GET /api/knowledge-topics called");
     
-    // Query active knowledge_topics only
+    // Query all knowledge_topics (for admin interface, users need to see all topics)
     const rows = await query(
-      'SELECT id, name FROM public.knowledge_topics WHERE status = $1',
-      ['active']
+      'SELECT id, name, status FROM public.knowledge_topics ORDER BY id'
     );
+    
+    console.log("Raw topics from DB:", rows);
     
     // Transform for SelectInput choices format
     const topics = rows.map(row => ({
@@ -18,6 +20,7 @@ export async function GET(request) {
       name: row.name
     }));
     
+    console.log("Transformed topics:", topics);
     
     return NextResponse.json({
       success: true,

@@ -34,12 +34,12 @@ async function query(text, params = []) {
     
     return result.rows
   } catch (error) {
-    // console.error("Database query error:", {
-    //   message: error.message,
-    //   code: error.code,
-    //   query: text.substring(0, 100)
-    // })
-    // throw error
+    console.error("Database query error:", {
+      message: error.message,
+      code: error.code,
+      query: text.substring(0, 100)
+    })
+    throw error
   }
 }
 

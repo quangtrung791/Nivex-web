@@ -48,7 +48,6 @@ const DynamicTopicSelect = ({ source, label, validate, ...props }) => {
           setTopics(choices)
         }
       } catch (error) {
-        console.error('Error fetching topics:', error)
         // Fallback to hardcoded values
         setTopics([
           { id: 1, name: 'Blockchain' },
