@@ -32,7 +32,8 @@ export default function MainMenu() {
                     "/gioi-thieu-ve-nivex",
                     "/huong-dan-rut-tien",
                     "/giao-dich-p2p",
-                    "/chuyen-tien-noi-bo"
+                    "/chuyen-tien-noi-bo",
+                    "/xac-thuc-hai-lop-2fa"
                     ])}`}>
                     <Link href="/gioi-thieu-ve-nivex" className='master-item'>Về Nivex</Link>
                     <ul className="sub-menu">
@@ -48,7 +49,8 @@ export default function MainMenu() {
                             checkCurrentMenuItem("/xac-minh-danh-tinh-kyc") ||
                             checkCurrentMenuItem("/huong-dan-rut-tien") ||
                             checkCurrentMenuItem("/giao-dich-p2p") ||
-                            checkCurrentMenuItem("/chuyen-tien-noi-bo") }`}>
+                            checkCurrentMenuItem("/chuyen-tien-noi-bo") ||
+                            checkCurrentMenuItem("/xac-thuc-hai-lop-2fa") }`}>
                             <Link href="/huong-dan-su-dung-app-nivex">Hướng dẫn sử dụng App</Link>
                         </li>
                     </ul>

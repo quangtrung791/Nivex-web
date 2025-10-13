@@ -35,7 +35,8 @@ export default function MobileMenu({ isMobileMenu }) {
                         "/gioi-thieu-ve-nivex",
                         "/huong-dan-rut-tien",
                         "/giao-dich-p2p",
-                        "/chuyen-tien-noi-bo"])}`}>
+                        "/chuyen-tien-noi-bo",
+                        "/xac-thuc-hai-lop-2fa"])}`}>
                         <Link href="/gioi-thieu-ve-nivex">Về Nivex</Link>
                         <span className={`arrow ${isActive === 1 ? 'active' : ''}`} onClick={() => handleClick(1)} />
                         <ul className="sub-menu" style={{ display: `${isActive == 1 ? "block" : "none"}` }}>
@@ -51,7 +52,8 @@ export default function MobileMenu({ isMobileMenu }) {
                                 checkCurrentMenuItem("/xac-minh-danh-tinh-kyc") ||
                                 checkCurrentMenuItem("/huong-dan-rut-tien") ||
                                 checkCurrentMenuItem("/giao-dich-p2p") ||
-                                checkCurrentMenuItem("/chuyen-tien-noi-bo") }`}>
+                                checkCurrentMenuItem("/chuyen-tien-noi-bo") ||
+                                checkCurrentMenuItem("/xac-thuc-hai-lop-2fa") }`}>
                                 <Link href="/huong-dan-su-dung-app-nivex">Hướng dẫn sử dụng App</Link>
                             </li>
                             

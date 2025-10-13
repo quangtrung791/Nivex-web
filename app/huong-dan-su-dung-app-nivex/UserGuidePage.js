@@ -20,7 +20,7 @@ export default function UserGuidePage() {
   ]), [])
 
   const linkOperation = useMemo(() => ([
-    { text: 'Xác thực 2 lớp (2FA)'},
+    { text: 'Xác thực 2 lớp (2FA)', href:'/xac-thuc-hai-lop-2fa'},
     { text: 'Tạo tài khoản Gmail'},
   ]), [])
 
@@ -232,7 +232,7 @@ export default function UserGuidePage() {
             <h3 className={styles.sectionTitle}>Thao tác liên kết</h3>
             <div className={styles.chipsRow}>
               {linkOperation.map((item, i) => (
-                <a key={i} href='#' className={styles.chip}>
+                <a key={i} href={item.href} className={styles.chip}>
                   <span className={styles.chipText}>{item.text}</span>
                   <span className={styles.chipArrow} aria-hidden>›</span>
                 </a>
