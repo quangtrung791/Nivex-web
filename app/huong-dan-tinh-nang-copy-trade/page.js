@@ -2,8 +2,8 @@ import Layout from '@/components/layout/Layout'
 import HuongDanCopyTradeComponent from './HuongDanCopyTradeComponent'
 
 export const metadata = {
-  title: 'Hướng dẫn tạo liên kết giới thiệu | Nivex Hub',
-  description: 'Chuyên trang hướng dẫn tạo liên kết giới thiệu, mời bạn bè, hoa hồng và nhiều thứ khác.',
+  title: 'Hướng dẫn Tính năng sao chép các Tổ chức Chiến lược giao dịch bằng AI | Nivex Hub',
+  description: 'Chuyên trang Hướng dẫn Tính năng sao chép các Tổ chức Chiến lược giao dịch bằng AI với Nivex Hub.',
   robots: {
         index: true,
         follow: true,
@@ -16,8 +16,8 @@ export const metadata = {
         },
     },
     openGraph: {
-        title: "Hướng dẫn tạo liên kết giới thiệu | Nivex Hub",
-        description: "Chuyên trang hướng dẫn tạo liên kết giới thiệu, mời bạn bè, hoa hồng và nhiều thứ khác.",
+        title: "Hướng dẫn Tính năng sao chép các Tổ chức Chiến lược giao dịch bằng AI | Nivex Hub",
+        description: "Chuyên trang Hướng dẫn Tính năng sao chép các Tổ chức Chiến lược giao dịch bằng AI với Nivex Hub.",
         url: "https://nivex.vn/huong-dan-tao-lien-ket-gioi-thieu",
         siteName: "Nivex",
         images: [
@@ -25,7 +25,7 @@ export const metadata = {
                 url: "/assets/images/logo/Nivex_icon_bg.png",
                 width: 1200,
                 height: 630,
-                alt: "Chuyên trang hướng dẫn tạo liên kết giới thiệu, mời bạn bè, hoa hồng và nhiều thứ khác."
+                alt: "Chuyên trang Hướng dẫn Tính năng sao chép các Tổ chức Chiến lược giao dịch bằng AI với Nivex Hub."
             }
         ],
         locale: "vi_VN",
