@@ -41,7 +41,7 @@ export async function generateMetadata({ params }) {
                     url: "/assets/images/logo/Nivex_icon_bg.png",
                     width: 1200,
                     height: 630,
-                    alt: `Thuật ngữ ${keyword}`
+                    alt: `${keyword}`
                 }
             ],
             locale: "vi_VN",
