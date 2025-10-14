@@ -46,3 +46,4 @@ async function performanceTest() {
 
 // Run the test
 performanceTest().catch(console.error)
+
