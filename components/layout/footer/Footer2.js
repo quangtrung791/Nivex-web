@@ -115,9 +115,9 @@ export default function Footer2() {
                             </div>
                             <div className="col-xl-4 col-md-12 footer-contact-container">
                                 <div className="footer-contact" >
-                                    <h5 style={{'fontWeight': '500'}}>Chúng tôi có thể giúp gì cho bạn?</h5>
-                                    <p className="link-footer">
-                                        Subscribe our newsletter to get more interested resources from Nivex.
+                                    <h5 style={{'fontWeight': '500'}}>Đăng ký nhận tin mới từ chúng tôi</h5>
+                                    <p className="link-footer" style={{'textTransform': 'unset', 'textAlign': 'justify', 'paddingRight': 0 }}>
+                                        Chỉ với e-mail của mình, bạn có thể đăng ký nhận ngay tin tức mới nhất từ Nivex.
                                     </p>
                                     <form onSubmit={handleSubmit}>
                                         <input className="input-email-footer-subscribe" 

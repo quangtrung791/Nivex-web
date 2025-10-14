@@ -1,7 +1,7 @@
 
 "use client";
 // import VideoPopup from "@/components/elements/VideoPopup"
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useParams } from "next/navigation"
 import Layout from "../../components/layout/Layout"
 import Link from "next/link"
@@ -51,6 +51,18 @@ export default function BlogDetails() {
     const [searchQuery, setSearchQuery] = useState("");
 
     const [visibleCount, setVisibleCount] = useState(3);
+
+    const titleRef = useRef(null);
+    const [titleLines, setTitleLines] = useState(1);
+
+    useEffect(() => {
+        if (titleRef.current) {
+            const lineHeight = parseFloat(getComputedStyle(titleRef.current).lineHeight);
+            const height = titleRef.current.offsetHeight;
+            const lines = Math.round(height / lineHeight);
+            setTitleLines(lines);
+        }
+    }, [news[0]?.title]);
 
     useEffect(() => {
         function handleResize() {
@@ -310,7 +322,11 @@ export default function BlogDetails() {
                                     {news[0] && (
                                         <div className="heading-title-main">
                                             <Link href={`/tin-tuc/${news[0].slug}`}>
-                                                <h3 className="title tin-tuc">
+                                                <h3 className="title tin-tuc"   ref={titleRef}
+                                                                                style={{
+                                                                                    position: "relative",
+                                                                                    top: titleLines === 1 ? 20 : -10
+                                                                                }}>
                                                     {news[0].title}
                                                 </h3>
                                             </Link>

@@ -55,7 +55,7 @@ export default function ChiTietTinTucPage() {
         // <Layout headerStyle={1} footerStyle={2}>
         //     <ChiTietThuatNgu />
         // </Layout>
-        <Layout>
+        <Layout headerStyle={1} footerStyle={2}>
             <NewsBlogsDetails />
         </Layout>
     )
