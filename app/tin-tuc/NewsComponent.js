@@ -54,6 +54,16 @@ export default function BlogDetails() {
 
     const titleRef = useRef(null);
     const [titleLines, setTitleLines] = useState(1);
+    const [titleTop, setTitleTop] = useState(-10);
+
+    // useEffect(() => {
+    //     if (titleRef.current) {
+    //         const lineHeight = parseFloat(getComputedStyle(titleRef.current).lineHeight);
+    //         const height = titleRef.current.offsetHeight;
+    //         const lines = Math.round(height / lineHeight);
+    //         setTitleLines(lines);
+    //     }
+    // }, [news[0]?.title]);
 
     useEffect(() => {
         if (titleRef.current) {
@@ -61,6 +71,15 @@ export default function BlogDetails() {
             const height = titleRef.current.offsetHeight;
             const lines = Math.round(height / lineHeight);
             setTitleLines(lines);
+
+            const width = window.innerWidth;
+            if (width >= 1440 && width < 1920) {
+                setTitleTop(lines === 1 ? 20 : -10);
+            } else if (width >= 1920) {
+                setTitleTop(lines === 1 ? 30 : -10);
+            } else {
+                setTitleTop(-10);
+            }
         }
     }, [news[0]?.title]);
 
@@ -325,7 +344,8 @@ export default function BlogDetails() {
                                                 <h3 className="title tin-tuc"   ref={titleRef}
                                                                                 style={{
                                                                                     position: "relative",
-                                                                                    top: titleLines === 1 ? 20 : -10
+                                                                                    // top: titleLines === 1 ? 20 : -10
+                                                                                    top: titleTop
                                                                                 }}>
                                                     {news[0].title}
                                                 </h3>
