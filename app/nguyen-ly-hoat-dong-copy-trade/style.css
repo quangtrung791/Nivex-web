@@ -36,11 +36,18 @@ section.banner-tao-lien-ket-gioi-thieu {
     display: flex;
     align-items: center;
 }
+.block-khoi-div-tai-sao-gray {
+    background: #24252999;
+}
+p.sub-content-section-3 {
+    font-weight: 300;
+}
 
 @media (min-width: 1440px) and (max-width: 1599px) {
     section.banner-tao-lien-ket-gioi-thieu, 
     section.content-tao-lien-ket-gioi-thieu,
-    section.co-che-chien-luoc-xu-huong {
+    section.co-che-chien-luoc-xu-huong,
+    section.tai-sao-nen-chon-chien-luoc {
         padding: 3.5% calc(7% + 15px);
     }
     .last-section-hdlkgt {
@@ -77,35 +84,313 @@ section.banner-tao-lien-ket-gioi-thieu {
         position: relative;
         right: -90px;
     }
-    
+    p.title-section-2 {
+        text-transform: uppercase;
+        color: white;
+        font-size: 28px;
+        font-weight: 500;
+    }
+    .title-section-2-container {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 17px;
+    }
+    .nguyen-ly-cot-loi {
+        margin: 4% 0;
+    }
+    .block-khoi-div-tai-sao-gray {
+        background: #24252999;
+        width: 20%;
+    }
+    .block-khoi-div-tai-sao,
+    .block-khoi-div-tai-sao-gray {
+        width: 20%;
+        padding: 30px 10px;
+    }
+    p.sub-title-section-3 {
+        font-size: 18px;
+        font-weight: 700;
+        color: white;
+        text-align: center;
+    }
+    p.sub-content-section-3 {
+        text-align: center;
+    }
+    .sub-div-sb {
+        text-align: center;
+        padding: 0 10px;
+    }
+    .block-khoi-div-tai-sao-container {
+        margin: 5% 0;
+    }
+    p.sub-title-section-3 {
+        margin: 15px 0;
+    }
+    section.tai-sao-nen-chon-chien-luoc {
+        margin-bottom: 4%;
+    }
 }
 
 @media (min-width: 1600px) and (max-width: 1919px) {
     section.banner-tao-lien-ket-gioi-thieu, 
-    section.content-tao-lien-ket-gioi-thieu {
+    section.content-tao-lien-ket-gioi-thieu,
+    section.co-che-chien-luoc-xu-huong,
+    section.tai-sao-nen-chon-chien-luoc {
         padding: 3.5% calc(12% + 15px);
     }
     .last-section-hdlkgt {
         padding-bottom: 10rem !important;
+    }
+    .con-so-big {
+        font-size: 96px;
+        font-weight: 800;
+        background: -webkit-linear-gradient(#BCFE08, #86F969);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .text-box-border-container.flex {
+        position: relative;
+        gap: 50px;
+    }
+    .text-box-border-container-second {
+        position: relative;
+        gap: 5%;
+    }
+    .text-box-border-container.flex,
+    .text-box-border-container-second {
+        margin-top: 5%;
+        padding: 1.5rem;
+    }
+    .text-box-border-container-gray {
+        background-color: #242529 !important;
+    }
+    .text-nguyen-ly-copy-trade {
+        font-size: 18px;
+        line-height: 1.8;
+    }
+    .con-so-big-2 {
+        position: relative;
+        right: -90px;
+    }
+    p.title-section-2 {
+        text-transform: uppercase;
+        color: white;
+        font-size: 28px;
+        font-weight: 500;
+    }
+    .title-section-2-container {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 17px;
+    }
+    .nguyen-ly-cot-loi {
+        margin: 4% 0;
+    }
+    .block-khoi-div-tai-sao-gray {
+        background: #24252999;
+        width: 20%;
+    }
+    .block-khoi-div-tai-sao,
+    .block-khoi-div-tai-sao-gray {
+        width: 20%;
+        padding: 30px 10px;
+    }
+    p.sub-title-section-3 {
+        font-size: 18px;
+        font-weight: 700;
+        color: white;
+        text-align: center;
+    }
+    p.sub-content-section-3 {
+        text-align: center;
+    }
+    .sub-div-sb {
+        text-align: center;
+        padding: 0 10px;
+    }
+    .block-khoi-div-tai-sao-container {
+        margin: 5% 0;
+    }
+    p.sub-title-section-3 {
+        margin: 15px 0;
+    }
+    section.tai-sao-nen-chon-chien-luoc {
+        margin-bottom: 4%;
     }
 }
 
 @media (min-width: 1920px) and (max-width: 2099px) {
     section.banner-tao-lien-ket-gioi-thieu, 
-    section.content-tao-lien-ket-gioi-thieu {
+    section.content-tao-lien-ket-gioi-thieu,
+    section.co-che-chien-luoc-xu-huong,
+    section.tai-sao-nen-chon-chien-luoc {
         padding: 3.5% calc(12% + 15px);
     }
     .last-section-hdlkgt {
         padding-bottom: 10rem !important;
     }
+    .con-so-big {
+        font-size: 96px;
+        font-weight: 800;
+        background: -webkit-linear-gradient(#BCFE08, #86F969);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .text-box-border-container.flex {
+        position: relative;
+        gap: 50px;
+    }
+    .text-box-border-container-second {
+        position: relative;
+        gap: 5%;
+    }
+    .text-box-border-container.flex,
+    .text-box-border-container-second {
+        margin-top: 5%;
+        padding: 1.5rem;
+    }
+    .text-box-border-container-gray {
+        background-color: #242529 !important;
+    }
+    .text-nguyen-ly-copy-trade {
+        font-size: 18px;
+        line-height: 1.8;
+    }
+    .con-so-big-2 {
+        position: relative;
+        right: -90px;
+    }
+    p.title-section-2 {
+        text-transform: uppercase;
+        color: white;
+        font-size: 28px;
+        font-weight: 500;
+    }
+    .title-section-2-container {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 17px;
+    }
+    .nguyen-ly-cot-loi {
+        margin: 4% 0;
+    }
+    .block-khoi-div-tai-sao-gray {
+        background: #24252999;
+        width: 20%;
+    }
+    .block-khoi-div-tai-sao,
+    .block-khoi-div-tai-sao-gray {
+        width: 20%;
+        padding: 30px 10px;
+    }
+    p.sub-title-section-3 {
+        font-size: 18px;
+        font-weight: 700;
+        color: white;
+        text-align: center;
+    }
+    p.sub-content-section-3 {
+        text-align: center;
+    }
+    .sub-div-sb {
+        text-align: center;
+        padding: 0 10px;
+    }
+    .block-khoi-div-tai-sao-container {
+        margin: 5% 0;
+    }
+    p.sub-title-section-3 {
+        margin: 15px 0;
+    }
+    section.tai-sao-nen-chon-chien-luoc {
+        margin-bottom: 4%;
+    }
 }
 @media (min-width: 2100px) {
     section.banner-tao-lien-ket-gioi-thieu, 
-    section.content-tao-lien-ket-gioi-thieu {
+    section.content-tao-lien-ket-gioi-thieu,
+    section.co-che-chien-luoc-xu-huong,
+    section.tai-sao-nen-chon-chien-luoc {
         padding: 3.5% calc(15% + 15px);
     }
     .last-section-hdlkgt {
         padding-bottom: 10rem !important;
+    }
+    .con-so-big {
+        font-size: 96px;
+        font-weight: 800;
+        background: -webkit-linear-gradient(#BCFE08, #86F969);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .text-box-border-container.flex {
+        position: relative;
+        gap: 50px;
+    }
+    .text-box-border-container-second {
+        position: relative;
+        gap: 5%;
+    }
+    .text-box-border-container.flex,
+    .text-box-border-container-second {
+        margin-top: 5%;
+        padding: 1.5rem;
+    }
+    .text-box-border-container-gray {
+        background-color: #242529 !important;
+    }
+    .text-nguyen-ly-copy-trade {
+        font-size: 18px;
+        line-height: 1.8;
+    }
+    .con-so-big-2 {
+        position: relative;
+        right: -90px;
+    }
+    p.title-section-2 {
+        text-transform: uppercase;
+        color: white;
+        font-size: 28px;
+        font-weight: 500;
+    }
+    .title-section-2-container {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 17px;
+    }
+    .nguyen-ly-cot-loi {
+        margin: 4% 0;
+    }
+    .block-khoi-div-tai-sao-gray {
+        background: #24252999;
+        width: 20%;
+    }
+    .block-khoi-div-tai-sao,
+    .block-khoi-div-tai-sao-gray {
+        width: 20%;
+        padding: 30px 10px;
+    }
+    p.sub-title-section-3 {
+        font-size: 18px;
+        font-weight: 700;
+        color: white;
+        text-align: center;
+    }
+    p.sub-content-section-3 {
+        text-align: center;
+    }
+    .sub-div-sb {
+        text-align: center;
+        padding: 0 10px;
+    }
+    .block-khoi-div-tai-sao-container {
+        margin: 5% 0;
+    }
+    p.sub-title-section-3 {
+        margin: 15px 0;
+    }
+    section.tai-sao-nen-chon-chien-luoc {
+        margin-bottom: 4%;
     }
 }
 
