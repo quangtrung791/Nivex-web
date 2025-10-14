@@ -82,7 +82,7 @@ export default function NguyenLyHoatDongCopyTrade() {
                             <div className="row">
                                 <div className="col-md-12" style={{'paddingLeft': 0,'paddingRight': 0}}>
                                     <div className="block-text">
-                                        <h3 className="big-text">Cơ chế chiến lược xu hướng <span className="gradient-text break-line">Martingale hai chiều</span> <br/></h3>
+                                        <h3 className="big-text">Cơ chế chiến lược xu hướng <span className="gradient-text break-line">Martingale hai chiều</span></h3>
                                         <p className="text-nguyen-ly-copy-trade">Nivex độc quyền phát triển Chiến lược Xu hướng Martingale Hai chiều, tích hợp hệ thống nhận diện xu hướng và hệ thống vào lệnh lưới bổ sung vị thế, xây dựng một mô hình lợi nhuận ổn định.</p>
                                     </div>
                                 </div>
