@@ -23,7 +23,7 @@ export default function NguyenLyHoatDongCopyTrade() {
                             <div className="row">
                                 <div className="col-md-12" style={{'paddingLeft': 0,'paddingRight': 0}}>
                                     <div className="block-text">
-                                        <h3 className="big-text">Chiến lược <span className="gradient-text">AI cấp tổ chức</span> <br/> phân tích thị trường như thế nào?</h3>
+                                        <h3 className="big-text">Chiến lược <span className="gradient-text">AI cấp tổ chức</span>  phân tích thị trường như thế nào?</h3>
                                         <p className="text-nguyen-ly-copy-trade">Nivex kết hợp trí tuệ nhân tạo với hệ thống dữ liệu lớn (Big Data) cấp tổ chức để xây dựng mô hình giao dịch AI hàng đầu, với ba công nghệ cốt lõi hỗ trợ hoạt động của chiến lược:</p>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@ export default function NguyenLyHoatDongCopyTrade() {
                             <div className="row">
                                 <div className="col-md-12" style={{'paddingLeft': 0,'paddingRight': 0}}>
                                     <div className="block-text">
-                                        <h3 className="big-text">Cơ chế chiến lược xu hướng <br/><span className="gradient-text">Martingale hai chiều</span> <br/></h3>
+                                        <h3 className="big-text">Cơ chế chiến lược xu hướng <span className="gradient-text">Martingale hai chiều</span> <br/></h3>
                                         <p className="text-nguyen-ly-copy-trade">Nivex độc quyền phát triển Chiến lược Xu hướng Martingale Hai chiều, tích hợp hệ thống nhận diện xu hướng và hệ thống vào lệnh lưới bổ sung vị thế, xây dựng một mô hình lợi nhuận ổn định.</p>
                                     </div>
                                 </div>
@@ -119,7 +119,7 @@ export default function NguyenLyHoatDongCopyTrade() {
                             <div className="row">
                                 <div className="col-md-12" style={{'paddingLeft': 0,'paddingRight': 0}}>
                                     <div className="block-text">
-                                        <h3 className="big-text">Tại sao nên chọn <span className="gradient-text">chiến lược AI theo tín hiệu<br/> từ tổ chức </span>của Nivex?</h3>
+                                        <h3 className="big-text">Tại sao nên chọn <span className="gradient-text">chiến lược AI theo tín hiệu từ tổ chức </span>của Nivex?</h3>
                                     </div>
                                 </div>
                             </div>
