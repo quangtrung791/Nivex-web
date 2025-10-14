@@ -1,0 +1,146 @@
+.banner-tao-lien-ket-gioi-thieu .banner-title {
+    font-size: 36px;
+}
+.text-nguyen-ly-copy-trade {
+    color: white;
+}
+.text-nguyen-ly-copy-trade {
+    list-style-type: disc !important;
+    font-weight: 400 !important;
+    letter-spacing: 0px;
+    font-size: 18px;
+    /* line-height: 1.4; */
+}
+.ul-text-content {
+    padding-left: 1rem;
+    margin-top: 8px;
+}
+.gradient-text {
+   background: linear-gradient(90deg, #bcfe08, #86f869);
+   -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-top: 3px;
+}
+section.banner-tao-lien-ket-gioi-thieu {
+    background: #18191D;
+}
+
+.uppercase-text {
+    text-transform: uppercase;
+    color: white;
+    font-size: 28px;
+    font-weight: 500;
+}
+.text-box-border-container,
+.text-box-border-container-gray {
+    display: flex;
+    align-items: center;
+}
+
+@media (min-width: 1440px) and (max-width: 1599px) {
+    section.banner-tao-lien-ket-gioi-thieu, 
+    section.content-tao-lien-ket-gioi-thieu,
+    section.co-che-chien-luoc-xu-huong {
+        padding: 3.5% calc(7% + 15px);
+    }
+    .last-section-hdlkgt {
+        padding-bottom: 10rem !important;
+    }
+    .con-so-big {
+        font-size: 96px;
+        font-weight: 800;
+        background: -webkit-linear-gradient(#BCFE08, #86F969);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .text-box-border-container.flex {
+        position: relative;
+        gap: 50px;
+    }
+    .text-box-border-container-second {
+        position: relative;
+        gap: 5%;
+    }
+    .text-box-border-container.flex,
+    .text-box-border-container-second {
+        margin-top: 5%;
+        padding: 1.5rem;
+    }
+    .text-box-border-container-gray {
+        background-color: #242529 !important;
+    }
+    .text-nguyen-ly-copy-trade {
+        font-size: 18px;
+        line-height: 1.8;
+    }
+    .con-so-big-2 {
+        position: relative;
+        right: -90px;
+    }
+    
+}
+
+@media (min-width: 1600px) and (max-width: 1919px) {
+    section.banner-tao-lien-ket-gioi-thieu, 
+    section.content-tao-lien-ket-gioi-thieu {
+        padding: 3.5% calc(12% + 15px);
+    }
+    .last-section-hdlkgt {
+        padding-bottom: 10rem !important;
+    }
+}
+
+@media (min-width: 1920px) and (max-width: 2099px) {
+    section.banner-tao-lien-ket-gioi-thieu, 
+    section.content-tao-lien-ket-gioi-thieu {
+        padding: 3.5% calc(12% + 15px);
+    }
+    .last-section-hdlkgt {
+        padding-bottom: 10rem !important;
+    }
+}
+@media (min-width: 2100px) {
+    section.banner-tao-lien-ket-gioi-thieu, 
+    section.content-tao-lien-ket-gioi-thieu {
+        padding: 3.5% calc(15% + 15px);
+    }
+    .last-section-hdlkgt {
+        padding-bottom: 10rem !important;
+    }
+}
+
+/* iPad Pro 12.9" (1024 x 1366) */
+@media (min-width: 1024px) and (max-width: 1366px) {
+    section.banner-tao-lien-ket-gioi-thieu,
+    section.content-tao-lien-ket-gioi-thieu {
+        padding: 4%;
+    }
+}
+
+/* iPad Air (820 x 1180) */
+@media (min-width: 820px) and (max-width: 1180px) {
+    section.banner-tao-lien-ket-gioi-thieu,
+    section.content-tao-lien-ket-gioi-thieu {
+        padding: 5% 4%;
+    }
+}
+
+/* iPad Mini (768px width) */
+@media (min-width: 768px) and (max-width: 819px) {
+    section.banner-tao-lien-ket-gioi-thieu,
+    section.content-tao-lien-ket-gioi-thieu {
+        padding: 5% 4%;
+    }
+}
+
+/* Mobile (≤ 767px) */
+@media (max-width: 767px) {
+    section.banner-tao-lien-ket-gioi-thieu,
+    section.content-tao-lien-ket-gioi-thieu {
+        padding: 6% 1.5rem;
+    }
+    .iframe-youtube-video-container-n iframe {
+        height: 300px !important;
+    }
+}
+
