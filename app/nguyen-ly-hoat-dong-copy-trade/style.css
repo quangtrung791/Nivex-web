@@ -1,3 +1,8 @@
+@media (min-width: 800px) {
+    .break-line {
+        display: block; /* Tự động xuống dòng */
+    }
+}
 .banner-tao-lien-ket-gioi-thieu .banner-title {
     font-size: 36px;
 }
@@ -258,7 +263,7 @@ p.sub-content-section-3 {
     }
     .con-so-big-2 {
         position: relative;
-        right: -90px;
+        right: -25%;
     }
     p.title-section-2 {
         text-transform: uppercase;
@@ -345,7 +350,7 @@ p.sub-content-section-3 {
     }
     .con-so-big-2 {
         position: relative;
-        right: -90px;
+        right: -25%;
     }
     p.title-section-2 {
         text-transform: uppercase;
@@ -738,5 +743,8 @@ p.sub-content-section-3 {
     }
     .tieu-de-big-special-mobile {
         padding-right: 16px;
+    }
+    .break-line {
+        display: inline; /* Trên mobile gộp chung 1 dòng */
     }
 }
