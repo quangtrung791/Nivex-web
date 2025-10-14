@@ -2,8 +2,8 @@ import Layout from '@/components/layout/Layout'
 import NguyenLyHoatDongCopyTrade from './NguyenLyCopyTradeComponent'
 
 export const metadata = {
-  title: 'Hướng dẫn Tính năng sao chép các Tổ chức Chiến lược giao dịch bằng AI | Nivex Hub',
-  description: 'Chuyên trang Hướng dẫn Tính năng sao chép các Tổ chức Chiến lược giao dịch bằng AI với Nivex Hub.',
+  title: 'Nguyên lý hoạt động Copy Trade | Nivex Hub',
+  description: 'Chiến lược AI cấp tổ chức phân tích thị trường như thế nào.',
   robots: {
         index: true,
         follow: true,
@@ -16,8 +16,8 @@ export const metadata = {
         },
     },
     openGraph: {
-        title: "Hướng dẫn Tính năng sao chép các Tổ chức Chiến lược giao dịch bằng AI | Nivex Hub",
-        description: "Chuyên trang Hướng dẫn Tính năng sao chép các Tổ chức Chiến lược giao dịch bằng AI với Nivex Hub.",
+        title: "Nguyên lý hoạt động Copy Trade | Nivex Hub",
+        description: "Chiến lược AI cấp tổ chức phân tích thị trường như thế nào.",
         url: "https://nivex.vn/huong-dan-tao-lien-ket-gioi-thieu",
         siteName: "Nivex",
         images: [
@@ -25,7 +25,7 @@ export const metadata = {
                 url: "/assets/images/logo/Nivex_icon_bg.png",
                 width: 1200,
                 height: 630,
-                alt: "Chuyên trang Hướng dẫn Tính năng sao chép các Tổ chức Chiến lược giao dịch bằng AI với Nivex Hub."
+                alt: "Chiến lược AI cấp tổ chức phân tích thị trường như thế nào."
             }
         ],
         locale: "vi_VN",
