@@ -46,7 +46,7 @@ export default function NguyenLyHoatDongCopyTrade() {
 
                         <div className="text-box-border-container-second flex">
                             <div className="text-ben-phai-box">
-                                <div className="tieu-de-big uppercase-text">
+                                <div className="tieu-de-big uppercase-text tieu-de-big-special-mobile">
                                     Mô hình dự đoán bằng máy học AI (AI Machine Learning)
                                 </div>
                                 <div className="text-conntent-ben-phai-box">

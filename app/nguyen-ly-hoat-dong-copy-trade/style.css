@@ -587,3 +587,156 @@ p.sub-content-section-3 {
    Mobile (≤ 767px)
    ========================= */
 
+@media (max-width: 767px) {
+    section.banner-tao-lien-ket-gioi-thieu,
+    section.content-tao-lien-ket-gioi-thieu,
+    section.co-che-chien-luoc-xu-huong,
+    section.tai-sao-nen-chon-chien-luoc {
+        padding: 4%;
+    }
+
+    .banner-tao-lien-ket-gioi-thieu .banner-title {
+        font-size: 24px;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-bottom: 0;
+    }
+
+    .con-so-big {
+        font-size: 96px;
+        font-weight: 800;
+        background: -webkit-linear-gradient(#BCFE08, #86F969);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    ul.ul-text-content {
+        text-align: justify;
+    }
+    p.text-nguyen-ly-copy-trade {
+        font-weight: 300 !important;
+        font-size: 14px !important;
+    }
+
+    .uppercase-text,
+    p.title-section-2 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .text-box-border-container,
+    .text-box-border-container-gray {
+        flex-direction: row;
+        text-align: center;
+        gap: 15px;
+        padding: 1rem;
+    }
+
+    .con-so-big {
+        font-size: 60px;
+    }
+
+    .text-nguyen-ly-copy-trade {
+        font-size: 15px;
+        line-height: 1.5;
+        text-align: left;
+    }
+    .tieu-de-big {
+        text-align: justify;
+    }
+    .text-box-border-container-second .tieu-de-big.uppercase-text {
+        text-align: left;
+    }
+
+    .ul-text-content {
+        padding-left: 1.25rem;
+    }
+
+    .block-khoi-div-tai-sao,
+    .block-khoi-div-tai-sao-gray {
+        width: 100%;
+        margin: 10px 0;
+        padding: 15px;
+    }
+
+    p.sub-title-section-3 {
+        font-size: 16px;
+    }
+
+    p.sub-content-section-3 {
+        font-size: 14px;
+    }
+
+    .gradient-text {
+        background: linear-gradient(90deg, #bcfe08, #86f869);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 600;
+    }
+    .con-so-big {
+        position: relative;
+        top: -100px;
+    }
+    .con-so-big-2 {
+        position: relative;
+        top: -12px;
+    }
+    p.title-section-2 {
+        text-transform: uppercase;
+        color: white;
+        font-size: 28px;
+        font-weight: 500;
+    }
+    .title-section-2-container {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 17px;
+    }
+    .nguyen-ly-cot-loi {
+        margin: 4% 0;
+    }
+    .block-khoi-div-tai-sao-gray {
+        background: #24252999;
+        /* width: 20%; */
+    }
+    .block-khoi-div-tai-sao,
+    .block-khoi-div-tai-sao-gray {
+        /* width: 20%; */
+        padding: 30px 10px;
+    }
+    p.sub-title-section-3 {
+        font-size: 18px;
+        font-weight: 700;
+        color: white;
+        text-align: center;
+    }
+    p.sub-content-section-3 {
+        text-align: center;
+    }
+    .sub-div-sb {
+        text-align: center;
+        /* padding: 0 10px; */
+    }
+    .block-khoi-div-tai-sao-container {
+        margin: 5% 0;
+    }
+    p.sub-title-section-3 {
+        margin: 15px 0;
+    }
+    section.tai-sao-nen-chon-chien-luoc {
+        margin-bottom: 4%;
+    }
+    section.tai-sao-nen-chon-chien-luoc .sub-div-sb img {
+        position: relative;
+        left: -6px;
+    }
+    .block-khoi-div-tai-sao-container {
+        display: block !important;
+    }
+    h3.big-text {
+        font-size: 28px;
+    }
+    .tieu-de-big-special-mobile {
+        padding-right: 16px;
+    }
+}
