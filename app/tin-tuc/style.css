@@ -2,8 +2,14 @@
 /* .widget {
     flex-direction: column !important;
 } */
+@media (min-width: 1920px) {
+    section.ttuc .trigger-full-w img {
+        height: 490px;
+    }
+}
+
 section.ttuc .mod-css-news-alt .box-image {
-    margin-top: 45px !important;
+    margin-top: 15px !important;
 }
 section.ttuc .widget.recent.mt-0 {
     /* padding-left: 15px;
@@ -46,7 +52,7 @@ section.ttuc .title-news-duoc-xem-nhieu a.title-news.headline-news {
 }
 
 .ttuc .trigger-full-w img {
-    max-height: 443px;
+    max-height: 490px;
 }
 
 .ttuc .div-duoc-xem-nhieu img {
@@ -74,7 +80,7 @@ section.ttuc .title-news-duoc-xem-nhieu a.title-news.headline-news {
     background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));
     z-index: 1;
     pointer-events: none;
-    height: 40%;
+    height: 50%;
 }
 .box-image img {
     display: block;
