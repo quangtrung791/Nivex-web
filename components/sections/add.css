@@ -3,7 +3,9 @@
         margin-bottom: 20px;
     }
 }
-
+a#button-master-homepg {
+    border-radius: 99px !important;
+}
 @media (min-width: 768px) {
     section.hanh-trinh-cua-ban-tri-truc {
         background-image: url(https://learningchain.vn/wp-content/uploads/nivex/knowledge_background.png);
