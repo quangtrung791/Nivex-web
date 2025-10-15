@@ -1,0 +1,42 @@
+import Layout from '@/components/layout/Layout'
+import NangLucCanhTranhComponent from './NangLucCanhTranhComponent'
+
+export const metadata = {
+  title: 'Nguyên lý hoạt động Copy Trade | Nivex Hub',
+  description: 'Chiến lược AI cấp tổ chức phân tích thị trường như thế nào.',
+  robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          maxSnippet: -1,
+          maxImagePreview: 'large',
+          maxVideoPreview: -1,
+        },
+    },
+    openGraph: {
+        title: "Nguyên lý hoạt động Copy Trade | Nivex Hub",
+        description: "Chiến lược AI cấp tổ chức phân tích thị trường như thế nào.",
+        url: "https://nivex.vn/huong-dan-tao-lien-ket-gioi-thieu",
+        siteName: "Nivex",
+        images: [
+            {
+                url: "/assets/images/logo/Nivex_icon_bg.png",
+                width: 1200,
+                height: 630,
+                alt: "Chiến lược AI cấp tổ chức phân tích thị trường như thế nào."
+            }
+        ],
+        locale: "vi_VN",
+        type: "website"
+    }
+}
+
+export default function NangLucCanhTranhLayout() {
+  return (
+    <Layout headerStyle={1} footerStyle={2}>
+      <NangLucCanhTranhComponent />
+    </Layout>
+  )
+}
