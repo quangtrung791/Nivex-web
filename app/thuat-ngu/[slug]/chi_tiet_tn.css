@@ -1,4 +1,10 @@
 /* Fixed */
+.btn-action {
+    border-radius: 99px !important;
+}
+footer .btn-action {
+    border-radius: 0 99px 99px 0 !important;
+}
 section.chi-tiet-thuat-ngu .dictionary-details-display-markdown p,
 section.chi-tiet-thuat-ngu .dictionary-details-display-markdown li {
     font-size: 16px !important;

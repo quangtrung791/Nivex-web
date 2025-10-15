@@ -2,6 +2,12 @@
 /* .su-kien-tg-id .col-xl-4.col-md-12 {
     padding-left: 0 !important;
 } */
+ .btn-action {
+    border-radius: 99px !important;
+}
+footer .btn-action {
+    border-radius: 0 99px 99px 0 !important;
+}
 .su-kien-tg-id .col-xl-8 .blog-main .content p {
     font-size: 16px !important;
 }
