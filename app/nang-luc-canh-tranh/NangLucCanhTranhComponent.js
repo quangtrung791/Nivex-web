@@ -28,7 +28,7 @@ export default function NangLucCanhTranhComponent() {
                                         </div>
                                         <div className="block-text block-hero-banner-text">
                                             <h3 className="big-text"><span className="gradient-text">AI cấp tổ chức</span></h3>
-                                            <p className="text-nguyen-ly-copy-trade">Không chỉ đơn thuần là sự chồng chất công nghệ, mà là một <span className="break-line">hàng rào cạnh tranh vững chắc được xây dựng từ <strong>"Nguồn lực,</strong> </span><span className="break-line"><strong>Hệ thống, Thực thi và Kiểm chứng".</strong></span></p>
+                                            <p className="text-nguyen-ly-copy-trade">Không chỉ đơn thuần là sự chồng chất công nghệ, mà là một <span className="break-line">hàng rào cạnh tranh vững chắc được xây dựng từ <span className="font-weight-bolder">"Nguồn lực,</span> </span><span className="break-line"><span className="font-weight-bolder">Hệ thống, Thực thi và Kiểm chứng".</span></span></p>
                                         </div>
                                     </div>
                                 </div>
@@ -64,7 +64,7 @@ export default function NangLucCanhTranhComponent() {
                                 <div className="text-conntent-ben-phai-box">
                                     <ul className="ul-text-content">
                                         <li className="li-text-content" style={{'listStyleType': 'disc', 'color': 'white', 'fontWeight': 300 }}>Các thành viên cốt lõi đến từ Phố Wall, các quỹ phòng hộ, phòng thí nghiệm dữ liệu của Stanford/MIT.</li>
-                                        <li className="li-text-content" style={{'listStyleType': 'disc', 'color': 'white', 'fontWeight': 300 }}>Kết hợp cả lý thuyết và thực chiến, chiến lược không phải là quyết định bộc phát mà được <span className="gradient-text font-weight-bolder">xây dựng dựa trên <br />mô hình suy luận và kiểm chứng.</span></li>
+                                        <li className="li-text-content" style={{'listStyleType': 'disc', 'color': 'white', 'fontWeight': 300 }}>Kết hợp cả lý thuyết và thực chiến, chiến lược không phải là quyết định bộc phát mà được <span className="gradient-text font-weight-bolder">xây dựng dựa trên mô hình suy luận và kiểm chứng.</span></li>
                                         <li className="li-text-content" style={{'listStyleType': 'disc', 'color': 'white', 'fontWeight': 300 }}>Mô hình giao dịch được thiết kế tuân theo cấu trúc tối ưu về tỷ lệ rủi ro - lợi nhuận.</li>
                                     </ul>
                                 </div>
@@ -90,7 +90,7 @@ export default function NangLucCanhTranhComponent() {
                     </section>
 
                     <section className="co-che-chien-luoc-xu-huong">
-                        <div className="container">
+                        <div className="container co-che-chien-luoc-container">
                             <div className="row">
                                 <div className="col-md-12" style={{'paddingLeft': 0,'paddingRight': 0}}>
                                     <div className="block-text">
@@ -144,7 +144,7 @@ export default function NangLucCanhTranhComponent() {
                                         <p className="con-so-section-2 gradient-text">05</p>
                                         <p className="sub-title-section-3">Quản trị rủi ro</p>
                                         <ul className="ul-content-section-3">
-                                            <li className="li-content-section-3"><span className="gradient-text font-weight-bolder">Kiểm Soát Drawdown</span>: Thiết lập <span className="gradient-text font-weight-bolder">ngưỡng sụt giảm vốn</span> (Drawdown), bảo vệ <span className="gradient-text font-weight-bolder">vốn gốc an toàn</span> trong cả điều kiện khắc nghiệt.</li>
+                                            <li className="li-content-section-3"><span className="gradient-text font-weight-bolder">Kiểm soát Drawdown</span>: Thiết lập <span className="gradient-text font-weight-bolder">ngưỡng sụt giảm vốn</span> (Drawdown), bảo vệ <span className="gradient-text font-weight-bolder">vốn gốc an toàn</span> trong cả điều kiện khắc nghiệt.</li>
                                         </ul>
                                     </div>
                                 </div>

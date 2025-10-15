@@ -1,3 +1,19 @@
+@media (min-width: 800px) {
+    .break-line {
+        display: block;
+    }
+}
+@media (min-width: 1200px) {
+    .block-hero-banner-text .break-line {
+        display: block;
+    }
+}
+@media (min-width: 801px) and (max-width: 1199px) {
+    .block-hero-banner-text .break-line {
+        display: inline !important;
+    }
+}
+
 .big-text {
     font-size: 32px !important;
 }
@@ -15,11 +31,6 @@
     letter-spacing: .25px;
 }
 
-@media (min-width: 800px) {
-    .break-line {
-        display: block; /* Tự động xuống dòng */
-    }
-}
 .banner-tao-lien-ket-gioi-thieu .banner-title {
     font-size: 36px;
 }
@@ -135,9 +146,13 @@ p.sub-content-section-3 {
         font-size: 18px;
         line-height: 1.8;
     }
-    .con-so-big-2 {
+    /* .con-so-big-2 {
         position: relative;
         right: -19%;
+    } */
+    .con-so-big-2 {
+        position: absolute;
+        right: 0;
     }
     .font-size-64 {
         font-size: 64px;
@@ -263,13 +278,40 @@ p.sub-content-section-3 {
     section.content-tao-lien-ket-gioi-thieu,
     section.co-che-chien-luoc-xu-huong,
     section.tai-sao-nen-chon-chien-luoc {
-        padding: 3.5% calc(12% + 15px);
+        padding: 3.5% calc(7% + 15px);
     }
     .last-section-hdlkgt {
         padding-bottom: 10rem !important;
     }
     section.content-tao-lien-ket-gioi-thieu .hero-section-container-flexible {
         display: flex;
+    }
+    section.content-tao-lien-ket-gioi-thieu .row.width-50-vw {
+        align-items: center;
+    }
+    section.content-tao-lien-ket-gioi-thieu .title-uu-the-nen-tang-container {
+        margin-top: 3%;
+    }
+    .title-uu-the-nen-tang {
+        font-size: 64px !important;
+        line-height: 1.15;
+    }
+    .normal-title-nen-tang {
+        font-size: 48px !important;
+    }
+
+     .quote-image-container-container {
+        display: flex;
+     }
+    .block-hero-banner-text {
+        margin-top: 15px;
+        margin-left: 10px;
+    }
+    .image-hero-sect.width-50-vw {
+        text-align: right;
+    }
+    .width-50-vw {
+        width: 100%;
     }
     .con-so-big {
         font-size: 96px;
@@ -288,7 +330,7 @@ p.sub-content-section-3 {
     }
     .text-box-border-container.flex,
     .text-box-border-container-second {
-        margin-top: 5%;
+        margin-top: 3%;
         padding: 1.5rem;
     }
     .text-box-border-container-gray {
@@ -298,9 +340,16 @@ p.sub-content-section-3 {
         font-size: 18px;
         line-height: 1.8;
     }
-    .con-so-big-2 {
+    /* .con-so-big-2 {
         position: relative;
-        right: -90px;
+        right: -27%;
+    } */
+    .con-so-big-2 {
+        position: absolute;
+        right: 0;
+    }
+    .font-size-64 {
+        font-size: 64px;
     }
     p.title-section-2 {
         text-transform: uppercase;
@@ -318,34 +367,103 @@ p.sub-content-section-3 {
     }
     .block-khoi-div-uu-the-gray {
         background: #24252999;
-        width: 33.3%;
     }
     .block-khoi-div-uu-the,
     .block-khoi-div-uu-the-gray {
         width: 33.3%;
         padding: 30px 20px;
     }
+    p.con-so-section-2 {
+        font-size: 64px;
+        font-weight: 900;
+        text-align: left;
+    }
     p.sub-title-section-3 {
-        font-size: 18px;
-        font-weight: 700;
+        font-size: 28px;
+        text-transform: uppercase;
+        font-weight: 500;
         color: white;
-        text-align: center;
+        text-align: left;
     }
     p.sub-content-section-3 {
-        text-align: center;
+        text-align: left;
+        margin-top: 15px;
+    }
+    .ul-content-section-3 {
+        padding-left: 15px;
+    }
+    .li-content-section-3 {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        text-align: left;
+        list-style-type: disc !important;
+        color: white;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 1.4;
     }
     .sub-div-sb {
-        text-align: center;
+        text-align: left;
         padding: 0 10px;
     }
     .block-khoi-div-uu-the-container {
-        margin: 5% 0;
+        margin: 20px 0;
+        gap: 15px;
     }
     p.sub-title-section-3 {
         margin: 15px 0;
     }
     section.tai-sao-nen-chon-chien-luoc {
         margin-bottom: 4%;
+    }
+    .image-hero-sect img {
+        scale: 1.2;
+        position: relative;
+        left: -36px;
+    }
+    .container-display-flex {
+        display: flex;
+    }
+    p.title-uu-the-tam-chien-luoc {
+        font-size: 28px;
+        font-weight: 700;
+    }
+    p.text-uu-the-tam-chien-luoc {
+        color: white;
+        font-size: 14px;
+        font-weight: 300;
+        text-align: left;
+    }
+    .container-display-flex {
+        gap: 20px;
+    }
+    .uu-the-tam-chien-luoc {
+        background-color: #18191D;
+    }
+    .container-display-block {
+        margin-top: 20px;
+    }
+    .uu-the-tam-chien-luoc {
+        padding: 20px;
+    }
+    .title-uu-the-tam-chien-luoc.gradient-text,
+    .text-uu-the-tam-chien-luoc {
+        margin-left: 5px;
+    }
+    .uu-the-tam-chien-luoc {
+        border-left: 4px solid #BCFE08;
+    }
+    .ul-normal {
+        padding-left: 24px;
+    }
+    .li-normal {
+        list-style-type: disc;
+    }
+    .li-normal::marker {
+        color: #BCFE08;
+    }
+    .title-container-opt {
+        margin-bottom: 3%;
     }
 }
 
@@ -359,6 +477,37 @@ p.sub-content-section-3 {
     .last-section-hdlkgt {
         padding-bottom: 10rem !important;
     }
+    section.content-tao-lien-ket-gioi-thieu .hero-section-container-flexible {
+        display: flex;
+    }
+    section.content-tao-lien-ket-gioi-thieu .row.width-50-vw {
+        /* align-items: center; */
+        padding-top: 32px;
+    }
+    section.content-tao-lien-ket-gioi-thieu .title-uu-the-nen-tang-container {
+        margin-top: 3%;
+    }
+    .title-uu-the-nen-tang {
+        font-size: 64px !important;
+        line-height: 1.15;
+    }
+    .normal-title-nen-tang {
+        font-size: 48px !important;
+    }
+
+     .quote-image-container-container {
+        display: flex;
+     }
+    .block-hero-banner-text {
+        margin-top: 15px;
+        margin-left: 10px;
+    }
+    .image-hero-sect.width-50-vw {
+        text-align: right;
+    }
+    .width-50-vw {
+        width: 100%;
+    }
     .con-so-big {
         font-size: 96px;
         font-weight: 800;
@@ -376,7 +525,7 @@ p.sub-content-section-3 {
     }
     .text-box-border-container.flex,
     .text-box-border-container-second {
-        margin-top: 5%;
+        margin-top: 3%;
         padding: 1.5rem;
     }
     .text-box-border-container-gray {
@@ -387,8 +536,11 @@ p.sub-content-section-3 {
         line-height: 1.8;
     }
     .con-so-big-2 {
-        position: relative;
-        right: -25%;
+        position: absolute;
+        right: 0;
+    }
+    .font-size-64 {
+        font-size: 64px;
     }
     p.title-section-2 {
         text-transform: uppercase;
@@ -406,28 +558,48 @@ p.sub-content-section-3 {
     }
     .block-khoi-div-uu-the-gray {
         background: #24252999;
-        width: 33.3%;;
     }
     .block-khoi-div-uu-the,
     .block-khoi-div-uu-the-gray {
         width: 33.3%;
-        padding: 30px 10px;
+        padding: 30px 20px;
+    }
+    p.con-so-section-2 {
+        font-size: 64px;
+        font-weight: 900;
+        text-align: left;
     }
     p.sub-title-section-3 {
-        font-size: 18px;
-        font-weight: 700;
+        font-size: 28px;
+        text-transform: uppercase;
+        font-weight: 500;
         color: white;
-        text-align: center;
+        text-align: left;
     }
     p.sub-content-section-3 {
-        text-align: center;
+        text-align: left;
+        margin-top: 15px;
+    }
+    .ul-content-section-3 {
+        padding-left: 15px;
+    }
+    .li-content-section-3 {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        text-align: left;
+        list-style-type: disc !important;
+        color: white;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 1.4;
     }
     .sub-div-sb {
-        text-align: center;
+        text-align: left;
         padding: 0 10px;
     }
     .block-khoi-div-uu-the-container {
-        margin: 5% 0;
+        margin: 20px 0;
+        gap: 15px;
     }
     p.sub-title-section-3 {
         margin: 15px 0;
@@ -435,7 +607,57 @@ p.sub-content-section-3 {
     section.tai-sao-nen-chon-chien-luoc {
         margin-bottom: 4%;
     }
+    .image-hero-sect img {
+        scale: 1.1;
+        position: relative;
+        left: -36px;
+    }
+    .container-display-flex {
+        display: flex;
+    }
+    p.title-uu-the-tam-chien-luoc {
+        font-size: 28px;
+        font-weight: 700;
+    }
+    p.text-uu-the-tam-chien-luoc {
+        color: white;
+        font-size: 14px;
+        font-weight: 300;
+        text-align: left;
+    }
+    .container-display-flex {
+        gap: 20px;
+    }
+    .uu-the-tam-chien-luoc {
+        background-color: #18191D;
+    }
+    .container-display-block {
+        margin-top: 20px;
+    }
+    .uu-the-tam-chien-luoc {
+        padding: 20px;
+    }
+    .title-uu-the-tam-chien-luoc.gradient-text,
+    .text-uu-the-tam-chien-luoc {
+        margin-left: 5px;
+    }
+    .uu-the-tam-chien-luoc {
+        border-left: 4px solid #BCFE08;
+    }
+    .ul-normal {
+        padding-left: 24px;
+    }
+    .li-normal {
+        list-style-type: disc;
+    }
+    .li-normal::marker {
+        color: #BCFE08;
+    }
+    .title-container-opt {
+        margin-bottom: 3%;
+    }
 }
+
 @media (min-width: 2100px) {
     section.banner-tao-lien-ket-gioi-thieu, 
     section.content-tao-lien-ket-gioi-thieu,
@@ -446,6 +668,36 @@ p.sub-content-section-3 {
     .last-section-hdlkgt {
         padding-bottom: 10rem !important;
     }
+    section.content-tao-lien-ket-gioi-thieu .hero-section-container-flexible {
+        display: flex;
+    }
+    section.content-tao-lien-ket-gioi-thieu .row.width-50-vw {
+        align-items: center;
+    }
+    section.content-tao-lien-ket-gioi-thieu .title-uu-the-nen-tang-container {
+        margin-top: 3%;
+    }
+    .title-uu-the-nen-tang {
+        font-size: 64px !important;
+        line-height: 1.15;
+    }
+    .normal-title-nen-tang {
+        font-size: 48px !important;
+    }
+
+     .quote-image-container-container {
+        display: flex;
+     }
+    .block-hero-banner-text {
+        margin-top: 15px;
+        margin-left: 10px;
+    }
+    .image-hero-sect.width-50-vw {
+        text-align: right;
+    }
+    .width-50-vw {
+        width: 100%;
+    }
     .con-so-big {
         font-size: 96px;
         font-weight: 800;
@@ -463,7 +715,7 @@ p.sub-content-section-3 {
     }
     .text-box-border-container.flex,
     .text-box-border-container-second {
-        margin-top: 5%;
+        margin-top: 3%;
         padding: 1.5rem;
     }
     .text-box-border-container-gray {
@@ -473,9 +725,16 @@ p.sub-content-section-3 {
         font-size: 18px;
         line-height: 1.8;
     }
-    .con-so-big-2 {
+    /* .con-so-big-2 {
         position: relative;
-        right: -25%;
+        right: -27%;
+    } */
+    .con-so-big-2 {
+        position: absolute;
+        right: 0;
+    }
+    .font-size-64 {
+        font-size: 64px;
     }
     p.title-section-2 {
         text-transform: uppercase;
@@ -493,34 +752,103 @@ p.sub-content-section-3 {
     }
     .block-khoi-div-uu-the-gray {
         background: #24252999;
-        width: 33.3%;;
     }
     .block-khoi-div-uu-the,
     .block-khoi-div-uu-the-gray {
-        width: 33.3%;;
-        padding: 30px 10px;
+        width: 33.3%;
+        padding: 30px 20px;
+    }
+    p.con-so-section-2 {
+        font-size: 64px;
+        font-weight: 900;
+        text-align: left;
     }
     p.sub-title-section-3 {
-        font-size: 18px;
-        font-weight: 700;
+        font-size: 28px;
+        text-transform: uppercase;
+        font-weight: 500;
         color: white;
-        text-align: center;
+        text-align: left;
     }
     p.sub-content-section-3 {
-        text-align: center;
+        text-align: left;
+        margin-top: 15px;
+    }
+    .ul-content-section-3 {
+        padding-left: 15px;
+    }
+    .li-content-section-3 {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        text-align: left;
+        list-style-type: disc !important;
+        color: white;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 1.4;
     }
     .sub-div-sb {
-        text-align: center;
+        text-align: left;
         padding: 0 10px;
     }
     .block-khoi-div-uu-the-container {
-        margin: 5% 0;
+        margin: 20px 0;
+        gap: 15px;
     }
     p.sub-title-section-3 {
         margin: 15px 0;
     }
     section.tai-sao-nen-chon-chien-luoc {
         margin-bottom: 4%;
+    }
+    .image-hero-sect img {
+        scale: 1.2;
+        position: relative;
+        left: -36px;
+    }
+    .container-display-flex {
+        display: flex;
+    }
+    p.title-uu-the-tam-chien-luoc {
+        font-size: 28px;
+        font-weight: 700;
+    }
+    p.text-uu-the-tam-chien-luoc {
+        color: white;
+        font-size: 14px;
+        font-weight: 300;
+        text-align: left;
+    }
+    .container-display-flex {
+        gap: 20px;
+    }
+    .uu-the-tam-chien-luoc {
+        background-color: #18191D;
+    }
+    .container-display-block {
+        margin-top: 20px;
+    }
+    .uu-the-tam-chien-luoc {
+        padding: 20px;
+    }
+    .title-uu-the-tam-chien-luoc.gradient-text,
+    .text-uu-the-tam-chien-luoc {
+        margin-left: 5px;
+    }
+    .uu-the-tam-chien-luoc {
+        border-left: 4px solid #BCFE08;
+    }
+    .ul-normal {
+        padding-left: 24px;
+    }
+    .li-normal {
+        list-style-type: disc;
+    }
+    .li-normal::marker {
+        color: #BCFE08;
+    }
+    .title-container-opt {
+        margin-bottom: 3%;
     }
 }
 /* =========================
@@ -531,15 +859,41 @@ p.sub-content-section-3 {
     section.content-tao-lien-ket-gioi-thieu,
     section.co-che-chien-luoc-xu-huong,
     section.tai-sao-nen-chon-chien-luoc {
-        padding: 4% 6%;
+        padding: 4%;
     }
     .last-section-hdlkgt {
         padding-bottom: 10rem !important;
     }
-    /* .con-so-big.con-so-big-2 {
-        position: relative;
-        right: -90px;
-    } */
+    section.content-tao-lien-ket-gioi-thieu .hero-section-container-flexible {
+        display: flex;
+    }
+    section.content-tao-lien-ket-gioi-thieu .row.width-50-vw {
+        align-items: center;
+    }
+    section.content-tao-lien-ket-gioi-thieu .title-uu-the-nen-tang-container {
+        margin-top: 3%;
+    }
+    .title-uu-the-nen-tang {
+        font-size: 64px !important;
+        line-height: 1.15;
+    }
+    .normal-title-nen-tang {
+        font-size: 48px !important;
+    }
+
+     .quote-image-container-container {
+        display: flex;
+     }
+    .block-hero-banner-text {
+        margin-top: 15px;
+        margin-left: 10px;
+    }
+    .image-hero-sect.width-50-vw {
+        text-align: right;
+    }
+    .width-50-vw {
+        width: 100%;
+    }
     .con-so-big {
         font-size: 96px;
         font-weight: 800;
@@ -557,8 +911,8 @@ p.sub-content-section-3 {
     }
     .text-box-border-container.flex,
     .text-box-border-container-second {
-        margin-top: 5%;
-        padding: 2.5rem;
+        margin-top: 3%;
+        padding: 1.5rem;
     }
     .text-box-border-container-gray {
         background-color: #242529 !important;
@@ -568,8 +922,11 @@ p.sub-content-section-3 {
         line-height: 1.8;
     }
     .con-so-big-2 {
-        position: relative;
-        /* right: -90px; */
+        position: absolute;
+        right: 0;
+    }
+    .font-size-64 {
+        font-size: 64px;
     }
     p.title-section-2 {
         text-transform: uppercase;
@@ -587,34 +944,104 @@ p.sub-content-section-3 {
     }
     .block-khoi-div-uu-the-gray {
         background: #24252999;
-        width: 33.3%;;
     }
     .block-khoi-div-uu-the,
     .block-khoi-div-uu-the-gray {
-        width: 33.3%;;
-        padding: 30px 10px;
+        width: 33.3%;
+        padding: 30px 20px;
+    }
+    p.con-so-section-2 {
+        font-size: 64px;
+        font-weight: 900;
+        text-align: left;
     }
     p.sub-title-section-3 {
-        font-size: 18px;
-        font-weight: 700;
+        font-size: 28px;
+        text-transform: uppercase;
+        font-weight: 500;
         color: white;
-        text-align: center;
+        text-align: left;
     }
     p.sub-content-section-3 {
-        text-align: center;
+        text-align: left;
+        margin-top: 15px;
+    }
+    .ul-content-section-3 {
+        padding-left: 15px;
+    }
+    .li-content-section-3 {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        text-align: left;
+        list-style-type: disc !important;
+        color: white;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 1.4;
     }
     .sub-div-sb {
-        text-align: center;
+        text-align: left;
         padding: 0 10px;
     }
     .block-khoi-div-uu-the-container {
-        margin: 5% 0;
+        margin: 20px 0;
+        gap: 15px;
     }
     p.sub-title-section-3 {
         margin: 15px 0;
     }
     section.tai-sao-nen-chon-chien-luoc {
         margin-bottom: 4%;
+    }
+    .image-hero-sect img {
+        position: relative;
+    }
+    .container-display-flex {
+        display: flex;
+    }
+    p.title-uu-the-tam-chien-luoc {
+        font-size: 28px;
+        font-weight: 700;
+    }
+    p.text-uu-the-tam-chien-luoc {
+        color: white;
+        font-size: 14px;
+        font-weight: 300;
+        text-align: left;
+    }
+    .container-display-flex {
+        gap: 20px;
+    }
+    .uu-the-tam-chien-luoc {
+        background-color: #18191D;
+    }
+    .container-display-block {
+        margin-top: 20px;
+    }
+    .uu-the-tam-chien-luoc {
+        padding: 20px;
+    }
+    .title-uu-the-tam-chien-luoc.gradient-text,
+    .text-uu-the-tam-chien-luoc {
+        margin-left: 5px;
+    }
+    .uu-the-tam-chien-luoc {
+        border-left: 4px solid #BCFE08;
+    }
+    .ul-normal {
+        padding-left: 24px;
+    }
+    .li-normal {
+        list-style-type: disc;
+    }
+    .li-normal::marker {
+        color: #BCFE08;
+    }
+    .title-container-opt {
+        margin-bottom: 3%;
+    }
+    .text-box-border-container-second .text-ben-phai-box {
+        width: 85%;
     }
 }
 
@@ -626,10 +1053,40 @@ p.sub-content-section-3 {
     section.content-tao-lien-ket-gioi-thieu,
     section.co-che-chien-luoc-xu-huong,
     section.tai-sao-nen-chon-chien-luoc {
-        padding: 5%;
+        padding: 4%;
     }
     .last-section-hdlkgt {
         padding-bottom: 10rem !important;
+    }
+    section.content-tao-lien-ket-gioi-thieu .hero-section-container-flexible {
+        display: flex;
+    }
+    section.content-tao-lien-ket-gioi-thieu .row.width-50-vw {
+        align-items: center;
+    }
+    section.content-tao-lien-ket-gioi-thieu .title-uu-the-nen-tang-container {
+        margin-top: 3%;
+    }
+    .title-uu-the-nen-tang {
+        font-size: 64px !important;
+        line-height: 1.15;
+    }
+    .normal-title-nen-tang {
+        font-size: 48px !important;
+    }
+
+     .quote-image-container-container {
+        display: flex;
+     }
+    .block-hero-banner-text {
+        margin-top: 15px;
+        margin-left: 10px;
+    }
+    .image-hero-sect.width-50-vw {
+        text-align: right;
+    }
+    .width-50-vw {
+        width: 100%;
     }
     .con-so-big {
         font-size: 96px;
@@ -648,7 +1105,7 @@ p.sub-content-section-3 {
     }
     .text-box-border-container.flex,
     .text-box-border-container-second {
-        margin-top: 5%;
+        margin-top: 3%;
         padding: 1.5rem;
     }
     .text-box-border-container-gray {
@@ -659,8 +1116,11 @@ p.sub-content-section-3 {
         line-height: 1.8;
     }
     .con-so-big-2 {
-        position: relative;
-        /* right: -90px; */
+        position: absolute;
+        right: 0;
+    }
+    .font-size-64 {
+        font-size: 64px;
     }
     p.title-section-2 {
         text-transform: uppercase;
@@ -678,28 +1138,48 @@ p.sub-content-section-3 {
     }
     .block-khoi-div-uu-the-gray {
         background: #24252999;
-        width: 33.3%;;
     }
     .block-khoi-div-uu-the,
     .block-khoi-div-uu-the-gray {
-        width: 33.3%;;
-        padding: 30px 10px;
+        width: 33.3%;
+        padding: 30px 20px;
+    }
+    p.con-so-section-2 {
+        font-size: 64px;
+        font-weight: 900;
+        text-align: left;
     }
     p.sub-title-section-3 {
-        font-size: 18px;
-        font-weight: 700;
+        font-size: 28px;
+        text-transform: uppercase;
+        font-weight: 500;
         color: white;
-        text-align: center;
+        text-align: left;
     }
     p.sub-content-section-3 {
-        text-align: center;
+        text-align: left;
+        margin-top: 15px;
+    }
+    .ul-content-section-3 {
+        padding-left: 15px;
+    }
+    .li-content-section-3 {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        text-align: left;
+        list-style-type: disc !important;
+        color: white;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 1.4;
     }
     .sub-div-sb {
-        text-align: center;
-        /* padding: 0 10px; */
+        text-align: left;
+        padding: 0 10px;
     }
     .block-khoi-div-uu-the-container {
-        margin: 5% 0;
+        margin: 20px 0;
+        gap: 15px;
     }
     p.sub-title-section-3 {
         margin: 15px 0;
@@ -707,9 +1187,55 @@ p.sub-content-section-3 {
     section.tai-sao-nen-chon-chien-luoc {
         margin-bottom: 4%;
     }
-    section.tai-sao-nen-chon-chien-luoc .sub-div-sb img {
+    .image-hero-sect img {
         position: relative;
-        left: -6px;
+    }
+    .container-display-flex {
+        display: flex;
+    }
+    p.title-uu-the-tam-chien-luoc {
+        font-size: 28px;
+        font-weight: 700;
+    }
+    p.text-uu-the-tam-chien-luoc {
+        color: white;
+        font-size: 14px;
+        font-weight: 300;
+        text-align: left;
+    }
+    .container-display-flex {
+        gap: 20px;
+    }
+    .uu-the-tam-chien-luoc {
+        background-color: #18191D;
+    }
+    .container-display-block {
+        margin-top: 20px;
+    }
+    .uu-the-tam-chien-luoc {
+        padding: 20px;
+    }
+    .title-uu-the-tam-chien-luoc.gradient-text,
+    .text-uu-the-tam-chien-luoc {
+        margin-left: 5px;
+    }
+    .uu-the-tam-chien-luoc {
+        border-left: 4px solid #BCFE08;
+    }
+    .ul-normal {
+        padding-left: 24px;
+    }
+    .li-normal {
+        list-style-type: disc;
+    }
+    .li-normal::marker {
+        color: #BCFE08;
+    }
+    .title-container-opt {
+        margin-bottom: 3%;
+    }
+    .text-box-border-container-second .text-ben-phai-box {
+        width: 85%;
     }
 }
 
@@ -719,9 +1245,13 @@ p.sub-content-section-3 {
 
 @media (max-width: 767px) {
     section.banner-tao-lien-ket-gioi-thieu,
-    section.content-tao-lien-ket-gioi-thieu,
-    section.co-che-chien-luoc-xu-huong,
     section.tai-sao-nen-chon-chien-luoc {
+        padding: 4%;
+    }
+    section.content-tao-lien-ket-gioi-thieu .hero-section-container-flexible,
+    section.content-tao-lien-ket-gioi-thieu .quote-image-container-container,
+    section.content-tao-lien-ket-gioi-thieu .title-uu-the-nen-tang-container,
+    section.content-tao-lien-ket-gioi-thieu .text-box-border-container-second {
         padding: 4%;
     }
 
@@ -731,13 +1261,55 @@ p.sub-content-section-3 {
         font-weight: 700;
         margin-bottom: 0;
     }
-
+    .co-che-chien-luoc-xu-huong .block-text {
+        padding-left: calc(4% + 15px) !important;
+    }
+    .co-che-chien-luoc-xu-huong .sub-div-sb {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+    span.gradient-text.font-size-64 {
+        font-size: 38px;
+        font-weight: 700;
+    }
+    section.tai-sao-nen-chon-chien-luoc span.normal-text-p {
+        font-size: 24px;
+    }
+    .container-display-flex p.title-uu-the-tam-chien-luoc.gradient-text,
+    .container-display-block p.title-uu-the-tam-chien-luoc.gradient-text {
+        font-size: 28px;
+        font-weight: 700;
+    }
+    p.text-uu-the-tam-chien-luoc {
+        color: white;
+        font-size: 14px;
+        text-align: justify;
+    }
+    .tai-sao-nen-chon-chien-luoc .uu-the-tam-chien-luoc {
+        margin-bottom: 20px;
+        padding: 20px;
+        border-left: 4px solid #BCFE08;
+        background-color: #18191D;
+    }
+    .tai-sao-nen-chon-chien-luoc p.title-uu-the-tam-chien-luoc.gradient-text {
+        margin-bottom: 15px;
+    }
     .con-so-big {
         font-size: 96px;
         font-weight: 800;
         background: -webkit-linear-gradient(#BCFE08, #86F969);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+    }
+    .text-box-border-container, .text-box-border-container-second {
+        margin-bottom: 25px;
+        margin-top: 5px;
+    }
+    .text-box-border-container {
+        background-color: #242529;
+    }
+    .tai-sao-nen-chon-chien-luoc .block-text.title-container-opt {
+        margin-bottom: 25px;
     }
 
     ul.ul-text-content {
@@ -769,7 +1341,7 @@ p.sub-content-section-3 {
     .text-nguyen-ly-copy-trade {
         font-size: 15px;
         line-height: 1.5;
-        text-align: left;
+        text-align: justify;
     }
     .tieu-de-big {
         text-align: justify;
@@ -808,8 +1380,25 @@ p.sub-content-section-3 {
         top: -100px;
     }
     .con-so-big-2 {
-        position: relative;
-        top: -12px;
+        top: 0;
+    }
+    .container.hero-section-container-flexible {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    section.content-tao-lien-ket-gioi-thieu .image-hero-sect.width-50-vw {
+        display: flex;
+        flex-direction: column;
+    }
+    section.content-tao-lien-ket-gioi-thieu .block-text.block-hero-banner-text {
+        padding-left: 2rem;
+    }
+    .quote-image-container-container .big-text .gradient-text {
+        font-size: 28px;
+        font-weight: 700;
+    }
+    section.content-tao-lien-ket-gioi-thieu .container.hero-section-container-flexible {
+        margin-bottom: 15%;
     }
     p.title-section-2 {
         text-transform: uppercase;
@@ -838,7 +1427,7 @@ p.sub-content-section-3 {
         font-size: 18px;
         font-weight: 700;
         color: white;
-        text-align: center;
+        text-align: left;
     }
     p.sub-content-section-3 {
         text-align: center;
@@ -860,6 +1449,21 @@ p.sub-content-section-3 {
         position: relative;
         left: -6px;
     }
+    .sub-div-sb {
+        text-align: left !important;
+    }
+    .sub-div-sb p.con-so-section-2 {
+        font-size: 64px;
+        font-weight: 900;
+        line-height: 1.4;
+        letter-spacing: 0;
+    }
+    .co-che-chien-luoc-xu-huong p.sub-title-section-3 {
+        text-transform: uppercase;
+        font-size: 28px;
+        font-weight: 500;
+        letter-spacing: 0;
+    }
     .block-khoi-div-uu-the-container {
         display: block !important;
     }
@@ -867,9 +1471,38 @@ p.sub-content-section-3 {
         font-size: 32px !important;
     }
     .tieu-de-big-special-mobile {
-        padding-right: 16px;
+        /* padding-right: 10px; */
     }
     .break-line {
-        display: inline; /* Trên mobile gộp chung 1 dòng */
+        display: block;
+    }
+    .block-hero-banner-text .break-line {
+        display: inline !important;
+    }
+    .title-uu-the-nen-tang span.gradient-text.break-line,
+    section.co-che-chien-luoc-xu-huong .font-size-64 {
+        font-size: 38px;
+        font-weight: 700;
+        letter-spacing: .25px;
+    }
+    span.normal-title-nen-tang.white-text,
+    section.co-che-chien-luoc-xu-huong span.normal-text-p {
+        font-size: 24px;
+    }
+    section.content-tao-lien-ket-gioi-thieu .text-box-border-container:nth-child(5) .con-so-big {
+        top: -130px;
+    }
+    li.li-content-section-3 {
+        list-style-type: disc;
+        color: white;
+    }
+    ul.ul-content-section-3 {
+        padding-left: 15px;
+    }
+    section.co-che-chien-luoc-xu-huong {
+        margin-top: 60px !important;
+    }
+    .banner-tao-lien-ket-gioi-thieu span.gradient-text {
+        font-weight: 700 !important;
     }
 }
