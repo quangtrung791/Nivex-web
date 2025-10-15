@@ -18,7 +18,7 @@ export default function Work1() {
                                 </p>
                             </div>
                             <div className="work__main">
-                                <div className="work-box" style={{'background': '#3f3f3f54', 'minHeight' : '276px', 'margin-right': '20px'}}>
+                                <div className="work-box box-hanh-trinh-1-container" style={{'background': '#3f3f3f54', 'minHeight' : '276px', 'margin-right': '20px'}}>
                                     <div className="image">
                                         {/* <img src="/assets/images/icon/trading_icon.svg" alt="" /> */}
                                         <img src="https://learningchain.vn/wp-content/uploads/nivex/img_1.png" alt="" />
@@ -33,7 +33,7 @@ export default function Work1() {
                                     </div>
                                     {/* <img className="line" src="/assets/images/icon/connect-line.png" alt="" /> */}
                                 </div>
-                                <div className="work-box" style={{'background': '#3f3f3f54', 'minHeight' : '276px', 'margin-right': '20px'}}>
+                                <div className="work-box box-hanh-trinh-1-container" style={{'background': '#3f3f3f54', 'minHeight' : '276px', 'margin-right': '20px'}}>
                                     <div className="image">
                                         {/* <img src="/assets/images/icon/contract_icon.svg" alt="" /> */}
                                         <img src="https://learningchain.vn/wp-content/uploads/nivex/img_2.png" className="img-src-2-el" alt="" />
@@ -48,7 +48,7 @@ export default function Work1() {
                                     </div>
                                     {/* <img className="line" src="/assets/images/icon/connect-line.png" alt="" /> */}
                                 </div>
-                                <div className="work-box last-el-wb" style={{'background': '#3f3f3f54',  'minHeight' : '276px'}}>
+                                <div className="work-box box-hanh-trinh-1-container last-el-wb" style={{'background': '#3f3f3f54',  'minHeight' : '276px'}}>
                                     <div className="image">
                                         {/* <img src="/assets/images/icon/target_icon.svg" alt="" /> */}
                                         <img src="https://learningchain.vn/wp-content/uploads/nivex/img_3.png" alt="" />

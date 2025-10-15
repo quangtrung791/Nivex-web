@@ -8777,3 +8777,14 @@ section.background-container-custom .work-box:hover {
 .gioi-thieu-nivex p.text.fs-14 {
     letter-spacing: 0px !important;
 }
+footer.footer-main input#email {
+    border-radius: 25px;
+}
+button.btn-action.btn-cta-simple {
+    border-radius: 0 25px 25px 0;
+    z-index: 100;
+}
+
+.box-hanh-trinh-1-container {
+    border-radius: 30px;
+}

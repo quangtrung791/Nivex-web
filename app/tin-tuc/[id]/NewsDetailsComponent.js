@@ -6,7 +6,6 @@ import { useEffect, useState } from "react"
 import Link from "next/link"
 import { useParams } from "next/navigation"
 import './style.css'
-// import '/public/app/dist/tin-tuc-details.css';
 
 export default function NewsBlogsDetails() {
     const { id } = useParams()
