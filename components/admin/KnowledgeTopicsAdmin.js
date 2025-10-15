@@ -31,12 +31,18 @@ import { useState } from 'react'
 const CustomDeleteButton = () => {
   const [isDeleting, setIsDeleting] = useState(false)
 
+  const handleDeleteSuccess = () => {
+    // Trigger refresh for DynamicTopicSelect components
+    localStorage.setItem('topics_updated', Date.now().toString())
+  }
+
   return (
     <DeleteButton
       label="Xóa"
       confirmTitle="Xác nhận xóa chủ đề"
       confirmContent="Bạn có chắc chắn muốn xóa chủ đề này? Hành động này không thể hoàn tác và có thể ảnh hưởng đến các bài viết kiến thức đang sử dụng chủ đề này."
       mutationMode="pessimistic"
+      onSuccess={handleDeleteSuccess}
       sx={{
         color: '#d32f2f',
         '&:hover': { backgroundColor: 'rgba(211, 47, 47, 0.04)' },
@@ -119,72 +125,86 @@ export const KnowledgeTopicsList = () => (
 )
 
 // ===== Create =====
-export const KnowledgeTopicsCreate = () => (
-  <Create title="➕ Tạo chủ đề mới" redirect="list">
-    <SimpleForm>
-      <TextInput
-        source="name"
-        label="Tên chủ đề"
-        validate={[required()]}
-        fullWidth
-        helperText="Nhập tên chủ đề (ví dụ: Blockchain, DeFi, NFT...)"
-      />
+export const KnowledgeTopicsCreate = () => {
+  const handleSuccess = () => {
+    // Trigger refresh for DynamicTopicSelect components
+    localStorage.setItem('topics_updated', Date.now().toString())
+  }
 
-      <TextInput
-        source="description"
-        label="Mô tả"
-        multiline
-        rows={3}
-        fullWidth
-        helperText="Mô tả ngắn gọn về chủ đề này"
-      />
-      <SelectInput
-        source="status"
-        label="Trạng thái"
-        choices={[
-          { id: 'active', name: 'Đang hoạt động' },
-          { id: 'inactive', name: 'Không hoạt động' },
-        ]}
-        defaultValue="active"
-        validate={[required()]}
-      />
-    </SimpleForm>
-  </Create>
-)
+  return (
+    <Create title="➕ Tạo chủ đề mới" redirect="list" onSuccess={handleSuccess}>
+      <SimpleForm>
+        <TextInput
+          source="name"
+          label="Tên chủ đề"
+          validate={[required()]}
+          fullWidth
+          helperText="Nhập tên chủ đề (ví dụ: Blockchain, DeFi, NFT...)"
+        />
+
+        <TextInput
+          source="description"
+          label="Mô tả"
+          multiline
+          rows={3}
+          fullWidth
+          helperText="Mô tả ngắn gọn về chủ đề này"
+        />
+        <SelectInput
+          source="status"
+          label="Trạng thái"
+          choices={[
+            { id: 'active', name: 'Đang hoạt động' },
+            { id: 'inactive', name: 'Không hoạt động' },
+          ]}
+          defaultValue="active"
+          validate={[required()]}
+        />
+      </SimpleForm>
+    </Create>
+  )
+}
 
 // ===== Edit =====
-export const KnowledgeTopicsEdit = () => (
-  <Edit title="✏️ Chỉnh sửa chủ đề">
-    <SimpleForm>
-      <TextInput source="id" label="ID" disabled />
-      <TextInput 
-        source="name" 
-        label="Tên chủ đề" 
-        validate={[required()]} 
-        fullWidth 
-      />
+export const KnowledgeTopicsEdit = () => {
+  const handleSuccess = () => {
+    // Trigger refresh for DynamicTopicSelect components
+    localStorage.setItem('topics_updated', Date.now().toString())
+  }
 
-      <TextInput
-        source="description"
-        label="Mô tả"
-        multiline
-        rows={3}
-        fullWidth
-      />
-      <SelectInput
-        source="status"
-        label="Trạng thái"
-        choices={[
-          { id: 'active', name: 'Đang hoạt động' },
-          { id: 'inactive', name: 'Không hoạt động' },
-        ]}
-        validate={[required()]}
-      />
-      <DateField source="created_at" label="Ngày tạo" showTime disabled />
-      <DateField source="updated_at" label="Cập nhật lần cuối" showTime disabled />
-    </SimpleForm>
-  </Edit>
-)
+  return (
+    <Edit title="✏️ Chỉnh sửa chủ đề" onSuccess={handleSuccess}>
+      <SimpleForm>
+        <TextInput source="id" label="ID" disabled />
+        <TextInput 
+          source="name" 
+          label="Tên chủ đề" 
+          validate={[required()]} 
+          fullWidth 
+        />
+
+        <TextInput
+          source="description"
+          label="Mô tả"
+          multiline
+          rows={3}
+          fullWidth
+        />
+        <SelectInput
+          source="status"
+          label="Trạng thái"
+          choices={[
+            { id: 'active', name: 'Đang hoạt động' },
+            { id: 'inactive', name: 'Không hoạt động' },
+          ]}
+          validate={[required()]}
+        />
+        <DateField source="created_at" label="Ngày tạo" showTime disabled />
+        <DateField source="updated_at" label="Cập nhật lần cuối" showTime disabled />
+      </SimpleForm>
+    </Edit>
+  )
+}
 
 // ===== Show =====
 export const KnowledgeTopicsShow = () => (
