@@ -26,6 +26,18 @@
   backdrop-filter: blur(4px);
   /* margin-top: -8.5%; */
 }
+.menuGrid {
+  border-top: 0.25px solid white;
+  border-left: 0.25px solid rgb(158, 157, 157);
+  border-right: 0.25px solid rgb(158, 157, 157);
+  border-radius: 30px;
+  box-shadow: 0 0 10px -4px #b6ff00, 0 0 16px 0 #b6ff0033;
+  transition: box-shadow 0.3s;
+}
+
+.menuGrid:hover {
+  box-shadow: 0 0 12px 1px #b6ff00, 0 0 20px 0 #b6ff0066;
+}
 
 /* Tablet nhỏ và mobile: 2-2-1 layout */
 @media (min-width: 768px) and (max-width: 1200px) {
@@ -86,6 +98,7 @@
 
 /* Menu Card */
 .menuCard {
+  border-radius: 35px;
   padding: 25px 20px;
   text-align: center;
   text-decoration: none;
@@ -97,8 +110,8 @@
 }
 
 .menuCard:hover {
-  /* background: rgba(36, 37, 41, 0.8); */
-  background: rgb(36 37 41 / 28%);
+  /* background: rgb(36 37 41 / 28%); */
+  background: #FFFFFF0D;
 }
 
 /* Icon Container */
