@@ -37,8 +37,8 @@ export default function NguyenLyHoatDongCopyTrade() {
                                 </div>
                                 <div className="text-conntent-ben-phai-box">
                                     <ul className="ul-text-content">
-                                        <li className="li-text-content" style={{'list-style-type': 'disc', 'color': 'white', 'fontWeight': 300 }}>Thu thập dữ liệu thị trường từ các sàn giao dịch chính thống toàn cầu theo thời gian thực, cũng như hành vi giao dịch trên chuỗi (on-chain) và xu hướng dòng vốn..</li>
-                                        <li className="li-text-content" style={{'list-style-type': 'disc', 'color': 'white', 'fontWeight': 300 }}>Sử dụng hệ thống tổng hợp dữ liệu để nhanh chóng xác định động thái của dòng vốn chủ lực và những thay đổi trong cấu trúc thị trường.</li>
+                                        <li className="li-text-content" style={{'listStyleType': 'disc', 'color': 'white', 'fontWeight': 300 }}>Thu thập dữ liệu thị trường từ các sàn giao dịch chính thống toàn cầu theo thời gian thực, cũng như hành vi giao dịch trên chuỗi (on-chain) và xu hướng dòng vốn..</li>
+                                        <li className="li-text-content" style={{'listStyleType': 'disc', 'color': 'white', 'fontWeight': 300 }}>Sử dụng hệ thống tổng hợp dữ liệu để nhanh chóng xác định động thái của dòng vốn chủ lực và những thay đổi trong cấu trúc thị trường.</li>
                                     </ul>
                                 </div>
                             </div>
@@ -51,9 +51,9 @@ export default function NguyenLyHoatDongCopyTrade() {
                                 </div>
                                 <div className="text-conntent-ben-phai-box">
                                     <ul className="ul-text-content">
-                                        <li className="li-text-content" style={{'list-style-type': 'disc', 'color': 'white', 'fontWeight': 300 }}>Huấn luyện mô hinh AI dựa trên hàng triệu dữ liệu nến K (K-line) trong lịch sử.</li>
-                                        <li className="li-text-content" style={{'list-style-type': 'disc', 'color': 'white', 'fontWeight': 300 }}>Xác định các biến động giá có “xác suất cao”, kết hợp với dữ liệu lớn để dự đoán các điểm đảo chiều của xu hướng.</li>
-                                        <li className="li-text-content" style={{'list-style-type': 'disc', 'color': 'white', 'fontWeight': 300 }}>Tự động cập nhật các tham số chiến lược hàng ngày để đảm bảo thích ứng với các điều kiện thị trường khác nhau.</li>
+                                        <li className="li-text-content" style={{'listStyleType': 'disc', 'color': 'white', 'fontWeight': 300 }}>Huấn luyện mô hinh AI dựa trên hàng triệu dữ liệu nến K (K-line) trong lịch sử.</li>
+                                        <li className="li-text-content" style={{'listStyleType': 'disc', 'color': 'white', 'fontWeight': 300 }}>Xác định các biến động giá có “xác suất cao”, kết hợp với dữ liệu lớn để dự đoán các điểm đảo chiều của xu hướng.</li>
+                                        <li className="li-text-content" style={{'listStyleType': 'disc', 'color': 'white', 'fontWeight': 300 }}>Tự động cập nhật các tham số chiến lược hàng ngày để đảm bảo thích ứng với các điều kiện thị trường khác nhau.</li>
                                     </ul>
                                 </div>
                             </div>
@@ -68,9 +68,9 @@ export default function NguyenLyHoatDongCopyTrade() {
                                 </div>
                                 <div className="text-conntent-ben-phai-box">
                                     <ul className="ul-text-content">
-                                        <li className="li-text-content" style={{'list-style-type': 'disc', 'color': 'white', 'fontWeight': 300 }}>Giám sát 24/7 các biến động thị trường và chỉ số rủi ro (như biến động của BTC, tỷ lệ thanh lý vị thế).</li>
-                                        <li className="li-text-content" style={{'list-style-type': 'disc', 'color': 'white', 'fontWeight': 300 }}>Tự động điều chỉnh hướng mở lệnh, quy mô vị thế và mức dừng lỗ (stop-loss) dựa trên tình hình thị trường.</li>
-                                        <li className="li-text-content" style={{'list-style-type': 'disc', 'color': 'white', 'fontWeight': 300 }}>Thiết lập vùng đệm rủi ro để tránh bị thanh lý vị thế (cháy tài khoản) do biến động mạnh của thị trường.</li>
+                                        <li className="li-text-content" style={{'listStyleType': 'disc', 'color': 'white', 'fontWeight': 300 }}>Giám sát 24/7 các biến động thị trường và chỉ số rủi ro (như biến động của BTC, tỷ lệ thanh lý vị thế).</li>
+                                        <li className="li-text-content" style={{'listStyleType': 'disc', 'color': 'white', 'fontWeight': 300 }}>Tự động điều chỉnh hướng mở lệnh, quy mô vị thế và mức dừng lỗ (stop-loss) dựa trên tình hình thị trường.</li>
+                                        <li className="li-text-content" style={{'listStyleType': 'disc', 'color': 'white', 'fontWeight': 300 }}>Thiết lập vùng đệm rủi ro để tránh bị thanh lý vị thế (cháy tài khoản) do biến động mạnh của thị trường.</li>
                                     </ul>
                                 </div>
                             </div>
@@ -95,9 +95,9 @@ export default function NguyenLyHoatDongCopyTrade() {
                                     <p className="title-section-2">nguyên lý cốt lõi</p>
                                 </div>
                                 <ul className="ul-text-content">
-                                    <li className="li-text-content" style={{'list-style-type': 'disc', 'color': 'white', 'fontWeight': 300 }}>Mở đồng thời các vị thế Mua (Long) / Bán (Short) để thu lợi nhuận từ các dao động của thị trường.</li>
-                                    <li className="li-text-content" style={{'list-style-type': 'disc', 'color': 'white', 'fontWeight': 300 }}>Kết hợp chiến lược xu hướng Martingale, tự động tăng vị thế một cách thông minh khi xu hướng dữ liệu lớn rõ ràng để tối đa hóa lợi nhuận.</li>
-                                    <li className="li-text-content" style={{'list-style-type': 'disc', 'color': 'white', 'fontWeight': 300 }}>Tự động giảm quy mô vị thế khi thị trường đảo chiều để giảm thiểu rủi ro.</li>
+                                    <li className="li-text-content" style={{'listStyleType': 'disc', 'color': 'white', 'fontWeight': 300 }}>Mở đồng thời các vị thế Mua (Long) / Bán (Short) để thu lợi nhuận từ các dao động của thị trường.</li>
+                                    <li className="li-text-content" style={{'listStyleType': 'disc', 'color': 'white', 'fontWeight': 300 }}>Kết hợp chiến lược xu hướng Martingale, tự động tăng vị thế một cách thông minh khi xu hướng dữ liệu lớn rõ ràng để tối đa hóa lợi nhuận.</li>
+                                    <li className="li-text-content" style={{'listStyleType': 'disc', 'color': 'white', 'fontWeight': 300 }}>Tự động giảm quy mô vị thế khi thị trường đảo chiều để giảm thiểu rủi ro.</li>
                                 </ul>
                             </div>
                             <div className="uu-diem-chien-luoc">
@@ -106,9 +106,9 @@ export default function NguyenLyHoatDongCopyTrade() {
                                     <p className="title-section-2">Ưu điểm chiến lược</p>
                                 </div>
                                 <ul className="ul-text-content">
-                                    <li className="li-text-content" style={{'list-style-type': 'disc', 'color': 'white', 'fontWeight': 300 }}>Giao dịch hai chiều bao quát cả thị trường tăng và giảm: có thể kiếm lợi nhuận dù thị trường đi lên hay đi xuống.</li>
-                                    <li className="li-text-content" style={{'list-style-type': 'disc', 'color': 'white', 'fontWeight': 300 }}>Cơ chế bổ sung vị thế linh hoạt: tự động vào thêm lệnh khi thị trường điều chỉnh giảm để trung bình giá.</li>
-                                    <li className="li-text-content" style={{'list-style-type': 'disc', 'color': 'white', 'fontWeight': 300 }}>Hỗ trợ đòn bẩy từ 2 đến 50 lần: đáp ứng nhu cầu của các nhà đầu tư có khẩu vị rủi ro khác nhau.</li>
+                                    <li className="li-text-content" style={{'listStyleType': 'disc', 'color': 'white', 'fontWeight': 300 }}>Giao dịch hai chiều bao quát cả thị trường tăng và giảm: có thể kiếm lợi nhuận dù thị trường đi lên hay đi xuống.</li>
+                                    <li className="li-text-content" style={{'listStyleType': 'disc', 'color': 'white', 'fontWeight': 300 }}>Cơ chế bổ sung vị thế linh hoạt: tự động vào thêm lệnh khi thị trường điều chỉnh giảm để trung bình giá.</li>
+                                    <li className="li-text-content" style={{'listStyleType': 'disc', 'color': 'white', 'fontWeight': 300 }}>Hỗ trợ đòn bẩy từ 2 đến 50 lần: đáp ứng nhu cầu của các nhà đầu tư có khẩu vị rủi ro khác nhau.</li>
                                 </ul>
                             </div>
                         </div>
