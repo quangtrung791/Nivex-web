@@ -34,47 +34,105 @@ import { slugify } from '@/utils/slugify'
 const DynamicTopicSelect = ({ source, label, validate, ...props }) => {
   const [topics, setTopics] = useState([])
   const [loading, setLoading] = useState(true)
+  const [refreshKey, setRefreshKey] = useState(0)
+
+  const fetchTopics = async () => {
+    try {
+      setLoading(true)
+      const response = await fetch('/api/knowledge-topics')
+      const result = await response.json()
+      if (result.success) {
+        const choices = result.data.map(topic => ({
+          id: topic.id,
+          name: topic.name
+        }))
+        setTopics(choices)
+      }
+    } catch (error) {
+      console.error('Error fetching topics:', error)
+      // Fallback to hardcoded values
+      setTopics([
+        { id: 1, name: 'Blockchain' },
+        { id: 2, name: 'DeFi' },
+        { id: 3, name: 'Copy Trade' },
+        { id: 4, name: 'AI' },
+      ])
+    } finally {
+      setLoading(false)
+    }
+  }
 
   useEffect(() => {
-    const fetchTopics = async () => {
-      try {
-        const response = await fetch('/api/knowledge-topics')
-        const result = await response.json()
-        if (result.success) {
-          const choices = result.data.map(topic => ({
-            id: topic.id,
-            name: topic.name
-          }))
-          setTopics(choices)
-        }
-      } catch (error) {
-        // Fallback to hardcoded values
-        setTopics([
-          { id: 1, name: 'Blockchain' },
-          { id: 2, name: 'DeFi' },
-          { id: 3, name: 'Copy Trade' },
-          { id: 4, name: 'AI' },
-        ])
-      } finally {
-        setLoading(false)
+    fetchTopics()
+  }, [refreshKey])
+
+  // Listen for storage events to refresh when topics are updated
+  useEffect(() => {
+    const handleStorageChange = (e) => {
+      if (e.key === 'topics_updated') {
+        setRefreshKey(prev => prev + 1)
+        localStorage.removeItem('topics_updated')
       }
     }
 
-    fetchTopics()
+    window.addEventListener('storage', handleStorageChange)
+    return () => window.removeEventListener('storage', handleStorageChange)
   }, [])
 
+  const handleRefresh = () => {
+    setRefreshKey(prev => prev + 1)
+  }
+
   if (loading) {
-    return <div>Đang tải chủ đề...</div>
+    return (
+      <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+        <div>Đang tải chủ đề...</div>
+        <button 
+          type="button" 
+          onClick={handleRefresh}
+          style={{ 
+            padding: '4px 8px', 
+            fontSize: '12px',
+            border: '1px solid #ccc',
+            borderRadius: '4px',
+            background: '#f5f5f5',
+            cursor: 'pointer'
+          }}
+        >
+          🔄 Refresh
+        </button>
+      </div>
+    )
   }
 
   return (
-    <SelectInput
-      source={source}
-      label={label}
-      choices={topics}
-      validate={validate}
-      {...props}
-    />
+    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+      <div style={{ flex: 1 }}>
+        <SelectInput
+          source={source}
+          label={label}
+          choices={topics}
+          validate={validate}
+          {...props}
+        />
+      </div>
+      <button 
+        type="button" 
+        onClick={handleRefresh}
+        style={{ 
+          padding: '4px 8px', 
+          fontSize: '12px',
+          border: '1px solid #ccc',
+          borderRadius: '4px',
+          background: '#f5f5f5',
+          cursor: 'pointer',
+          marginTop: '20px'
+        }}
+        title="Làm mới danh sách chủ đề"
+      >
+        🔄
+      </button>
+    </div>
   )
 }
 
