@@ -4,6 +4,9 @@
 footer .btn-action {
     border-radius: 0 99px 99px 0 !important;
 }
+.text-bolder {
+    font-weight: 700 !important;
+}
 
 @media (min-width: 800px) {
     .break-line {
@@ -66,6 +69,10 @@ p.sub-content-section-3 {
         display: flex;
         gap: 25%;
     }
+    section.content-tao-lien-ket-gioi-thieu {
+        padding-top: 0;
+        padding-bottom: 7%;
+    }
     .li-xi-nivex-super-text {
         font-weight: 700;
         position: absolute;
@@ -74,15 +81,18 @@ p.sub-content-section-3 {
     }
     .container-flexible {
         display: flex;
-        align-items: center;
+        /* align-items: center; */
     }
     .image-bao-li-xi-container {
         width: 100%;
     }
     img.image-bao-li-xi {
-        width: 80%;
+        width: 100%;
         position: relative;
-        right: -8%;
+        /* right: -8%; */
+    }
+    .giai-thich-y-nghia-bao-li-xi {
+        margin-top: 7%;
     }
     h3.big-text {
         margin-bottom: 1rem;
@@ -94,6 +104,28 @@ p.sub-content-section-3 {
         font-size: 28px;
         font-weight: 700;
         color: white;
+    }
+    .huong-dan-cac-buoc-container {
+        margin-top: -10%;
+    }
+    .step-component-text {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 1.4;
+        letter-spacing: 0px;
+        color: white;
+        padding: 15px 0;
+        margin-bottom: 10px;
+    }
+    .group-images-flexible {
+        display: flex;
+        gap: 20px;
+    }
+    img.image-li-xi {
+        max-width: 50vw;
+    }
+    .buoc-huong-dan {
+        margin: 20px 0;
     }
     .con-so-big {
         font-size: 96px;
