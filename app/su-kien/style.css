@@ -1,4 +1,11 @@
 /* Fixed */
+.btn-action {
+    border-radius: 99px !important;
+}
+footer .btn-action {
+    border-radius: 0 99px 99px 0 !important;
+}
+
 @media (width: 1912px) {
     header#header_main {
         padding: 0 !important;

@@ -1,6 +1,12 @@
 
 /* TRANG: BẢNG THUẬT NGỮ */
 /* fixed */
+.btn-action {
+    border-radius: 99px !important;
+}
+footer .btn-action {
+    border-radius: 0 99px 99px 0 !important;
+}
 section.dictionary-list-alphabet .glossary-desc {
   display: block; /* Fallback for non-webkit */
   display: -webkit-box;

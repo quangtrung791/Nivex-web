@@ -1,4 +1,10 @@
 /* Fixed */
+.btn-action {
+    border-radius: 99px !important;
+}
+footer .btn-action {
+    border-radius: 0 99px 99px 0 !important;
+}
 @media (max-width: 600px) {
     .blog-grid ul {
         z-index: 201 !important;
