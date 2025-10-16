@@ -138,7 +138,7 @@ export default function Footer2() {
                                             </div>
                                         )}
 
-                                        <button type="submit" className="btn-action btn-cta-simple" style={{'color':'black','fontSize': 12, 'fontWeight': 500, 'padding': '10px 23px', 'background': 'linear-gradient(90deg,#BCFE08, #86F969)'}} 
+                                        <button type="submit" className="btn-action btn-cta-simple" style={{'color':'black','fontSize': 12, 'fontWeight': 500, 'padding': '10px 23px', 'background': 'linear-gradient(90deg,#BCFE08, #86F969)', 'borderRadius': '0 99px 99px 0 !important'}} 
                                         disabled={isSubmitting}
                                         >
                                             {isSubmitting ? 'Đang xử lý...' : 'Đăng ký' }
