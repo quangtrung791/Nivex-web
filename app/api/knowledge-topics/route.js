@@ -7,7 +7,7 @@ export async function GET(request) {
   try {
     // Query all knowledge_topics (for admin interface, users need to see all topics)
     const rows = await query(
-      `SELECT id, name, status FROM public.knowledge_topics WHERE status = 'active' ORDER BY id`
+      `SELECT id, name FROM public.knowledge_topics ORDER BY id`
     );
     
     // Transform for SelectInput choices format
