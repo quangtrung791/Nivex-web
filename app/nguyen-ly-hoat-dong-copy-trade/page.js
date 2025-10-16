@@ -18,7 +18,7 @@ export const metadata = {
     openGraph: {
         title: "Nguyên lý hoạt động Copy Trade | Nivex Hub",
         description: "Chiến lược AI cấp tổ chức phân tích thị trường như thế nào.",
-        url: "https://nivex.vn/huong-dan-tao-lien-ket-gioi-thieu",
+        url: "https://nivex.vn/nguyen-ly-hoat-dong-copy-trade",
         siteName: "Nivex",
         images: [
             {

@@ -18,7 +18,7 @@ export const metadata = {
     openGraph: {
         title: "Xác minh danh tính KYC - Nivex Hub",
         description: "Hướng dẫn chi tiết các bước xác minh danh tính KYC trên Nivex",
-        url: "https://nivex.vn/su-kien",
+        url: "https://nivex.vn/xac-minh-danh-tinh-kyc",
         siteName: "Nivex",
         images: [
             {

@@ -18,7 +18,7 @@ export const metadata = {
     openGraph: {
         title: "Huớng dẫn liên kết Google Authenticator | Nivex Hub",
         description: "Huớng dẫn liên kết Google Authenticator với Nivex Hub giúp tăng cường bảo mật tài khoản của bạn. Thực hiện các bước đơn giản để thiết lập xác thực hai yếu tố (2FA), bảo vệ dữ liệu và tài khoản của bạn khỏi các nguy cơ tấn công.",
-        url: "https://nivex.vn/huong-dan-tao-lien-ket-gioi-thieu",
+        url: "https://nivex.vn/huong-dan-lien-ket-google-authenticator",
         siteName: "Nivex",
         images: [
             {
