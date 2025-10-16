@@ -14,7 +14,7 @@ export default function PhanThuongBaoLiXiNivex() {
     return (
         <>
                 <div>
-                    <section className="banner-tao-lien-ket-gioi-thieu banner-section-flexible">
+                    <section className="banner-tao-bao-li-xi-nivex-huong-dan banner-section-flexible">
                         <div className="li-xi-nivex-super-title">
                             <h2 className="banner-title"><span className="gradient-text">Lì Xì </span>Nivex</h2>
                         </div>
@@ -23,7 +23,7 @@ export default function PhanThuongBaoLiXiNivex() {
                         </div>
                     </section>
 
-                    <section className="content-tao-lien-ket-gioi-thieu">
+                    <section className="content-tao-bao-li-xi-nivex-huong-dan">
                         <div className="container container-flexible">
                             <div className="row giai-thich-y-nghia-bao-li-xi">
                                 <div className="col-md-12" style={{'paddingLeft': 0,'paddingRight': 0}}>
