@@ -18,7 +18,7 @@ export const metadata = {
     openGraph: {
         title: "Hướng dẫn Tính năng sao chép các Tổ chức Chiến lược giao dịch bằng AI | Nivex Hub",
         description: "Chuyên trang Hướng dẫn Tính năng sao chép các Tổ chức Chiến lược giao dịch bằng AI với Nivex Hub.",
-        url: "https://nivex.vn/huong-dan-tao-lien-ket-gioi-thieu",
+        url: "https://nivex.vn/huong-dan-tinh-nang-copy-trade",
         siteName: "Nivex",
         images: [
             {
