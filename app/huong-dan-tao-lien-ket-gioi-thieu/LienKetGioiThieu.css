@@ -68,6 +68,12 @@ section.banner-tao-lien-ket-gioi-thieu {
         padding: 4%;
     }
 }
+@media (min-width: 1367px) and (max-width: 1439px) {
+    section.banner-tao-lien-ket-gioi-thieu,
+    section.content-tao-lien-ket-gioi-thieu {
+        padding: 4%;
+    }
+}
 
 /* iPad Air (820 x 1180) */
 @media (min-width: 820px) and (max-width: 1180px) {
