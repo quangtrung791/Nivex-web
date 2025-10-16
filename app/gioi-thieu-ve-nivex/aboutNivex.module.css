@@ -15,6 +15,7 @@
 
 .pageHeaderKnowledgeSubtitle {
     text-align: right;
+    font-size: 14px !important;
 }
 .col6mdCenter {
     align-self: center;
@@ -86,9 +87,13 @@
 .visionCard,
 .missionCard {
   background: #18191D;
+  border-radius: 25px;
   padding: 25px 20px 25px 30px;
   border-left: 4px solid #bcfe08;
 }
+/* .missionCard {
+  border-radius: 25px;
+} */
 
 .cardTitle {
   font-size: 28px;
@@ -172,13 +177,18 @@
 }
 
 .ctaButton {
+  /* border-radius: 25px; */
   align-self: flex-end;
 }
 
 .learnMoreBtn {
-  background: linear-gradient(90deg, #bcfe08, #86f869);
-  color: #000;
-  border: none;
+  border-radius: 25px;
+    background: transparent;
+    border: 1px solid white;
+    color: white;;
+  /* background: linear-gradient(90deg, #bcfe08, #86f869); */
+  /* color: #000; */
+  /* border: none; */
   padding: 13px 24px;
   font-size: 14px;
   font-weight: 600;

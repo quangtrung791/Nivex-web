@@ -16,7 +16,7 @@ export default function PhanThuongBaoLiXiNivex() {
                 <div>
                     <section className="banner-tao-bao-li-xi-nivex-huong-dan banner-section-flexible">
                         <div className="li-xi-nivex-super-title">
-                            <h2 className="banner-title">Tìm hiểu <span className="gradient-text">Tiềm năng lợi nhuận</span></h2>
+                            <h2 className="banner-title"><span className="gradient-text">Bao lì xì </span>Nivex</h2>
                         </div>
                         <div className="li-xi-nivex-super-text">
                             <p>Giúp tăng cường bảo mật tài khoản của bạn, tránh bị chặn <span className="break-line">SMS hoặc mất mã qua email do lỗi mạng.</span></p>
