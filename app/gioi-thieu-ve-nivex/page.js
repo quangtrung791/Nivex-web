@@ -19,7 +19,10 @@ export default function AboutNivex() {
                             </h1>
                         </div>
                         <div className={`col-md-6 ${styles.col6mdCenter}`}>
-                            <p className={`${styles.pageHeaderKnowledgeSubtitle}`}>Sao chép chiến lược từ các tổ chức AI; Tận dụng công nghệ AI tối ưu lợi nhuận và quản lý rủi ro trong giao dịch.</p>
+                            {/* <p className={`${styles.pageHeaderKnowledgeSubtitle}`}>Sao chép chiến lược từ các tổ chức AI; Tận dụng công nghệ AI tối ưu lợi nhuận và quản lý rủi ro trong giao dịch.</p> */}
+                            <p className={`${styles.pageHeaderKnowledgeSubtitle}`}>
+                                Tận dụng công nghệ AI để tự động sao chép chiến lược, tối ưu hóa lợi nhuận và quản lý rủi ro thời gian thực.
+                            </p>
                         </div>
                     </div>
                 </div>

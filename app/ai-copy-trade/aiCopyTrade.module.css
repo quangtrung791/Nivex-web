@@ -54,6 +54,7 @@
 }
 
 .heroContent {
+    border-radius: 25px;
     padding: 35px;
     background-color:#18191D;
 }
