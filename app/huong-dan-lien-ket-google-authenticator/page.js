@@ -2,8 +2,8 @@ import Layout from '@/components/layout/Layout'
 import HuongDanLienKetGGAuth from './HuongDanLienKetGGAuthComponent'
 
 export const metadata = {
-  title: 'Phần thưởng Bao lì xì Nivex | Nivex Hub',
-  description: 'Phần thưởng Bao lì xì Nivex tại Nivex Hub mang đến cơ hội nhận những phần quà hấp dẫn, khuyến khích người dùng tham gia và trải nghiệm các dịch vụ thú vị trong không gian sáng tạo của Nivex.',
+  title: 'Huớng dẫn liên kết Google Authenticator | Nivex Hub',
+  description: 'Huớng dẫn liên kết Google Authenticator với Nivex Hub giúp tăng cường bảo mật tài khoản của bạn. Thực hiện các bước đơn giản để thiết lập xác thực hai yếu tố (2FA), bảo vệ dữ liệu và tài khoản của bạn khỏi các nguy cơ tấn công.',
   robots: {
         index: true,
         follow: true,
@@ -16,8 +16,8 @@ export const metadata = {
         },
     },
     openGraph: {
-        title: "Phần thưởng Bao lì xì Nivex | Nivex Hub",
-        description: "Phần thưởng Bao lì xì Nivex tại Nivex Hub mang đến cơ hội nhận những phần quà hấp dẫn, khuyến khích người dùng tham gia và trải nghiệm các dịch vụ thú vị trong không gian sáng tạo của Nivex.",
+        title: "Huớng dẫn liên kết Google Authenticator | Nivex Hub",
+        description: "Huớng dẫn liên kết Google Authenticator với Nivex Hub giúp tăng cường bảo mật tài khoản của bạn. Thực hiện các bước đơn giản để thiết lập xác thực hai yếu tố (2FA), bảo vệ dữ liệu và tài khoản của bạn khỏi các nguy cơ tấn công.",
         url: "https://nivex.vn/huong-dan-tao-lien-ket-gioi-thieu",
         siteName: "Nivex",
         images: [
@@ -25,7 +25,7 @@ export const metadata = {
                 url: "/assets/images/logo/Nivex_icon_bg.png",
                 width: 1200,
                 height: 630,
-                alt: "Phần thưởng Bao lì xì Nivex tại Nivex Hub mang đến cơ hội nhận những phần quà hấp dẫn, khuyến khích người dùng tham gia và trải nghiệm các dịch vụ thú vị trong không gian sáng tạo của Nivex."
+                alt: "Huớng dẫn liên kết Google Authenticator với Nivex Hub giúp tăng cường bảo mật tài khoản của bạn. Thực hiện các bước đơn giản để thiết lập xác thực hai yếu tố (2FA), bảo vệ dữ liệu và tài khoản của bạn khỏi các nguy cơ tấn công."
             }
         ],
         locale: "vi_VN",

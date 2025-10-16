@@ -40,7 +40,7 @@ export default function HuongDanLienKetGGAuth() {
                         <div className="huong-dan-cac-buoc-container">
                             <div className="buoc-huong-dan">
                                 <div className="step-components step-components-mobile-mt">
-                                    <p className="gg-step-component-title">Bước 1: Đăng nhập và truy cập mục Lì Xì</p>
+                                    <p className="gg-step-component-title">1. Mở ứng dụng Nivex và nhấn vào nút <span className="text-bolder">đăng ký</span></p>
                                     {/* <p className="step-component-text">Mở Ứng dụng Nivex, nhấn vào biểu tượng <span className="text-bolder">LOGO</span> ở góc trên bên trái, sau đó chọn <span className="text-bolder">Khuyến mãi </span>-&gt; <span className="text-bolder">Lì Xì</span></p> */}
                                     <div className="group-images-flexible">
                                         <img src="/assets/images/screenshot/gg-1.svg" className="image-li-xi" />
@@ -51,25 +51,30 @@ export default function HuongDanLienKetGGAuth() {
                             </div>
                             <div className="buoc-huong-dan">
                                 <div className="step-components">
-                                    <p className="gg-step-component-title">Bước 2: Tạo Lì Xì</p>
-                                    {/* <p className="step-component-text">Nhấn vào <span className="text-bolder">Gửi Lì Xì</span>. Nhập số tiền, lời chúc, sau đó nhập <span className="text-bolder">Mật khẩu thanh toán</span> để hoàn tất.</p> */}
+                                    <p className="gg-step-component-title">2. Nhập địa chỉ Gmail mới của bạn, sau đó xác minh email theo hướng dẫn hệ thống gửi về hộp thư.</p>
+                                </div>
+                            </div>
+                            <div className="buoc-huong-dan">
+                                <div className="step-components">
+                                    <p className="gg-step-component-title">3. Tạo mật khẩu mạnh để bảo mật tài khoản của bạn.</p>
                                     <div className="group-images-flexible">
+                                        <img src="/assets/images/screenshot/gg-1.svg" className="image-li-xi" />
+                                        <img src="/assets/images/screenshot/gg-2.svg" className="image-li-xi" />
                                         <img src="/assets/images/screenshot/gg-3.svg" className="image-li-xi" />
-                                        <img src="/assets/images/screenshot/gg-4.svg" className="image-li-xi" />
                                     </div>
                                 </div>
                             </div>
                             <div className="buoc-huong-dan">
                                 <div className="step-components">
-                                    <p className="gg-step-component-title">Bước 3: Gửi tặng Lì Xì</p>
-                                    {/* <p className="step-component-text">Sau khi tạo thành công, hệ thống sẽ cung cấp một mã nhận <span className="text-bolder">Lì Xì</span>. Bạn có thể chia sẻ link nhận quà hoặc sao chép <span className="text-bolder">Mã Lì Xì</span> để gửi cho bạn bè.</p> */}
-                                    <div className="group-images-flexible">
-                                        <img src="/assets/images/screenshot/gg-5.svg" className="image-li-xi" />
-                                    </div>
+                                    <p className="gg-step-component-title">4. Sau khi xác minh và thiết lập xong mật khẩu, bạn đã đăng ký thành công tài khoản Nivex mới.</p>
                                 </div>
                             </div>
                         </div>
                     </section> 
+                    <section className="ho-tro-truc-tuyen">
+                        <p className="title-ho-tro-truc-tuyen">Hỗ trợ trực tuyến</p>
+                        <p className="text-ho-tro-truc-tuyen">Truy cập trang web chính thức của <Link className="link-gg-auth" href="https://nivex.vn" >Nivex</Link>, nhấp vào nút <Link href="" className="link-gg-auth">[Liên hệ chúng tôi]</Link> hoặc <Link href="" className="link-gg-auth">[Hỗ trợ trực tuyến]</Link> ở cuối trang.</p>
+                    </section>
                 </div>
 
         </>

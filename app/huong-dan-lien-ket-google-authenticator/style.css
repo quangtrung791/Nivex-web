@@ -16,15 +16,9 @@ footer .btn-action {
 .banner-tao-bao-li-xi-nivex-huong-dan .banner-title {
     font-size: 36px;
 }
-/* .text-bao-li-xi-nivex-main {
-    color: white;
+.title-ho-tro-truc-tuyen {
+    margin-bottom: 10px;
 }
-.text-bao-li-xi-nivex-main {
-    list-style-type: disc !important;
-    font-weight: 400 !important;
-    letter-spacing: 0px;
-    font-size: 18px;
-} */
 .ul-text-content {
     padding-left: 1rem;
     margin-top: 8px;
@@ -61,14 +55,15 @@ p.sub-content-section-3 {
     section.banner-tao-bao-li-xi-nivex-huong-dan, 
     section.content-tao-bao-li-xi-nivex-huong-dan,
     section.co-che-chien-luoc-xu-huong,
-    section.tai-sao-nen-chon-chien-luoc {
+    section.tai-sao-nen-chon-chien-luoc,
+    section.ho-tro-truc-tuyen {
         padding: 3.5% calc(7% + 15px);
     }
     .banner-section-flexible {
         display: flex;
         gap: 25%;
     }
-    section.content-tao-bao-li-xi-nivex-huong-dan {
+    section.ho-tro-truc-tuyen {
         padding-top: 0;
         padding-bottom: 7%;
     }
@@ -91,7 +86,7 @@ p.sub-content-section-3 {
         /* right: -8%; */
     }
     .giai-thich-y-nghia-bao-li-xi {
-        margin-top: 7%;
+        /* margin-top: 7%; */
     }
     h3.big-text {
         margin-bottom: 1rem;
@@ -100,7 +95,7 @@ p.sub-content-section-3 {
         padding-bottom: 10rem !important;
     }
     .gg-step-component-title {
-        font-size: 24px;
+        font-size: 18px;
         font-weight: 400;
         color: white;
         margin-bottom: 16px;
@@ -138,11 +133,7 @@ p.sub-content-section-3 {
     .text-box-border-container-gray {
         background-color: #242529 !important;
     }
-    /* .text-bao-li-xi-nivex-main {
-        font-size: 14px;
-        line-height: 1.4;
-        width: 75%;
-    } */
+    
     .con-so-big-2 {
         position: absolute;
         right: 0;
@@ -153,20 +144,37 @@ p.sub-content-section-3 {
         font-size: 28px;
         font-weight: 500;
     }
+    .title-ho-tro-truc-tuyen {
+        font-size: 28px;
+        font-weight: 700;
+        color: white;
+    }
+    .text-ho-tro-truc-tuyen {
+        font-size: 14px;
+        font-weight: 300;
+        color: white;
+    }
+    .link-gg-auth {
+        font-size: 14px;
+        font-weight: 300;
+        color: #BCFE08;
+        text-decoration: underline;
+    }
 }
 
 @media (min-width: 1600px) and (max-width: 1919px) {
     section.banner-tao-bao-li-xi-nivex-huong-dan, 
     section.content-tao-bao-li-xi-nivex-huong-dan,
     section.co-che-chien-luoc-xu-huong,
-    section.tai-sao-nen-chon-chien-luoc {
+    section.tai-sao-nen-chon-chien-luoc,
+    section.ho-tro-truc-tuyen {
         padding: 3.5% calc(7% + 15px);
     }
     .banner-section-flexible {
         display: flex;
         gap: 25%;
     }
-    section.content-tao-bao-li-xi-nivex-huong-dan {
+    section.ho-tro-truc-tuyen {
         padding-top: 0;
         padding-bottom: 7%;
     }
@@ -178,6 +186,7 @@ p.sub-content-section-3 {
     }
     .container-flexible {
         display: flex;
+        /* align-items: center; */
     }
     .image-bao-li-xi-container {
         width: 100%;
@@ -185,11 +194,8 @@ p.sub-content-section-3 {
     img.image-bao-li-xi {
         width: 100%;
         position: relative;
-        /* right: -8%; */
     }
-    .giai-thich-y-nghia-bao-li-xi {
-        margin-top: 7%;
-    }
+   
     h3.big-text {
         margin-bottom: 1rem;
     }
@@ -197,14 +203,11 @@ p.sub-content-section-3 {
         padding-bottom: 10rem !important;
     }
     .gg-step-component-title {
-        font-size: 24px;
+        font-size: 18px;
         font-weight: 400;
         color: white;
+        margin-bottom: 16px;
     }
-    .huong-dan-cac-buoc-container {
-        /* margin-top: -10%; */
-    }
-    
     .group-images-flexible {
         display: flex;
         gap: 20px;
@@ -238,11 +241,7 @@ p.sub-content-section-3 {
     .text-box-border-container-gray {
         background-color: #242529 !important;
     }
-    /* .text-bao-li-xi-nivex-main {
-        font-size: 14px;
-        line-height: 1.4;
-        width: 75%;
-    } */
+    
     .con-so-big-2 {
         position: absolute;
         right: 0;
@@ -253,20 +252,37 @@ p.sub-content-section-3 {
         font-size: 28px;
         font-weight: 500;
     }
+    .title-ho-tro-truc-tuyen {
+        font-size: 28px;
+        font-weight: 700;
+        color: white;
+    }
+    .text-ho-tro-truc-tuyen {
+        font-size: 14px;
+        font-weight: 300;
+        color: white;
+    }
+    .link-gg-auth {
+        font-size: 14px;
+        font-weight: 300;
+        color: #BCFE08;
+        text-decoration: underline;
+    }
 }
 
 @media (min-width: 1920px) and (max-width: 2099px) {
     section.banner-tao-bao-li-xi-nivex-huong-dan, 
     section.content-tao-bao-li-xi-nivex-huong-dan,
     section.co-che-chien-luoc-xu-huong,
-    section.tai-sao-nen-chon-chien-luoc {
+    section.tai-sao-nen-chon-chien-luoc,
+    section.ho-tro-truc-tuyen {
         padding: 3.5% calc(12% + 15px);
     }
     .banner-section-flexible {
         display: flex;
         gap: 25%;
     }
-    section.content-tao-bao-li-xi-nivex-huong-dan {
+    section.ho-tro-truc-tuyen {
         padding-top: 0;
         padding-bottom: 7%;
     }
@@ -278,6 +294,7 @@ p.sub-content-section-3 {
     }
     .container-flexible {
         display: flex;
+        /* align-items: center; */
     }
     .image-bao-li-xi-container {
         width: 100%;
@@ -285,10 +302,9 @@ p.sub-content-section-3 {
     img.image-bao-li-xi {
         width: 100%;
         position: relative;
+        /* right: -8%; */
     }
-    .giai-thich-y-nghia-bao-li-xi {
-        margin-top: 7%;
-    }
+    
     h3.big-text {
         margin-bottom: 1rem;
     }
@@ -296,14 +312,11 @@ p.sub-content-section-3 {
         padding-bottom: 10rem !important;
     }
     .gg-step-component-title {
-        font-size: 24px;
+        font-size: 18px;
         font-weight: 400;
         color: white;
+        margin-bottom: 16px;
     }
-    .huong-dan-cac-buoc-container {
-        /* margin-top: -10%; */
-    }
-    
     .group-images-flexible {
         display: flex;
         gap: 20px;
@@ -312,7 +325,7 @@ p.sub-content-section-3 {
         max-width: 50vw;
     }
     .buoc-huong-dan {
-        margin: 30px 0;
+        margin: 20px 0;
     }
     .con-so-big {
         font-size: 96px;
@@ -337,11 +350,7 @@ p.sub-content-section-3 {
     .text-box-border-container-gray {
         background-color: #242529 !important;
     }
-    /* .text-bao-li-xi-nivex-main {
-        font-size: 14px;
-        line-height: 1.4;
-        width: 75%;
-    } */
+    
     .con-so-big-2 {
         position: absolute;
         right: 0;
@@ -352,30 +361,48 @@ p.sub-content-section-3 {
         font-size: 28px;
         font-weight: 500;
     }
+    .title-ho-tro-truc-tuyen {
+        font-size: 28px;
+        font-weight: 700;
+        color: white;
+    }
+    .text-ho-tro-truc-tuyen {
+        font-size: 14px;
+        font-weight: 300;
+        color: white;
+    }
+    .link-gg-auth {
+        font-size: 14px;
+        font-weight: 300;
+        color: #BCFE08;
+        text-decoration: underline;
+    }
 }
 @media (min-width: 2100px) {
     section.banner-tao-bao-li-xi-nivex-huong-dan, 
     section.content-tao-bao-li-xi-nivex-huong-dan,
     section.co-che-chien-luoc-xu-huong,
-    section.tai-sao-nen-chon-chien-luoc {
+    section.tai-sao-nen-chon-chien-luoc,
+    section.ho-tro-truc-tuyen {
         padding: 3.5% calc(15% + 15px);
     }
     .banner-section-flexible {
         display: flex;
         gap: 25%;
     }
-    section.content-tao-bao-li-xi-nivex-huong-dan {
+    section.ho-tro-truc-tuyen {
         padding-top: 0;
         padding-bottom: 7%;
     }
     .li-xi-nivex-super-text {
         font-weight: 700;
         position: absolute;
-        right: calc(12% + 15px);
+        right: calc(15% + 15px);
         text-align: right;
     }
     .container-flexible {
         display: flex;
+        /* align-items: center; */
     }
     .image-bao-li-xi-container {
         width: 100%;
@@ -383,9 +410,7 @@ p.sub-content-section-3 {
     img.image-bao-li-xi {
         width: 100%;
         position: relative;
-    }
-    .giai-thich-y-nghia-bao-li-xi {
-        margin-top: 7%;
+        /* right: -8%; */
     }
     h3.big-text {
         margin-bottom: 1rem;
@@ -394,14 +419,11 @@ p.sub-content-section-3 {
         padding-bottom: 10rem !important;
     }
     .gg-step-component-title {
-        font-size: 24px;
+        font-size: 18px;
         font-weight: 400;
         color: white;
+        margin-bottom: 16px;
     }
-    .huong-dan-cac-buoc-container {
-        /* margin-top: -10%; */
-    }
-    
     .group-images-flexible {
         display: flex;
         gap: 20px;
@@ -410,7 +432,14 @@ p.sub-content-section-3 {
         max-width: 50vw;
     }
     .buoc-huong-dan {
-        margin: 32px 0;
+        margin: 20px 0;
+    }
+    .con-so-big {
+        font-size: 96px;
+        font-weight: 800;
+        background: -webkit-linear-gradient(#BCFE08, #86F969);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
     .text-box-border-container.flex {
         position: relative;
@@ -428,11 +457,7 @@ p.sub-content-section-3 {
     .text-box-border-container-gray {
         background-color: #242529 !important;
     }
-    /* .text-bao-li-xi-nivex-main {
-        font-size: 14px;
-        line-height: 1.4;
-        width: 75%;
-    } */
+    
     .con-so-big-2 {
         position: absolute;
         right: 0;
@@ -442,6 +467,22 @@ p.sub-content-section-3 {
         color: white;
         font-size: 28px;
         font-weight: 500;
+    }
+    .title-ho-tro-truc-tuyen {
+        font-size: 28px;
+        font-weight: 700;
+        color: white;
+    }
+    .text-ho-tro-truc-tuyen {
+        font-size: 14px;
+        font-weight: 300;
+        color: white;
+    }
+    .link-gg-auth {
+        font-size: 14px;
+        font-weight: 300;
+        color: #BCFE08;
+        text-decoration: underline;
     }
 }
 /* =========================
@@ -451,6 +492,7 @@ p.sub-content-section-3 {
     section.banner-tao-bao-li-xi-nivex-huong-dan,
     section.content-tao-bao-li-xi-nivex-huong-dan,
     section.co-che-chien-luoc-xu-huong,
+    section.ho-tro-truc-tuyen,
     section.tai-sao-nen-chon-chien-luoc {
         padding: 4%;
     }
@@ -458,19 +500,19 @@ p.sub-content-section-3 {
         display: flex;
         gap: 25%;
     }
-    section.content-tao-bao-li-xi-nivex-huong-dan {
+    section.ho-tro-truc-tuyen {
         padding-top: 0;
         padding-bottom: 7%;
     }
     .li-xi-nivex-super-text {
         font-weight: 700;
         position: absolute;
-        right: calc(2.5% + 15px);
+        right: calc(4%);
         text-align: right;
     }
     .container-flexible {
         display: flex;
-        align-items: center;
+        /* align-items: center; */
     }
     .image-bao-li-xi-container {
         width: 100%;
@@ -480,9 +522,6 @@ p.sub-content-section-3 {
         position: relative;
         /* right: -8%; */
     }
-    .giai-thich-y-nghia-bao-li-xi {
-        /* margin-top: 7%; */
-    }
     h3.big-text {
         margin-bottom: 1rem;
     }
@@ -490,14 +529,11 @@ p.sub-content-section-3 {
         padding-bottom: 10rem !important;
     }
     .gg-step-component-title {
-        font-size: 24px;
-        font-weight:400;
+        font-size: 18px;
+        font-weight: 400;
         color: white;
+        margin-bottom: 16px;
     }
-    .huong-dan-cac-buoc-container {
-        /* margin-top: -10%; */
-    }
-    
     .group-images-flexible {
         display: flex;
         gap: 20px;
@@ -531,11 +567,7 @@ p.sub-content-section-3 {
     .text-box-border-container-gray {
         background-color: #242529 !important;
     }
-    /* .text-bao-li-xi-nivex-main {
-        font-size: 14px;
-        line-height: 1.4;
-        width: 75%;
-    } */
+    
     .con-so-big-2 {
         position: absolute;
         right: 0;
@@ -545,6 +577,22 @@ p.sub-content-section-3 {
         color: white;
         font-size: 28px;
         font-weight: 500;
+    }
+    .title-ho-tro-truc-tuyen {
+        font-size: 28px;
+        font-weight: 700;
+        color: white;
+    }
+    .text-ho-tro-truc-tuyen {
+        font-size: 14px;
+        font-weight: 300;
+        color: white;
+    }
+    .link-gg-auth {
+        font-size: 14px;
+        font-weight: 300;
+        color: #BCFE08;
+        text-decoration: underline;
     }
 }
 @media (min-width: 1367px) and (max-width: 1439px) {
@@ -558,19 +606,19 @@ p.sub-content-section-3 {
         display: flex;
         gap: 25%;
     }
-    section.content-tao-bao-li-xi-nivex-huong-dan {
+    section.ho-tro-truc-tuyen {
         padding-top: 0;
         padding-bottom: 7%;
     }
     .li-xi-nivex-super-text {
         font-weight: 700;
         position: absolute;
-        right: calc(2.5% + 15px);
+        right: calc(4%);
         text-align: right;
     }
     .container-flexible {
         display: flex;
-        align-items: center;
+        /* align-items: center; */
     }
     .image-bao-li-xi-container {
         width: 100%;
@@ -580,9 +628,6 @@ p.sub-content-section-3 {
         position: relative;
         /* right: -8%; */
     }
-    .giai-thich-y-nghia-bao-li-xi {
-        /* margin-top: 7%; */
-    }
     h3.big-text {
         margin-bottom: 1rem;
     }
@@ -590,14 +635,11 @@ p.sub-content-section-3 {
         padding-bottom: 10rem !important;
     }
     .gg-step-component-title {
-        font-size: 24px;
+        font-size: 18px;
         font-weight: 400;
         color: white;
+        margin-bottom: 16px;
     }
-    .huong-dan-cac-buoc-container {
-        /* margin-top: -10%; */
-    }
-  
     .group-images-flexible {
         display: flex;
         gap: 20px;
@@ -631,11 +673,7 @@ p.sub-content-section-3 {
     .text-box-border-container-gray {
         background-color: #242529 !important;
     }
-    /* .text-bao-li-xi-nivex-main {
-        font-size: 14px;
-        line-height: 1.4;
-        width: 75%;
-    } */
+    
     .con-so-big-2 {
         position: absolute;
         right: 0;
@@ -645,6 +683,22 @@ p.sub-content-section-3 {
         color: white;
         font-size: 28px;
         font-weight: 500;
+    }
+    .title-ho-tro-truc-tuyen {
+        font-size: 28px;
+        font-weight: 700;
+        color: white;
+    }
+    .text-ho-tro-truc-tuyen {
+        font-size: 14px;
+        font-weight: 300;
+        color: white;
+    }
+    .link-gg-auth {
+        font-size: 14px;
+        font-weight: 300;
+        color: #BCFE08;
+        text-decoration: underline;
     }
 }
 
@@ -655,27 +709,32 @@ p.sub-content-section-3 {
     section.banner-tao-bao-li-xi-nivex-huong-dan,
     section.content-tao-bao-li-xi-nivex-huong-dan,
     section.co-che-chien-luoc-xu-huong,
+    section.ho-tro-truc-tuyen,
     section.tai-sao-nen-chon-chien-luoc {
         padding: 5%;
     }
-    .banner-section-flexible {
+    /* .banner-section-flexible {
         display: flex;
         gap: 25%;
-    }
-    section.content-tao-bao-li-xi-nivex-huong-dan {
-        /* padding-top: 0; */
+    } */
+    section.ho-tro-truc-tuyen {
+        padding-top: 0;
         padding-bottom: 7%;
     }
     .li-xi-nivex-super-text {
         font-weight: 700;
         position: absolute;
-        right: calc(2.5% + 15px);
-        text-align: right;
+        /* right: calc(5%); */
+        text-align: left;
     }
     .container-flexible {
         display: flex;
-        align-items: center;
+        /* align-items: center; */
     }
+    .li-xi-nivex-super-text p {
+        font-size: 14px;
+    }
+
     .image-bao-li-xi-container {
         width: 100%;
     }
@@ -684,9 +743,6 @@ p.sub-content-section-3 {
         position: relative;
         /* right: -8%; */
     }
-    .giai-thich-y-nghia-bao-li-xi {
-        /* margin-top: 7%; */
-    }
     h3.big-text {
         margin-bottom: 1rem;
     }
@@ -694,11 +750,11 @@ p.sub-content-section-3 {
         padding-bottom: 10rem !important;
     }
     .gg-step-component-title {
-        font-size: 24px;
+        font-size: 18px;
         font-weight: 400;
         color: white;
+        margin-bottom: 16px;
     }
-   
     .group-images-flexible {
         display: flex;
         gap: 20px;
@@ -732,12 +788,7 @@ p.sub-content-section-3 {
     .text-box-border-container-gray {
         background-color: #242529 !important;
     }
-    /* .text-bao-li-xi-nivex-main {
-        font-size: 14px;
-        line-height: 1.4;
-        width: 75%;
-        text-align: justify;
-    } */
+    
     .con-so-big-2 {
         position: absolute;
         right: 0;
@@ -747,6 +798,22 @@ p.sub-content-section-3 {
         color: white;
         font-size: 28px;
         font-weight: 500;
+    }
+    .title-ho-tro-truc-tuyen {
+        font-size: 28px;
+        font-weight: 700;
+        color: white;
+    }
+    .text-ho-tro-truc-tuyen {
+        font-size: 14px;
+        font-weight: 300;
+        color: white;
+    }
+    .link-gg-auth {
+        font-size: 14px;
+        font-weight: 300;
+        color: #BCFE08;
+        text-decoration: underline;
     }
 }
 
@@ -755,32 +822,28 @@ p.sub-content-section-3 {
     section.banner-tao-bao-li-xi-nivex-huong-dan,
     section.content-tao-bao-li-xi-nivex-huong-dan,
     section.co-che-chien-luoc-xu-huong,
-    section.tai-sao-nen-chon-chien-luoc {
+    section.tai-sao-nen-chon-chien-luoc,
+    section.ho-tro-truc-tuyen {
         padding: 5%;
     }
-    section.banner-tao-bao-li-xi-nivex-huong-dan.banner-section-flexible {
-        padding-bottom: 10%;
-    }
-    .banner-section-flexible {
-        /* display: flex;
-        gap: 25%; */
-    }
-    section.content-tao-bao-li-xi-nivex-huong-dan {
-        /* padding-top: 0; */
+    section.ho-tro-truc-tuyen {
+        padding-top: 0;
         padding-bottom: 7%;
     }
     .li-xi-nivex-super-text {
-        font-weight: 300;
+        font-weight: 700;
         position: absolute;
-        /* right: calc(2.5% + 15px); */
+        /* right: calc(5%); */
         text-align: left;
-        /* padding-left: 5%; */
-        /* padding-bottom: 5%; */
     }
     .container-flexible {
         display: flex;
-        align-items: center;
+        /* align-items: center; */
     }
+    .li-xi-nivex-super-text p {
+        font-size: 14px;
+    }
+
     .image-bao-li-xi-container {
         width: 100%;
     }
@@ -789,9 +852,6 @@ p.sub-content-section-3 {
         position: relative;
         /* right: -8%; */
     }
-    .giai-thich-y-nghia-bao-li-xi {
-        /* margin-top: 7%; */
-    }
     h3.big-text {
         margin-bottom: 1rem;
     }
@@ -799,11 +859,11 @@ p.sub-content-section-3 {
         padding-bottom: 10rem !important;
     }
     .gg-step-component-title {
-        font-size: 24px;
+        font-size: 18px;
         font-weight: 400;
         color: white;
+        margin-bottom: 16px;
     }
-   
     .group-images-flexible {
         display: flex;
         gap: 20px;
@@ -837,12 +897,7 @@ p.sub-content-section-3 {
     .text-box-border-container-gray {
         background-color: #242529 !important;
     }
-    /* .text-bao-li-xi-nivex-main {
-        font-size: 14px;
-        line-height: 1.4;
-        width: 75%;
-        text-align: justify;
-    } */
+    
     .con-so-big-2 {
         position: absolute;
         right: 0;
@@ -852,6 +907,22 @@ p.sub-content-section-3 {
         color: white;
         font-size: 28px;
         font-weight: 500;
+    }
+    .title-ho-tro-truc-tuyen {
+        font-size: 28px;
+        font-weight: 700;
+        color: white;
+    }
+    .text-ho-tro-truc-tuyen {
+        font-size: 14px;
+        font-weight: 300;
+        color: white;
+    }
+    .link-gg-auth {
+        font-size: 14px;
+        font-weight: 300;
+        color: #BCFE08;
+        text-decoration: underline;
     }
 }
 /* =========================
@@ -862,12 +933,13 @@ p.sub-content-section-3 {
     section.banner-tao-bao-li-xi-nivex-huong-dan,
     section.content-tao-bao-li-xi-nivex-huong-dan,
     section.co-che-chien-luoc-xu-huong,
+    section.ho-tro-truc-tuyen,
     section.tai-sao-nen-chon-chien-luoc {
         padding: 4%;
     }
 
     .li-xi-nivex-super-text {
-        display: none;
+        font-weight: 700;
     }
     .container-flexible {
         flex-direction: column-reverse;
@@ -877,20 +949,32 @@ p.sub-content-section-3 {
         font-weight: 700 !important;
     }
     .gg-step-component-title {
-        font-size: 24px;
+        font-size: 14px;
         font-weight: 400;
         color: white;
     }
-    
-    .step-components-mobile-mt {
-        margin-top: 60px;
+    .li-xi-nivex-super-text p {
+        font-size: 12px;
+        font-weight: 700;
+        margin-top: 7px;
+    }
+    .step-components-mobile-mt,
+    img.image-li-xi {
+        margin-top: 20px;
     }
     img.image-li-xi {
-        width: 100%;
+        width: calc(30% + 7px);
     }
     .group-images-flexible {
-        display: block;
+        display: inline-block;
+        width: 100%;
+        display: flex;
+        gap: 10px;
     }
+    .buoc-huong-dan:nth-child(2) {
+        margin-bottom: 10px;
+    }
+
     img.image-li-xi {
         padding-bottom: 20px;
     }
@@ -913,12 +997,6 @@ p.sub-content-section-3 {
     ul.ul-text-content {
         text-align: justify;
     }
-    /* p.text-bao-li-xi-nivex-main {
-        font-weight: 300 !important;
-        font-size: 14px !important;
-        text-align: justify;
-    } */
-
     .uppercase-text,
     p.title-section-2 {
         font-size: 20px;
@@ -937,11 +1015,6 @@ p.sub-content-section-3 {
         font-size: 60px;
     }
 
-    /* .text-bao-li-xi-nivex-main {
-        font-size: 15px;
-        line-height: 1.5;
-        text-align: justify;
-    } */
     .tieu-de-big {
         text-align: justify;
     }
@@ -1042,5 +1115,24 @@ p.sub-content-section-3 {
     }
     .break-line {
         display: inline; /* Trên mobile gộp chung 1 dòng */
+    }
+    .title-ho-tro-truc-tuyen {
+        font-size: 28px;
+        font-weight: 700;
+        color: white;
+    }
+    .text-ho-tro-truc-tuyen {
+        font-size: 14px;
+        font-weight: 300;
+        color: white;
+    }
+    .link-gg-auth {
+        font-size: 14px;
+        font-weight: 300;
+        color: #BCFE08;
+        text-decoration: underline;
+    }
+    section.ho-tro-truc-tuyen {
+        margin-bottom: 10%;
     }
 }
