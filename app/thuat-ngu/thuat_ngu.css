@@ -1,9 +1,14 @@
 
 /* TRANG: BẢNG THUẬT NGỮ */
 /* fixed */
+
 .glossary-search-input {
   border-radius: 25px 0 0 25px !important;
 }
+.glossary-search-btn {
+  border-radius: 0 25px 25px 0 !important;
+}
+
 .btn-action {
     border-radius: 99px !important;
 }
