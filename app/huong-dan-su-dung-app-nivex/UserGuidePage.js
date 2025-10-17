@@ -14,8 +14,8 @@ export default function UserGuidePage() {
     { title: 'Hướng dẫn nạp tiền', icon: 'https://learningchain.vn/wp-content/uploads/2025/10/guidenaptien_guide_nivex.webp', href:'/huong-dan-nap-tien' },
     { title: 'Hướng dẫn rút tiền', icon: 'https://learningchain.vn/wp-content/uploads/2025/10/guideruttien_guide_nivex.webp', href:'/huong-dan-rut-tien' },
     { title: 'Giao dịch P2P', icon: 'https://learningchain.vn/wp-content/uploads/2025/10/giaodichp2p_guide_nivex.webp', href:'/giao-dich-p2p' },
-    { title: 'Giao dịch hợp đồng', icon: 'https://learningchain.vn/wp-content/uploads/2025/10/giaodichhopdong_guide_nivex.webp' },
-    { title: 'AI Copy Trade', icon: 'https://learningchain.vn/wp-content/uploads/2025/10/aicoptrade_guide_nivex.webp' },
+    { title: 'Giao dịch hợp đồng', icon: 'https://learningchain.vn/wp-content/uploads/2025/10/giaodichhopdong_guide_nivex.webp',  href:'/nguyen-ly-hoat-dong-copy-trade' },
+    { title: 'AI Copy Trade', icon: 'https://learningchain.vn/wp-content/uploads/2025/10/aicoptrade_guide_nivex.webp',  href:'/ai-copy-trade' },
     { title: 'Chuyển tiền nội bộ', icon: 'https://learningchain.vn/wp-content/uploads/2025/10/chuyentiennoibo_guide_nivex.webp', href:'/chuyen-tien-noi-bo'},    
   ]), [])
 
