@@ -14,19 +14,19 @@ export default function TimHieuTiemNangLoiNhuan() {
     return (
         <>
                 <div>
-                    <section className="banner-tao-bao-li-xi-nivex-huong-dan banner-section-flexible">
+                    <section className="banner-sect-tim-hieu-ve-tiem-nang-loi-nhuan banner-section-flexible">
                         <div className="li-xi-nivex-super-title">
                             <h2 className="banner-title">Tìm hiểu <span className="gradient-text">tiềm năng lợi nhuận</span></h2>
                         </div>
                     </section>
 
-                    <section className="content-tao-bao-li-xi-nivex-huong-dan">
+                    <section className="content-tao-bao-tiem-nang-loi-nhuan">
                         <div className="container container-flexible">
                             <div className="row giai-thich-y-nghia-bao-li-xi">
                                 <div className="col-md-12" style={{'paddingLeft': 0,'paddingRight': 0}}>
                                     <div className="block-text">
-                                        <h3 className="big-text">Giải thích về <span className="gradient-text">tần suất giao dịch: </span><span className="break-line">Dựa trên số liệu thống kê thực tế</span></h3>
-                                        <p className="text-welcome-main-2">Sản phẩm Copy Trade cấp tổ chức của Nivex được cung cấp tín hiệu bởi đội ngũ giao dịch định lượng chuyên nghiệp. Người dùng chỉ cần liên kết vốn, hệ thống sẽ tự động “sao chép giao dịch” toàn phần. </p><br />
+                                        <h3 className="big-text big-text-tiem-nang-loi-nhuan">Giải thích về <span className="gradient-text">tần suất giao dịch: </span><span className="break-line">Dựa trên số liệu thống kê thực tế</span></h3>
+                                        <p className="text-welcome-main-2 text-dele-1">Sản phẩm Copy Trade cấp tổ chức của Nivex được cung cấp tín hiệu bởi đội ngũ giao dịch định lượng chuyên nghiệp. Người dùng chỉ cần liên kết vốn, hệ thống sẽ tự động “sao chép giao dịch” toàn phần. </p><br />
                                         <p className="text-welcome-main-2">Dựa trên dữ liệu lịch sử được đội ngũ kỹ thuật phân tích, với các mức vốn khác nhau, tần suất giao dịch trung bình mỗi tháng như sau:</p>
                                     </div>
                                 </div>
@@ -67,12 +67,12 @@ export default function TimHieuTiemNangLoiNhuan() {
                         </div>
                     </section>
 
-                    <section className="content-tao-bao-li-xi-nivex-huong-dan">
+                    <section className="content-tao-bao-tiem-nang-loi-nhuan">
                         <div className="container container-flexible">
                             <div className="row giai-thich-y-nghia-bao-li-xi">
                                 <div className="col-md-12" style={{'paddingLeft': 0,'paddingRight': 0}}>
                                     <div className="block-text">
-                                        <h3 className="big-text">Ví dụ <span className="gradient-text">ước tính phí giao dịch </span>trên nền tảng<span className="break-line">(Cơ sở tính hoàn phí/hoa hồng)</span></h3>
+                                        <h3 className="big-text big-text-tiem-nang-loi-nhuan">Ví dụ <span className="gradient-text">ước tính phí giao dịch </span>trên nền tảng<span className="break-line">(Cơ sở tính hoàn phí/hoa hồng)</span></h3>
                                         <p className="text-welcome-main-2">Trong cơ chế Copy Trade tổ chức tại Nivex: Phí giao dịch mỗi lệnh = 0,05%</p>
                                         <p className="text-welcome-main-2">Do mô hình giao dịch 2 chiều (mở long, mở short, đóng long, đóng short), một vòng giao dịch trọn vẹn sẽ phát sinh 4 lần phí: 0,05% x 4 = 0,2% (Phí cho mỗi vòng giao dịch hoàn chỉnh)</p> <br/>
                                         <p className="text-welcome-main-2">Ví dụ 3 kịch bản ước tính:</p>
