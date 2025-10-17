@@ -8,6 +8,9 @@
 .glossary-search-btn {
   border-radius: 0 25px 25px 0 !important;
 }
+form.glossary-search-form {
+    border-radius: 25px !important;
+}
 
 .btn-action {
     border-radius: 99px !important;
