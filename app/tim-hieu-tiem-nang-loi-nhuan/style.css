@@ -7,9 +7,9 @@ footer .btn-action {
 .text-bolder {
     font-weight: 700 !important;
 }
-.text-welcome-main {
+.text-welcome-main-2 {
     color: white;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 @media (min-width: 800px) {
@@ -60,14 +60,14 @@ p.sub-content-section-3 {
     section.content-tao-bao-li-xi-nivex-huong-dan,
     section.co-che-chien-luoc-xu-huong,
     section.tai-sao-nen-chon-chien-luoc,
-    section.ho-tro-truc-tuyen {
+    section.tuyen-bo-su-dung-du-lieu {
         padding: 3.5% calc(7% + 15px);
     }
     .banner-section-flexible {
         display: flex;
         gap: 25%;
     }
-    section.ho-tro-truc-tuyen {
+    section.tuyen-bo-su-dung-du-lieu {
         padding-top: 0;
         padding-bottom: 7%;
     }
@@ -135,32 +135,6 @@ p.sub-content-section-3 {
         background-color: #242529 !important;
     }
     
-    .con-so-big-2 {
-        position: absolute;
-        right: 0;
-    }
-    p.title-section-2 {
-        text-transform: uppercase;
-        color: white;
-        font-size: 28px;
-        font-weight: 500;
-    }
-    .title-ho-tro-truc-tuyen {
-        font-size: 28px;
-        font-weight: 700;
-        color: white;
-    }
-    .text-ho-tro-truc-tuyen {
-        font-size: 14px;
-        font-weight: 300;
-        color: white;
-    }
-    .link-gg-auth {
-        font-size: 14px;
-        font-weight: 300;
-        color: #BCFE08;
-        text-decoration: underline;
-    }
     table.table-tiem-nang-loi-nhuan {
         width: 100%;
         text-align: center;
@@ -172,6 +146,12 @@ p.sub-content-section-3 {
         padding: 1.5% 0;
         border: 1px solid white;
         width: 50%;
+    }
+    .th-table-tiem-nang-2,
+    .td-table-tiem-nang-2 {
+        padding: 1.5% 5%;
+        border: 1px solid white;
+        width: 33.33%;
     }
     .italic-text-tiem-nang-loi-nhuan > * ,
     .italic-text-tiem-nang-loi-nhuan > * > * {
@@ -187,6 +167,37 @@ p.sub-content-section-3 {
     .special-italic-tiem-nang-ln li {
         list-style-type: disc;
     }
+    .title-su-dung-du-lieu {
+        font-size: 48px;
+        font-weight: 700;
+        color: white;
+    }
+    .text-su-dung-du-lieu {
+        font-size: 14px;
+        font-weight: 400;
+        color: white;
+        letter-spacing: 0px;
+        line-height: 1.4;
+        text-align: left;
+        list-style-type: disc;
+        padding: 2px 0;
+    }
+    .list-su-dung-du-lieu {
+        padding-left: 20px;
+    }
+    .big-text-ket-luan p {
+        font-size: 48px;
+        font-weight: 700;
+    }
+    .content-text-ket-luan {
+        margin: -10px 0 20px 0;
+    }
+    .text-welcome-main-2 {
+        font-size: 14px;
+    }
+    .padding-cust {
+        padding: 1.5% 8%;
+    }
 }
 
 @media (min-width: 1600px) and (max-width: 1919px) {
@@ -194,14 +205,14 @@ p.sub-content-section-3 {
     section.content-tao-bao-li-xi-nivex-huong-dan,
     section.co-che-chien-luoc-xu-huong,
     section.tai-sao-nen-chon-chien-luoc,
-    section.ho-tro-truc-tuyen {
+    section.tuyen-bo-su-dung-du-lieu {
         padding: 3.5% calc(7% + 15px);
     }
     .banner-section-flexible {
         display: flex;
         gap: 25%;
     }
-    section.ho-tro-truc-tuyen {
+    section.tuyen-bo-su-dung-du-lieu {
         padding-top: 0;
         padding-bottom: 7%;
     }
@@ -222,9 +233,9 @@ p.sub-content-section-3 {
         width: 100%;
         position: relative;
     }
-   
+  
     h3.big-text {
-        margin-bottom: 1rem;
+        margin-bottom: .5rem;
     }
     .last-section-hdlkgt {
         padding-bottom: 10rem !important;
@@ -269,31 +280,68 @@ p.sub-content-section-3 {
         background-color: #242529 !important;
     }
     
-    .con-so-big-2 {
-        position: absolute;
-        right: 0;
-    }
-    p.title-section-2 {
-        text-transform: uppercase;
+    table.table-tiem-nang-loi-nhuan {
+        width: 100%;
+        text-align: center;
         color: white;
-        font-size: 28px;
-        font-weight: 500;
+        margin: 3% 0;
     }
-    .title-ho-tro-truc-tuyen {
-        font-size: 28px;
+    .th-table-tiem-nang,
+    .td-table-tiem-nang {
+        padding: 1.5% 0;
+        border: 1px solid white;
+        width: 50%;
+    }
+    .th-table-tiem-nang-2,
+    .td-table-tiem-nang-2 {
+        padding: 1.5% 5%;
+        border: 1px solid white;
+        width: 33.33%;
+    }
+    .italic-text-tiem-nang-loi-nhuan > * ,
+    .italic-text-tiem-nang-loi-nhuan > * > * {
+        padding: 5px 0;
+        color: white;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 14px;
+    }
+    .special-italic-tiem-nang-ln ul {
+        padding-left: 20px;
+    }
+    .special-italic-tiem-nang-ln li {
+        list-style-type: disc;
+    }
+    .title-su-dung-du-lieu {
+        font-size: 48px;
         font-weight: 700;
         color: white;
     }
-    .text-ho-tro-truc-tuyen {
+    .text-su-dung-du-lieu {
         font-size: 14px;
-        font-weight: 300;
+        font-weight: 400;
         color: white;
+        letter-spacing: 0px;
+        line-height: 1.4;
+        text-align: left;
+        list-style-type: disc;
+        padding: 2px 0;
     }
-    .link-gg-auth {
+    .list-su-dung-du-lieu {
+        padding-left: 20px;
+    }
+    .big-text-ket-luan p {
+        font-size: 48px;
+        font-weight: 700;
+    }
+    .content-text-ket-luan {
+        margin: -10px 0 20px 0;
+    }
+    .text-welcome-main-2 {
         font-size: 14px;
-        font-weight: 300;
-        color: #BCFE08;
-        text-decoration: underline;
+    }
+    .padding-cust {
+        padding: 1.5% 8%;
     }
 }
 
@@ -302,21 +350,21 @@ p.sub-content-section-3 {
     section.content-tao-bao-li-xi-nivex-huong-dan,
     section.co-che-chien-luoc-xu-huong,
     section.tai-sao-nen-chon-chien-luoc,
-    section.ho-tro-truc-tuyen {
+    section.tuyen-bo-su-dung-du-lieu {
         padding: 3.5% calc(12% + 15px);
     }
     .banner-section-flexible {
         display: flex;
         gap: 25%;
     }
-    section.ho-tro-truc-tuyen {
+    section.tuyen-bo-su-dung-du-lieu {
         padding-top: 0;
         padding-bottom: 7%;
     }
     .li-xi-nivex-super-text {
         font-weight: 700;
         position: absolute;
-        right: calc(12% + 15px);
+        right: calc(7% + 15px);
         text-align: right;
     }
     .container-flexible {
@@ -329,11 +377,10 @@ p.sub-content-section-3 {
     img.image-bao-li-xi {
         width: 100%;
         position: relative;
-        /* right: -8%; */
     }
-    
+  
     h3.big-text {
-        margin-bottom: 1rem;
+        margin-bottom: .5rem;
     }
     .last-section-hdlkgt {
         padding-bottom: 10rem !important;
@@ -378,31 +425,68 @@ p.sub-content-section-3 {
         background-color: #242529 !important;
     }
     
-    .con-so-big-2 {
-        position: absolute;
-        right: 0;
-    }
-    p.title-section-2 {
-        text-transform: uppercase;
+    table.table-tiem-nang-loi-nhuan {
+        width: 100%;
+        text-align: center;
         color: white;
-        font-size: 28px;
-        font-weight: 500;
+        margin: 3% 0;
     }
-    .title-ho-tro-truc-tuyen {
-        font-size: 28px;
+    .th-table-tiem-nang,
+    .td-table-tiem-nang {
+        padding: 1.5% 0;
+        border: 1px solid white;
+        width: 50%;
+    }
+    .th-table-tiem-nang-2,
+    .td-table-tiem-nang-2 {
+        padding: 1.5% 5%;
+        border: 1px solid white;
+        width: 33.33%;
+    }
+    .italic-text-tiem-nang-loi-nhuan > * ,
+    .italic-text-tiem-nang-loi-nhuan > * > * {
+        padding: 5px 0;
+        color: white;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 14px;
+    }
+    .special-italic-tiem-nang-ln ul {
+        padding-left: 20px;
+    }
+    .special-italic-tiem-nang-ln li {
+        list-style-type: disc;
+    }
+    .title-su-dung-du-lieu {
+        font-size: 48px;
         font-weight: 700;
         color: white;
     }
-    .text-ho-tro-truc-tuyen {
+    .text-su-dung-du-lieu {
         font-size: 14px;
-        font-weight: 300;
+        font-weight: 400;
         color: white;
+        letter-spacing: 0px;
+        line-height: 1.4;
+        text-align: left;
+        list-style-type: disc;
+        padding: 2px 0;
     }
-    .link-gg-auth {
+    .list-su-dung-du-lieu {
+        padding-left: 20px;
+    }
+    .big-text-ket-luan p {
+        font-size: 48px;
+        font-weight: 700;
+    }
+    .content-text-ket-luan {
+        margin: -10px 0 20px 0;
+    }
+    .text-welcome-main-2 {
         font-size: 14px;
-        font-weight: 300;
-        color: #BCFE08;
-        text-decoration: underline;
+    }
+    .padding-cust {
+        padding: 1.5% 8%;
     }
 }
 @media (min-width: 2100px) {
@@ -410,21 +494,21 @@ p.sub-content-section-3 {
     section.content-tao-bao-li-xi-nivex-huong-dan,
     section.co-che-chien-luoc-xu-huong,
     section.tai-sao-nen-chon-chien-luoc,
-    section.ho-tro-truc-tuyen {
+    section.tuyen-bo-su-dung-du-lieu {
         padding: 3.5% calc(15% + 15px);
     }
     .banner-section-flexible {
         display: flex;
         gap: 25%;
     }
-    section.ho-tro-truc-tuyen {
+    section.tuyen-bo-su-dung-du-lieu {
         padding-top: 0;
         padding-bottom: 7%;
     }
     .li-xi-nivex-super-text {
         font-weight: 700;
         position: absolute;
-        right: calc(15% + 15px);
+        right: calc(7% + 15px);
         text-align: right;
     }
     .container-flexible {
@@ -437,10 +521,10 @@ p.sub-content-section-3 {
     img.image-bao-li-xi {
         width: 100%;
         position: relative;
-        /* right: -8%; */
     }
+  
     h3.big-text {
-        margin-bottom: 1rem;
+        margin-bottom: .5rem;
     }
     .last-section-hdlkgt {
         padding-bottom: 10rem !important;
@@ -485,31 +569,68 @@ p.sub-content-section-3 {
         background-color: #242529 !important;
     }
     
-    .con-so-big-2 {
-        position: absolute;
-        right: 0;
-    }
-    p.title-section-2 {
-        text-transform: uppercase;
+    table.table-tiem-nang-loi-nhuan {
+        width: 100%;
+        text-align: center;
         color: white;
-        font-size: 28px;
-        font-weight: 500;
+        margin: 3% 0;
     }
-    .title-ho-tro-truc-tuyen {
-        font-size: 28px;
+    .th-table-tiem-nang,
+    .td-table-tiem-nang {
+        padding: 1.5% 0;
+        border: 1px solid white;
+        width: 50%;
+    }
+    .th-table-tiem-nang-2,
+    .td-table-tiem-nang-2 {
+        padding: 1.5% 5%;
+        border: 1px solid white;
+        width: 33.33%;
+    }
+    .italic-text-tiem-nang-loi-nhuan > * ,
+    .italic-text-tiem-nang-loi-nhuan > * > * {
+        padding: 5px 0;
+        color: white;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 14px;
+    }
+    .special-italic-tiem-nang-ln ul {
+        padding-left: 20px;
+    }
+    .special-italic-tiem-nang-ln li {
+        list-style-type: disc;
+    }
+    .title-su-dung-du-lieu {
+        font-size: 48px;
         font-weight: 700;
         color: white;
     }
-    .text-ho-tro-truc-tuyen {
+    .text-su-dung-du-lieu {
         font-size: 14px;
-        font-weight: 300;
+        font-weight: 400;
         color: white;
+        letter-spacing: 0px;
+        line-height: 1.4;
+        text-align: left;
+        list-style-type: disc;
+        padding: 2px 0;
     }
-    .link-gg-auth {
+    .list-su-dung-du-lieu {
+        padding-left: 20px;
+    }
+    .big-text-ket-luan p {
+        font-size: 48px;
+        font-weight: 700;
+    }
+    .content-text-ket-luan {
+        margin: -10px 0 20px 0;
+    }
+    .text-welcome-main-2 {
         font-size: 14px;
-        font-weight: 300;
-        color: #BCFE08;
-        text-decoration: underline;
+    }
+    .padding-cust {
+        padding: 1.5% 8%;
     }
 }
 /* =========================
