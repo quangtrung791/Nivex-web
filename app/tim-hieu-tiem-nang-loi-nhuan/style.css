@@ -161,6 +161,32 @@ p.sub-content-section-3 {
         color: #BCFE08;
         text-decoration: underline;
     }
+    table.table-tiem-nang-loi-nhuan {
+        width: 100%;
+        text-align: center;
+        color: white;
+        margin: 3% 0;
+    }
+    .th-table-tiem-nang,
+    .td-table-tiem-nang {
+        padding: 1.5% 0;
+        border: 1px solid white;
+        width: 50%;
+    }
+    .italic-text-tiem-nang-loi-nhuan > * ,
+    .italic-text-tiem-nang-loi-nhuan > * > * {
+        padding: 5px 0;
+        color: white;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 14px;
+    }
+    .special-italic-tiem-nang-ln ul {
+        padding-left: 20px;
+    }
+    .special-italic-tiem-nang-ln li {
+        list-style-type: disc;
+    }
 }
 
 @media (min-width: 1600px) and (max-width: 1919px) {
