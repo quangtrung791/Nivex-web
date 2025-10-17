@@ -3,7 +3,7 @@ import TimHieuTiemNangLoiNhuan from './TimHieuTiemNangLoiNhuanComponent'
 
 export const metadata = {
   title: 'Tìm hiểu về tiềm năng lợi nhuận | Nivex Hub',
-  description: 'Huớng dẫn liên kết Google Authenticator với Nivex Hub giúp tăng cường bảo mật tài khoản của bạn. Thực hiện các bước đơn giản để thiết lập xác thực hai yếu tố (2FA), bảo vệ dữ liệu và tài khoản của bạn khỏi các nguy cơ tấn công.',
+  description: 'Nivex Hub là nền tảng sáng tạo kết nối các nhà đầu tư và doanh nghiệp, mang đến cơ hội lớn để tối đa hóa lợi nhuận.',
   robots: {
         index: true,
         follow: true,
@@ -17,7 +17,7 @@ export const metadata = {
     },
     openGraph: {
         title: "Tìm hiểu về tiềm năng lợi nhuận | Nivex Hub",
-        description: "Huớng dẫn liên kết Google Authenticator với Nivex Hub giúp tăng cường bảo mật tài khoản của bạn. Thực hiện các bước đơn giản để thiết lập xác thực hai yếu tố (2FA), bảo vệ dữ liệu và tài khoản của bạn khỏi các nguy cơ tấn công.",
+        description: "Nivex Hub là nền tảng sáng tạo kết nối các nhà đầu tư và doanh nghiệp, mang đến cơ hội lớn để tối đa hóa lợi nhuận.",
         url: "https://nivex.vn/tim-hieu-tiem-nang-loi-nhuan",
         siteName: "Nivex",
         images: [
@@ -25,7 +25,7 @@ export const metadata = {
                 url: "/assets/images/logo/Nivex_icon_bg.png",
                 width: 1200,
                 height: 630,
-                alt: "Huớng dẫn liên kết Google Authenticator với Nivex Hub giúp tăng cường bảo mật tài khoản của bạn. Thực hiện các bước đơn giản để thiết lập xác thực hai yếu tố (2FA), bảo vệ dữ liệu và tài khoản của bạn khỏi các nguy cơ tấn công."
+                alt: "Nivex Hub là nền tảng sáng tạo kết nối các nhà đầu tư và doanh nghiệp, mang đến cơ hội lớn để tối đa hóa lợi nhuận."
             }
         ],
         locale: "vi_VN",
