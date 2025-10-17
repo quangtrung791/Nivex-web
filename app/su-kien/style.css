@@ -1,4 +1,10 @@
 /* Fixed */
+input.news-search-input {
+    border-radius: 25px 0 0 25px;
+}
+.news-search-btn {
+    border-radius: 0 25px 25px 0;
+}
 .btn-action {
     border-radius: 99px !important;
 }
@@ -288,12 +294,15 @@ section.section-news-header {
     -webkit-text-fill-color: transparent;
     padding-top: 4px;
 }
-
+.box-image img {
+    border-radius: 25px;
+}
 li.listing.active {
     padding: 8px 10px;
     background: linear-gradient(90deg, #bcfe08, #86f869);
 }
 li.listing {
+    border-radius: 25px;
     cursor: pointer;
     padding: 8px 10px;
     background: transparent;
