@@ -6,7 +6,7 @@
     border-radius: 25px 0 0 25px;
 }
 .news-search-btn {
-    border-radius: 0 25px 25px 0;
+    border-radius: 0 25px 25px 0 !important;
 }
 .btn-action {
     border-radius: 99px !important;
@@ -22,7 +22,7 @@ footer .btn-action {
 }
 
 section.ttuc .mod-css-news-alt .box-image {
-    margin-top: 15px !important;
+    /* margin-top: 15px !important; */
 }
 section.ttuc .widget.recent.mt-0 {
     /* padding-left: 15px;
@@ -58,7 +58,7 @@ section.ttuc .widget.recent.mt-0 {
 section.ttuc .title-news-duoc-xem-nhieu a.title-news.headline-news {
     display: block;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -94,6 +94,7 @@ section.ttuc .title-news-duoc-xem-nhieu a.title-news.headline-news {
     z-index: 1;
     pointer-events: none;
     height: 50%;
+    border-radius: 25px;
 }
 .box-image img {
     display: block;

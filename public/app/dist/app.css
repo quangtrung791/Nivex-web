@@ -786,7 +786,7 @@ section.banner {
     padding: 2px 8px 0px 8px;
     line-height: 1.2;
     font-weight: 600;
-    border-radius: 0px !important;
+    border-radius: 25px !important;
 }
 
 #header_main .mode-switcher {
