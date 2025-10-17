@@ -2,6 +2,16 @@
 /* .su-kien-tg-id .col-xl-4.col-md-12 {
     padding-left: 0 !important;
 } */
+ input.news-search-input {
+    border-radius: 25px 0 0 25px;
+}
+.news-search-btn {
+    border-radius: 0 25px 25px 0;
+}
+.box-image img {
+    border-radius: 25px;
+}
+
  .btn-action {
     border-radius: 99px !important;
 }
