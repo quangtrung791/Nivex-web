@@ -4,6 +4,39 @@
     padding: 60px 0;
 }
 
+/* Breadcrumb Section */
+.breadcrumbSection {
+    background: #141414;
+    padding: 35px 0 0px 0;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.breadcrumb a {
+    color: rgb(166, 170, 183);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.breadcrumb a:hover {
+    color: #bcfe08;
+}
+
+.separator {
+    color: #777e90;
+}
+
+.current {
+    color: #ffff;
+    overflow: hidden;
+}
+
 .displayFlexForHeader {
     display: flex;
     justify-content: space-between;
@@ -338,4 +371,12 @@ h1.pageTitleHeading {
      .contentColumn {
         margin-bottom: 0px;
     }   
+}
+
+/* Responsive breadcrumb */
+@media (max-width: 768px) {
+    .breadcrumbSection {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }

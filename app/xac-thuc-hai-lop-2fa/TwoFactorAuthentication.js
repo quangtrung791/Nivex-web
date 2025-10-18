@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import Link from 'next/link'
 import styles from './TwoFactorAuthentication.module.css'
 
 
@@ -20,6 +21,17 @@ export default function TwoFactorAuthentication() {
                              <p className={`${styles.pageHeaderKnowledgeSubtitle}`}>Giúp tăng cường bảo mật tài khoản của bạn, tránh bị chặn SMS hoặc mất mã qua email do lỗi mạng.gười dùng Nivex khác tức thì và hoàn toàn miễn phí.</p>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            {/* Breadcrumb */}
+            <section className={styles.breadcrumbSection}>
+                <div className="container">
+                    <nav className={styles.breadcrumb}>
+                        <Link href="/huong-dan-su-dung-app-nivex">Hướng dẫn sử dụng app Nivex</Link>
+                        <span className={styles.separator}>&gt;</span>
+                        <span className={styles.current}>Xác thực 2 lớp (2FA)</span>
+                    </nav>
                 </div>
             </section>
 
