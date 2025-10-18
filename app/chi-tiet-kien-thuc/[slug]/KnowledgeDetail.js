@@ -1,9 +1,22 @@
 'use client'
-import { useState, useEffect } from "react"
+import { useState, useEffect, useMemo } from "react"
 import { useParams } from "next/navigation"
 import Link from "next/link"
-import { NextSeo } from 'next-seo'
 import styles from './knowledgeDetail.module.css'
+
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://nivex.vn'
+
+// helper client (phòng khi muốn dùng mô tả tạm thời)
+const summarizeHtml = (html, wordLimit = 100) => {
+  if (!html) return ''
+  const text = html
+    .replace(/<style[\s\S]*?<\/style>/gi, '')
+    .replace(/<script[\s\S]*?<\/script>/gi, '')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+  return text.split(/\s+/).slice(0, wordLimit).join(' ')
+}
 
 export default function KnowledgeDetail() {
     const params = useParams()
@@ -139,23 +152,52 @@ export default function KnowledgeDetail() {
         }
     }
 
-    const getDifficultyLabel = (difficulty) => {
-        switch (difficulty) {
-            case 'easy': return 'Người mới'
-            case 'intermediate': return 'Trung cấp'
-            case 'advanced': return 'Nâng cao'
-            default: return 'Người mới'
+    // Generate schema for the article
+    const canonical = useMemo(
+        () => `${BASE_URL}/chi-tiet-kien-thuc/${article?.slug || ''}`,
+        [article?.slug]
+    )
+    
+    const metaDescription = useMemo(
+        () =>
+          article?.description ||
+          summarizeHtml(article?.content || '', 100) ||
+          article?.title ||
+          '',
+        [article]
+    )
+    
+      // JSON-LD object
+    const jsonLd = useMemo(() => {
+        if (!article) return null
+        return {
+          '@context': 'https://schema.org',
+          '@type': 'Article',
+          headline: article.title,
+          description: metaDescription,
+          image: article.image || '/assets/images/logo/Nivex_icon_bg.png',
+          author: { '@type': 'Organization', name: 'Nivex Hub', url: 'https://nivex.vn' },
+          publisher: {
+            '@type': 'Organization',
+            name: 'Nivex Hub',
+            url: 'https://nivex.vn',
+            logo: {
+              '@type': 'ImageObject',
+              url: 'https://nivex.vn/assets/images/logo/Nivex_icon_bg.png',
+              width: 1200,
+              height: 630
+            }
+          },
+          datePublished: article.created_at,
+          dateModified: article.updated_at || article.created_at,
+          mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+          url: canonical,
+          articleSection: 'Kiến thức',
+          keywords: article.topic ? [article.topic] : ['kiến thức', 'crypto', 'blockchain'],
+          inLanguage: 'vi-VN',
+          isAccessibleForFree: true
         }
-    }
-
-    const getDifficultyColor = (difficulty) => {
-        switch (difficulty) {
-            case 'easy': return 'blue'
-            case 'intermediate': return 'orange'
-            case 'advanced': return 'purple'
-            default: return 'blue'
-        }
-    }
+      }, [article, metaDescription, canonical])
 
     if (loading) {
         return (
@@ -179,104 +221,12 @@ export default function KnowledgeDetail() {
             </>
         )
     }
+    
+    
 
-    // Generate schema for the article
-    const generateArticleSchema = () => {
-        if (!article) return null
-
-        const schema = {
-            "@context": "https://schema.org",
-            "@type": "Article",
-            "headline": article.title,
-            "description": article.description || article.title,
-            "image": article.image || "/assets/images/logo/Nivex_icon_bg.png",
-            "author": {
-                "@type": "Organization",
-                "name": "Nivex Hub",
-                "url": "https://nivex.vn"
-            },
-            "publisher": {
-                "@type": "Organization",
-                "name": "Nivex Hub",
-                "url": "https://nivex.vn",
-                "logo": {
-                    "@type": "ImageObject",
-                    "url": "https://nivex.vn/assets/images/logo/Nivex_icon_bg.png",
-                    "width": 1200,
-                    "height": 630
-                }
-            },
-            "datePublished": article.created_at,
-            "dateModified": article.updated_at || article.created_at,
-            "mainEntityOfPage": {
-                "@type": "WebPage",
-                "@id": `https://nivex.vn/chi-tiet-kien-thuc/${params.slug}`
-            },
-            "url": `https://nivex.vn/chi-tiet-kien-thuc/${params.slug}`,
-            "articleSection": "Kiến thức",
-            "keywords": article.topic ? [article.topic] : ["kiến thức", "crypto", "blockchain"],
-            "inLanguage": "vi-VN"
-        }
-
-        return schema
-    }
 
     return (
         <>
-            <NextSeo
-                title={article ? `${article.title} | Nivex Hub` : 'Chi tiết kiến thức | Nivex Hub'}
-                description={article ? (article.description || article.title) : 'Chi tiết kiến thức về các tính năng và cách sử dụng của Nivex Hub.'}
-                canonical={`https://nivex.vn/chi-tiet-kien-thuc/${params.slug}`}
-                openGraph={{
-                    title: article ? article.title : 'Chi tiết kiến thức | Nivex Hub',
-                    description: article ? (article.description || article.title) : 'Chi tiết kiến thức về các tính năng và cách sử dụng của Nivex Hub.',
-                    url: `https://nivex.vn/chi-tiet-kien-thuc/${params.slug}`,
-                    siteName: 'Nivex Hub',
-                    images: [
-                        {
-                            url: article?.image || '/assets/images/logo/Nivex_icon_bg.png',
-                            width: 1200,
-                            height: 630,
-                            alt: article ? article.title : 'Chi tiết kiến thức | Nivex Hub',
-                        },
-                    ],
-                    locale: 'vi_VN',
-                    type: 'article',
-                    article: {
-                        publishedTime: article?.created_at,
-                        modifiedTime: article?.updated_at || article?.created_at,
-                        section: 'Kiến thức',
-                        authors: ['Nivex Hub'],
-                        tags: article?.topic ? [article.topic] : ['kiến thức', 'crypto', 'blockchain'],
-                    },
-                }}
-                twitter={{
-                    handle: '@nivexhub',
-                    site: '@nivexhub',
-                    cardType: 'summary_large_image',
-                }}
-                additionalMetaTags={[
-                    {
-                        name: 'keywords',
-                        content: article?.topic ? `kiến thức, crypto, blockchain, ${article.topic}` : 'kiến thức, crypto, blockchain, nivex',
-                    },
-                    {
-                        name: 'author',
-                        content: 'Nivex Hub',
-                    },
-                ]}
-                additionalLinkTags={[]}
-            />
-            
-            {/* JSON-LD Schema */}
-            {article && (
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{
-                        __html: JSON.stringify(generateArticleSchema()),
-                    }}
-                />
-            )}
 
             <section className={`page-title ${styles.pageTitleKnowLedge}`}>
                 <div className="container">
@@ -416,6 +366,13 @@ export default function KnowledgeDetail() {
                     </div>
                 </div>
             </section>
+        {jsonLd && (
+            <script
+                type="application/ld+json"
+                // Quan trọng: stringify sạch sẽ, không chèn biến không hiển thị
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+        )}
         </>
     )
 }
