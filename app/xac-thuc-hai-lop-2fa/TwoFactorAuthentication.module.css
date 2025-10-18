@@ -4,6 +4,39 @@
     padding: 60px 0;
 }
 
+/* Breadcrumb Section */
+.breadcrumbSection {
+    background: #141414;
+    padding: 35px 0 0px 0;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.breadcrumb a {
+    color: rgb(166, 170, 183);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.breadcrumb a:hover {
+    color: #bcfe08;
+}
+
+.separator {
+    color: #777e90;
+}
+
+.current {
+    color: #ffff;
+    overflow: hidden;
+}
+
 .displayFlexContainer {
     display: flex;
 }
@@ -220,7 +253,7 @@ section.pageTitleDeposit, section.depositSection {
         width: 350px;
     }
 
-    section.pageTitleDeposit, section.depositSection {
+    section.pageTitleDeposit, section.depositSection, .breadcrumbSection {
         padding-left: 3%;
         padding-right: 3%;
     } 
@@ -264,7 +297,7 @@ section.pageTitleDeposit, section.depositSection {
         width: 100%;
     }
 
-    section.pageTitleDeposit, section.depositSection  {
+    section.pageTitleDeposit, section.depositSection, .breadcrumbSection  {
         padding-left: 0;
         padding-right: 0;
     }
