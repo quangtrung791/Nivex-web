@@ -6,47 +6,57 @@ import { useEffect, useState } from "react"
 import Link from "next/link"
 import { useParams } from "next/navigation"
 import './style.css'
-// import '/public/app/dist/tin-tuc-details.css';
 
 export default function NewsBlogsDetails() {
-    const { id } = useParams()
+    const { id: slug } = useParams();          // id chính là slug
     const [news, setNews] = useState(null);
     const [hotNews, setHotNews] = useState([]);
-    const [loading, setLoading] = useState(true)
-
+    const [loading, setLoading] = useState(true);
+  
     useEffect(() => {
-        if (news && news.title) {
-            document.title = news.title;
-        }
+      if (news?.title) document.title = news.title;
     }, [news]);
-
+  
     useEffect(() => {
-        if (!id) return
-        setLoading(true)
-        fetch(`/api/news/${id}`)
-            .then(res => res.json())
-            .then(data => {
-                setNews(data)
-                setLoading(false)
-            })
-            .catch(() => setLoading(false))
-    }, [id]);
-
-    useEffect(() => {
-    if (!id) return;
-        setLoading(true);
-        fetch(`/api/news/${id}`)
-            .then(res => res.json())
-            .then(data => {
-                setNews(data);
-                setLoading(false);
-            })
-            .catch(() => setLoading(false));
-        // Fetch danh sách tin nóng
-        fetch('/api/news?hot=1')
-            .then(res => res.json())
-            .then(data => setHotNews(Array.isArray(data.data) ? data.data : []));
-    }, [id]);
+      if (!slug) return;
+      setLoading(true);
+      fetch(`/api/news/${encodeURIComponent(slug)}`)
+        .then(r => r.json())
+        .then(({ success, data, error }) => {
+          if (success) setNews(data);
+          else {
+            console.error('API news detail error:', error);
+            setNews(null);
+          }
+        })
+        .catch(err => {
+          console.error('Fetch detail failed:', err);
+          setNews(null);
+        })
+        .finally(() => setLoading(false));
+  
+      // Tin nóng (tạm lấy từ /api/news)
+      fetch('/api/news')
+        .then(r => r.json())
+        .then(({ success, data }) => setHotNews(success && Array.isArray(data) ? data : []))
+        .catch(() => setHotNews([]));
+    }, [slug]);
+  
+    if (loading) {
+      return (
+        <div style={{ display:'flex', justifyContent:'center', alignItems:'center' }}>
+          <p>Đang tải dữ liệu...</p>
+        </div>
+      );
+    }
+  
+    if (!news) {
+      return (
+        <div style={{ display:'flex', justifyContent:'center', alignItems:'center' }}>
+          <p>Không tìm thấy bài viết.</p>
+        </div>
+      );
+    }
 
     if (loading) return 
         <div style={{'display': 'flex', 'justifyContent': 'center', 'alignItems': 'center'}}>

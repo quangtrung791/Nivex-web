@@ -5,7 +5,7 @@ import styles from './knowledge.module.css'
 import Propose from "@/components/sections/Propose"
 
 export default function KnowledgePage() {
-    const [activeCategory, setActiveCategory] = useState('Blockchain')
+    const [activeCategory, setActiveCategory] = useState()
     const [activeDifficulty, setActiveDifficulty] = useState('easy')
     const [isCategoryDropdownOpen, setIsCategoryDropdownOpen] = useState(false)
     const [knowledgeArticles, setKnowledgeArticles] = useState([])
@@ -143,7 +143,6 @@ export default function KnowledgePage() {
                 setViewedOffset(prev => prev + 6)
             }
         } catch (error) {
-            console.error('Error loading more articles:', error)
         } finally {
             setLoadingMore(false)
         }
@@ -163,7 +162,7 @@ export default function KnowledgePage() {
                 setNewestOffset(prev => prev + 6)
             }
         } catch (error) {
-            console.error('Error loading more articles:', error)
+            // console.error('Error loading more articles:', error)
         } finally {
             setLoadingMore(false)
         }

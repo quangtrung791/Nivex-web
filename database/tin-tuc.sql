@@ -1,5 +1,5 @@
 -- Schema cho bảng news (tin tức)
-CREATE TABLE IF NOT EXISTS news (
+CREATE TABLE IF NOT EXISTS wpun_news (
   id SERIAL PRIMARY KEY,
   slug VARCHAR(200) NOT NULL,
   title VARCHAR(500) NOT NULL,
@@ -12,24 +12,22 @@ CREATE TABLE IF NOT EXISTS news (
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 
-  category_id SERIAL
-);
+  category_id INT(20),
+  shadow_id INT(20)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 -- Index cho tìm kiếm (cập nhật)
-CREATE INDEX IF NOT EXISTS idx_news_title ON news(title);
-CREATE INDEX IF NOT EXISTS idx_news_content ON news(content);
+CREATE INDEX IF NOT EXISTS idx_news_title ON wpun_news(title);
 
 -- ###########################################
 -- Schema cho category news (danh mục tin tức)
-CREATE TABLE IF NOT EXISTS cate_news (
+CREATE TABLE IF NOT EXISTS wpun_cate_news (
   id SERIAL PRIMARY KEY,
   name VARCHAR(500) NOT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 -- Index cho tìm kiếm (cập nhật)
-CREATE INDEX IF NOT EXISTS idx_catenews_name ON cate_news(name);
+CREATE INDEX IF NOT EXISTS idx_catenews_name ON wpun_cate_news(name);
 
-
-DROP INDEX public.idx_news_content;

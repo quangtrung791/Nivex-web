@@ -15,17 +15,19 @@ export default function ChiTietThuatNgu() {
     const [loading, setLoading] = useState(true)
     
     useEffect(() => {
-        fetch(`/api/dictionary/${slug}`)
-            .then((res) => res.json())
-            .then((data) => {
-                // Nếu data là object có id, keyword, description thì setTerm luôn
-                if (data && data.slug) {
-                    setTerm(data)
-                }
-                setLoading(false)
-            })
-            .catch(() => setLoading(false))
-    }, [slug])
+        if (!slug) return;
+        fetch(`/api/dictionary/${encodeURIComponent(slug)}`)
+          .then(res => res.json())
+          .then(payload => {
+            if (payload?.success && payload.data?.slug) {
+              setTerm(payload.data);
+            } else {
+              setTerm(null);
+            }
+            setLoading(false);
+          })
+          .catch(() => setLoading(false));
+      }, [slug]);
 
     if (loading) {
         return (

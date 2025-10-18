@@ -1,58 +1,53 @@
-import { NextResponse } from 'next/server'
-import { query } from "@/app/lib/neon"
+// app/api/joined_events/[slug]/route.js
+import { NextResponse } from 'next/server';
 
 export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
 
-export async function GET(request, { params }) {
+const WP_BASE = 'https://nivexhub.learningchain.vn/wp-json/nivex/v1';
+
+export async function GET(_req, { params }) {
   try {
-    const { slug } = params;
+    const slug = params?.slug;
     if (!slug) {
       return NextResponse.json(
-        { success: false, error: "Thiếu slug thông tin sự kiện" },
+        { success: false, error: 'Thiếu slug sự kiện' },
         { status: 400 }
       );
     }
 
-    const sqlQuery = `
-      SELECT 
-        id,
-        slug,
-        title,
-        content,
-        short_desc,
-        thumbnail_url,
-        time_event,
-        time_from_and_to,
-        tag1,
-        tag2,
-        tag3,
-        type,
-        created_at,
-        updated_at
-      FROM public.joined_events
-      WHERE slug = $1
-      LIMIT 1
-    `;
-    const result = await query(sqlQuery, [slug]);
+    const url  = `${WP_BASE}/joined-events/by-slug/${encodeURIComponent(slug)}`;
+    const res  = await fetch(url, { next: { revalidate: 30 } });
+    const json = await res.json();
 
-    if (!result || result.length === 0) {
+    if (!res.ok || !json?.success || !json?.data) {
       return NextResponse.json(
-        { success: false, error: "Không tìm thấy dữ liệu" },
+        { success: false, error: json?.error || 'WP API error' },
         { status: 404 }
       );
     }
 
-    // Trả về thông tin sự kiện đầu tiên
-    return NextResponse.json(result[0]);
+    const e = json.data;
+    const event = {
+      id: Number(e.id),
+      slug: e.slug,
+      title: e.title,
+      time_event: e.time_event,
+      content: e.content ?? '',
+      short_desc: e.short_desc ?? '',
+      thumbnail_url: e.thumbnail_url ?? '',
+      time_from_and_to: e.time_from_and_to ?? '',
+      tag1: e.tag1 ?? '',
+      tag2: e.tag2 ?? '',
+      tag3: e.tag3 ?? '',
+      type: e.type ?? ''
+    };
+
+    return NextResponse.json(event);
   } catch (error) {
-    console.error('Error fetching by id:', error)
     return NextResponse.json(
-      {
-        success: false,
-        error: 'Không thể tải dữ liệu chi tiết',
-        details: error.message
-      },
+      { success: false, error: 'Không thể tải chi tiết sự kiện', details: error.message },
       { status: 500 }
-    )
+    );
   }
 }

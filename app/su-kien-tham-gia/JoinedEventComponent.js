@@ -34,7 +34,7 @@ export default function SuKienAlt() {
     useEffect(() => {
         // Lấy danh sách event từ API
         // fetch('/api/joined_events') // api cũ
-        fetch('/api/alt-joined-event') // roll-back api cũ nếu check netwỏk báo lỗi 404
+        fetch('/api/joined_events') // roll-back api cũ nếu check netwỏk báo lỗi 404
             .then(res => res.json())
             .then(data => setNews(Array.isArray(data.data) ? data.data : []))
             .catch(() => setNews([]));

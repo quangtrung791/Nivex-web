@@ -1,59 +1,36 @@
-import { NextResponse } from 'next/server'
-import { query } from "@/app/lib/neon"
+import { NextResponse } from 'next/server';
 
 export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
 
-export async function GET(request, { params }) {
+const WP_BASE = 'https://nivexhub.learningchain.vn/wp-json/nivex/v1';
+
+export async function GET(_req, { params }) {
   try {
-    // const { id } = params;
-    // if (!id) {
-    //   return NextResponse.json(
-    //     { success: false, error: "Thiếu id thông tin thuật ngữ" },
-    //     { status: 400 }
-    //   );
-    // }
-    const { slug } = params;
+    const slug = params?.slug;
     if (!slug) {
       return NextResponse.json(
-        { success: false, error: "Thiếu slug thông tin thuật ngữ" },
+        { success: false, error: 'Thiếu slug thông tin thuật ngữ' },
         { status: 400 }
       );
     }
 
-    const sqlQuery = `
-      SELECT 
-        id,
-        slug,
-        keyword,
-        short_desc,
-        description,
-        created_at,
-        updated_at
-      FROM public.dictionary
-      WHERE slug = $1
-      LIMIT 1
-    `;
-    // const result = await query(sqlQuery, [id]);
-    const result = await query(sqlQuery, [slug]);
+    const url  = `${WP_BASE}/dictionary/by-slug/${encodeURIComponent(slug)}`;
+    const res  = await fetch(url, { next: { revalidate: 60 } });
+    const json = await res.json();
 
-    if (!result || result.length === 0) {
+    if (!res.ok || !json?.success) {
       return NextResponse.json(
-        { success: false, error: "Không tìm thấy dữ liệu" },
-        { status: 404 }
+        { success: false, error: json?.error || 'WP API error' },
+        { status: res.status || 404 }
       );
     }
 
-    // Trả về thông tin sự kiện đầu tiên
-    return NextResponse.json(result[0]);
+    return NextResponse.json({ success: true, data: json.data });
   } catch (error) {
-    console.error('Error fetching by id:', error)
     return NextResponse.json(
-      {
-        success: false,
-        error: 'Không thể tải dữ liệu chi tiết',
-        details: error.message
-      },
+      { success: false, error: 'Không thể tải dữ liệu chi tiết', details: error.message },
       { status: 500 }
-    )
+    );
   }
 }

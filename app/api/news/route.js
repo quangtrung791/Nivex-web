@@ -1,84 +1,51 @@
-import { NextResponse } from 'next/server'
-import { query } from "@/app/lib/neon"
+import { NextResponse } from 'next/server';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
 export async function GET(request) {
   try {
-    console.log("GET /api/news called");
-    
-    const { searchParams } = new URL(request.url)
-    const filter = searchParams.get('filter') || 'all'
-    const search = searchParams.get('search') || ''
+    const { searchParams } = new URL(request.url);
+    const search = searchParams.get('search') || '';
+    const page   = searchParams.get('page')   || '1';
+    const per    = searchParams.get('per_page') || '50';
+    const category_id = searchParams.get('category_id') || '';
 
-    // truy vấn chỉ lấy ra những tin tức có status = active
-    let sqlQuery = `
-      SELECT 
-        id,
-        slug,
-        title,
-        status,
-        thumbnail_url,
-        time_upload,
-        created_at,
-        updated_at,
-        category_id
-      FROM public.news
-      WHERE public.news.status = 'active'
-      `
+    // WP endpoint
+    const wp = new URL('https://nivexhub.learningchain.vn/wp-json/nivex/v1/news');
+    wp.searchParams.set('status', 'active');
+    wp.searchParams.set('page', page);
+    wp.searchParams.set('per_page', per);
+    if (search) wp.searchParams.set('search', search);
+    if (category_id) wp.searchParams.set('category_id', category_id);
 
-    const queryParams = []
-    let paramIndex = 1
+    const res  = await fetch(wp.toString(), { next: { revalidate: 60 } });
+    const json = await res.json();
 
-    // Apply search filter
-    if (search.trim()) {
-      sqlQuery += ` AND (title ILIKE $${paramIndex})`
-      queryParams.push(`%${search}%`)
-      paramIndex++
+    if (!res.ok || !json?.success) {
+      return NextResponse.json(
+        { success: false, error: json?.error || 'WP API error' },
+        { status: 500 }
+      );
     }
 
+    const news = (json.data || []).map(n => ({
+      id: n.id,
+      slug: n.slug,
+      title: n.title,
+      status: n.status,
+      category_id: n.category_id ?? null,
+      time_upload: n.time_upload,
+      created_at: n.created_at,
+      updated_at: n.updated_at,
+      thumbnail_url: n.thumbnail_url || 'https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp'
+    }));
 
-  // Order by start date and limit to 50 records
-  sqlQuery += ` ORDER BY COALESCE(time_upload, created_at) DESC LIMIT 50`
-
-    console.log("Executing query:", { sqlQuery, queryParams });
-    const result = await query(sqlQuery, queryParams)
-
-    // Process courses data
-    const news = result.map(n => {
-      const now = new Date()
-      const startDate = new Date(n.start_date)
-      const timeUpload = n.time_upload
-
-      return {
-        id: n.id,
-        slug: n.slug,
-        title: n.title,
-        category_id: n.category_id,
-        status: n.status,
-        time_upload: n.time_upload,
-        // content: n.content,
-        thumbnail_url: n.thumbnail_url
-      }
-    })
-
-    console.log("Returning news:", news.length);
-
-    return NextResponse.json({
-      success: true,
-      data: news
-    })
-
+    return NextResponse.json({ success: true, data: news, meta: json.meta });
   } catch (error) {
-    console.error('Error fetching news:', error)
     return NextResponse.json(
-      {
-        success: false,
-        error: 'Không thể tải danh sách tin tức',
-        details: error.message
-      },
+      { success: false, error: 'Không thể tải danh sách tin tức', details: error.message },
       { status: 500 }
-    )
+    );
   }
 }
