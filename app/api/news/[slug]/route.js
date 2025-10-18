@@ -1,56 +1,49 @@
-import { NextResponse } from 'next/server'
-import { query } from "@/app/lib/neon"
+import { NextResponse } from 'next/server';
 
 export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
 
-export async function GET(request, { params }) {
+export async function GET(_request, { params }) {
   try {
-    // const { id } = params;
-    const { slug } = params;
+    const slug = params?.slug;
     if (!slug) {
       return NextResponse.json(
-        { success: false, error: "Thiếu slug cuar bài viết" },
+        { success: false, error: 'Thiếu slug của bài viết' },
         { status: 400 }
       );
     }
 
-    const sqlQuery = `
-      SELECT 
-        id,
-        slug,
-        title,
-        status,
-        content,
-        thumbnail_url,
-        author,
-        time_upload,
-        created_at,
-        updated_at,
-        category_id
-      FROM public.news
-      WHERE slug = $1 AND status = 'active'
-      LIMIT 1
-    `;
-    const result = await query(sqlQuery, [slug]);
+    const url = `https://nivexhub.learningchain.vn/wp-json/nivex/v1/news/by-slug/${encodeURIComponent(slug)}`;
+    const res  = await fetch(url, { next: { revalidate: 60 } });
+    const json = await res.json();
 
-    if (!result || result.length === 0) {
+    if (!res.ok || !json?.success) {
       return NextResponse.json(
-        { success: false, error: "Không tìm thấy bài viết" },
+        { success: false, error: json?.error || 'WP API error' },
         { status: 404 }
       );
     }
 
-    // Trả về bài viết đầu tiên
-    return NextResponse.json(result[0]);
+    const a = json.data;
+    const article = {
+      id: a.id,
+      slug: a.slug,
+      title: a.title,
+      status: a.status,
+      content: a.content || '',
+      thumbnail_url: a.thumbnail_url || 'https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp',
+      author: a.author || 'admin',
+      time_upload: a.time_upload,
+      created_at: a.created_at,
+      updated_at: a.updated_at,
+      category_id: a.category_id ?? null
+    };
+
+    return NextResponse.json({ success: true, data: article });
   } catch (error) {
-    console.error('Error fetching news by id:', error)
     return NextResponse.json(
-      {
-        success: false,
-        error: 'Không thể tải chi tiết tin tức',
-        details: error.message
-      },
+      { success: false, error: 'Không thể tải chi tiết tin tức', details: error.message },
       { status: 500 }
-    )
+    );
   }
 }

@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS courses (
   id SERIAL PRIMARY KEY,
   title VARCHAR(500) NOT NULL,
   type VARCHAR(50) NOT NULL DEFAULT 'online',
-  category JSONB NOT NULL DEFAULT '[]',
+  category VARCHAR(200),
   status VARCHAR(50) NOT NULL DEFAULT 'active',
   start_date TIMESTAMP,
   end_date TIMESTAMP,

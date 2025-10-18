@@ -1,71 +1,50 @@
-import { NextResponse } from 'next/server'
-import { query } from "@/app/lib/neon"
+import { NextResponse } from 'next/server';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
+// Có thể đưa vào ENV nếu muốn
+const WP_BASE = 'https://nivexhub.learningchain.vn/wp-json/nivex/v1';
+
 export async function GET(request) {
   try {
-    console.log("GET /api/vocabulary called");
-    
-    const { searchParams } = new URL(request.url)
-    const filter = searchParams.get('filter') || 'all'
-    const search = searchParams.get('search') || ''
+    const { searchParams } = new URL(request.url);
+    const search   = searchParams.get('search')   || '';
+    const page     = searchParams.get('page')     || '1';
+    const perPage  = searchParams.get('per_page') || '500'; // lấy nhiều để group A..Z
 
-    let sqlQuery = `
-      SELECT 
-        id,
-        slug,
-        keyword,
-        short_desc
-      FROM public.dictionary`
-    
-    const queryParams = []
-    let paramIndex = 1
+    // Reuse endpoint dictionary trên WP
+    const url = new URL(`${WP_BASE}/dictionary`);
+    if (search) url.searchParams.set('search', search);
+    url.searchParams.set('page', page);
+    url.searchParams.set('per_page', perPage);
 
-    // Apply search filter
-    if (search.trim()) {
-      sqlQuery += ` AND (keyword ILIKE $${paramIndex})`
-      queryParams.push(`%${search}%`)
-      paramIndex++
+    const res  = await fetch(url.toString(), { next: { revalidate: 60 } });
+    const json = await res.json();
+
+    if (!res.ok || !json?.success) {
+      return NextResponse.json(
+        { success: false, error: json?.error || 'WP API error' },
+        { status: 500 }
+      );
     }
 
+    // Trả đúng format Propose() đang dùng
+    const list = (json.data || [])
+      .map(x => ({
+        id: Number(x.id),
+        slug: x.slug || '',
+        keyword: x.keyword || '',
+        short_desc: x.short_desc || ''
+      }))
+      // sắp xếp A→Z theo keyword (tiếng Việt)
+      .sort((a, b) => a.keyword.localeCompare(b.keyword, 'vi', { sensitivity: 'base' }));
 
-    // Select all and Order by keyword (alphabet A to Z)
-    sqlQuery += ` ORDER BY keyword ASC`
-
-    console.log("Executing query:", { sqlQuery, queryParams });
-    const result = await query(sqlQuery, queryParams)
-
-    // Process courses data
-    const dictionary = result.map(n => {
-    // const now = new Date()
-    // const timeUpload = n.time_event
-
-    return {
-        id: n.id,
-        slug: n.slug,
-        keyword: n.keyword,
-        short_desc: n.short_desc
-      }
-    })
-
-    console.log("Returning data:", dictionary.length);
-
-    return NextResponse.json({
-      success: true,
-      data: dictionary
-    })
-
+    return NextResponse.json({ success: true, data: list });
   } catch (error) {
-    console.error('Error fetching data:', error)
     return NextResponse.json(
-      {
-        success: false,
-        error: 'Không thể tải danh sách sự kiện',
-        details: error.message
-      },
+      { success: false, error: 'Không thể tải danh sách thuật ngữ', details: error.message },
       { status: 500 }
-    )
+    );
   }
 }
