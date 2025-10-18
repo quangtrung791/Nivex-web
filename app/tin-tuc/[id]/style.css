@@ -2,8 +2,30 @@
 /* .widget {
     flex-direction: column !important;
 } */
+ .box-image img {
+    border-radius: 25px;
+}
+input.news-search-input {
+    border-radius: 25px 0 0 25px;
+}
+.news-search-btn {
+    border-radius: 0 25px 25px 0 !important;
+}
+ .btn-action {
+    border-radius: 99px !important;
+}
+footer .btn-action {
+    border-radius: 0 99px 99px 0 !important;
+}
 
 /* Fix */
+.btn-action {
+    border-radius: 99px !important;
+}
+footer .btn-action {
+    border-radius: 0 99px 99px 0 !important;
+}
+
 @media (width: 1912px) {
     header#header_main {
         padding: 0 !important;

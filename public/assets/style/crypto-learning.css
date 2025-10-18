@@ -117,6 +117,7 @@
 }
 
 .crypto-learning-section .btn-crypto-card-learning {
+    border-radius: 25px;
     background: linear-gradient(to right, #BCFE08, #86F869);
     color: black;
     border: none;

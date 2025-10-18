@@ -1,4 +1,19 @@
 /* Fixed */
+input.news-search-input {
+    border-radius: 25px 0 0 25px;
+}
+.news-search-btn {
+    border-radius: 0 25px 25px 0 !important;
+}
+.box-image img {
+    border-radius: 25px;
+}
+.btn-action {
+    border-radius: 99px !important;
+}
+footer .btn-action {
+    border-radius: 0 99px 99px 0 !important;
+}
 @media (max-width: 600px) {
     .blog-grid ul {
         z-index: 201 !important;
@@ -3500,6 +3515,7 @@ li.listing.active .fs-16 {
     color: black;
 }
 li.listing {
+    border-radius: 25px;
     cursor: pointer;
     padding: 8px 10px;
     background: transparent;

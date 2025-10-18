@@ -1,4 +1,17 @@
 /* Fixed */
+input.news-search-input {
+    border-radius: 25px 0 0 25px;
+}
+.news-search-btn {
+    border-radius: 0 25px 25px 0 !important;
+}
+.btn-action {
+    border-radius: 99px !important;
+}
+footer .btn-action {
+    border-radius: 0 99px 99px 0 !important;
+}
+
 @media (width: 1912px) {
     header#header_main {
         padding: 0 !important;
@@ -281,12 +294,15 @@ section.section-news-header {
     -webkit-text-fill-color: transparent;
     padding-top: 4px;
 }
-
+.box-image img {
+    border-radius: 25px;
+}
 li.listing.active {
     padding: 8px 10px;
     background: linear-gradient(90deg, #bcfe08, #86f869);
 }
 li.listing {
+    border-radius: 25px;
     cursor: pointer;
     padding: 8px 10px;
     background: transparent;
