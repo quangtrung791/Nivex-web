@@ -1,6 +1,5 @@
 'use client'
 import Layout from "../../components/layout/Layout"
-import Link from "next/link"
 import { useState, useEffect } from "react"
 import styles from './aiCopyTrade.module.css'
 
