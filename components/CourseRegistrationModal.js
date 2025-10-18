@@ -37,7 +37,11 @@ export default function CourseRegistrationModal({ isOpen, onClose, course }) {
           courseId: course.id,
           fullName: formData.fullName,
           email: formData.email,
-          phone: formData.phone
+          phone: formData.phone,
+          courseName: course.title,
+          courseDate: course.date,
+          courseTime: course.time,
+          zoomLink: course.link_zoom, 
         })
       })
 
