@@ -1,4 +1,9 @@
 /* Fixed */
+ @media (width: 1912px) {
+    section.section-news-header {
+        padding: 3.5% 13% !important;
+    }
+ }
 .tag-status p,
 .event-tags span {
     border-radius: 10px;

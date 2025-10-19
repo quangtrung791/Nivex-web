@@ -117,7 +117,7 @@ export default function JoinedEventDetailsComponent() {
                                                                     : ''}
                                                             </p>
                                                             <div className="image">
-                                                                <img src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
+                                                                <img className="mini-image-src-2" src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
                                                             </div>
                                                         </div>
                                                         <div className="content">

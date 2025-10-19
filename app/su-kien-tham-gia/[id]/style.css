@@ -2,6 +2,17 @@
 /* .su-kien-tg-id .col-xl-4.col-md-12 {
     padding-left: 0 !important;
 } */
+ @media (width: 1912px) {
+    section.section-news-header,
+    section.duoc-xem-nhieu.col-md-12
+    {
+        padding: 3.5% 13% !important;
+    }
+ }
+ 
+ .mini-image-src-2 {
+    border-radius: 10px !important;
+ }
 .joined-event-details-display-markdown img {
     border-radius: 25px !important;
 }
