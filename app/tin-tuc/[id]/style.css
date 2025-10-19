@@ -2,6 +2,9 @@
 /* .widget {
     flex-direction: column !important;
 } */
+ .title-muc-luc > * {
+    font-family: '__Inter_b9c7ce';
+}
  .box-image img {
     border-radius: 25px;
 }
