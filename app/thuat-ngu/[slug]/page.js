@@ -7,8 +7,12 @@ import { Metadata } from "next"
 async function getTermBySlug(slug) {
     const productionUrl = 'https://nivex.vn';
     const developedUrl = 'http://localhost:3000'
+    // const res = await fetch(
+    //     `${process.env.NODE_ENV === "production" ? productionUrl : developedUrl}/api/dictionary/${slug}`,
+    //     { cache: "no-store" }
+    // );
     const res = await fetch(
-        `${process.env.NODE_ENV === "production" ? productionUrl : developedUrl}/api/dictionary/${slug}`,
+        `https://nivex.vn/api/dictionary/${slug}`,
         { cache: "no-store" }
     );
     
