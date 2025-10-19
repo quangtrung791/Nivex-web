@@ -7,10 +7,6 @@ import { Metadata } from "next"
 async function getTermBySlug(slug) {
     const productionUrl = 'https://nivex.vn';
     const developedUrl = 'http://localhost:3000'
-    // const res = await fetch(
-    //     `https://nivex.vn/api/dictionary/${slug}`,
-    //     { cache: "no-store" }
-    // );
     const res = await fetch(
         `${process.env.NODE_ENV === "production" ? productionUrl : developedUrl}/api/dictionary/${slug}`,
         { cache: "no-store" }
@@ -18,9 +14,6 @@ async function getTermBySlug(slug) {
     
     if (!res.ok) return null;
     return await res.json();
-    // const json = await res.json();
-    // Tìm đúng thuật ngữ theo slug
-    // return json.data?.find(item => item.slug?.toLowerCase() === slug.toLowerCase()) || null;
 }
 
 // Tạo metadata động

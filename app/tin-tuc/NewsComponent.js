@@ -389,7 +389,7 @@ export default function BlogDetails() {
                             </div>
                         </div>
 
-                        <div className="col-xl-4 col-md-12">
+                        <div className="col-xl-4 col-md-12 ttuc-tin-nong-gg">
                             <div className="sidebar">
                                 <div className="widget recent mt-0">
                                     <h6 className="heading">Tin nóng</h6>

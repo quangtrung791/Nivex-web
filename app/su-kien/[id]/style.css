@@ -1,4 +1,24 @@
 /* Fixed */
+.event-details-display-markdown img {
+    border-radius: 25px !important;
+}
+img.mini-image-sukienkhac {
+    border-radius: 10px;
+}
+.ctietsukiennivex-tochuc {
+    display: block; /* Fallback for non-webkit */
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.su-kien-khaccc {
+    border-radius: 0 0 25px 25px;
+}
+.heading-skienkhacc {
+    border-radius: 25px 25px 0 0;
+}
 input.news-search-input {
     border-radius: 25px 0 0 25px;
 }
