@@ -2,6 +2,34 @@
 /* .widget {
     flex-direction: column !important;
 } */
+ .blog-details.tin-tuc-id .row .col-xl-4.col-md-12 .sidebar {
+    border-radius: 25px;
+ }
+ .heding-tin-xem-nhieu {
+    border-radius: 25px 25px 0 0;
+ }
+ .tin-nogggg {
+    border-radius: 0 0 25px 25px;
+ }
+
+    .mini-image-imgs,
+    .mini-image-imgs1 {
+        border-radius: 10px;
+    }
+    .a-href-tin-long {
+        display: block; /* Fallback for non-webkit */
+        display: -webkit-box !important;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+ .sb-tin-nong-ttuc-id {
+    border-radius: 0 0 25px 25px !important;
+ }
+ .tin-nong-tintucid {
+    border-radius: 25px 25px 0 0 !important;
+ }
  .title-muc-luc > * {
     font-family: 'Inter, sans-serif';
 }

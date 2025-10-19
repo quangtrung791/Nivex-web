@@ -1,4 +1,9 @@
 /* Fixed */
+.tag-status p,
+.event-tags span {
+    border-radius: 10px;
+}
+
 input.news-search-input {
     border-radius: 25px 0 0 25px;
 }
