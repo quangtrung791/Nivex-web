@@ -19,7 +19,8 @@ async function getTermBySlug(slug) {
 // Tạo metadata động
 export async function generateMetadata({ params }) {
     const { slug } = params;
-    const dataGet = await getTermBySlug(slug);
+    const res = await getTermBySlug(slug);
+    const dataGet = res?.data;
     console.log("Metadata data:", dataGet); // Thêm dòng này để debug
 
     const keyword = dataGet?.keyword || "Thuật ngữ";
@@ -30,10 +31,7 @@ export async function generateMetadata({ params }) {
         : plainText;
     // const desc = dataGet?.short_desc?.replace(/<[^>]+>/g, '') || "Tìm hiểu về các từ khóa của ngành blockchain chỉ trong vài phút.";
 
-    console.log(keyword);
-
-    let keywordTitle = dataGet?.keyword;
-    if(!keywordTitle || keywordTitle == null) {
+    if (!(dataGet?.keyword) || dataGet?.keyword == null) {
         return {
             title: `${dataGet?.slug} | Bảng thuật ngữ Nivex`,
             description: desc,
