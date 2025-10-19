@@ -1,74 +1,37 @@
-import { NextResponse } from 'next/server'
-import { query } from "@/app/lib/neon"
+import { NextResponse } from 'next/server';
 
 export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
+
+const WP_BASE = 'https://nivexhub.learningchain.vn/wp-json/nivex/v1';
 
 export async function GET(request) {
   try {
-    console.log("GET /api/dictionary called");
-    
-    const { searchParams } = new URL(request.url)
-    const filter = searchParams.get('filter') || 'all'
-    const search = searchParams.get('search') || ''
+    const { searchParams } = new URL(request.url);
+    const search = searchParams.get('search') || '';
+    const page   = searchParams.get('page') || '1';
+    const per    = searchParams.get('per_page') || '100';
 
-    let sqlQuery = `
-      SELECT 
-        id,
-        slug,
-        keyword,
-        short_desc,
-        description,
-        created_at,
-        updated_at
-      FROM public.dictionary`
-    
-    const queryParams = []
-    let paramIndex = 1
+    const url = new URL(`${WP_BASE}/dictionary`);
+    if (search) url.searchParams.set('search', search);
+    if (page)   url.searchParams.set('page', page);
+    if (per)    url.searchParams.set('per_page', per);
 
-    // Apply search filter
-    if (search.trim()) {
-      sqlQuery += ` AND (keyword ILIKE $${paramIndex} OR description ILIKE $${paramIndex})`
-      queryParams.push(`%${search}%`)
-      paramIndex++
+    const res  = await fetch(url.toString(), { next: { revalidate: 60 } });
+    const json = await res.json();
+
+    if (!res.ok || !json?.success) {
+      return NextResponse.json(
+        { success: false, error: json?.error || 'WP API error' },
+        { status: 500 }
+      );
     }
 
-
-  // Order by start date and limit to 20 records
-  sqlQuery += ` ORDER BY created_at DESC`
-
-    console.log("Executing query:", { sqlQuery, queryParams });
-    const result = await query(sqlQuery, queryParams)
-
-    // Process courses data
-    const dictionary = result.map(n => {
-    // const now = new Date()
-    // const timeUpload = n.time_event
-
-    return {
-        id: n.id,
-        slug: n.slug,
-        keyword: n.keyword,
-        short_desc: n.short_desc,
-        description: n.description
-      }
-    })
-
-    console.log("Returning data:", dictionary.length);
-
-    return NextResponse.json({
-      success: true,
-      data: dictionary
-    })
-
+    return NextResponse.json({ success: true, data: json.data });
   } catch (error) {
-    console.error('Error fetching data:', error)
     return NextResponse.json(
-      {
-        success: false,
-        error: 'Không thể tải danh sách sự kiện',
-        details: error.message
-      },
+      { success: false, error: 'Không thể tải danh sách thuật ngữ', details: error.message },
       { status: 500 }
-    )
+    );
   }
 }

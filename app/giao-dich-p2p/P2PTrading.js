@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import Link from 'next/link'
 import styles from './P2PTrading.module.css'
 
 
@@ -21,6 +22,17 @@ export default function P2PTrading() {
 an toàn và thuận tiện.</p>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            {/* Breadcrumb */}
+            <section className={styles.breadcrumbSection}>
+                <div className="container">
+                    <nav className={styles.breadcrumb}>
+                        <Link href="/huong-dan-su-dung-app-nivex">Hướng dẫn sử dụng app Nivex</Link>
+                        <span className={styles.separator}>&gt;</span>
+                        <span className={styles.current}>Giao dịch P2P</span>
+                    </nav>
                 </div>
             </section>
 

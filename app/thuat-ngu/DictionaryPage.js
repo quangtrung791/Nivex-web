@@ -17,23 +17,21 @@ export default function DictionaryPage() {
     const [ searchQuery, setSearchQuery ] = useState("");
 
     useEffect(() => {
-        // fetch('/api/dictionary')
-        fetch('/api/vocabulary')
-            .then(res => res.json())
-            .then(data => {
-                if (!data.success) return;
-
-                const grouped = data.data.reduce((acc, item) => {
-                    const firstLetter = item.keyword.charAt(0).toUpperCase();
-                    if (!acc[firstLetter]) acc[firstLetter] = [];
-                    acc[firstLetter].push(item);
-                    return acc;
-                }, {});
-                setDictionary(grouped);
-                setLoading(false);
-            })
-            .catch(() => setLoading(false));
-    }, []);
+        fetch('/api/dictionary')
+          .then(res => res.json())
+          .then(payload => {
+            if (!payload?.success || !Array.isArray(payload.data)) return;
+            const grouped = payload.data.reduce((acc, item) => {
+              const firstLetter = (item.keyword?.charAt(0) || '').toUpperCase();
+              if (!firstLetter) return acc;
+              (acc[firstLetter] ||= []).push(item);
+              return acc;
+            }, {});
+            setDictionary(grouped);
+            setLoading(false);
+          })
+          .catch(() => setLoading(false));
+      }, []);
 
     // Hàm xử lý sau khi submit form search
     const handleSearch = (e) => {

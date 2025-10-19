@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import Link from 'next/link'
 import styles from './InternalTransfer.module.css'
 
 
@@ -20,6 +21,17 @@ export default function InternalTransfer() {
                              <p className={`${styles.pageHeaderKnowledgeSubtitle}`}>Tính năng chuyển khoản nội bộ giúp bạn gửi tiền mã hóa đến người dùng Nivex khác tức thì và hoàn toàn miễn phí.</p>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            {/* Breadcrumb */}
+            <section className={styles.breadcrumbSection}>
+                <div className="container">
+                    <nav className={styles.breadcrumb}>
+                        <Link href="/huong-dan-su-dung-app-nivex">Hướng dẫn sử dụng app Nivex</Link>
+                        <span className={styles.separator}>&gt;</span>
+                        <span className={styles.current}>Chuyển tiền nội bộ</span>
+                    </nav>
                 </div>
             </section>
 

@@ -6,8 +6,8 @@ CREATE TABLE IF NOT EXISTS joined_events (
   tag1 VARCHAR(50) NOT NULL,
   tag2 VARCHAR(50) NOT NULL,
   tag3 VARCHAR(50) NOT NULL,
-  type VARCHAR(25) NOT NULL,
-  short_desc TEXT,
+  type VARCHAR(25) NOT NULL DEFAULT 'offline',
+  short_desc VARCHAR(500),
   content TEXT,
   thumbnail_url VARCHAR(500),
   time_event TIMESTAMP NOT NULL, -- ngày diễn ra

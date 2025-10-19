@@ -1,63 +1,38 @@
-import { NextResponse } from 'next/server'
-import { query } from "@/app/lib/neon"
+import { NextResponse } from 'next/server';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
 export async function GET(request) {
   try {
-    console.log("GET /api/category_news called");
-    
-    const { searchParams } = new URL(request.url)
-    const search = searchParams.get('search') || ''
+    const { searchParams } = new URL(request.url);
+    const search = searchParams.get('search') || '';
 
-    let sqlQuery = `
-      SELECT 
-        id,
-        name,
-        created_at,
-        updated_at
-      FROM public.cate_news
-      WHERE 1=1
-    `
+    const wp = new URL('https://nivexhub.learningchain.vn/wp-json/nivex/v1/news/categories');
+    if (search) wp.searchParams.set('search', search);
 
-    const queryParams = []
-    let paramIndex = 1
+    const res  = await fetch(wp.toString(), { next: { revalidate: 60 } });
+    const json = await res.json();
 
-    // Apply search filter
-    if (search.trim()) {
-      sqlQuery += ` AND (name ILIKE $${paramIndex})`
-      queryParams.push(`%${search}%`)
-      paramIndex++
+    if (!res.ok || !json?.success) {
+      return NextResponse.json(
+        { success: false, error: json?.error || 'WP API error' },
+        { status: 500 }
+      );
     }
 
-    sqlQuery += ` ORDER BY created_at DESC LIMIT 20`
-
-    console.log("Executing query:", { sqlQuery, queryParams });
-    const result = await query(sqlQuery, queryParams)
-
-    // Trả về đúng dữ liệu category
-    const categories = result.map(c => ({
+    const categories = (json.data || []).map(c => ({
       id: c.id,
       name: c.name,
-      created_at: c.created_at,
-      updated_at: c.updated_at
-    }))
+      created_at: c.created_at ?? null,
+      updated_at: c.updated_at ?? null
+    }));
 
-    return NextResponse.json({
-      success: true,
-      data: categories
-    })
-
+    return NextResponse.json({ success: true, data: categories });
   } catch (error) {
-    console.error('Error fetching categories:', error)
     return NextResponse.json(
-      {
-        success: false,
-        error: 'Không thể tải danh sách danh mục',
-        details: error.message
-      },
+      { success: false, error: 'Không thể tải danh sách danh mục', details: error.message },
       { status: 500 }
-    )
+    );
   }
 }

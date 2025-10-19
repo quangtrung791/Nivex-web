@@ -4,6 +4,9 @@ import { sendEmail } from '@/lib/emailService'
 import { randomUUID } from 'crypto'
 
 export const runtime = 'nodejs'
+export const dynamic = 'force-dynamic'
+const WP_BASE_URL = process.env.WP_BASE_URL || 'https://nivexhub.learningchain.vn/'
+const WP_AUTH = process.env.WP_APP_PASS_B64 || ''
 
 // 📨 Hàm tạo nội dung email xác nhận đăng ký nhận tin tức
 const generateFooterSubscribeEmail = (email) => {
@@ -63,7 +66,7 @@ const generateFooterSubscribeEmail = (email) => {
               <p>Hãy thường xuyên kiểm tra hộp thư để không bỏ lỡ các khóa học và tin tức hấp dẫn nhé!</p>
           </div>
           <div class="footer">
-              <p>© 2025 Nivex. Tất cả quyền được bảo lưu.</p>
+              <p>© 2025 Nivex. All rights reserved.</p>
               <p>
                   <a href="mailto:nivexvietnam@gmail.com">nivexvietnam@gmail.com</a> |
                   <a href="https://nivex.vn">nivex.vn</a>
@@ -87,78 +90,79 @@ Trân trọng,
   return { html: htmlTemplate, text: textTemplate }
 }
 
-// 🧠 Xử lý POST request
+const isValidEmail = (s) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s || '')
+
 export async function POST(request) {
   try {
     const body = await request.json()
-    const { email } = body
+    const { email } = body || {}
 
-    // 🔹 Kiểm tra dữ liệu bắt buộc
+    // Validate
     if (!email) {
       return NextResponse.json(
         { success: false, error: 'Vui lòng nhập địa chỉ email.' },
         { status: 400 }
       )
     }
-
-    // 🔹 Kiểm tra định dạng email
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    if (!emailRegex.test(email)) {
+    if (!isValidEmail(email)) {
       return NextResponse.json(
         { success: false, error: 'Địa chỉ email không hợp lệ.' },
         { status: 400 }
       )
     }
-
-    // 🔹 Kiểm tra trùng email
-    const existing = await query('SELECT id FROM public.subscribe WHERE email = $1', [email])
-    if (existing.length > 0) {
+    if (!WP_BASE_URL) {
       return NextResponse.json(
-        { success: false, error: 'Email này đã được đăng ký trước đó.' },
-        { status: 409 }
+        { success: false, error: 'Thiếu cấu hình WP_BASE_URL' },
+        { status: 500 }
       )
     }
 
-    // 🔹 Thêm mới vào cơ sở dữ liệu
-    // const id = randomUUID()
-    // const result = await query(
-    //   `INSERT INTO public.subscribe (id, email, registered_at)
-    //    VALUES ($1, $2, NOW())
-    //    RETURNING id, email, registered_at`,
-    //   [id, email]
-    // )
-    const result = await query(
-      `INSERT INTO public.subscribe (email, registered_at)
-      VALUES ($1, NOW())
-      RETURNING id, email, registered_at`,
-      [email]
-    )
+    // Gọi WP REST để tạo subscribe
+    const endpoint = `${WP_BASE_URL}/wp-json/nivex/v1/subscribe`
+    const res = await fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        ...(WP_AUTH ? { Authorization: `Basic ${WP_AUTH}` } : {}),
+      },
+      body: JSON.stringify({ email }),
+      cache: 'no-store',
+    })
 
-    const data = Array.isArray(result) ? result[0] : result.rows?.[0] || null
+    const json = await res.json().catch(() => ({}))
 
-    // 🔹 Gửi email xác nhận (không chặn request nếu lỗi)
+    if (!res.ok || !json?.success) {
+      // map lỗi phổ biến
+      if (res.status === 409) {
+        return NextResponse.json(
+          { success: false, error: 'Email này đã đăng ký trước đó.' },
+          { status: 409 }
+        )
+      }
+      const msg = json?.error || 'Không thể đăng ký'
+      return NextResponse.json({ success: false, error: msg }, { status: res.status || 500 })
+    }
+
+    // Gửi email cảm ơn (không block nếu fail)
     const { html, text } = generateFooterSubscribeEmail(email)
     sendEmail(
       email,
       'Cảm ơn bạn đã đăng ký nhận bản tin Nivex.vn!',
       html,
       text
-    ).catch(console.error)
+    ).catch(() => {})
 
-    // 🔹 Trả kết quả về client
     return NextResponse.json({
       success: true,
       message: 'Đăng ký nhận tin thành công! Vui lòng kiểm tra email của bạn.',
-      // data: result.rows[0]
-      data
+      data: json.data || null,
     })
   } catch (error) {
-    console.error('Subscribe Error:', error)
     return NextResponse.json(
       {
         success: false,
         error: 'Đã xảy ra lỗi khi xử lý yêu cầu.',
-        details: process.env.NODE_ENV === 'development' ? error.message : undefined
+        details: process.env.NODE_ENV === 'development' ? error.message : undefined,
       },
       { status: 500 }
     )
