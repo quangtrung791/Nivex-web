@@ -30,9 +30,42 @@
     width: 33%;
 }
 
-.pageTitleKnowLedge, .guideSection {
+.pageTitleKnowLedge, .guideSection, .breadcrumbSection {
     padding-left: 7%;
     padding-right: 7%;
+}
+
+/* Breadcrumb Section */
+.breadcrumbSection {
+    background: #141414;
+    padding: 35px 0 0px 0;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.breadcrumb a {
+    color: rgb(166, 170, 183);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.breadcrumb a:hover {
+    color: #bcfe08;
+}
+
+.separator {
+    color: #777e90;
+}
+
+.current {
+    color: #ffff;
+    overflow: hidden;
 }
 
 .displayFlexContainer {
@@ -191,7 +224,7 @@
 }
 
 @media (min-width: 650px) and (max-width: 1439px) {
-    .pageTitleKnowLedge, .guideSection {
+    .pageTitleKnowLedge, .guideSection, .breadcrumbSection {
         padding-left: 3.5%;
         padding-right: 3.5%;
     }  
@@ -263,7 +296,7 @@
     
 }
 @media (max-width: 480px)  {
-    .pageTitleKnowLedge {
+    .pageTitleKnowLedge, .breadcrumbSection {
         padding-left: 0px;
         padding-right: 0px;
     }

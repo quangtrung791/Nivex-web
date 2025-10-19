@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import Link from 'next/link'
 import styles from './RegisterLoginGuide.module.css'
 
 export default function RegisterLoginGuide() {
@@ -19,6 +20,18 @@ export default function RegisterLoginGuide() {
                     </div>
                 </div>
             </section>
+            
+            {/* Breadcrumb */}
+            <section className={styles.breadcrumbSection}>
+                <div className="container">
+                    <nav className={styles.breadcrumb}>
+                        <Link href="/huong-dan-su-dung-app-nivex">Hướng dẫn sử dụng app Nivex</Link>
+                        <span className={styles.separator}>&gt;</span>
+                        <span className={styles.current}>Đăng ký & Đăng nhập</span>
+                    </nav>
+                </div>
+            </section>
+            
             <section className={styles.guideSection}>
             <div className={`container ${styles.displayFlexContainer}`}>
                 {/* <div className="row"> */}

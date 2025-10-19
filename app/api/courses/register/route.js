@@ -1,7 +1,9 @@
 import { NextResponse } from 'next/server'
-import { query } from "@/app/lib/neon"
 import { sendEmail } from "@/lib/emailService"
 
+
+const WP_BASE_URL = process.env.WP_BASE_URL || 'https://nivexhub.learningchain.vn/'
+const WP_AUTH = process.env.WP_APP_PASS_B64 || ''
 export const runtime = 'nodejs';
 
 // Generate course registration email template (Local to course registration)
@@ -129,21 +131,21 @@ const generateCourseRegistrationEmail = (registrationData) => {
             <div class="course-info">
                 <h3>📚 Thông tin khóa học</h3>
                 <div class="info-row">
-                    <span class="info-label">Tên khóa học:</span>
+                    <span class="info-label">Tên khóa học: </span>
                     <span class="info-value">${courseName}</span>
                 </div>
                 <div class="info-row">
-                    <span class="info-label">Ngày học:</span>
+                    <span class="info-label">Ngày học: </span>
                     <span class="info-value">${courseDate}</span>
                 </div>
                 ${courseTime ? `
                 <div class="info-row">
-                    <span class="info-label">Thời gian:</span>
+                    <span class="info-label">Thời gian: </span>
                     <span class="info-value">${courseTime}</span>
                 </div>
                 ` : ''}
                 <div class="info-row">
-                    <span class="info-label">Mã đăng ký:</span>
+                    <span class="info-label">Mã đăng ký: </span>
                     <span class="info-value">#${registrationId}</span>
                 </div>
             </div>
@@ -189,7 +191,7 @@ const generateCourseRegistrationEmail = (registrationData) => {
             <p>Email này được gửi tự động từ hệ thống Nivex</p>
             <p>© 2025 Nivex. All rights reserved.</p>
             <p>
-                <a href="mailto:support@nivex.vn">nivexvietnam@gmail.com</a> | 
+                <a href="mailto:nivexvietnam@gmail.com">nivexvietnam@gmail.com</a> | 
                 <a href="https://nivex.vn">nivex.vn</a>
             </p>
         </div>
@@ -235,150 +237,112 @@ const generateCourseRegistrationEmail = (registrationData) => {
   return { html: htmlTemplate, text: textTemplate }
 }
 
-// Local course registration email sender
-const sendCourseRegistrationEmailRouter = async (email, registrationData) => {
+// Gửi email xác nhận (không làm fail đăng ký nếu email lỗi)
+async function sendCourseRegistrationEmailRouter(email, registrationData) {
   try {
-    
-    // Generate email content locally
     const { html, text } = generateCourseRegistrationEmail(registrationData)
-    
-    // Create email subject
-    const subject = `Thông tin khóa học ${registrationData.courseName} - Nivex.vn`
-    
-    // Use the generic email service to send
-    const result = await sendEmail(email, subject, html, text)
-    
-    return result
-    
+    const subject = `Thông tin khóa học${registrationData.courseName ? ` ${registrationData.courseName}` : ''} - Nivex.vn`
+    return await sendEmail(email, subject, html, text)
   } catch (error) {
-    return { 
-      success: false, 
-      message: 'Failed to send email',
-      error: error.message 
-    }
+    return { success: false, message: 'Failed to send email', error: error.message }
   }
 }
+
+// Helpers validate
+const isValidEmail = (s) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s || '')
+const isValidVNPhone = (s) => /^(?:\+84|84|0)[3-9]\d{8}$/.test(String(s || '').replace(/\s/g, ''))
 
 export async function POST(request) {
   try {
     const body = await request.json()
-    const { courseId, fullName, email, phone } = body
+    const {
+      courseId,             // bắt buộc để lưu WP
+      fullName,
+      email,
+      phone,
+      courseName,
+      courseDate,
+      courseTime,
+      zoomLink, 
+    } = body || {}
 
-    // Validate required fields
+    // Validate tối thiểu
     if (!courseId || !fullName || !email || !phone) {
       return NextResponse.json(
-        {
-          success: false,
-          error: 'Vui lòng điền đầy đủ thông tin bắt buộc'
-        },
+        { success: false, error: 'Vui lòng điền đầy đủ thông tin bắt buộc' },
+        { status: 400 }
+      )
+    }
+    if (!isValidEmail(email)) {
+      return NextResponse.json(
+        { success: false, error: 'Địa chỉ email không hợp lệ' },
+        { status: 400 }
+      )
+    }
+    if (!isValidVNPhone(phone)) {
+      return NextResponse.json(
+        { success: false, error: 'Số điện thoại không hợp lệ' },
         { status: 400 }
       )
     }
 
-    // Validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    if (!emailRegex.test(email)) {
+    // Gọi WordPress REST để lưu đăng ký
+    if (!WP_BASE_URL) {
       return NextResponse.json(
-        {
-          success: false,
-          error: 'Địa chỉ email không hợp lệ'
-        },
-        { status: 400 }
+        { success: false, error: 'Thiếu cấu hình WP_BASE_URL' },
+        { status: 500 }
       )
     }
 
-    // Validate phone format (Vietnam phone numbers)
-    const phoneRegex = /^(\+84|84|0)[3-9]\d{8}$/
-    if (!phoneRegex.test(phone.replace(/\s/g, ''))) {
-      return NextResponse.json(
-        {
-          success: false,
-          error: 'Số điện thoại không hợp lệ'
-        },
-        { status: 400 }
-      )
+    const wpRes = await fetch(`${WP_BASE_URL}/wp-json/nivex/v1/course-registrations`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        ...(WP_AUTH ? { Authorization: `Basic ${WP_AUTH}` } : {}),
+      },
+      body: JSON.stringify({
+        course_id: courseId,
+        full_name: fullName,
+        email,
+        phone,
+      }),
+      cache: 'no-store',
+    })
+
+    const wpJson = await wpRes.json().catch(() => ({}))
+
+    if (!wpRes.ok || !wpJson?.success) {
+      const status = wpRes.status || 500
+      const message = wpJson?.error || 'Có lỗi xảy ra khi đăng ký. Vui lòng thử lại sau.'
+      return NextResponse.json({ success: false, error: message }, { status })
     }
 
-    // Check if course exists and get full course details
-    const courseCheck = await query(
-      'SELECT id, title, start_date, end_date, link_zoom FROM public.courses WHERE id = $1 AND status = $2',
-      [courseId, 'active']
-    )
-
-    if (courseCheck.length === 0) {
-      return NextResponse.json(
-        {
-          success: false,
-          error: 'Khóa học không tồn tại hoặc đã bị vô hiệu hóa'
-        },
-        { status: 404 }
-      )
-    }
-
-    // Check for duplicate registration
-    const existingRegistration = await query(
-      'SELECT id FROM public.course_registrations WHERE course_id = $1 AND email = $2',
-      [courseId, email]
-    )
-
-    if (existingRegistration.length > 0) {
-      return NextResponse.json(
-        {
-          success: false,
-          error: 'Email này đã được đăng ký cho khóa học'
-        },
-        { status: 409 }
-      )
-    }
-
-    // Insert registration
-    const result = await query(
-      `INSERT INTO public.course_registrations (course_id, full_name, email, phone, registered_at) 
-       VALUES ($1, $2, $3, $4, NOW()) 
-       RETURNING id, registered_at`,
-      [courseId, fullName, email, phone]
-    )
-
-    // Prepare data for email
-    const course = courseCheck[0]
-    const startDate = course.start_date ? new Date(course.start_date) : null
-    
-    const emailData = {
+    // Gửi email xác nhận (không block request nếu lỗi)
+    const registrationId = wpJson?.data?.id
+    sendCourseRegistrationEmailRouter(email, {
       fullName,
-      courseName: course.title,
-      courseDate: startDate ? startDate.toLocaleDateString('vi-VN', {
-        day: '2-digit',
-        month: '2-digit',
-        year: 'numeric'
-      }) : 'Chưa xác định',
-      courseTime: startDate ? startDate.toLocaleTimeString('vi-VN', {
-        hour: '2-digit',
-        minute: '2-digit'
-      }) : null,
-      zoomLink: course.link_zoom,
-      registrationId: result[0].id
-    }
-
-    // Send registration confirmation email (don't fail the registration if email fails)
-   
-    sendCourseRegistrationEmailRouter(email, emailData)
+      courseName,
+      courseDate,
+      courseTime,
+      zoomLink,
+      registrationId,
+    }).catch(() => {})
 
     return NextResponse.json({
       success: true,
       message: 'Đăng ký thành công! Vui lòng kiểm tra email để xem thông tin chi tiết.',
       data: {
-        registrationId: result[0].id,
-        courseName: course.title,
-        registeredAt: result[0].registered_at
-      }
+        registrationId,
+        courseName: courseName || null,
+        registeredAt: wpJson?.data?.registered_at || null,
+      },
     })
-
   } catch (error) {
     return NextResponse.json(
       {
         success: false,
         error: 'Có lỗi xảy ra khi đăng ký. Vui lòng thử lại sau.',
-        details: process.env.NODE_ENV === 'development' ? error.message : undefined
+        details: process.env.NODE_ENV === 'development' ? error?.message : undefined,
       },
       { status: 500 }
     )

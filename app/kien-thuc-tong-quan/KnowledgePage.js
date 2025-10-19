@@ -5,7 +5,7 @@ import styles from './knowledge.module.css'
 import Propose from "@/components/sections/Propose"
 
 export default function KnowledgePage() {
-    const [activeCategory, setActiveCategory] = useState('Blockchain')
+    const [activeCategory, setActiveCategory] = useState()
     const [activeDifficulty, setActiveDifficulty] = useState('easy')
     const [isCategoryDropdownOpen, setIsCategoryDropdownOpen] = useState(false)
     const [knowledgeArticles, setKnowledgeArticles] = useState([])
@@ -62,13 +62,13 @@ export default function KnowledgePage() {
             
             // Fetch filtered articles for current category and difficulty (for "Được xem nhiều")
             const filteredResponse = await fetch(
-                `/api/knowledge?topic=${activeCategory}&difficulty=${activeDifficulty}&limit=8&offset=0`
+                `/api/knowledge?topic=${activeCategory}&difficulty=${activeDifficulty}&limit=6&offset=0`
             )
             const filteredData = await filteredResponse.json()
             
             // Fetch newest articles with same filters (for "Mới nhất")
             const newestResponse = await fetch(
-                `/api/knowledge?topic=${activeCategory}&difficulty=${activeDifficulty}&limit=8&offset=0`
+                `/api/knowledge?topic=${activeCategory}&difficulty=${activeDifficulty}&limit=6&offset=0`
             )
             const newestData = await newestResponse.json()
             
@@ -77,8 +77,8 @@ export default function KnowledgePage() {
                 setNewestArticles(newestData.data || [])
                 setHasMoreViewed(filteredData.pagination?.hasMore || false)
                 setHasMoreNewest(newestData.pagination?.hasMore || false)
-                setViewedOffset(8)
-                setNewestOffset(8)
+                setViewedOffset(6)
+                setNewestOffset(6)
             } else {
                 throw new Error('Failed to fetch articles')
             }
@@ -133,7 +133,7 @@ export default function KnowledgePage() {
         try {
             setLoadingMore(true)
             const response = await fetch(
-                `/api/knowledge?topic=${activeCategory}&difficulty=${activeDifficulty}&limit=8&offset=${viewedOffset}`
+                `/api/knowledge?topic=${activeCategory}&difficulty=${activeDifficulty}&limit=6&offset=${viewedOffset}`
             )
             const data = await response.json()
             
@@ -143,7 +143,6 @@ export default function KnowledgePage() {
                 setViewedOffset(prev => prev + 6)
             }
         } catch (error) {
-            console.error('Error loading more articles:', error)
         } finally {
             setLoadingMore(false)
         }
@@ -153,7 +152,7 @@ export default function KnowledgePage() {
         try {
             setLoadingMore(true)
             const response = await fetch(
-                `/api/knowledge?topic=${activeCategory}&difficulty=${activeDifficulty}&limit=8&offset=${newestOffset}`
+                `/api/knowledge?topic=${activeCategory}&difficulty=${activeDifficulty}&limit=6&offset=${newestOffset}`
             )
             const data = await response.json()
             
@@ -163,7 +162,7 @@ export default function KnowledgePage() {
                 setNewestOffset(prev => prev + 6)
             }
         } catch (error) {
-            console.error('Error loading more articles:', error)
+            // console.error('Error loading more articles:', error)
         } finally {
             setLoadingMore(false)
         }

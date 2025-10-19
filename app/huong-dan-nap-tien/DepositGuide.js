@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import Link from 'next/link'
 import styles from './DepositGuide.module.css'
 
 export default function DepositGuide() {
@@ -19,6 +20,17 @@ export default function DepositGuide() {
 nhanh chóng, an toàn và thuận tiện.</p>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            {/* Breadcrumb */}
+            <section className={styles.breadcrumbSection}>
+                <div className="container">
+                    <nav className={styles.breadcrumb}>
+                        <Link href="/huong-dan-su-dung-app-nivex">Hướng dẫn sử dụng app Nivex</Link>
+                        <span className={styles.separator}>&gt;</span>
+                        <span className={styles.current}>Hướng dẫn nạp tiền</span>
+                    </nav>
                 </div>
             </section>
 

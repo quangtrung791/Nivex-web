@@ -1,53 +1,50 @@
-import { NextResponse } from 'next/server'
-import { query } from "@/app/lib/neon"
+// app/api/event/[slug]/route.js
+import { NextResponse } from 'next/server';
 
 export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
 
-export async function GET(request, { params }) {
+const WP_BASE = 'https://nivexhub.learningchain.vn/wp-json/nivex/v1';
+
+export async function GET(_request, { params }) {
   try {
-    const { slug } = params;
+    const slug = params?.slug;
     if (!slug) {
       return NextResponse.json(
-        { success: false, error: "Thiếu slug thông tin sự kiện" },
+        { success: false, error: 'Không thể tải chi tiết sự kiện' },
         { status: 400 }
       );
     }
 
-    const sqlQuery = `
-      SELECT 
-        id,
-        slug,
-        title,
-        content,
-        short_desc,
-        thumbnail_url,
-        time_event,
-        created_at,
-        updated_at
-      FROM public.event
-      WHERE slug = $1
-      LIMIT 1
-    `;
-    const result = await query(sqlQuery, [slug]);
+    const url  = `${WP_BASE}/events/by-slug/${encodeURIComponent(slug)}`;
+    const res  = await fetch(url, { next: { revalidate: 30 } });
+    const json = await res.json();
 
-    if (!result || result.length === 0) {
+    if (!res.ok || !json?.success || !json?.data) {
       return NextResponse.json(
-        { success: false, error: "Không tìm thấy dữ liệu" },
+        { success: false, error: json?.error || 'WP API error' },
         { status: 404 }
       );
     }
 
-    // Trả về thông tin sự kiện đầu tiên
-    return NextResponse.json(result[0]);
+    const e = json.data;
+    const event = {
+      id: Number(e.id),
+      slug: e.slug,
+      title: e.title,
+      short_desc: e.short_desc ?? '',
+      content: e.content ?? '',
+      thumbnail_url: e.thumbnail_url ?? '',
+      time_event: e.time_event,
+      created_at: e.created_at,
+      updated_at: e.updated_at,
+    };
+
+    return NextResponse.json(event);
   } catch (error) {
-    console.error('Error fetching by id:', error)
     return NextResponse.json(
-      {
-        success: false,
-        error: 'Không thể tải dữ liệu chi tiết',
-        details: error.message
-      },
+      { success: false, error: 'Không thể tải chi tiết sự kiện', details: error.message },
       { status: 500 }
-    )
+    );
   }
 }
