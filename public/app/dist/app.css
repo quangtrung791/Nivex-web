@@ -6166,7 +6166,8 @@ img.img-src-2-el {
 
 .blog-box .box-image {
     position: relative;
-    background: var(--surface);
+    /* background: var(--surface); */
+    background: transparent;
     border-radius: 16px;
     display: flex;
     align-items: center;
