@@ -35,7 +35,6 @@ export async function GET(request) {
       slug: e.slug,
       title: e.title,
       short_desc: e.short_desc ?? '',
-      content: e.content ?? '',
       thumbnail_url: e.thumbnail_url ?? '',
       time_event: e.time_event,
       created_at: e.created_at,

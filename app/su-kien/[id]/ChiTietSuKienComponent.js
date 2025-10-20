@@ -14,11 +14,11 @@ export default function EventDetails() {
     const [loading, setLoading] = useState(true);
     const [moreNewsCount, setMoreNewsCount] = useState(3);
 
-    useEffect(() => {
-        if (events && events.title) {
-            document.title = events.title;
-        }
-    }, [events]);
+    // useEffect(() => {
+        // if (events && events.title) {
+        //     document.title = events.title;
+        // }
+    // }, [events]);
 
     useEffect(() => {
         if (!id) return

@@ -21,10 +21,15 @@ export async function generateMetadata({ params }) {
     const data = await getTermBySlug(slug);
     const title = data?.title || "Sự kiện Nivex";
     const desc = data?.short_desc?.replace(/<[^>]+>/g, '') || "Sự kiện tại Nivex tổ chức";
+    const keywords = data?.rank_math_seo_keyword
 
     return {
         title: `${title} | Chi tiết sự kiện Nivex`,
         description: desc,
+        alternates: {
+            canonical: `https://nivex.vn/su-kien/${slug}`
+        },
+        keywords,
         openGraph: {
             title: `${title} | Chi tiết sự kiện Nivex`,
             description: desc,
