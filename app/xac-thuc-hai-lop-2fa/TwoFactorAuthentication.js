@@ -18,7 +18,7 @@ export default function TwoFactorAuthentication() {
                             </h1>
                         </div>
                         <div className={`col-md-6 ${styles.col4mdCenter}`}>
-                             <p className={`${styles.pageHeaderKnowledgeSubtitle}`}>Giúp tăng cường bảo mật tài khoản của bạn, tránh bị chặn SMS hoặc mất mã qua email do lỗi mạng.gười dùng Nivex khác tức thì và hoàn toàn miễn phí.</p>
+                             <p className={`${styles.pageHeaderKnowledgeSubtitle}`}>Giúp tăng cường bảo mật tài khoản của bạn, tránh bị chặn SMS hoặc mất mã qua email do lỗi mạng. Người dùng Nivex khác tức thì và hoàn toàn miễn phí.</p>
                         </div>
                     </div>
                 </div>
@@ -89,9 +89,9 @@ export default function TwoFactorAuthentication() {
                                 <div className={styles.stepContent}>
                                     <p className={styles.stepTitle}>6. Quay lại ứng dụng Nivex, nhập mã xác thực 6 số từ ứng dụng Google Authenticator vào ô <span className={styles.hightlightP2P}>Xác thực Google</span> và chọn <span className={styles.hightlightP2P}>Xác nhận</span>.</p>
                                     <div className={styles.displayFlexForStepDescription}>  
-                                        <div className={styles.imagePlaceholder + ' ' + styles.imagePlaceholder1}></div>
-                                        <div className={styles.imagePlaceholder + ' ' + styles.imagePlaceholder2}></div>
-                                        <div className={styles.imagePlaceholder + ' ' + styles.imagePlaceholder3}></div>
+                                        <div className={styles.imagePlaceholder + ' ' + styles.imagePlaceholder4}></div>
+                                        <div className={styles.imagePlaceholder + ' ' + styles.imagePlaceholder5}></div>
+                                        <div className={styles.imagePlaceholder + ' ' + styles.imagePlaceholder6}></div>
                                     </div>
                                 </div>
                             </div>

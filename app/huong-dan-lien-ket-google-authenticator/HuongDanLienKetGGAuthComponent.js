@@ -33,15 +33,11 @@ export default function HuongDanLienKetGGAuth() {
                                     </div>
                                 </div>
                             </div>
-                            {/* <div className="row image-bao-li-xi-container">
-                                <img className="image-bao-li-xi" src='/assets/images/icon/li-xi.svg' />
-                            </div> */}
                         </div>
                         <div className="huong-dan-cac-buoc-container">
                             <div className="buoc-huong-dan">
                                 <div className="step-components step-components-mobile-mt">
                                     <p className="gg-step-component-title">1. Mở ứng dụng Nivex và nhấn vào nút <span className="text-bolder">đăng ký</span></p>
-                                    {/* <p className="step-component-text">Mở Ứng dụng Nivex, nhấn vào biểu tượng <span className="text-bolder">LOGO</span> ở góc trên bên trái, sau đó chọn <span className="text-bolder">Khuyến mãi </span>-&gt; <span className="text-bolder">Lì Xì</span></p> */}
                                     <div className="group-images-flexible">
                                         <img src="/assets/images/screenshot/gg-1.svg" className="image-li-xi" />
                                         <img src="/assets/images/screenshot/gg-2.svg" className="image-li-xi" />
