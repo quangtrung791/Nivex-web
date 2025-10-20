@@ -105,8 +105,8 @@ export default function EventDetails() {
                                 </div>
                             </div>
                             <div className="col-xl-4 col-md-12">
-                                <h6 className="heading tin-nong-heading">Sự kiện khác</h6>
-                                <div className="sidebar">
+                                <h6 className="heading tin-nong-heading heading-skienkhacc">Sự kiện khác</h6>
+                                <div className="sidebar su-kien-khaccc">
                                     <div className="widget recent mt-0">
                                         <ul className="tin-nong">
                                             {Array.isArray(hotEvents) && hotEvents.slice(0, 10).map(item => (
@@ -118,11 +118,11 @@ export default function EventDetails() {
                                                                 : ''}
                                                         </p>
                                                         <div className="image">
-                                                            <img src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
+                                                            <img className="mini-image-sukienkhac" src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
                                                         </div>
                                                     </div>
                                                     <div className="content">
-                                                        <Link href={`/su-kien/${item.slug}`} className="title navigate-child-news">
+                                                        <Link href={`/su-kien/${item.slug}`} className="title navigate-child-news ctietsukiennivex-tochuc">
                                                             {item.title}
                                                         </Link>
                                                     </div>

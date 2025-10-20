@@ -1,4 +1,7 @@
 /* Fixed */
+.nivex-da-bezt {
+    border-radius: 25px !important;
+}
 input.news-search-input {
     border-radius: 25px 0 0 25px;
 }

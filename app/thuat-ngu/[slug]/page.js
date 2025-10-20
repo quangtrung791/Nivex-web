@@ -14,15 +14,13 @@ async function getTermBySlug(slug) {
     
     if (!res.ok) return null;
     return await res.json();
-    // const json = await res.json();
-    // Tìm đúng thuật ngữ theo slug
-    // return json.data?.find(item => item.slug?.toLowerCase() === slug.toLowerCase()) || null;
 }
 
 // Tạo metadata động
 export async function generateMetadata({ params }) {
     const { slug } = params;
-    const dataGet = await getTermBySlug(slug);
+    const res = await getTermBySlug(slug);
+    const dataGet = res?.data;
     console.log("Metadata data:", dataGet); // Thêm dòng này để debug
 
     const keyword = dataGet?.keyword || "Thuật ngữ";
@@ -33,7 +31,28 @@ export async function generateMetadata({ params }) {
         : plainText;
     // const desc = dataGet?.short_desc?.replace(/<[^>]+>/g, '') || "Tìm hiểu về các từ khóa của ngành blockchain chỉ trong vài phút.";
 
-    console.log(keyword);
+    if (!(dataGet?.keyword) || dataGet?.keyword == null) {
+        return {
+            title: `${dataGet?.slug} | Bảng thuật ngữ Nivex`,
+            description: desc,
+            openGraph: {
+                title: `${dataGet?.keyword} | Bảng thuật ngữ Nivex`,
+                description: desc,
+                url: `https://nivex.vn/thuat-ngu/${dataGet?.slug}`,
+                siteName: "Nivex",
+                images: [
+                    {
+                        url: "/assets/images/logo/Nivex_icon_bg.png",
+                        width: 1200,
+                        height: 630,
+                        alt: `${keyword}`
+                    }
+                ],
+                locale: "vi_VN",
+                type: "website"
+            }
+        }
+    }
     
     return {
         title: `${dataGet?.keyword} | Bảng thuật ngữ Nivex`,

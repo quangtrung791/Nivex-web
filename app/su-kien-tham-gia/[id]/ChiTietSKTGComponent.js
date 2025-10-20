@@ -104,8 +104,8 @@ export default function JoinedEventDetailsComponent() {
                                     </div>
                                 </div>
                                 <div className="col-xl-4 col-md-12">
-                                    <h6 className="heading tin-nong-heading">Sự kiện khác</h6>
-                                    <div className="sidebar">
+                                    <h6 className="heading tin-nong-heading heading-skienkhacc1">Sự kiện khác</h6>
+                                    <div className="sidebar su-kien-khaccc1">
                                         <div className="widget recent mt-0">
                                             <ul className="tin-nong">
                                                 {Array.isArray(hotEvents) && hotEvents.slice(0, 10).map(item => (
@@ -117,7 +117,7 @@ export default function JoinedEventDetailsComponent() {
                                                                     : ''}
                                                             </p>
                                                             <div className="image">
-                                                                <img src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
+                                                                <img className="mini-image-src-2" src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
                                                             </div>
                                                         </div>
                                                         <div className="content">

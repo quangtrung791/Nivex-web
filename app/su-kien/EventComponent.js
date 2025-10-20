@@ -248,7 +248,7 @@ export default function SuKien() {
                                                 }
 
                                                 return (
-                                                    <div className="blog-box" key={item.id}>
+                                                    <div className="blog-box nivex-da-bezt" key={item.id}>
                                                         <div className="box-image">
                                                             <img src={item.thumbnail_url || "/assets/images/blog/blog-01.jpg"} alt={item.title} />
                                                         </div>

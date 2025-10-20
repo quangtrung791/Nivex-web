@@ -122,8 +122,8 @@ export default function NewsBlogsDetails() {
                                     </div>
                                 </div>
                                 <div className="col-xl-4 col-md-12 right-side-panel-blog-details">
-                                    <h6 className="heading tin-nong-heading">Tin nóng</h6>
-                                    <div className="sidebar">
+                                    <h6 className="heading tin-nong-heading tin-nong-tintucid">Tin nóng</h6>
+                                    <div className="sidebar sb-tin-nong-ttuc-id">
                                         <div className="widget recent mt-0 title-link-right-panel">
                                             {/* <h6 className="heading">Tin nóng</h6> */}
                                             <ul className="tin-nong">
@@ -136,11 +136,11 @@ export default function NewsBlogsDetails() {
                                                                     : ''}
                                                             </p>
                                                             <div className="image">
-                                                                <img src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
+                                                                <img className="mini-image-imgs" src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
                                                             </div>
                                                         </div>
                                                         <div className="content">
-                                                            <Link href={`/tin-tuc/${item.slug}`} className="title navigate-child-news">
+                                                            <Link href={`/tin-tuc/${item.slug}`} className="title navigate-child-news a-href-tin-long">
                                                                 {item.title}
                                                             </Link>
                                                         </div>
@@ -154,9 +154,9 @@ export default function NewsBlogsDetails() {
                                     {/* Tin xem nhiều */}
                                     <div className="sidebar tin-xem-nhieu">
                                         <div className="widget recent mt-0 title-link-right-panel">
-                                            <h6 className="heading">Tin xem nhiều</h6>
+                                            <h6 className="heading heding-tin-xem-nhieu">Tin xem nhiều</h6>
                                             
-                                            <ul className="tin-nong">
+                                            <ul className="tin-nong tin-nogggg">
                                                 {hotNews.slice(0, 3).map(item => (
                                                     <li key={item.id}>
                                                         <div style={{ display: 'block' }}>
@@ -166,7 +166,7 @@ export default function NewsBlogsDetails() {
                                                                     : ''}
                                                             </p>
                                                             <div className="image">
-                                                                <img src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
+                                                                <img className="mini-image-imgs1" src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
                                                             </div>
                                                         </div>
                                                         <div className="content">
