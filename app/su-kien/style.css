@@ -270,7 +270,7 @@ section.section-news-header {
 }
 .blog-box:hover {
     /* box-shadow: 1px 1px 5px gray; */
-    background-color: #242529;
+    /* background-color: #242529; */
 }
 .blog-box:hover .read-more-btn {
      background: linear-gradient(#BCFE08 , #86F969);

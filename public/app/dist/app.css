@@ -5939,15 +5939,6 @@ img.img-src-2-el {
     margin-right: 10px;
 }
 
-/* .crypto-box {
-    background: var(--bg);
-    border-radius: 12px;
-    padding: 31px 40px;
-    margin-right: 22px;
-    width: 25%;
-    transition: 0.3s all ease-in-out;
-} */
-
 .crypto-box:last-child {
     margin-right: 0;
 }

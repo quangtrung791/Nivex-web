@@ -232,7 +232,8 @@ footer .btnAction {
 
 @media (min-width: 1440px) and (max-width: 1600px) {
     .blogDetails.ttuc .contentTab {
-        margin-top: 48px !important;
+        /* margin-top: 48px !important; */
+        margin-top: 24px !important;
     }
     .duocXemNhieu.colMd12 {
         padding: 3.5% 8% !important;
@@ -964,7 +965,8 @@ footer.footer.style-2.footer-main {
         justify-content: flex-end;
     }
     .blogDetails.ttuc .contentInner.row.divDuocXemNhieu {
-        margin-top: 10%;
+        /* margin-top: 10%; */
+        margin-top: 8%;
     }
     .duocXemNhieu .titleContainer {
         margin-bottom: 20px;

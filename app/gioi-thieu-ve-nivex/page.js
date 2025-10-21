@@ -39,7 +39,7 @@ export default function AboutNivex() {
                                         {/* <span className={styles.highlight}>Nivex</span> là nền tảng tài sản số an toàn & minh bạch, được AI hỗ trợ phân tích */}
                                         Nền tảng giao dịch tài sản số, bảo mật & minh bạch do AI hỗ trợ giao dịch
                                     </h2>
-                                    <p className={styles.description}>
+                                    <p className={`${styles.description} ${styles.descriptionCustomedd}`}>
                                         {/* Nivex là nền tảng tài sản số hướng tới bảo mật, minh bạch phí và trải nghiệm mượt mà. Nivex cung cấp Spot, Futures và AI Copy Trade – nơi AI hỗ trợ phân tích dữ liệu để người dùng ra quyết định tốt hơn. Bạn luôn giữ quyền kiểm soát: phân bổ vốn, chốt lời/dừng lỗ và có thể dừng sao chép bất kỳ lúc nào. */}
                                         Nivex xây dựng một nền tảng giao dịch tập trung vào bảo mật, minh bạch phí và trải nghiệm mượt mà, với bộ công cụ AI cùng với các tín hiệu quỹ tổ chức hàng đầu
                                     </p>
