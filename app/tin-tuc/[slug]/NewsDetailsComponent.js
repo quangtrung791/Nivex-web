@@ -7,8 +7,8 @@ import Link from "next/link"
 import { useParams } from "next/navigation"
 import './style.css'
 
-export default function NewsBlogsDetails() {
-    const {slug } = useParams();          // id chính là slug
+export default function ChiTietTinTucComponent() {
+    const { id: slug } = useParams();          // id chính là slug
     const [news, setNews] = useState(null);
     const [hotNews, setHotNews] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -70,7 +70,6 @@ export default function NewsBlogsDetails() {
 
     return (
         <>
-            {/* <Layout headerStyle={1} footerStyle={2} > */}
                 <div>
                     <section className="section-news-header">
                         <div className="news-header-container">
@@ -98,7 +97,6 @@ export default function NewsBlogsDetails() {
                                     <div className="navigate-link">
                                         <span className="navigate-link-content" id="navigate-link-content">
                                             <Link href='/tin-tuc'>Tin tức&nbsp;&nbsp;&gt;</Link>
-                                            {/* <span>&nbsp;&nbsp;Virtual Land in the Metaverse Is Selling for Millions of Dollars</span> */}
                                             <span>&nbsp;&nbsp;{news.title}</span>
                                         </span>
                                     </div>
@@ -109,13 +107,7 @@ export default function NewsBlogsDetails() {
                                         <h3 className="title">
                                             {news.title}
                                         </h3>
-                                        {/* <div className="meta">
-                                            <Link href="#" className="category btn-action">learn &amp; earn</Link>
-                                            <div className="meta-info">
-                                                <Link href="#" className="name"><span />Floyd Buckridge</Link>
-                                                <Link href="#" className="time">Feb 03, 2021</Link>
-                                            </div>
-                                        </div> */}
+                                       
                                         <div className="news-details-display-markdown content" dangerouslySetInnerHTML={{ __html: news.content }} >
                                             {/* Noi dung */}
                                         </div>
@@ -125,7 +117,6 @@ export default function NewsBlogsDetails() {
                                     <h6 className="heading tin-nong-heading tin-nong-tintucid">Tin nóng</h6>
                                     <div className="sidebar sb-tin-nong-ttuc-id">
                                         <div className="widget recent mt-0 title-link-right-panel">
-                                            {/* <h6 className="heading">Tin nóng</h6> */}
                                             <ul className="tin-nong">
                                                 {Array.isArray(hotNews) && hotNews.slice(0, 10).map(item => (
                                                     <li key={item.id}>
@@ -177,23 +168,6 @@ export default function NewsBlogsDetails() {
                                                     </li>
                                                 ))}
                                             </ul>
-
-
-                                            {/* <ul className="tin-nong">
-                                                <li>
-                                                    <div style={{ 'display': 'block'}}>
-                                                        <p className="time-stamp-p">30 phút trước</p>
-                                                        <div className="image">
-                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
-                                                        </div>
-                                                    </div>
-                                                    <div className="content">
-                                                        <Link href="#" className="title navigate-child-news">Learn about UI8 coin and earn an All-Access Pass</Link>
-                                                    </div>
-                                                </li>
-                                                
-                                                
-                                            </ul> */}
                                         </div>
                                     </div>
 
@@ -207,56 +181,6 @@ export default function NewsBlogsDetails() {
                         <div className="title-container">
                             <h5>Được xem nhiều</h5>
                         </div>
-                                            {/* <div className="content-inner row div-duoc-xem-nhieu" > 
-                                                <div className="col-md-4">
-                                                    <div className="blog-box">
-                                                        <div className="box-image">
-                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
-                                                            <div className="wrap-video">
-                                                                 
-                                                            </div>
-                                                        </div>
-                                                        <div className="box-content title-news-duoc-xem-nhieu">
-                                                            <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className="col-md-4">
-                                                    <div className="blog-box">
-                                                        <div className="box-image">
-                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
-                                                            <div className="wrap-video">
-                                                                 
-                                                            </div>
-                                                        </div>
-                                                        <div className="box-content title-news-duoc-xem-nhieu">
-                                                            <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className="col-md-4">
-                                                    <div className="blog-box">
-                                                        <div className="box-image">
-                                                            <img src="/assets/images/blog/blog-02.jpg" alt="" />
-                                                            <div className="wrap-video">
-                                                                 
-                                                            </div>
-                                                        </div>
-                                                        <div className="box-content title-news-duoc-xem-nhieu">
-                                                            <Link href="#" className="title">Learn about UI8 coin and earn an All-Access Pass</Link>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                              
-                                                <div className="col-md-12">
-                                                    <div className="button-loadmore">
-                                                        <Link href="#" className="btn-action">
-                                                            Xem thêm
-                                                        </Link>
-                                                    </div>
-                                                </div>
-                                            </div> */}
-
                                             <div className="content-inner row div-duoc-xem-nhieu">
                                                 {hotNews.slice(0, 3).map(item => (
                                                     <div className="col-md-4" key={item.id}>
@@ -281,8 +205,6 @@ export default function NewsBlogsDetails() {
                                             </div>
                     </section>
                 </div>
-
-            {/* </Layout> */}
         </>
     )
 }
