@@ -316,7 +316,7 @@ export default function KnowledgePage() {
                     </div>
 
                     <div className={styles.contentSection} style={{marginTop: '70px'}}>
-                        <h3 className={styles.sectionTitle}>MỚI NHẤT</h3>
+                        <h3 className={styles.sectionTitle}>Mới nhất</h3>
                         
                         {!loading && !error && (
                             <div className={styles.articlesGrid}>
