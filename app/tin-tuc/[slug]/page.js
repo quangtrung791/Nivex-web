@@ -1,6 +1,6 @@
 import Layout from "@/components/layout/Layout"
 import { Metadata } from "next"
-import NewsBlogsDetails from "./NewsDetailsComponent";
+import ChiTietTinTucComponent from "./NewsDetailsComponent";
 
 // Hàm lấy dữ liệu từ API theo slug
 async function getTermBySlug(slug) {
@@ -20,7 +20,6 @@ export async function generateMetadata({ params }) {
     const { slug } = params
     const data = await getTermBySlug(slug);
     const keyword = data?.title || "Chi tiết tin tức";
-    const keywords = data?.rank_math_seo_keyword;
     // const desc = (data?.content?.replace(/<[^>]+>/g, '') || "Chi tiết tin tức tại Nivex.").slice(0, 160);
     
     // tránh trường hợp bị cắt ngang chữ
@@ -32,10 +31,6 @@ export async function generateMetadata({ params }) {
     return {
         title: `${keyword} | Chi tiết tin tức Nivex`,
         description: desc,
-        keywords: keywords,
-        alternates: {
-            canonical: `https://nivex.vn/tin-tuc/${slug}`
-        },
         openGraph: {
             title: `${keyword} | Chi tiết tin tức Nivex`,
             description: desc,
@@ -57,11 +52,8 @@ export async function generateMetadata({ params }) {
 
 export default function ChiTietTinTucPage() {
     return (
-        // <Layout headerStyle={1} footerStyle={2}>
-        //     <ChiTietThuatNgu />
-        // </Layout>
         <Layout headerStyle={1} footerStyle={2}>
-            <NewsBlogsDetails />
+            <ChiTietTinTucComponent />
         </Layout>
     )
 }
