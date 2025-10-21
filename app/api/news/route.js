@@ -10,6 +10,7 @@ export async function GET(request) {
     const page   = searchParams.get('page')   || '1';
     const per    = searchParams.get('per_page') || '50';
     const category_id = searchParams.get('category_id') || '';
+    const featured = searchParams.get('featured') || '';
 
     // WP endpoint
     const wp = new URL('https://nivexhub.learningchain.vn/wp-json/nivex/v1/news');
@@ -18,6 +19,7 @@ export async function GET(request) {
     wp.searchParams.set('per_page', per);
     if (search) wp.searchParams.set('search', search);
     if (category_id) wp.searchParams.set('category_id', category_id);
+    if (featured !== '') wp.searchParams.set('featured', featured);
 
     const res  = await fetch(wp.toString(), { next: { revalidate: 60 } });
     const json = await res.json();
@@ -38,7 +40,8 @@ export async function GET(request) {
       time_upload: n.time_upload,
       created_at: n.created_at,
       updated_at: n.updated_at,
-      thumbnail_url: n.thumbnail_url || 'https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp'
+      thumbnail_url: n.thumbnail_url || 'https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp',
+      is_featured: Number(n.is_featured) === 1,
     }));
 
     return NextResponse.json({ success: true, data: news, meta: json.meta });

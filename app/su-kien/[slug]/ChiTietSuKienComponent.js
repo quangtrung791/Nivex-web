@@ -8,7 +8,7 @@ import { useParams } from "next/navigation"
 import './style.css'
 
 export default function EventDetails() {
-    const { id } = useParams()
+    const { slug } = useParams()
     const [events, setEvents] = useState(null);
     const [hotEvents, setHotEvents] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -21,21 +21,21 @@ export default function EventDetails() {
     // }, [events]);
 
     useEffect(() => {
-        if (!id) return
+        if (!slug) return
         setLoading(true)
-        fetch(`/api/event/${id}`)
+        fetch(`/api/event/${slug}`)
             .then(res => res.json())
             .then(data => {
                 setEvents(data)
                 setLoading(false)
             })
             .catch(() => setLoading(false))
-    }, [id]);
+    }, [slug]);
 
     useEffect(() => {
-        if (!id) return;
+        if (!slug) return;
         setLoading(true);
-        fetch(`/api/event/${id}`)
+        fetch(`/api/event/${slug}`)
             .then(res => res.json())
             .then(data => {
                 setEvents(data);
@@ -46,7 +46,7 @@ export default function EventDetails() {
         fetch('/api/event?hot=1')
             .then(res => res.json())
             .then(data => setHotEvents(Array.isArray(data.data) ? data.data : []));
-    }, [id]);
+    }, [slug]);
 
     if (loading) return
     <div style={{ 'display': 'flex', 'justifyContent': 'center', 'alignItems': 'center' }}>

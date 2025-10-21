@@ -8,7 +8,7 @@ import { useParams } from "next/navigation"
 import './style.css'
 
 export default function NewsBlogsDetails() {
-    const { id: slug } = useParams();          // id chính là slug
+    const {slug } = useParams();          // id chính là slug
     const [news, setNews] = useState(null);
     const [hotNews, setHotNews] = useState([]);
     const [loading, setLoading] = useState(true);

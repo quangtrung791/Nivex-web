@@ -20,6 +20,7 @@ export async function generateMetadata({ params }) {
     const { slug } = params
     const data = await getTermBySlug(slug);
     const keyword = data?.title || "Chi tiết tin tức";
+    const keywords = data?.rank_math_seo_keyword;
     // const desc = (data?.content?.replace(/<[^>]+>/g, '') || "Chi tiết tin tức tại Nivex.").slice(0, 160);
     
     // tránh trường hợp bị cắt ngang chữ
@@ -31,6 +32,10 @@ export async function generateMetadata({ params }) {
     return {
         title: `${keyword} | Chi tiết tin tức Nivex`,
         description: desc,
+        keywords: keywords,
+        alternates: {
+            canonical: `https://nivex.vn/tin-tuc/${slug}`
+        },
         openGraph: {
             title: `${keyword} | Chi tiết tin tức Nivex`,
             description: desc,
