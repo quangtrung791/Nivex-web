@@ -1,6 +1,6 @@
 import Layout from "@/components/layout/Layout"
 import { Metadata } from "next"
-import TinTucComponent from "./NewsComponent"
+import BlogDetails from "./NewsComponent"
 
 export const metadata = {
     title: "Danh sách tin tức | Nivex",
@@ -34,10 +34,10 @@ export const metadata = {
     }
 }
 
-export default function TinTucLayout() {
+export default function NewsListPage() {
     return (
         <Layout headerStyle={1} footerStyle={2}>
-            <TinTucComponent />
+            <BlogDetails />
         </Layout>
     )
 }
