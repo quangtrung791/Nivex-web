@@ -38,6 +38,7 @@ export async function GET(_request, { params }) {
       time_event: e.time_event,
       created_at: e.created_at,
       updated_at: e.updated_at,
+      rank_math_seo_keyword: e.rank_math_seo_keyword,
     };
 
     return NextResponse.json(event);
