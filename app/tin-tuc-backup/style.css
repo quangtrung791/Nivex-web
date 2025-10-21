@@ -43,7 +43,7 @@ footer .btn-action {
 .button-loadmore .btn-action:hover {
     color: black;
     background: linear-gradient(90deg,#BCFE08, #86F969);
-    border: 2px solid black;
+    border: 1px solid black;
 }
 @media (min-width: 800px) {
     section.ttuc .col-xl-4.col-md-12 a.title.navigate-child-news {

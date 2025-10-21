@@ -142,7 +142,7 @@ footer .btnAction {
 .buttonLoadmore .btnAction:hover {
     color: black;
     background: linear-gradient(90deg,#BCFE08, #86F969);
-    border: 2px solid black;
+    border: 1px solid black;
 }
 @media (min-width: 800px) {
     .ttuc .colXl4.colMd12 a.title.navigateChildNews {
