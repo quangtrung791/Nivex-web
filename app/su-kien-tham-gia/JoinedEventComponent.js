@@ -151,7 +151,7 @@ export default function SuKienAlt() {
                                                         }
                                                         return (
                                                             <div className="col-md-6" key={item.id}>
-                                                                <div className="blog-box">
+                                                                <div className="blog-box hien-thi-su-kiem-tham-gia">
                                                                     <div className="tag-status">
                                                                         <p>{item.type || "Online"}</p>
                                                                     </div>
