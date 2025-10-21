@@ -30,33 +30,14 @@ export async function generateMetadata({ params }) {
         ? plainText.slice(0, 157).trimEnd() + "..."
         : plainText;
     // const desc = dataGet?.short_desc?.replace(/<[^>]+>/g, '') || "Tìm hiểu về các từ khóa của ngành blockchain chỉ trong vài phút.";
-
-    if (!(dataGet?.keyword) || dataGet?.keyword == null) {
-        return {
-            title: `${dataGet?.slug} | Bảng thuật ngữ Nivex`,
-            description: desc,
-            openGraph: {
-                title: `${dataGet?.keyword} | Bảng thuật ngữ Nivex`,
-                description: desc,
-                url: `https://nivex.vn/thuat-ngu/${dataGet?.slug}`,
-                siteName: "Nivex",
-                images: [
-                    {
-                        url: "/assets/images/logo/Nivex_icon_bg.png",
-                        width: 1200,
-                        height: 630,
-                        alt: `${keyword}`
-                    }
-                ],
-                locale: "vi_VN",
-                type: "website"
-            }
-        }
-    }
     
     return {
         title: `${dataGet?.keyword} | Bảng thuật ngữ Nivex`,
         description: desc,
+        keywords: dataGet?.rank_math_seo_keyword || '',
+        alternates: {
+            canonical: `https://nivex.vn/thuat-ngu/${dataGet?.slug}`
+        },
         openGraph: {
             title: `${dataGet?.keyword} | Bảng thuật ngữ Nivex`,
             description: desc,

@@ -21,13 +21,19 @@ export async function generateMetadata({ params }) {
     const data = await getTermBySlug(slug);
     const title = data?.title || "Sự kiện Nivex tham dự";
     const desc = data?.short_desc?.replace(/<[^>]+>/g, '') || "Sự kiện Nivex đã tham dự";
-
+    const keywords = data?.rank_math_seo_keyword || '';
+    console.log('[metadata] rank_math_seo_keyword:', data?.rank_math_seo_keyword);
     return {
         title: `${title} | Chi tiết sự kiện Nivex`,
         description: desc,
+        keywords,
+        alternates: {
+            canonical: `https://nivex.vn/su-kien-tham-gia/${slug}`
+        },
         openGraph: {
             title: `${title} | Chi tiết sự kiện Nivex`,
             description: desc,
+            keywords : keywords,
             url: `https://nivex.vn/su-kien-tham-gia/${slug}`,
             siteName: "Nivex",
             images: [

@@ -36,7 +36,9 @@ export async function GET(_request, { params }) {
       time_upload: a.time_upload,
       created_at: a.created_at,
       updated_at: a.updated_at,
-      category_id: a.category_id ?? null
+      category_id: a.category_id ?? null,
+      rank_math_seo_keyword: a.rank_math_seo_keyword ?? '',
+      rank_math_seo_description: a.rank_math_seo_description ?? '',
     };
 
     return NextResponse.json({ success: true, data: article });

@@ -40,7 +40,8 @@ export async function GET(_req, { params }) {
       tag1: e.tag1 ?? '',
       tag2: e.tag2 ?? '',
       tag3: e.tag3 ?? '',
-      type: e.type ?? ''
+      type: e.type ?? '',
+      rank_math_seo_keyword: e.rank_math_seo_keyword,
     };
 
     return NextResponse.json(event);
