@@ -326,7 +326,7 @@ export default function TinTucComponent() {
                                     {news[0] && (
                                         <div className={`box-image ${styles2.boxImage} ${styles2.triggerFullW}`}>
                                             <img className={`${styles2.mostFeaturedNewsHighlight}`} src={hero.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={hero.title} />
-                                            <div className={styles.imageOverlay}></div>
+                                            <div className={`${styles2.imageOverlay}`}></div>
                                         </div>
                                     )}
 
