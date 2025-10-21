@@ -1,6 +1,6 @@
 import Layout from "@/components/layout/Layout"
 import { Metadata } from "next"
-import ChiTietTinTucComponent from "./NewsDetailsComponent";
+import NewsBlogsDetails from "./NewsDetailsComponent";
 
 // Hàm lấy dữ liệu từ API theo slug
 async function getTermBySlug(slug) {
@@ -52,7 +52,11 @@ export async function generateMetadata({ params }) {
 
 export default function ChiTietTinTucPage() {
     return (
+        // <Layout headerStyle={1} footerStyle={2}>
+        //     <ChiTietThuatNgu />
+        // </Layout>
         <Layout headerStyle={1} footerStyle={2}>
-            <ChiTietTinTucComponent />
+            <NewsBlogsDetails />
         </Layout>
     )
+}
