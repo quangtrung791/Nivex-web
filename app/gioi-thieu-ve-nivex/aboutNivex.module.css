@@ -1,4 +1,7 @@
 /* Fixed */
+.timHieuThemBtn:hover {
+  background: linear-gradient(90deg,#BCFE08, #86F969);
+}
 @media (min-width: 1900px) {
   .heroContentColumn1 {
     width: 70% !important;

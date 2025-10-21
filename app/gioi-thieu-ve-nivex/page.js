@@ -117,7 +117,7 @@ export default function AboutNivex() {
                                     
                                 </div>
                                 <div className={styles.ctaButton}>
-                                        <a href="/ai-copy-trade"className={`btn-cta-simple ${styles.learnMoreBtn}`}>Tìm hiểu thêm</a>
+                                        <a href="/ai-copy-trade"className={`btn-cta-simple ${styles.learnMoreBtn} ${styles.timHieuThemBtn}`}>Tìm hiểu thêm</a>
                                 </div>
                             </div>
                         </div>
