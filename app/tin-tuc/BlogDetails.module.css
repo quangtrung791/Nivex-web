@@ -661,8 +661,8 @@ footer.footer.style-2.footer-main {
         padding-bottom: 5px;
     }
     .blogDetails.ttuc .tinNong {
-        max-height: 660px; 
-        /* max-height: 700px;  */
+        /* max-height: 660px;  */
+        max-height: 700px; 
         overflow-y: auto;
     }
     .blogBox .boxContent .title {
