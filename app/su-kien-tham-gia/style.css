@@ -57,7 +57,7 @@ footer .btn-action {
 }
 
 .blog-grid .blog-box:hover {
-    background: #242529;
+    /* background: #242529; */
 }
 
 .blog-grid .blog-box:hover .event-btn {
