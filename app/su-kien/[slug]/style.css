@@ -3,7 +3,8 @@
     background-color: unset !important;
     cursor: pointer;
 }
-.chi-tiet-su-kien-item-box:hover .title-news-duoc-xem-nhieu a {
+.chi-tiet-su-kien-item-box:hover .title-news-duoc-xem-nhieu a,
+.li-chi-tiet-su-kien-to-chuc-slug:hover a {
     /* background: var(--primary); */
     background: linear-gradient(90deg, #BCFE08, #86F969);
     -webkit-background-clip: text;
@@ -240,8 +241,10 @@ section.section-sale {
 a.title.navigate-child-news:hover {
     color:  #BCFE08  !important; 
 }
-h6.heading.tin-nong-heading {
-    padding-bottom: 20px !important;
+@media (min-width: 600px) {
+    h6.heading.tin-nong-heading {
+        padding-bottom: 20px !important;
+    }
 }
 
 @media (min-width: 1440px) and (max-width: 1919px) {

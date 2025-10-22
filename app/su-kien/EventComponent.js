@@ -248,24 +248,26 @@ export default function SuKien() {
                                                 }
 
                                                 return (
-                                                    <div className="blog-box nivex-da-bezt" key={item.id}>
-                                                        <div className="box-image">
-                                                            <img src={item.thumbnail_url || "/assets/images/blog/blog-01.jpg"} alt={item.title} />
-                                                        </div>
-                                                        <div className="box-content">
-                                                            <div className="meta">
-                                                                <Link href="#" className="name">
-                                                                    <span /> {statusText}
-                                                                </Link>
-                                                                <Link href="#" className="time">
-                                                                    {item.time_event ? new Date(item.time_event).toLocaleDateString("vi-VN") : ""}
-                                                                </Link>
+                                                    <Link href={`/su-kien/${item.slug}`} style={{'fontWeight': 'unset', 'fontSize':'unset', 'color': 'unset'}}>
+                                                        <div className="blog-box nivex-da-bezt" key={item.id}>
+                                                            <div className="box-image">
+                                                                <img src={item.thumbnail_url || "/assets/images/blog/blog-01.jpg"} alt={item.title} />
                                                             </div>
-                                                            <Link href={`/su-kien/${item.slug}`} className="title">{item.title}</Link>
-                                                            <div className="text" dangerouslySetInnerHTML={{ __html: item.short_desc }}></div>
-                                                            <Link href={`/su-kien/${item.slug}`} className="read-more-btn btn-action">Xem thêm</Link>
+                                                            <div className="box-content">
+                                                                <div className="meta">
+                                                                    <Link href="#" className="name">
+                                                                        <span /> {statusText}
+                                                                    </Link>
+                                                                    <Link href="#" className="time">
+                                                                        {item.time_event ? new Date(item.time_event).toLocaleDateString("vi-VN") : ""}
+                                                                    </Link>
+                                                                </div>
+                                                                <Link href={`/su-kien/${item.slug}`} className="title">{item.title}</Link>
+                                                                <div className="text" dangerouslySetInnerHTML={{ __html: item.short_desc }}></div>
+                                                                <Link href={`/su-kien/${item.slug}`} className="read-more-btn btn-action">Xem thêm</Link>
+                                                            </div>
                                                         </div>
-                                                    </div>
+                                                    </Link>
                                                 );
                                             })
                                         )}

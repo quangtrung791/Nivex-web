@@ -5,7 +5,9 @@
 .duoccc-xemmm-nhieuuu img {
     border-radius: 25px !important;
 }
-.duoccc-xemmm-nhieuuu:hover .title-news-duoc-xem-nhieu a {
+.duoccc-xemmm-nhieuuu:hover .title-news-duoc-xem-nhieu a,
+.li-chi-tiet-tin-tuc-slug:hover a,
+.li-chi-tiet-tin-tuc-slug2:hover a {
     /* background: var(--primary); */
     background: linear-gradient(90deg, #BCFE08, #86F969);
     -webkit-background-clip: text;

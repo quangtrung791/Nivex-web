@@ -120,23 +120,25 @@ export default function ChiTietTinTucComponent() {
                                         <div className="widget recent mt-0 title-link-right-panel">
                                             <ul className="tin-nong">
                                                 {Array.isArray(hotNews) && hotNews.slice(0, 10).map(item => (
-                                                    <li key={item.id}>
-                                                        <div style={{ display: 'block' }}>
-                                                            <p className="time-stamp-p">
-                                                                {item.time_upload
-                                                                    ? new Date(item.time_upload).toLocaleString('vi-VN', { hour12: false })
-                                                                    : ''}
-                                                            </p>
-                                                            <div className="image">
-                                                                <img className="mini-image-imgs" src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
+                                                    <Link href={`/tin-tuc/${item.slug}`}>
+                                                        <li className="li-chi-tiet-tin-tuc-slug" key={item.id}>
+                                                            <div style={{ display: 'block' }}>
+                                                                <p className="time-stamp-p">
+                                                                    {item.time_upload
+                                                                        ? new Date(item.time_upload).toLocaleString('vi-VN', { hour12: false })
+                                                                        : ''}
+                                                                </p>
+                                                                <div className="image">
+                                                                    <img className="mini-image-imgs" src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div className="content">
-                                                            <Link href={`/tin-tuc/${item.slug}`} className="title navigate-child-news a-href-tin-long">
-                                                                {item.title}
-                                                            </Link>
-                                                        </div>
-                                                    </li>
+                                                            <div className="content">
+                                                                <Link href={`/tin-tuc/${item.slug}`} className="title navigate-child-news a-href-tin-long">
+                                                                    {item.title}
+                                                                </Link>
+                                                            </div>
+                                                        </li>
+                                                    </Link>
                                                 ))}
                                             </ul>
                                         </div> 
@@ -150,23 +152,25 @@ export default function ChiTietTinTucComponent() {
                                             
                                             <ul className="tin-nong tin-nogggg">
                                                 {hotNews.slice(0, 3).map(item => (
-                                                    <li key={item.id}>
-                                                        <div style={{ display: 'block' }}>
-                                                            <p className="time-stamp-p">
-                                                                {item.time_upload
-                                                                    ? new Date(item.time_upload).toLocaleString('vi-VN', { hour12: false })
-                                                                    : ''}
-                                                            </p>
-                                                            <div className="image">
-                                                                <img className="mini-image-imgs1" src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
+                                                    <Link href={`/tin-tuc/${item.slug}`}>
+                                                        <li className="li-chi-tiet-tin-tuc-slug2" key={item.id}>
+                                                            <div style={{ display: 'block' }}>
+                                                                <p className="time-stamp-p">
+                                                                    {item.time_upload
+                                                                        ? new Date(item.time_upload).toLocaleString('vi-VN', { hour12: false })
+                                                                        : ''}
+                                                                </p>
+                                                                <div className="image">
+                                                                    <img className="mini-image-imgs1" src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div className="content">
-                                                            <Link href={`/tin-tuc/${item.slug}`} className="title navigate-child-news">
-                                                                {item.title}
-                                                            </Link>
-                                                        </div>
-                                                    </li>
+                                                            <div className="content">
+                                                                <Link href={`/tin-tuc/${item.slug}`} className="title navigate-child-news">
+                                                                    {item.title}
+                                                                </Link>
+                                                            </div>
+                                                        </li>
+                                                    </Link>
                                                 ))}
                                             </ul>
                                         </div>

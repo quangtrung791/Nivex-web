@@ -151,34 +151,36 @@ export default function SuKienAlt() {
                                                         }
                                                         return (
                                                             <div className="col-md-6" key={item.id}>
-                                                                <div className="blog-box hien-thi-su-kiem-tham-gia">
-                                                                    <div className="tag-status">
-                                                                        <p>{item.type || "Online"}</p>
-                                                                    </div>
-                                                                    <div className="box-image">
-                                                                        <img src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt="" />
-                                                                    </div>
-                                                                    <div className="box-content">
-                                                                        <div>
-                                                                            <Link href={`/su-kien-tham-gia/${item.slug}`} className="title">{item.title}</Link>
-                                                                            <p className="text-desc-su-kien">{item.short_desc}</p>
+                                                                <Link href={`/su-kien-tham-gia/${item.slug}`} style={{'fontWeight': 'unset', 'fontSize':'unset', 'color': 'unset'}}>
+                                                                    <div className="blog-box hien-thi-su-kiem-tham-gia">
+                                                                        <div className="tag-status">
+                                                                            <p>{item.type || "Online"}</p>
                                                                         </div>
-                                                                        <div className="event-meta-row">
-                                                                            <div className="event-meta-info">
-                                                                                <div className="event-time-date">
-                                                                                    <span className="event-time">{item.time_from_and_to || "Unknown"}</span>
-                                                                                    <span className="event-date">{eventDate.toLocaleDateString("vi-VN")}</span>
-                                                                                </div>
-                                                                                <div className="event-tags">
-                                                                                    <span>{item.tag1 || "Hợp đồng"}</span>
-                                                                                    <span>{item.tag2 || "Spot"}</span>
-                                                                                    <span>{item.tag3 || "CopyTrade"}</span>
-                                                                                </div>
+                                                                        <div className="box-image">
+                                                                            <img src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt="" />
+                                                                        </div>
+                                                                        <div className="box-content">
+                                                                            <div>
+                                                                                <Link href={`/su-kien-tham-gia/${item.slug}`} className="title">{item.title}</Link>
+                                                                                <p className="text-desc-su-kien">{item.short_desc}</p>
                                                                             </div>
-                                                                            <Link href={`/su-kien-tham-gia/${item.slug}`} className="event-btn btn-action">Xem thêm</Link>
+                                                                            <div className="event-meta-row">
+                                                                                <div className="event-meta-info">
+                                                                                    <div className="event-time-date">
+                                                                                        <span className="event-time">{item.time_from_and_to || "Unknown"}</span>
+                                                                                        <span className="event-date">{eventDate.toLocaleDateString("vi-VN")}</span>
+                                                                                    </div>
+                                                                                    <div className="event-tags">
+                                                                                        <span>{item.tag1 || "Hợp đồng"}</span>
+                                                                                        <span>{item.tag2 || "Spot"}</span>
+                                                                                        <span>{item.tag3 || "CopyTrade"}</span>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <Link href={`/su-kien-tham-gia/${item.slug}`} className="event-btn btn-action cta-butonnnnn">Xem thêm</Link>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
-                                                                </div>
+                                                                </Link>
                                                             </div>
                                                         );
                                                     })
