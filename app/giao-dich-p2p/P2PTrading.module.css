@@ -60,6 +60,7 @@
 
 .col4mdCenter {
     display: flex;
+    justify-content: flex-end;
 }
 
 .pageHeaderKnowledgeSubtitle {
@@ -199,7 +200,7 @@ h2.depositSectionTitle {
     display: none;
 }
 
-section.pageTitleDeposit, section.depositSection {
+section.pageTitleDeposit, section.depositSection, .breadcrumbSection {
     padding-left: 7%;
     padding-right: 7%;
 }
@@ -234,7 +235,7 @@ section.pageTitleDeposit, section.depositSection {
     }
 }
 @media (min-width: 650px) and (max-width: 1439px) {
-    section.pageTitleDeposit, section.depositSection {
+    section.pageTitleDeposit, section.depositSection, .breadcrumbSection {
         padding-left: 3.5%;
         padding-right: 3.5%;
     }  
