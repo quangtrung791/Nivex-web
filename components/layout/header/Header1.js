@@ -131,11 +131,11 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu }) {
                                         <Menu.Button className="btn dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             VN
                                         </Menu.Button>
-                                        <Menu.Items as="div" className="dropdown-menu show" aria-labelledby="dropdownMenuButton2">
-                                            <Link href="#" className="dropdown-item notify-item language" data-lang="en">
+                                        {/* <Menu.Items as="div" className="dropdown-menu show" aria-labelledby="dropdownMenuButton2"> */}
+                                            {/* <Link href="#" className="dropdown-item notify-item language" data-lang="en">
                                                 <img src="/assets/images/flags/us.jpg" alt="user-image" className="me-1" height={12} />
                                                 <span className="align-middle">English</span>
-                                            </Link>
+                                            </Link> */}
                                             {/* <Link href="#" className="dropdown-item notify-item language" data-lang="sp">
                                                 <img src="/assets/images/flags/spain.jpg" alt="user-image" className="me-1" height={12} />
                                                 <span className="align-middle">Spanish</span>
@@ -152,7 +152,7 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu }) {
                                                 <img src="/assets/images/flags/russia.jpg" alt="user-image" className="me-1" height={12} />
                                                 <span className="align-middle">Russian</span>
                                             </Link> */}
-                                        </Menu.Items>
+                                        {/* </Menu.Items> */}
                                     </Menu>
                                     <ThemeSwitch />
 
