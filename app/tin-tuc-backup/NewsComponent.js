@@ -259,8 +259,8 @@ export default function BlogDetails() {
                                                 color: "#111",
                                                 fontWeight: "bold",
                                                 border: "none",
-                                                borderRadius: 4,
-                                                padding: "10px 16px",
+                                                borderRadius: 25,
+                                                padding: "9px 16px",
                                                 minWidth: 100,
                                                 textAlign: "left",
                                                 width: "100%"
