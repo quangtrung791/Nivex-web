@@ -1,4 +1,9 @@
 /* Fixed */
+@media (max-width: 600px) {
+    .blog-main a.title {
+        height: 28% !important;
+    }
+}
 .nivex-da-bezt {
     border-radius: 25px !important;
 }

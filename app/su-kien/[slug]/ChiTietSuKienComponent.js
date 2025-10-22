@@ -6,6 +6,7 @@ import { useEffect, useState } from "react"
 import Link from "next/link"
 import { useParams } from "next/navigation"
 import './style.css'
+import './fix-content.css'
 
 export default function EventDetails() {
     const { slug } = useParams()
