@@ -2,6 +2,48 @@
 /* .su-kien-tg-id .col-xl-4.col-md-12 {
     padding-left: 0 !important;
 } */
+.really-need-a-specific-classname:hover {
+    background-color: unset !important;
+    cursor: pointer;
+}
+.really-need-a-specific-classname:hover .title-news-duoc-xem-nhieu a {
+    /* background: var(--primary); */
+    background: linear-gradient(90deg, #BCFE08, #86F969);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* fallback */
+    transition: all 0.3s ease;
+}
+.sktg-slug-right-side-panel {
+    display: block; /* Fallback for non-webkit */
+    display: -webkit-box !important;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media (min-width: 768px) {
+    .need-a-classname {
+        margin-bottom: 20px;
+    }
+}
+
+ .dc-xem-nhieu-diff-sktg a.title {
+    display: block; /* fallback */
+    display: -webkit-box;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: auto;
+ }
+@media (min-width: 1440px) {
+    a.title.navigate-child-events {
+        height: auto;
+    }
+}
+
  @media (width: 1912px) {
     section.section-news-header,
     section.duoc-xem-nhieu.col-md-12
@@ -181,8 +223,10 @@ section.section-sale {
 a.title.navigate-child-news:hover {
     color:  #BCFE08  !important; 
 }
-h6.heading.tin-nong-heading {
-    padding-bottom: 20px !important;
+@media (min-width: 600px) {
+    h6.heading.tin-nong-heading {
+        padding-bottom: 20px !important;
+    }
 }
 
 @media (min-width: 1440px) and (max-width: 1919px) {
@@ -1959,7 +2003,7 @@ footer.footer.style-2.footer-main {
     }
     .blog-details .sidebar {
         padding-left: 0;
-        padding-top: 20px;
+        padding-top: 0px;
         background: rgb(93 91 91 / 22%);
     }
     .widget.recent.mt-0 {
@@ -2187,7 +2231,7 @@ footer.footer.style-2.footer-main {
     }
     .blog-details .sidebar {
         padding-left: 0;
-        padding-top: 20px;
+        padding-top: 0px;
         background: rgb(93 91 91 / 22%);
     }
     .widget.recent.mt-0 {

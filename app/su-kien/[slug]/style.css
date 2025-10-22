@@ -1,4 +1,28 @@
 /* Fixed */
+.chi-tiet-su-kien-item-box:hover {
+    background-color: unset !important;
+    cursor: pointer;
+}
+.chi-tiet-su-kien-item-box:hover .title-news-duoc-xem-nhieu a {
+    /* background: var(--primary); */
+    background: linear-gradient(90deg, #BCFE08, #86F969);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* fallback */
+    transition: all 0.3s ease;
+}
+.title-news-duoc-xem-nhieu:hover  {
+    cursor: pointer;
+}
+
+.load-more-su-kiens button.btn-action {
+    background: linear-gradient(#BCFE08, #86F969);
+    color: black;
+}
+.load-more-su-kiens button.btn-action:hover {
+    color: black;
+}
+
 .event-details-display-markdown img {
     border-radius: 25px !important;
 }
@@ -23,7 +47,7 @@ input.news-search-input {
     border-radius: 25px 0 0 25px;
 }
 .news-search-btn {
-    border-radius: 0 25px 25px 0;
+    border-radius: 0 25px 25px 0 !important;
 }
 .box-image img {
     border-radius: 25px;

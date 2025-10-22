@@ -122,7 +122,7 @@ export default function JoinedEventDetailsComponent() {
                                                             </div>
                                                         </div>
                                                         <div className="content">
-                                                            <Link href={`/su-kien-tham-gia/${item.slug}`} className="title navigate-child-news">
+                                                            <Link href={`/su-kien-tham-gia/${item.slug}`} className="title navigate-child-news navigate-child-events sktg-slug-right-side-panel">
                                                                 {item.title}
                                                             </Link>
                                                         </div>
@@ -137,23 +137,25 @@ export default function JoinedEventDetailsComponent() {
                         </div>
                     </section>
                       <section className="duoc-xem-nhieu col-md-12">
-                        <div className="title-container">
+                        <div className="title-container need-a-classname">
                             <h5>Được xem nhiều</h5>
                         </div>
                                             
 
-                                            <div className="content-inner row div-duoc-xem-nhieu">
+                                            <div className="content-inner row div-duoc-xem-nhieu ">
                                                 {hotEvents.slice(0, 3).map(item => (
                                                     <div className="col-md-4" key={item.id}>
-                                                        <div className="blog-box">
-                                                            <div className="box-image">
-                                                                <img src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
-                                                                <div className="wrap-video"></div>
+                                                        <Link href={`/su-kien-tham-gia/${item.slug}`}>
+                                                            <div className="blog-box really-need-a-specific-classname">
+                                                                <div className="box-image">
+                                                                    <img src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
+                                                                    <div className="wrap-video"></div>
+                                                                </div>
+                                                                <div className="box-content title-news-duoc-xem-nhieu dc-xem-nhieu-diff-sktg">
+                                                                    <Link href={`/su-kien-tham-gia/${item.slug}`} className="title">{item.title}</Link>
+                                                                </div>
                                                             </div>
-                                                            <div className="box-content title-news-duoc-xem-nhieu">
-                                                                <Link href={`/su-kien-tham-gia/${item.slug}`} className="title">{item.title}</Link>
-                                                            </div>
-                                                        </div>
+                                                        </Link>
                                                     </div>
                                                 ))}
                                                 <div className="col-md-12">
