@@ -1,0 +1,8 @@
+@media (max-width: 600px) {
+    .event-details-display-markdown img {
+        /* max-height: 250px !important; */
+        height: unset;
+        object-fit: contain;
+        border-radius: 25px;
+    }
+}

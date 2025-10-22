@@ -372,7 +372,7 @@ export default function TinTucComponent() {
 
                         <div className={`d-flex ${styles2.containerXemThemBtnMobileOnly}`}>
                             <div className={`${styles2.xemThemBtnMobileOnly}`}>
-                                <Link href="#">
+                                <Link className={`${styles2.xemThemBtnAHref}`} href="#">
                                     Xem thêm
                                 </Link>
                             </div>

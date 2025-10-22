@@ -1,4 +1,7 @@
 /* Fixed */
+.xemThemBtnAHref {
+    border-radius: 25px !important;
+}
 .titleTinNongg12 {
     margin-bottom: 0 !important;
 }
