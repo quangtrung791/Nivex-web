@@ -1,3 +1,6 @@
+.text-box-border-container {
+    border-radius: 25px;
+}
 .btn-action {
     border-radius: 99px !important;
 }
