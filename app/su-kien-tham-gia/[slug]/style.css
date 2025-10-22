@@ -6,6 +6,8 @@
     background-color: unset !important;
     cursor: pointer;
 }
+
+.li-chi-tiet-su-kien-tham-gia-slug:hover a,
 .really-need-a-specific-classname:hover .title-news-duoc-xem-nhieu a {
     /* background: var(--primary); */
     background: linear-gradient(90deg, #BCFE08, #86F969);
@@ -2003,7 +2005,7 @@ footer.footer.style-2.footer-main {
     }
     .blog-details .sidebar {
         padding-left: 0;
-        padding-top: 0px;
+        padding-top: 20px;
         background: rgb(93 91 91 / 22%);
     }
     .widget.recent.mt-0 {
@@ -2231,7 +2233,7 @@ footer.footer.style-2.footer-main {
     }
     .blog-details .sidebar {
         padding-left: 0;
-        padding-top: 0px;
+        padding-top: 20px;
         background: rgb(93 91 91 / 22%);
     }
     .widget.recent.mt-0 {

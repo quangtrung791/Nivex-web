@@ -1,4 +1,11 @@
 /* Fixed */
+.liHovering:hover .linkHoveringg {
+    background: linear-gradient(90deg, #BCFE08, #86F969);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* fallback */
+    transition: all 0.3s ease;
+}
 @media (max-width: 600px) {
     .sidebar {
         border-radius: 25px !important;

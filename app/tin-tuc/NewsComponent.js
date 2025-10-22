@@ -388,23 +388,25 @@ export default function TinTucComponent() {
                                     <h6 className={`${styles2.heading} ${styles2.titleTinNongg12}`}>Tin nóng</h6>
                                     <ul className={`${styles2.tinNong}`}>
                                         {news.slice(0, 10).map(item => (
-                                            <li key={item.id}>
-                                                <div style={{ display: 'block' }}>
-                                                    <p className={`${styles2.timeStampP}`}>
-                                                        {item.time_upload
-                                                            ? new Date(item.time_upload).toLocaleString('vi-VN', { hour12: false })
-                                                            : ''}
-                                                    </p>
-                                                    <div className={`${styles2.image}`}>
-                                                        <img className={`${styles2.imageTinLonggg12}`} src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
+                                            <Link href={`/tin-tuc/${item.slug}`}>
+                                                <li className={`${styles2.liHovering}`} key={item.id}>
+                                                    <div style={{ display: 'block' }}>
+                                                        <p className={`${styles2.timeStampP}`}>
+                                                            {item.time_upload
+                                                                ? new Date(item.time_upload).toLocaleString('vi-VN', { hour12: false })
+                                                                : ''}
+                                                        </p>
+                                                        <div className={`${styles2.image}`}>
+                                                            <img className={`${styles2.imageTinLonggg12}`} src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            <div className={`${styles2.content}`}>
-                                                    <Link href={`/tin-tuc/${item.slug}`} className={`${styles2.title} ${styles2.navigateChildNews}`}>
-                                                        {item.title}
-                                                    </Link>
-                                                </div>
-                                            </li>
+                                                    <div className={`${styles2.content}`}>
+                                                        <Link href={`/tin-tuc/${item.slug}`} className={`${styles2.title} ${styles2.navigateChildNews} ${styles2.linkHoveringg}`}>
+                                                            {item.title}
+                                                        </Link>
+                                                    </div>
+                                                </li>
+                                            </Link>
                                         ))}
                                     </ul>
                                 </div>

@@ -119,23 +119,25 @@ export default function EventDetails() {
                                     <div className="widget recent mt-0">
                                         <ul className="tin-nong">
                                             {Array.isArray(hotEvents) && hotEvents.slice(0, 10).map(item => (
-                                                <li key={item.id}>
-                                                    <div style={{ display: 'block' }}>
-                                                        <p className="time-stamp-p">
-                                                            {item.time_event
-                                                                ? new Date(item.time_event).toLocaleString('vi-VN', { hour12: false })
-                                                                : ''}
-                                                        </p>
-                                                        <div className="image">
-                                                            <img className="mini-image-sukienkhac" src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
+                                                <Link href={`/su-kien/${item.slug}`}>
+                                                    <li className="li-chi-tiet-su-kien-to-chuc-slug" key={item.id}>
+                                                        <div style={{ display: 'block' }}>
+                                                            <p className="time-stamp-p">
+                                                                {item.time_event
+                                                                    ? new Date(item.time_event).toLocaleString('vi-VN', { hour12: false })
+                                                                    : ''}
+                                                            </p>
+                                                            <div className="image">
+                                                                <img className="mini-image-sukienkhac" src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div className="content">
-                                                        <Link href={`/su-kien/${item.slug}`} className="title navigate-child-news ctietsukiennivex-tochuc">
-                                                            {item.title}
-                                                        </Link>
-                                                    </div>
-                                                </li>
+                                                        <div className="content">
+                                                            <Link href={`/su-kien/${item.slug}`} className="title navigate-child-news ctietsukiennivex-tochuc">
+                                                                {item.title}
+                                                            </Link>
+                                                        </div>
+                                                    </li>
+                                                </Link>
                                             ))}
                                         </ul>
                                     </div>
