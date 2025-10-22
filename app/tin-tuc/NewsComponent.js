@@ -418,7 +418,7 @@ export default function TinTucComponent() {
                 <div className={`row content-inner ${styles.contentInner} ${styles.row} ${styles.divDuocXemNhieu}`}>
                     {Array.isArray(news) && news.slice(0, 3).map(item => (
                         <div className={`${styles2.colMd4} col-md-4`} key={item.id}>
-                            <div className={`${styles2.blogBox} blog-box`}>
+                            <div className={`${styles2.blogBox} blog-box ${styles2.blogBoxTinTuc}`}>
                                 <div className={`${styles2.boxImage} box-image`}>
                                     <img src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
                                 </div>
