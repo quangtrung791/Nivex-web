@@ -61,7 +61,10 @@ export default function TinTucComponent() {
                 setTitleTop(lines === 1 ? 20 : -10);
             } else if (width >= 1920) {
                 setTitleTop(lines === 1 ? 30 : -10);
-            } else {
+            } else if (width <= 600) {
+                setTitleTop(lines === 1 ? 30 : -80);
+            }
+            else {
                 setTitleTop(-10);
             }
         }
