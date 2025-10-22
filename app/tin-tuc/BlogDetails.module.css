@@ -1,4 +1,45 @@
 /* Fixed */
+@media (max-width: 600px) {
+    .sidebar {
+        border-radius: 25px !important;
+    }
+}
+.level2NewsItemBox:hover .headlineNews {
+    /* background: var(--primary); */
+    background: linear-gradient(90deg, #BCFE08, #86F969);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* fallback */
+    transition: all 0.3s ease;
+}
+.level2NewsItemBox:hover .level2NewsImage {
+    cursor: pointer;
+}
+
+.level3NewsItemBox:hover .titleNewsDuocXemNhieu a {
+    /* background: var(--primary); */
+    background: linear-gradient(90deg, #BCFE08, #86F969);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* fallback */
+    transition: all 0.3s ease;
+}
+.level3NewsItemBox:hover .level3NewsImage {
+    cursor: pointer;
+}
+
+.mostHighlightNewsItemBox:hover .mostHighlightTitleNewsH {
+    /* background: var(--primary); */
+    background: linear-gradient(90deg, #BCFE08, #86F969);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* fallback */
+    transition: all 0.3s ease;
+}
+.mostHighlightNewsItemBox:hover {
+    cursor: pointer;
+}
+
 .blogBoxTinTuc:hover {
     background-color: unset !important;
 }
@@ -13,10 +54,12 @@
         padding-right: 6px !important;
     }
 }
-@media (min-width: 1300px) and (max-width: 1919px) {
+@media (min-width: 1420px) and (max-width: 1919px) {
     .mostFeaturedNewsHighlight {
-        max-height: 490px !important;
-        height: 490px !important;
+        /* max-height: 490px !important;
+        height: 490px !important; */
+        height: unset;
+        object-fit: contain;
     }
 }
 /* app.css */
@@ -125,7 +168,9 @@ footer .btnAction {
 
 @media (min-width: 1920px) {
     .ttuc .triggerFullW img {
-        height: 490px;
+        /* height: 490px; */
+        height: unset;
+        object-fit: contain;
     }
 }
 
@@ -148,7 +193,7 @@ footer .btnAction {
 .buttonLoadmore .btnAction:hover {
     color: black;
     background: linear-gradient(90deg,#BCFE08, #86F969);
-    border: 1px solid black;
+    border: 1px solid black !important;
 }
 @media (min-width: 800px) {
     .ttuc .colXl4.colMd12 a.title.navigateChildNews {
@@ -165,9 +210,9 @@ footer .btnAction {
     text-overflow: ellipsis;
 }
 
-.ttuc .triggerFullW img {
+/* .ttuc .triggerFullW img {
     max-height: 490px;
-}
+} */
 
 .ttuc .divDuocXemNhieu img {
     max-height: 135px;
@@ -668,8 +713,8 @@ footer.footer.style-2.footer-main {
         padding-bottom: 5px;
     }
     .blogDetails.ttuc .tinNong {
-        /* max-height: 660px;  */
-        max-height: 700px; 
+        max-height: 660px; 
+        /* max-height: 700px;  */
         overflow-y: auto;
     }
     .blogBox .boxContent .title {
@@ -858,7 +903,8 @@ footer.footer.style-2.footer-main {
         padding-bottom: 5px;
     }
     .blogDetails.ttuc .tinNong {
-        max-height: 700px; 
+        /* max-height: 700px;  */
+        /* max-height: 670px;  */
         overflow-y: auto;
     }
     .blogBox .boxContent .title {
@@ -867,7 +913,18 @@ footer.footer.style-2.footer-main {
     ul.menuTab.menuOnLine {
         margin-top: 29px;
     }
-   
+}
+@media (min-width: 1600px) and (max-width: 1799px) {
+    .blogDetails.ttuc .tinNong {
+        max-height: 690px; 
+        overflow-y: auto;
+    }
+}
+@media (min-width: 1800px) and (max-width: 1919px) {
+    .blogDetails.ttuc .tinNong {
+        max-height: 700px; 
+        overflow-y: auto;
+    }
 }
 /* 1920+ */
 @media (min-width: 1920px) {
@@ -1052,7 +1109,7 @@ footer.footer.style-2.footer-main {
     }
     .blogDetails.ttuc .tinNong {
         /* max-height: 840px;  */
-        max-height: 760px;
+        max-height: 780px;
         overflow-y: auto;
     }
     .blogBox .boxContent .title {
@@ -1439,6 +1496,13 @@ footer.footer.style-2.footer-main {
 }
 
 /* iPad Air 1180 */
+@media (min-width: 1150px) and (max-width: 1199px) {
+    .level2NewsImage {
+        max-height: unset !important;
+        height: unset;
+         object-fit: contain !important;
+    }
+}
 @media (min-width: 1100px) and (max-width: 1180px) {
     /* fixed */
     .ttuc .blogMain .contentTab {
@@ -2054,7 +2118,9 @@ footer.footer.style-2.footer-main {
     }
 
     .xemThemBtnMobileOnly {
-        margin-bottom: 15%;
+        /* margin-bottom: 15%; */
+        margin-top: -10%;
+        margin-bottom: 10%;
         display: flex;
         justify-content: end;
     }

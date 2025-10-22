@@ -185,15 +185,17 @@ export default function ChiTietTinTucComponent() {
                                             <div className="content-inner row div-duoc-xem-nhieu">
                                                 {hotNews.slice(0, 3).map(item => (
                                                     <div className="col-md-4" key={item.id}>
-                                                        <div className="blog-box">
-                                                            <div className="box-image">
-                                                                <img src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
-                                                                <div className="wrap-video"></div>
+                                                        <Link href={`/tin-tuc/${item.slug}`}>
+                                                            <div className="blog-box duoccc-xemmm-nhieuuu">
+                                                                <div className="box-image">
+                                                                    <img src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
+                                                                    <div className="wrap-video"></div>
+                                                                </div>
+                                                                <div className="box-content title-news-duoc-xem-nhieu abcuixyz-nivex-news">
+                                                                    <Link href={`/tin-tuc/${item.slug}`} className="title">{item.title}</Link>
+                                                                </div>
                                                             </div>
-                                                            <div className="box-content title-news-duoc-xem-nhieu">
-                                                                <Link href={`/tin-tuc/${item.slug}`} className="title">{item.title}</Link>
-                                                            </div>
-                                                        </div>
+                                                        </Link>
                                                     </div>
                                                 ))}
                                                 <div className="col-md-12">
