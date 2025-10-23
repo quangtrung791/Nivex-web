@@ -45,9 +45,10 @@ export const metadata = {
         siteName: "Nivex",
         images: [
             {
-                url: "/assets/images/icon/icon_menu_header.png",
+                url: "https://nivex.vn/assets/images/logo/Nivex_icon_bg.png",
                 width: 1200,
                 height: 630,
+                objectFit: "contain",
                 alt: "Nivex – nền tảng giao dịch crypto bằng trí tuệ nhân tạo, cung cấp spot và futures an toàn, nhanh chóng, dành cho cộng đồng người dùng Việt."
             }
         ],
