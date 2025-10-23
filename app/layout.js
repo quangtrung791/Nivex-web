@@ -45,7 +45,7 @@ export const metadata = {
         siteName: "Nivex",
         images: [
             {
-                url: "https://nivex.vn/assets/images/logo/Nivex_icon_bg.png",
+                url: "assets/images/logo/NivexIcon.PNG",
                 width: 1200,
                 height: 630,
                 objectFit: "contain",
