@@ -2,18 +2,18 @@ import Layout from "@/components/layout/Layout"
 import { Metadata } from "next"
 import JoinedEventDetailsComponent from "./ChiTietSKTGComponent";
 
-const WP_BASE = 'https://nivexhub.learningchain.vn/wp-json/nivex/v1';
 // Hàm lấy dữ liệu từ API theo slug
 async function getTermBySlug(slug) {
+    const productionUrl = 'https://nivex.vn';
+    const developedUrl = 'http://localhost:3000'
     const res = await fetch(
-      `${WP_BASE}/joined-events/by-slug/${encodeURIComponent(slug)}`,
-      { cache: 'no-store' }
+        `${process.env.NODE_ENV === "production" ? productionUrl : developedUrl}/api/joined_events/${slug}`,
+        { cache: "no-store" }
     );
-    const json = await res.json();
-    if (!res.ok || !json?.success || !json?.data) return null;
-
-    return json.data;
-  }
+    
+    if (!res.ok) return null;
+    return await res.json();
+}
 
 // Tạo metadata động
 export async function generateMetadata({ params }) {
@@ -22,7 +22,7 @@ export async function generateMetadata({ params }) {
     const title = data?.title || "Sự kiện Nivex tham dự";
     const desc = data?.short_desc?.replace(/<[^>]+>/g, '') || "Sự kiện Nivex đã tham dự";
     const keywords = data?.rank_math_seo_keyword || '';
-    
+    console.log('[metadata] rank_math_seo_keyword:', data?.rank_math_seo_keyword);
     return {
         title: `${title} | Chi tiết sự kiện Nivex`,
         description: desc,

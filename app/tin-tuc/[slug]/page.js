@@ -4,14 +4,16 @@ import ChiTietTinTucComponent from "./NewsDetailsComponent";
 
 // Hàm lấy dữ liệu từ API theo slug
 async function getTermBySlug(slug) {
-    const url = `https://nivexhub.learningchain.vn/wp-json/nivex/v1/news/by-slug/${encodeURIComponent(slug)}`
-    const res = await fetch(url, { cache: 'no-store' })
-    const json = await res.json()
-  
-    if (!res.ok || !json?.success || !json?.data) return null
-    // Trả về đúng object bài viết để generateMetadata dùng trực tiếp
-    return json.data
-  }
+    const productionUrl = 'https://nivex.vn';
+    const developedUrl = 'http://localhost:3000'
+    const res = await fetch(
+        `${process.env.NODE_ENV === "production" ? productionUrl : developedUrl}/api/news/${slug}`,
+        { cache: "no-store" }
+    );
+    
+    if (!res.ok) return null;
+    return await res.json();
+}
 
 // Tạo metadata động
 export async function generateMetadata({ params }) {
@@ -22,17 +24,13 @@ export async function generateMetadata({ params }) {
     
     // tránh trường hợp bị cắt ngang chữ
     const plainText = data?.content?.replace(/<[^>]+>/g, '') || "Chi tiết tin tức tại Nivex.";
-    const desc = data.rank_math_seo_description || (plainText.length > 160
+    const desc = plainText.length > 160
         ? plainText.slice(0, 157).trimEnd() + "..."
-        : plainText);
+        : plainText;
 
     return {
         title: `${keyword} | Chi tiết tin tức Nivex`,
         description: desc,
-        keywords: data.rank_math_seo_keyword || '',
-        alternates: {
-            canonical: `https://nivex.vn/tin-tuc/${slug}`
-        },
         openGraph: {
             title: `${keyword} | Chi tiết tin tức Nivex`,
             description: desc,

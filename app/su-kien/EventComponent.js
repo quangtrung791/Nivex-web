@@ -1,20 +1,21 @@
 'use client'
-// import VideoPopup from "@/components/elements/VideoPopup"
+import VideoPopup from "@/components/elements/VideoPopup"
+import Layout from "@/components/layout/Layout"
 import Link from "next/link"
+import { Autoplay, Navigation, Pagination } from "swiper/modules"
 import { useState, useEffect } from "react";
+import { Swiper, SwiperSlide } from "swiper/react"
 import styles from '../kien-thuc-tong-quan/knowledge.module.css';
 import './style.css';
-const WP_BASE = 'https://nivexhub.learningchain.vn/wp-json/nivex/v1';
+import { useParams } from "next/navigation"
 
-
-
-// const swiperOptions = {
-//     modules: [Autoplay, Pagination, Navigation],
-//     pagination: {
-//         el: ".swiper-pagination",
-//         clickable: true,
-//     },
-// }
+const swiperOptions = {
+    modules: [Autoplay, Pagination, Navigation],
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+}
 
 const TABS = [
     { label: "Tất cả", value: "all" },
@@ -24,12 +25,12 @@ const TABS = [
 ];
 
 export default function SuKien() {
-    const [loading, setLoading] = useState(true);
     const [activeTab, setActiveTab] = useState("all");
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [selectedTab, setSelectedTab] = useState(TABS[0].value);
     const [news, setNews] = useState([]);
-    // const [hotNews, setHotNews] = useState([]);
+    const [hotNews, setHotNews] = useState([]);
+    const { id } = useParams();
     const [ searchQuery, setSearchQuery ] = useState("");
 
     // Hàm xử lý sau khi submit form search
@@ -46,45 +47,29 @@ export default function SuKien() {
             .trim();
     };
 
-    // useEffect(() => {
-    //     // Lấy danh sách event từ API
-    //     fetch('/api/event')
-    //         .then(res => res.json())
-    //         .then(data => setNews(Array.isArray(data.data) ? data.data : []))
-    // }, []);
+    useEffect(() => {
+        // Lấy danh sách event từ API
+        fetch('/api/event')
+            .then(res => res.json())
+            .then(data => setNews(Array.isArray(data.data) ? data.data : []))
+    }, []);
 
     useEffect(() => {
-        const url = new URL(`${WP_BASE}/events`);
-        url.searchParams.set('page', '1');
-        url.searchParams.set('per_page', '50');
-      
-        fetch(url.toString(), { cache: 'no-store' })
-          .then(res => res.json())
-          .then(json => {
-            const arr = Array.isArray(json?.data) ? json.data : [];
-            const mapped = arr.map(e => ({
-              id: Number(e.id),
-              slug: e.slug,
-              title: e.title,
-              short_desc: e.short_desc ?? '',
-              thumbnail_url: e.thumbnail_url ?? '',
-              time_event: e.time_event,
-              created_at: e.created_at,
-              updated_at: e.updated_at,
-            }));
-            setNews(mapped);
-          })
-          .catch(() => setNews([]))
-          .finally(() => setLoading(false));
-      }, []);
-      
-    //   useEffect(() => {
-    //     fetch(`${WP_BASE}/events?hot=1`, { cache: 'no-store' })
-    //       .then(res => res.json())
-    //       .then(json => setHotNews(Array.isArray(json?.data) ? json.data : []))
-    //       .catch(() => setHotNews([]));
-    //   }, []);
-      
+        if (!id) return;
+        setLoading(true);
+        fetch(`/api/event/${id}`)
+            .then(res => res.json())
+            .then(data => {
+                setNews(data);
+                setLoading(false);
+            })
+            .catch(() => setLoading(false));
+        // Fetch danh sách tin nóng
+        fetch('/api/event?hot=1')
+            .then(res => res.json())
+            .then(data => setHotNews(data));
+    }, [id]);
+
     // useEffect(() => {
     //     fetch('/api/event?hot=1')
     //         .then(res => res.json())
@@ -244,14 +229,10 @@ export default function SuKien() {
                                         </div>
                                         
                                         {/* Hiển thị dữ liệu sự kiện dựa trên bộ lọc thời gian (time_event) */}
-                                        {loading ? (
-                                        <p style={{ textAlign: "center", padding: 20, color: "#888" }}>
-                                            Đang tải dữ liệu...
-                                        </p>
-                                        ) : filteredNews.length === 0 ? (
-                                        <p style={{ textAlign: "center", padding: 20, color: "#888" }}>
-                                            Không có sự kiện phù hợp
-                                        </p>
+                                        {filteredNews.length === 0 ? (
+                                            <p style={{ textAlign: "center", padding: "20px", color: "#888" }}>
+                                                Đang tải dữ liệu
+                                            </p>
                                         ) : (
                                             filteredNews.map(item => {
                                                 const eventDate = new Date(item.time_event);
@@ -267,7 +248,7 @@ export default function SuKien() {
                                                 }
 
                                                 return (
-                                                    <Link key={item.id} href={`/su-kien/${item.slug}`} style={{'fontWeight': 'unset', 'fontSize':'unset', 'color': 'unset'}}>
+                                                    <Link href={`/su-kien/${item.slug}`} style={{'fontWeight': 'unset', 'fontSize':'unset', 'color': 'unset'}}>
                                                         <div className="blog-box nivex-da-bezt" key={item.id}>
                                                             <div className="box-image">
                                                                 <img src={item.thumbnail_url || "/assets/images/blog/blog-01.jpg"} alt={item.title} />

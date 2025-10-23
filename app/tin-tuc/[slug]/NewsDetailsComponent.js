@@ -8,8 +8,6 @@ import { useParams } from "next/navigation"
 import './style.css'
 import './fix-content.css'
 
-const WP_BASE = 'https://nivexhub.learningchain.vn/wp-json/nivex/v1';
-
 export default function ChiTietTinTucComponent() {
     const { slug } = useParams();          // id chính là slug
     const [news, setNews] = useState(null);
@@ -17,61 +15,34 @@ export default function ChiTietTinTucComponent() {
     const [loading, setLoading] = useState(true);
   
     useEffect(() => {
-        if (!slug) return
-        setLoading(true)
-      
-        // Chi tiết bài viết (gọi trực tiếp WP)
-        const detailUrl = `${WP_BASE}/news/by-slug/${encodeURIComponent(slug)}`
-        fetch(detailUrl, { cache: 'no-store' })
-          .then(r => r.json())
-          .then(json => {
-            if (json?.success && json.data) {
-              const a = json.data
-              setNews({
-                id: a.id,
-                slug: a.slug,
-                title: a.title,
-                content: a.content || '',
-                thumbnail_url: a.thumbnail_url || 'https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp',
-                time_upload: a.time_upload,
-                created_at: a.created_at,
-                updated_at: a.updated_at,
-                category_id: a.category_id ?? null,
-              })
-            } else {
-              setNews(null)
-            }
-          })
-          .catch(() => setNews(null))
-          .finally(() => setLoading(false))
-      
-        // Danh sách tin nóng / mới (lấy nhanh qua list news)
-        const listUrl = `${WP_BASE}/news?status=active&page=1&per_page=20`
-        fetch(listUrl, { cache: 'no-store' })
-          .then(r => r.json())
-          .then(json => {
-            const arr = Array.isArray(json?.data) ? json.data : []
-            setHotNews(arr.map(n => ({
-              id: n.id,
-              slug: n.slug,
-              title: n.title,
-              time_upload: n.time_upload,
-              thumbnail_url: n.thumbnail_url || 'https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp',
-            })))
-          })
-          .catch(() => setHotNews([]))
-      }, [slug])
-      
-
+      if (news?.title) document.title = news.title;
+    }, [news]);
+  
     useEffect(() => {
-        if (!news?.slug) return
-        void fetch(`${WP_BASE}/news-view?slug=${encodeURIComponent(news.slug)}`, {
-          method: 'GET',
-          cache: 'no-store',
-          keepalive: true
-        }).catch(() => {})
-    }, [news?.slug])
-
+      if (!slug) return;
+      setLoading(true);
+      fetch(`/api/news/${encodeURIComponent(slug)}`)
+        .then(r => r.json())
+        .then(({ success, data, error }) => {
+          if (success) setNews(data);
+          else {
+            console.error('API news detail error:', error);
+            setNews(null);
+          }
+        })
+        .catch(err => {
+          console.error('Fetch detail failed:', err);
+          setNews(null);
+        })
+        .finally(() => setLoading(false));
+  
+      // Tin nóng (tạm lấy từ /api/news)
+      fetch('/api/news')
+        .then(r => r.json())
+        .then(({ success, data }) => setHotNews(success && Array.isArray(data) ? data : []))
+        .catch(() => setHotNews([]));
+    }, [slug]);
+  
     if (loading) {
       return (
         <div style={{ display:'flex', justifyContent:'center', alignItems:'center' }}>
@@ -96,7 +67,6 @@ export default function ChiTietTinTucComponent() {
         <div style={{ 'display': 'flex', 'justifyContent': 'center', 'alignItems': 'center' }}>
             <p>Lỗi kết nối với máy chủ.</p>
         </div>
-
 
 
     return (

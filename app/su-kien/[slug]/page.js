@@ -1,16 +1,18 @@
 import Layout from "@/components/layout/Layout"
 import { Metadata } from "next"
 import EventDetails from "./ChiTietSuKienComponent";
-const WP_BASE = 'https://nivexhub.learningchain.vn/wp-json/nivex/v1';
+
 // Hàm lấy dữ liệu từ API theo slug
 async function getTermBySlug(slug) {
-  const res = await fetch(
-    `${WP_BASE}/events/by-slug/${encodeURIComponent(slug)}`,
-    { cache: 'no-store' }
-  );
-  if (!res.ok) return null;
-  const json = await res.json();
-  return json?.success ? json.data : null;
+    const productionUrl = 'https://nivex.vn';
+    const developedUrl = 'http://localhost:3000'
+    const res = await fetch(
+        `${process.env.NODE_ENV === "production" ? productionUrl : developedUrl}/api/event/${slug}`,
+        { cache: "no-store" }
+    );
+    
+    if (!res.ok) return null;
+    return await res.json();
 }
 
 // Tạo metadata động

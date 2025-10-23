@@ -1,13 +1,11 @@
 'use client'
-// import VideoPopup from "@/components/elements/VideoPopup"
-// import Layout from "@/components/layout/Layout"
+import VideoPopup from "@/components/elements/VideoPopup"
+import Layout from "@/components/layout/Layout"
 import Link from "next/link"
 import { useState, useEffect } from "react"
 import './style.css';
 import styles from '../kien-thuc-tong-quan/knowledge.module.css';
-// import { useParams } from "next/navigation"
-
-const WP_BASE = 'https://nivexhub.learningchain.vn/wp-json/nivex/v1';
+import { useParams } from "next/navigation"
 
 export default function SuKienAlt() {
     const TABS = [
@@ -19,11 +17,11 @@ export default function SuKienAlt() {
 
     const [flatTabs, setFlatTabs] = useState(1);
     const [activeTab, setActiveTab] = useState("all");
-    // const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    // const [selectedTab, setSelectedTab] = useState(TABS[0].value);
-    // const { id } = useParams();
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [selectedTab, setSelectedTab] = useState(TABS[0].value);
+    const { id } = useParams();
     const [news, setNews] = useState([]);
-    // const [hotNews, setHotNews] = useState([]);
+    const [hotNews, setHotNews] = useState([]);
     const [ searchQuery, setSearchQuery ] = useState("");
 
     const handleFlatTabs = (index) => {
@@ -34,33 +32,13 @@ export default function SuKienAlt() {
     }, []);
 
     useEffect(() => {
-        const url = new URL(`${WP_BASE}/joined-events`);
-        url.searchParams.set('page', '1');
-        url.searchParams.set('per_page', '50');
-      
-        fetch(url.toString(), { cache: 'no-store' })
-          .then(res => res.json())
-          .then(json => {
-            const arr = Array.isArray(json?.data) ? json.data : [];
-            // map nhẹ để chắc chắn field đúng như bạn đang dùng
-            const mapped = arr.map(e => ({
-              id: Number(e.id),
-              slug: e.slug,
-              title: e.title,
-              time_event: e.time_event,
-              short_desc: e.short_desc ?? '',
-              thumbnail_url: e.thumbnail_url ?? '',
-              time_from_and_to: e.time_from_and_to ?? '',
-              tag1: e.tag1 ?? '',
-              tag2: e.tag2 ?? '',
-              tag3: e.tag3 ?? '',
-              type: e.type ?? '',
-            }));
-            setNews(mapped);
-          })
-          .catch(() => setNews([]));
-      }, []);
-      
+        // Lấy danh sách event từ API
+        // fetch('/api/joined_events') // api cũ
+        fetch('/api/joined_events') // roll-back api cũ nếu check netwỏk báo lỗi 404
+            .then(res => res.json())
+            .then(data => setNews(Array.isArray(data.data) ? data.data : []))
+            .catch(() => setNews([]));
+    }, []);
 
 
     // Hàm xử lý sau khi submit form search

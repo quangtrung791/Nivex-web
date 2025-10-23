@@ -8,69 +8,54 @@ import { useParams } from "next/navigation"
 import './style.css'
 import './fix-content.css'
 
-const WP_BASE = 'https://nivexhub.learningchain.vn/wp-json/nivex/v1';
-
 export default function JoinedEventDetailsComponent() {
     const { slug } = useParams()
     const [events, setEvents] = useState(null);
     const [hotEvents, setHotEvents] = useState([]);
     const [loading, setLoading] = useState(true)
 
+    useEffect(() => {
+        if (events && events.title) {
+            document.title = events.title;
+        }
+    }, [events]);
 
     useEffect(() => {
-        if (!slug) return;
-      
+        if (!slug) return
+        setLoading(true)
+        fetch(`/api/joined_events/${slug}`)
+            .then(res => res.json())
+            .then(data => {
+                setEvents(data)
+                setLoading(false)
+            })
+            .catch(() => setLoading(false))
+    }, [slug]);
+
+    useEffect(() => {
+    if (!slug) return;
         setLoading(true);
-      
-        // chi tiết sự kiện (theo slug)
-        fetch(`${WP_BASE}/joined-events/by-slug/${encodeURIComponent(slug)}`, { cache: 'no-store' })
-          .then(res => res.json())
-          .then(json => {
-            if (json?.success && json.data) {
-              const e = json.data;
-              setEvents({
-                id: Number(e.id),
-                slug: e.slug,
-                title: e.title,
-                time_event: e.time_event,
-                content: e.content ?? '',
-                short_desc: e.short_desc ?? '',
-                thumbnail_url: e.thumbnail_url ?? '',
-                time_from_and_to: e.time_from_and_to ?? '',
-                tag1: e.tag1 ?? '',
-                tag2: e.tag2 ?? '',
-                tag3: e.tag3 ?? '',
-                type: e.type ?? '',
-                rank_math_seo_keyword: e.rank_math_seo_keyword ?? ''
-              });
-            } else {
-              setEvents(null);
-            }
-            setLoading(false);
-          })
-          .catch(() => {
-            setEvents(null);
-            setLoading(false);
-          });
-      
-        // danh sách sự kiện khác (hot)
-        fetch(`${WP_BASE}/joined-events?hot=1`, { cache: 'no-store' })
-          .then(res => res.json())
-          .then(json => setHotEvents(Array.isArray(json?.data) ? json.data : []))
-          .catch(() => setHotEvents([]));
-      }, [slug]);
-      
-      if (loading) return (
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-          <p>Đang tải dữ liệu...</p>
+        fetch(`/api/joined_events/${slug}`)
+            .then(res => res.json())
+            .then(data => {
+                setEvents(data);
+                setLoading(false);
+            })
+            .catch(() => setLoading(false));
+        // Fetch danh sách event
+        fetch('/api/joined_events?hot=1')
+            .then(res => res.json())
+            .then(data => setHotEvents(Array.isArray(data.data) ? data.data : []));
+    }, [slug]);
+
+    if (loading) return 
+        <div style={{'display': 'flex', 'justifyContent': 'center', 'alignItems': 'center'}}>
+            <p>Đang tải dữ liệu...</p>
         </div>
-      );
-      
-      if (!events) return (
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-          <p>Lỗi kết nối với máy chủ.</p>
+    if (!events) return 
+        <div style={{ 'display': 'flex', 'justifyContent': 'center', 'alignItems': 'center' }}>
+            <p>Lỗi kết nối với máy chủ.</p>
         </div>
-      );
 
 
     return (
