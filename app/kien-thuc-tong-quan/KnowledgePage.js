@@ -30,14 +30,16 @@ export default function KnowledgePage() {
     // Fetch categories from database
     const fetchCategories = async () => {
         try {
-            const response = await fetch('/api/categories')
-            const result = await response.json()
-            if (result.success) {
-                setCategories(result.data || [])
-                // Set default category to first available category
-                if (result.data && result.data.length > 0) {
-                    setActiveCategory(result.data[0].id)
-                }
+            const res = await fetch(
+                'https://nivexhub.learningchain.vn/wp-json/nivex/v1/knowledge-topics',
+                { cache: 'no-store' }
+            )
+            const json = await res.json()
+            if (json.success) {
+                // WP trả [{id,name}] → frontend dùng {id,label}; id dùng luôn "name"
+                const cats = (json.data || []).map(r => ({ id: r.name, label: r.name }))
+                setCategories(cats)
+                if (cats.length) setActiveCategory(cats[0].id)
             }
         } catch (error) {
             setCategories([
@@ -60,17 +62,27 @@ export default function KnowledgePage() {
                 setNewestOffset(0)
             }
             
-            // Fetch filtered articles for current category and difficulty (for "Được xem nhiều")
-            const filteredResponse = await fetch(
-                `/api/knowledge?topic=${activeCategory}&difficulty=${activeDifficulty}&limit=6&offset=0`
-            )
-            const filteredData = await filteredResponse.json()
+            const base = 'https://nivexhub.learningchain.vn/wp-json/nivex/v1/knowledge'
+            const qsViewed = new URLSearchParams({
+                topic: String(activeCategory || ''),
+                difficulty: String(activeDifficulty || ''),
+                limit: '6',
+                offset: '0',
+                sort: 'view'
+             }).toString()
             
-            // Fetch newest articles with same filters (for "Mới nhất")
-            const newestResponse = await fetch(
-                `/api/knowledge?topic=${activeCategory}&difficulty=${activeDifficulty}&limit=6&offset=0`
-            )
-            const newestData = await newestResponse.json()
+            const filteredRes = await fetch(`${base}?${qsViewed}`, { cache: 'no-store' })
+            const filteredData = await filteredRes.json()
+
+            const qsNewest = new URLSearchParams({
+                   topic: String(activeCategory || ''),
+                    difficulty: String(activeDifficulty || ''),
+                    limit: '6',
+                    offset: '0',
+                    sort: 'newest'
+            }).toString()
+            const newestRes = await fetch(`${base}?${qsNewest}`, { cache: 'no-store' })
+            const newestData = await newestRes.json()
             
             if (filteredData.success && newestData.success) {
                 setKnowledgeArticles(filteredData.data || [])
@@ -132,10 +144,10 @@ export default function KnowledgePage() {
     const loadMoreViewed = async () => {
         try {
             setLoadingMore(true)
-            const response = await fetch(
-                `/api/knowledge?topic=${activeCategory}&difficulty=${activeDifficulty}&limit=6&offset=${viewedOffset}`
-            )
-            const data = await response.json()
+            const base = 'https://nivexhub.learningchain.vn/wp-json/nivex/v1/knowledge'
+            const url  = `${base}?topic=${encodeURIComponent(activeCategory)}&difficulty=${encodeURIComponent(activeDifficulty)}&limit=6&offset=${viewedOffset}&sort=view`
+            const res  = await fetch(url, { cache: 'no-store' })
+            const data = await res.json()
             
             if (data.success) {
                 setKnowledgeArticles(prev => [...prev, ...(data.data || [])])
@@ -151,10 +163,10 @@ export default function KnowledgePage() {
     const loadMoreNewest = async () => {
         try {
             setLoadingMore(true)
-            const response = await fetch(
-                `/api/knowledge?topic=${activeCategory}&difficulty=${activeDifficulty}&limit=6&offset=${newestOffset}`
-            )
-            const data = await response.json()
+            const base = 'https://nivexhub.learningchain.vn/wp-json/nivex/v1/knowledge'
+            const url  = `${base}?topic=${encodeURIComponent(activeCategory)}&difficulty=${encodeURIComponent(activeDifficulty)}&limit=6&offset=${newestOffset}`
+            const res  = await fetch(url, { cache: 'no-store' })
+            const data = await res.json()
             
             if (data.success) {
                 setNewestArticles(prev => [...prev, ...(data.data || [])])

@@ -1,70 +1,60 @@
 
 'use client'
-import VideoPopup from "@/components/elements/VideoPopup"
-import Layout from "@/components/layout/Layout"
+// import VideoPopup from "@/components/elements/VideoPopup"
+// import Layout from "@/components/layout/Layout"
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import { useParams } from "next/navigation"
 import './style.css'
 import './fix-content.css'
 
+const WP_BASE = 'https://nivexhub.learningchain.vn/wp-json/nivex/v1';
+
 export default function EventDetails() {
-    const { slug } = useParams()
-    const [events, setEvents] = useState(null);
-    const [hotEvents, setHotEvents] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [moreNewsCount, setMoreNewsCount] = useState(3);
-    const [isLoadingMore, setIsLoadingMore] = useState(false);
-    
-    const handleLoadMore = () => {
-        setIsLoadingMore(true);
-        // Tăng số lượng item hiển thị
-        setMoreNewsCount(prev => prev + 3);
-        setIsLoadingMore(false);
-    }
+  const { slug } = useParams()
+  const [events, setEvents] = useState(null)
+  const [hotEvents, setHotEvents] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [moreNewsCount, setMoreNewsCount] = useState(3)
+  const [isLoadingMore, setIsLoadingMore] = useState(false)
 
-    // useEffect(() => {
-        // if (events && events.title) {
-        //     document.title = events.title;
-        // }
-    // }, [events]);
+  useEffect(() => {
+    if (!slug) return
+    setLoading(true)
+    fetch(`${WP_BASE}/events/by-slug/${encodeURIComponent(slug)}`, { cache: 'no-store' })
+      .then(res => res.json())
+      .then(json => setEvents(json?.success ? json.data : null))
+      .catch(() => setEvents(null))
+      .finally(() => setLoading(false))
+  }, [slug])
 
-    useEffect(() => {
-        if (!slug) return
-        setLoading(true)
-        fetch(`/api/event/${slug}`)
-            .then(res => res.json())
-            .then(data => {
-                setEvents(data)
-                setLoading(false)
-            })
-            .catch(() => setLoading(false))
-    }, [slug]);
+  useEffect(() => {
+    fetch(`${WP_BASE}/events?hot=1`, { cache: 'no-store' })
+      .then(res => res.json())
+      .then(json => setHotEvents(Array.isArray(json?.data) ? json.data : []))
+      .catch(() => setHotEvents([]))
+  }, [])
 
-    useEffect(() => {
-        if (!slug) return;
-        setLoading(true);
-        fetch(`/api/event/${slug}`)
-            .then(res => res.json())
-            .then(data => {
-                setEvents(data);
-                setLoading(false);
-            })
-            .catch(() => setLoading(false));
-        // Fetch danh sách event
-        fetch('/api/event?hot=1')
-            .then(res => res.json())
-            .then(data => setHotEvents(Array.isArray(data.data) ? data.data : []));
-    }, [slug]);
+  const handleLoadMore = () => {
+    setIsLoadingMore(true)
+    setMoreNewsCount(prev => prev + 3)
+    setIsLoadingMore(false)
+  }
 
-    if (loading) return
-    <div style={{ 'display': 'flex', 'justifyContent': 'center', 'alignItems': 'center' }}>
+  if (loading) {
+    return (
+      <div style={{ display:'flex', justifyContent:'center', alignItems:'center' }}>
         <p>Đang tải dữ liệu...</p>
-    </div>
-    if (!events) return
-    <div style={{ 'display': 'flex', 'justifyContent': 'center', 'alignItems': 'center' }}>
-        <p>Lỗi kết nối với máy chủ.</p>
-    </div>
+      </div>
+    )
+  }
+  if (!events) {
+    return (
+      <div style={{ display:'flex', justifyContent:'center', alignItems:'center' }}>
+        <p>Không tìm thấy sự kiện</p>
+      </div>
+    )
+  }
 
 
     return (

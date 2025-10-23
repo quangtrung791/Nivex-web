@@ -28,6 +28,7 @@ const TABS = [
     { label: "Âm nhạc", value: "music" }
 ];
 
+const WP_BASE = 'https://nivexhub.learningchain.vn/wp-json/nivex/v1';
 
 export default function TinTucComponent() {
     const [coinData, setCoinData] = useState([]);
@@ -38,8 +39,8 @@ export default function TinTucComponent() {
     const [categories, setCategories] = useState([]);
     const [news, setNews] = useState([]);
     const [hotNews, setHotNews] = useState([]);
-    const { id } = useParams()
-    const pathname = usePathname();
+    // const { id } = useParams()
+    // const pathname = usePathname();
     const [searchQuery, setSearchQuery] = useState("");
     const [hero, setHero] = useState(null);
 
@@ -110,52 +111,64 @@ export default function TinTucComponent() {
     };
 
     useEffect(() => {
-        // Lấy danh mục từ API
-        fetch('/api/category_news')
-            .then(res => res.json())
-            .then(data => {
-                // data.data là mảng [{ id, name }]
-                setCategories([
-                    { label: "Tất cả", value: "all" }, // Thêm tab "Tất cả"
-                    ...(Array.isArray(data.data) ? data.data.map(cat => ({
-                        label: cat.name,
-                        value: cat.id
-                    })) : [])
-                ])
-            })
-    }, []);
+        fetch(`${WP_BASE}/news/categories`, { cache: 'no-store' })
+          .then(res => res.json())
+          .then(json => {
+            const cats = Array.isArray(json?.data) ? json.data : [];
+            setCategories([
+              { label: 'Tất cả', value: 'all' },
+              ...cats.map(c => ({ label: c.name, value: String(c.id) }))
+            ]);
+          })
+          .catch(() => {
+            setCategories([{ label: 'Tất cả', value: 'all' }]);
+          });
+      }, []);
+      
 
     useEffect(() => {
-        // Lấy danh sách bài viết từ API
-        fetch('/api/news')
-            .then(res => res.json())
-            .then(data => {
-                const arr = Array.isArray(data.data) ? data.data : [];
-                setNews(arr);
-              
-                const featured = arr
-                  .filter(n => n.is_featured)
-                  .sort((a,b) => new Date(b.time_upload || b.created_at) - new Date(a.time_upload || a.created_at));
-              
-                setHero(featured[0] || arr[0] || null);
-            })
+    const url = new URL(`${WP_BASE}/news`);
+    url.searchParams.set('status', 'active');
+    url.searchParams.set('page', '1');
+    url.searchParams.set('per_page', '50');
+
+    fetch(url.toString(), { cache: 'no-store' })
+        .then(res => res.json())
+        .then(json => {
+        const arr = Array.isArray(json?.data) ? json.data : [];
+        const mapped = arr.map(n => ({
+            id: n.id,
+            slug: n.slug,
+            title: n.title,
+            category_id: n.category_id ?? null,
+            time_upload: n.time_upload,
+            created_at: n.created_at,
+            updated_at: n.updated_at,
+            thumbnail_url: n.thumbnail_url || 'https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp',
+            is_featured: Number(n.is_featured) === 1,
+        }));
+
+        setNews(mapped);
+
+        const featured = mapped
+            .filter(n => n.is_featured)
+            .sort((a,b) => new Date(b.time_upload || b.created_at) - new Date(a.time_upload || a.created_at));
+
+        setHero(featured[0] || mapped[0] || null);
+        })
+        .catch(() => {
+        setNews([]);
+        setHero(null);
+        });
     }, []);
 
+
     useEffect(() => {
-        if (!id) return;
-        setLoading(true);
-        fetch(`/api/news/${id}`)
-            .then(res => res.json())
-            .then(data => {
-                setNews(data);
-                setLoading(false);
-            })
-            .catch(() => setLoading(false));
-        // Fetch danh sách tin nóng
-        fetch('/api/news?hot=1')
-            .then(res => res.json())
-            .then(data => setHotNews(data));
-    }, [id]);
+        fetch(`${WP_BASE}/news?featured=1&page=1&per_page=10`, { cache: 'no-store' })
+          .then(res => res.json())
+          .then(json => setHotNews(Array.isArray(json?.data) ? json.data : []))
+          .catch(() => setHotNews([]));
+      }, []);
 
     // chuẩn hóa query 1 lần để tiết kiệm hiệu năng
     const q = normalizeString(searchQuery);

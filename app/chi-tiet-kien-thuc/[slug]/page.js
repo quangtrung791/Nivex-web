@@ -3,13 +3,10 @@ import KnowledgeDetail from './KnowledgeDetail'
 import { notFound } from 'next/navigation'
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://nivex.vn'
+const WP_BASE = 'https://nivexhub.learningchain.vn/wp-json/nivex/v1'
 
 async function getArticle(slug) {
-  // Nên gọi trực tiếp nguồn dữ liệu; ở đây dùng API nội bộ cho nhanh
-  const res = await fetch(`${BASE_URL}/api/knowledge/${slug}`, {
-    // Chọn 1 trong 2 tùy nhu cầu:
-    cache: 'no-store',            // luôn mới
-  })
+  const res = await fetch(`${WP_BASE}/knowledge/${encodeURIComponent(slug)}`, { cache: 'no-store' })
   const json = await res.json()
   if (!json?.success || !json?.data) notFound()
   return json.data

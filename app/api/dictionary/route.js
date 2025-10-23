@@ -9,13 +9,9 @@ export async function GET(request) {
   try {
     const { searchParams } = new URL(request.url);
     const search = searchParams.get('search') || '';
-    const page   = searchParams.get('page') || '1';
-    const per    = searchParams.get('per_page') || '100';
 
     const url = new URL(`${WP_BASE}/dictionary`);
     if (search) url.searchParams.set('search', search);
-    if (page)   url.searchParams.set('page', page);
-    if (per)    url.searchParams.set('per_page', per);
 
     const res  = await fetch(url.toString(), { next: { revalidate: 60 } });
     const json = await res.json();
