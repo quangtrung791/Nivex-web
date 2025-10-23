@@ -1,4 +1,22 @@
 /* Fixed */
+.hien-thi-su-kiem-tham-gia:hover a.title {
+    background: linear-gradient(90deg, #BCFE08, #86F969);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* fallback */
+    transition: all 0.3s ease;
+}
+/* .hien-thi-su-kiem-tham-gia:hover .cta-butonnnnn {
+    color: #222 !important;
+} */
+
+.hien-thi-su-kiem-tham-gia .box-content {
+    border-radius: 0 0 25px 25px !important;
+}
+.hien-thi-su-kiem-tham-gia img {
+    border-radius: 25px 25px 0 0 !important;
+}
+
  @media (width: 1912px) {
     section.section-news-header {
         padding: 3.5% 13% !important;
@@ -57,7 +75,8 @@ footer .btn-action {
 }
 
 .blog-grid .blog-box:hover {
-    /* background: #242529; */
+    background: #242529;
+    border-radius: 25px !important;
 }
 
 .blog-grid .blog-box:hover .event-btn {
@@ -93,9 +112,9 @@ h2.cung-nivex-heading {
     text-transform: uppercase !important;
 }
 
-section.blog-grid .blog-box {
+/* section.blog-grid .blog-box {
     border-radius: 0px !important;
-}
+} */
 .blog-grid .flat-tabs .menu-tab li {
     border-radius: 0 !important;
 }

@@ -6,6 +6,7 @@ import { useEffect, useState } from "react"
 import Link from "next/link"
 import { useParams } from "next/navigation"
 import './style.css'
+import './fix-content.css'
 
 export default function JoinedEventDetailsComponent() {
     const { slug } = useParams()
@@ -109,23 +110,25 @@ export default function JoinedEventDetailsComponent() {
                                         <div className="widget recent mt-0">
                                             <ul className="tin-nong">
                                                 {Array.isArray(hotEvents) && hotEvents.slice(0, 10).map(item => (
-                                                    <li key={item.id}>
-                                                        <div style={{ display: 'block' }}>
-                                                            <p className="time-stamp-p">
-                                                                {item.time_event
-                                                                    ? new Date(item.time_event).toLocaleString('vi-VN', { hour12: false })
-                                                                    : ''}
-                                                            </p>
-                                                            <div className="image">
-                                                                <img className="mini-image-src-2" src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
+                                                    <Link href={`/su-kien-tham-gia/${item.slug}`}>
+                                                        <li className="li-chi-tiet-su-kien-tham-gia-slug" key={item.id}>
+                                                            <div style={{ display: 'block' }}>
+                                                                <p className="time-stamp-p">
+                                                                    {item.time_event
+                                                                        ? new Date(item.time_event).toLocaleString('vi-VN', { hour12: false })
+                                                                        : ''}
+                                                                </p>
+                                                                <div className="image">
+                                                                    <img className="mini-image-src-2" src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div className="content">
-                                                            <Link href={`/su-kien-tham-gia/${item.slug}`} className="title navigate-child-news">
-                                                                {item.title}
-                                                            </Link>
-                                                        </div>
-                                                    </li>
+                                                            <div className="content">
+                                                                <Link href={`/su-kien-tham-gia/${item.slug}`} className="title navigate-child-news navigate-child-events sktg-slug-right-side-panel">
+                                                                    {item.title}
+                                                                </Link>
+                                                            </div>
+                                                        </li>
+                                                    </Link>
                                                 ))}
                                             </ul>
                                         </div> 
@@ -136,23 +139,25 @@ export default function JoinedEventDetailsComponent() {
                         </div>
                     </section>
                       <section className="duoc-xem-nhieu col-md-12">
-                        <div className="title-container">
+                        <div className="title-container need-a-classname">
                             <h5>Được xem nhiều</h5>
                         </div>
                                             
 
-                                            <div className="content-inner row div-duoc-xem-nhieu">
+                                            <div className="content-inner row div-duoc-xem-nhieu ">
                                                 {hotEvents.slice(0, 3).map(item => (
                                                     <div className="col-md-4" key={item.id}>
-                                                        <div className="blog-box">
-                                                            <div className="box-image">
-                                                                <img src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
-                                                                <div className="wrap-video"></div>
+                                                        <Link href={`/su-kien-tham-gia/${item.slug}`}>
+                                                            <div className="blog-box really-need-a-specific-classname">
+                                                                <div className="box-image">
+                                                                    <img src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
+                                                                    <div className="wrap-video"></div>
+                                                                </div>
+                                                                <div className="box-content title-news-duoc-xem-nhieu dc-xem-nhieu-diff-sktg">
+                                                                    <Link href={`/su-kien-tham-gia/${item.slug}`} className="title">{item.title}</Link>
+                                                                </div>
                                                             </div>
-                                                            <div className="box-content title-news-duoc-xem-nhieu">
-                                                                <Link href={`/su-kien-tham-gia/${item.slug}`} className="title">{item.title}</Link>
-                                                            </div>
-                                                        </div>
+                                                        </Link>
                                                     </div>
                                                 ))}
                                                 <div className="col-md-12">

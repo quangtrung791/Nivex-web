@@ -6,6 +6,7 @@ import { useEffect, useState } from "react"
 import Link from "next/link"
 import { useParams } from "next/navigation"
 import './style.css'
+import './fix-content.css'
 
 export default function EventDetails() {
     const { slug } = useParams()
@@ -13,6 +14,14 @@ export default function EventDetails() {
     const [hotEvents, setHotEvents] = useState([]);
     const [loading, setLoading] = useState(true);
     const [moreNewsCount, setMoreNewsCount] = useState(3);
+    const [isLoadingMore, setIsLoadingMore] = useState(false);
+    
+    const handleLoadMore = () => {
+        setIsLoadingMore(true);
+        // Tăng số lượng item hiển thị
+        setMoreNewsCount(prev => prev + 3);
+        setIsLoadingMore(false);
+    }
 
     // useEffect(() => {
         // if (events && events.title) {
@@ -110,23 +119,25 @@ export default function EventDetails() {
                                     <div className="widget recent mt-0">
                                         <ul className="tin-nong">
                                             {Array.isArray(hotEvents) && hotEvents.slice(0, 10).map(item => (
-                                                <li key={item.id}>
-                                                    <div style={{ display: 'block' }}>
-                                                        <p className="time-stamp-p">
-                                                            {item.time_event
-                                                                ? new Date(item.time_event).toLocaleString('vi-VN', { hour12: false })
-                                                                : ''}
-                                                        </p>
-                                                        <div className="image">
-                                                            <img className="mini-image-sukienkhac" src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
+                                                <Link href={`/su-kien/${item.slug}`}>
+                                                    <li className="li-chi-tiet-su-kien-to-chuc-slug" key={item.id}>
+                                                        <div style={{ display: 'block' }}>
+                                                            <p className="time-stamp-p">
+                                                                {item.time_event
+                                                                    ? new Date(item.time_event).toLocaleString('vi-VN', { hour12: false })
+                                                                    : ''}
+                                                            </p>
+                                                            <div className="image">
+                                                                <img className="mini-image-sukienkhac" src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div className="content">
-                                                        <Link href={`/su-kien/${item.slug}`} className="title navigate-child-news ctietsukiennivex-tochuc">
-                                                            {item.title}
-                                                        </Link>
-                                                    </div>
-                                                </li>
+                                                        <div className="content">
+                                                            <Link href={`/su-kien/${item.slug}`} className="title navigate-child-news ctietsukiennivex-tochuc">
+                                                                {item.title}
+                                                            </Link>
+                                                        </div>
+                                                    </li>
+                                                </Link>
                                             ))}
                                         </ul>
                                     </div>
@@ -175,15 +186,17 @@ export default function EventDetails() {
                     <div className="content-inner row div-duoc-xem-nhieu">
                         {hotEvents.slice(0, moreNewsCount).map(item => (
                             <div className="col-md-4" key={item.id}>
-                                <div className="blog-box">
-                                    <div className="box-image">
-                                        <img className="img-suggest-chi-tiet-su-kien" src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
-                                        <div className="wrap-video"></div>
+                                <Link href={`/su-kien/${item.slug}`}>
+                                    <div className="blog-box chi-tiet-su-kien-item-box">
+                                        <div className="box-image">
+                                            <img className="img-suggest-chi-tiet-su-kien" src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
+                                            <div className="wrap-video"></div>
+                                        </div>
+                                        <div className="box-content title-news-duoc-xem-nhieu">
+                                            <Link href={`/su-kien/${item.slug}`} className="title">{item.title}</Link>
+                                        </div>
                                     </div>
-                                    <div className="box-content title-news-duoc-xem-nhieu">
-                                        <Link href={`/su-kien/${item.slug}`} className="title">{item.title}</Link>
-                                    </div>
-                                </div>
+                                </Link>
                             </div>
                         ))}
                         {/* <div className="col-md-12">
@@ -193,7 +206,20 @@ export default function EventDetails() {
                                                         </Link>
                                                     </div>
                                                 </div> */}
+
                         {moreNewsCount < hotEvents.length && (
+                            <div className="col-md-12">
+                                <div className="button-loadmore load-more-su-kiens">
+                                    <button
+                                        className="btn-action"
+                                        disabled={isLoadingMore}
+                                        onClick={handleLoadMore}>
+                                        {isLoadingMore ? 'Đang tải...' : 'Xem thêm'}
+                                    </button>
+                                </div>
+                            </div>
+                        )}
+                        {/* {moreNewsCount < hotEvents.length && (
                             <div className="col-md-12">
                                 <div className="button-loadmore">
                                     <button
@@ -203,7 +229,7 @@ export default function EventDetails() {
                                     </button>
                                 </div>
                             </div>
-                        )}
+                        )} */}
                     </div>
                 </section>
             </div>

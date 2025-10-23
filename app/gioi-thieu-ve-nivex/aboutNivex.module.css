@@ -100,6 +100,11 @@
   background: #141414;
   padding: 0px 0 20px;
 }
+@media (min-width: 1900px) {
+  .visionMissionSection {
+    padding-bottom: 4%;
+  }
+}
 
 .visionCard,
 .missionCard {
@@ -232,7 +237,7 @@
 }
 .COFounderName {
     font-size: 74px;
-    
+    font-weight: 800;
 }
 
 .COFounderSubtitle {

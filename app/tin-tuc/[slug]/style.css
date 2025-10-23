@@ -1,7 +1,24 @@
 /* Fixed */
-/* .widget {
-    flex-direction: column !important;
-} */
+.duoccc-xemmm-nhieuuu:hover {
+    background-color: unset !important;
+}
+.duoccc-xemmm-nhieuuu img {
+    border-radius: 25px !important;
+}
+.duoccc-xemmm-nhieuuu:hover .title-news-duoc-xem-nhieu a,
+.li-chi-tiet-tin-tuc-slug:hover a,
+.li-chi-tiet-tin-tuc-slug2:hover a {
+    /* background: var(--primary); */
+    background: linear-gradient(90deg, #BCFE08, #86F969);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* fallback */
+    transition: all 0.3s ease;
+}
+.duoccc-xemmm-nhieuuu:hover  {
+    cursor: pointer;
+}
+
  .blog-details.tin-tuc-id .row .col-xl-4.col-md-12 .sidebar {
     border-radius: 25px;
  }

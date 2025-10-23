@@ -61,7 +61,10 @@ export default function TinTucComponent() {
                 setTitleTop(lines === 1 ? 20 : -10);
             } else if (width >= 1920) {
                 setTitleTop(lines === 1 ? 30 : -10);
-            } else {
+            } else if (width <= 600) {
+                setTitleTop(lines === 1 ? 30 : -80);
+            }
+            else {
                 setTitleTop(-10);
             }
         }
@@ -265,8 +268,8 @@ export default function TinTucComponent() {
                                                 color: "#111",
                                                 fontWeight: "bold",
                                                 border: "none",
-                                                borderRadius: 4,
-                                                padding: "10px 16px",
+                                                borderRadius: 25,
+                                                padding: "9px 16px",
                                                 minWidth: 100,
                                                 textAlign: "left",
                                                 width: "100%"
@@ -322,18 +325,20 @@ export default function TinTucComponent() {
                                     )}
                                 </div>
 
-                                <div className={`content ${styles2.content}`}>
+                                <div className={`content ${styles2.content} ${styles2.mostHighlightNewsItemBox}`}>
                                     {news[0] && (
-                                        <div className={`box-image ${styles2.boxImage} ${styles2.triggerFullW}`}>
-                                            <img className={`${styles2.mostFeaturedNewsHighlight}`} src={hero.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={hero.title} />
-                                            <div className={`${styles2.imageOverlay}`}></div>
-                                        </div>
+                                        <Link href={`/tin-tuc/${hero.slug}`}>
+                                            <div className={`box-image ${styles2.boxImage} ${styles2.triggerFullW}`}>
+                                                <img className={`${styles2.mostFeaturedNewsHighlight}`} src={hero.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={hero.title} />
+                                                <div className={`${styles2.imageOverlay}`}></div>
+                                            </div>
+                                        </Link>
                                     )}
 
                                     {news[0] && (
                                         <div className={`heading-title-main ${styles2.headingTitleMain}`}>
                                             <Link href={`/tin-tuc/${hero.slug}`}>
-                                                <h3 className={`${styles2.tinTuc} ${styles2.title} title`} ref={titleRef} style={{ position:"relative", top:titleTop }}>
+                                                <h3 className={`${styles2.tinTuc} ${styles2.title} ${styles2.mostHighlightTitleNewsH} title`} ref={titleRef} style={{ position:"relative", top:titleTop }}>
                                                     {hero.title}
                                                 </h3>
                                             </Link>
@@ -341,35 +346,37 @@ export default function TinTucComponent() {
                                     )}
 
 
-                                    <div className={`content-tab ${styles2.contentTab}`}>
+                                    
+                                </div>
+
+                                <div className={`content-tab ${styles2.contentTab}`}>
                                         <div className={`content-inner row ${styles2.contentInner} ${styles2.row} ${styles2.divDuocXemNhieu} ${styles2.modCssNewsAlt}`}>
                                             {filteredNews.length === 0 ? (
                                                 <p style={{ textAlign: "center", padding: "20px", color: "#888" }}>
                                                     Không có dữ liệu
                                                 </p>
                                             ) : filteredNews.slice(0, visibleCount).map(item => (
-                                                <div className={`col-md-4 ${styles2.colMd4}`} key={item.id}>
-                                                    <div className={`${styles2.blogBox}`}>
-                                                        <div className={`box-image ${styles2.boxImage}`}>
-                                                            <img src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
+                                                <div className={`col-md-4 ${styles2.colMd4} ${styles2.level2NewsItemBox}`} key={item.id}>
+                                                   <Link href={`/tin-tuc/${item.slug}`} >
+                                                        <div className={`${styles2.blogBox}`}>
+                                                            <div className={`box-image ${styles2.boxImage}`}>
+                                                                <img className={`${styles2.level2NewsImage}`} src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
+                                                            </div>
+                                                            <div className={`box-content ${styles2.boxContent} ${styles2.titleNewsDuocXemNhieu}`}>
+                                                                <Link href={`/tin-tuc/${item.slug}`} className={`${styles2.titleNews} ${styles2.headlineNews}`} >{item.title}</Link>
+                                                            </div>
                                                         </div>
-                                                        <div className={`box-content ${styles2.boxContent} ${styles2.titleNewsDuocXemNhieu}`}>
-                                                            <Link href={`/tin-tuc/${item.slug}`} className={`${styles2.titleNews} ${styles2.headlineNews}`} >{item.title}</Link>
-                                                        </div>
-                                                    </div>
+                                                   </Link>
                                                 </div>
                                             ))}
                                         </div>
-
                                     </div>
-                                </div>
-
                             </div>
                         </div>
 
                         <div className={`d-flex ${styles2.containerXemThemBtnMobileOnly}`}>
                             <div className={`${styles2.xemThemBtnMobileOnly}`}>
-                                <Link href="#">
+                                <Link className={`${styles2.xemThemBtnAHref}`} href="#">
                                     Xem thêm
                                 </Link>
                             </div>
@@ -381,23 +388,25 @@ export default function TinTucComponent() {
                                     <h6 className={`${styles2.heading} ${styles2.titleTinNongg12}`}>Tin nóng</h6>
                                     <ul className={`${styles2.tinNong}`}>
                                         {news.slice(0, 10).map(item => (
-                                            <li key={item.id}>
-                                                <div style={{ display: 'block' }}>
-                                                    <p className={`${styles2.timeStampP}`}>
-                                                        {item.time_upload
-                                                            ? new Date(item.time_upload).toLocaleString('vi-VN', { hour12: false })
-                                                            : ''}
-                                                    </p>
-                                                    <div className={`${styles2.image}`}>
-                                                        <img className={`${styles2.imageTinLonggg12}`} src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
+                                            <Link href={`/tin-tuc/${item.slug}`}>
+                                                <li className={`${styles2.liHovering}`} key={item.id}>
+                                                    <div style={{ display: 'block' }}>
+                                                        <p className={`${styles2.timeStampP}`}>
+                                                            {item.time_upload
+                                                                ? new Date(item.time_upload).toLocaleString('vi-VN', { hour12: false })
+                                                                : ''}
+                                                        </p>
+                                                        <div className={`${styles2.image}`}>
+                                                            <img className={`${styles2.imageTinLonggg12}`} src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            <div className={`${styles2.content}`}>
-                                                    <Link href={`/tin-tuc/${item.slug}`} className={`${styles2.title} ${styles2.navigateChildNews}`}>
-                                                        {item.title}
-                                                    </Link>
-                                                </div>
-                                            </li>
+                                                    <div className={`${styles2.content}`}>
+                                                        <Link href={`/tin-tuc/${item.slug}`} className={`${styles2.title} ${styles2.navigateChildNews} ${styles2.linkHoveringg}`}>
+                                                            {item.title}
+                                                        </Link>
+                                                    </div>
+                                                </li>
+                                            </Link>
                                         ))}
                                     </ul>
                                 </div>
@@ -415,14 +424,16 @@ export default function TinTucComponent() {
                 <div className={`row content-inner ${styles.contentInner} ${styles.row} ${styles.divDuocXemNhieu}`}>
                     {Array.isArray(news) && news.slice(0, 3).map(item => (
                         <div className={`${styles2.colMd4} col-md-4`} key={item.id}>
-                            <div className={`${styles2.blogBox} blog-box`}>
-                                <div className={`${styles2.boxImage} box-image`}>
-                                    <img src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
+                            <Link href={`/tin-tuc/${item.slug}`} >
+                                <div className={`${styles2.blogBox} blog-box ${styles2.blogBoxTinTuc} ${styles2.level3NewsItemBox}`}>
+                                    <div className={`${styles2.boxImage} box-image`}>
+                                        <img className={`${styles2.level3NewsImage}`} src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
+                                    </div>
+                                    <div className={`${styles2.boxContent} ${styles2.titleNewsDuocXemNhieu} box-content title-news-duoc-xem-nhieu`}>
+                                        <Link href={`/tin-tuc/${item.slug}`} className={`${styles2.title} title`}>{item.title}</Link>
+                                    </div>
                                 </div>
-                                <div className={`${styles2.boxContent} ${styles2.titleNewsDuocXemNhieu} box-content title-news-duoc-xem-nhieu`}>
-                                    <Link href={`/tin-tuc/${item.slug}`} className={`${styles2.title} title`}>{item.title}</Link>
-                                </div>
-                            </div>
+                            </Link>
                         </div>
                     ))}
                     <div className={`${styles2.colMd12} col-md-12`}>
