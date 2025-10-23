@@ -8,6 +8,8 @@ import { useState, useEffect } from "react";
 import { useParams } from "next/navigation"
 import './chi_tiet_tn.css';
 
+const WP_BASE = 'https://nivexhub.learningchain.vn/wp-json/nivex/v1';
+
 export default function ChiTietThuatNgu() {
     // const { slug } = params
     const { slug } = useParams();
@@ -16,7 +18,7 @@ export default function ChiTietThuatNgu() {
     
     useEffect(() => {
         if (!slug) return;
-        fetch(`/api/dictionary/${encodeURIComponent(slug)}`)
+        fetch(`${WP_BASE}/dictionary/by-slug/${encodeURIComponent(slug)}`, { cache: 'no-store' })
           .then(res => res.json())
           .then(payload => {
             if (payload?.success && payload.data?.slug) {
@@ -28,6 +30,7 @@ export default function ChiTietThuatNgu() {
           })
           .catch(() => setLoading(false));
       }, [slug]);
+      
 
     if (loading) {
         return (

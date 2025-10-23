@@ -5,6 +5,8 @@ import Link from "next/link"
 import './thuat_ngu.css'
 import { useState, useEffect } from "react"
 
+const WP_BASE = 'https://nivexhub.learningchain.vn/wp-json/nivex/v1';
+
 export default function DictionaryPage() {
     // useEffect(() => {
     //     document.title = "Bảng thuật ngữ | Nivex"
@@ -17,10 +19,18 @@ export default function DictionaryPage() {
     const [ searchQuery, setSearchQuery ] = useState("");
 
     useEffect(() => {
-        fetch('/api/dictionary')
-          .then(res => res.json())
-          .then(payload => {
-            if (!payload?.success || !Array.isArray(payload.data)) return;
+        (async () => {
+          try {
+            setLoading(true);
+            const res = await fetch(`${WP_BASE}/dictionary`, { cache: 'no-store' });
+            const payload = await res.json();
+      
+            if (!payload?.success || !Array.isArray(payload.data)) {
+              setDictionary({});
+              setLoading(false);
+              return;
+            }
+      
             const grouped = payload.data.reduce((acc, item) => {
               const firstLetter = (item.keyword?.charAt(0) || '').toUpperCase();
               if (!firstLetter) return acc;
@@ -28,10 +38,14 @@ export default function DictionaryPage() {
               return acc;
             }, {});
             setDictionary(grouped);
+          } catch {
+            setDictionary({});
+          } finally {
             setLoading(false);
-          })
-          .catch(() => setLoading(false));
+          }
+        })();
       }, []);
+      
 
     // Hàm xử lý sau khi submit form search
     const handleSearch = (e) => {

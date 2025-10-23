@@ -4,6 +4,7 @@ import { useState, useEffect, useMemo } from 'react'
 import CourseRegistrationModal from '@/components/CourseRegistrationModal'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://nivex.vn'
+const WP_BASE = 'https://nivexhub.learningchain.vn/wp-json/nivex/v1';
 
 export default function CoursesPage() {
   const [searchTerm, setSearchTerm] = useState('')
@@ -19,25 +20,43 @@ export default function CoursesPage() {
   // Fetch courses from API
   const fetchCourses = async (filter = 'all', search = '') => {
     try {
-      setLoading(true)
-      const params = new URLSearchParams()
-      if (filter !== 'all') params.append('filter', filter)
-      if (search.trim()) params.append('search', search)
-      
-      const response = await fetch(`/api/courses?${params}`)
-      const result = await response.json()
-      
-      if (result.success) {
-        setCourses(result.data)
+      setLoading(true);
+  
+      const wp = new URL(`${WP_BASE}/courses`);
+      wp.searchParams.set('filter', filter);
+      if (search.trim()) wp.searchParams.set('search', search.trim());
+      wp.searchParams.set('page', '1');
+      wp.searchParams.set('per_page', '30');
+  
+      const res = await fetch(wp.toString(), { cache: 'no-store' });
+      const json = await res.json();
+  
+      if (res.ok && json?.success && Array.isArray(json.data)) {
+        const mapped = json.data.map(course => ({
+          id: course.id,
+          title: course.title,
+          type: course.type, // 'online' | 'offline' | 'completed'
+          category: course.category || '',
+          status: course.status,
+          date: course.date,
+          start_date: course.start_date,
+          end_date: course.end_date,
+          link_zoom: course.link_zoom,
+          content: course.content || '',
+          image: course.image || '/assets/images/background/course_image_test1.png',
+          buttonText: course.buttonText || (course.type === 'online' ? 'Tham gia' : 'Đăng ký ngay'),
+        }));
+        setCourses(mapped);
       } else {
-        setCourses([])
+        setCourses([]);
       }
     } catch (error) {
-      setCourses([])
+      setCourses([]);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
+  
 
   // Load courses on component mount
   useEffect(() => {
@@ -108,7 +127,7 @@ export default function CoursesPage() {
   }
 
     // canonical của trang tổng hợp
-  const canonical = `https://nivex.vn/khoa-hoc`
+  const canonical = `https://nivex.vn/khoa-hoc/`
 
   // ItemList (danh sách khóa học)
   const itemListJsonLd = useMemo(() => {

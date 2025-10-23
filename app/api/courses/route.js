@@ -12,25 +12,25 @@ export async function GET(request) {
     const wp = new URL('https://nivexhub.learningchain.vn/wp-json/nivex/v1/courses');
     wp.searchParams.set('filter', filter);
     if (search) wp.searchParams.set('search', search);
-    wp.searchParams.set('page', page);
-    wp.searchParams.set('per_page', '30');
+    // wp.searchParams.set('page', page);
+    // wp.searchParams.set('per_page', '30');
 
     const res = await fetch(wp.toString(), { next: { revalidate: 5 } });
     const json = await res.json();
 
-    if (!res.ok || !json.success) {
-      return NextResponse.json(
-        { success: false, error: json.error || 'WP API error' },
-        { status: 500 }
-      );
-    }
+    // if (!res.ok || !json.success) {
+    //   return NextResponse.json(
+    //     { success: false, error: json.error || 'WP API error' },
+    //     { status: 500 }
+    //   );
+    // }
 
     const courses = (json.data || []).map((course) => ({
       id: course.id,
       title: course.title,
       type: course.type,
       category: course.category || '',
-      status: course.computed_status || course.status,
+      status: course.status,
       date: course.date,
       start_date: course.start_date,
       end_date: course.end_date,

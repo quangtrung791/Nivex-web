@@ -5,6 +5,7 @@ import Link from 'next/link'
 import styles from './knowledgeDetail.module.css'
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://nivex.vn'
+const WP_BASE = 'https://nivexhub.learningchain.vn/wp-json/nivex/v1'
 
 const summarizeHtml = (html, wordLimit = 100) => {
   if (!html) return ''
@@ -28,31 +29,30 @@ export default function KnowledgeDetail({ initialArticle }) {
   const [searchResults, setSearchResults] = useState([])
   const [isSearching, setIsSearching] = useState(false)
   const [allKnowledgeArticles, setAllKnowledgeArticles] = useState([])
-  // const sentOnce = useRef(false);
 
-  // Chỉ fetch bổ sung nếu KHÔNG có initialArticle (trường hợp truy cập trực tiếp client-only)
-  useEffect(() => {
-    if (article) { setLoading(false); return }
-    if (!params?.slug) return
-    ;(async () => {
-      try {
-        setLoading(true)
-        const res = await fetch(`/api/knowledge/${params.slug}`, { cache: 'no-store' })
-        const data = await res.json()
-        if (data.success) {
-          setArticle(data.data)
-        } else {
-          throw new Error('Không thể tải bài viết. Vui lòng thử lại sau.')
-        }
-      } catch (e) {
-        setError('Không thể tải bài viết. Vui lòng thử lại sau.')
-      } finally {
-        setLoading(false)
-      }
-    })()
-  }, [params?.slug])
+  // // Nếu không có initialArticle (truy cập client trực tiếp) thì gọi thẳng WP
+  // useEffect(() => {
+  //   if (article) { setLoading(false); return }
+  //   if (!params?.slug) return
+  //   ;(async () => {
+  //     try {
+  //       setLoading(true)
+  //       const res = await fetch(`${WP_BASE}/knowledge/${encodeURIComponent(params.slug)}`, { cache: 'no-store' })
+  //       const data = await res.json()
+  //       if (data?.success) {
+  //         setArticle(data.data)
+  //       } else {
+  //         throw new Error(data?.error || 'Không thể tải bài viết.')
+  //       }
+  //     } catch {
+  //       setError('Không thể tải bài viết. Vui lòng thử lại sau.')
+  //     } finally {
+  //       setLoading(false)
+  //     }
+  //   })()
+  // }, [params?.slug])
 
-  // Các dữ liệu phụ (sidebar, search)
+  // Dữ liệu phụ (sidebar, search)
   useEffect(() => {
     if (!params?.slug) return
     fetchLatestNews()
@@ -62,8 +62,8 @@ export default function KnowledgeDetail({ initialArticle }) {
 
   const fetchAllKnowledgeArticles = async () => {
     try {
-      const response = await fetch('/api/knowledge?limit=100')
-      const data = await response.json()
+      const res = await fetch(`${WP_BASE}/knowledge?limit=100`, { cache: 'no-store' })
+      const data = await res.json()
       if (data.success && data.data) setAllKnowledgeArticles(data.data)
     } catch {}
   }
@@ -78,7 +78,7 @@ export default function KnowledgeDetail({ initialArticle }) {
     setIsSearching(true)
     const t = term.toLowerCase()
     const results = allKnowledgeArticles.filter(a =>
-      a.title.toLowerCase().includes(t) ||
+      a.title?.toLowerCase().includes(t) ||
       (a.topic && a.topic.toLowerCase().includes(t)) ||
       (a.description && a.description.toLowerCase().includes(t))
     )
@@ -87,8 +87,8 @@ export default function KnowledgeDetail({ initialArticle }) {
 
   const fetchLatestNews = async () => {
     try {
-      const response = await fetch('/api/knowledge?limit=8')
-      const data = await response.json()
+      const res = await fetch(`${WP_BASE}/knowledge?limit=8`, { cache: 'no-store' })
+      const data = await res.json()
       if (data.success && data.data?.length) {
         const filtered = data.data
           .filter(a => a.slug !== params.slug)
@@ -107,8 +107,9 @@ export default function KnowledgeDetail({ initialArticle }) {
 
   const fetchPopularArticles = async () => {
     try {
-      const response = await fetch('/api/knowledge?limit=3&sort=views')
-      const data = await response.json()
+      // Cần backend hỗ trợ sort=views (ORDER BY view DESC, updated_at DESC)
+      const res = await fetch(`${WP_BASE}/knowledge?limit=3&sort=views`, { cache: 'no-store' })
+      const data = await res.json()
       if (data.success) setPopularArticles(data.data || [])
     } catch {
       setPopularArticles([])
@@ -138,7 +139,6 @@ export default function KnowledgeDetail({ initialArticle }) {
     [article]
   )
 
-
   const jsonLd = useMemo(() => {
     if (!article) return null
     return {
@@ -164,7 +164,6 @@ export default function KnowledgeDetail({ initialArticle }) {
       mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
       url: canonical,
       articleSection: 'Kiến thức',
-      // sửa typo: rank_math_seo_keyword
       keywords: article.rank_math_seo_keyword || article.topic,
       inLanguage: 'vi-VN',
       isAccessibleForFree: true
@@ -190,24 +189,15 @@ export default function KnowledgeDetail({ initialArticle }) {
     )
   }
 
+  // Tăng view (gửi nền, không chờ)
   useEffect(() => {
-    if (!article?.slug) return;
-    // sentOnce.current = true; // chặn gọi lần 2 ở dev
-  
-    // (tuỳ chọn) chống đếm lại khi user F5: sessionStorage
-    // const key = `viewed:${article.slug}`;
-    // if (sessionStorage.getItem(key)) return;
-    // sessionStorage.setItem(key, '1');
-
-  // gửi nền, không chờ kết quả
-  void fetch(`https://nivexhub.learningchain.vn/wp-json/nivex/v1/knowledge-view?slug=${encodeURIComponent(article.slug)}`, {
-    method: 'GET',
-    cache: 'no-store',
-    keepalive: true,
-    // mode: 'cors' // nếu cần
-  }).catch(() => { /* im lặng */ });
-
-  }, [article?.slug]);
+    if (!article?.slug) return
+    void fetch(`${WP_BASE}/knowledge-view?slug=${encodeURIComponent(article.slug)}`, {
+      method: 'GET',
+      cache: 'no-store',
+      keepalive: true
+    }).catch(() => {})
+  }, [article?.slug])
   
   
 

@@ -2,19 +2,18 @@ import Layout from "@/components/layout/Layout"
 import ChiTietThuatNgu from "./DictionaryDetailsPage"
 import { Metadata } from "next"
 // import { useParams } from "next/navigation";
+const WP_BASE = 'https://nivexhub.learningchain.vn/wp-json/nivex/v1';
 
 // Hàm lấy dữ liệu từ API theo slug
 async function getTermBySlug(slug) {
-    const productionUrl = 'https://nivex.vn';
-    const developedUrl = 'http://localhost:3000'
     const res = await fetch(
-        `${process.env.NODE_ENV === "production" ? productionUrl : developedUrl}/api/dictionary/${slug}`,
-        { cache: "no-store" }
+      `${WP_BASE}/dictionary/by-slug/${encodeURIComponent(slug)}`,
+      { cache: 'no-store' }
     );
-    
     if (!res.ok) return null;
-    return await res.json();
-}
+    return await res.json(); // { success, data }
+  }
+  
 
 // Tạo metadata động
 export async function generateMetadata({ params }) {
