@@ -28,6 +28,7 @@ export default function KnowledgeDetail({ initialArticle }) {
   const [searchResults, setSearchResults] = useState([])
   const [isSearching, setIsSearching] = useState(false)
   const [allKnowledgeArticles, setAllKnowledgeArticles] = useState([])
+  // const sentOnce = useRef(false);
 
   // Chỉ fetch bổ sung nếu KHÔNG có initialArticle (trường hợp truy cập trực tiếp client-only)
   useEffect(() => {
@@ -61,7 +62,7 @@ export default function KnowledgeDetail({ initialArticle }) {
 
   const fetchAllKnowledgeArticles = async () => {
     try {
-      const response = await fetch('/api/knowledge?limit=80')
+      const response = await fetch('/api/knowledge?limit=100')
       const data = await response.json()
       if (data.success && data.data) setAllKnowledgeArticles(data.data)
     } catch {}
@@ -86,7 +87,7 @@ export default function KnowledgeDetail({ initialArticle }) {
 
   const fetchLatestNews = async () => {
     try {
-      const response = await fetch('/api/knowledge?limit=10')
+      const response = await fetch('/api/knowledge?limit=8')
       const data = await response.json()
       if (data.success && data.data?.length) {
         const filtered = data.data
@@ -136,6 +137,7 @@ export default function KnowledgeDetail({ initialArticle }) {
     () => summarizeHtml(article?.content || '', 100) || article?.title || '',
     [article]
   )
+
 
   const jsonLd = useMemo(() => {
     if (!article) return null
@@ -187,9 +189,27 @@ export default function KnowledgeDetail({ initialArticle }) {
       </div>
     )
   }
-    
-    
 
+  useEffect(() => {
+    if (!article?.slug) return;
+    // sentOnce.current = true; // chặn gọi lần 2 ở dev
+  
+    // (tuỳ chọn) chống đếm lại khi user F5: sessionStorage
+    // const key = `viewed:${article.slug}`;
+    // if (sessionStorage.getItem(key)) return;
+    // sessionStorage.setItem(key, '1');
+
+  // gửi nền, không chờ kết quả
+  void fetch(`https://nivexhub.learningchain.vn/wp-json/nivex/v1/knowledge-view?slug=${encodeURIComponent(article.slug)}`, {
+    method: 'GET',
+    cache: 'no-store',
+    keepalive: true,
+    // mode: 'cors' // nếu cần
+  }).catch(() => { /* im lặng */ });
+
+  }, [article?.slug]);
+  
+  
 
     return (
         <>
@@ -340,4 +360,5 @@ export default function KnowledgeDetail({ initialArticle }) {
         )}
         </>
     )
+    
 }
