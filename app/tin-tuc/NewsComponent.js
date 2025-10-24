@@ -38,16 +38,14 @@ export default function TinTucComponent() {
     const [selectedTab, setSelectedTab] = useState(TABS[0].value);
     const [categories, setCategories] = useState([]);
     const [news, setNews] = useState([]);
-    const [hotNews, setHotNews] = useState([]);
-    // const { id } = useParams()
-    // const pathname = usePathname();
+    const [mostViewedNews, setMostViewedNews] = useState([]);
     const [searchQuery, setSearchQuery] = useState("");
     const [hero, setHero] = useState(null);
 
     const [visibleCount, setVisibleCount] = useState(3);
 
     const titleRef = useRef(null);
-    const [titleLines, setTitleLines] = useState(1);
+    // const [titleLines, setTitleLines] = useState(1);
     const [titleTop, setTitleTop] = useState(-10);
 
     useEffect(() => {
@@ -55,7 +53,7 @@ export default function TinTucComponent() {
             const lineHeight = parseFloat(getComputedStyle(titleRef.current).lineHeight);
             const height = titleRef.current.offsetHeight;
             const lines = Math.round(height / lineHeight);
-            setTitleLines(lines);
+            // setTitleLines(lines);
 
             const width = window.innerWidth;
             if (width >= 1440 && width < 1920) {
@@ -127,48 +125,56 @@ export default function TinTucComponent() {
       
 
     useEffect(() => {
-    const url = new URL(`${WP_BASE}/news`);
-    url.searchParams.set('status', 'active');
-    url.searchParams.set('page', '1');
-    url.searchParams.set('per_page', '50');
+        const url = new URL(`${WP_BASE}/news`);
+        url.searchParams.set('status', 'active');
+        url.searchParams.set('page', '1');
+        url.searchParams.set('per_page', '50');
 
-    fetch(url.toString(), { cache: 'no-store' })
-        .then(res => res.json())
-        .then(json => {
-        const arr = Array.isArray(json?.data) ? json.data : [];
-        const mapped = arr.map(n => ({
-            id: n.id,
-            slug: n.slug,
-            title: n.title,
-            category_id: n.category_id ?? null,
-            time_upload: n.time_upload,
-            created_at: n.created_at,
-            updated_at: n.updated_at,
-            thumbnail_url: n.thumbnail_url || 'https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp',
-            is_featured: Number(n.is_featured) === 1,
-        }));
+        fetch(url.toString(), { cache: 'no-store' })
+            .then(res => res.json())
+            .then(json => {
+            const arr = Array.isArray(json?.data) ? json.data : [];
+            const mapped = arr.map(n => ({
+                id: n.id,
+                slug: n.slug,
+                title: n.title,
+                category_id: n.category_id ?? null,
+                time_upload: n.time_upload,
+                created_at: n.created_at,
+                updated_at: n.updated_at,
+                thumbnail_url: n.thumbnail_url || 'https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp',
+                is_featured: Number(n.is_featured) === 1,
+            }));
 
-        setNews(mapped);
+            setNews(mapped);
 
-        const featured = mapped
-            .filter(n => n.is_featured)
-            .sort((a,b) => new Date(b.time_upload || b.created_at) - new Date(a.time_upload || a.created_at));
+            const featured = mapped
+                .filter(n => n.is_featured)
+                .sort((a,b) => new Date(b.time_upload || b.created_at) - new Date(a.time_upload || a.created_at));
 
-        setHero(featured[0] || mapped[0] || null);
-        })
-        .catch(() => {
-        setNews([]);
-        setHero(null);
-        });
+            setHero(featured[0] || mapped[0] || null);
+            })
+            .catch(() => {
+            setNews([]);
+            setHero(null);
+            });
     }, []);
 
 
     useEffect(() => {
-        fetch(`${WP_BASE}/news?featured=1&page=1&per_page=10`, { cache: 'no-store' })
-          .then(res => res.json())
-          .then(json => setHotNews(Array.isArray(json?.data) ? json.data : []))
-          .catch(() => setHotNews([]));
-      }, []);
+        const url = new URL(`${WP_BASE}/news`);
+        url.searchParams.set('status', 'active');
+        url.searchParams.set('page', '1');
+        url.searchParams.set('per_page', '10');
+        url.searchParams.set('sort', 'view');
+
+        fetch(url.toString(), { cache: 'no-store' })
+            .then(res => res.json())
+            .then(json => {
+            setMostViewedNews(Array.isArray(json?.data) ? json.data : []);
+            })
+            .catch(() => setMostViewedNews([]));
+    }, []);
 
     // chuẩn hóa query 1 lần để tiết kiệm hiệu năng
     const q = normalizeString(searchQuery);
@@ -435,7 +441,7 @@ export default function TinTucComponent() {
                     <h5>Được xem nhiều</h5>
                 </div>
                 <div className={`row content-inner ${styles.contentInner} ${styles.row} ${styles.divDuocXemNhieu}`}>
-                    {Array.isArray(news) && news.slice(0, 3).map(item => (
+                    {Array.isArray(mostViewedNews) && mostViewedNews.slice(0, 3).map(item => (
                         <div className={`${styles2.colMd4} col-md-4`} key={item.id}>
                             <Link href={`/tin-tuc/${item.slug}`} >
                                 <div className={`${styles2.blogBox} blog-box ${styles2.blogBoxTinTuc} ${styles2.level3NewsItemBox}`}>

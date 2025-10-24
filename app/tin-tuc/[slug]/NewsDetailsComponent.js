@@ -15,7 +15,8 @@ export default function ChiTietTinTucComponent() {
     const [news, setNews] = useState(null);
     const [hotNews, setHotNews] = useState([]);
     const [loading, setLoading] = useState(true);
-  
+    const [mostViewedNews, setMostViewedNews] = useState([]);
+
     useEffect(() => {
         if (!slug) return
         setLoading(true)
@@ -60,8 +61,22 @@ export default function ChiTietTinTucComponent() {
             })))
           })
           .catch(() => setHotNews([]))
-      }, [slug])
-      
+      }, [slug])     
+    
+    useEffect(() => {
+        const url = new URL(`${WP_BASE}/news`);
+        url.searchParams.set('status', 'active');
+        url.searchParams.set('page', '1');
+        url.searchParams.set('per_page', '10');
+        url.searchParams.set('sort', 'view');
+
+        fetch(url.toString(), { cache: 'no-store' })
+            .then(res => res.json())
+            .then(json => {
+            setMostViewedNews(Array.isArray(json?.data) ? json.data : []);
+            })
+            .catch(() => setMostViewedNews([]));
+    }, []);
 
     useEffect(() => {
         if (!news?.slug) return
@@ -71,6 +86,8 @@ export default function ChiTietTinTucComponent() {
           keepalive: true
         }).catch(() => {})
     }, [news?.slug])
+
+
 
     if (loading) {
       return (
@@ -217,7 +234,7 @@ export default function ChiTietTinTucComponent() {
                             <h5>Được xem nhiều</h5>
                         </div>
                                             <div className="content-inner row div-duoc-xem-nhieu">
-                                                {hotNews.slice(0, 3).map(item => (
+                                                {mostViewedNews.slice(0, 3).map(item => (
                                                     <div className="col-md-4" key={item.id}>
                                                         <Link href={`/tin-tuc/${item.slug}`}>
                                                             <div className="blog-box duoccc-xemmm-nhieuuu">
