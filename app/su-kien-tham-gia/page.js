@@ -1,5 +1,5 @@
 import Layout from "@/components/layout/Layout"
-import { Metadata } from "next"
+// import { Metadata } from "next"
 import SuKienAlt from "./JoinedEventComponent"
 
 export const metadata = {

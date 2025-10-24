@@ -330,6 +330,10 @@ footer.footer.style-2.footer-main {
     scrollbar-color: #757575 transparent;
     padding-right: 0 !important;
 }
+section.su-kien-id .blog-main .content {
+    font-size: 15px;
+    font-weight: 100;
+}
 
 @media (min-width: 750px) {
     section.duoc-xem-nhieu .blog-box .box-content .title {
