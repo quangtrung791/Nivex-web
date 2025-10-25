@@ -62,27 +62,28 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu }) {
                                         <Menu.Items as="div" className="dropdown-menu show" aria-labelledby="dropdownMenuButton3">
                                             <div className="dropdown-item">
                                                 <div className="media server-log">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="feather feather-server">
+                                                    {/* <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="feather feather-server">
                                                         <rect x={2} y={2} width={20} height={8} rx={2} ry={2} />
                                                         <rect x={2} y={14} width={20} height={8} rx={2} ry={2} />
                                                         <line x1={6} y1={6} x2={6} y2={6} />
                                                         <line x1={6} y1={18} x2={6} y2={18} />
-                                                    </svg>
+                                                    </svg> */}
+                                                    <img src="/assets/images/icon/logo-03nivex.svg" />
                                                     <div className="media-body">
                                                         <div className="data-info">
-                                                            <h6 >Server Rebooted</h6>
-                                                            <p >45 min ago</p>
+                                                            <h6 style={{"color": "black"}}>Thông báo từ Nivex</h6>
+                                                            <p style={{"fontSize": "13px", "textAlign": "justify"}}>Chào mừng bạn đến với NivexHub, nền tảng tri thức cho Kỷ nguyên Giao dịch AI</p>
                                                         </div>
-                                                        <div className="icon-status">
+                                                        {/* <div className="icon-status">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="feather feather-x">
                                                                 <line x1={18} y1={6} x2={6} y2={18} />
                                                                 <line x1={6} y1={6} x2={18} y2={18} />
                                                             </svg>
-                                                        </div>
+                                                        </div> */}
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div className="dropdown-item">
+                                            {/* <div className="dropdown-item">
                                                 <div className="media">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="feather feather-heart">
                                                         <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
@@ -124,7 +125,7 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu }) {
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> */}
                                         </Menu.Items>
                                     </Menu>
                                     <Menu as="div" className="dropdown">

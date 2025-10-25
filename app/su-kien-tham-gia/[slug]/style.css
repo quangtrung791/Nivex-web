@@ -2,6 +2,10 @@
 /* .su-kien-tg-id .col-xl-4.col-md-12 {
     padding-left: 0 !important;
 } */
+.news-search-input:hover {
+    border-color: greenyellow !important;
+}
+
 .really-need-a-specific-classname:hover {
     background-color: unset !important;
     cursor: pointer;

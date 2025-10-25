@@ -1,3 +1,7 @@
+p.disclaimer-text > * {
+    color: white !important;
+}
+
 @media (max-width: 600px) {
     .news-details-display-markdown img {
         /* max-height: 250px !important; */

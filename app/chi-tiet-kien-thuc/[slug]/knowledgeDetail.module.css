@@ -1,3 +1,6 @@
+p.disclaimer-text > * {
+    color: white !important;
+}
 .articleBody ul {
 	/* padding: 20px; */
     padding-left: 20px;
@@ -238,6 +241,7 @@
     aspect-ratio: 16/9;
     margin-bottom: 25px;
     overflow: hidden;
+    border-radius: 25px;
 }
 
 .featuredImage img {
@@ -379,6 +383,7 @@
     overflow: hidden; 
     display: flex;              /* QUAN TRỌNG */
     flex-direction: column; 
+    border-radius: 25px;
 }
 
 .sidebarTitle {
