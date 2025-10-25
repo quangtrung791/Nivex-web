@@ -131,8 +131,14 @@ export default function TimHieuTiemNangLoiNhuan() {
                     <section className="tuyen-bo-su-dung-du-lieu">
                         <p className="title-su-dung-du-lieu">Kết luận:</p>
                         <div className="big-text-ket-luan gradient-text">
-                            <p className="">Vốn và số lượng người dùng đều quan trọng</p>
-                            <p className="content-text-ket-luan">Vốn lớn mang lại lợi nhuận vượt trội!</p>
+                            <div className="von-va-so-luong-deu-quan-trong-container">
+                                <img className="von-va-so-luong-deu-quan-trong-img" src="/assets/images/icon/tamgiac.png" />
+                                <p className="">Vốn và số lượng người dùng đều quan trọng</p>
+                            </div>
+                            <div className="von-va-so-luong-deu-quan-trong-container">
+                                <img className="von-va-so-luong-deu-quan-trong-img" src="/assets/images/icon/tamgiac.png" />
+                                <p className="content-text-ket-luan">Vốn lớn mang lại lợi nhuận vượt trội!</p>
+                            </div>
                         </div>
                         <ul className="">
                             <li className="text-welcome-main-2">Một số đại lý thường hiểu nhầm rằng “muốn có khối lượng lớn thì phải thu hút nhiều người vốn nhỏ”.</li>
