@@ -1,7 +1,10 @@
 
 /* TRANG: BẢNG THUẬT NGỮ */
 /* fixed */
-
+.glossary-search-input:hover, 
+.glossary-search-form:hover {
+    border-color: greenyellow !important;
+}
 .glossary-search-input {
   border-radius: 25px 0 0 25px !important;
 }

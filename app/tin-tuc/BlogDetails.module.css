@@ -1,4 +1,8 @@
 /* Fixed */
+.newsSearchInput:hover {
+    border-color: greenyellow !important;
+}
+
 .liHovering:hover .linkHoveringg {
     background: linear-gradient(90deg, #BCFE08, #86F969);
     -webkit-background-clip: text;

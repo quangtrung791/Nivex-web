@@ -1,4 +1,8 @@
 /* Fixed */
+.news-search-input:hover {
+    border-color: greenyellow !important;
+}
+
 .hien-thi-su-kiem-tham-gia:hover a.title {
     background: linear-gradient(90deg, #BCFE08, #86F969);
     -webkit-background-clip: text;
@@ -6,9 +10,6 @@
     color: transparent; /* fallback */
     transition: all 0.3s ease;
 }
-/* .hien-thi-su-kiem-tham-gia:hover .cta-butonnnnn {
-    color: #222 !important;
-} */
 
 .hien-thi-su-kiem-tham-gia .box-content {
     border-radius: 0 0 25px 25px !important;

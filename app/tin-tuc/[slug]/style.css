@@ -1,4 +1,8 @@
 /* Fixed */
+.news-search-input:hover {
+    border-color: greenyellow !important;
+}
+
 .duoccc-xemmm-nhieuuu:hover {
     background-color: unset !important;
 }

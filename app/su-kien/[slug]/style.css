@@ -1,11 +1,14 @@
 /* Fixed */
+.news-search-input:hover {
+    border-color: greenyellow !important;
+}
+
 .chi-tiet-su-kien-item-box:hover {
     background-color: unset !important;
     cursor: pointer;
 }
 .chi-tiet-su-kien-item-box:hover .title-news-duoc-xem-nhieu a,
 .li-chi-tiet-su-kien-to-chuc-slug:hover a {
-    /* background: var(--primary); */
     background: linear-gradient(90deg, #BCFE08, #86F969);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -31,7 +34,7 @@ img.mini-image-sukienkhac {
     border-radius: 10px;
 }
 .ctietsukiennivex-tochuc {
-    display: block; /* Fallback for non-webkit */
+    display: block; /* Fallback */
   display: -webkit-box !important;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;

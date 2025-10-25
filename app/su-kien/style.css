@@ -1,4 +1,8 @@
 /* Fixed */
+.news-search-input:hover {
+    border-color: greenyellow !important;
+}
+
 .nivex-da-bezt:hover a.title {
     background: linear-gradient(90deg, #BCFE08, #86F969);
     -webkit-background-clip: text;
