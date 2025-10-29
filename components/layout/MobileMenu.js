@@ -76,8 +76,18 @@ export default function MobileMenu({ isMobileMenu }) {
                     <li className={`menu-item ${pathname === "/khoa-hoc" ? "current-menu-item" : ""}`}>
                         <Link href="/khoa-hoc">Khóa học</Link>
                     </li>
-                    <li className={`menu-item ${pathname === "/#" ? "current-menu-item" : ""}`}>
+                    <li className={`menu-item menu-item-has-children ${checkParentActive(["/su-kien",
+                        "/su-kien-tham-gia",])}`}>
                         <Link href="/su-kien">Sự kiện</Link>
+                        <span className={`arrow ${isActive === 3 ? 'active' : ''}`} onClick={() => handleClick(3)} />
+                        <ul className="sub-menu" style={{ display: `${isActive == 3 ? "block" : "none"}` }}>
+                            <li className={`menu-item ${checkCurrentMenuItem("/su-kien")}`}>
+                                <Link href="/su-kien">Sự kiện Nivex tổ chức</Link>
+                            </li>
+                            <li className={`menu-item ${checkCurrentMenuItem("/su-kien-tham-gia")}`}>
+                                <Link href="/su-kien-tham-gia">Sự kiện Nivex tham dự</Link>
+                            </li>
+                        </ul>
                     </li>
                     <li className={`menu-item ${pathname === "/tin-tuc" ? "current-menu-item" : ""}`}>
                         <Link href="/tin-tuc">Tin tức</Link>

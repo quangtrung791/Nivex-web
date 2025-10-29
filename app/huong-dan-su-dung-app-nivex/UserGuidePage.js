@@ -21,18 +21,18 @@ export default function UserGuidePage() {
 
   const linkOperation = useMemo(() => ([
     { text: 'Xác thực 2 lớp (2FA)', href:'/xac-thuc-hai-lop-2fa'},
-    { text: 'Tạo tài khoản Gmail'},
+    { text: 'Tạo tài khoản Gmail', href:'/huong-dan-lien-ket-google-authenticator' },
   ]), [])
 
   const copyTradeAdvanced = useMemo(() => ([
-    { text: 'Nguyên lý Copy Trade'},
-    { text: 'Năng lực cạnh tranh Copy Trade'},
-    { text: 'Tìm hiểu tiềm năng lợi nhuận'},
+    { text: 'Nguyên lý Copy Trade', href:'/nguyen-ly-hoat-dong-copy-trade'},
+    { text: 'Năng lực cạnh tranh Copy Trade', href:'/nang-luc-canh-tranh'},
+    { text: 'Tìm hiểu tiềm năng lợi nhuận', href:'/tim-hieu-tiem-nang-loi-nhuan'},
   ]), [])
 
   const inviteFriendsAndRewards = useMemo(() => ([
-    { text: 'Lì xì Nivex'},
-    { text: 'Tạo liên kết giới thiệu bạn bè'},
+    { text: 'Lì xì Nivex', href:'/phan-thuong-bao-li-xi-nivex'},
+    { text: 'Tạo liên kết giới thiệu bạn bè', href: '/huong-dan-tao-lien-ket-gioi-thieu' },
   ]), [])
 
   // Tổng hợp tất cả items để search
@@ -245,7 +245,7 @@ export default function UserGuidePage() {
             <h3 className={styles.sectionTitle}>Copy Trade & AI nâng cao</h3>
             <div className={styles.chipsRow}>
               {copyTradeAdvanced.map((item, i) => (
-                <a key={i} href='#' className={styles.chip}>
+                <a key={i} href={item.href} className={styles.chip}>
                   <span className={styles.chipText}>{item.text}</span>
                   <span className={styles.chipArrow} aria-hidden>›</span>
                 </a>
@@ -257,7 +257,7 @@ export default function UserGuidePage() {
             <h3 className={styles.sectionTitle}>Mời bạn bè & Phần thưởng</h3>
             <div className={`${styles.chipsRow}`}>
               {inviteFriendsAndRewards.map((item, i) => (
-                <a key={i} href='#' className={styles.chip}>
+                <a key={i} href={item.href} className={styles.chip}>
                   <span className={styles.chipText}>{item.text}</span>
                   <span className={styles.chipArrow} aria-hidden>›</span>
                 </a>
