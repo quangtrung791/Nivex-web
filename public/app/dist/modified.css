@@ -6,14 +6,3 @@ section.about p.fs-14.decs {
 	content: none !important;
 }
 
-/* @media (min-width: 1024px) and (max-width: 1139px) {
-    .header .header__left .main-nav .menu li .sub-menu {
-        left: 107% !important;
-    }
-}
-@media (min-width: 1140px) and (max-width: 1279px) {
-    .header .header__left .main-nav .menu li .sub-menu {
-        left: 107% !important;
-    }
-} */
-

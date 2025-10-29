@@ -632,14 +632,13 @@ section.banner {
 
 .header .header__left .main-nav .menu li {
     position: relative;
-    transition: 0.3s all ease-in-out;
-    padding: 13px 16px;
+    
 }
 
-.header .header__left .main-nav .menu li a {
+.header .header__left .main-nav .menu li a.master-item {
     position: relative;
     display: block;
-    transition: 0.3s all ease-in-out;
+    padding: 13px 16px;
 }
 
 .header .header__left .main-nav .menu li a svg {
