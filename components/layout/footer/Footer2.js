@@ -89,7 +89,7 @@ export default function Footer2() {
                                         <h6 className="title">VỀ NIVEX</h6>
                                         <ul>
                                             <li className="link-footer" style={{ 'fontWeight': 300 }}><Link href="/gioi-thieu-ve-nivex"  style={{ 'fontWeight': 300 }}>Giới thiệu</Link></li>
-                                            <li className="link-footer" style={{ 'fontWeight': 300 }}><Link href="#"  style={{ 'fontWeight': 300 }}>Tải App</Link></li>
+                                            <li className="link-footer" style={{ 'fontWeight': 300 }}><Link href="/huong-dan-su-dung-app-nivex"  style={{ 'fontWeight': 300 }}>Tải App</Link></li>
                                             <li className="link-footer" style={{ 'fontWeight': 300 }}><Link href="/huong-dan-su-dung-app-nivex"  style={{ 'fontWeight': 300 }}>Hướng dẫn sử dụng App Nivex</Link></li>
                                             <li className="link-footer" style={{ 'fontWeight': 300 }}><Link href="/su-kien"  style={{ 'fontWeight': 300 }}>Sự kiện</Link></li>
                                         </ul>
@@ -104,10 +104,10 @@ export default function Footer2() {
                                     <div className="widget-link s3" >
                                         <h6 className="title">HỖ TRỢ</h6>
                                         <ul>
-                                            <li className="link-footer" ><Link style={{ 'fontWeight': 300 }} href="/" >Tài khoản & Bảo mật</Link></li>
-                                            <li className="link-footer" ><Link style={{ 'fontWeight': 300 }} href="/">Nạp & Rút tiền</Link></li>
-                                            <li className="link-footer" ><Link style={{ 'fontWeight': 300 }} href="/">Chương trình đại lý</Link></li>
-                                            <li className="link-footer" ><Link style={{ 'fontWeight': 300 }} href="/">An toàn & Bảo mật</Link></li>
+                                            <li className="link-footer" ><Link style={{ 'fontWeight': 300 }} href="/ai-copy-trade" >Tài khoản & Bảo mật</Link></li>
+                                            <li className="link-footer" ><Link style={{ 'fontWeight': 300 }} href="/huong-dan-nap-tien">Nạp & Rút tiền</Link></li>
+                                            <li className="link-footer" ><Link style={{ 'fontWeight': 300 }} href="/chuyen-tien-noi-bo">Chương trình đại lý</Link></li>
+                                            <li className="link-footer" ><Link style={{ 'fontWeight': 300 }} href="/giao-dich-p2p">An toàn & Bảo mật</Link></li>
                                             
                                         </ul>
                                     </div>
