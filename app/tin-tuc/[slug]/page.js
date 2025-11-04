@@ -31,12 +31,12 @@ export async function generateMetadata({ params }) {
         description: desc,
         keywords: data.rank_math_seo_keyword || '',
         alternates: {
-            canonical: `https://nivex.vn/tin-tuc/${slug}`
+            canonical: `https://nivex.info/tin-tuc/${slug}`
         },
         openGraph: {
             title: `${keyword} | Chi tiết tin tức Nivex`,
             description: desc,
-            url: `https://nivex.vn/tin-tuc/${slug}`,
+            url: `https://nivex.info/tin-tuc/${slug}`,
             siteName: "Nivex",
             images: [
                 {

@@ -11,7 +11,7 @@ export const metadata = {
     title: 'Hướng dẫn giao dịch P2P Nivex | Nivex Hub',
     description:
       'Tính năng chuyển khoản nội bộ giúp bạn gửi tiền mã hóa đến người dùng Nivex khác tức thì và hoàn toàn miễn phí.',
-    url: 'https://nivex.vn/giao-dich-p2p',
+    url: 'https://nivex.info/giao-dich-p2p',
     siteName: 'Nivex',
     images: [{ url: '/assets/images/logo/Nivex_icon_bg.png', width: 1200, height: 630, alt: 'Nivex P2P' }],
     locale: 'vi_VN',
@@ -26,7 +26,7 @@ export default function P2PTradingPage() {
     name: 'Cách thực hiện giao dịch P2P trên Nivex',
     description:
       'Hướng dẫn 9 bước để mua USDT qua P2P trên Nivex: vào P2P, chọn người bán, tạo đơn, thanh toán, xác nhận và nhận coin.',
-    mainEntityOfPage: 'https://nivex.vn/giao-dich-p2p',
+    mainEntityOfPage: 'https://nivex.info/giao-dich-p2p',
     totalTime: 'PT10M', // ước lượng
     supply: [
       { '@type': 'HowToSupply', name: 'Ứng dụng ngân hàng hoặc ví thanh toán' },
@@ -47,8 +47,8 @@ export default function P2PTradingPage() {
     publisher: {
       '@type': 'Organization',
       name: 'Nivex',
-      url: 'https://nivex.vn',
-      logo: { '@type': 'ImageObject', url: 'https://nivex.vn/assets/images/logo/Nivex_icon_bg.png' },
+      url: 'https://nivex.info',
+      logo: { '@type': 'ImageObject', url: 'https://nivex.info/assets/images/logo/Nivex_icon_bg.png' },
     },
   }
 

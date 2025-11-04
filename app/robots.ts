@@ -2,7 +2,7 @@
 import type { MetadataRoute } from 'next'
 
 const isProd = process.env.VERCEL_ENV === 'production'
-const BASE = process.env.NEXT_PUBLIC_SITE_URL || 'https://nivex.vn'
+const BASE = process.env.NEXT_PUBLIC_SITE_URL || 'https://nivex.info'
 
 // cache lại 6 giờ (tùy chọn)
 export const revalidate = 6 * 60 * 60

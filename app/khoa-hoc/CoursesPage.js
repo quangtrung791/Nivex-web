@@ -3,7 +3,7 @@ import styles from './courses.module.css'
 import { useState, useEffect, useMemo } from 'react'
 import CourseRegistrationModal from '@/components/CourseRegistrationModal'
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://nivex.vn'
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://nivex.info'
 const WP_BASE = 'https://nivexhub.learningchain.vn/wp-json/nivex/v1';
 
 export default function CoursesPage() {
@@ -127,7 +127,7 @@ export default function CoursesPage() {
   }
 
     // canonical của trang tổng hợp
-  const canonical = `https://nivex.vn/khoa-hoc/`
+  const canonical = `https://nivex.info/khoa-hoc/`
 
   // ItemList (danh sách khóa học)
   const itemListJsonLd = useMemo(() => {

@@ -21,7 +21,7 @@ const inter = Inter({
 export const metadata = {
 
     //metadataBase giúp Next.js tạo URL tuyệt đối cho các thẻ/meta liên quan (OG images, canonical...)
-    metadataBase: new URL('https://nivex.vn'),
+    metadataBase: new URL('https://nivex.info'),
 
     title: 'Nivex Hub',
     description: 'Nivex – nền tảng giao dịch crypto bằng trí tuệ nhân tạo, cung cấp spot và futures an toàn, nhanh chóng, dành cho cộng đồng người dùng Việt.',
@@ -41,7 +41,7 @@ export const metadata = {
     openGraph: {
         title: "Nivex Hub",
         description: "Nivex – nền tảng giao dịch crypto bằng trí tuệ nhân tạo, cung cấp spot và futures an toàn, nhanh chóng, dành cho cộng đồng người dùng Việt.",
-        url: "https://nivex.vn",
+        url: "https://nivex.info",
         siteName: "Nivex",
         images: [
             {

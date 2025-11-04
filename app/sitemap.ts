@@ -2,7 +2,7 @@
 import type { MetadataRoute } from 'next'
 import { query } from "./lib/neon.js"  // bạn đã có helper này
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://nivex.vn'
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://nivex.info'
 
 // (tùy chọn) cache lại mỗi 6h
 export const revalidate = 6 * 60 * 60

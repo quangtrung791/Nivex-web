@@ -18,7 +18,7 @@ export const metadata = {
     openGraph: {
         title: "Tìm hiểu về tiềm năng lợi nhuận | Nivex Hub",
         description: "Nivex Hub là nền tảng sáng tạo kết nối các nhà đầu tư và doanh nghiệp, mang đến cơ hội lớn để tối đa hóa lợi nhuận.",
-        url: "https://nivex.vn/tim-hieu-tiem-nang-loi-nhuan",
+        url: "https://nivex.info/tim-hieu-tiem-nang-loi-nhuan",
         siteName: "Nivex",
         images: [
             {

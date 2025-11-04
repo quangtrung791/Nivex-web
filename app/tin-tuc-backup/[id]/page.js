@@ -4,7 +4,7 @@ import NewsBlogsDetails from "./NewsDetailsComponent";
 
 // Hàm lấy dữ liệu từ API theo slug
 async function getTermBySlug(slug) {
-    const productionUrl = 'https://nivex.vn';
+    const productionUrl = 'https://nivex.info';
     const developedUrl = 'http://localhost:3000'
     const res = await fetch(
         `${process.env.NODE_ENV === "production" ? productionUrl : developedUrl}/api/news/${slug}`,
@@ -34,7 +34,7 @@ export async function generateMetadata({ params }) {
         openGraph: {
             title: `${keyword} | Chi tiết tin tức Nivex`,
             description: desc,
-            url: `https://nivex.vn/tin-tuc/${slug}`,
+            url: `https://nivex.info/tin-tuc/${slug}`,
             siteName: "Nivex",
             images: [
                 {

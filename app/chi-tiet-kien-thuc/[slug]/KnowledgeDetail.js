@@ -4,7 +4,7 @@ import { useParams } from 'next/navigation'
 import Link from 'next/link'
 import styles from './knowledgeDetail.module.css'
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://nivex.vn'
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://nivex.info'
 const WP_BASE = 'https://nivexhub.learningchain.vn/wp-json/nivex/v1'
 
 const summarizeHtml = (html, wordLimit = 100) => {
@@ -147,14 +147,14 @@ export default function KnowledgeDetail({ initialArticle }) {
       headline: article.title,
       description: metaDescription,
       image: article.image || '/assets/images/logo/Nivex_icon_bg.png',
-      author: { '@type': 'Organization', name: 'Nivex Hub', url: 'https://nivex.vn' },
+      author: { '@type': 'Organization', name: 'Nivex Hub', url: 'https://nivex.info' },
       publisher: {
         '@type': 'Organization',
         name: 'Nivex Hub',
-        url: 'https://nivex.vn',
+        url: 'https://nivex.info',
         logo: {
           '@type': 'ImageObject',
-          url: 'https://nivex.vn/assets/images/logo/Nivex_icon_bg.png',
+          url: 'https://nivex.info/assets/images/logo/Nivex_icon_bg.png',
           width: 1200,
           height: 630
         }

@@ -62,14 +62,14 @@ const generateFooterSubscribeEmail = (email) => {
           </div>
           <div class="content">
               <p>Xin chào <strong>${email}</strong>,</p>
-              <p>Bạn đã đăng ký nhận bản tin và thông báo mới nhất từ <strong>Nivex.vn</strong>.</p>
+              <p>Bạn đã đăng ký nhận bản tin và thông báo mới nhất từ <strong>nivex.info</strong>.</p>
               <p>Hãy thường xuyên kiểm tra hộp thư để không bỏ lỡ các khóa học và tin tức hấp dẫn nhé!</p>
           </div>
           <div class="footer">
               <p>© 2025 Nivex. All rights reserved.</p>
               <p>
                   <a href="mailto:nivexvietnam@gmail.com">nivexvietnam@gmail.com</a> |
-                  <a href="https://nivex.vn">nivex.vn</a>
+                  <a href="https://nivex.info">nivex.info</a>
               </p>
           </div>
       </div>
@@ -80,7 +80,7 @@ const generateFooterSubscribeEmail = (email) => {
   const textTemplate = `
 Xin chào ${email},
 
-Cảm ơn bạn đã đăng ký nhận bản tin từ Nivex.vn.
+Cảm ơn bạn đã đăng ký nhận bản tin từ nivex.info.
 Hãy thường xuyên kiểm tra hộp thư để cập nhật tin tức mới nhất!
 
 Trân trọng,
@@ -147,7 +147,7 @@ export async function POST(request) {
     const { html, text } = generateFooterSubscribeEmail(email)
     sendEmail(
       email,
-      'Cảm ơn bạn đã đăng ký nhận bản tin Nivex.vn!',
+      'Cảm ơn bạn đã đăng ký nhận bản tin nivex.info!',
       html,
       text
     ).catch(() => {})

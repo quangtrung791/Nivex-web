@@ -18,7 +18,7 @@ export const metadata = {
     openGraph: {
         title: "Guide for Beginners - Nivex Hub",
         description: "Hướng dẫn đầu tư tiền mã hóa cho người mới bắt đầu",
-        url: "https://nivex.vn/guide-for-beginners",
+        url: "https://nivex.info/guide-for-beginners",
         siteName: "Nivex",
         images: [
             {

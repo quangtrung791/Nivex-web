@@ -7,7 +7,7 @@ export const metadata = {
   title: 'Khóa học Nivex Hub',
   description: 'Khám phá các khóa học đa dạng tại Nivex Hub. Nâng cao kỹ năng, phát triển chuyên môn và định hình tương lai sự nghiệp của bạn ngay hôm nay!',
   alternates: {
-    canonical: 'https://nivex.vn/khoa-hoc/'
+    canonical: 'https://nivex.info/khoa-hoc/'
   },
   robots: {
         index: true,
@@ -23,7 +23,7 @@ export const metadata = {
     openGraph: {
         title: "Các khóa học | Nivex Hub",
         description: "Giới thiệu khóa học tại Nivex",
-        url: "https://nivex.vn/khoa-hoc/",
+        url: "https://nivex.info/khoa-hoc/",
         siteName: "Nivex",
         images: [
             {

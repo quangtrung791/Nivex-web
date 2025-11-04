@@ -18,7 +18,7 @@ export const metadata = {
     openGraph: {
         title: "Hướng dẫn tạo liên kết giới thiệu | Nivex Hub",
         description: "Chuyên trang hướng dẫn tạo liên kết giới thiệu, mời bạn bè, hoa hồng và nhiều thứ khác.",
-        url: "https://nivex.vn/huong-dan-tao-lien-ket-gioi-thieu",
+        url: "https://nivex.info/huong-dan-tao-lien-ket-gioi-thieu",
         siteName: "Nivex",
         images: [
             {
