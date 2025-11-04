@@ -2,7 +2,7 @@ import Layout from '@/components/layout/Layout'
 import KnowledgeDetail from './KnowledgeDetail'
 import { notFound } from 'next/navigation'
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://nivex.vn'
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://nivex.info'
 const WP_BASE = 'https://nivexhub.learningchain.vn/wp-json/nivex/v1'
 
 async function getArticle(slug) {

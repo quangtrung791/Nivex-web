@@ -69,7 +69,7 @@ export default function HuongDanLienKetGGAuth() {
                     </section> 
                     <section className="ho-tro-truc-tuyen">
                         <p className="title-ho-tro-truc-tuyen">Hỗ trợ trực tuyến</p>
-                        <p className="text-ho-tro-truc-tuyen">Truy cập trang web chính thức của <Link className="link-gg-auth" href="https://nivex.vn" >Nivex</Link>, nhấp vào nút <Link href="" className="link-gg-auth">[Liên hệ chúng tôi]</Link> hoặc <Link href="" className="link-gg-auth">[Hỗ trợ trực tuyến]</Link> ở cuối trang.</p>
+                        <p className="text-ho-tro-truc-tuyen">Truy cập trang web chính thức của <Link className="link-gg-auth" href="https://nivex.info" >Nivex</Link>, nhấp vào nút <Link href="" className="link-gg-auth">[Liên hệ chúng tôi]</Link> hoặc <Link href="" className="link-gg-auth">[Hỗ trợ trực tuyến]</Link> ở cuối trang.</p>
                     </section>
                 </div>
 

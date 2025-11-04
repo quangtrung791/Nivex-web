@@ -177,15 +177,15 @@ export async function POST(request) {
       <div style="font-family:Arial,sans-serif;">
         <h2>${n.title}</h2>
         <p>${n.content.substring(0, 200)}...</p>
-          <a href="https://nivex.vn/tin-tuc/${n.slug}"
+          <a href="https://nivex.info/tin-tuc/${n.slug}"
             style="background:#0070f3;color:#fff;padding:10px 20px;text-decoration:none;border-radius:5px;">
             Xem chi tiết
           </a>
           <hr>
-          <p style="font-size:12px;color:#777">Bạn nhận được email này vì đã đăng ký nhận tin tại website Nivex.vn.</p>
+          <p style="font-size:12px;color:#777">Bạn nhận được email này vì đã đăng ký nhận tin tại website nivex.info.</p>
         </div>
       `;
-      const textContent = `${n.title}\n\n${n.content.substring(0, 200)}...\nXem chi tiết: https://nivex.vn/tin-tuc/${n.slug}`;
+      const textContent = `${n.title}\n\n${n.content.substring(0, 200)}...\nXem chi tiết: https://nivex.info/tin-tuc/${n.slug}`;
     
 
     // Thực thi gửi email
@@ -266,15 +266,15 @@ export async function POST(request) {
 //       <div style="font-family:Arial,sans-serif;">
 //         <h2>${n.title}</h2>
 //         <p>${n.content.substring(0, 200)}...</p>
-//           <a href="https://nivex.vn/tin-tuc/${n.id}"
+//           <a href="https://nivex.info/tin-tuc/${n.id}"
 //             style="background:#0070f3;color:#fff;padding:10px 20px;text-decoration:none;border-radius:5px;">
 //             Xem chi tiết
 //           </a>
 //           <hr>
-//           <p style="font-size:12px;color:#777">Bạn nhận được email này vì đã đăng ký nhận tin tại website Nivex.vn.</p>
+//           <p style="font-size:12px;color:#777">Bạn nhận được email này vì đã đăng ký nhận tin tại website nivex.info.</p>
 //         </div>
 //       `;
-//       const textContent = `${n.title}\n\n${n.content.substring(0, 200)}...\nXem chi tiết: https://nivex.vn/tin-tuc/${n.id}`;
+//       const textContent = `${n.title}\n\n${n.content.substring(0, 200)}...\nXem chi tiết: https://nivex.info/tin-tuc/${n.id}`;
     
 
 //     // Thực thi gửi email

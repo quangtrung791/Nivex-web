@@ -192,7 +192,7 @@ const generateCourseRegistrationEmail = (registrationData) => {
             <p>© 2025 Nivex. All rights reserved.</p>
             <p>
                 <a href="mailto:nivexvietnam@gmail.com">nivexvietnam@gmail.com</a> | 
-                <a href="https://nivex.vn">nivex.vn</a>
+                <a href="https://nivex.info">nivex.info</a>
             </p>
         </div>
     </div>
@@ -227,11 +227,11 @@ const generateCourseRegistrationEmail = (registrationData) => {
     - Kiểm tra chức năng âm thanh và video trước khi tham gia
     - Chuẩn bị sẵn các câu hỏi để trao đổi trong buổi học
 
-    Nếu bạn có thắc mắc, xin vui lòng liên hệ với chúng tôi qua email support@nivex.vn hoặc số hotline 1900-xxxx
+    Nếu bạn có thắc mắc, xin vui lòng liên hệ với chúng tôi qua email support@nivex.info hoặc số hotline 1900-xxxx
 
     Trân trọng,
     Học viện Đào tạo Nivex
-    Website: https://nivex.vn
+    Website: https://nivex.info
   `
 
   return { html: htmlTemplate, text: textTemplate }
@@ -241,7 +241,7 @@ const generateCourseRegistrationEmail = (registrationData) => {
 async function sendCourseRegistrationEmailRouter(email, registrationData) {
   try {
     const { html, text } = generateCourseRegistrationEmail(registrationData)
-    const subject = `Thông tin khóa học${registrationData.courseName ? ` ${registrationData.courseName}` : ''} - Nivex.vn`
+    const subject = `Thông tin khóa học${registrationData.courseName ? ` ${registrationData.courseName}` : ''} - nivex.info`
     return await sendEmail(email, subject, html, text)
   } catch (error) {
     return { success: false, message: 'Failed to send email', error: error.message }

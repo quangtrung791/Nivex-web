@@ -18,7 +18,7 @@ export const metadata = {
     openGraph: {
         title: "    ",
         description: "Tính năng chuyển khoản nội bộ giúp bạn gửi tiền mã hóa đến người dùng Nivex khác tức thì và hoàn toàn miễn phí.",
-        url: "https://nivex.vn/chuyen-tien-noi-bo",
+        url: "https://nivex.info/chuyen-tien-noi-bo",
         siteName: "Nivex",
         images: [
             {

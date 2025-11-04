@@ -18,7 +18,7 @@ export const metadata = {
     openGraph: {
         title: "    ",
         description: "Giúp tăng cường bảo mật tài khoản của bạn, tránh bị chặn SMS hoặc mất mã qua email do lỗi mạng.",
-        url: "https://nivex.vn/xac-thuc-hai-lop-2fa",
+        url: "https://nivex.info/xac-thuc-hai-lop-2fa",
         siteName: "Nivex",
         images: [
             {

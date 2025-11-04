@@ -19,7 +19,7 @@ export const metadata = {
     openGraph: {
         title: "Sự kiện tổ chức tại Nivex",
         description: "Các sự kiện lớn Nivex đã được mời đến tham dự.",
-        url: "https://nivex.vn/su-kien-tham-gia",
+        url: "https://nivex.info/su-kien-tham-gia",
         siteName: "Nivex",
         images: [
             {

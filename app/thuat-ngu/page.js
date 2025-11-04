@@ -19,7 +19,7 @@ export const metadata = {
     openGraph: {
         title: "Danh sách thuật ngữ | Nivex",
         description: "Tìm hiểu các từ khóa thông dụng về ngành blockchain chỉ trong vài phút.",
-        url: "https://nivex.vn/thuat-ngu",
+        url: "https://nivex.info/thuat-ngu",
         siteName: "Nivex",
         images: [
             {

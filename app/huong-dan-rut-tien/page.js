@@ -18,7 +18,7 @@ export const metadata = {
     openGraph: {
         title: "Hướng dẫn rút tiền Nivex | Nivex Hub",
         description: "Hướng dẫn chi tiết cách rút tiền từ tài khoản Nivex một cách nhanh chóng và an toàn. Xử lý các vấn đề khi rút tiền chưa về.",
-        url: "https://nivex.vn/huong-dan-rut-tien",
+        url: "https://nivex.info/huong-dan-rut-tien",
         siteName: "Nivex",
         images: [
             {

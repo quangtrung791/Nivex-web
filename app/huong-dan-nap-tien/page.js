@@ -18,7 +18,7 @@ export const metadata = {
     openGraph: {
         title: "Hướng dẫn nạp tiền Nivex | Nivex Hub",
         description: "Hướng dẫn chi tiết cách nạp tiền vào tài khoản Nivex một cách nhanh chóng và an toàn. Xử lý các vấn đề khi nạp tiền chưa về.",
-        url: "https://nivex.vn/huong-dan-nap-tien",
+        url: "https://nivex.info/huong-dan-nap-tien",
         siteName: "Nivex",
         images: [
             {

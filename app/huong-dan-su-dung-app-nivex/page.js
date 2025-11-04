@@ -18,7 +18,7 @@ export const metadata = {
     openGraph: {
         title: "Hướng dẫn sử dụng app Nivex | Nivex Hub",
         description: "Tổng hợp các bước cài đặt, thao tác và giải pháp nhanh để sử dụng Nivex hiệu quả.",
-        url: "https://nivex.vn/huong-dan-su-dung-app-nivex",
+        url: "https://nivex.info/huong-dan-su-dung-app-nivex",
         siteName: "Nivex",
         images: [
             {

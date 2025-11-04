@@ -19,7 +19,7 @@ export const metadata = {
     openGraph: {
         title: "Danh sách tin tức | Nivex",
         description: "Bảng tin Nivex luôn cập nhật các tin tức mới nhất về thị trường Blockchain, AI, Crypto.",
-        url: "https://nivex.vn/tin-tuc",
+        url: "https://nivex.info/tin-tuc",
         siteName: "Nivex",
         images: [
             {

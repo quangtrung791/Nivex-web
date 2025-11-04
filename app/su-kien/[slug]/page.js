@@ -26,12 +26,12 @@ export async function generateMetadata({ params }) {
         description: desc,
         keywords,
         alternates: {
-            canonical: `https://nivex.vn/su-kien/${slug}`
+            canonical: `https://nivex.info/su-kien/${slug}`
         },
         openGraph: {
             title: `${title} | Chi tiết sự kiện Nivex`,
             description: desc,
-            url: `https://nivex.vn/su-kien/${slug}`,
+            url: `https://nivex.info/su-kien/${slug}`,
             siteName: "Nivex",
             images: [
                 {
@@ -50,7 +50,7 @@ const toISO = (v) => (v ? new Date(v).toISOString() : undefined);
 
 export default async function EventDetailsPage({ params }) {
   const data = await getTermBySlug(params.slug);
-  const canonical = `https://nivex.vn/su-kien/${params.slug}`;
+  const canonical = `https://nivex.info/su-kien/${params.slug}`;
 
   // Suy luận chế độ tham dự
   const hasVenue =
@@ -124,7 +124,7 @@ export default async function EventDetailsPage({ params }) {
     organizer: {
       "@type": "Organization",
       name: "Nivex",
-      url: "https://nivex.vn",
+      url: "https://nivex.info",
     },
     // Nếu miễn phí
     isAccessibleForFree: !offers,
@@ -141,13 +141,13 @@ export default async function EventDetailsPage({ params }) {
         "@type": "ListItem",
         position: 1,
         name: "Trang chủ",
-        item: "https://nivex.vn/",
+        item: "https://nivex.info/",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Sự kiện",
-        item: "https://nivex.vn/su-kien",
+        item: "https://nivex.info/su-kien",
       },
       {
         "@type": "ListItem",

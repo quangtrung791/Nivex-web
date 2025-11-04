@@ -28,13 +28,13 @@ export async function generateMetadata({ params }) {
         description: desc,
         keywords,
         alternates: {
-            canonical: `https://nivex.vn/su-kien-tham-gia/${slug}`
+            canonical: `https://nivex.info/su-kien-tham-gia/${slug}`
         },
         openGraph: {
             title: `${title} | Chi tiết sự kiện Nivex`,
             description: desc,
             keywords : keywords,
-            url: `https://nivex.vn/su-kien-tham-gia/${slug}`,
+            url: `https://nivex.info/su-kien-tham-gia/${slug}`,
             siteName: "Nivex",
             images: [
                 {

@@ -35,12 +35,12 @@ export async function generateMetadata({ params }) {
         description: desc,
         keywords: dataGet?.rank_math_seo_keyword || '',
         alternates: {
-            canonical: `https://nivex.vn/thuat-ngu/${dataGet?.slug}`
+            canonical: `https://nivex.info/thuat-ngu/${dataGet?.slug}`
         },
         openGraph: {
             title: `${dataGet?.keyword} | Bảng thuật ngữ Nivex`,
             description: desc,
-            url: `https://nivex.vn/thuat-ngu/${dataGet?.slug}`,
+            url: `https://nivex.info/thuat-ngu/${dataGet?.slug}`,
             siteName: "Nivex",
             images: [
                 {
