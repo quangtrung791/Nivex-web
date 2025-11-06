@@ -5510,9 +5510,14 @@ h2.title {
         padding: 5% 7% 10% 7%;
     }
 }
-@media (min-width: 1600px) and (max-width: 1919px) {
+@media (min-width: 1600px) and (max-width: 1899px) {
     .banner {
         padding: 5% 7% 10% 7%;
+    }
+}
+@media (min-width: 1900px) and (max-width: 1919px) {
+    .banner {
+        padding: 5% 7%;
     }
 }
 @media (min-width: 1920px)  {
