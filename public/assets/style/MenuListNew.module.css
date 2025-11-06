@@ -75,23 +75,27 @@
 }
 
 @media (min-width: 1350px) and (max-width: 1439px) {
-  .menuGrid  {
+  .menuGrid {
     margin-top: -12.5%;
   }
 }
 @media (min-width: 1440px) and (max-width: 1599px) {
-  .menuGrid  {
+  .menuGrid {
     margin-top: -8.5%;
   }
 }
-
-@media (min-width: 1600px) and (max-width: 1919px) {
-  .menuGrid  {
-    margin-top: -7.5%;
+@media (min-width: 1600px) and (max-width: 1899px) {
+  .menuGrid {
+    margin-top: -17.5%;
+  }
+}
+@media (min-width: 1900px) and (max-width: 1919px) {
+  .menuGrid {
+    margin-top: -12.5%;
   }
 }
 @media (min-width: 1920px) {
-  .menuGrid  {
+  .menuGrid {
     margin-top: -7.5%;
   }
 }
