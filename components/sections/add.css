@@ -158,7 +158,7 @@ p.text.fs-14 {
         margin-bottom: 5%;
     }
     .about-first-title-container .about-first-title {
-        font-size: 56px; /* để cho nó chung padding với section ở trên */
+        font-size: 54px; /* để cho nó chung padding với section ở trên */
     }
     section.work .col-md-12 {
         padding-left: 0 !important;
@@ -168,9 +168,6 @@ p.text.fs-14 {
 @media (min-width: 1600px) and (max-width: 1919px) {
     .ai-copy-trade h3.heading {
         font-size: 28px  !important;
-    }
-    img.img0-ai.pic-1 {
-        /* width: 75% !important; */
     }
     .about__content.aos-init.aos-animate {
         padding-top: 110px;
