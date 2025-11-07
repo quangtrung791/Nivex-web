@@ -1,4 +1,18 @@
 /* Fixed */
+@media (min-width: 1180px) and (max-width: 1899px) {
+    .level3NewsImage {
+        height: 240px !important;
+    }
+}
+@media (min-width: 1900px) {
+    .level3NewsImage {
+        height: 260px !important;
+    }
+}
+.sideBannerLinkRelated, .sideLinkRelated a {
+    width: 100%;
+}
+
 .newsSearchInput:hover {
     border-color: greenyellow !important;
 }
@@ -67,8 +81,6 @@
 }
 @media (min-width: 1420px) and (max-width: 1919px) {
     .mostFeaturedNewsHighlight {
-        /* max-height: 490px !important;
-        height: 490px !important; */
         height: unset;
         object-fit: contain;
     }

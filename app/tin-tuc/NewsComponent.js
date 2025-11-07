@@ -405,7 +405,7 @@ export default function TinTucComponent() {
                             <div className={`${styles2.sidebar}`}>
                                 <div className={`widget recent mt-0  ${styles2.widget} ${styles2.recent} ${styles2.mt0}`}>
                                     <h6 className={`${styles2.heading} ${styles2.titleTinNongg12}`}>Tin nóng</h6>
-                                    <ul className={`${styles2.tinNong}`}>
+                                    <ul className={`${styles2.tinNong} ${styles2.sideLinkRelated}`}>
                                         {news.slice(0, 10).map(item => (
                                             <Link href={`/tin-tuc/${item.slug}`}>
                                                 <li className={`${styles2.liHovering}`} key={item.id}>
@@ -420,7 +420,7 @@ export default function TinTucComponent() {
                                                         </div>
                                                     </div>
                                                     <div className={`${styles2.content}`}>
-                                                        <Link href={`/tin-tuc/${item.slug}`} className={`${styles2.title} ${styles2.navigateChildNews} ${styles2.linkHoveringg}`}>
+                                                        <Link href={`/tin-tuc/${item.slug}`} className={`${styles2.title} ${styles2.navigateChildNews} ${styles2.linkHoveringg} ${styles2.sideBannerLinkRelated}`}>
                                                             {item.title}
                                                         </Link>
                                                     </div>
