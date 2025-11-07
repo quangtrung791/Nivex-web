@@ -128,7 +128,7 @@ export default function TinTucComponent() {
         const url = new URL(`${WP_BASE}/news`);
         url.searchParams.set('status', 'active');
         url.searchParams.set('page', '1');
-        url.searchParams.set('per_page', '50');
+        url.searchParams.set('per_page', '20');
 
         fetch(url.toString(), { cache: 'no-store' })
             .then(res => res.json())
@@ -143,20 +143,20 @@ export default function TinTucComponent() {
                 created_at: n.created_at,
                 updated_at: n.updated_at,
                 thumbnail_url: n.thumbnail_url || 'https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp',
-                is_featured: Number(n.is_featured) === 1,
+                is_featured: n.is_featured,
             }));
 
-            setNews(mapped);
+            setNews(mapped.slice(1)); 
 
             const featured = mapped
-                .filter(n => n.is_featured)
-                .sort((a,b) => new Date(b.time_upload || b.created_at) - new Date(a.time_upload || a.created_at));
-
-            setHero(featured[0] || mapped[0] || null);
+                .filter(n => n.is_featured);
+                // .sort((a,b) => new Date(b.time_upload || b.created_at) - new Date(a.time_upload || a.created_at));
+            setHero(featured[0] || mapped[0]);
+            
             })
             .catch(() => {
-            setNews([]);
-            setHero(null);
+                setNews([]);
+                setHero(null);
             });
     }, []);
 
