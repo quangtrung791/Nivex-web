@@ -739,10 +739,6 @@ section.banner {
 } 
 
 @media only screen and (max-width: 1200px) {
-    .header .header__left .main-nav .menu li {
-        padding: 13px 11px;
-    }
-
     .header .header__left .main-nav .menu li a {
         font-size: 14px;
     }
