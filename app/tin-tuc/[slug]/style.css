@@ -1,4 +1,9 @@
 /* Fixed */
+.side-Banner-Link-Related,
+.tin-nong-real a {
+    width: 100% !important;
+}
+
 .news-search-input:hover {
     border-color: greenyellow !important;
 }

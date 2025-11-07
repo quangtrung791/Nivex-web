@@ -165,7 +165,7 @@ export default function ChiTietTinTucComponent() {
                                     <h6 className="heading tin-nong-heading tin-nong-tintucid">Tin nóng</h6>
                                     <div className="sidebar sb-tin-nong-ttuc-id">
                                         <div className="widget recent mt-0 title-link-right-panel">
-                                            <ul className="tin-nong">
+                                            <ul className="tin-nong tin-nong-real">
                                                 {Array.isArray(hotNews) && hotNews.slice(0, 10).map(item => (
                                                     <Link href={`/tin-tuc/${item.slug}`}>
                                                         <li className="li-chi-tiet-tin-tuc-slug" key={item.id}>
@@ -180,7 +180,7 @@ export default function ChiTietTinTucComponent() {
                                                                 </div>
                                                             </div>
                                                             <div className="content">
-                                                                <Link href={`/tin-tuc/${item.slug}`} className="title navigate-child-news a-href-tin-long">
+                                                                <Link href={`/tin-tuc/${item.slug}`} className="title navigate-child-news a-href-tin-long side-Banner-Link-Related">
                                                                     {item.title}
                                                                 </Link>
                                                             </div>
