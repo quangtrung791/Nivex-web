@@ -284,8 +284,15 @@ section.pageTitleKnowLedge, .knowledgeSection {
     }
 }
 
+@media screen and (max-width: 1200px) and (min-width: 850px) {
+  .filterSection {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 850px) {
   .displayFlexForHeader {
     flex-direction: column;
     gap:10px;
@@ -379,7 +386,7 @@ section.pageTitleKnowLedge, .knowledgeSection {
   }
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 851px) and (max-width: 1100px) {
   .articlesGrid {
     grid-template-columns: repeat(2, 1fr);
   }
