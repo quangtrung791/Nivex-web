@@ -1,4 +1,9 @@
 /* Fixed */
+@media (max-width: 600px) {
+    section.chi-tiet-ttuc-duoc-xem-nhieu {
+        overflow: hidden;
+    }
+}
 .side-Banner-Link-Related,
 .tin-nong-real a {
     width: 100% !important;
