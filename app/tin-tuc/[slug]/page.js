@@ -40,7 +40,8 @@ export async function generateMetadata({ params }) {
             siteName: "Nivex",
             images: [
                 {
-                    url: "/assets/images/logo/Nivex_icon_bg.png",
+                    // url: "/assets/images/logo/Nivex_icon_bg.png",
+                    url: data?.thumbnail_url || "https://nivex.info/assets/images/logo/Nivex_icon_bg.png",
                     width: 1200,
                     height: 630,
                     alt: `${keyword}`
