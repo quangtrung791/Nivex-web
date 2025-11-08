@@ -35,7 +35,7 @@ export async function generateMetadata({ params }) {
             siteName: "Nivex",
             images: [
                 {
-                    url: data?.thumbnail_url || "https://nivex.info/assets/images/logo/Nivex_icon_bg.png",
+                    url: data?.thumbnail_url || "https://learningchain.vn/wp-content/uploads/2025/11/nivex_event.webp",
                     width: 1200,
                     height: 630,
                     alt: `Sự kiện ${title} do chính Nivex tổ chức`
