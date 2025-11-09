@@ -35,8 +35,9 @@ export function middleware(request) {
 
 export const config = {
   matcher: [
+    // Loại trừ _next, các file tĩnh có dấu chấm, favicon, robots, sitemap:
+    '/((?!_next/static|_next/image|favicon.ico|robots\\.txt|sitemap\\.xml|.*\\..*).*)',
     '/api/:path*',
     '/assets/:path*',
-    '/((?!_next/static|_next/image|favicon.ico|sitemap\\.xml|robots\\.txt).*)',
   ],
 }
