@@ -1,11 +1,10 @@
-// middleware.js
 import { NextResponse } from 'next/server';
 
 export function middleware(request) {
   const res = NextResponse.next()
-
-  // Cache cho API coins
   const { pathname } = new URL(request.url)
+
+  // Chỉ cache cho API coins ở đây (nếu bạn muốn override so với headers())
   if (pathname.startsWith('/api/coins')) {
     if (pathname.includes('/static')) {
       res.headers.set('Cache-Control', 's-maxage=86400, stale-while-revalidate=172800')
@@ -18,24 +17,12 @@ export function middleware(request) {
     }
   }
 
-  // Cache static assets
-  if (
-    pathname.startsWith('/assets/') ||
-    pathname.endsWith('.css') ||
-    pathname.endsWith('.js') ||
-    pathname.endsWith('.png') ||
-    pathname.endsWith('.jpg') ||
-    pathname.endsWith('.webp')
-  ) {
-    res.headers.set('Cache-Control', 'public, max-age=31536000, immutable')
-  }
-
-  return res;
+  return res
 }
 
+// Loại trừ _next, favicon, robots, sitemap (như bạn đã làm)
 export const config = {
   matcher: [
-    // Loại trừ _next, các file tĩnh có dấu chấm, favicon, robots, sitemap:
     '/((?!_next/static|_next/image|favicon.ico|robots\\.txt|sitemap\\.xml|.*\\..*).*)',
     '/api/:path*',
     '/assets/:path*',
