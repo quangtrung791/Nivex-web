@@ -32,10 +32,10 @@
   border-radius: 25px;
   position: relative;
   width: 100%;
-  max-width: 62vw;
+  max-width: 54vw;
   height: auto;
-  aspect-ratio: 1313/736;
-  background-image: url('https://learningchain.vn/wp-content/uploads/2025/10/bg_popup_new_s3_2x_new_2.webp');
+  aspect-ratio: 1024/683;
+  background-image: url('https://nivexhub.learningchain.vn/wp-content/uploads/2025/11/Pop-up-wealth-Growth-marathon.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -44,20 +44,20 @@
 
 @media (max-width: 1440px){
     .modal {
-       max-width: 75vw;
+       max-width: 70vw;
     }
 }
 
 @media (max-width: 1200px){
     .modal {
-       max-width: 80vw;
+       max-width: 75vw;
     }
 }
 
 
 @media (max-width: 1024px){
     .modal {
-       max-width: 85vw;
+       max-width: 80vw;
     }
 }
 
@@ -129,7 +129,7 @@
 /* Mobile Responsive */
 @media (max-width: 480px) {
   .modal {
-    max-width: 90vw;
+    max-width: 95vw;
   }
 
 
@@ -147,7 +147,7 @@
 
 @media (max-width: 480px) {
   .modal {
-    aspect-ratio: 492/826;
-    background-image: url('https://learningchain.vn/wp-content/uploads/2025/10/mobile_pop_up_s3_2x_new.webp');
+    aspect-ratio: 768/994;
+    background-image: url('https://nivexhub.learningchain.vn/wp-content/uploads/2025/11/Pop-up-wealth-Growth-marathon-mobile-768x994.webp');
   }
 }
