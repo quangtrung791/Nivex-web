@@ -1,3 +1,4 @@
+/*
 @font-face {
   font-family: 'icomoon';
   src:  url('fonts/icomoon.eot?422y2y');
@@ -11,7 +12,6 @@
 }
 
 [class^="icon-"], [class*=" icon-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: never;
   font-style: normal;
@@ -20,11 +20,12 @@
   text-transform: none;
   line-height: 1;
 
-  /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+*/
+/*
 .icon-facebook-f:before {
   content: "\e933";
   color: #777e90;
@@ -224,3 +225,4 @@
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
+*/
