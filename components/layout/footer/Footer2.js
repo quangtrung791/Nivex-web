@@ -2,6 +2,7 @@ import Link from "next/link"
 import styles from "./footer2.module.css"
 import BackToTop from '../../elements/BackToTop'
 import '../../sections/addtion.css';
+import FloatingContacts from "../../elements/FloatingContacts"
 import { useState } from "react";
 
 export default function Footer2() {
@@ -44,7 +45,7 @@ export default function Footer2() {
             setSuccess(true)
             // Auto close after 2 seconds
             setTimeout(() => {
-                console.log('Thành công');
+                // console.log('Thành công');
             }, 2000)
         } else {
             setError(result.error || 'Có lỗi xảy ra khi đăng ký');
@@ -176,6 +177,8 @@ export default function Footer2() {
                     © 2025 All rights reserved
                 </p>
             </div>
+            {/* Floating Contact Buttons */}
+            <FloatingContacts />
         </>
     )
 }
