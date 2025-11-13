@@ -165,24 +165,24 @@ export default function NewsFlashNotifier() {
   async function subscribeIfNeeded() {
     // đăng ký SW (scope gốc)
     const reg = await navigator.serviceWorker.register('/sw.js', { scope: '/' });
-    // let sub = await reg.pushManager.getSubscription();
-    // if (!sub) {
-    const applicationServerKey = base64urlToUint8Array(
-      process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY_BASE64URL as string
-    );
-    const sub = await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey });
-    // }
-    
-    // GỬI THẲNG subscription (không bọc { sub })
-    await fetch('https://nivexhub.learningchain.vn/wp-json/nivex/v1/subscribe_web_notification', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        ...(process.env.WP_APP_PASS_B64 ? { Authorization: `Basic ${process.env.WP_APP_PASS_B64}` } : {}),
-      },
-      body: JSON.stringify(sub),
-      cache: 'no-store',
-    });
+    let sub = await reg.pushManager.getSubscription();
+
+    if (!sub) {
+        const applicationServerKey = base64urlToUint8Array(
+          process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY_BASE64URL as string
+        );
+        sub = await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey });
+        // GỬI THẲNG subscription (không bọc { sub })
+        await fetch('https://nivexhub.learningchain.vn/wp-json/nivex/v1/subscribe_web_notification', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            ...(process.env.WP_APP_PASS_B64 ? { Authorization: `Basic ${process.env.WP_APP_PASS_B64}` } : {}),
+          },
+          body: JSON.stringify(sub),
+          cache: 'no-store',
+        });
+    }
   }
 
   if (!showPrompt) return null;
