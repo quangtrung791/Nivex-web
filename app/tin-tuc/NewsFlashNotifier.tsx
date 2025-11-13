@@ -1,9 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
 
-// const NEWS_API =
-//   'https://nivexhub.learningchain.vn/wp-json/nivex/v1/news_flash?status=active&per_page=1';
-
 // Cho TS chấp nhận các field phổ biến khi showNotification
 type NotificationOptionsCompat = NotificationOptions & {
   renotify?: boolean;
@@ -20,85 +17,74 @@ function base64urlToUint8Array(base64url: string) {
   return arr;
 }
 
-// function stripHtmlToText(html: string): string {
-//   const div = document.createElement('div');
-//   div.innerHTML = html || '';
-//   return (div.textContent || div.innerText || '').replace(/\s+/g, ' ').trim();
-// }
-// function oneLineEllipsis(input: string, maxChars = 120): string {
-//   const s = (input || '').replace(/\r?\n|\r/g, ' ');
-//   return s.length > maxChars ? s.slice(0, maxChars - 1).trimEnd() + '…' : s;
-// }
-
-// --- NEW: phát hiện trình duyệt và sinh hướng dẫn bật lại thông báo
-function buildEnableNotifSteps(): string[] {
-  if (typeof navigator === 'undefined') return generic();
-  const ua = navigator.userAgent.toLowerCase();
-
-  const chromeLike = /chrome|crios/.test(ua) && !/edg\//.test(ua) && !/opr\//.test(ua);
-  const edge = /edg\//.test(ua);
-  const firefox = /firefox|fxios/.test(ua);
-  const safari = /safari/.test(ua) && !/chrome|crios|android/.test(ua);
-
-  if (chromeLike) {
-    return [
-      'Nhấn vào biểu tượng ổ khóa (trên thanh địa chỉ).',
-      'Chọn “Cài đặt trang” (Site settings).',
-      'Tìm mục “Notifications” (Thông báo) → chuyển sang “Allow”.',
-      `Đảm bảo domain: ${location.origin}`,
-    ];
-  }
-  if (edge) {
-    return [
-      'Nhấn vào biểu tượng ổ khóa (trên thanh địa chỉ).',
-      'Chọn “Permissions for this site”.',
-      'Tìm “Notifications” → đặt thành “Allow”.',
-      `Đảm bảo domain: ${location.origin}`,
-    ];
-  }
-  if (firefox) {
-    return [
-      'Vào Settings → Privacy & Security.',
-      'Trong phần Permissions → Notifications → Settings…',
-      `Tìm ${location.origin} và đặt “Allow”.`,
-    ];
-  }
-  if (safari) {
-    return [
-      'Safari → Settings (Preferences) → Websites → Notifications.',
-      `Tìm ${location.origin} → chọn “Allow”.`,
-      'Trên iOS: Settings của iOS → Safari → Notifications → Allow.',
-    ];
-  }
-  return generic();
-
-  function generic() {
-    return [
-      'Mở cài đặt quyền thông báo của trình duyệt.',
-      `Tìm website ${location.origin} và bật “Allow/Cho phép”.`,
-    ];
-  }
+// ==== Helpers: iOS / Standalone detection ====
+function isIOSUA() {
+  if (typeof navigator === 'undefined') return false;
+  return /iphone|ipad|ipod/i.test(navigator.userAgent);
 }
+function inStandalone() {
+  if (typeof window === 'undefined') return false;
+  // iOS Safari cũ: navigator.standalone; hiện đại: display-mode: standalone
+  return (
+    window.matchMedia('(display-mode: standalone)').matches ||
+    (navigator as any).standalone === true
+  );
+}
+
+type Reason =
+  | 'default'
+  | 'denied'
+  | 'insecure'
+  | 'unsupported'
+  | 'ios-a2hs'
+  | null;
 
 export default function NewsFlashNotifier() {
   const [showPrompt, setShowPrompt] = useState(false);
-  const [reason, setReason] = useState<'default' | 'denied' | 'insecure' | 'unsupported' | null>(null);
+  const [reason, setReason] = useState<Reason>(null);
 
-  // NEW: hộp hướng dẫn bật lại thông báo
-  const [helpOpen, setHelpOpen] = useState(false);
-  const [helpSteps, setHelpSteps] = useState<string[]>([]);
+  // A2HS banners / Android install
+  const [showIOSA2HS, setShowIOSA2HS] = useState(false);
+  const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
+  const [showAndroidInstall, setShowAndroidInstall] = useState(false);
 
-  // 1) Đăng ký SW
-  // useEffect(() => {
-  //   if ('serviceWorker' in navigator) {
-  //     navigator.serviceWorker.register('/sw.js').catch(() => {});
-  //   }
-  // }, []);
+  // 1) Android/desktop: hứng beforeinstallprompt để chủ động hiển thị nút "Cài đặt"
+  useEffect(() => {
+    const onBIP = (e: any) => {
+      e.preventDefault();
+      setDeferredPrompt(e);
+      setShowAndroidInstall(true);
+    };
+    window.addEventListener('beforeinstallprompt', onBIP);
+    const onInstalled = () => setDeferredPrompt(null);
+    window.addEventListener('appinstalled', onInstalled);
+    return () => {
+      window.removeEventListener('beforeinstallprompt', onBIP);
+      window.removeEventListener('appinstalled', onInstalled);
+    };
+  }, []);
 
-  // 2) Kiểm tra quyền → gợi ý xin phép hoặc hướng dẫn
+  async function handleAndroidInstall() {
+    if (!deferredPrompt) return;
+    deferredPrompt.prompt();
+    await deferredPrompt.userChoice; // { outcome: 'accepted' | 'dismissed' }
+    setDeferredPrompt(null);
+    setShowAndroidInstall(false);
+  }
+
+  // 2) Kiểm tra ngữ cảnh để chọn thông điệp phù hợp
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
+    // iOS: nếu chưa standalone (chưa Add to Home Screen) ⇒ hướng dẫn A2HS
+    if (isIOSUA() && !inStandalone()) {
+      setReason('ios-a2hs');
+      setShowIOSA2HS(true);
+      setShowPrompt(true);
+      return;
+    }
+
+    // Bình thường: kiểm tra hỗ trợ Notification & secure context
     if (!('Notification' in window)) {
       setReason('unsupported');
       setShowPrompt(true);
@@ -110,22 +96,19 @@ export default function NewsFlashNotifier() {
       return;
     }
 
-    const perm = Notification.permission;
-    if (perm === 'granted') {
+    // Nếu đã granted ⇒ đăng ký/đồng bộ sub
+    if (Notification.permission === 'granted') {
       subscribeIfNeeded().catch(() => {});
       return;
     }
 
-    // Nếu đang denied, mở luôn hộp hướng dẫn
-    if (perm === 'denied') {
+    if (Notification.permission === 'denied') {
       setReason('denied');
-      setHelpSteps(buildEnableNotifSteps());
-      setHelpOpen(true);
       setShowPrompt(true);
       return;
     }
 
-    // default
+    // default: hỏi người dùng cho phép
     setReason('default');
     setShowPrompt(true);
   }, []);
@@ -133,24 +116,17 @@ export default function NewsFlashNotifier() {
   // 3) Xin quyền (bị denied thì hiện hướng dẫn)
   async function askPermission() {
     try {
-      // Nếu đã bị denied rồi, khỏi gọi requestPermission; mở hướng dẫn luôn
       if (Notification.permission === 'denied') {
         setReason('denied');
-        setHelpSteps(buildEnableNotifSteps());
-        setHelpOpen(true);
         setShowPrompt(true);
         return;
       }
-
       const p = await Notification.requestPermission();
       if (p === 'granted') {
         setShowPrompt(false);
         subscribeIfNeeded().catch(() => {});
-        // await pingOnceForNow();
       } else if (p === 'denied') {
         setReason('denied');
-        setHelpSteps(buildEnableNotifSteps());
-        setHelpOpen(true);
         setShowPrompt(true);
       } else {
         setReason('default');
@@ -161,34 +137,34 @@ export default function NewsFlashNotifier() {
     }
   }
 
-  // Đăng ký Push nếu chưa có
+  // 4) Đăng ký Push nếu chưa có
   async function subscribeIfNeeded() {
-    // đăng ký SW (scope gốc)
     const reg = await navigator.serviceWorker.register('/sw.js', { scope: '/' });
     let sub = await reg.pushManager.getSubscription();
-
     if (!sub) {
-        const applicationServerKey = base64urlToUint8Array(
-          process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY_BASE64URL as string
-        );
-        sub = await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey });
-        // GỬI THẲNG subscription (không bọc { sub })
-        await fetch('https://nivexhub.learningchain.vn/wp-json/nivex/v1/subscribe_web_notification', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            ...(process.env.WP_APP_PASS_B64 ? { Authorization: `Basic ${process.env.WP_APP_PASS_B64}` } : {}),
-          },
-          body: JSON.stringify(sub),
-          cache: 'no-store',
-        });
+      const applicationServerKey = base64urlToUint8Array(
+        process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY_BASE64URL as string
+      );
+      sub = await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey });
+      await fetch('https://nivexhub.learningchain.vn/wp-json/nivex/v1/subscribe_web_notification', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          ...(process.env.WP_APP_PASS_B64 ? { Authorization: `Basic ${process.env.WP_APP_PASS_B64}` } : {}),
+        },
+        body: JSON.stringify(sub),
+        cache: 'no-store',
+      });
     }
   }
 
   if (!showPrompt) return null;
 
+  // ===== UI =====
   const message =
-    reason === 'unsupported'
+    reason === 'ios-a2hs'
+      ? 'Để bật thông báo trên iPhone/iPad, bạn cần cài ứng dụng web (Add to Home Screen).'
+      : reason === 'unsupported'
       ? 'Trình duyệt không hỗ trợ Notifications.'
       : reason === 'insecure'
       ? 'Thông báo cần chạy trên HTTPS.'
@@ -200,39 +176,36 @@ export default function NewsFlashNotifier() {
     <div className="nvx-notif-bar" role="dialog" aria-live="polite">
       <span>{message}</span>
 
-      <div className="nvx-actions">
-        {reason !== 'unsupported' && reason !== 'insecure' && (
-          <button className="nvx-allow" onClick={askPermission}>
-            Cho phép
-          </button>
-        )}
-        {reason === 'denied' && (
-          <button
-            className="nvx-help"
-            onClick={() => {
-              setHelpSteps(buildEnableNotifSteps());
-              setHelpOpen((v) => !v);
-            }}
-          >
-            Cách bật lại
-          </button>
-        )}
-        <button className="nvx-deny" onClick={() => setShowPrompt(false)}>
-          Để sau
+      {/* ANDROID / DESKTOP: cài PWA */}
+      {showAndroidInstall && reason !== 'ios-a2hs' && (
+        <button className="nvx-allow" onClick={handleAndroidInstall}>
+          Cài đặt ứng dụng
         </button>
-      </div>
+      )}
 
-      {helpOpen && (
+      {/* iOS: hướng dẫn Add to Home Screen */}
+      {showIOSA2HS && reason === 'ios-a2hs' && (
         <div className="nvx-helpbox">
-          <b>Hướng dẫn bật lại thông báo:</b>
+          <b>Cài ứng dụng web trên iPhone/iPad:</b>
           <ul>
-            {helpSteps.map((s, i) => (
-              <li key={i}>{s}</li>
-            ))}
+            <li>Mở menu <i>Share</i> (biểu tượng ⬆️ trong Safari).</li>
+            <li>Chọn <b>Add to Home Screen</b>.</li>
+            <li>Mở lại từ icon ngoài màn hình, sau đó bấm <b>Cho phép</b> để bật thông báo.</li>
           </ul>
-          <button className="nvx-close" onClick={() => setHelpOpen(false)}>
-            Đã hiểu
-          </button>
+        </div>
+      )}
+
+      {/* Quy trình xin quyền chuẩn */}
+      {(reason === 'default' || reason === 'denied') && (
+        <div className="nvx-actions">
+          <button className="nvx-allow" onClick={askPermission}>Cho phép</button>
+          <button className="nvx-deny" onClick={() => setShowPrompt(false)}>Để sau</button>
+        </div>
+      )}
+
+      {(reason === 'unsupported' || reason === 'insecure') && (
+        <div className="nvx-actions">
+          <button className="nvx-deny" onClick={() => setShowPrompt(false)}>Đã hiểu</button>
         </div>
       )}
 
@@ -273,14 +246,13 @@ export default function NewsFlashNotifier() {
           background: #2b2b2b;
           color: #fff;
         }
-        .nvx-notif-bar button.nvx-allow {
+        .nvx-notif-bar .nvx-allow {
           background: linear-gradient(90deg, #bcfe08, #86f969);
           color: #000;
           border-color: #000;
-          margin-right: 0;
         }
-        .nvx-notif-bar button.nvx-deny {
-          color:rgb(197, 197, 197);
+        .nvx-notif-bar .nvx-deny {
+          color: rgb(197, 197, 197);
         }
         .nvx-helpbox {
           width: 100%;
@@ -289,13 +261,7 @@ export default function NewsFlashNotifier() {
           border-radius: 10px;
           padding: 10px 12px;
         }
-        .nvx-helpbox ul {
-          margin: 8px 0 0 18px;
-        }
-        .nvx-close {
-          margin-top: 8px;
-          background: #2b2b2b;
-        }
+        .nvx-helpbox ul { margin: 8px 0 0 18px; }
       `}</style>
     </div>
   );
