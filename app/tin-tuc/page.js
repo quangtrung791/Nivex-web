@@ -1,5 +1,4 @@
 import Layout from "@/components/layout/Layout"
-import { Metadata } from "next"
 import TinTucComponent from "./NewsComponent"
 
 export const metadata = {
