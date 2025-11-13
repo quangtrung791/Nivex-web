@@ -441,8 +441,7 @@ export default function TinTucComponent() {
                                                                             {item.title}
                                                                         </div>
                                                                     </div>
-                                                                    <div className={`${styles2.timelineDescription}`}>
-                                                                        {item.content}
+                                                                    <div className={`${styles2.timelineDescription}`} dangerouslySetInnerHTML={{ __html: item.content }}>
                                                                     </div>
                                                                     <div className={`${styles2.timelineLink}`}>
                                                                         Xem thêm
