@@ -78,3 +78,13 @@ self.addEventListener('notificationclick', (event) => {
   })());
 });
 
+self.addEventListener('fetch', (event) => {
+  // ví dụ: chỉ cache GET HTML để có offline fallback đơn giản
+  if (event.request.mode === 'navigate') {
+    event.respondWith((async () => {
+      try { return await fetch(event.request); }
+      catch { return new Response('<h1>Offline</h1>', { headers: { 'Content-Type': 'text/html' } }); }
+    })());
+  }
+});
+
