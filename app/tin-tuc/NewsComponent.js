@@ -2,13 +2,10 @@
 "use client";
 // import VideoPopup from "@/components/elements/VideoPopup"
 import React, { useEffect, useRef, useState } from "react";
-import { useParams } from "next/navigation"
-import Layout from "../../components/layout/Layout"
 import Link from "next/link"
 import styles2 from './BlogDetails.module.css';
 import styles from '../kien-thuc-tong-quan/knowledge.module.css'
-import { usePathname } from "next/navigation";
-
+import NewsFlashNotifier from './NewsFlashNotifier';
 
 const COINS = [
     { id: "solana", symbol: "SOL", name: "Solana" },
@@ -16,16 +13,11 @@ const COINS = [
     { id: "ethereum", symbol: "ETH", name: "Ethereum" },
     { id: "bitcoin", symbol: "BTC", name: "Bitcoin" },
     { id: "litecoin", symbol: "LTC", name: "Litecoin" },
-    { id: "shiba-inu", symbol: "SHIB", name: "Shiba Inu" }
+    // { id: "shiba-inu", symbol: "SHIB", name: "Shiba Inu" },
 ];
 const TABS = [
-    { label: "Tất cả", value: "all" },
-    { label: "Metaverse", value: "learn" },
-    { label: "Giải trí", value: "metaverse" },
-    { label: "Năng lượng", value: "energy" },
-    { label: "NFT", value: "nft" },
-    { label: "Trò chơi", value: "gaming" },
-    { label: "Âm nhạc", value: "music" }
+    { label: "Tin chính", value: "all" },
+    { label: "Tin nhanh", value: "tin-nhanh" }
 ];
 
 const WP_BASE = 'https://nivexhub.learningchain.vn/wp-json/nivex/v1';
@@ -38,6 +30,7 @@ export default function TinTucComponent() {
     const [selectedTab, setSelectedTab] = useState(TABS[0].value);
     const [categories, setCategories] = useState([]);
     const [news, setNews] = useState([]);
+    const [newsFlash, setNewsFlash] = useState([]); // Dữ liệu cho tab Tin nhanh
     const [mostViewedNews, setMostViewedNews] = useState([]);
     const [searchQuery, setSearchQuery] = useState("");
     const [hero, setHero] = useState(null);
@@ -109,18 +102,8 @@ export default function TinTucComponent() {
     };
 
     useEffect(() => {
-        fetch(`${WP_BASE}/news/categories`, { cache: 'no-store' })
-          .then(res => res.json())
-          .then(json => {
-            const cats = Array.isArray(json?.data) ? json.data : [];
-            setCategories([
-              { label: 'Tất cả', value: 'all' },
-              ...cats.map(c => ({ label: c.name, value: String(c.id) }))
-            ]);
-          })
-          .catch(() => {
-            setCategories([{ label: 'Tất cả', value: 'all' }]);
-          });
+        // Chỉ set 2 tabs: Tin chính và Tin nhanh
+        setCategories(TABS);
       }, []);
       
 
@@ -144,6 +127,7 @@ export default function TinTucComponent() {
                 updated_at: n.updated_at,
                 thumbnail_url: n.thumbnail_url || 'https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp',
                 is_featured: n.is_featured,
+                is_hot: n.is_hot || 0,
             }));
 
             setNews(mapped.slice(1)); 
@@ -157,6 +141,35 @@ export default function TinTucComponent() {
             .catch(() => {
                 setNews([]);
                 setHero(null);
+            });
+    }, []);
+
+    // Fetch dữ liệu news_flash cho tab Tin nhanh
+    useEffect(() => {
+        const url = new URL(`${WP_BASE}/news_flash`);
+        url.searchParams.set('status', 'active');
+        url.searchParams.set('page', '1');
+        url.searchParams.set('per_page', '35');
+
+        fetch(url.toString(), { cache: 'no-store' })
+            .then(res => res.json())
+            .then(json => {
+                const arr = Array.isArray(json?.data) ? json.data : [];
+                const mapped = arr.map(n => ({
+                    id: n.id,
+                    slug: n.slug,
+                    title: n.title,
+                    content: n.content,
+                    time_upload: n.time_upload,
+                    created_at: n.created_at,
+                    updated_at: n.updated_at,
+                    thumbnail_url: n.thumbnail_url,
+                    is_hot: n.is_hot || 0,
+                }));
+                setNewsFlash(mapped);
+            })
+            .catch(() => {
+                setNewsFlash([]);
             });
     }, []);
 
@@ -179,31 +192,29 @@ export default function TinTucComponent() {
     // chuẩn hóa query 1 lần để tiết kiệm hiệu năng
     const q = normalizeString(searchQuery);
 
-    // const filteredNews = news.filter(item => {
-    //     // --- Lọc theo danh mục ---
-    //     let tabMatch = true;
-    //     if (activeTab !== "all") {
-    //         tabMatch = String(item.category_id) === String(activeTab);
-    //     }
-    //     if (!tabMatch) return false;
+    // Filter cho tab "Tin chính" - dùng dữ liệu từ news (bảng news)
+    // const filteredNews = news
+    //     .filter(item => !hero || item.id !== hero.id)
+    //     .filter(item => {
+    //         // Lọc theo danh mục
+    //         let tabMatch = activeTab === "all" ? true : String(item.category_id) === String(activeTab);
+    //         if (!tabMatch) return false;
+            
+    //         // Lọc theo từ khóa (nếu có)
+    //         if (!q) return true;
+    //         const title = normalizeString(item.title || "");
+    //         const desc = normalizeString(item.short_desc || "");
+    //         return title.includes(q) || desc.includes(q);
+    //     });
 
-    //     // --- Lọc theo từ khóa (nếu có) ---
+    // Filter cho tab "Tin nhanh" - dùng dữ liệu từ newsFlash (bảng news_flash)
+    // const filteredNewsFlash = newsFlash.filter(item => {
+    //     // Lọc theo từ khóa (nếu có)
     //     if (!q) return true;
-
     //     const title = normalizeString(item.title || "");
-    //     const desc = normalizeString(item.short_desc || "");
+    //     const desc = normalizeString(item.content || "");
     //     return title.includes(q) || desc.includes(q);
     // });
-    const filteredNews = news
-    .filter(item => !hero || item.id !== hero.id)
-    .filter(item => {
-      let tabMatch = activeTab === "all" ? true : String(item.category_id) === String(activeTab);
-      if (!tabMatch) return false;
-      if (!q) return true;
-      const title = normalizeString(item.title || "");
-      const desc  = normalizeString(item.short_desc || "");
-      return title.includes(q) || desc.includes(q);
-    });
 
     return (
         <>
@@ -270,7 +281,7 @@ export default function TinTucComponent() {
                                 </ul>
 
                                 {/* Tab menu for mobile */}
-                                <div className={styles.mobileDropdown} style={{ width: "30%" }}>
+                                <div className={styles.mobileDropdown + " " + styles2.mobileDropdownNewsComponent}>
                                     <div
                                         className={styles.mobileDropdownInnerFlex}
                                         onClick={() => setIsDropdownOpen((v) => !v)}
@@ -283,7 +294,7 @@ export default function TinTucComponent() {
                                             aria-expanded={isDropdownOpen}
                                             aria-haspopup="listbox"
                                             style={{
-                                                background: selectedTab === "all" ? "linear-gradient(90deg, #BCFE08, #86F969)" : undefined,
+                                                background: selectedTab === "all" || selectedTab === "tin-nhanh" ? "linear-gradient(90deg, #BCFE08, #86F969)" : undefined,
                                                 color: "#111",
                                                 fontWeight: "bold",
                                                 border: "none",
@@ -294,7 +305,7 @@ export default function TinTucComponent() {
                                                 width: "100%"
                                             }}
                                         >
-                                            {TABS.find((t) => t.value === selectedTab)?.label}
+                                            {categories.find((t) => t.value === selectedTab)?.label || "Tin chính"}
                                         </button>
                                         <span className={`${styles.dropdownIcon} ${isDropdownOpen ? styles.open : ''}`}>
                                             <svg width="18" height="18" style={{ marginLeft: 8, verticalAlign: "middle" }} viewBox="0 0 20 20">
@@ -317,7 +328,7 @@ export default function TinTucComponent() {
                                                 width: "50%"
                                             }}
                                         >
-                                            {TABS.map((tab) => (
+                                            {categories.map((tab) => (
                                                 <li
                                                     key={tab.value}
                                                     role="option"
@@ -344,37 +355,113 @@ export default function TinTucComponent() {
                                     )}
                                 </div>
 
-                                <div className={`content ${styles2.content} ${styles2.mostHighlightNewsItemBox}`}>
-                                    {news[0] && (
-                                        <Link href={`/tin-tuc/${hero.slug}`}>
-                                            <div className={`box-image ${styles2.boxImage} ${styles2.triggerFullW}`}>
-                                                <img className={`${styles2.mostFeaturedNewsHighlight}`} src={hero.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={hero.title} />
-                                                <div className={`${styles2.imageOverlay}`}></div>
-                                            </div>
-                                        </Link>
-                                    )}
-
-                                    {news[0] && (
-                                        <div className={`heading-title-main ${styles2.headingTitleMain}`}>
+                                {activeTab !== "tin-nhanh" && (
+                                    <div className={`content ${styles2.content} ${styles2.mostHighlightNewsItemBox}`}>
+                                        {hero && (
                                             <Link href={`/tin-tuc/${hero.slug}`}>
-                                                <h3 className={`${styles2.tinTuc} ${styles2.title} ${styles2.mostHighlightTitleNewsH} title`} ref={titleRef} style={{ position:"relative", top:titleTop }}>
-                                                    {hero.title}
-                                                </h3>
+                                                <div className={`box-image ${styles2.boxImage} ${styles2.triggerFullW}`}>
+                                                    <img className={`${styles2.mostFeaturedNewsHighlight}`} src={hero.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={hero.title} />
+                                                    <div className={`${styles2.imageOverlay}`}></div>
+                                                </div>
                                             </Link>
-                                        </div>
-                                    )}
+                                        )}
 
-
-                                    
-                                </div>
+                                        {hero && (
+                                            <div className={`heading-title-main ${styles2.headingTitleMain}`}>
+                                                <Link href={`/tin-tuc/${hero.slug}`}>
+                                                    <h3 className={`${styles2.tinTuc} ${styles2.title} ${styles2.mostHighlightTitleNewsH} title`} 
+                                                    ref={titleRef} style={{ position:"relative", top:titleTop }}
+                                                    >
+                                                        {hero.title}
+                                                    </h3>
+                                                </Link>
+                                            </div>
+                                        )}
+                                    </div>
+                                )}
 
                                 <div className={`content-tab ${styles2.contentTab}`}>
-                                        <div className={`content-inner row ${styles2.contentInner} ${styles2.row} ${styles2.divDuocXemNhieu} ${styles2.modCssNewsAlt}`}>
-                                            {filteredNews.length === 0 ? (
+                                    {activeTab === "tin-nhanh" ? (
+                                        // UI Timeline cho Tab Tin nhanh với nhóm theo ngày
+                                        <div className={`${styles2.timelineContainer}`}>
+                                            {newsFlash.length < 0 ? (
                                                 <p style={{ textAlign: "center", padding: "20px", color: "#888" }}>
                                                     Không có dữ liệu
                                                 </p>
-                                            ) : filteredNews.slice(0, visibleCount).map(item => (
+                                            ) : (() => {
+                                                // Nhóm tin tức theo ngày từ filteredNewsFlash (bảng news_flash)
+                                                const groupedByDate = {};
+                                                newsFlash.forEach((item) => {
+                                                    const date = item.time_upload || item.created_at || new Date().toISOString();
+                                                    const dateKey = new Date(date).toLocaleDateString('vi-VN', { 
+                                                        year: 'numeric', 
+                                                        month: '2-digit', 
+                                                        day: '2-digit' 
+                                                    });
+                                                    
+                                                    if (!groupedByDate[dateKey]) {
+                                                        groupedByDate[dateKey] = [];
+                                                    }
+                                                    groupedByDate[dateKey].push(item);
+                                                });
+
+                                                // Sắp xếp các ngày từ mới đến cũ
+                                                const sortedDates = Object.keys(groupedByDate).sort((a, b) => {
+                                                    return new Date(b.split('/').reverse().join('-')) - new Date(a.split('/').reverse().join('-'));
+                                                });
+
+                                                return sortedDates.map((dateKey) => (
+                                                    <div key={dateKey} className={`${styles2.timelineDateGroup}`}>
+                                                        <div className={`${styles2.timelineDateDisplayFlex}`}>
+                                                            <div className={`${styles2.timelineDateHeaderDate}`}>{dateKey}</div>
+                                                            <div className={`${styles2.timelineDateHeaderLine}`}>Tin nhanh quan trong</div>
+                                                        </div>
+                                                        {groupedByDate[dateKey].map((item) => (
+                                                            <div className={`${styles2.timelineItem}`} key={item.id}>
+                                                                <div className={`${styles2.timelineTime}`}>
+                                                                    {item.time_upload 
+                                                                        ? new Date(item.time_upload).toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit', hour12: false })
+                                                                        : new Date(item.created_at).toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit', hour12: false })}
+                                                                </div>
+                                                                <Link href={`/tin-nhanh/${item.slug}`} className={`${styles2.timelineContent}`}>
+                                                                    <div className={`${styles2.timelineTitleContainerDisplayFlex}`}>
+                                                                        {item.is_hot == 1 && (
+                                                                            <img 
+                                                                                src="https://nivexhub.learningchain.vn/wp-content/uploads/2025/11/Hot_news_flash_post_icon.webp" 
+                                                                                alt="Hot" 
+                                                                                style={{ 
+                                                                                    width: '29px', 
+                                                                                    height: '14px', 
+                                                                                    marginTop: '3px',
+                                                                                    flexShrink: 0
+                                                                                }} 
+                                                                            />
+                                                                        )}
+                                                                        <div className={`${styles2.timelineTitle}`}>
+                                                                            {item.title}
+                                                                        </div>
+                                                                    </div>
+                                                                    <div className={`${styles2.timelineDescription}`}>
+                                                                        {item.content}
+                                                                    </div>
+                                                                    <div className={`${styles2.timelineLink}`}>
+                                                                        Xem thêm
+                                                                    </div>
+                                                                </Link>
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                ));
+                                            })()}
+                                        </div>
+                                    ) : (
+                                        // UI Grid cho Tab Tin chính - dùng filteredNews từ bảng news
+                                        <div className={`content-inner row ${styles2.contentInner} ${styles2.row} ${styles2.divDuocXemNhieu} ${styles2.modCssNewsAlt}`}>
+                                            {news.length < 0 ? (
+                                                <p style={{ textAlign: "center", padding: "20px", color: "#888" }}>
+                                                    Không có dữ liệu
+                                                </p>
+                                            ) : news.slice(0, visibleCount).map(item => (
                                                 <div className={`col-md-4 ${styles2.colMd4} ${styles2.level2NewsItemBox}`} key={item.id}>
                                                    <Link href={`/tin-tuc/${item.slug}`} >
                                                         <div className={`${styles2.blogBox}`}>
@@ -382,14 +469,15 @@ export default function TinTucComponent() {
                                                                 <img className={`${styles2.level2NewsImage}`} src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
                                                             </div>
                                                             <div className={`box-content ${styles2.boxContent} ${styles2.titleNewsDuocXemNhieu}`}>
-                                                                <Link href={`/tin-tuc/${item.slug}`} className={`${styles2.titleNews} ${styles2.headlineNews}`} >{item.title}</Link>
+                                                                <div className={`${styles2.titleNews} ${styles2.headlineNews}`} >{item.title}</div>
                                                             </div>
                                                         </div>
                                                    </Link>
                                                 </div>
                                             ))}
                                         </div>
-                                    </div>
+                                    )}
+                                </div>
                             </div>
                         </div>
 
@@ -404,26 +492,48 @@ export default function TinTucComponent() {
                         <div className={`col-xl-4 col-md-12 ${styles2.ttucTinNongGg} ${styles2.colXl4} ${styles2.colMd12}  ${styles2.cotBenTayPhai}`}>
                             <div className={`${styles2.sidebar}`}>
                                 <div className={`widget recent mt-0  ${styles2.widget} ${styles2.recent} ${styles2.mt0}`}>
-                                    <h6 className={`${styles2.heading} ${styles2.titleTinNongg12}`}>Tin nóng</h6>
+                                    <h6 className={`${styles2.heading} ${styles2.titleTinNongg12}`}>Tin nổi bật</h6>
                                     <ul className={`${styles2.tinNong} ${styles2.sideLinkRelated}`}>
-                                        {news.slice(0, 10).map(item => (
-                                            <Link href={`/tin-tuc/${item.slug}`}>
-                                                <li className={`${styles2.liHovering}`} key={item.id}>
-                                                    <div style={{ display: 'block' }}>
-                                                        <p className={`${styles2.timeStampP}`}>
-                                                            {item.time_upload
-                                                                ? new Date(item.time_upload).toLocaleString('vi-VN', { hour12: false })
-                                                                : ''}
-                                                        </p>
-                                                        <div className={`${styles2.image}`}>
-                                                            <img className={`${styles2.imageTinLonggg12}`} src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
-                                                        </div>
-                                                    </div>
-                                                    <div className={`${styles2.content}`}>
-                                                        <Link href={`/tin-tuc/${item.slug}`} className={`${styles2.title} ${styles2.navigateChildNews} ${styles2.linkHoveringg} ${styles2.sideBannerLinkRelated}`}>
-                                                            {item.title}
-                                                        </Link>
-                                                    </div>
+                                        {(activeTab === "tin-nhanh" 
+                                            ? newsFlash.filter(item => item.is_hot == 1)
+                                            : news
+                                        ).slice(0, 10).map(item => (
+                                            <Link href={activeTab === "tin-nhanh" ? `/tin-nhanh/${item.slug}` : `/tin-tuc/${item.slug}`} key={item.id} className={`${styles2.linkHoveringtinNongTitleSimple}`}>
+                                                <li className={`${styles2.liHovering} ${activeTab === "tin-nhanh" ? styles2.tinNongSimple : ""}`}>
+                                                    {activeTab === "tin-nhanh" ? (
+                                                        // Layout đơn giản cho tab Tin nhanh: chỉ thời gian + title
+                                                        <>
+                                                            <p className={`${styles2.timeStampP}`}>
+                                                                {item.time_upload
+                                                                    ? new Date(item.time_upload).toLocaleString('vi-VN', { hour12: false })
+                                                                    : ''}
+                                                            </p>
+                                                            <div className={`${styles2.content}`}>
+                                                                <div className={`${styles2.title} ${styles2.navigateChildNews} ${styles2.linkHoveringg} ${styles2.sideBannerLinkRelated} ${styles2.tinNongTitleSimple}`}>
+                                                                    {item.title}
+                                                                </div>
+                                                            </div>
+                                                        </>
+                                                    ) : (
+                                                        // Layout đầy đủ cho tab Tin chính: ảnh + thời gian + title
+                                                        <>
+                                                            <div style={{ display: 'block' }}>
+                                                                <p className={`${styles2.timeStampP}`}>
+                                                                    {item.time_upload
+                                                                        ? new Date(item.time_upload).toLocaleString('vi-VN', { hour12: false })
+                                                                        : ''}
+                                                                </p>
+                                                                <div className={`${styles2.image}`}>
+                                                                    <img className={`${styles2.imageTinLonggg12}`} src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
+                                                                </div>
+                                                            </div>
+                                                            <div className={`${styles2.content}`}>
+                                                                <div  className={`${styles2.title} ${styles2.navigateChildNews} ${styles2.linkHoveringg} ${styles2.sideBannerLinkRelated}`}>
+                                                                    {item.title}
+                                                                </div>
+                                                            </div>
+                                                        </>
+                                                    )}
                                                 </li>
                                             </Link>
                                         ))}
@@ -449,7 +559,7 @@ export default function TinTucComponent() {
                                         <img className={`${styles2.level3NewsImage}`} src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
                                     </div>
                                     <div className={`${styles2.boxContent} ${styles2.titleNewsDuocXemNhieu} box-content title-news-duoc-xem-nhieu`}>
-                                        <Link href={`/tin-tuc/${item.slug}`} className={`${styles2.title} title`}>{item.title}</Link>
+                                        <div className={`${styles2.title} title`}>{item.title}</div>
                                     </div>
                                 </div>
                             </Link>
@@ -464,6 +574,7 @@ export default function TinTucComponent() {
                     </div>
                 </div>
             </section>
+            <NewsFlashNotifier />
         </>
     )
 }

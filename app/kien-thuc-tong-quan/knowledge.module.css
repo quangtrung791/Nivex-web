@@ -327,7 +327,7 @@ section.pageTitleKnowLedge, .knowledgeSection {
 
   /* Show mobile dropdown, hide desktop tabs */
   .mobileDropdown { 
-    display: block; 
+    display: inline-block; 
     
   }
   .desktopTabs { 

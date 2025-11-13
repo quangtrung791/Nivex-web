@@ -53,7 +53,7 @@ export async function POST(req: NextRequest) {
 
       try {
         await webpush.sendNotification(subscription as any, payload, {
-          TTL: 600,           // hết hạn sau 10 phút
+          TTL: 86400,           // hết hạn sau 1 ngày
           urgency: 'high',    // đẩy ưu tiên cao
           topic: 'newsflash', // optional
         });
