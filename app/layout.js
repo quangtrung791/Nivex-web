@@ -51,19 +51,19 @@ export const metadata = {
         type: "website"
     },
 
-    themeColor: "#bcfe08",
-    manifest: "/manifest.webmanifest",
-    icons: {
-        icon: [
-          { url: "https://nivexhub.learningchain.vn/wp-content/uploads/2025/11/zdsfsdhdfxgshjrdfgthd.webp", sizes: "192x192", type: "image/png" },
-        ],
-        apple: [{ url: "https://nivexhub.learningchain.vn/wp-content/uploads/2025/11/zdsfsdhdfxgshjrdfgthd.webp", sizes: "180x180", type: "image/png" }]
-    },
-    appleWebApp: {
-        capable: true,
-        statusBarStyle: "black-translucent",
-        title: "Nivex Hub"
-    }
+    // themeColor: "#bcfe08",
+    // // manifest: "/manifest.webmanifest",
+    // icons: {
+    //     icon: [
+    //       { url: "https://nivexhub.learningchain.vn/wp-content/uploads/2025/11/zdsfsdhdfxgshjrdfgthd.webp", sizes: "192x192", type: "image/png" },
+    //     ],
+    //     apple: [{ url: "https://nivexhub.learningchain.vn/wp-content/uploads/2025/11/zdsfsdhdfxgshjrdfgthd.webp", sizes: "180x180", type: "image/png" }]
+    // },
+    // appleWebApp: {
+    //     capable: true,
+    //     statusBarStyle: "black-translucent",
+    //     title: "Nivex Hub"
+    // }
 }
 
 export default function RootLayout({ children }) {

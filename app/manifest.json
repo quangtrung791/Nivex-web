@@ -1,0 +1,18 @@
+{
+    "name": "Nivex Hub",
+    "short_name": "Nivex",
+    "description": "Tin nhanh & học tập crypto trên Nivex Hub",
+    "id": "/",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "background_color": "#0b0b0c",
+    "theme_color": "#bcfe08",
+    "icons": [
+      { "src": "https://nivexhub.learningchain.vn/wp-content/uploads/2025/11/zdsfsdhdfxgshjrdfgthd.webp", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" }
+    ],
+    "shortcuts": [
+      { "name": "Tin chính", "url": "/tin-tuc", "icons": [{ "src": "https://nivexhub.learningchain.vn/wp-content/uploads/2025/11/zdsfsdhdfxgshjrdfgthd.webp", "sizes": "96x96", "type": "image/png" }] }
+    ]
+}
+  
