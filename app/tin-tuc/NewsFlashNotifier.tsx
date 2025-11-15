@@ -88,22 +88,22 @@ export default function NewsFlashNotifier() {
   const [helpOpen, setHelpOpen] = useState(false);
   const [helpSteps, setHelpSteps] = useState<string[]>([]);
 
-  // 1) Đăng ký SW
-  // useEffect(() => {
-  //   if ('serviceWorker' in navigator) {
-  //     navigator.serviceWorker.register('/sw.js').catch(() => {});
-  //   }
-  // }, []);
+  1) Đăng ký SW
+  useEffect(() => {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js').catch(() => {});
+    }
+  }, []);
 
   // 2) Kiểm tra quyền → gợi ý xin phép hoặc hướng dẫn
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    // if (!('Notification' in window)) {
-    //   setReason('unsupported');
-    //   setShowPrompt(true);
-    //   return;
-    // }
+    if (!('Notification' in window)) {
+      setReason('unsupported');
+      setShowPrompt(true);
+      return;
+    }
     if (!window.isSecureContext) {
       setReason('insecure');
       setShowPrompt(true);
