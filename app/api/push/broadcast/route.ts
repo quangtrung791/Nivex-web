@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import webpush from 'web-push';
 
 webpush.setVapidDetails(
-  process.env.VAPID_SUBJECT || 'mailto:admin@your-domain.com',
+  process.env.VAPID_SUBJECT || 'mailto:nivexvn@gmail.com',
   process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY_BASE64URL!, // base64url public
   process.env.VAPID_PRIVATE_KEY!                       // private
 );
