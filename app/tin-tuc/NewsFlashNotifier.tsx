@@ -89,11 +89,11 @@ export default function NewsFlashNotifier() {
   const [helpSteps, setHelpSteps] = useState<string[]>([]);
 
   //1) Đăng ký SW
-  useEffect(() => {
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js').catch(() => {});
-    }
-  }, []);
+  // useEffect(() => {
+  //   if ('serviceWorker' in navigator) {
+  //     navigator.serviceWorker.register('/sw.js').catch(() => {});
+  //   }
+  // }, []);
 
   // 2) Kiểm tra quyền → gợi ý xin phép hoặc hướng dẫn
   useEffect(() => {
@@ -188,8 +188,8 @@ export default function NewsFlashNotifier() {
   if (!showPrompt) return null;
 
   const message =
-    reason === 'unsupported'
-      ? 'Trình duyệt không hỗ trợ Notifications.' : 
+    // reason === 'unsupported'
+    //   ? 'Trình duyệt không hỗ trợ Notifications.' : 
       reason === 'insecure'
       ? 'Thông báo cần chạy trên HTTPS.'
       : reason === 'denied'
