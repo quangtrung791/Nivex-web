@@ -99,11 +99,11 @@ export default function NewsFlashNotifier() {
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    // if (!('Notification' in window)) {
-    //   setReason('unsupported');
-    //   setShowPrompt(true);
-    //   return;
-    // }
+    if (!('Notification' in window)) {
+      setReason('unsupported');
+      setShowPrompt(true);
+      return;
+    }
     if (!window.isSecureContext) {
       setReason('insecure');
       setShowPrompt(true);
@@ -188,8 +188,8 @@ export default function NewsFlashNotifier() {
   if (!showPrompt) return null;
 
   const message =
-    // reason === 'unsupported'
-    //   ? 'Trình duyệt không hỗ trợ Notifications.' : 
+    reason === 'unsupported'
+      ? 'Trình duyệt không hỗ trợ Notifications.' : 
       reason === 'insecure'
       ? 'Thông báo cần chạy trên HTTPS.'
       : reason === 'denied'
@@ -201,7 +201,7 @@ export default function NewsFlashNotifier() {
       <span>{message}</span>
 
       <div className="nvx-actions">
-        {reason !== 'insecure' && (
+        {reason!== 'unsupported' && reason !== 'insecure' && (
           <button className="nvx-allow" onClick={askPermission}>
             Cho phép
           </button>
