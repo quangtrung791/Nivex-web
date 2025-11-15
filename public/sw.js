@@ -1,42 +1,75 @@
-// --- SW cơ bản của bạn ---
-self.addEventListener('install', (e) => self.skipWaiting());
-self.addEventListener('activate', (e) => e.waitUntil(self.clients.claim()));
+// // /public/sw.js
+// self.addEventListener('install', () => self.skipWaiting());
+// self.addEventListener('activate', (e) => e.waitUntil(self.clients.claim()));
 
-// ==================== FCM (compat) ====================
-importScripts('https://www.gstatic.com/firebasejs/10.12.4/firebase-app-compat.js');
-importScripts('https://www.gstatic.com/firebasejs/10.12.4/firebase-messaging-compat.js');
+// self.addEventListener('push', (event) => {
+//   let data = {};
+//   try { data = event.data ? event.data.json() : {}; } catch {}
+//   const title = data.title || 'Tin nhanh';
+//   const incoming = data.options || {};
 
-// Only need projectId & messagingSenderId here; full config cũng được
-firebase.initializeApp({
-  projectId: 'nivex-hub',
-  messagingSenderId: '302794987102',
+//   // ép các giá trị giúp hiện banner rõ
+//   const opts = {
+//     body: incoming.body || '',
+//     icon: incoming.icon || '/assets/images/icon/icon_menu_header.png',
+//     badge: incoming.badge || '/assets/images/icon/icon_menu_header.png', // thêm file 72x72 trong /public/icons
+//     data: incoming.data || {},
+//     // tránh bị thay thế yên lặng
+//     tag: (incoming.tag || 'newsflash') + '-' + Date.now(),
+//     renotify: true,
+//     // hiện cho tới khi user tương tác (ít nhất trong giai đoạn test)
+//     requireInteraction: true,
+//     // KHÔNG im lặng
+//     silent: false,
+//     timestamp: Date.now(),
+//     // bạn có thể copy thêm các field khác từ incoming nếu muốn
+//   };
+
+//   event.waitUntil(self.registration.showNotification(title, opts));
+// });
+
+// self.addEventListener('notificationclick', (event) => {
+//   event.notification.close();
+//   const url = event.notification?.data?.url || '/';
+//   event.waitUntil((async () => {
+//     const all = await clients.matchAll({ type: 'window', includeUncontrolled: true });
+//     for (const c of all) {
+//       if ('focus' in c) { c.navigate(url); return c.focus(); }
+//     }
+//     if (clients.openWindow) return clients.openWindow(url);
+//   })());
+// });
+// /public/sw.js
+self.addEventListener('install', (e) => {
+  self.skipWaiting();               // update ngay khi có SW mới
 });
 
-const messaging = firebase.messaging();
-
-// Nhận message nền do FCM đẩy (app đang background/đóng)
-// Payload có thể chứa notification & data
-messaging.onBackgroundMessage((payload) => {
-  const n = payload.notification || {};
-  const data = payload.data || {};
-  const title = n.title || 'Tin mới';
-  const body  = n.body  || '';
-  // Link ưu tiên theo fcmOptions.link (browser tự xử), fallback data.url
-  const url = data.url || '/';
-
-  self.registration.showNotification(title, {
-    body,
-    icon: n.icon || '/icons/icon-192.png',
-    badge: n.badge || '/icons/badge-72.png',
-    tag: data.tag || 'newsflash',
-    data: { url }
-  });
+self.addEventListener('activate', (e) => {
+  e.waitUntil(self.clients.claim()); // chiếm quyền tất cả client cùng origin
 });
 
-// Click mở đúng trang
+self.addEventListener('push', (event) => {
+  // Nhớ: luôn bọc toàn bộ async trong waitUntil
+  event.waitUntil((async () => {
+    let p = {};
+    try { p = event.data ? event.data.json() : {}; } catch {}
+    const title = p.title || 'Tin mới';
+    const opts = Object.assign({
+      body: p.options?.body,
+      icon: p.options?.icon ,
+      badge: p.options?.badge,
+      data: p.options?.data || {},
+      tag: p.options?.tag || 'newsflash',
+      renotify: true,
+      // requireInteraction: true, // bật khi debug muốn giữ noti lâu trên desktop
+    }, p.options || {});
+    await self.registration.showNotification(title, opts);
+  })());
+});
+
 self.addEventListener('notificationclick', (event) => {
   event.notification.close();
-  const url = event.notification?.data?.url || '/';
+  const url = event.notification.data?.url || '/';
   event.waitUntil((async () => {
     const all = await clients.matchAll({ type: 'window', includeUncontrolled: true });
     const u = new URL(url, location.origin).href;
@@ -45,8 +78,8 @@ self.addEventListener('notificationclick', (event) => {
   })());
 });
 
-// Optional: offline HTML đơn giản
 self.addEventListener('fetch', (event) => {
+  // ví dụ: chỉ cache GET HTML để có offline fallback đơn giản
   if (event.request.mode === 'navigate') {
     event.respondWith((async () => {
       try { return await fetch(event.request); }
