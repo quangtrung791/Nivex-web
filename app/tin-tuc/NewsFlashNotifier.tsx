@@ -97,7 +97,7 @@ export default function NewsFlashNotifier() {
 
   // 2) Kiểm tra quyền → gợi ý xin phép hoặc hướng dẫn
   useEffect(() => {
-    // if (typeof window === 'undefined') return;
+    if (typeof window === 'undefined') return;
 
     // if (!('Notification' in window)) {
     //   setReason('unsupported');
@@ -188,8 +188,8 @@ export default function NewsFlashNotifier() {
   if (!showPrompt) return null;
 
   const message =
-    // reason === 'unsupported'
-    //   ? 'Trình duyệt không hỗ trợ Notifications.' : 
+    reason === 'unsupported'
+      ? 'Trình duyệt không hỗ trợ Notifications.' : 
       reason === 'insecure'
       ? 'Thông báo cần chạy trên HTTPS.'
       : reason === 'denied'
