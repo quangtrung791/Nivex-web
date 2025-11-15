@@ -88,7 +88,7 @@ export default function NewsFlashNotifier() {
   const [helpOpen, setHelpOpen] = useState(false);
   const [helpSteps, setHelpSteps] = useState<string[]>([]);
 
-  1) Đăng ký SW
+  //1) Đăng ký SW
   useEffect(() => {
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/sw.js').catch(() => {});
@@ -99,11 +99,11 @@ export default function NewsFlashNotifier() {
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    if (!('Notification' in window)) {
-      setReason('unsupported');
-      setShowPrompt(true);
-      return;
-    }
+    // if (!('Notification' in window)) {
+    //   setReason('unsupported');
+    //   setShowPrompt(true);
+    //   return;
+    // }
     if (!window.isSecureContext) {
       setReason('insecure');
       setShowPrompt(true);
