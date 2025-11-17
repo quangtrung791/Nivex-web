@@ -62,20 +62,20 @@ export default function ChiTietTinNhanhComponent() {
           .catch(() => setHotNews([]))
       }, [slug])     
     
-    useEffect(() => {
-        const url = new URL(`${WP_BASE}/news`);
-        url.searchParams.set('status', 'active');
-        url.searchParams.set('page', '1');
-        url.searchParams.set('per_page', '10');
-        url.searchParams.set('sort', 'view');
+    // useEffect(() => {
+    //     const url = new URL(`${WP_BASE}/news`);
+    //     url.searchParams.set('status', 'active');
+    //     url.searchParams.set('page', '1');
+    //     url.searchParams.set('per_page', '10');
+    //     url.searchParams.set('sort', 'view');
 
-        fetch(url.toString(), { cache: 'no-store' })
-            .then(res => res.json())
-            .then(json => {
-            setMostViewedNews(Array.isArray(json?.data) ? json.data : []);
-            })
-            .catch(() => setMostViewedNews([]));
-    }, []);
+    //     fetch(url.toString(), { cache: 'no-store' })
+    //         .then(res => res.json())
+    //         .then(json => {
+    //         setMostViewedNews(Array.isArray(json?.data) ? json.data : []);
+    //         })
+    //         .catch(() => setMostViewedNews([]));
+    // }, []);
 
     // useEffect(() => {
     //     if (!news?.slug) return
@@ -215,7 +215,7 @@ export default function ChiTietTinNhanhComponent() {
                             </div>
                         </div>
                     </section>
-                      <section className="duoc-xem-nhieu col-md-12 chi-tiet-ttuc-duoc-xem-nhieu">
+                      {/* <section className="duoc-xem-nhieu col-md-12 chi-tiet-ttuc-duoc-xem-nhieu">
                         <div className="title-container">
                             <h5>Được xem nhiều</h5>
                         </div>
@@ -243,7 +243,7 @@ export default function ChiTietTinNhanhComponent() {
                                                     </div>
                                                 </div>
                                             </div>
-                    </section>
+                    </section> */}
                 </div>
                 <NewsFlashNotifier />
         </>

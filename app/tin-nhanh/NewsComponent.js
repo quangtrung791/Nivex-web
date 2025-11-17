@@ -16,21 +16,21 @@ const COINS = [
     // { id: "shiba-inu", symbol: "SHIB", name: "Shiba Inu" },
 ];
 const TABS = [
-    { label: "Tin chính", value: "all" }
+    { label: "Tin nhanh", value: "tin-nhanh" }
 ];
 
 const WP_BASE = 'https://nivexhub.learningchain.vn/wp-json/nivex/v1';
 
 export default function TinTucComponent() {
     const [coinData, setCoinData] = useState([]);
-    const [activeTab, setActiveTab] = useState("all");
+    const [activeTab, setActiveTab] = useState("tin-nhanh");
     
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [selectedTab, setSelectedTab] = useState(TABS[0].value);
     const [categories, setCategories] = useState([]);
     const [news, setNews] = useState([]);
     const [newsFlash, setNewsFlash] = useState([]); // Dữ liệu cho tab Tin nhanh
-    const [mostViewedNews, setMostViewedNews] = useState([]);
+    // const [mostViewedNews, setMostViewedNews] = useState([]);
     const [searchQuery, setSearchQuery] = useState("");
     const [hero, setHero] = useState(null);
 
@@ -40,43 +40,43 @@ export default function TinTucComponent() {
     // const [titleLines, setTitleLines] = useState(1);
     const [titleTop, setTitleTop] = useState(-10);
 
+    // useEffect(() => {
+    //     if (titleRef.current) {
+    //         const lineHeight = parseFloat(getComputedStyle(titleRef.current).lineHeight);
+    //         const height = titleRef.current.offsetHeight;
+    //         const lines = Math.round(height / lineHeight);
+    //         // setTitleLines(lines);
+
+    //         const width = window.innerWidth;
+    //         if (width >= 1440 && width < 1920) {
+    //             setTitleTop(lines === 1 ? 20 : -10);
+    //         } else if (width >= 1920) {
+    //             setTitleTop(lines === 1 ? 30 : -10);
+    //         } else if (width <= 600) {
+    //             setTitleTop(lines === 1 ? 30 : -80);
+    //         }
+    //         else {
+    //             setTitleTop(-10);
+    //         }
+    //     }
+    // }, [hero?.title]);
+
+    // useEffect(() => {
+    //     function handleResize() {
+    //         if (window.innerWidth >= 900) {
+    //             setVisibleCount(3);
+    //         } else {
+    //             setVisibleCount(4);
+    //         }
+    //     }
+    //     handleResize(); // Gọi khi mount
+    //     window.addEventListener('resize', handleResize);
+    //     return () => window.removeEventListener('resize', handleResize);
+    // }, []);
+
+
     useEffect(() => {
-        if (titleRef.current) {
-            const lineHeight = parseFloat(getComputedStyle(titleRef.current).lineHeight);
-            const height = titleRef.current.offsetHeight;
-            const lines = Math.round(height / lineHeight);
-            // setTitleLines(lines);
-
-            const width = window.innerWidth;
-            if (width >= 1440 && width < 1920) {
-                setTitleTop(lines === 1 ? 20 : -10);
-            } else if (width >= 1920) {
-                setTitleTop(lines === 1 ? 30 : -10);
-            } else if (width <= 600) {
-                setTitleTop(lines === 1 ? 30 : -80);
-            }
-            else {
-                setTitleTop(-10);
-            }
-        }
-    }, [hero?.title]);
-
-    useEffect(() => {
-        function handleResize() {
-            if (window.innerWidth >= 900) {
-                setVisibleCount(3);
-            } else {
-                setVisibleCount(4);
-            }
-        }
-        handleResize(); // Gọi khi mount
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
-
-
-    useEffect(() => {
-        document.title = "Tin tức"
+        document.title = "Tin nhanh"
     }, []);
     useEffect(() => {
         fetch(
@@ -106,87 +106,87 @@ export default function TinTucComponent() {
       }, []);
       
 
-    useEffect(() => {
-        const url = new URL(`${WP_BASE}/news`);
-        url.searchParams.set('status', 'active');
-        url.searchParams.set('page', '1');
-        url.searchParams.set('per_page', '20');
-
-        fetch(url.toString(), { cache: 'no-store' })
-            .then(res => res.json())
-            .then(json => {
-            const arr = Array.isArray(json?.data) ? json.data : [];
-            const mapped = arr.map(n => ({
-                id: n.id,
-                slug: n.slug,
-                title: n.title,
-                category_id: n.category_id ?? null,
-                time_upload: n.time_upload,
-                created_at: n.created_at,
-                updated_at: n.updated_at,
-                thumbnail_url: n.thumbnail_url || 'https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp',
-                is_featured: n.is_featured,
-                is_hot: n.is_hot || 0,
-            }));
-
-            setNews(mapped.slice(1)); 
-
-            const featured = mapped
-                .filter(n => n.is_featured);
-                // .sort((a,b) => new Date(b.time_upload || b.created_at) - new Date(a.time_upload || a.created_at));
-            setHero(featured[0] || mapped[0]);
-            
-            })
-            .catch(() => {
-                setNews([]);
-                setHero(null);
-            });
-    }, []);
-
-    // Fetch dữ liệu news_flash cho tab Tin nhanh
     // useEffect(() => {
-    //     const url = new URL(`${WP_BASE}/news_flash`);
+    //     const url = new URL(`${WP_BASE}/news`);
     //     url.searchParams.set('status', 'active');
     //     url.searchParams.set('page', '1');
-    //     url.searchParams.set('per_page', '35');
+    //     url.searchParams.set('per_page', '20');
 
     //     fetch(url.toString(), { cache: 'no-store' })
     //         .then(res => res.json())
     //         .then(json => {
-    //             const arr = Array.isArray(json?.data) ? json.data : [];
-    //             const mapped = arr.map(n => ({
-    //                 id: n.id,
-    //                 slug: n.slug,
-    //                 title: n.title,
-    //                 content: n.content,
-    //                 time_upload: n.time_upload,
-    //                 created_at: n.created_at,
-    //                 updated_at: n.updated_at,
-    //                 thumbnail_url: n.thumbnail_url,
-    //                 is_hot: n.is_hot || 0,
-    //             }));
-    //             setNewsFlash(mapped);
+    //         const arr = Array.isArray(json?.data) ? json.data : [];
+    //         const mapped = arr.map(n => ({
+    //             id: n.id,
+    //             slug: n.slug,
+    //             title: n.title,
+    //             category_id: n.category_id ?? null,
+    //             time_upload: n.time_upload,
+    //             created_at: n.created_at,
+    //             updated_at: n.updated_at,
+    //             thumbnail_url: n.thumbnail_url || 'https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp',
+    //             is_featured: n.is_featured,
+    //             is_hot: n.is_hot || 0,
+    //         }));
+
+    //         setNews(mapped.slice(1)); 
+
+    //         const featured = mapped
+    //             .filter(n => n.is_featured);
+    //             // .sort((a,b) => new Date(b.time_upload || b.created_at) - new Date(a.time_upload || a.created_at));
+    //         setHero(featured[0] || mapped[0]);
+            
     //         })
     //         .catch(() => {
-    //             setNewsFlash([]);
+    //             setNews([]);
+    //             setHero(null);
     //         });
     // }, []);
 
-
+    // Fetch dữ liệu news_flash cho tab Tin nhanh
     useEffect(() => {
-        const url = new URL(`${WP_BASE}/news`);
+        const url = new URL(`${WP_BASE}/news_flash`);
         url.searchParams.set('status', 'active');
         url.searchParams.set('page', '1');
-        url.searchParams.set('per_page', '10');
-        url.searchParams.set('sort', 'view');
+        url.searchParams.set('per_page', '35');
 
         fetch(url.toString(), { cache: 'no-store' })
             .then(res => res.json())
             .then(json => {
-            setMostViewedNews(Array.isArray(json?.data) ? json.data : []);
+                const arr = Array.isArray(json?.data) ? json.data : [];
+                const mapped = arr.map(n => ({
+                    id: n.id,
+                    slug: n.slug,
+                    title: n.title,
+                    content: n.content,
+                    time_upload: n.time_upload,
+                    created_at: n.created_at,
+                    updated_at: n.updated_at,
+                    thumbnail_url: n.thumbnail_url,
+                    is_hot: n.is_hot || 0,
+                }));
+                setNewsFlash(mapped);
             })
-            .catch(() => setMostViewedNews([]));
+            .catch(() => {
+                setNewsFlash([]);
+            });
     }, []);
+
+
+    // useEffect(() => {
+    //     const url = new URL(`${WP_BASE}/news`);
+    //     url.searchParams.set('status', 'active');
+    //     url.searchParams.set('page', '1');
+    //     url.searchParams.set('per_page', '10');
+    //     url.searchParams.set('sort', 'view');
+
+    //     fetch(url.toString(), { cache: 'no-store' })
+    //         .then(res => res.json())
+    //         .then(json => {
+    //         setMostViewedNews(Array.isArray(json?.data) ? json.data : []);
+    //         })
+    //         .catch(() => setMostViewedNews([]));
+    // }, []);
 
     // chuẩn hóa query 1 lần để tiết kiệm hiệu năng
     const q = normalizeString(searchQuery);
@@ -544,7 +544,7 @@ export default function TinTucComponent() {
                 </div>
             </section>
            
-            <section className={`col-md-12 ${styles2.duocXemNhieu} ${styles2.colMd12} ${styles2.ttucDuocXemNhieu}`}>
+            {/* <section className={`col-md-12 ${styles2.duocXemNhieu} ${styles2.colMd12} ${styles2.ttucDuocXemNhieu}`}>
                 <div className={`${styles2.titleContainer} title-container`}>
                     <h5>Được xem nhiều</h5>
                 </div>
@@ -571,7 +571,7 @@ export default function TinTucComponent() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
             <NewsFlashNotifier />
         </>
     )
