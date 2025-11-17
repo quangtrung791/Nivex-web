@@ -139,9 +139,9 @@ export default function ChiTietTinNhanhComponent() {
                                         </span>
                                     </div>
                                     <div className="blog-main">
-                                         <div className="box-image">
+                                         {/* <div className="box-image">
                                              <img src={news.thumbnail_url || "/assets/images/blog/blog-01.jpg"} alt={news.title} />
-                                        </div>
+                                        </div> */}
                                         <h3 className="title">
                                             {news.title}
                                         </h3>

@@ -57,11 +57,9 @@
     font-size: 14px;
     font-weight: 400;
 }
- .sb-tin-nong-ttuc-id {
-    border-radius: 0 0 25px 25px !important;
- }
+ 
  .tin-nong-tintucid {
-    border-radius: 25px 25px 0 0 !important;
+    border-radius: 24px;
  }
  .title-muc-luc > * {
     font-family: 'Inter, sans-serif';
@@ -353,13 +351,12 @@ h6.heading.tin-nong-heading {
     color: black;
     background: linear-gradient(to right, #BCFE08, #86F969);
 }
-section.blog-details.tin-tuc-id .col-xl-4.col-md-12 .sidebar {
-    /* background-color: rgb(93 91 91 / 22%); */
+/* section.blog-details.tin-tuc-id .col-xl-4.col-md-12 .sidebar {
     background-image: url('/assets/images/background/background_tin_nong.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-}
+} */
 
 /* Custom scrollbar for Chrome, Edge, Safari */
 .sidebar::-webkit-scrollbar {
@@ -628,9 +625,9 @@ footer.footer.style-2.footer-main {
     .content-tab .blog-box .box-content {
         padding: 0;
     }
-    .content-tab .blog-box .box-image {
+    /* .content-tab .blog-box .box-image {
         margin-bottom: 10px;
-    }
+    } */
     .content-tab .blog-box .box-content .title {
         font-size: 13.2px;
         font-weight: 700;
@@ -672,9 +669,9 @@ footer.footer.style-2.footer-main {
     a.title.navigate-child-news {
         margin-top: 15px;
     }
-    .blog-details.tin-tuc-id .box-image {
+    /* .blog-details.tin-tuc-id .box-image {
         margin-top: 0;
-    }
+    } */
     section.blog-details.tin-tuc-id .blog-main .content {
         margin-top: 20px !important;
     }
@@ -824,9 +821,9 @@ footer.footer.style-2.footer-main {
     .content-tab .blog-box .box-content {
         padding: 0;
     }
-    .content-tab .blog-box .box-image {
+    /* .content-tab .blog-box .box-image {
         margin-bottom: 10px;
-    }
+    } */
     .content-tab .blog-box .box-content .title {
         font-size: 13.2px;
         font-weight: 700;
@@ -861,9 +858,9 @@ footer.footer.style-2.footer-main {
     a.title.navigate-child-news {
         margin-top: 15px;
     }
-    .blog-details.tin-tuc-id .box-image {
+    /* .blog-details.tin-tuc-id .box-image {
         margin-top: 0;
-    }
+    } */
     section.blog-details.tin-tuc-id .blog-main .content {
         margin-top: 20px !important;
     }
@@ -1012,9 +1009,9 @@ footer.footer.style-2.footer-main {
     .content-tab .blog-box .box-content {
         padding: 0;
     }
-    .content-tab .blog-box .box-image {
+    /* .content-tab .blog-box .box-image {
         margin-bottom: 10px;
-    }
+    } */
     section.duoc-xem-nhieu .blog-box .box-content .title {
         font-size: 20px;
         font-weight: 700;
@@ -1056,9 +1053,9 @@ footer.footer.style-2.footer-main {
     a.title.navigate-child-news {
         margin-top: 15px;
     }
-    .blog-details.tin-tuc-id .box-image {
+    /* .blog-details.tin-tuc-id .box-image {
         margin-top: 0;
-    }
+    } */
     section.blog-details.tin-tuc-id .blog-main .content {
         margin-top: 20px !important;
     }
@@ -1207,9 +1204,9 @@ footer.footer.style-2.footer-main {
         padding: 0;
     }
 
-    .content-tab .blog-box .box-image {
+    /* .content-tab .blog-box .box-image {
         margin-bottom: 10px;
-    }
+    } */
 
     .content-tab .blog-box .box-content .title {
         font-size: 12.5px;
@@ -1258,9 +1255,9 @@ footer.footer.style-2.footer-main {
         padding-bottom: 5px;
     }
 
-    .blog-details.tin-tuc-id .box-image {
+    /* .blog-details.tin-tuc-id .box-image {
         margin-top: 0;
-    }
+    } */
 
     section.blog-details.tin-tuc-id .blog-main .content {
         margin-top: 25px !important;
@@ -1411,9 +1408,9 @@ footer.footer.style-2.footer-main {
         padding: 0;
     }
 
-    .content-tab .blog-box .box-image {
+    /* .content-tab .blog-box .box-image {
         margin-bottom: 8px;
-    }
+    } */
 
     .content-tab .blog-box .box-content .title {
         font-size: 12px;
@@ -1458,9 +1455,9 @@ footer.footer.style-2.footer-main {
         padding-bottom: 5px;
     }
 
-    .blog-details.tin-tuc-id .box-image {
+    /* .blog-details.tin-tuc-id .box-image {
         margin-top: 0;
-    }
+    } */
 
     section.blog-details.tin-tuc-id .blog-main .content {
         margin-top: 25px !important;
@@ -1626,9 +1623,9 @@ footer.footer.style-2.footer-main {
         padding: 0;
     }
 
-    .content-tab .blog-box .box-image {
+    /* .content-tab .blog-box .box-image {
         margin-bottom: 8px;
-    }
+    } */
 
     .content-tab .blog-box .box-content .title {
         font-size: 12px;
@@ -1670,9 +1667,9 @@ footer.footer.style-2.footer-main {
         font-weight: 300;
     }
 
-    .blog-details.tin-tuc-id .box-image {
+    /* .blog-details.tin-tuc-id .box-image {
         margin-top: 0;
-    }
+    } */
 
     section.blog-details.tin-tuc-id .blog-main .content {
         margin-top: 25px !important;
@@ -1829,9 +1826,9 @@ footer.footer.style-2.footer-main {
         padding: 0;
     }
 
-    .content-tab .blog-box .box-image {
+    /* .content-tab .blog-box .box-image {
         margin-bottom: 7px;
-    }
+    } */
 
     .content-tab .blog-box .box-content .title {
         font-size: 11.5px;
@@ -1873,9 +1870,9 @@ footer.footer.style-2.footer-main {
         font-weight: 300;
     }
 
-    .blog-details.tin-tuc-id .box-image {
+    /* .blog-details.tin-tuc-id .box-image {
         margin-top: 0;
-    }
+    } */
 
     section.blog-details.tin-tuc-id .blog-main .content {
         margin-top: 25px !important;
@@ -2021,9 +2018,7 @@ footer.footer.style-2.footer-main {
     section.blog-details.tin-tuc-id {
         padding: 20px 0 0 0;
     }
-    .blog-details.tin-tuc-id .box-image.trigger-full-w {
-        margin: unset;
-    }
+
     .blog-details.tin-tuc-id h3.title {
         margin-top: 20px;        
     }
@@ -2034,9 +2029,7 @@ footer.footer.style-2.footer-main {
         width: 50%;
         padding: 5px;
     }
-    .blog-details.tin-tuc-id .box-image {
-        margin: 0 !important;
-    }
+
     .blog-box .box-content {
         padding: 0 !important;
     }
@@ -2244,9 +2237,7 @@ footer.footer.style-2.footer-main {
     section.blog-details.tin-tuc-id {
         padding: 20px 0 0 0;
     }
-    .blog-details.tin-tuc-id .box-image.trigger-full-w {
-        margin: unset;
-    }
+
     .blog-details.tin-tuc-id h3.title {
         margin-top: 20px;        
     }
@@ -2257,9 +2248,7 @@ footer.footer.style-2.footer-main {
         width: 50%;
         padding: 5px;
     }
-    .blog-details.tin-tuc-id .box-image {
-        margin: 0 !important;
-    }
+
     .blog-box .box-content {
         padding: 0 !important;
     }
@@ -2483,9 +2472,6 @@ footer.footer.style-2.footer-main {
         padding: 0;
     }
 
-    .content-tab .blog-box .box-image {
-        margin-bottom: 7px;
-    }
 
     .content-tab .blog-box .box-content .title {
         font-size: 11.5px;
@@ -2527,9 +2513,7 @@ footer.footer.style-2.footer-main {
         font-weight: 300;
     }
 
-    .blog-details.tin-tuc-id .box-image {
-        margin-top: 0;
-    }
+
 
     section.blog-details.tin-tuc-id .blog-main .content {
         margin-top: 25px !important;
@@ -2686,9 +2670,6 @@ footer.footer.style-2.footer-main {
         padding: 0;
     }
 
-    .content-tab .blog-box .box-image {
-        margin-bottom: 8px;
-    }
 
     .content-tab .blog-box .box-content .title {
         font-size: 12px;
@@ -2731,9 +2712,6 @@ footer.footer.style-2.footer-main {
         padding-bottom: 5px;
     }
 
-    .blog-details.tin-tuc-id .box-image {
-        margin-top: 0;
-    }
 
     section.blog-details.tin-tuc-id .blog-main .content {
         margin-top: 25px !important;
@@ -2900,9 +2878,6 @@ footer.footer.style-2.footer-main {
         padding: 0;
     }
 
-    .content-tab .blog-box .box-image {
-        margin-bottom: 8px;
-    }
 
     .content-tab .blog-box .box-content .title {
         font-size: 12px;
@@ -2943,9 +2918,6 @@ footer.footer.style-2.footer-main {
         font-weight: 300;
     }
 
-    .blog-details.tin-tuc-id .box-image {
-        margin-top: 0;
-    }
 
     section.blog-details.tin-tuc-id .blog-main .content {
         margin-top: 25px !important;
@@ -3092,9 +3064,6 @@ footer.footer.style-2.footer-main {
         padding: 0;
     }
 
-    .content-tab .blog-box .box-image {
-        margin-bottom: 10px;
-    }
 
     .content-tab .blog-box .box-content .title {
         font-size: 12.5px;
@@ -3140,10 +3109,6 @@ footer.footer.style-2.footer-main {
         font-size: 10px;
         font-weight: 300;
         padding-bottom: 5px;
-    }
-
-    .blog-details.tin-tuc-id .box-image {
-        margin-top: 0;
     }
 
     section.blog-details.tin-tuc-id .blog-main .content {
