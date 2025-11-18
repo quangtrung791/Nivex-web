@@ -227,8 +227,9 @@ section.tin-tuc-id .content .ql-size-large {
 .blog-details.tin-tuc-id .content img {
     max-width: 100%;
 }
-section.blog-details.tin-tuc-id .col-xl-4.col-md-12 {
-    background-image: none !important;
+section.blog-details.tin-tuc-id .right-side-panel-blog-details {
+    background: #242529;
+    border-radius: 24px;
 }
 section.tin-tuc-id .widget.recent.mt-0 {
     flex-direction: column !important;
@@ -506,7 +507,6 @@ footer.footer.style-2.footer-main {
         margin-top: 30px;
     }
     section.tin-tuc-id h6.heading {
-        background: #242529;
         margin-bottom: unset;
         padding-top: 20px;
         padding-left: 14px;
@@ -700,7 +700,6 @@ footer.footer.style-2.footer-main {
         margin-top: 30px;
     }
     section.tin-tuc-id h6.heading {
-        background: #242529;
         margin-bottom: unset;
         padding-top: 20px;
         padding-left: 14px;
@@ -888,7 +887,6 @@ footer.footer.style-2.footer-main {
         margin-top: 30px;
     }
     section.tin-tuc-id h6.heading {
-        background: #242529;
         margin-bottom: unset;
         padding-top: 20px;
         padding-left: 14px;
@@ -1082,7 +1080,6 @@ footer.footer.style-2.footer-main {
         margin-top: 30px;
     }
     section.tin-tuc-id h6.heading {
-        background: #242529;
         margin-bottom: unset;
         padding-top: 20px;
         padding-left: 14px;
@@ -1279,7 +1276,6 @@ footer.footer.style-2.footer-main {
         margin-top: 30px;
     }
     section.tin-tuc-id h6.heading {
-        background: #242529;
         margin-bottom: unset;
         padding-top: 20px;
         padding-left: 14px;
@@ -1483,7 +1479,6 @@ footer.footer.style-2.footer-main {
         margin-top: 30px;
     }
     section.tin-tuc-id h6.heading {
-        background: #242529;
         margin-bottom: unset;
         padding-top: 20px;
         padding-left: 14px;
@@ -1695,7 +1690,6 @@ footer.footer.style-2.footer-main {
         margin-top: 30px;
     }
     section.tin-tuc-id h6.heading {
-        background: #242529;
         margin-bottom: unset;
         padding-top: 20px;
         padding-left: 14px;
@@ -1898,7 +1892,6 @@ footer.footer.style-2.footer-main {
         margin-top: 30px;
     }
     section.tin-tuc-id h6.heading {
-        background: #242529;
         margin-bottom: unset;
         padding-top: 20px;
         padding-left: 14px;
@@ -2117,7 +2110,6 @@ footer.footer.style-2.footer-main {
         margin-top: 30px;
     }
     section.tin-tuc-id h6.heading {
-        background: #242529;
         margin-bottom: unset;
         padding-top: 20px;
         padding-left: 14px;
@@ -2341,7 +2333,6 @@ footer.footer.style-2.footer-main {
         margin-top: 30px;
     }
     section.tin-tuc-id h6.heading {
-        background: #242529;
         margin-bottom: unset;
         padding-top: 20px;
         padding-left: 14px;
@@ -2539,7 +2530,6 @@ footer.footer.style-2.footer-main {
         padding: unset;
     }
     section.tin-tuc-id h6.heading {
-        background: #242529;
         margin-bottom: unset;
         padding-top: 20px;
         padding-left: 14px;
@@ -2733,7 +2723,6 @@ footer.footer.style-2.footer-main {
         margin-top: 30px;
     }
     section.tin-tuc-id h6.heading {
-        background: #242529;
         margin-bottom: unset;
         padding-top: 20px;
         padding-left: 14px;
@@ -2940,7 +2929,6 @@ footer.footer.style-2.footer-main {
         margin-top: 30px;
     }
     section.tin-tuc-id h6.heading {
-        background: #242529;
         margin-bottom: unset;
         padding-top: 20px;
         padding-left: 14px;
