@@ -413,7 +413,7 @@ export default function TinTucComponent() {
                                                     <div key={dateKey} className={`${styles2.timelineDateGroup}`}>
                                                         <div className={`${styles2.timelineDateDisplayFlex}`}>
                                                             <div className={`${styles2.timelineDateHeaderDate}`}>{dateKey}</div>
-                                                            <div className={`${styles2.timelineDateHeaderLine}`}>Tin nhanh quan trong</div>
+                                                            {/* <div className={`${styles2.timelineDateHeaderLine}`}>Tin nhanh quan trong</div> */}
                                                         </div>
                                                         {groupedByDate[dateKey].map((item) => (
                                                             <div className={`${styles2.timelineItem}`} key={item.id}>

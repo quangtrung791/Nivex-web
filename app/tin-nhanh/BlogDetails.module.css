@@ -51,7 +51,7 @@
     letter-spacing: 1.6px;
 }
 
-.timelineDateHeaderLine {
+/* .timelineDateHeaderLine {
     font-size: 14px;
     font-weight: 500;
     color: #fff;
@@ -64,7 +64,7 @@
     display: inline-block;
     margin-right: 5px;
     margin-bottom: -2px;
-  }
+} */
 .timelineItem {
     display: flex;
     gap: 20px;
