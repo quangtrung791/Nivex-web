@@ -68,7 +68,7 @@ export default function Footer2() {
                                     <Link href="/" className="logo">
                                         <img src="/assets/images/logo/Nivex_icon_bg.png" alt="" />
                                     </Link>
-                                    <h6 >Hãy liên hệ với chúng tôi</h6>
+                                    <p >Hãy liên hệ với chúng tôi</p>
                                     <ul className="list">
                                         <li>
                                             <p className="link-footer">+84 974 743 849</p>
@@ -87,7 +87,7 @@ export default function Footer2() {
                             <div className="col-xl-4 col-md-6">
                                 <div className="widget" style={{'marginLeft': '0%'}}>
                                     <div className="widget-link s1">
-                                        <h6 className="title">VỀ NIVEX</h6>
+                                        <p className="title">VỀ NIVEX</p>
                                         <ul>
                                             <li className="link-footer" style={{ 'fontWeight': 300 }}><Link href="/gioi-thieu-ve-nivex"  style={{ 'fontWeight': 300 }}>Giới thiệu</Link></li>
                                             <li className="link-footer" style={{ 'fontWeight': 300 }}><Link href="/huong-dan-su-dung-app-nivex"  style={{ 'fontWeight': 300 }}>Tải App</Link></li>
@@ -96,14 +96,14 @@ export default function Footer2() {
                                         </ul>
                                     </div>
                                     <div className="widget-link s2 custom-s2" >
-                                        <h6 className="title">KIẾN THỨC</h6>
+                                        <p className="title">KIẾN THỨC</p>
                                         <ul>
                                             <li className="link-footer" ><Link style={{ 'fontWeight': 300 }} href="/kien-thuc-tong-quan" >Tổng quan</Link></li>
                                             <li className="link-footer" ><Link style={{ 'fontWeight': 300 }} href="/thuat-ngu">Thuật ngữ</Link></li>
                                         </ul>
                                     </div>
                                     <div className="widget-link s3" >
-                                        <h6 className="title">HỖ TRỢ</h6>
+                                        <p className="title">HỖ TRỢ</p>
                                         <ul>
                                             <li className="link-footer" ><Link style={{ 'fontWeight': 300 }} href="/ai-copy-trade" >Tài khoản & Bảo mật</Link></li>
                                             <li className="link-footer" ><Link style={{ 'fontWeight': 300 }} href="/huong-dan-nap-tien">Nạp & Rút tiền</Link></li>
@@ -116,7 +116,7 @@ export default function Footer2() {
                             </div>
                             <div className="col-xl-4 col-md-12 footer-contact-container">
                                 <div className="footer-contact" >
-                                    <h5 style={{'fontWeight': '500'}}>Đăng ký nhận tin mới từ chúng tôi</h5>
+                                    <p style={{'fontWeight': '500'}}>Đăng ký nhận tin mới từ chúng tôi</p>
                                     <p className="link-footer" style={{'textTransform': 'unset', 'textAlign': 'justify', 'paddingRight': 0 }}>
                                         Chỉ với e-mail của mình, bạn có thể đăng ký nhận ngay tin tức mới nhất từ Nivex.
                                     </p>

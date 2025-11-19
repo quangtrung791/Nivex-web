@@ -1,6 +1,6 @@
 'use client'
 import styles from './courses.module.css'
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect, useMemo, useRef } from 'react'
 import CourseRegistrationModal from '@/components/CourseRegistrationModal'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://nivex.info'
@@ -16,6 +16,8 @@ export default function CoursesPage() {
   const [loading, setLoading] = useState(true)
   const [showRegistrationModal, setShowRegistrationModal] = useState(false)
   const [selectedCourse, setSelectedCourse] = useState(null)
+  const [highlightedCourseId, setHighlightedCourseId] = useState(null)
+  const highlightTimeoutRef = useRef(null)
 
   // Fetch courses from API
   const fetchCourses = async (filter = 'all', search = '') => {
@@ -26,7 +28,7 @@ export default function CoursesPage() {
       wp.searchParams.set('filter', filter);
       if (search.trim()) wp.searchParams.set('search', search.trim());
       wp.searchParams.set('page', '1');
-      wp.searchParams.set('per_page', '30');
+      wp.searchParams.set('per_page', '100');
   
       const res = await fetch(wp.toString(), { cache: 'no-store' });
       const json = await res.json();
@@ -109,6 +111,50 @@ export default function CoursesPage() {
     setShowRegistrationModal(false)
     setSelectedCourse(null)
   }
+
+  const handleSearchResultSelect = (courseId) => {
+    setSearchTerm('')
+    setSearchResults([])
+    setIsSearching(false)
+    setHighlightedCourseId(courseId)
+
+    if (highlightTimeoutRef.current) {
+      clearTimeout(highlightTimeoutRef.current)
+    }
+
+    highlightTimeoutRef.current = setTimeout(() => {
+      setHighlightedCourseId(null)
+    }, 2500)
+  }
+
+  useEffect(() => {
+    if (!highlightedCourseId) return
+
+    const headerOffset = 140
+
+    const scrollToCourse = () => {
+      const target = document.getElementById(`course-${highlightedCourseId}`)
+      if (!target) return
+
+      const rect = target.getBoundingClientRect()
+      const offsetTop = rect.top + window.scrollY - headerOffset
+      window.scrollTo({
+        top: offsetTop < 0 ? 0 : offsetTop,
+        behavior: 'smooth',
+      })
+    }
+
+    const timeoutId = setTimeout(scrollToCourse, 50)
+    return () => clearTimeout(timeoutId)
+  }, [highlightedCourseId, courses])
+
+  useEffect(() => {
+    return () => {
+      if (highlightTimeoutRef.current) {
+        clearTimeout(highlightTimeoutRef.current)
+      }
+    }
+  }, [])
 
   // bỏ tag HTML + cắt ngắn
   const toPlain = (html = '', limit = 100) =>
@@ -228,16 +274,9 @@ export default function CoursesPage() {
                                             <div 
                                             key={result.id} 
                                             className={styles.searchResultItem}
-                                            onClick={() => {
-                                                setSearchTerm('')
-                                                setSearchResults([])
-                                                setIsSearching(false)
-                                            }}
+                                            onClick={() => handleSearchResultSelect(result.id)}
                                             >
                                             <div className={styles.searchResultTitle}>{result.title}</div>
-                                                <div className={styles.searchResultMeta}>
-                                                  {(Array.isArray(result.category) ? result.category.join(', ') : result.category)}
-                                                </div>
                                             </div>
                                         ))}
                                         </>
@@ -319,7 +358,11 @@ export default function CoursesPage() {
             
             <div className={styles.coursesGrid}>
               {filteredCourses.map((course) => (
-                <div key={course.id} className={styles.courseCard}>
+                <div 
+                  key={course.id} 
+                  id={`course-${course.id}`} 
+                  className={`${styles.courseCard} ${highlightedCourseId === course.id ? styles.courseCardHighlight : ''}`}
+                >
                   <div className={styles.courseImage}>
                     <img src={course.image} alt={course.title} />
                     
