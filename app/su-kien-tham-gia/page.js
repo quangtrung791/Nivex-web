@@ -5,6 +5,9 @@ import SuKienAlt from "./JoinedEventComponent"
 export const metadata = {
     title: "Các sự kiện Nivex đã tham dự",
     description: "Các sự kiện lớn Nivex đã được mời đến tham dự.",
+    alternates: {
+        canonical: 'https://nivex.info/su-kien-tham-gia'
+    },
     robots: {
         index: true,
         follow: true,

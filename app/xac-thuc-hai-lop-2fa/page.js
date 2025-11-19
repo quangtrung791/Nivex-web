@@ -4,6 +4,9 @@ import TwoFactorAuthentication from './TwoFactorAuthentication'
 export const metadata = {
     title: 'Hướng dẫn xác thực hai lớp 2FA | Nivex Hub',
     description: 'Giúp tăng cường bảo mật tài khoản của bạn, tránh bị chặn SMS hoặc mất mã qua email do lỗi mạng..',
+    alternates: {
+        canonical: 'https://nivex.info/xac-thuc-hai-lop-2fa'
+    },
     robots: {
         index: true,
         follow: true,

@@ -4,6 +4,9 @@ import RegisterLoginGuide from "./RegisterLoginGuide"
 export const metadata = {
     title: 'Hướng dẫn đăng ký và đăng nhập - Nivex Hub',
     description: 'Hướng dẫn chi tiết cách tạo tài khoản và đăng nhập vào Nivex',
+    alternates: {
+        canonical: 'https://nivex.info/huong-dan-dang-ky-dang-nhap'
+    },
     robots: {
         index: true,
         follow: true,
