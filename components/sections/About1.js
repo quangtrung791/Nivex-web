@@ -28,7 +28,7 @@ export default function About1() {
                                 <p className="fs-14 decs text-white">
                                    <b>Nivex</b> tự hào góp mặt tại các hội nghị và sự kiện blockchain hàng đầu thế giới, kết nối với các nhà lãnh đạo ngành và mang về những kiến thức chuyên sâu độc quyền cho cộng đồng của mình.
                                 </p>
-                                <Link href="#" className="btn-action" style={{'padding': '13px 25px'}}>Xem thêm</Link>
+                                <Link href="/khoa-hoc" className="btn-action" style={{'padding': '13px 25px'}}>Xem thêm</Link>
                             </div>
                         </div>
 
@@ -44,7 +44,7 @@ export default function About1() {
                                 <p className="fs-14 decs text-white">
                                    <b>Nivex</b> tự hào góp mặt tại các hội nghị và sự kiện blockchain hàng đầu thế giới, kết nối với các nhà lãnh đạo ngành và mang về những kiến thức chuyên sâu độc quyền cho cộng đồng của mình.
                                 </p>
-                                <Link href="#" className="btn-action" style={{'padding': '13px 25px'}}>Xem thêm</Link>
+                                <Link href="/khoa-hoc" className="btn-action" style={{'padding': '13px 25px'}}>Xem thêm</Link>
                             </div>
                         </div>
                     </div>
@@ -56,28 +56,6 @@ export default function About1() {
                                  {/* <img className="img0-ai" src="https://learningchain.vn/wp-content/uploads/nivex/world_map.svg" ></img> */}
                                 
                                  <img className="img0-ai" src="https://learningchain.vn/wp-content/uploads/nivex/world.png" ></img>
-                                {/* <div className="swiper img-swiper">
-                                    <Swiper {...swiperOptions} className="swiper-wrapper">
-                                        <SwiperSlide>
-                                            <img className="img-main" src="/assets/images/layout/about-h1.png" alt="" />
-                                        </SwiperSlide>
-                                        <SwiperSlide>
-                                            <img className="img-main" src="/assets/images/layout/about-h1.png" alt="" />
-                                        </SwiperSlide>
-                                        <SwiperSlide>
-                                            <img className="img-main" src="/assets/images/layout/about-h1.png" alt="" />
-                                        </SwiperSlide>
-                                        <SwiperSlide>
-                                            <img className="img-main" src="/assets/images/layout/about-h1.png" alt="" />
-                                        </SwiperSlide>
-                                    </Swiper>
-                                    <div className="swiper-pagination" />
-                                </div> */}
-                                {/* <img className="icon icon-1" src="/assets/images/icon/icon-01.png" alt="" />
-                                <img className="icon icon-2" src="/assets/images/icon/icon-02.png" alt="" />
-                                <img className="icon icon-3" src="/assets/images/icon/icon-03.png" alt="" />
-                                <img className="icon icon-4" src="/assets/images/icon/icon-04.png" alt="" />
-                                <img className="icon icon-5" src="/assets/images/icon/icon-05.png" alt="" /> */}
                             </div>
                         </div>
                         <div className="col-xl-6 col-md-12 limit-width">
@@ -86,33 +64,7 @@ export default function About1() {
                                 <p className="fs-14 decs text-white">
                                    <b>Nivex</b> tự hào góp mặt tại các hội nghị và sự kiện blockchain hàng đầu thế giới, kết nối với các nhà lãnh đạo ngành và mang về những kiến thức chuyên sâu độc quyền cho cộng đồng của mình.
                                 </p>
-                                {/* <ul className="list">
-                                    <li>
-                                        <img className="ai-icon-small" src="/assets/images/icon/coin_ico.svg" />
-                                        <div>
-                                            <h6 className="title" style={{'marginBottom': '0'}}>
-                                                <span className="icon-check" />
-                                                Spot AI
-                                            </h6>
-                                            <p className="fs-14 text">
-                                                Hỗ trợ nhiều cặp tiền và công cụ quản trị rủi ro linh hoạt, giúp giữ kỷ luật khi thị trường biến động.
-                                            </p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <img className="ai-icon-small" src="/assets/images/icon/brain_ico.svg" />
-                                        <div>
-                                            <h6 className=" title" style={{'marginBottom': '0'}}>
-                                                <span className="icon-check" />
-                                                Futures AI 
-                                            </h6>
-                                            <p className="fs-14 text">
-                                                Giao dịch hợp đồng có <b>đòn bẩy linh hoạt</b>, theo dõi ký quỹ và cảnh báo thời gian thực; AI hỗ trợ đọc tín hiệu để <b>kiểm soát rủi ro</b> tốt hơn.
-                                            </p>
-                                        </div>
-                                    </li>
-                                </ul> */}
-                                <Link href="#" className="btn-action" style={{'padding': '13px 25px'}}>Xem thêm</Link>
+                                <Link href="/su-kien-tham-gia" className="btn-action" style={{'padding': '13px 25px'}}>Xem thêm</Link>
                             </div>
                         </div>
                     </div>

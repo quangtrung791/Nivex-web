@@ -18,8 +18,8 @@ export const metadata = {
     //metadataBase giúp Next.js tạo URL tuyệt đối cho các thẻ/meta liên quan (OG images, canonical...)
     metadataBase: new URL('https://nivex.info'),
 
-    title: 'Nivex Hub',
-    description: 'Nivex – nền tảng giao dịch crypto bằng trí tuệ nhân tạo, cung cấp spot và futures an toàn, nhanh chóng, dành cho cộng đồng người dùng Việt.',
+    title: 'NIVEX - AI Copy Trading Cryto an toàn & Future thế hệ mới',
+    description: 'Nivex là nền tảng AI copy trading crypto an toàn, nhanh chóng. Tự động hóa giao dịch Spot & Futures bằng AI tiên tiến. Dành cho cộng đồng người dùng Việt',
     alternates: {
         canonical: 'https://nivex.info'
     },
@@ -36,7 +36,7 @@ export const metadata = {
         },
     },
     openGraph: {
-        title: "Nivex Hub",
+        title: "Nivex - AI Copy Trading Crypto an toàn & Future thế hệ mới",
         description: "Nivex – nền tảng giao dịch crypto bằng trí tuệ nhân tạo, cung cấp spot và futures an toàn, nhanh chóng, dành cho cộng đồng người dùng Việt.",
         url: "https://nivex.info",
         siteName: "Nivex",
