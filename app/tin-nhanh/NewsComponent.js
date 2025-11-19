@@ -32,11 +32,16 @@ export default function TinTucComponent() {
     const [newsFlash, setNewsFlash] = useState([]); // Dữ liệu cho tab Tin nhanh
     // const [mostViewedNews, setMostViewedNews] = useState([]);
     const [searchQuery, setSearchQuery] = useState("");
+    const [searchResults, setSearchResults] = useState([]);
+    const [isSearching, setIsSearching] = useState(false);
+    const [highlightedNewsId, setHighlightedNewsId] = useState(null);
     const [hero, setHero] = useState(null);
 
     const [visibleCount, setVisibleCount] = useState(3);
 
     const titleRef = useRef(null);
+    const highlightTimeoutRef = useRef(null);
+    const scrollTimeoutRef = useRef(null);
     // const [titleLines, setTitleLines] = useState(1);
     const [titleTop, setTitleTop] = useState(-10);
 
@@ -86,11 +91,6 @@ export default function TinTucComponent() {
             .then(data => setCoinData(data));
     }, []);
 
-    // Hàm xử lý sau khi submit form search
-    const handleSearch = (e) => {
-        e.preventDefault();
-    };
-
     // Helper: chuẩn hóa chuỗi để so sánh (lowercase + bỏ dấu)
     const normalizeString = (str = "") => {
         return String(str)
@@ -98,6 +98,60 @@ export default function TinTucComponent() {
             .normalize('NFD')                // tách ký tự và dấu
             .replace(/[\u0300-\u036f]/g, '') // bỏ dấu
             .trim();
+    };
+
+    const stripHtml = (value = "") => {
+        if (!value) return "";
+        return value.replace(/<[^>]+>/g, " ");
+    };
+
+    // Hàm xử lý sau khi submit form search
+    const handleSearch = (e) => {
+        e.preventDefault();
+    };
+
+    const filterNewsFlash = (term, source = newsFlash) => {
+        if (!term.trim()) return [];
+        const normalizedTerm = normalizeString(term);
+        return source.filter((item) => {
+            const title = normalizeString(item.title || "");
+            const content = normalizeString(stripHtml(item.content || ""));
+            return title.includes(normalizedTerm) || content.includes(normalizedTerm);
+        });
+    };
+
+    const handleSearchInput = (value) => {
+        setSearchQuery(value);
+
+        if (!value.trim()) {
+            setSearchResults([]);
+            setIsSearching(false);
+            return;
+        }
+
+        setIsSearching(true);
+        setSearchResults(filterNewsFlash(value));
+    };
+
+    const handleSearchResultSelect = (item) => {
+        if (!item) return;
+
+        if (activeTab !== "tin-nhanh") {
+            setActiveTab("tin-nhanh");
+            setSelectedTab("tin-nhanh");
+        }
+
+        setSearchQuery("");
+        setSearchResults([]);
+        setIsSearching(false);
+        setHighlightedNewsId(item.id);
+
+        if (highlightTimeoutRef.current) {
+            clearTimeout(highlightTimeoutRef.current);
+        }
+        highlightTimeoutRef.current = setTimeout(() => {
+            setHighlightedNewsId(null);
+        }, 2500);
     };
 
     useEffect(() => {
@@ -172,6 +226,47 @@ export default function TinTucComponent() {
             });
     }, []);
 
+    useEffect(() => {
+        if (!searchQuery.trim()) return;
+        setSearchResults(filterNewsFlash(searchQuery));
+    }, [newsFlash]);
+
+    useEffect(() => {
+        if (!highlightedNewsId) return;
+
+        const scrollToHighlighted = () => {
+            const target = document.getElementById(`news-flash-${highlightedNewsId}`);
+            if (!target) return;
+
+            const headerOffset = 150;
+            const rect = target.getBoundingClientRect();
+            const offsetTop = rect.top + window.scrollY - headerOffset;
+            window.scrollTo({
+                top: offsetTop < 0 ? 0 : offsetTop,
+                behavior: "smooth",
+            });
+        };
+
+        scrollTimeoutRef.current = setTimeout(scrollToHighlighted, 80);
+
+        return () => {
+            if (scrollTimeoutRef.current) {
+                clearTimeout(scrollTimeoutRef.current);
+            }
+        };
+    }, [highlightedNewsId, newsFlash]);
+
+    useEffect(() => {
+        return () => {
+            if (highlightTimeoutRef.current) {
+                clearTimeout(highlightTimeoutRef.current);
+            }
+            if (scrollTimeoutRef.current) {
+                clearTimeout(scrollTimeoutRef.current);
+            }
+        };
+    }, []);
+
 
     // useEffect(() => {
     //     const url = new URL(`${WP_BASE}/news`);
@@ -221,19 +316,52 @@ export default function TinTucComponent() {
                 <div className={`${styles2.newsHeaderContainer}`}>
                     <h1 className={`${styles2.newsTitle}`}>Tin tức</h1>
                     <form className={`${styles2.newsSearchForm}`} onSubmit={handleSearch}>
-                        <input
-                            type="text"
-                            placeholder="Tìm kiếm"
-                            className={`${styles2.newsSearchInput}`}
-                            value={searchQuery}
-                            onChange={(e) => setSearchQuery(e.target.value)}
-                        />
-                        <button type="submit" className={`${styles2.newsSearchBtn}`}>
-                            <svg width="20" height="20" viewBox="0 0 24 24">
-                                <circle cx="11" cy="11" r="8" stroke="#222" strokeWidth="2" fill="none" />
-                                <line x1="17" y1="17" x2="22" y2="22" stroke="#222" strokeWidth="2" />
-                            </svg>
-                        </button>
+                        <div className={styles2.newsSearchBox}>
+                            <input
+                                type="text"
+                                placeholder="Tìm kiếm"
+                                className={`${styles2.newsSearchInput}`}
+                                value={searchQuery}
+                                onChange={(e) => handleSearchInput(e.target.value)}
+                                aria-label="Tìm kiếm tin nhanh"
+                            />
+                            <button type="submit" className={`${styles2.newsSearchBtn}`}>
+                                <svg width="20" height="20" viewBox="0 0 24 24">
+                                    <circle cx="11" cy="11" r="8" stroke="#222" strokeWidth="2" fill="none" />
+                                    <line x1="17" y1="17" x2="22" y2="22" stroke="#222" strokeWidth="2" />
+                                </svg>
+                            </button>
+
+                            {isSearching && (
+                                <div className={styles2.newsSearchResults}>
+                                    {searchResults.length > 0 ? (
+                                        <>
+                                            <div className={styles2.newsSearchResultsHeader}>
+                                                Kết quả tìm kiếm ({searchResults.length})
+                                            </div>
+                                            {searchResults.map((item) => (
+                                                <div
+                                                    key={item.id}
+                                                    className={styles2.newsSearchResultItem}
+                                                    onClick={() => handleSearchResultSelect(item)}
+                                                >
+                                                    <div className={styles2.newsSearchResultTitle}>{item.title}</div>
+                                                    <div className={styles2.newsSearchResultTime}>
+                                                        {item.time_upload
+                                                            ? new Date(item.time_upload).toLocaleString('vi-VN', { hour12: false })
+                                                            : ''}
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </>
+                                    ) : (
+                                        <div className={styles2.newsSearchNoResults}>
+                                            Không tìm thấy tin tức cho "{searchQuery}"
+                                        </div>
+                                    )}
+                                </div>
+                            )}
+                        </div>
                     </form>
                 </div>
             </section>
@@ -416,7 +544,11 @@ export default function TinTucComponent() {
                                                             {/* <div className={`${styles2.timelineDateHeaderLine}`}>Tin nhanh quan trong</div> */}
                                                         </div>
                                                         {groupedByDate[dateKey].map((item) => (
-                                                            <div className={`${styles2.timelineItem}`} key={item.id}>
+                                                            <div
+                                                                className={`${styles2.timelineItem} ${highlightedNewsId === item.id ? styles2.timelineItemHighlight : ""}`}
+                                                                key={item.id}
+                                                                id={`news-flash-${item.id}`}
+                                                            >
                                                                 <div className={`${styles2.timelineTime}`}>
                                                                     {item.time_upload 
                                                                         ? new Date(item.time_upload).toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit', hour12: false })
