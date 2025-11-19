@@ -376,7 +376,7 @@ export default function CoursesPage() {
                       <div className={styles.courseDate}><span className={styles.iconCourseDateTime}></span> {course.date}</div>
                     </div>
                     
-                    <h3 className={styles.courseTitle}>{course.title}</h3>
+                    <p className={styles.courseTitle}>{course.title}</p>
                     <div className={styles.courseCardContent}>{course.content}</div>
 
                     <div className={styles.courseCardLastChild}>
