@@ -36,17 +36,17 @@ export default function Banner1() {
                     <div className="row">
                         <div className="col-xl-6 col-md-12">
                             <div className="banner__content">
-                                <h1 className="title_nivex_hub gradient-text">Nivex HUB</p>
-                                <h2 className="title" style={{'textTransform': 'uppercase', 'letterSpacing' : '-0.75px'}}>
+                                <div className="title_nivex_hub gradient-text">Nivex HUB</div>
+                                <h1 className="title" style={{'textTransform': 'uppercase', 'letterSpacing' : '-0.75px'}}>
                                         <span className="block">Nền tảng tri thức cho </span>
                                         <span className="block"> Kỷ Nguyên <span className="gradient-text">Giao Dịch AI</span> </span>
                                         {/* <span className="block"> tiền mã hóa </span> */}
-                                </h2>
+                                </h1>
                                 <p className="fs-14 desc main-description">
                                     Kiến thức dễ hiểu cho người mới, tin tức chọn lọc mỗi ngày và lớp học trực tuyến hàng tuần.
                                     <br></br>Cùng khám phá Nivex & AI Copy Trade – nơi bạn không chỉ nhận công cụ, mà còn được trang bị nền tảng kiến thức và sự tự tin để đưa ra những quyết định giao dịch thông minh trong kỷ nguyên số.
                                 </p>
-                                <Link href="#" className="btn-action" id="button-master-homepg" style={{'borderRadius':'0px'}}><span >Xem thêm</span></Link>
+                                <Link href="/kien-thuc-tong-quan" className="btn-action" id="button-master-homepg" style={{'borderRadius':'0px'}}><span >Xem thêm</span></Link>
                                 {/* <div className="partner">
                                     <h6>Our Partners</h6>
                                     <div className="partner__list">

@@ -17,7 +17,7 @@ export default function About1() {
         <>
             <section className="about">
                 <div className="about-first-title-container">
-                    <h3 className="about-first-title">KHÁM PHÁ <span className="gradient-text">HỆ SINH THÁI HỌC TẬP</span> CỦA BẠN</h3>
+                    <h2 className="about-first-title">KHÁM PHÁ <span className="gradient-text">HỆ SINH THÁI HỌC TẬP</span> CỦA BẠN</h2>
                 </div>
                 <div className="container ai-copy-trade">
                     {/* Các khóa học chuyên sâu */}
