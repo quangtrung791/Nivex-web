@@ -36,7 +36,7 @@ export default function Banner1() {
                     <div className="row">
                         <div className="col-xl-6 col-md-12">
                             <div className="banner__content">
-                                <h2 className="title_nivex_hub gradient-text">Nivex HUB</h2>
+                                <h1 className="title_nivex_hub gradient-text">Nivex HUB</p>
                                 <h2 className="title" style={{'textTransform': 'uppercase', 'letterSpacing' : '-0.75px'}}>
                                         <span className="block">Nền tảng tri thức cho </span>
                                         <span className="block"> Kỷ Nguyên <span className="gradient-text">Giao Dịch AI</span> </span>
