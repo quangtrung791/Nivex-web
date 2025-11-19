@@ -50,7 +50,10 @@ export async function GET() {
     const items = await fetchAllKnowledge()
 
     const urls = items.map((item) => {
-      const lastmod = item.updated_at || item.created_at || new Date().toISOString()
+    const rawDate = item.updated_at || item.created_at
+    const lastmod = rawDate
+        ? new Date(rawDate).toISOString() // -> 2025-11-10T12:35:53.000Z
+        : new Date().toISOString()
       return `  <url>
     <loc>${BASE_URL}/chi-tiet-kien-thuc/${item.slug}</loc>
     <lastmod>${lastmod}</lastmod>
