@@ -1,4 +1,4 @@
-// app/joined-events-sitemap.xml/route.ts
+// app/news-sitemap.xml/route.ts
 import { NextResponse } from 'next/server'
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://nivex.info'
@@ -7,16 +7,17 @@ const WP_BASE = 'https://nivexhub.learningchain.vn/wp-json/nivex/v1'
 export const runtime = 'nodejs'
 export const revalidate = 6 * 60 * 60 // Cache 6 giờ
 
-async function fetchAllJoinedEvents() {
+async function fetchAllNews() {
   try {
     const allItems: any[] = []
     let page = 1
     let hasMore = true
 
     while (hasMore) {
-      const url = new URL(`${WP_BASE}/joined-events`)
+      const url = new URL(`${WP_BASE}/news_flash`)
+      url.searchParams.set('status', 'active')
       url.searchParams.set('page', page.toString())
-      url.searchParams.set('per_page', '100')
+      url.searchParams.set('per_page', '200')
 
       const res = await fetch(url.toString(), { next: { revalidate: 3600 } })
       const json = await res.json()
@@ -30,7 +31,7 @@ async function fetchAllJoinedEvents() {
       allItems.push(...items)
 
       // Kiểm tra xem còn trang tiếp theo không
-      if (json.data.length < 100) {
+      if (!json.meta || !json.meta.total_pages || page >= json.meta.total_pages) {
         hasMore = false
       } else {
         page++
@@ -39,24 +40,24 @@ async function fetchAllJoinedEvents() {
 
     return allItems
   } catch (error) {
-    console.error('Error fetching joined events:', error)
+    console.error('Error fetching news:', error)
     return []
   }
 }
 
 export async function GET() {
   try {
-    const items = await fetchAllJoinedEvents()
+    const items = await fetchAllNews()
 
     const urls = items.map((item) => {
-      const rawDate = item.updated_at || item.created_at
-      const lastmod = rawDate
-        ? new Date(rawDate).toISOString() // -> 2025-11-10T12:35:53.000Z
-        : new Date().toISOString()
+    const rawDate = item.updated_at || item.created_at
+    const lastmod = rawDate
+      ? new Date(rawDate).toISOString() // -> 2025-11-10T12:35:53.000Z
+      : new Date().toISOString()
       return `  <url>
-    <loc>${BASE_URL}/su-kien-tham-gia/${item.slug}</loc>
+    <loc>${BASE_URL}/tin-tuc/${item.slug}</loc>
     <lastmod>${lastmod}</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>`
     }).join('\n')
@@ -73,7 +74,7 @@ ${urls}
       },
     })
   } catch (error) {
-    console.error('Error generating joined-events-sitemap.xml:', error)
+    console.error('Error generating news-sitemap.xml:', error)
     return new NextResponse('Error generating sitemap', { status: 500 })
   }
 }

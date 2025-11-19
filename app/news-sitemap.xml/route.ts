@@ -17,7 +17,7 @@ async function fetchAllNews() {
       const url = new URL(`${WP_BASE}/news`)
       url.searchParams.set('status', 'active')
       url.searchParams.set('page', page.toString())
-      url.searchParams.set('per_page', '100')
+      url.searchParams.set('per_page', '200')
 
       const res = await fetch(url.toString(), { next: { revalidate: 3600 } })
       const json = await res.json()
@@ -50,12 +50,15 @@ export async function GET() {
     const items = await fetchAllNews()
 
     const urls = items.map((item) => {
-      const lastmod = item.updated_at || item.created_at || new Date().toISOString()
+    const rawDate = item.updated_at || item.created_at
+    const lastmod = rawDate
+      ? new Date(rawDate).toISOString() // -> 2025-11-10T12:35:53.000Z
+      : new Date().toISOString()
       return `  <url>
     <loc>${BASE_URL}/tin-tuc/${item.slug}</loc>
     <lastmod>${lastmod}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
   </url>`
     }).join('\n')
 

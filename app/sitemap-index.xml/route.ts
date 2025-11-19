@@ -17,6 +17,7 @@ export async function GET() {
       `${BASE_URL}/news-sitemap.xml`,
       `${BASE_URL}/events-sitemap.xml`,
       `${BASE_URL}/joined-events-sitemap.xml`,
+      `${BASE_URL}/news-flash-sitemap.xml`,
     ]
 
     const sitemapEntries = sitemaps.map((url) => {
