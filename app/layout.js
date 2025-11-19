@@ -20,7 +20,9 @@ export const metadata = {
 
     title: 'Nivex Hub',
     description: 'Nivex – nền tảng giao dịch crypto bằng trí tuệ nhân tạo, cung cấp spot và futures an toàn, nhanh chóng, dành cho cộng đồng người dùng Việt.',
-    
+    alternates: {
+        canonical: 'https://nivex.info'
+    },
     // Thêm index, follow cho trực quan...
     robots: {
         index: true,
