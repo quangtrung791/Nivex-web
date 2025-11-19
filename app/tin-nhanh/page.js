@@ -4,6 +4,10 @@ import TinTucComponent from "./NewsComponent"
 export const metadata = {
     title: "Danh sách tin nhanh | Nivex",
     description: "Bảng tin Nivex luôn cập nhật các tin nhanh mới nhất về thị trường Blockchain, AI, Crypto.",
+    keywords: "tin nhanh, tin tức, tin tuc, tin nhanh nivex, tin tuc nivex, tin nhanh nivex hub, tin tuc nivex hub",
+    alternates: {
+        canonical: "https://nivex.info/tin-nhanh"
+    },
     robots: {
         index: true,
         follow: true,
@@ -17,8 +21,8 @@ export const metadata = {
     },
     openGraph: {
         title: "Danh sách tin nhanh | Nivex",
-        description: "Bảng tin Nivex luôn cập nhật các tin tức mới nhất về thị trường Blockchain, AI, Crypto.",
-        url: "https://nivex.info/tin-tuc",
+        description: "Bảng tin Nivex luôn cập nhật các tin nhanh mới nhất về thị trường Blockchain, AI, Crypto.",
+        url: "https://nivex.info/tin-nhanh",
         siteName: "Nivex",
         images: [
             {

@@ -4,6 +4,9 @@ import NguyenLyHoatDongCopyTrade from './NguyenLyCopyTradeComponent'
 export const metadata = {
   title: 'Nguyên lý hoạt động Copy Trade | Nivex Hub',
   description: 'Chiến lược AI cấp tổ chức phân tích thị trường như thế nào.',
+  alternates: {
+    canonical: 'https://nivex.info/nguyen-ly-hoat-dong-copy-trade/'
+  },
   robots: {
         index: true,
         follow: true,

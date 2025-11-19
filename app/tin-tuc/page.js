@@ -4,6 +4,10 @@ import TinTucComponent from "./NewsComponent"
 export const metadata = {
     title: "Danh sách tin tức | Nivex",
     description: "Bảng tin Nivex luôn cập nhật các tin tức mới nhất về thị trường Blockchain, AI, Crypto.",
+    keywords: "tin tức, tin tuc, tin tuc nivex, tin tuc nivex hub",
+    alternates: {
+        canonical: "https://nivex.info/tin-tuc"
+    },
     robots: {
         index: true,
         follow: true,

@@ -21,7 +21,7 @@ export const metadata = {
     openGraph: {
         title: "Kiến thức tổng quan | Nivex Hub",
         description: "Trang bị nền tảng cơ bản để tự tin bước vào thế giới blockchain và tài sản số.",
-        url: "https://nivex.info/kien-thuc-tong-quan",
+        url: "https://nivex.info/kien-thuc-tong-quan/",
         siteName: "Nivex",
         images: [
             {
