@@ -20,7 +20,9 @@ export const metadata = {
 
     title: 'NIVEX HUB - Nền tảng giao dịch tích hợp AI & Copytrade thông minh',
     description: 'NIVEX HUB là nền tảng giao dịch tích hợp Công cụ AI giúp giao dịch thông minh, an toàn, hỗ trợ tối ưu cho người dùng toàn cầu.',
-    
+    alternates: {
+        canonical: 'https://nivex.info',
+    },
     // Thêm index, follow cho trực quan...
     robots: {
         index: true,
