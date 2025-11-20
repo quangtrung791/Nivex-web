@@ -4,6 +4,9 @@ import DepositGuide from './DepositGuide'
 export const metadata = {
     title: 'Hướng dẫn nạp tiền Nivex | Nivex Hub',
     description: 'Hướng dẫn chi tiết cách nạp tiền vào tài khoản Nivex một cách nhanh chóng và an toàn. Xử lý các vấn đề khi nạp tiền chưa về.',
+    alternates: {
+        canonical: 'https://nivex.info/huong-dan-nap-tien'
+    },
     robots: {
         index: true,
         follow: true,

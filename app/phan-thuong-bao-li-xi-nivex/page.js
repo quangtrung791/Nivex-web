@@ -4,6 +4,9 @@ import PhanThuongBaoLiXiNivex from './PhanThuongBaoLiXiNivexComponent'
 export const metadata = {
   title: 'Phần thưởng Bao lì xì Nivex | Nivex Hub',
   description: 'Phần thưởng Bao lì xì Nivex tại Nivex Hub mang đến cơ hội nhận những phần quà hấp dẫn, khuyến khích người dùng tham gia và trải nghiệm các dịch vụ thú vị trong không gian sáng tạo của Nivex.',
+  alternates: {
+    canonical: 'https://nivex.info/phan-thuong-bao-li-xi-nivex'
+  },
   robots: {
         index: true,
         follow: true,

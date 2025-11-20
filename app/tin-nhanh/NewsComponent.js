@@ -16,67 +16,72 @@ const COINS = [
     // { id: "shiba-inu", symbol: "SHIB", name: "Shiba Inu" },
 ];
 const TABS = [
-    { label: "Tin chính", value: "all" }
+    { label: "Tin nhanh", value: "tin-nhanh" }
 ];
 
 const WP_BASE = 'https://nivexhub.learningchain.vn/wp-json/nivex/v1';
 
 export default function TinTucComponent() {
     const [coinData, setCoinData] = useState([]);
-    const [activeTab, setActiveTab] = useState("all");
+    const [activeTab, setActiveTab] = useState("tin-nhanh");
     
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [selectedTab, setSelectedTab] = useState(TABS[0].value);
     const [categories, setCategories] = useState([]);
     const [news, setNews] = useState([]);
     const [newsFlash, setNewsFlash] = useState([]); // Dữ liệu cho tab Tin nhanh
-    const [mostViewedNews, setMostViewedNews] = useState([]);
+    // const [mostViewedNews, setMostViewedNews] = useState([]);
     const [searchQuery, setSearchQuery] = useState("");
+    const [searchResults, setSearchResults] = useState([]);
+    const [isSearching, setIsSearching] = useState(false);
+    const [highlightedNewsId, setHighlightedNewsId] = useState(null);
     const [hero, setHero] = useState(null);
 
     const [visibleCount, setVisibleCount] = useState(3);
 
     const titleRef = useRef(null);
+    const highlightTimeoutRef = useRef(null);
+    const scrollTimeoutRef = useRef(null);
     // const [titleLines, setTitleLines] = useState(1);
     const [titleTop, setTitleTop] = useState(-10);
 
+    // useEffect(() => {
+    //     if (titleRef.current) {
+    //         const lineHeight = parseFloat(getComputedStyle(titleRef.current).lineHeight);
+    //         const height = titleRef.current.offsetHeight;
+    //         const lines = Math.round(height / lineHeight);
+    //         // setTitleLines(lines);
+
+    //         const width = window.innerWidth;
+    //         if (width >= 1440 && width < 1920) {
+    //             setTitleTop(lines === 1 ? 20 : -10);
+    //         } else if (width >= 1920) {
+    //             setTitleTop(lines === 1 ? 30 : -10);
+    //         } else if (width <= 600) {
+    //             setTitleTop(lines === 1 ? 30 : -80);
+    //         }
+    //         else {
+    //             setTitleTop(-10);
+    //         }
+    //     }
+    // }, [hero?.title]);
+
+    // useEffect(() => {
+    //     function handleResize() {
+    //         if (window.innerWidth >= 900) {
+    //             setVisibleCount(3);
+    //         } else {
+    //             setVisibleCount(4);
+    //         }
+    //     }
+    //     handleResize(); // Gọi khi mount
+    //     window.addEventListener('resize', handleResize);
+    //     return () => window.removeEventListener('resize', handleResize);
+    // }, []);
+
+
     useEffect(() => {
-        if (titleRef.current) {
-            const lineHeight = parseFloat(getComputedStyle(titleRef.current).lineHeight);
-            const height = titleRef.current.offsetHeight;
-            const lines = Math.round(height / lineHeight);
-            // setTitleLines(lines);
-
-            const width = window.innerWidth;
-            if (width >= 1440 && width < 1920) {
-                setTitleTop(lines === 1 ? 20 : -10);
-            } else if (width >= 1920) {
-                setTitleTop(lines === 1 ? 30 : -10);
-            } else if (width <= 600) {
-                setTitleTop(lines === 1 ? 30 : -80);
-            }
-            else {
-                setTitleTop(-10);
-            }
-        }
-    }, [hero?.title]);
-
-    useEffect(() => {
-        function handleResize() {
-            if (window.innerWidth >= 900) {
-                setVisibleCount(3);
-            } else {
-                setVisibleCount(4);
-            }
-        }
-        handleResize(); // Gọi khi mount
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
-
-
-    useEffect(() => {
-        document.title = "Tin tức"
+        document.title = "Tin nhanh"
     }, []);
     useEffect(() => {
         fetch(
@@ -85,11 +90,6 @@ export default function TinTucComponent() {
             .then(res => res.json())
             .then(data => setCoinData(data));
     }, []);
-
-    // Hàm xử lý sau khi submit form search
-    const handleSearch = (e) => {
-        e.preventDefault();
-    };
 
     // Helper: chuẩn hóa chuỗi để so sánh (lowercase + bỏ dấu)
     const normalizeString = (str = "") => {
@@ -100,93 +100,188 @@ export default function TinTucComponent() {
             .trim();
     };
 
+    const stripHtml = (value = "") => {
+        if (!value) return "";
+        return value.replace(/<[^>]+>/g, " ");
+    };
+
+    // Hàm xử lý sau khi submit form search
+    const handleSearch = (e) => {
+        e.preventDefault();
+    };
+
+    const filterNewsFlash = (term, source = newsFlash) => {
+        if (!term.trim()) return [];
+        const normalizedTerm = normalizeString(term);
+        return source.filter((item) => {
+            const title = normalizeString(item.title || "");
+            const content = normalizeString(stripHtml(item.content || ""));
+            return title.includes(normalizedTerm) || content.includes(normalizedTerm);
+        });
+    };
+
+    const handleSearchInput = (value) => {
+        setSearchQuery(value);
+
+        if (!value.trim()) {
+            setSearchResults([]);
+            setIsSearching(false);
+            return;
+        }
+
+        setIsSearching(true);
+        setSearchResults(filterNewsFlash(value));
+    };
+
+    const handleSearchResultSelect = (item) => {
+        if (!item) return;
+
+        if (activeTab !== "tin-nhanh") {
+            setActiveTab("tin-nhanh");
+            setSelectedTab("tin-nhanh");
+        }
+
+        setSearchQuery("");
+        setSearchResults([]);
+        setIsSearching(false);
+        setHighlightedNewsId(item.id);
+
+        if (highlightTimeoutRef.current) {
+            clearTimeout(highlightTimeoutRef.current);
+        }
+        highlightTimeoutRef.current = setTimeout(() => {
+            setHighlightedNewsId(null);
+        }, 2500);
+    };
+
     useEffect(() => {
         // Chỉ set 2 tabs: Tin chính và Tin nhanh
         setCategories(TABS);
       }, []);
       
 
-    useEffect(() => {
-        const url = new URL(`${WP_BASE}/news`);
-        url.searchParams.set('status', 'active');
-        url.searchParams.set('page', '1');
-        url.searchParams.set('per_page', '20');
-
-        fetch(url.toString(), { cache: 'no-store' })
-            .then(res => res.json())
-            .then(json => {
-            const arr = Array.isArray(json?.data) ? json.data : [];
-            const mapped = arr.map(n => ({
-                id: n.id,
-                slug: n.slug,
-                title: n.title,
-                category_id: n.category_id ?? null,
-                time_upload: n.time_upload,
-                created_at: n.created_at,
-                updated_at: n.updated_at,
-                thumbnail_url: n.thumbnail_url || 'https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp',
-                is_featured: n.is_featured,
-                is_hot: n.is_hot || 0,
-            }));
-
-            setNews(mapped.slice(1)); 
-
-            const featured = mapped
-                .filter(n => n.is_featured);
-                // .sort((a,b) => new Date(b.time_upload || b.created_at) - new Date(a.time_upload || a.created_at));
-            setHero(featured[0] || mapped[0]);
-            
-            })
-            .catch(() => {
-                setNews([]);
-                setHero(null);
-            });
-    }, []);
-
-    // Fetch dữ liệu news_flash cho tab Tin nhanh
     // useEffect(() => {
-    //     const url = new URL(`${WP_BASE}/news_flash`);
+    //     const url = new URL(`${WP_BASE}/news`);
     //     url.searchParams.set('status', 'active');
     //     url.searchParams.set('page', '1');
-    //     url.searchParams.set('per_page', '35');
+    //     url.searchParams.set('per_page', '20');
 
     //     fetch(url.toString(), { cache: 'no-store' })
     //         .then(res => res.json())
     //         .then(json => {
-    //             const arr = Array.isArray(json?.data) ? json.data : [];
-    //             const mapped = arr.map(n => ({
-    //                 id: n.id,
-    //                 slug: n.slug,
-    //                 title: n.title,
-    //                 content: n.content,
-    //                 time_upload: n.time_upload,
-    //                 created_at: n.created_at,
-    //                 updated_at: n.updated_at,
-    //                 thumbnail_url: n.thumbnail_url,
-    //                 is_hot: n.is_hot || 0,
-    //             }));
-    //             setNewsFlash(mapped);
+    //         const arr = Array.isArray(json?.data) ? json.data : [];
+    //         const mapped = arr.map(n => ({
+    //             id: n.id,
+    //             slug: n.slug,
+    //             title: n.title,
+    //             category_id: n.category_id ?? null,
+    //             time_upload: n.time_upload,
+    //             created_at: n.created_at,
+    //             updated_at: n.updated_at,
+    //             thumbnail_url: n.thumbnail_url || 'https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp',
+    //             is_featured: n.is_featured,
+    //             is_hot: n.is_hot || 0,
+    //         }));
+
+    //         setNews(mapped.slice(1)); 
+
+    //         const featured = mapped
+    //             .filter(n => n.is_featured);
+    //             // .sort((a,b) => new Date(b.time_upload || b.created_at) - new Date(a.time_upload || a.created_at));
+    //         setHero(featured[0] || mapped[0]);
+            
     //         })
     //         .catch(() => {
-    //             setNewsFlash([]);
+    //             setNews([]);
+    //             setHero(null);
     //         });
     // }, []);
 
-
+    // Fetch dữ liệu news_flash cho tab Tin nhanh
     useEffect(() => {
-        const url = new URL(`${WP_BASE}/news`);
+        const url = new URL(`${WP_BASE}/news_flash`);
         url.searchParams.set('status', 'active');
         url.searchParams.set('page', '1');
-        url.searchParams.set('per_page', '10');
-        url.searchParams.set('sort', 'view');
+        url.searchParams.set('per_page', '35');
 
         fetch(url.toString(), { cache: 'no-store' })
             .then(res => res.json())
             .then(json => {
-            setMostViewedNews(Array.isArray(json?.data) ? json.data : []);
+                const arr = Array.isArray(json?.data) ? json.data : [];
+                const mapped = arr.map(n => ({
+                    id: n.id,
+                    slug: n.slug,
+                    title: n.title,
+                    content: n.content,
+                    time_upload: n.time_upload,
+                    created_at: n.created_at,
+                    updated_at: n.updated_at,
+                    thumbnail_url: n.thumbnail_url,
+                    is_hot: n.is_hot || 0,
+                }));
+                setNewsFlash(mapped);
             })
-            .catch(() => setMostViewedNews([]));
+            .catch(() => {
+                setNewsFlash([]);
+            });
     }, []);
+
+    useEffect(() => {
+        if (!searchQuery.trim()) return;
+        setSearchResults(filterNewsFlash(searchQuery));
+    }, [newsFlash]);
+
+    useEffect(() => {
+        if (!highlightedNewsId) return;
+
+        const scrollToHighlighted = () => {
+            const target = document.getElementById(`news-flash-${highlightedNewsId}`);
+            if (!target) return;
+
+            const headerOffset = 150;
+            const rect = target.getBoundingClientRect();
+            const offsetTop = rect.top + window.scrollY - headerOffset;
+            window.scrollTo({
+                top: offsetTop < 0 ? 0 : offsetTop,
+                behavior: "smooth",
+            });
+        };
+
+        scrollTimeoutRef.current = setTimeout(scrollToHighlighted, 80);
+
+        return () => {
+            if (scrollTimeoutRef.current) {
+                clearTimeout(scrollTimeoutRef.current);
+            }
+        };
+    }, [highlightedNewsId, newsFlash]);
+
+    useEffect(() => {
+        return () => {
+            if (highlightTimeoutRef.current) {
+                clearTimeout(highlightTimeoutRef.current);
+            }
+            if (scrollTimeoutRef.current) {
+                clearTimeout(scrollTimeoutRef.current);
+            }
+        };
+    }, []);
+
+
+    // useEffect(() => {
+    //     const url = new URL(`${WP_BASE}/news`);
+    //     url.searchParams.set('status', 'active');
+    //     url.searchParams.set('page', '1');
+    //     url.searchParams.set('per_page', '10');
+    //     url.searchParams.set('sort', 'view');
+
+    //     fetch(url.toString(), { cache: 'no-store' })
+    //         .then(res => res.json())
+    //         .then(json => {
+    //         setMostViewedNews(Array.isArray(json?.data) ? json.data : []);
+    //         })
+    //         .catch(() => setMostViewedNews([]));
+    // }, []);
 
     // chuẩn hóa query 1 lần để tiết kiệm hiệu năng
     const q = normalizeString(searchQuery);
@@ -221,19 +316,52 @@ export default function TinTucComponent() {
                 <div className={`${styles2.newsHeaderContainer}`}>
                     <h1 className={`${styles2.newsTitle}`}>Tin tức</h1>
                     <form className={`${styles2.newsSearchForm}`} onSubmit={handleSearch}>
-                        <input
-                            type="text"
-                            placeholder="Tìm kiếm"
-                            className={`${styles2.newsSearchInput}`}
-                            value={searchQuery}
-                            onChange={(e) => setSearchQuery(e.target.value)}
-                        />
-                        <button type="submit" className={`${styles2.newsSearchBtn}`}>
-                            <svg width="20" height="20" viewBox="0 0 24 24">
-                                <circle cx="11" cy="11" r="8" stroke="#222" strokeWidth="2" fill="none" />
-                                <line x1="17" y1="17" x2="22" y2="22" stroke="#222" strokeWidth="2" />
-                            </svg>
-                        </button>
+                        <div className={styles2.newsSearchBox}>
+                            <input
+                                type="text"
+                                placeholder="Tìm kiếm"
+                                className={`${styles2.newsSearchInput}`}
+                                value={searchQuery}
+                                onChange={(e) => handleSearchInput(e.target.value)}
+                                aria-label="Tìm kiếm tin nhanh"
+                            />
+                            <button type="submit" className={`${styles2.newsSearchBtn}`}>
+                                <svg width="20" height="20" viewBox="0 0 24 24">
+                                    <circle cx="11" cy="11" r="8" stroke="#222" strokeWidth="2" fill="none" />
+                                    <line x1="17" y1="17" x2="22" y2="22" stroke="#222" strokeWidth="2" />
+                                </svg>
+                            </button>
+
+                            {isSearching && (
+                                <div className={styles2.newsSearchResults}>
+                                    {searchResults.length > 0 ? (
+                                        <>
+                                            <div className={styles2.newsSearchResultsHeader}>
+                                                Kết quả tìm kiếm ({searchResults.length})
+                                            </div>
+                                            {searchResults.map((item) => (
+                                                <div
+                                                    key={item.id}
+                                                    className={styles2.newsSearchResultItem}
+                                                    onClick={() => handleSearchResultSelect(item)}
+                                                >
+                                                    <div className={styles2.newsSearchResultTitle}>{item.title}</div>
+                                                    <div className={styles2.newsSearchResultTime}>
+                                                        {item.time_upload
+                                                            ? new Date(item.time_upload).toLocaleString('vi-VN', { hour12: false })
+                                                            : ''}
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </>
+                                    ) : (
+                                        <div className={styles2.newsSearchNoResults}>
+                                            Không tìm thấy tin tức cho "{searchQuery}"
+                                        </div>
+                                    )}
+                                </div>
+                            )}
+                        </div>
                     </form>
                 </div>
             </section>
@@ -413,10 +541,14 @@ export default function TinTucComponent() {
                                                     <div key={dateKey} className={`${styles2.timelineDateGroup}`}>
                                                         <div className={`${styles2.timelineDateDisplayFlex}`}>
                                                             <div className={`${styles2.timelineDateHeaderDate}`}>{dateKey}</div>
-                                                            <div className={`${styles2.timelineDateHeaderLine}`}>Tin nhanh quan trong</div>
+                                                            {/* <div className={`${styles2.timelineDateHeaderLine}`}>Tin nhanh quan trong</div> */}
                                                         </div>
                                                         {groupedByDate[dateKey].map((item) => (
-                                                            <div className={`${styles2.timelineItem}`} key={item.id}>
+                                                            <div
+                                                                className={`${styles2.timelineItem} ${highlightedNewsId === item.id ? styles2.timelineItemHighlight : ""}`}
+                                                                key={item.id}
+                                                                id={`news-flash-${item.id}`}
+                                                            >
                                                                 <div className={`${styles2.timelineTime}`}>
                                                                     {item.time_upload 
                                                                         ? new Date(item.time_upload).toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit', hour12: false })
@@ -544,7 +676,7 @@ export default function TinTucComponent() {
                 </div>
             </section>
            
-            <section className={`col-md-12 ${styles2.duocXemNhieu} ${styles2.colMd12} ${styles2.ttucDuocXemNhieu}`}>
+            {/* <section className={`col-md-12 ${styles2.duocXemNhieu} ${styles2.colMd12} ${styles2.ttucDuocXemNhieu}`}>
                 <div className={`${styles2.titleContainer} title-container`}>
                     <h5>Được xem nhiều</h5>
                 </div>
@@ -571,7 +703,7 @@ export default function TinTucComponent() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
             <NewsFlashNotifier />
         </>
     )

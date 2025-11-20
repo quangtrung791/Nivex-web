@@ -13,7 +13,7 @@ export default function Home() {
         '@type': 'Organization',
         name: 'Nivex Hub',
         url: 'https://nivex.info',
-        logo: 'https://nivex.info/assets/images/logo/NivexIcon.PNG',
+        logo: 'https://nivex.info/assets/images/logo/Nivex_icon_bg.png',
         description: 'Nền tảng tri thức cho Kỷ Nguyên Giao Dịch AI, cung cấp kiến thức dễ hiểu cho người mới, tin tức chọn lọc mỗi ngày và lớp học trực tuyến hàng tuần.',
         sameAs: [
             // Có thể thêm các mạng xã hội nếu có
@@ -36,7 +36,7 @@ export default function Home() {
             name: 'Nivex',
             logo: {
                 '@type': 'ImageObject',
-                url: 'https://nivex.info/assets/images/logo/NivexIcon.PNG'
+                url: 'https://nivex.info/assets/images/logo/Nivex_icon_bg.png'
             }
         },
         inLanguage: 'vi-VN',

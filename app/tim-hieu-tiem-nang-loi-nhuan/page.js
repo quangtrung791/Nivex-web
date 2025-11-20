@@ -4,6 +4,9 @@ import TimHieuTiemNangLoiNhuan from './TimHieuTiemNangLoiNhuanComponent'
 export const metadata = {
   title: 'Tìm hiểu về tiềm năng lợi nhuận | Nivex Hub',
   description: 'Nivex Hub là nền tảng sáng tạo kết nối các nhà đầu tư và doanh nghiệp, mang đến cơ hội lớn để tối đa hóa lợi nhuận.',
+  alternates: {
+    canonical: 'https://nivex.info/tim-hieu-tiem-nang-loi-nhuan'
+  },
   robots: {
         index: true,
         follow: true,

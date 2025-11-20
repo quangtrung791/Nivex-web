@@ -44,7 +44,7 @@ export async function GET() {
     <loc>${url}</loc>
     <lastmod>${now}</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <priority>1.0</priority>
   </url>`
     }).join('\n')
 

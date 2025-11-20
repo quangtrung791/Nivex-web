@@ -5,6 +5,9 @@ import SuKien from "./EventComponent"
 export const metadata = {
     title: "Sự kiện tổ chức tại Nivex",
     description: "Hãy tham dự các sự kiện do chính Nivex tổ chức.",
+    alternates: {
+        canonical: 'https://nivex.info/su-kien'
+    },
     robots: {
         index: true,
         follow: true,

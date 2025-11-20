@@ -68,7 +68,7 @@ export default function MenuListNew() {
                     />
                   </div>
                   <div className={styles.menuContent}>
-                    <h3 className={styles.menuTitle}>{item.title}</h3>
+                    <div className={styles.menuTitle}>{item.title}</div>
                   </div>
                 </Link>
               )})}

@@ -4,6 +4,9 @@ import NangLucCanhTranhComponent from './NangLucCanhTranhComponent'
 export const metadata = {
   title: 'Copy Trade và AI Nâng cao - Năng lực cạnh tranh | Nivex Hub',
   description: 'Khám phá sức mạnh của Copy Trade kết hợp AI Nâng cao cùng Nivex Hub - giải pháp tối ưu giúp nhà đầu tư nâng cao năng lực cạnh tranh, tối đa hóa lợi nhuận và tự động hóa chiến lược giao dịch thông minh.',
+  alternates: {
+    canonical: 'https://nivex.info/nang-luc-canh-tranh'
+  },
   robots: {
         index: true,
         follow: true,

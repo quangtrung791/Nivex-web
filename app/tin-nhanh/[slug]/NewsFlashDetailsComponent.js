@@ -5,11 +5,11 @@ import Link from "next/link"
 import { useParams } from "next/navigation"
 import './style.css'
 import './fix-content.css'
-import NewsFlashNotifier from '../NewsFlashNotifier';
+import NewsFlashNotifier from '../../tin-tuc/NewsFlashNotifier';
 
 const WP_BASE = 'https://nivexhub.learningchain.vn/wp-json/nivex/v1';
 
-export default function ChiTietTinTucComponent() {
+export default function ChiTietTinNhanhComponent() {
     const { slug } = useParams();          // id chính là slug
     const [news, setNews] = useState(null);
     const [hotNews, setHotNews] = useState([]);
@@ -21,7 +21,7 @@ export default function ChiTietTinTucComponent() {
         setLoading(true)
       
         // Chi tiết bài viết (gọi trực tiếp WP)
-        const detailUrl = `${WP_BASE}/news/by-slug/${encodeURIComponent(slug)}`
+        const detailUrl = `${WP_BASE}/news_flash/by-slug/${encodeURIComponent(slug)}`
         fetch(detailUrl, { cache: 'no-store' })
           .then(r => r.json())
           .then(json => {
@@ -35,8 +35,7 @@ export default function ChiTietTinTucComponent() {
                 thumbnail_url: a.thumbnail_url || 'https://learningchain.vn/wp-content/uploads/2025/09/Frame_1707483879_new_knowledge.webp',
                 time_upload: a.time_upload,
                 created_at: a.created_at,
-                updated_at: a.updated_at,
-                category_id: a.category_id ?? null,
+                updated_at: a.updated_at
               })
             } else {
               setNews(null)
@@ -45,13 +44,14 @@ export default function ChiTietTinTucComponent() {
           .catch(() => setNews(null))
           .finally(() => setLoading(false))
       
-        // Danh sách tin nóng / mới (lấy nhanh qua list news)
-        const listUrl = `${WP_BASE}/news?status=active&page=1&per_page=20`
+        // Danh sách tin nóng / mới (lấy nhanh qua list news_flash)
+        const listUrl = `${WP_BASE}/news_flash?status=active&page=1&per_page=20`
         fetch(listUrl, { cache: 'no-store' })
           .then(r => r.json())
           .then(json => {
             const arr = Array.isArray(json?.data) ? json.data : []
-            setHotNews(arr.map(n => ({
+            setHotNews(arr.filter(n => n.is_hot == 1)
+                .map(n => ({
               id: n.id,
               slug: n.slug,
               title: n.title,
@@ -62,29 +62,29 @@ export default function ChiTietTinTucComponent() {
           .catch(() => setHotNews([]))
       }, [slug])     
     
-    useEffect(() => {
-        const url = new URL(`${WP_BASE}/news`);
-        url.searchParams.set('status', 'active');
-        url.searchParams.set('page', '1');
-        url.searchParams.set('per_page', '10');
-        url.searchParams.set('sort', 'view');
+    // useEffect(() => {
+    //     const url = new URL(`${WP_BASE}/news`);
+    //     url.searchParams.set('status', 'active');
+    //     url.searchParams.set('page', '1');
+    //     url.searchParams.set('per_page', '10');
+    //     url.searchParams.set('sort', 'view');
 
-        fetch(url.toString(), { cache: 'no-store' })
-            .then(res => res.json())
-            .then(json => {
-            setMostViewedNews(Array.isArray(json?.data) ? json.data : []);
-            })
-            .catch(() => setMostViewedNews([]));
-    }, []);
+    //     fetch(url.toString(), { cache: 'no-store' })
+    //         .then(res => res.json())
+    //         .then(json => {
+    //         setMostViewedNews(Array.isArray(json?.data) ? json.data : []);
+    //         })
+    //         .catch(() => setMostViewedNews([]));
+    // }, []);
 
-    useEffect(() => {
-        if (!news?.slug) return
-        void fetch(`${WP_BASE}/news-view?slug=${encodeURIComponent(news.slug)}`, {
-          method: 'GET',
-          cache: 'no-store',
-          keepalive: true
-        }).catch(() => {})
-    }, [news?.slug])
+    // useEffect(() => {
+    //     if (!news?.slug) return
+    //     void fetch(`${WP_BASE}/news-view?slug=${encodeURIComponent(news.slug)}`, {
+    //       method: 'GET',
+    //       cache: 'no-store',
+    //       keepalive: true
+    //     }).catch(() => {})
+    // }, [news?.slug])
 
 
 
@@ -111,7 +111,7 @@ export default function ChiTietTinTucComponent() {
                 <div>
                     <section className="section-news-header">
                         <div className="news-header-container">
-                            <h1 className="news-title">Tin tức</h1>
+                            <h1 className="news-title">Tin nhanh</h1>
                             <form className="news-search-form">
                                 <input
                                     type="text"
@@ -134,14 +134,14 @@ export default function ChiTietTinTucComponent() {
                                 <div className="col-xl-8 col-md-12">
                                     <div className="navigate-link">
                                         <span className="navigate-link-content" id="navigate-link-content">
-                                            <Link href='/tin-tuc'>Tin tức&nbsp;&nbsp;&gt;</Link>
+                                            <Link href='/tin-tuc'>Tin nhanh&nbsp;&nbsp;&gt;</Link>
                                             <span>&nbsp;&nbsp;{news.title}</span>
                                         </span>
                                     </div>
                                     <div className="blog-main">
-                                         <div className="box-image">
+                                         {/* <div className="box-image">
                                              <img src={news.thumbnail_url || "/assets/images/blog/blog-01.jpg"} alt={news.title} />
-                                        </div>
+                                        </div> */}
                                         <h3 className="title">
                                             {news.title}
                                         </h3>
@@ -157,22 +157,18 @@ export default function ChiTietTinTucComponent() {
                                         <div className="widget recent mt-0 title-link-right-panel">
                                             <ul className="tin-nong tin-nong-real">
                                                 {Array.isArray(hotNews) && hotNews.slice(0, 10).map(item => (
-                                                    <Link href={`/tin-tuc/${item.slug}`}>
-                                                        <li className="li-chi-tiet-tin-tuc-slug" key={item.id}>
-                                                            <div style={{ display: 'block' }}>
-                                                                <p className="time-stamp-p">
-                                                                    {item.time_upload
-                                                                        ? new Date(item.time_upload).toLocaleString('vi-VN', { hour12: false })
-                                                                        : ''}
-                                                                </p>
-                                                                <div className="image">
-                                                                    <img className="mini-image-imgs" src={item.thumbnail_url || "/assets/images/blog/blog-02.jpg"} alt={item.title} />
-                                                                </div>
-                                                            </div>
+                                                    
+                                                    <Link href={`/tin-nhanh/${item.slug}`}>
+                                                        <li className="tin-noi-bat-tin-nhanh" key={item.id}>
+                                                            <p className="time-stamp-p">
+                                                                {item.time_upload
+                                                                    ? new Date(item.time_upload).toLocaleString('vi-VN', { hour12: false })
+                                                                    : ''}
+                                                            </p>
                                                             <div className="content">
-                                                                <Link href={`/tin-tuc/${item.slug}`} className="title navigate-child-news a-href-tin-long side-Banner-Link-Related">
+                                                                <div className="title navigate-child-news a-href-tin-long side-Banner-Link-Related">
                                                                     {item.title}
-                                                                </Link>
+                                                                </div>
                                                             </div>
                                                         </li>
                                                     </Link>
@@ -183,7 +179,7 @@ export default function ChiTietTinTucComponent() {
 
 
                                     {/* Tin xem nhiều */}
-                                    <div className="sidebar tin-xem-nhieu">
+                                    {/* <div className="sidebar tin-xem-nhieu">
                                         <div className="widget recent mt-0 title-link-right-panel">
                                             <h6 className="heading heding-tin-xem-nhieu">Tin xem nhiều</h6>
                                             
@@ -211,7 +207,7 @@ export default function ChiTietTinTucComponent() {
                                                 ))}
                                             </ul>
                                         </div>
-                                    </div>
+                                    </div> */}
 
 
 
@@ -219,7 +215,7 @@ export default function ChiTietTinTucComponent() {
                             </div>
                         </div>
                     </section>
-                      <section className="duoc-xem-nhieu col-md-12 chi-tiet-ttuc-duoc-xem-nhieu">
+                      {/* <section className="duoc-xem-nhieu col-md-12 chi-tiet-ttuc-duoc-xem-nhieu">
                         <div className="title-container">
                             <h5>Được xem nhiều</h5>
                         </div>
@@ -233,7 +229,7 @@ export default function ChiTietTinTucComponent() {
                                                                     <div className="wrap-video"></div>
                                                                 </div>
                                                                 <div className="box-content title-news-duoc-xem-nhieu abcuixyz-nivex-news">
-                                                                    <Link href={`/tin-tuc/${item.slug}`} className="title">{item.title}</Link>
+                                                                    <div className="title">{item.title}</div>
                                                                 </div>
                                                             </div>
                                                         </Link>
@@ -247,7 +243,7 @@ export default function ChiTietTinTucComponent() {
                                                     </div>
                                                 </div>
                                             </div>
-                    </section>
+                    </section> */}
                 </div>
                 <NewsFlashNotifier />
         </>

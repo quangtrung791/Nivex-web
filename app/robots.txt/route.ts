@@ -14,7 +14,7 @@ export async function GET() {
 
   const robotsTxt = `${rules}
 
-Sitemap: ${BASE}/sitemap.xml`
+Sitemap: ${BASE}/sitemap-index.xml`
 
   return new NextResponse(robotsTxt, {
     headers: {

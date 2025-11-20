@@ -4,6 +4,9 @@ import KYCVerification from "./KYCVerification"
 export const metadata = {
     title: 'Xác minh danh tính KYC - Nivex Hub',
     description: 'Hướng dẫn chi tiết các bước xác minh danh tính KYC trên Nivex',
+    alternates: {
+        canonical: 'https://nivex.info/xac-minh-danh-tinh-kyc'
+    },
     robots: {
         index: true,
         follow: true,

@@ -4,6 +4,9 @@ import UserGuidePage from './UserGuidePage'
 export const metadata = {
   title: 'Hướng dẫn sử dụng app Nivex | Nivex Hub',
   description: 'Tổng hợp các bước cài đặt, thao tác và giải pháp nhanh để sử dụng Nivex hiệu quả.',
+  alternates: {
+    canonical: 'https://nivex.info/huong-dan-su-dung-app-nivex'
+  },
   robots: {
         index: true,
         follow: true,

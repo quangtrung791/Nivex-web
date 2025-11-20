@@ -49,12 +49,15 @@ export async function GET() {
     const items = await fetchAllEvents()
 
     const urls = items.map((item) => {
-      const lastmod = item.updated_at || item.created_at || new Date().toISOString()
+      const rawDate = item.updated_at || item.created_at
+      const lastmod = rawDate
+        ? new Date(rawDate).toISOString() // -> 2025-11-10T12:35:53.000Z
+        : new Date().toISOString()
       return `  <url>
     <loc>${BASE_URL}/su-kien/${item.slug}</loc>
     <lastmod>${lastmod}</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.5</priority>
   </url>`
     }).join('\n')
 

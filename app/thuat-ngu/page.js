@@ -5,6 +5,9 @@ import DictionaryPage from "./DictionaryPage"
 export const metadata = {
     title: "Danh sách thuật ngữ | Nivex",
     description: "Tìm hiểu các từ khóa thông dụng về ngành blockchain chỉ trong vài phút.",
+    alternates: {
+        canonical: 'https://nivex.info/thuat-ngu'
+    },
     robots: {
         index: true,
         follow: true,

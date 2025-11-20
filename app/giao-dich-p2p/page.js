@@ -6,6 +6,9 @@ export const metadata = {
   title: 'Hướng dẫn giao dịch P2P Nivex | Nivex Hub',
   description:
     'Tính năng chuyển khoản nội bộ giúp bạn gửi tiền mã hóa đến người dùng Nivex khác tức thì và hoàn toàn miễn phí.',
+  alternates: {
+    canonical: 'https://nivex.info/giao-dich-p2p'
+  },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
   openGraph: {
     title: 'Hướng dẫn giao dịch P2P Nivex | Nivex Hub',

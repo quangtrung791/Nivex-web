@@ -145,6 +145,39 @@ h1.pageTitleHeading span {
   display: flex;
   padding: 20px;
   gap: 20px;
+  position: relative;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.courseCardHighlight {
+  background: #242529;
+  box-shadow: 0 0 0 2px rgba(188, 254, 8, 0.7);
+  border-radius: 20px;
+  animation: courseHighlight 2.5s ease forwards;
+}
+
+.courseCardHighlight .courseTitle  {
+  background: linear-gradient(90deg, #bcfe08, #86f869);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.courseCardHighlight .courseButton {
+  background: linear-gradient(90deg, #BCFE08, #86F969);
+  color: #000;
+  border-color: transparent;
+}
+
+.courseCardHighlight .courseDate {
+  color: #fff;
+}
+
+.courseCardHighlight .courseCardContent {
+  color: #d2d4dc;
+}
+
+.courseCardHighlight .courseImage img {
+  outline: 2px solid rgba(188, 254, 8, 0.4);
 }
 
 .courseCard:hover {
@@ -362,6 +395,15 @@ h1.pageTitleHeading span {
 .pageTitleCourse, .coursesWrapper {
     padding-left: 7%;
     padding-right: 7%;
+}
+
+@keyframes courseHighlight {
+  50% {
+    box-shadow: 0 0 0 2px rgba(188, 254, 8, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(188, 254, 8, 0);
+  }
 }
 @media (min-width: 650px) and (max-width:1439px) {
   .pageTitleCourse, .coursesWrapper {

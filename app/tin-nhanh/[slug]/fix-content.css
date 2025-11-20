@@ -1,0 +1,23 @@
+p.disclaimer-text > * {
+    color: white !important;
+}
+
+@media (max-width: 600px) {
+    .news-details-display-markdown img {
+        /* max-height: 250px !important; */
+        height: unset;
+        object-fit: contain;
+        border-radius: 25px;
+    }
+}
+@media (min-width: 1400px) {
+    .abcuixyz-nivex-news a.title {
+         display: block; /* fallback */
+        display: -webkit-box;
+        -webkit-line-clamp: 2 !important;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: auto;
+    }
+}
