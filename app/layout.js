@@ -18,8 +18,8 @@ export const metadata = {
     //metadataBase giúp Next.js tạo URL tuyệt đối cho các thẻ/meta liên quan (OG images, canonical...)
     metadataBase: new URL('https://nivex.info'),
 
-    title: 'NIVEX HUB - Nền tảng giao dịch tích hợp AI & Copytrade thông minh',
-    description: 'NIVEX HUB là nền tảng giao dịch tích hợp Công cụ AI giúp giao dịch thông minh, an toàn, hỗ trợ tối ưu cho người dùng toàn cầu.',
+    title: 'NIVEX - Nền Tảng Crypto AI & Copytrade Thông Minh',
+    description: 'Giao dịch crypto thông minh với NIVEX. Nền tảng giao dịch crypto tích hợp AI thông minh. Bảo mật cao, dễ sử dụng cho người mới. Đăng ký miễn phí.',
     alternates: {
         canonical: 'https://nivex.info',
     },
@@ -36,17 +36,17 @@ export const metadata = {
         },
     },
     openGraph: {
-        title: "NIVEX HUB - Nền tảng giao dịch tích hợp AI & Copytrade thông minh",
-        description: "NIVEX HUB là nền tảng giao dịch tích hợp Công cụ AI giúp giao dịch thông minh, an toàn, hỗ trợ tối ưu cho người dùng toàn cầu.",
+        title: "NIVEX - Nền Tảng Crypto AI & Copytrade Thông Minh",
+        description: "Giao dịch crypto thông minh với NIVEX. Nền tảng giao dịch crypto tích hợp AI thông minh. Bảo mật cao, dễ sử dụng cho người mới. Đăng ký miễn phí.",
         url: "https://nivex.info",
         siteName: "Nivex",
         images: [
             {
-                url: "assets/images/logo/NivexIcon.png",
+                url: "assets/images/icon/icon_menu_header.png",
                 width: 1200,
                 height: 630,
                 objectFit: "contain",
-                alt: "NIVEX HUB là nền tảng giao dịch tích hợp Công cụ AI giúp giao dịch thông minh, an toàn, hỗ trợ tối ưu cho người dùng toàn cầu."
+                alt: "Giao dịch crypto thông minh với NIVEX. Nền tảng giao dịch crypto tích hợp AI thông minh. Bảo mật cao, dễ sử dụng cho người mới. Đăng ký miễn phí."
             }
         ],
         locale: "vi_VN",
