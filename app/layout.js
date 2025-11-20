@@ -18,8 +18,8 @@ export const metadata = {
     //metadataBase giúp Next.js tạo URL tuyệt đối cho các thẻ/meta liên quan (OG images, canonical...)
     metadataBase: new URL('https://nivex.info'),
 
-    title: 'NIVEX - Nền tảng giao dịch AI & Copytrade thông minh',
-    description: 'NIVEX là nền tảng giao dịch tích hợp AI giúp giao dịch minh bạch, an toàn, hỗ trợ Spot, Future và AI Copytrade với hiệu suất tối ưu cho người dùng toàn cầu.',
+    title: 'NIVEX HUB - Nền tảng giao dịch tích hợp AI & Copytrade thông minh',
+    description: 'NIVEX HUB là nền tảng giao dịch tích hợp Công cụ AI giúp giao dịch thông minh, an toàn, hỗ trợ tối ưu cho người dùng toàn cầu.',
     
     // Thêm index, follow cho trực quan...
     robots: {
@@ -34,8 +34,8 @@ export const metadata = {
         },
     },
     openGraph: {
-        title: "NIVEX - Nền tảng giao dịch AI & Copytrade thông minh",
-        description: "NIVEX là nền tảng giao dịch tích hợp AI giúp giao dịch minh bạch, an toàn, hỗ trợ Spot, Future và AI Copytrade với hiệu suất tối ưu cho người dùng toàn cầu.",
+        title: "NIVEX HUB - Nền tảng giao dịch tích hợp AI & Copytrade thông minh",
+        description: "NIVEX HUB là nền tảng giao dịch tích hợp Công cụ AI giúp giao dịch thông minh, an toàn, hỗ trợ tối ưu cho người dùng toàn cầu.",
         url: "https://nivex.info",
         siteName: "Nivex",
         images: [
@@ -44,7 +44,7 @@ export const metadata = {
                 width: 1200,
                 height: 630,
                 objectFit: "contain",
-                alt: "NIVEX là nền tảng giao dịch tích hợp AI giúp giao dịch minh bạch, an toàn, hỗ trợ Spot, Future và AI Copytrade với hiệu suất tối ưu cho người dùng toàn cầu."
+                alt: "NIVEX HUB là nền tảng giao dịch tích hợp Công cụ AI giúp giao dịch thông minh, an toàn, hỗ trợ tối ưu cho người dùng toàn cầu."
             }
         ],
         locale: "vi_VN",
