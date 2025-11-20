@@ -1,4 +1,5 @@
 import { Inter } from 'next/font/google' // 1. Import font Inter
+import Script from 'next/script'
 import "/public/app/dist/app.css"
 import "/public/assets/style/crypto-learning.css"
 import "/public/app/dist/swiper-bundle.min.css"
@@ -71,6 +72,21 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="vi">
+            <Script
+                strategy="afterInteractive"
+                src="https://www.googletagmanager.com/gtag/js?id=AW-16514563754"
+            />
+            <Script
+                id="google-ads"
+                strategy="afterInteractive"
+            >
+                {`
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', 'AW-16514563754');
+                `}
+            </Script>
             {/* 4. Sử dụng biến của font Inter */}
             <body className={`${inter.variable} body header-fixed is_dark`}>
                     {children}
