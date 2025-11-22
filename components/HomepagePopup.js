@@ -33,7 +33,7 @@ const HomepagePopup = () => {
     >
       <a
         className={`${styles.modal} ${isClosing ? styles.fadeOut : ''}`}
-        href="https://app.nivex.vn/nivex-wealth-growth-summit-2025"
+        href="https://app.nivex.info/nivex-wealth-growth-summit-2025"
         target="_blank"
         rel="noopener noreferrer"
       >
