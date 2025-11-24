@@ -72,6 +72,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="vi">
+            {/* Mã Gtag cũ */}
             <Script
                 strategy="afterInteractive"
                 src="https://www.googletagmanager.com/gtag/js?id=AW-16514563754"
@@ -87,6 +88,22 @@ export default function RootLayout({ children }) {
                     gtag('config', 'AW-16514563754');
                 `}
             </Script>
+
+             {/* Google Analytics (GA4) */}
+            <Script
+                strategy="afterInteractive"
+                src="https://www.googletagmanager.com/gtag/js?id=G-BFN2HNVTKV"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+                {`
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+
+                    gtag('js', new Date());
+                    gtag('config', 'G-BFN2HNVTKV');
+                `}
+            </Script>
+
             {/* 4. Sử dụng biến của font Inter */}
             <body className={`${inter.variable} body header-fixed is_dark`}>
                     {children}
