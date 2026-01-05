@@ -162,7 +162,7 @@ export default function Home() {
     }
     return (
         <>
-            <HomepagePopup />
+            // <HomepagePopup />
             <Layout headerStyle={1} footerStyle={2}>
                 <Banner1 />
                 <MenuListNew />
