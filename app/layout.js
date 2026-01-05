@@ -17,42 +17,42 @@ const inter = Inter({
 export const metadata = {
 
     //metadataBase giúp Next.js tạo URL tuyệt đối cho các thẻ/meta liên quan (OG images, canonical...)
-    metadataBase: new URL('https://nivex.info'),
+    // metadataBase: new URL('https://nivex.info'),
 
-    title: 'NIVEX - Nền Tảng Crypto AI & Copytrade Thông Minh',
-    description: 'Giao dịch crypto thông minh với NIVEX. Nền tảng giao dịch crypto tích hợp AI thông minh. Bảo mật cao, dễ sử dụng cho người mới. Đăng ký miễn phí.',
-    alternates: {
-        canonical: 'https://nivex.info',
-    },
-    // Thêm index, follow cho trực quan...
-    robots: {
-        index: true,
-        follow: true,
-        googleBot: {
-          index: true,
-          follow: true,
-          maxSnippet: -1,
-          maxImagePreview: 'large',
-          maxVideoPreview: -1,
-        },
-    },
-    openGraph: {
-        title: "NIVEX - Nền Tảng Crypto AI & Copytrade Thông Minh",
-        description: "Giao dịch crypto thông minh với NIVEX. Nền tảng giao dịch crypto tích hợp AI thông minh. Bảo mật cao, dễ sử dụng cho người mới. Đăng ký miễn phí.",
-        url: "https://nivex.info",
-        siteName: "Nivex",
-        images: [
-            {
-                url: "assets/images/icon/icon_menu_header.png",
-                width: 1200,
-                height: 630,
-                objectFit: "contain",
-                alt: "Giao dịch crypto thông minh với NIVEX. Nền tảng giao dịch crypto tích hợp AI thông minh. Bảo mật cao, dễ sử dụng cho người mới. Đăng ký miễn phí."
-            }
-        ],
-        locale: "vi_VN",
-        type: "website"
-    },
+    // title: 'NIVEX - Nền Tảng Crypto AI & Copytrade Thông Minh',
+    // description: 'Giao dịch crypto thông minh với NIVEX. Nền tảng giao dịch crypto tích hợp AI thông minh. Bảo mật cao, dễ sử dụng cho người mới. Đăng ký miễn phí.',
+    // alternates: {
+    //     canonical: 'https://nivex.info',
+    // },
+    // // Thêm index, follow cho trực quan...
+    // robots: {
+    //     index: true,
+    //     follow: true,
+    //     googleBot: {
+    //       index: true,
+    //       follow: true,
+    //       maxSnippet: -1,
+    //       maxImagePreview: 'large',
+    //       maxVideoPreview: -1,
+    //     },
+    // },
+    // openGraph: {
+    //     title: "NIVEX - Nền Tảng Crypto AI & Copytrade Thông Minh",
+    //     description: "Giao dịch crypto thông minh với NIVEX. Nền tảng giao dịch crypto tích hợp AI thông minh. Bảo mật cao, dễ sử dụng cho người mới. Đăng ký miễn phí.",
+    //     url: "https://nivex.info",
+    //     siteName: "Nivex",
+    //     images: [
+    //         {
+    //             url: "assets/images/icon/icon_menu_header.png",
+    //             width: 1200,
+    //             height: 630,
+    //             objectFit: "contain",
+    //             alt: "Giao dịch crypto thông minh với NIVEX. Nền tảng giao dịch crypto tích hợp AI thông minh. Bảo mật cao, dễ sử dụng cho người mới. Đăng ký miễn phí."
+    //         }
+    //     ],
+    //     locale: "vi_VN",
+    //     type: "website"
+    // },
 
     // themeColor: "#bcfe08",
     // // manifest: "/manifest.webmanifest",
@@ -67,6 +67,11 @@ export const metadata = {
     //     statusBarStyle: "black-translucent",
     //     title: "Nivex Hub"
     // }
+
+      robots: {
+        index: false,
+        follow: false,
+      }
 }
 
 export default function RootLayout({ children }) {
