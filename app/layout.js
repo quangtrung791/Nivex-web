@@ -68,9 +68,13 @@ export const metadata = {
     //     title: "Nivex Hub"
     // }
 
-      robots: {
+    robots: {
         index: false,
         follow: false,
+        googleBot: {
+          index: false,
+          follow: false,
+        }
       }
 }
 
