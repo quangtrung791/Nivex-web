@@ -175,12 +175,6 @@ export default function Home() {
                 {/* <Propose /> */}
 
             </Layout>
-
-            {/* Schema JSON-LD - Đặt ở cuối trang để không ảnh hưởng hiệu suất */}
-            // <script
-            //     type="application/ld+json"
-            //     dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-            // />
         </>
     )
 }
