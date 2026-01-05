@@ -4,7 +4,6 @@ import Banner1 from "@/components/sections/Banner1"
 import Work1 from "@/components/sections/Work1"
 import MenuListNew from "@/components/sections/MenuListNew"
 import SanSangGiaoDich from '@/components/sections/SanSangGiaoDich'
-import HomepagePopup from '@/components/HomepagePopup'
 
 export default function Home() {
     // Schema JSON-LD cho trang chủ
@@ -162,7 +161,6 @@ export default function Home() {
     }
     return (
         <>
-            // <HomepagePopup />
             <Layout headerStyle={1} footerStyle={2}>
                 <Banner1 />
                 <MenuListNew />
