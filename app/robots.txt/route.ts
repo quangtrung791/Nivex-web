@@ -9,7 +9,7 @@ export const revalidate = 6 * 60 * 60 // Cache 6 giờ
 
 export async function GET() {
   const rules = isProd
-    ? 'User-agent: *\nAllow: /'
+    ? 'User-agent: *\nDisallow: /'
     : 'User-agent: *\nDisallow: /' // chặn crawl ở preview
 
   const robotsTxt = `${rules}
