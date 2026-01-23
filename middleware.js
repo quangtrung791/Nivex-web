@@ -24,7 +24,6 @@ export function middleware(request: NextRequest) {
     return res
   }
 
-  // ✅ Redirect mọi thứ về đúng homepage (không giữ path/query)
   const res = NextResponse.redirect('https://nivex.info', 301)
 
   // (Tuỳ chọn) Gắn thêm noindex vào response redirect
